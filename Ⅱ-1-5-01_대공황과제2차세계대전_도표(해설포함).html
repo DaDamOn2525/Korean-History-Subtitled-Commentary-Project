@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>대공황과 제2차 세계 대전 — 한국사 요약도표</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EFE9DA; --paper-card:#FBF8F0;
+  --ink:#20242B; --ink-soft:#4A4F58;
+  --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+  --crimson:#7A2331; --crimson-soft:#EFDBDD;
+  --brass:#93701F; --brass-soft:#EDE1C2;
+  --line:#D3C9AE; --line-strong:#B8AB88;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Noto Sans KR',sans-serif;line-height:1.7;}
+h1,h2,h3,h4{font-family:'Noto Serif KR',serif;color:var(--ink);margin:0 0 .5em;}
+.nav-pill{position:sticky;top:0;z-index:100;background:var(--ink);color:#EFE9DA;
+  display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center;padding:.7rem 1.2rem;font-size:.85rem;}
+.nav-pill a,.nav-pill span.disabled{color:#EFE9DA;text-decoration:none;padding:.25rem .7rem;border-radius:999px;border:1px solid rgba(239,233,218,.35);}
+.nav-pill a:hover{background:rgba(239,233,218,.15);}
+.nav-pill span.disabled{opacity:.5;border-style:dashed;}
+.nav-pill .anchors{margin-left:auto;display:flex;gap:.5rem;flex-wrap:wrap;}
+.hero{background:var(--ink);color:var(--paper);padding:3rem 1.5rem 2.2rem;}
+.hero-inner{max-width:920px;margin:0 auto;}
+.kicker{font-size:.85rem;letter-spacing:.08em;color:var(--brass-soft);font-weight:500;margin-bottom:.6rem;}
+.hero h1{color:#FBF8F0;font-size:1.9rem;font-weight:900;line-height:1.4;}
+.hero .lead{color:#D9D4C4;font-size:1.02rem;max-width:640px;margin-top:.8rem;}
+.hero-tags{margin-top:1.2rem;display:flex;gap:.5rem;flex-wrap:wrap;}
+.hero-tags span{background:rgba(239,233,218,.12);border:1px solid rgba(239,233,218,.3);
+  padding:.25rem .7rem;border-radius:999px;font-size:.78rem;color:#EFE9DA;}
+main{max-width:920px;margin:0 auto;padding:0 1.5rem 4rem;}
+.legend{background:var(--paper-card);border:1px solid var(--line);border-radius:10px;
+  padding:.9rem 1.2rem;margin:1.8rem 0 1rem;font-size:.92rem;display:flex;gap:1.3rem;flex-wrap:wrap;align-items:center;}
+.legend .dot{display:inline-block;width:.8em;height:.8em;border-radius:50%;margin-right:.4em;vertical-align:-.05em;}
+.section{margin:2.6rem 0;}
+.section > h2{font-size:1.35rem;border-bottom:2px solid var(--line-strong);padding-bottom:.4rem;}
+.section > h3{font-size:1.1rem;margin-top:1.4rem;}
+.section > h4{font-size:1rem;margin-top:1.2rem;}
+.diagram-box{background:var(--paper-card);border:1px solid var(--line);border-radius:14px;padding:1.4rem;}
+.timeline{position:relative;padding-left:1.6rem;margin-top:1rem;}
+.timeline::before{content:'';position:absolute;left:.4rem;top:.3rem;bottom:.3rem;width:2px;background:var(--line-strong);}
+.timeline-item{position:relative;padding:.5rem 0 .5rem 1rem;}
+.timeline-item::before{content:'';position:absolute;left:-1.4875rem;top:.75rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--dotcolor,var(--ink-soft));}
+.timeline-item .yr{font-weight:700;font-family:'Noto Serif KR',serif;margin-right:.5em;}
+.flow{display:flex;flex-direction:column;gap:0;margin-top:1rem;}
+.flow-step{background:var(--paper-card);border:1px solid var(--line);border-radius:10px;padding:.9rem 1.1rem;}
+.flow-step h4{font-size:.95rem;margin-bottom:.3rem;margin-top:0;}
+.flow-arrow{text-align:center;color:var(--ink-soft);font-size:1.3rem;margin:.15rem 0;}
+.causal-link{font-size:.88rem;color:var(--ink-soft);background:var(--brass-soft);border-radius:8px;
+  padding:.45rem .8rem;margin:.3rem 0;display:inline-block;}
+.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;}
+@media(max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+.compare-card{background:var(--paper-card);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;}
+.compare-card h4{font-family:'Noto Serif KR',serif;margin-bottom:.5rem;margin-top:0;}
+.compare-card.a{border-top:4px solid var(--indigo);}
+.compare-card.b{border-top:4px solid var(--crimson);}
+.compare-card.c{border-top:4px solid var(--brass);}
+table.data-table{width:100%;border-collapse:collapse;margin-top:.8rem;font-size:.9rem;background:var(--paper-card);}
+table.data-table caption{caption-side:top;text-align:left;font-weight:700;margin-bottom:.5rem;font-family:'Noto Serif KR',serif;}
+table.data-table th,table.data-table td{border:1px solid var(--line);padding:.5rem .6rem;text-align:center;}
+table.data-table th{background:var(--indigo-soft);}
+.quote-block{border-left:4px solid var(--line-strong);background:var(--paper-card);
+  padding:.9rem 1.2rem;margin:1rem 0;font-size:.95rem;}
+.quote-block cite{display:block;margin-top:.5rem;font-size:.82rem;color:var(--ink-soft);font-style:normal;}
+.quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:640px){.quote-grid{grid-template-columns:1fr;}}
+.think-box,.limit-box{border-radius:10px;padding:1rem 1.2rem;margin:1rem 0;font-size:.95rem;}
+.think-box{background:var(--indigo-soft);border:1px solid var(--indigo);}
+.limit-box{background:var(--crimson-soft);border:1px solid var(--crimson);}
+.think-box h4,.limit-box h4{margin-bottom:.4rem;font-size:.95rem;margin-top:0;}
+details.check-box{background:var(--paper-card);border:1px solid var(--line);border-radius:10px;
+  padding:.7rem 1.1rem;margin:.6rem 0;}
+details.check-box summary{cursor:pointer;font-weight:700;font-family:'Noto Serif KR',serif;}
+details.check-box .answer{margin-top:.6rem;color:var(--ink-soft);}
+.sidebox{background:var(--brass-soft);border:1px solid var(--brass);border-radius:10px;
+  padding:1rem 1.2rem;margin:1rem 0;font-size:.93rem;}
+.trust{margin-top:3rem;border-top:2px solid var(--line-strong);padding-top:1.2rem;font-size:.82rem;color:var(--ink-soft);}
+.trust p{margin:.3rem 0;}
+svg.branch text{font-family:'Noto Sans KR',sans-serif;fill:var(--ink);}
+
+/* [눈으로 듣는 해설 Ver 4.3] 통합 스크롤 확장형 어댑티브 엔진 (A안 적용) 스타일 */
+#focus-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+}
+.section.focus-active {
+  position: relative; z-index: 9995 !important;
+  background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+  border-radius: 12px; transform: scale(1.01);
+  box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+  transition: all 0.4s ease; margin-bottom: 5px !important;
+}
+.subtitle-container {
+  margin-top: 15px; position: relative;
+  background: #1A222E !important; 
+  display: none; flex-direction: column; 
+  max-height: none !important; overflow-y: visible !important;
+  text-align: left; border-radius: 0 0 10px 10px;
+  box-shadow: inset 0 5px 20px rgba(0,0,0,0.3);
+  border-top: 3px solid var(--brass);
+}
+.subtitle-ctrl-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky; top: 0; z-index: 20;
+}
+.ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+.ctrl-btns { display: flex; gap: 4px; align-items: center; }
+.progress-wrap {
+  width: 100%; height: 5px; background: rgba(255,255,255,0.1);
+  position: sticky; top: 37px; left: 0; z-index: 15;
+}
+.liquid-bar {
+  width: 0%; height: 100%; background: #FFD700;
+  box-shadow: 0 0 12px #FFD700; transition: width 0s linear; 
+}
+.subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+.sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+.sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+.sent.current { 
+  font-size: clamp(1.2em, 2vw, 1.4em); 
+  opacity: 1; color: #FFFFFF; font-weight: 700;
+  border-left: 6px solid #FFD700; padding-left: 15px;
+}
+.sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+.doc-word-highlight {
+  color: #000 !important; background-color: #FFD700 !important;
+  font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+.speed-btn {
+  background: #4A4F58; color: #fff; border: none; padding: 3px 7px;
+  border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700;
+}
+.speed-btn.active { background: #FFD700; color: #000; }
+.exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+.narrative-footer { text-align: right !important; padding: 8px 0 0 0; }
+.narrative-run-btn {
+  background: var(--brass); color: #fff; border: none;
+  padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅱ-1-4-03_대중운동과민족문화수호운동_도표(해설포함).html">◀ 이전: 대중 운동과 민족 문화 수호 운동</a>
+  <a href="Ⅱ-1-5-02_병참기지화정책과민족말살통치_도표(해설포함).html">다음: 병참 기지화 정책과 민족 말살 통치 ▶</a>
+  <span class="anchors">
+    <a href="#s0">구조</a><a href="#s1">연표</a><a href="#s2">전체주의</a><a href="#s3">세계대전</a><a href="#s4">인권유린</a><a href="#s5">확인</a>
+  </span>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Ⅰ. 일제 식민 통치와 민족 운동 · 5. 일제 침략 전쟁과 광복을 위한 노력</div>
+    <h1>뉴욕의 주가 폭락이, 세계를 전쟁으로 몰아넣기까지</h1>
+    <p class="lead">1929년 한 증권 거래소의 붕괴가 세 나라의 전체주의를 낳았고, 그 세 나라가 손을 잡으면서 인류는 두 번째 세계 대전을 맞았다.</p>
+    <div class="hero-tags">
+      <span>자기주도용</span><span>전자칠판용</span><span>1929~1945년</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<div class="legend">
+  <span><span class="dot" style="background:var(--indigo)"></span>이탈리아(파시즘)</span>
+  <span><span class="dot" style="background:var(--crimson)"></span>독일(나치즘)</span>
+  <span><span class="dot" style="background:var(--brass)"></span>일본(군국주의)</span>
+</div>
+
+<section id="s0" class="section">
+  <h2>0. 전체 구조 — 세 갈래가 하나로 합류하다</h2>
+  <div class="diagram-box">
+    <svg class="branch" viewBox="0 0 760 300" width="100%" height="auto">
+      <rect x="270" y="10" width="220" height="46" rx="10" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+      <text x="380" y="38" text-anchor="middle" font-size="14" font-weight="700">1929 대공황</text>
+
+      <line x1="380" y1="56" x2="180" y2="100" stroke="var(--line-strong)" stroke-width="2"/>
+      <line x1="380" y1="56" x2="380" y2="100" stroke="var(--line-strong)" stroke-width="2"/>
+      <line x1="380" y1="56" x2="580" y2="100" stroke="var(--line-strong)" stroke-width="2"/>
+
+      <rect x="90" y="100" width="180" height="60" rx="8" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1.5"/>
+      <text x="180" y="126" text-anchor="middle" font-size="13" font-weight="700" fill="var(--indigo)">이탈리아</text>
+      <text x="180" y="144" text-anchor="middle" font-size="11">무솔리니 파시스트당</text>
+
+      <rect x="290" y="100" width="180" height="60" rx="8" fill="var(--crimson-soft)" stroke="var(--crimson)" stroke-width="1.5"/>
+      <text x="380" y="126" text-anchor="middle" font-size="13" font-weight="700" fill="var(--crimson)">독일</text>
+      <text x="380" y="144" text-anchor="middle" font-size="11">히틀러 나치당</text>
+
+      <rect x="490" y="100" width="180" height="60" rx="8" fill="var(--brass-soft)" stroke="var(--brass)" stroke-width="1.5"/>
+      <text x="580" y="126" text-anchor="middle" font-size="13" font-weight="700" fill="var(--brass)">일본</text>
+      <text x="580" y="144" text-anchor="middle" font-size="11">군부 군국주의화</text>
+
+      <line x1="180" y1="160" x2="380" y2="200" stroke="var(--line-strong)" stroke-width="2"/>
+      <line x1="380" y1="160" x2="380" y2="200" stroke="var(--line-strong)" stroke-width="2"/>
+      <line x1="580" y1="160" x2="380" y2="200" stroke="var(--line-strong)" stroke-width="2"/>
+
+      <rect x="240" y="200" width="280" height="70" rx="10" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+      <text x="380" y="228" text-anchor="middle" font-size="13.5" font-weight="700">방공 협정 → 추축국 형성</text>
+      <text x="380" y="248" text-anchor="middle" font-size="11" fill="var(--ink-soft)">대외 침략 본격화 → 제2차 세계 대전</text>
+    </svg>
+  </div>
+</section>
+
+<section id="s1" class="section">
+  <h2>1. 한눈에 보는 연표</h2>
+  <div class="timeline">
+    <div class="timeline-item" style="--dotcolor:var(--ink-soft)"><span class="yr">1929</span>미국 뉴욕 증권 거래소, 주가 폭락 — 대공황 시작</div>
+    <div class="timeline-item" style="--dotcolor:var(--brass)"><span class="yr">1931</span>일본, 만주 사변 도발</div>
+    <div class="timeline-item" style="--dotcolor:var(--brass)"><span class="yr">1937</span>중·일 전쟁 발발, 난징 대학살</div>
+    <div class="timeline-item" style="--dotcolor:var(--crimson)"><span class="yr">1939</span>독일의 폴란드 침공 — 제2차 세계 대전 발발</div>
+    <div class="timeline-item" style="--dotcolor:var(--brass)"><span class="yr">1941</span>일본, 진주만 기습 — 아시아·태평양 전쟁 발발</div>
+    <div class="timeline-item" style="--dotcolor:var(--ink-soft)"><span class="yr">1945</span>미국, 일본에 원자 폭탄 투하 — 일본 항복</div>
+  </div>
+</section>
+
+<section id="s2" class="section">
+  <h3>2. 대공황과 전체주의의 확산</h3>
+  <div class="flow">
+    <div class="flow-step"><h4>대공황</h4>1929년 뉴욕 증권 거래소에서 주가가 폭락하며 대공황이 시작되었다. 기업이 파산하고 실업자가 늘었으며, 세계 무역 규모도 크게 줄었다.</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><h4>각국의 대응이 갈리다</h4>미국은 국가가 시장에 적극 개입하는 <strong>뉴딜 정책</strong>을 추진했다. 영국·프랑스는 본국과 식민지를 묶은 배타적 경제 블록을 형성하고 보호 무역을 강화했다.</div>
+    <div class="flow-arrow">→</div>
+    <div class="causal-link">반면 식민지가 부족했던 이탈리아·독일·일본은 경제 위기를 틈타 전체주의로 돌아섰다</div>
+    <div class="flow-step"><h4>전체주의의 확산</h4>이탈리아에서는 무솔리니의 파시스트당이, 독일에서는 히틀러의 나치당이 권력을 잡았고, 일본에서도 군부 강경파 주도로 군국주의화가 가속되었다. 이들은 침략 전쟁으로 국민의 불만을 잠재우고 해외 시장을 확보해 위기를 극복하려 했다.</div>
+  </div>
+  <div class="quote-grid">
+    <div class="quote-block">무솔리니는 파시스트에게 국가는 모든 것이며, 개인은 국가 밖에서 아무 가치도 갖지 못한다고 밝혔다.<cite>무솔리니, 『파시즘 독트린』</cite></div>
+    <div class="quote-block">방공 협정은 자원이 풍부한 국가에 맞선, 자원이 결핍된 국가 간의 대립이라는 시각도 있었다.<cite>조선일보, 1937. 11. 8.</cite></div>
+  </div>
+  <div class="sidebox">세 나라는 공산주의 확산을 막는다는 명분으로 <strong>방공 협정</strong>을 맺고 <strong>추축국</strong>을 형성해, 대외 침략을 본격화했다.</div>
+</section>
+
+<section id="s3" class="section">
+  <h3>3. 제2차 세계 대전의 발발과 확대</h3>
+  <div class="flow">
+    <div class="flow-step"><h4>일본의 중국 침략</h4>1931년 일본은 <strong>만주 사변</strong>을 일으켜 만주 주요 지역을 점령했고, 이듬해 꼭두각시 국가인 <strong>만주국</strong>을 세워 실질적으로 지배했다. 1937년에는 <strong>중·일 전쟁</strong>을 일으켜 중국을 본격 침략했고, 난징을 점령하며 수많은 중국인을 학살했다(난징 대학살).</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><h4>유럽에서의 전쟁</h4>1939년 독일이 폴란드를 침공하면서 <strong>제2차 세계 대전</strong>이 일어났다. 독일은 프랑스를 점령하는 등 빠르게 유럽을 장악했다.</div>
+    <div class="flow-arrow">→</div>
+    <div class="causal-link">중·일 전쟁이 길어져 곤란을 겪던 일본은 이 틈을 타 동남아시아 자원을 확보하려 했고, 미국은 석유 등 군수 물자의 대일 수출을 금지했다</div>
+    <div class="flow-step"><h4>아시아·태평양 전쟁</h4>1941년 일본이 하와이 진주만을 기습하며 아시아·태평양 전쟁이 일어났다. 초기에는 일본이 유리했으나 1942년 <strong>미드웨이 해전</strong>을 계기로 미국이 전세를 역전시켰다.</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><h4>전쟁의 종결</h4>유럽에서는 연합국의 공격으로 이탈리아와 독일이 차례로 항복했다. 미국은 일본에 두 차례 원자 폭탄을 투하했고 소련도 대일 선전 포고를 했다. 결국 일본은 무조건 항복을 선언했다(1945. 8. 15.).</div>
+  </div>
+</section>
+
+<section id="s4" class="section">
+  <h3>4. 심화 — 전쟁과 인권 유린</h3>
+  <div class="compare-grid">
+    <div class="compare-card a"><h4>아우슈비츠 강제 수용소</h4>독일은 유대인을 사회에서 격리·수용해 강제 노동을 시켰으며, 독가스 등으로 대량 학살했다.</div>
+    <div class="compare-card b"><h4>731부대</h4>일제가 생화학 무기 개발을 위해 조직한 부대로, 포로·민간인을 대상으로 생체 실험을 자행했다.</div>
+    <div class="compare-card c"><h4>난징 대학살</h4>중국은 학살된 사람을 약 30만 명으로 추정하며, 난징대학살기념관에 조형물을 세웠다.</div>
+  </div>
+  <div class="limit-box"><h4>기억할 지점</h4>침략 전쟁은 국가 간의 전쟁으로 그치지 않고, 곳곳에서 민간인을 강제로 동원하고 학살·생체 실험 등 반인도적 범죄로 이어졌다.</div>
+  <div class="think-box"><h4>생각해보기</h4>전쟁 과정에서 이러한 인권 유린이 일어난 까닭은 무엇일까?</div>
+</section>
+
+<section id="s5" class="section">
+  <h2>5. 확인하기</h2>
+  <details class="check-box"><summary>1929년 뉴욕 증권 거래소에서 주가가 폭락하면서 무엇이 시작되었는가?</summary><div class="answer">정답: 대공황</div></details>
+  <details class="check-box"><summary>독일, 일본, 이탈리아는 무슨 협정을 맺고 대외 침략을 본격화하였는가?</summary><div class="answer">정답: 방공 협정</div></details>
+  <details class="check-box"><summary>일제는 무엇을 일으켜 만주를 점령하고 만주국을 세웠는가?</summary><div class="answer">정답: 만주 사변</div></details>
+  <details class="check-box"><summary>일제가 하와이의 무엇을 기습하면서 아시아·태평양 전쟁이 발발하였는가?</summary><div class="answer">정답: 진주만</div></details>
+  <div class="think-box"><h4>생각해보기</h4>일제는 어떻게 침략 전쟁을 확대해 나갔을까?</div>
+</section>
+
+<footer class="trust">
+  <p><strong>출처</strong> — 1차 근거: 현행 교육과정 『한국사』, 52~53쪽</p>
+  <p>이 소주제는 EBS·구교육과정 자료가 별도로 업로드되지 않아 반영하지 않았다. 자료 폴더에 있던 비표준 디자인의 보조 HTML(타임라인, 카드뉴스 등)은 참고만 하고 그대로 가져오지 않았다.</p>
+</footer>
+
+</main>
+
+<!-- [눈으로 듣는 해설 Ver 4.3] 통합 스크롤 확장형 어댑티브 엔진 (A안 적용) -->
+<div id="focus-overlay"></div>
+<script>
+  // 대공황과 제2차 세계 대전 관련 해설 데이터 (s2, s3, s4에 대응)
+  const narrativeData = {
+    "p14-2": [
+      "1929년 미국 뉴욕 증권 거래소의 주가 폭락으로 시작된 <b>대공황</b>은 자본주의 세계 경제를 순식간에 마비시켰습니다.",
+      "그 배경을 좀 더 들여다보면, 미국은 국가가 시장에 적극적으로 개입하는 <b>뉴딜 정책</b>으로 위기를 돌파하려 했고, 영국과 프랑스는 식민지를 묶어 배타적인 경제 블록을 쌓았던 사정이 있었습니다.",
+      "하지만 식민지가 부족했던 나라들은 전혀 다른 위험한 길을 선택했습니다.",
+      "경제 위기를 틈타 강력한 독재 체제인 <b>전체주의</b>가 확산한 점이 중요합니다.",
+      "이탈리아에서는 무솔리니의 <b>파시즘</b>이, 독일에서는 히틀러의 <b>나치즘</b>이 국가를 위해 개인의 희생을 강요하며 권력을 잡았습니다.",
+      "일본 역시 군부 강경파가 주도하는 <b>군국주의</b> 길로 들어섰습니다.",
+      "이들은 침략 전쟁으로 국민의 불만을 잠재우고 해외 시장을 확보해 위기를 극복하려 했습니다.",
+      "독일, 이탈리아, 일본은 공산주의 확산을 막는다는 명분으로 <b>방공 협정</b>을 맺고 <b>추축국</b>이라는 거대한 침략 동맹을 형성했습니다."
+    ],
+    "p14-3": [
+      "1930년대 일제는 대륙 침략의 야욕을 노골적으로 드러냈습니다.",
+      "1931년 <b>만주 사변</b>을 일으켜 만주를 점령한 뒤, 괴뢰 국가인 <b>만주국</b>을 세워 실질적인 지배에 들어갔습니다.",
+      "이어 1937년에는 <b>중·일 전쟁</b>을 도발하여 중국 본토를 본격적으로 침략했습니다.",
+      "이러한 일제의 행보는 유럽에서 독일이 폴란드를 침공하며 시작된 <b>제2차 세계 대전</b>의 흐름과 맞물려 전 세계를 전쟁의 소용돌이로 몰아넣었습니다.",
+      "전쟁은 1941년 일본이 하와이 <b>진주만</b>을 기습 공격하면서 <b>아시아·태평양 전쟁</b>으로 확대되었습니다.",
+      "초기에 일본이 기세를 올렸으나, 1942년 <b>미드웨이 해전</b>에서 미국에 패배하며 전세는 역전되기 시작했습니다.",
+      "유럽에서도 연합군의 강력한 반격으로 이탈리아와 독일이 차례로 항복을 선언했습니다.",
+      "일제는 끝까지 버텼으나 미국의 원자 폭탄 투하와 소련의 참전 앞에 결국 1945년 8월 15일 무조건 항복을 선언했습니다."
+    ],
+    "p14-4": [
+      "제2차 세계 대전은 단순히 국가 간의 영토 전쟁을 넘어, 인류의 존엄성을 처참히 짓밟은 잔혹한 <b>인권 유린</b>의 현장이었습니다.",
+      "그 배경을 좀 더 들여다보면, 전체주의와 군국주의에 빠진 침략국들이 자신들의 목적을 달성하기 위해 민간인과 포로를 수단으로만 여겼던 사정이 있었습니다.",
+      "사례들은 전 세계 곳곳에서 나타났습니다.",
+      "독일은 <b>아우슈비츠</b> 강제 수용소에서 유대인들을 대량 학살했고, 일제는 중국에서 <b>난징 대학살</b>을 저질러 수많은 무고한 생명을 앗아갔습니다.",
+      "특히 일제의 <b>731부대</b>는 살아있는 사람을 대상으로 생체 실험을 자행하는 등 입에 담기 힘든 <b>반인도적 범죄</b>를 저질렀습니다.",
+      "역사적으로 보면, 이러한 비극을 기억하고 기록하는 일은 다시는 같은 잘못을 반복하지 않기 위한 평화의 시작입니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1; 
+
+  function initEngine() {
+    const mapping = { "s2": "p14-2", "s3": "p14-3", "s4": "p14-4" };
+    
+    Object.keys(mapping).forEach(secId => {
+      const block = document.getElementById(secId);
+      if (!block) return;
+      const blockId = mapping[secId];
+      
+      if (narrativeData[blockId]) {
+        const footer = document.createElement('div');
+        footer.className = 'narrative-footer';
+        footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">👁️‍🗨️ 눈으로 듣는 해설 (집중 모드)</button>`;
+        block.appendChild(footer);
+
+        const sub = document.createElement('div');
+        sub.id = `sub-box-${blockId}`;
+        sub.className = 'subtitle-container';
+        sub.innerHTML = `
+          <div class="subtitle-ctrl-bar">
+            <span class="ctrl-title">👁️‍🗨️ 눈으로 듣는 해설 재생 중</span>
+            <div class="ctrl-btns">
+              <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+              <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+              <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+              <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+              <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+            </div>
+          </div>
+          <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+          <div class="subtitle-body"></div>
+        `;
+        block.appendChild(sub);
+      }
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('.section');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+    const overlay = document.getElementById('focus-overlay');
+
+    forceExit(); 
+    overlay.style.display = 'block';
+    block.classList.add('focus-active');
+    document.body.style.overflow = 'auto'; 
+    
+    subArea.style.display = 'flex';
+    
+    window.scrollTo({
+      top: block.getBoundingClientRect().top + window.pageYOffset - 60,
+      behavior: 'smooth'
+    });
+
+    let step = 0;
+    const scripts = narrativeData[id];
+    const totalChars = scripts.join('').replace(/<[^>]*>/g, '').length;
+    let completedChars = 0;
+
+    function play() {
+      if (step < scripts.length) {
+        const prev = subBody.querySelector('.current');
+        if (prev) prev.classList.replace('current', 'past');
+
+        const now = document.createElement('div');
+        now.className = 'sent current';
+        now.innerHTML = scripts[step];
+        subBody.appendChild(now);
+        
+        accumulateWordHighlight(block, scripts[step]);
+        
+        const pureText = scripts[step].replace(/<[^>]*>/g, '');
+        const duration = (pureText.length * currentBaseDelay) + 800;
+
+        completedChars += pureText.length;
+        const targetPercent = (completedChars / totalChars) * 100;
+        
+        progressBar.style.transition = `width ${duration}ms linear`;
+        progressBar.style.width = targetPercent + '%';
+
+        window.scrollBy({ top: 80, behavior: 'smooth' });
+        
+        step++;
+        activeTimer = setTimeout(play, duration);
+      } else {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('.section').querySelector('.narrative-run-btn'))">↺ 또</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>
+        `;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+      }
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => {
+      if(!b.classList.contains('exit-btn')) b.classList.remove('active');
+    });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.innerText);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      let nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        if (node.parentNode.className === 'doc-word-highlight' || node.parentNode.closest('b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.body.style.overflow = ''; 
+    document.querySelectorAll('.section').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => { 
+        s.querySelector('.subtitle-body').innerHTML = ''; 
+        const bar = s.querySelector('.liquid-bar');
+        if(bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+        s.style.display = 'none'; 
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if(parent) { parent.replaceChild(document.createTextNode(el.innerText), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+</html>

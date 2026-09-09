@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1910년대 일제의 식민 통치 | 무단 통치와 경제 수탈</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .force-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; margin-bottom:2px; }
+  .force-cols{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;}
+  @media (max-width:640px){.force-cols{grid-template-columns:1fr;}}
+  .force-col{border-top:3px solid var(--indigo); padding-top:14px;}
+  .force-col.soft{border-top-color:var(--indigo-soft); border-top-width:5px;}
+  .force-col h4{font-size:15px; margin-bottom:10px;}
+  .force-col.soft h4{color:var(--indigo);}
+  .force-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13.5px; margin-bottom:8px; }
+  .force-node.deep{background:var(--indigo-soft);}
+  .force-node.dashed{border-style:dashed; color:var(--ink-soft); background:transparent;}
+  .force-node b{display:block; font-size:14.5px; margin-bottom:2px;}
+  .force-merge{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:14px 18px; font-weight:700; font-size:14.5px; text-align:center; margin-top:16px; }
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.soft .tl-year::after{background:var(--indigo-soft); border-color:var(--indigo);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅱ-1-1-01_제1차세계대전과러시아혁명_도표(해설포함).html" style="color:var(--brass);">‹ 이전 소주제</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#govgen">조선 총독부 설치</a>
+  <a href="#military">무단 통치</a>
+  <a href="#economy">경제 수탈</a>
+  <a href="#summary">정리</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅱ-1-1-03_1920년대일제의식민통치_도표(해설포함).html" style="color:var(--brass); pointer-events:auto;">다음 소주제 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>일제 강점기 식민 통치</span> · 1910년대 무단 통치와 경제 수탈</div>
+    <h1>총과 서류로 나라를 옭아매다</h1>
+    <p class="lead">국권을 빼앗은 일제는 조선 총독부를 세우고 헌병 경찰로 정치를 억누르는 한편, 토지 조사 사업과 회사령으로 경제를 옥죄었다. 정치와 경제 두 갈래의 수탈이 한국인의 생활 기반을 무너뜨렸다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1910 – 1919</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>정치와 경제, 두 손으로 조이다</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--ink-soft)">옅은 남색 = 정치(무단 통치)</strong> · <strong style="color:var(--indigo)">진한 남색 = 경제(수탈)</strong> · <strong style="color:var(--brass)">황갈색 = 전환점이 된 사건</strong></p>
+
+    <div class="force-root">국권 피탈(1910) → 조선 총독부 설치</div>
+    <div class="force-cols">
+      <div class="force-col soft">
+        <h4>정치 — 무단 통치</h4>
+        <div class="force-node deep"><b>헌병 경찰제 · 조선 태형령</b>정식 재판 없이 처벌, 언론·집회·결사의 자유 박탈</div>
+      </div>
+      <div class="force-col">
+        <h4>경제 — 수탈</h4>
+        <div class="force-node deep"><b>토지 조사 사업 · 회사령</b>신고제 토지 조사로 총독부·일본인 소유 확대, 회사 설립을 허가제로 제한</div>
+      </div>
+    </div>
+    <div class="force-merge">한국인의 정치적 권한과 경제적 기반 상실 → 이후 저항 운동의 배경이 됨</div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item turn"><div class="tl-year">1910</div><div class="tl-body"><div class="tl-title">국권 피탈 · 조선 총독부 설치 · 회사령 제정</div><div class="tl-desc">식민 통치 기구가 들어서고 회사 설립이 허가제로 전환</div></div></div>
+      <div class="tl-item soft"><div class="tl-year">1912</div><div class="tl-body"><div class="tl-title">조선 태형령 시행 · 토지 조사령 공포</div><div class="tl-desc">한국인에게만 적용되는 태형 제도, 신고제 토지 조사 시작</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1915</div><div class="tl-body"><div class="tl-title">조선 광업령 공포</div><div class="tl-desc">광산물에 대한 자원 수탈 강화</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="govgen">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>조선 총독부를 설치하다</h2>
+    </div>
+    <table class="data-table">
+      <caption>조선 총독부의 조직과 성격</caption>
+      <thead><tr><th>구분</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">조선 총독</td><td>입법·사법·행정·군사권을 장악한 최고 권력자, 군인 출신이 임명됨</td></tr>
+        <tr><td class="hd">정무총감 · 경무총감</td><td>총독 아래에서 각각 행정과 치안을 담당</td></tr>
+        <tr><td class="hd">중추원</td><td>한국인의 정치 참여를 선전하기 위해 친일파로 구성했으나 제대로 운영되지 않음</td></tr>
+        <tr><td class="hd">지방 행정</td><td>전국을 13도로 나누고 부·군·면을 두어 일본인·친일 인사를 관리로 배치</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="block" id="military">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>무단 통치(헌병 경찰 통치)를 실시하다</h2>
+    </div>
+    <p class="block-sub">아래 정책들은 순서대로 이어진 게 아니라, 조선 총독부가 같은 시기에 함께 시행한 병렬 정책이다.</p>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo-soft)">
+        <div class="step-title">헌병 경찰제</div>
+        <div class="step-desc">헌병이 일반 경찰 업무와 행정 업무까지 담당, 정식 재판 없이 벌금·구류 처분 가능</div>
+      </div>
+      <div class="flow-arrow" style="font-size:14px;">+</div>
+      <div class="flow-step" style="border-color:var(--indigo-soft)">
+        <div class="step-title">조선 태형령(1912)</div>
+        <div class="step-desc">한국인에게만 적용되는 매질 형벌 제정</div>
+      </div>
+      <div class="flow-arrow" style="font-size:14px;">+</div>
+      <div class="flow-step" style="border-color:var(--indigo-soft)">
+        <div class="step-title">기본권 박탈</div>
+        <div class="step-desc">언론·출판·집회·결사의 자유를 빼앗아 신문·잡지 발행 금지, 정치 단체 해산</div>
+      </div>
+      <div class="flow-arrow" style="font-size:14px;">+</div>
+      <div class="flow-step" style="border-color:var(--indigo-soft)">
+        <div class="step-title">식민지 교육</div>
+        <div class="step-desc">보통·실업 교육 중심 편성, 일본보다 짧은 4년제 보통학교, 고등 교육 기회 거의 없음</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-10px;">이 정책들은 모두 "헌병 경찰이 한국인의 일상 전반을 감시·처벌한다"는 같은 목적에서 나온 것이지, 하나가 다음 것을 낳은 게 아니다.</p>
+    <table class="data-table">
+      <caption>즉결 처분 제도 — 재판 없이 처벌하다</caption>
+      <thead><tr><th>제도</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">범죄 즉결례(1910)</td><td>경찰서장 등이 관할 구역에서 일어난 구류·과료형이나 3개월 이하 징역·100원 이하 벌금에 해당하는 죄, 도박죄 등을 정식 재판 없이 즉결 심판할 수 있게 함</td></tr>
+        <tr><td class="hd">경찰범 처벌 규칙(1912)</td><td>대중을 모아 관공서에 청원·진정하는 행위, 경찰의 지시·명령 위반, 길거리에서 공기총이나 활을 가지고 노는 것 같은 일상적 행위까지 구류·과료 대상으로 규정</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">헌병과 경찰은 이 두 법령에 따라 정식 재판 없이도 처벌할 수 있었다. 출처: 「범죄 즉결례」(1910)·「경찰범 처벌 규칙」(1912), 재구성.</p>
+
+    <div class="quote-block">
+      <h4>조선 태형령(1912)</h4>
+      3개월 이하의 징역 또는 구류에 처할 자는 상황에 따라 태형에 처할 수 있으며, 이 명령은 조선인에게만 적용한다고 규정했다.
+      <div class="src">출처: 『조선 총독부 제령』 13호(재구성)</div>
+    </div>
+  </section>
+
+  <section class="block" id="economy">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>한국의 산업을 통제하고 자원을 수탈하다</h2>
+    </div>
+    <p class="block-sub">토지 조사 사업과 회사령·자원 독점 역시 순서대로 이어진 게 아니라, 총독부가 함께 추진한 병렬 수탈 정책이다.</p>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">토지 조사 사업(1912–1918)</div>
+        <div class="step-desc">소유주가 정해진 기한 내 직접 신고하는 방식으로 진행, 미신고·소유 불분명 토지는 총독부 소유가 됨</div>
+      </div>
+      <div class="flow-arrow" style="font-size:14px;">+</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">회사령(1910)</div>
+        <div class="step-desc">회사 설립을 총독의 허가제로 전환해 한국인의 자본 축적을 차단</div>
+      </div>
+      <div class="flow-arrow" style="font-size:14px;">+</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">자원 독점 · 기간 시설</div>
+        <div class="step-desc">어업령·광업령으로 자원을 독점하고, 철도·도로·항구를 건설해 자원 수탈에 활용</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-10px;">셋 다 "한국의 토지·자본·자원을 일본이 가져간다"는 같은 목표 아래 각각 다른 영역(땅/기업/자원)을 겨냥한 병렬 정책이다.</p>
+
+    <table class="data-table">
+      <caption>토지 조사 사업 전후 일본인 지주의 성장</caption>
+      <thead><tr><th></th><th>1909년</th><th>1915년</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">일본인 지주 수</td><td>692명</td><td>6,969명</td></tr>
+        <tr><td class="hd">소유 면적(천 정보)</td><td>52</td><td>206</td></tr>
+        <tr><td class="hd">투자액(만 원)</td><td>800</td><td>4,600</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">출처: 국사편찬위원회(2001), 재구성. 토지 조사 사업으로 지주의 권한은 강화되고 경작권을 잃은 농민은 소작농이 되거나 만주·연해주로 이주하였다.</p>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>정리 — 정치와 경제, 두 갈래의 수탈</h2>
+    </div>
+    <table class="data-table">
+      <thead><tr><th></th><th>정치(무단 통치)</th><th>경제(수탈)</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">핵심 수단</td><td>헌병 경찰제, 조선 태형령</td><td>토지 조사 사업, 회사령</td></tr>
+        <tr><td class="hd">직접 대상</td><td>언론·집회·결사의 자유, 신체(태형)</td><td>토지 소유권, 기업 설립 권리, 자원</td></tr>
+        <tr><td class="hd">결과</td><td>한국인의 정치적 권한 완전 박탈</td><td>지주 권한 강화, 다수 농민의 몰락·이주</td></tr>
+      </tbody>
+    </table>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>일제가 시행한 무단 통치는 어떤 모습이었을까?</li>
+        <li>1910년대 일제는 한국 경제를 어떻게 수탈하였을까?</li>
+      </ol>
+    </div>
+
+    <details class="check-item">
+      <summary style="font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px;">스스로 확인하기</summary>
+      <div class="check-box" style="margin-top:14px;">
+        <div class="check-item"><details><summary>Q1. 한국의 입법·사법·행정 및 군사권을 장악한 식민 통치의 최고 권력자는?</summary>
+          <div class="check-answer">조선 총독이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q2. 일제가 헌병으로 하여금 일반 경찰 업무까지 담당하게 한 제도는?</summary>
+          <div class="check-answer">헌병 경찰제이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q3. 일제가 회사 설립을 조선 총독의 허가제로 규정한 법령은?</summary>
+          <div class="check-answer">회사령이다.</div>
+        </details></div>
+      </div>
+    </details>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>고등학교 『한국사』 교과서, Ⅰ단원 1 「일제의 식민지 지배 정책」, 14–15쪽 — 본문·연표·사료(조선 태형령, 치안 유지법, 토지 조사령)의 기본 출처</li>
+      <li>EBS 개념완성 한국사Ⅰ (2022), 「01 제국주의 질서와 일제의 식민 통치 정책」, 134–135쪽 — 무단 통치 사실 관계 교차 확인</li>
+    </ol>
+    <div class="note">
+      함께 업로드된 2006년 『한국 근현대사』 교재는 2007 개정 이전 교육과정의 자료다. 이 교재에는 조선 총독부의 세부 조직표(총무부·내무부·탁지부 등 6부 체제), 경작권 개념 설명, 철도 건설로 성장한 도시(목포·군산·대전) 서술이 실려 있으나, 현행 교육과정 서술 범위를 벗어나므로 본문 구성에는 반영하지 않고 참고로만 확인하였다.
+    </div>
+  </div>
+</footer>
+
+<!-- [눈으로 듣는 해설 Ver 4.3] 통합 스크롤 확장형 어댑티브 엔진 (A안 적용) -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  
+  /* 자막창 컨테이너: 내부 스크롤 제거, 전체 페이지와 함께 자연스럽게 아래로 확장 */
+  .subtitle-container {
+    margin-top: 10px; position: relative;
+    background: #1A222E !important; 
+    display: none; flex-direction: column; 
+    max-height: none !important; overflow-y: visible !important;
+    text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3);
+    border-top: 3px solid var(--brass);
+  }
+
+  /* 해설창 바로 상단에 위치하는 통합 컨트롤러 바 */
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; }
+
+  .progress-wrap {
+    width: 100%; height: 5px; background: rgba(255,255,255,0.1);
+    position: sticky; top: 37px; left: 0; z-index: 15;
+  }
+  .liquid-bar {
+    width: 0%; height: 100%; background: #FFD700;
+    box-shadow: 0 0 12px #FFD700; transition: width 0s linear; 
+  }
+
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current { 
+    font-size: clamp(1.2em, 2vw, 1.4em); 
+    opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+
+  .speed-btn {
+    background: #4A4F58; color: #fff; border: none; padding: 3px 7px;
+    border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700;
+  }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn {
+    background: var(--brass); color: #fff; border: none;
+    padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px;
+  }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  const narrativeData = {
+    "p02-2": [
+      "1910년 국권을 강탈한 일제는 한국을 효과적으로 지배하기 위해 최고 통치 기구인 <b>조선 총독부</b>를 설치했습니다.",
+      "그 배경을 좀 더 들여다보면, 일본 천황에 직속된 <b>조선 총독</b>에게 행정, 입법, 사법권은 물론 군대 통솔권까지 부여하여 식민지의 절대 권력자로 군림하게 한 사정이 있었습니다.",
+      "역대 총독들은 모두 현역 또는 예비역 일본군 장성 출신이 임명되어 공포 분위기를 주도했습니다.",
+      "총독부의 내부 조직은 치밀하게 설계되었습니다.",
+      "행정을 담당하는 <b>정무총감</b>과 치안을 담당하는 <b>경무총감</b>을 두어 지배 체제의 두 축을 세웠습니다.",
+      "또한 일제는 한국인의 의견을 듣는 척하기 위해 친일파로 구성된 <b>중추원</b>을 설치했으나, 실제로는 아무런 권한이 없는 자문 기구에 불과했습니다.",
+      "일제는 전국을 13도로 나누고 일본인 관리들을 배치하며 촘촘한 <b>지방 행정</b> 조직을 완성했습니다.",
+      "여기서 주목할 점은, 이러한 <b>조선 총독부</b> 중심의 지배 체제가 우리 민족의 주권을 완전히 무시하고 오직 일제의 명령에 순응하게 하려는 목적을 가졌다는 사실입니다.",
+      "독립된 나라의 주권을 빼앗고 그 자리에 들어선 이 압도적인 통치 기구는, 이후 35년간 이어진 우리 민족 수난사의 상징이 되었습니다.",
+      "이 거대한 지배 장치가 우리 민족의 일상을 어떻게 억눌렀는지 다음 섹션에서 살펴보겠습니다."
+    ],
+    "p02-3": [
+      "1910년대 일제는 칼을 찬 교사와 군인이 일상을 감시하는 이른바 <b>무단 통치</b>를 펼쳤습니다.",
+      "그 핵심은 군대 치안을 담당하는 헌병이 일반 경찰의 업무까지 모두 맡는 <b>헌병 경찰제</b>였습니다.",
+      "헌병 경찰은 한국인의 일상을 낱낱이 감시했을 뿐만 아니라, 첩보 수집과 의병 토벌 등 독립의 의지를 뿌리 뽑는 최첨단 탄압 기구로 활동했습니다.",
+      "일제는 법과 규정을 동원해 한국인의 인권을 무참히 짓밟았습니다.",
+      "<b>범죄 즉결례</b>와 <b>경찰범 처벌 규칙</b>을 만들어 정식 재판 없이도 한국인을 즉석에서 처벌할 수 있는 무소불위의 권한을 경찰에게 주었습니다.",
+      "특히 한국인에게만 매질을 가하는 야만적인 <b>조선 태형령</b>을 시행하여 신체적 고통과 굴욕감을 안겼습니다.",
+      "교육 분야에서도 한국인에게는 일본보다 짧은 수업 연한의 <b>보통학교</b> 중심 교육만 허용하며 고등 교육의 기회를 차단했습니다.",
+      "역사적으로 보면, 이러한 <b>무단 통치</b>는 우리 민족의 모든 기본권을 박탈하여 거대한 감옥과 같은 식민지 사회를 만들려는 시도였습니다.",
+      "하지만 숨 막히는 일제의 압박은 오히려 한국인들의 저항 의지를 지하로 결집하게 했고, 이는 훗날 3·1 운동이라는 전 민족적 거사로 이어지는 강력한 화약고가 되었습니다.",
+      "이제 일제가 경제적으로는 우리 민족을 어떻게 수탈했는지 확인해 보겠습니다."
+    ],
+    "p02-4": [
+      "일제는 정치적 억압뿐만 아니라 우리 민족의 경제적 토대까지 무너뜨리기 위해 치밀한 수탈 정책을 벌였습니다.",
+      "그 시작은 1910년부터 시행되어 1918년까지 이어진 <b>토지 조사 사업</b>이었습니다.",
+      "일제는 근대적 소유권을 확립한다는 구실을 내세웠으나, 실제로는 기한 내에 소유주가 직접 신고해야 하는 복잡한 절차를 악용했습니다.",
+      "그 결과, 주인이 불분명하거나 신고하지 못한 막대한 면적의 토지를 <b>조선 총독부</b>가 강제로 가로챘습니다.",
+      "산업 전반에 걸친 통제도 매우 강력했습니다.",
+      "일제는 <b>회사령</b>을 공포하여 한국인이 회사를 세울 때 반드시 총독의 허가를 받게 함으로써 우리 자본의 성장을 철저히 방해했습니다.",
+      "또한 <b>어업령</b>과 <b>광업령</b>을 잇따라 제정하여 산과 바다의 풍부한 자원을 일본 자본가들에게 넘겨주었습니다.",
+      "이는 우리 경제를 일본의 부품 공급처이자 보조적인 시장으로 전락시키려는 계산된 전략이었습니다.",
+      "주목할 점은, 이러한 전방위적 수탈의 결과 수많은 한국인 농민이 경작권을 잃고 소작농으로 전락하거나 굶주림을 피해 만주와 연해주로 떠나야 했다는 사실입니다.",
+      "일제가 휘두른 법령과 서류들은 우리 민족의 경제적 자립 가능성을 처참히 무너뜨렸습니다.",
+      "정치와 경제라는 두 갈래의 조임수가 어떻게 우리 민족의 삶을 벼랑 끝으로 몰아넣었는지 다시 한번 도표를 통해 정리해 보시기 바랍니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1; 
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `p02-${numEl.innerText.trim()}`;
+      
+      if (narrativeData[blockId]) {
+        const footer = document.createElement('div');
+        footer.className = 'narrative-footer';
+        footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">👁️‍🗨️ 눈으로 듣는 해설 (집중 모드)</button>`;
+        block.appendChild(footer);
+
+        const sub = document.createElement('div');
+        sub.id = `sub-box-${blockId}`;
+        sub.className = 'subtitle-container';
+        sub.innerHTML = `
+          <div class="subtitle-ctrl-bar">
+            <span class="ctrl-title">👁️‍🗨️ 눈으로 듣는 해설 재생 중</span>
+            <div class="ctrl-btns">
+              <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+              <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+              <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+              <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+              <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+            </div>
+          </div>
+          <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+          <div class="subtitle-body"></div>
+        `;
+        block.appendChild(sub);
+      }
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+    const overlay = document.getElementById('focus-overlay');
+
+    forceExit(); 
+    overlay.style.display = 'block';
+    block.classList.add('focus-active');
+    document.body.style.overflow = 'auto'; 
+    
+    subArea.style.display = 'flex';
+    
+    window.scrollTo({
+      top: block.getBoundingClientRect().top + window.pageYOffset - 60,
+      behavior: 'smooth'
+    });
+
+    let step = 0;
+    const scripts = narrativeData[id];
+    const totalChars = scripts.join('').replace(/<[^>]*>/g, '').length;
+    let completedChars = 0;
+
+    function play() {
+      if (step < scripts.length) {
+        const prev = subBody.querySelector('.current');
+        if (prev) prev.classList.replace('current', 'past');
+
+        const now = document.createElement('div');
+        now.className = 'sent current';
+        now.innerHTML = scripts[step];
+        subBody.appendChild(now);
+        
+        accumulateWordHighlight(block, scripts[step]);
+        
+        const pureText = scripts[step].replace(/<[^>]*>/g, '');
+        const duration = (pureText.length * currentBaseDelay) + 800;
+
+        completedChars += pureText.length;
+        const targetPercent = (completedChars / totalChars) * 100;
+        
+        progressBar.style.transition = `width ${duration}ms linear`;
+        progressBar.style.width = targetPercent + '%';
+
+        // A안 적용: 해설 박스가 길어짐에 따라 페이지 전체 스크롤을 자연스럽게 아래로 이동
+        window.scrollBy({ top: 80, behavior: 'smooth' });
+        
+        step++;
+        activeTimer = setTimeout(play, duration);
+      } else {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 또</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>
+        `;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+      }
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => {
+      if(!b.classList.contains('exit-btn')) b.classList.remove('active');
+    });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.innerText);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      let nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        if (node.parentNode.className === 'doc-word-highlight' || node.parentNode.closest('b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.body.style.overflow = ''; 
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => { 
+        s.querySelector('.subtitle-body').innerHTML = ''; 
+        const bar = s.querySelector('.liquid-bar');
+        if(bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+        s.style.display = 'none'; 
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if(parent) { parent.replaceChild(document.createTextNode(el.innerText), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+</body>
+</html>

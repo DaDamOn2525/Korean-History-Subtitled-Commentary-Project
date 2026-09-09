@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3·1 운동 | 거족적 민족 운동</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.soft .tl-year::after{background:var(--indigo-soft); border-color:var(--indigo);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 확산 그러데이션 flow */
+  .spread-step{ color:var(--paper-card); padding:16px 18px; flex:1; min-width:160px; }
+  .spread-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .spread-step .step-desc{font-size:13px; opacity:0.9;}
+  .spread-1{background:var(--indigo-soft); color:var(--ink);}
+  .spread-1 .step-desc{color:var(--ink-soft);}
+  .spread-2{background:#8797AC;}
+  .spread-3{background:var(--indigo);}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅱ-1-2-01_3.1운동이전의민족운동_도표(해설포함).html" style="color:var(--brass);">‹ 이전 소주제</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#intl">국제 정세와 국내 배경</a>
+  <a href="#prep">독립 선언 준비</a>
+  <a href="#outbreak">3·1 운동의 발발</a>
+  <a href="#spread">확산과 탄압</a>
+  <a href="#summary">정리</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅱ-1-2-03_대한민국임시정부_도표(해설포함).html" style="color:var(--brass); pointer-events:auto;">다음 소주제 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>일제 강점기 민족 운동</span> · 3·1 운동</div>
+    <h1>온 나라가 한목소리로 일어서다</h1>
+    <p class="lead">국제 정세의 변화와 국내에 쌓여 온 경제적 불만이 만나, 1919년 3월 1일 학생과 시민의 만세 시위는 전 계층이 참여하는 거족적 민족 운동으로 번져 나갔다. 일제의 무자비한 탄압에도 시위는 도시에서 농촌으로, 국내에서 국외로 확산되었다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1917 – 1919</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>하나의 물결이 점점 커지다</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">진한 남색 = 확산 3단계(농촌·무력 저항)</strong> · <strong style="color:#8797AC">중간 남색 = 확산 2단계(중소도시)</strong> · <strong style="color:var(--ink-soft)">옅은 남색 = 확산 1단계(대도시)</strong> · <strong style="color:var(--brass)">황갈색 = 전환점이 된 사건</strong>. 이 소주제는 대립하는 두 세력이 아니라 하나의 흐름이 커지는 구조이므로, 톤이 짙어질수록 참여 계층과 저항의 강도가 커짐을 뜻한다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)"><div class="step-title">국제 정세 + 국내 배경</div><div class="step-desc">민족 자결주의·사회주의 확산 + 토지 조사 사업 이후 누적된 경제적 불만</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)"><div class="step-title">독립 선언 준비</div><div class="step-desc">2·8 독립 선언, 국내 종교계·학생의 비밀 계획</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)"><div class="step-title">3·1 운동 발발</div><div class="step-desc">탑골 공원, 독립 선언서 낭독, 만세 시위</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)"><div class="step-title">확산 · 탄압 · 의의</div><div class="step-desc">전국·국외로 확산, 일제의 학살, 임시 정부 수립의 계기</div></div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item deep"><div class="tl-year">1917</div><div class="tl-body"><div class="tl-title">러시아 혁명</div><div class="tl-desc">사회주의 정권 수립, 레닌이 식민지 독립운동 지원을 선언</div></div></div>
+      <div class="tl-item soft"><div class="tl-year">1918</div><div class="tl-body"><div class="tl-title">윌슨, 14개조 평화 원칙 발표</div><div class="tl-desc">민족 자결주의 포함, 약소민족에 독립의 희망</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1919.1</div><div class="tl-body"><div class="tl-title">고종 사망</div><div class="tl-desc">'일제가 독살하였다'는 소문이 퍼지며 반일 감정 고조</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1919.2</div><div class="tl-body"><div class="tl-title">2·8 독립 선언</div><div class="tl-desc">일본 유학생들이 독립 선언서 발표</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1919.3.1</div><div class="tl-body"><div class="tl-title">3·1 운동</div><div class="tl-desc">탑골 공원과 전국 주요 도시에서 만세 시위 시작</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1919.4</div><div class="tl-body"><div class="tl-title">제암리 사건</div><div class="tl-desc">일제가 만세 시위에 대한 보복으로 주민을 학살</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="intl">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>국제 정세가 변화하다, 국내에서도 불만이 쌓이다</h2>
+    </div>
+    <p class="block-sub">국제 정세와 국내의 경제적 불만은 서로가 서로를 낳은 게 아니라, 각자 독립적으로 쌓이다가 3·1 운동에서 함께 만났다.</p>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo-soft)">
+        <div class="step-title">국제 정세(외부 요인)</div>
+        <div class="step-desc">러시아 혁명(사회주의, 식민지 해방 지원 선언) + 윌슨의 민족 자결주의 → 세계 약소민족이 독립의 희망을 품음</div>
+      </div>
+      <div class="flow-arrow" style="font-size:14px;">+</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">국내의 경제적 배경(내부 요인)</div>
+        <div class="step-desc">토지 조사 사업·회사령으로 다수 농민이 소작농으로 전락하거나 만주·연해주로 이주 — 식민 통치에 대한 반감이 이미 광범위하게 축적됨</div>
+      </div>
+    </div>
+    <div class="note-box">자세한 수치와 표는 앞선 소주제 <a href="Ⅱ-1-1-02_1910년대일제의식민통치_도표(해설포함).html">「1910년대 일제의 식민 통치」</a>에서 다루었다. 이 경제적 배경은 뒤의 확산 3단계(농촌·무력 저항)를 이해하는 데 직접적인 근거가 된다.</div>
+  </section>
+
+  <section class="block" id="prep">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>독립 선언을 준비하다</h2>
+    </div>
+    <table class="data-table">
+      <caption>국내외 독립 선언 준비</caption>
+      <thead><tr><th>주체</th><th>활동</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">신한청년당(상하이)</td><td>파리 강화 회의에 김규식을 대표로 파견</td></tr>
+        <tr><td class="hd">연해주 민족 지도자</td><td>파리에 대표단 파견</td></tr>
+        <tr><td class="hd">만주</td><td>조소앙 등이 독립 선언 준비</td></tr>
+        <tr><td class="hd">일본 유학생</td><td>1919년 2월 8일 독립 선언서 발표(2·8 독립 선언)</td></tr>
+        <tr><td class="hd">국내</td><td>고종 사망 후 반일 감정 고조, 종교 지도자·학생 대표가 비밀리에 독립 선언과 만세 시위 계획</td></tr>
+      </tbody>
+    </table>
+    <div class="quote-block">
+      <h4>2·8 독립 선언(1919)</h4>
+      한·일 병합이 우리 민족의 자유의사에서 나오지 않았으며, 만국 강화 회의에서 민족 자결주의를 우리 민족에게도 적용해 줄 것을 요구하였다.
+      <div class="src">출처: 2·8 독립 선언서(재구성)</div>
+    </div>
+  </section>
+
+  <section class="block" id="outbreak">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>3·1 운동이 일어나다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">민족 대표의 계획</div>
+        <div class="step-desc">손병희·이승훈·한용운 등 민족 대표가 탑골 공원에서 독립 선언식을 열기로 함</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">태화관에서 자진 체포</div>
+        <div class="step-desc">시위 과격화를 우려해 태화관에 모여 독립 선언식을 열고 일본 경찰에 자진 체포됨</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo-soft)">
+        <div class="step-title">탑골 공원의 시위</div>
+        <div class="step-desc">민족 대표가 빠진 가운데 학생·시민이 독립 선언서를 낭독하고 만세 시위, 원산·평양 등에서도 동시 발생</div>
+      </div>
+    </div>
+    <table class="data-table">
+      <caption>기미 독립 선언서(1919)</caption>
+      <tbody>
+        <tr><td>우리는 조선이 독립한 나라이고 조선 사람이 자주적인 국민이라는 것을 선언한다. 이를 세계에 알려 인류 평등의 도리를 밝히고, 후손에게 민족의 독자적 생존이라는 권리를 전한다.</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">출처: 「기미 독립 선언서」(1919), 재구성</p>
+  </section>
+
+  <section class="block" id="spread">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>확산과 탄압</h2>
+    </div>
+    <p class="block-sub">시위가 확산될수록 참여 계층이 넓어지고 저항의 강도도 세졌다 — 색이 짙어지는 순서를 따라가 보자.</p>
+    <div class="flow">
+      <div class="spread-step spread-1"><div class="step-title">1단계 · 대도시</div><div class="step-desc">민족 대표를 중심으로 서울 등 주요 도시에서 시위 점화</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="spread-step spread-2"><div class="step-title">2단계 · 중소 도시</div><div class="step-desc">청년·학생·상인·노동자로 시위 주도 세력이 확대, 시위가 조직화됨</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="spread-step spread-3"><div class="step-title">3단계 · 농촌</div><div class="step-desc">토지 조사 사업으로 잃을 것이 이미 없었던 농민이 곡괭이·쇠스랑을 들고 무력 저항, 관청·헌병 주재소 습격</div></div>
+    </div>
+    <p style="font-size:14px; color:var(--ink-soft);">만세 시위는 간도, 연해주, 일본, 중국 상하이, 미국 필라델피아 등 국외로도 퍼져 나갔다.</p>
+    <div class="limit-box">
+      <h4>일제의 탄압 — 제암리 사건</h4>
+      일제는 시위를 무자비하게 탄압하였으며, 화성 제암리에서는 만세 시위에 대한 보복으로 주민을 교회에 가두고 학살하였다.
+      <div class="src" style="margin-top:8px; font-size:12px; color:var(--ink-soft);">출처: 켄들, 『한국 독립운동의 진상』(재구성)</div>
+    </div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>정리 — 3·1 운동, 독립운동의 기반이 되다</h2>
+    </div>
+    <p style="font-size:14px; color:var(--ink-soft);">3·1 운동이 남녀노소·전 계층이 참여한 거족적 운동이 될 수 있었던 것은, 국제 정세의 변화라는 외부 요인과 함께 토지 조사 사업 이후 누적된 경제적 불만이라는 내부 요인이 겹쳤기 때문이다.</p>
+
+    <table class="data-table">
+      <caption>3·1 운동의 의의</caption>
+      <tbody>
+        <tr><td class="hd">국내</td><td>노동자·농민 등 민족 운동 주체가 확대되어 다양한 사회 운동으로 이어짐</td></tr>
+        <tr><td class="hd">정부 수립</td><td>우리 역사 최초의 민주 공화제 정부인 대한민국 임시 정부 수립의 계기가 됨</td></tr>
+        <tr><td class="hd">국외</td><td>중국의 5·4 운동, 세계 약소민족의 반제국주의 운동에 영향</td></tr>
+        <tr><td class="hd">일제의 대응</td><td>무단 통치의 한계를 깨닫고 '문화 정치'로 통치 방식 전환</td></tr>
+      </tbody>
+    </table>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>3·1 운동이 일어난 배경은 무엇일까?</li>
+        <li>3·1 운동은 한국의 독립운동에 어떤 영향을 끼쳤을까? 3·1 운동이 한국의 독립운동에서 가지는 의미는 무엇일까?</li>
+      </ol>
+    </div>
+
+    <details class="check-item">
+      <summary style="font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px;">스스로 확인하기</summary>
+      <div class="check-box" style="margin-top:14px;">
+        <div class="check-item"><details><summary>Q1. 민족 대표들은 3월 1일 어디에서 독립 선언식을 열기로 하였을까?</summary>
+          <div class="check-answer">탑골 공원에서 열기로 하였으나, 실제로는 시위가 과격해질 것을 우려해 태화관에서 열었다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q2. 3·1 운동의 주도 세력은 학생·시민에서 점차 무엇으로 바뀌었을까?</summary>
+          <div class="check-answer">노동자와 농민으로 바뀌었다.</div>
+        </details></div>
+      </div>
+    </details>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>고등학교 『한국사』 교과서, Ⅰ단원 2 「3·1 운동과 대한민국 임시 정부」, 22–25쪽 — 본문·연표·사료(기미 독립 선언서, 2·8 독립 선언, 제암리 사건)의 기본 출처</li>
+      <li>EBS 개념완성 한국사Ⅰ (2022), 146–147쪽 — 3·1 운동 기념 장소 관련 확인</li>
+    </ol>
+    <div class="note">
+      함께 업로드된 2006년 『한국 근현대사』 교재는 2007 개정 이전 교육과정의 자료다. 이 교재의 참여 계층별 3단계 구분 논의, 투옥자 직업별 분포 통계, 윤치호의 반대론 등은 현행 교육과정 서술 범위를 벗어나므로 본문에는 반영하지 않고 참고로만 확인하였다.
+    </div>
+  </div>
+</footer>
+
+<!-- [눈으로 듣는 해설 Ver 4.3] 통합 스크롤 확장형 어댑티브 엔진 (A안 적용) -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  
+  .subtitle-container {
+    margin-top: 10px; position: relative;
+    background: #1A222E !important; 
+    display: none; flex-direction: column; 
+    max-height: none !important; overflow-y: visible !important;
+    text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3);
+    border-top: 3px solid var(--brass);
+  }
+
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; }
+
+  .progress-wrap {
+    width: 100%; height: 5px; background: rgba(255,255,255,0.1);
+    position: sticky; top: 37px; left: 0; z-index: 15;
+  }
+  .liquid-bar {
+    width: 0%; height: 100%; background: #FFD700;
+    box-shadow: 0 0 12px #FFD700; transition: width 0s linear; 
+  }
+
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current { 
+    font-size: clamp(1.2em, 2vw, 1.4em); 
+    opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+
+  .speed-btn {
+    background: #4A4F58; color: #fff; border: none; padding: 3px 7px;
+    border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700;
+  }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn {
+    background: var(--brass); color: #fff; border: none;
+    padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px;
+  }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  const narrativeData = {
+    // p05-2: 국제 정세와 국내 배경
+    "p05-2": [
+      "1919년 봄, 한반도를 뒤흔든 거대한 함성 뒤에는 대내외적인 거대한 변화의 물결이 있었습니다.",
+      "그 배경을 좀 더 들여다보면, 제1차 세계 대전이 끝난 뒤 1917년 러시아 혁명을 통해 들어선 소비에트 정부가 식민지와 약소민족의 해방을 지지한다고 선언하고, 미국 대통령 윌슨이 <b>민족 자결주의</b>를 내세우며 전 세계 약소민족에게 독립의 희망을 준 <b>국제 정세</b>의 변화가 있었습니다.",
+      "국내 상황은 더욱 절박했습니다.",
+      "일제가 1910년대에 실시한 <b>토지 조사 사업</b>과 <b>회사령</b>으로 인해 우리 농민들은 삶의 터전을 잃고 소작농으로 전락했으며, 우리 자본의 성장도 철저히 차단되었습니다.",
+      "이러한 <b>국내의 경제적 배경</b>은 민중들의 가슴 속에 일제의 식민 통치에 대한 깊은 반감과 분노를 차곡차곡 쌓아 올렸습니다."
+    ],
+    // p05-3: 독립 선언 준비
+    "p05-3": [
+      "독립을 향한 열망은 국내외 활동가들의 치밀한 준비를 통해 구체화되었습니다.",
+      "상하이의 <b>신한청년당</b>은 김규식을 대표로 파리에 파견해 <b>청원서</b>를 제출하며 국제 사회에 독립을 호소했고, 1919년 2월에는 일본 도쿄의 유학생들이 <b>2·8 독립 선언</b>을 발표하며 국내 독립운동 세력에 커다란 자극을 주었습니다.",
+      "결정적인 계기는 1919년 1월에 전해진 <b>고종 사망</b> 소식이었으며, 일제가 고종 황제를 독살했다는 소문이 퍼지면서 민중들의 반일 감정은 최고조에 달했습니다.",
+      "이에 종교 지도자들과 학생 대표들이 손을 잡고 <b>민족 대표</b>를 구성하여 전 민족이 참여하는 비폭력 평화 시위와 독립 선언을 비밀리에 계획했습니다."
+    ],
+    // p05-4: 3·1 운동 발발
+    "p05-4": [
+      "1919년 3월 1일 오후, 서울의 중심에서 독립의 외침이 시작되었습니다.",
+      "원래 <b>민족 대표</b>들은 <b>탑골 공원</b>에서 민중들과 함께 독립 선언식을 열기로 했으나, 시위가 폭력적으로 변할 것을 우려하여 인근의 <b>태화관</b>에 모여 따로 선언식을 진행했습니다.",
+      "이들은 <b>기미 독립 선언서</b>를 낭독하고 독립을 선포한 뒤, 일본 경찰에 자진 체포되는 길을 택했습니다.",
+      "하지만 민중들의 열기는 멈추지 않았습니다.",
+      "<b>탑골 공원</b>에 모여있던 학생과 시민들은 스스로 독립 선언서를 낭독하고 힘차게 <b>만세 시위</b>를 시작했습니다."
+    ],
+    // p05-5: 확산과 탄압
+    "p05-5": [
+      "서울에서 시작된 만세 소리는 횃불처럼 번져 나갔습니다.",
+      "처음에는 학생과 시민들이 주도한 <b>1단계 · 대도시</b> 시위였으나, 점차 상인과 노동자들이 가세하며 <b>2단계 · 중소 도시</b>로 확대되었습니다.",
+      "시위가 장날을 이용해 <b>3단계 · 농촌</b>까지 깊숙이 파고들자, 일제의 수탈에 고통받던 농민들은 곡괭이와 쇠스랑을 들고 주재소를 공격하는 등 강력한 <b>무력 저항</b>을 펼치기도 했습니다.",
+      "당황한 일제는 평화로운 시위대를 향해 총을 쏘며 잔혹하게 탄압했습니다.",
+      "특히 경기도 화성에서 일어난 <b>제암리 사건</b>은 일제의 야만성을 전 세계에 알린 비극이었습니다."
+    ],
+    // p05-6: 정리 및 의의
+    "p05-6": [
+      "3·1 운동은 비록 당장의 독립을 가져오지는 못했지만, 우리 역사의 물줄기를 바꾼 위대한 전환점이었습니다.",
+      "가장 큰 결실은 독립운동을 체계적으로 이끌 지도부인 <b>대한민국 임시 정부</b>가 수립된 것입니다.",
+      "전 민족이 하나가 된 경험을 통해 우리 민족은 국민이 주권자가 되는 새로운 민주 공화국의 청사진을 완성할 수 있었습니다.",
+      "또한, 무력만으로는 한국인을 지배할 수 없음을 깨달은 일제는 통치 방식을 무단 통치에서 이른바 <b>문화 정치</b>로 바꾸게 되었습니다.",
+      "나아가 중국의 <b>5·4 운동</b>과 인도의 비폭력 불복종 운동 등 아시아 각국의 <b>반제국주의</b> 민족 운동에 깊은 영감을 주었습니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1; 
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `p05-${numEl.innerText.trim()}`;
+      
+      if (narrativeData[blockId]) {
+        const footer = document.createElement('div');
+        footer.className = 'narrative-footer';
+        footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">👁️‍🗨️ 눈으로 듣는 해설 (집중 모드)</button>`;
+        block.appendChild(footer);
+
+        const sub = document.createElement('div');
+        sub.id = `sub-box-${blockId}`;
+        sub.className = 'subtitle-container';
+        sub.innerHTML = `
+          <div class="subtitle-ctrl-bar">
+            <span class="ctrl-title">👁️‍🗨️ 눈으로 듣는 해설 재생 중</span>
+            <div class="ctrl-btns">
+              <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+              <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+              <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+              <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+              <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+            </div>
+          </div>
+          <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+          <div class="subtitle-body"></div>
+        `;
+        block.appendChild(sub);
+      }
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+    const overlay = document.getElementById('focus-overlay');
+
+    forceExit(); 
+    overlay.style.display = 'block';
+    block.classList.add('focus-active');
+    document.body.style.overflow = 'auto'; 
+    
+    subArea.style.display = 'flex';
+    
+    window.scrollTo({
+      top: block.getBoundingClientRect().top + window.pageYOffset - 60,
+      behavior: 'smooth'
+    });
+
+    let step = 0;
+    const scripts = narrativeData[id];
+    const totalChars = scripts.join('').replace(/<[^>]*>/g, '').length;
+    let completedChars = 0;
+
+    function play() {
+      if (step < scripts.length) {
+        const prev = subBody.querySelector('.current');
+        if (prev) prev.classList.replace('current', 'past');
+
+        const now = document.createElement('div');
+        now.className = 'sent current';
+        now.innerHTML = scripts[step];
+        subBody.appendChild(now);
+        
+        accumulateWordHighlight(block, scripts[step]);
+        
+        const pureText = scripts[step].replace(/<[^>]*>/g, '');
+        const duration = (pureText.length * currentBaseDelay) + 800;
+
+        completedChars += pureText.length;
+        const targetPercent = (completedChars / totalChars) * 100;
+        
+        progressBar.style.transition = `width ${duration}ms linear`;
+        progressBar.style.width = targetPercent + '%';
+
+        window.scrollBy({ top: 80, behavior: 'smooth' });
+        
+        step++;
+        activeTimer = setTimeout(play, duration);
+      } else {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 또</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>
+        `;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+      }
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => {
+      if(!b.classList.contains('exit-btn')) b.classList.remove('active');
+    });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.innerText);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      let nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        if (node.parentNode.className === 'doc-word-highlight' || node.parentNode.closest('b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.body.style.overflow = ''; 
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => { 
+        s.querySelector('.subtitle-body').innerHTML = ''; 
+        const bar = s.querySelector('.liquid-bar');
+        if(bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+        s.style.display = 'none'; 
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if(parent) { parent.replaceChild(document.createTextNode(el.innerText), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+</body>
+</html>
