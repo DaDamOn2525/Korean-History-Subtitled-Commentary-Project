@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>농민 운동과 노동 운동 | 생존에서 항일로</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EFE9DA; --paper-card:#FBF8F0;
+  --ink:#20242B; --ink-soft:#4A4F58;
+  --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+  --crimson:#7A2331; --crimson-soft:#EFDBDD;
+  --brass:#93701F; --brass-soft:#EDE1C2;
+  --line:#D3C9AE; --line-strong:#B8AB88;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Noto Sans KR',sans-serif;line-height:1.7;}
+h1,h2,h3,h4{font-family:'Noto Serif KR',serif;color:var(--ink);margin:0 0 .5em;}
+.nav-pill{position:sticky;top:0;z-index:100;background:var(--ink);color:#EFE9DA;
+  display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center;padding:.7rem 1.2rem;font-size:.85rem;}
+.nav-pill a,.nav-pill span.disabled{color:#EFE9DA;text-decoration:none;padding:.25rem .7rem;border-radius:999px;border:1px solid rgba(239,233,218,.35);}
+.nav-pill a:hover{background:rgba(239,233,218,.15);}
+.nav-pill span.disabled{opacity:.5;border-style:dashed;}
+.nav-pill .anchors{margin-left:auto;display:flex;gap:.5rem;flex-wrap:wrap;}
+.hero{background:var(--ink);color:var(--paper);padding:3rem 1.5rem 2.2rem;}
+.hero-inner{max-width:920px;margin:0 auto;}
+.kicker{font-size:.85rem;letter-spacing:.08em;color:var(--brass-soft);font-weight:500;margin-bottom:.6rem;}
+.hero h1{color:#FBF8F0;font-size:2rem;font-weight:900;line-height:1.4;}
+.hero .lead{color:#D9D4C4;font-size:1.02rem;max-width:640px;margin-top:.8rem;}
+.hero-tags{margin-top:1.2rem;display:flex;gap:.5rem;flex-wrap:wrap;}
+.hero-tags span{background:rgba(239,233,218,.12);border:1px solid rgba(239,233,218,.3);
+  padding:.25rem .7rem;border-radius:999px;font-size:.78rem;color:#EFE9DA;}
+main{max-width:920px;margin:0 auto;padding:0 1.5rem 4rem;}
+.legend{background:var(--paper-card);border:1px solid var(--line);border-radius:10px;
+  padding:.9rem 1.2rem;margin:1.8rem 0 1rem;font-size:.92rem;display:flex;gap:1.3rem;flex-wrap:wrap;align-items:center;}
+.legend .dot{display:inline-block;width:.8em;height:.8em;border-radius:50%;margin-right:.4em;vertical-align:-.05em;}
+.section{margin:2.6rem 0;}
+.section > h2{font-size:1.35rem;border-bottom:2px solid var(--line-strong);padding-bottom:.4rem;}
+.section > h3{font-size:1.1rem;margin-top:1.4rem;}
+.diagram-box{background:var(--paper-card);border:1px solid var(--line);border-radius:14px;padding:1.4rem;}
+.timeline{position:relative;padding-left:1.6rem;margin-top:1rem;}
+.timeline::before{content:'';position:absolute;left:.4rem;top:.3rem;bottom:.3rem;width:2px;background:var(--line-strong);}
+.timeline-item{position:relative;padding:.5rem 0 .5rem 1rem;}
+.timeline-item::before{content:'';position:absolute;left:-1.4875rem;top:.75rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--dotcolor,var(--ink-soft));}
+.timeline-item .yr{font-weight:700;font-family:'Noto Serif KR',serif;margin-right:.5em;}
+.flow{display:flex;flex-direction:column;gap:0;margin-top:1rem;}
+.flow-step{background:var(--paper-card);border:1px solid var(--line);border-radius:10px;padding:.9rem 1.1rem;}
+.flow-step h4{font-size:.95rem;margin-bottom:.3rem;}
+.flow-arrow{text-align:center;color:var(--ink-soft);font-size:1.3rem;margin:.15rem 0;}
+.causal-link{font-size:.88rem;color:var(--ink-soft);background:var(--brass-soft);border-radius:8px;
+  padding:.45rem .8rem;margin:.3rem 0;display:inline-block;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+@media(max-width:640px){.compare-grid{grid-template-columns:1fr;}}
+.compare-card{background:var(--paper-card);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;}
+.compare-card h4{font-family:'Noto Serif KR',serif;margin-bottom:.5rem;}
+.compare-card.a{border-top:4px solid var(--indigo);}
+.compare-card.b{border-top:4px solid var(--crimson);}
+table.data-table{width:100%;border-collapse:collapse;margin-top:.8rem;font-size:.92rem;background:var(--paper-card);}
+table.data-table caption{caption-side:top;text-align:left;font-weight:700;margin-bottom:.5rem;font-family:'Noto Serif KR',serif;}
+table.data-table th,table.data-table td{border:1px solid var(--line);padding:.5rem .7rem;text-align:center;}
+table.data-table th{background:var(--indigo-soft);}
+.quote-block{border-left:4px solid var(--line-strong);background:var(--paper-card);
+  padding:.9rem 1.2rem;margin:1.0rem 0;font-size:.95rem;}
+.quote-block cite{display:block;margin-top:.5rem;font-size:.82rem;color:var(--ink-soft);font-style:normal;}
+.quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:640px){.quote-grid{grid-template-columns:1fr;}}
+.think-box,.limit-box{border-radius:10px;padding:1rem 1.2rem;margin:1rem 0;font-size:.95rem;}
+.think-box{background:var(--indigo-soft);border:1px solid var(--indigo);}
+.think-box h4{margin-bottom:.4rem;font-size:.95rem;}
+details.check-box{background:var(--paper-card);border:1px solid var(--line);border-radius:10px;
+  padding:.7rem 1.1rem;margin:.6rem 0;}
+details.check-box summary{cursor:pointer;font-weight:700;font-family:'Noto Serif KR',serif;}
+details.check-box .answer{margin-top:.6rem;color:var(--ink-soft);}
+.sidebox{background:var(--brass-soft);border:1px solid var(--brass);border-radius:10px;
+  padding:1rem 1.2rem;margin:1rem 0;font-size:.93rem;}
+.trust{margin-top:3rem;border-top:2px solid var(--line-strong);padding-top:1.2rem;font-size:.82rem;color:var(--ink-soft);}
+.trust p{margin:.3rem 0;}
+svg.branch text{font-family:'Noto Sans KR',sans-serif;fill:var(--ink);}
+
+/* [눈으로 듣는 해설 Ver 4.3] 통합 스크롤 확장형 어댑티브 엔진 (A안 적용) 스타일 */
+#focus-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+}
+.section.focus-active {
+  position: relative; z-index: 9995 !important;
+  background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+  border-radius: 12px; transform: scale(1.01);
+  box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+  transition: all 0.4s ease; margin-bottom: 5px !important;
+}
+.subtitle-container {
+  margin-top: 15px; position: relative;
+  background: #1A222E !important; 
+  display: none; flex-direction: column; 
+  max-height: none !important; overflow-y: visible !important;
+  text-align: left; border-radius: 0 0 10px 10px;
+  box-shadow: inset 0 5px 20px rgba(0,0,0,0.3);
+  border-top: 3px solid var(--brass);
+}
+.subtitle-ctrl-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky; top: 0; z-index: 20;
+}
+.ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+.ctrl-btns { display: flex; gap: 4px; align-items: center; }
+.progress-wrap {
+  width: 100%; height: 5px; background: rgba(255,255,255,0.1);
+  position: sticky; top: 37px; left: 0; z-index: 15;
+}
+.liquid-bar {
+  width: 0%; height: 100%; background: #FFD700;
+  box-shadow: 0 0 12px #FFD700; transition: width 0s linear; 
+}
+.subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+.sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+.sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+.sent.current { 
+  font-size: clamp(1.2em, 2vw, 1.4em); 
+  opacity: 1; color: #FFFFFF; font-weight: 700;
+  border-left: 6px solid #FFD700; padding-left: 15px;
+}
+.sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+.doc-word-highlight {
+  color: #000 !important; background-color: #FFD700 !important;
+  font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+.speed-btn {
+  background: #4A4F58; color: #fff; border: none; padding: 3px 7px;
+  border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700;
+}
+.speed-btn.active { background: #FFD700; color: #000; }
+.exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+.narrative-footer { text-align: right !important; padding: 8px 0 0 0; }
+.narrative-run-btn {
+  background: var(--brass); color: #fff; border: none;
+  padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="index.html" style="color:var(--brass); font-weight:700;">☰ 목차</a>
+  <a href="Ⅱ-1-4-01_도시와농촌의변화_도표(해설포함).html">◀ 이전: 도시와 농촌의 변화</a>
+  <a href="Ⅱ-1-4-03_대중운동과민족문화수호운동_도표(해설포함).html">다음: 대중 운동과 민족 문화 수호 운동 ▶</a>
+  <span class="anchors">
+    <a href="#s0">구조</a><a href="#s1">연표</a><a href="#s2">농민</a><a href="#s3">노동</a><a href="#s4">정리</a><a href="#s5">확인</a>
+  </span>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Ⅰ. 일제 식민 통치와 민족 운동 · 4. 사회·문화의 변화와 대중 운동</div>
+    <h1>생존을 지키려던 싸움이, 항일의 깃발이 되다</h1>
+    <p class="lead">소작농과 공장 노동자는 처음엔 소작료를 낮추고 임금을 지키려 했을 뿐이다. 그러나 1930년대에 접어들며 그 싸움은 점점 일제 자체를 겨누는 싸움으로 번져 갔다.</p>
+    <div class="hero-tags">
+      <span>자기주도용</span><span>전자칠판용</span><span>1920~1945년</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<div class="legend">
+  <span><span class="dot" style="background:var(--indigo)"></span>농민 운동</span>
+  <span><span class="dot" style="background:var(--crimson)"></span>노동 운동</span>
+  <span><span class="dot" style="background:var(--brass)"></span>두 운동의 공통 접점</span>
+</div>
+
+<section id="s0" class="section">
+  <h2>0. 전체 구조 — 하나의 배경, 두 갈래의 싸움</h2>
+  <div class="diagram-box">
+    <svg class="branch" viewBox="0 0 760 300" width="100%" height="auto">
+      <rect x="260" y="10" width="240" height="56" rx="10" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+      <text x="380" y="34" text-anchor="middle" font-size="14" font-weight="700">일제의 식민지 경제 정책</text>
+      <text x="380" y="52" text-anchor="middle" font-size="11" fill="var(--ink-soft)">토지 조사 사업·산미 증식 계획 / 식민지 공업화</text>
+
+      <line x1="380" y1="66" x2="380" y2="100" stroke="var(--line-strong)" stroke-width="2"/>
+      <rect x="290" y="100" width="200" height="46" rx="8" fill="var(--brass-soft)" stroke="var(--brass)" stroke-width="1.5"/>
+      <text x="390" y="122" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--brass)">1924 조선 노농 총동맹</text>
+      <text x="390" y="138" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">1927년 두 단체로 분리</text>
+
+      <line x1="330" y1="146" x2="180" y2="185" stroke="var(--line-strong)" stroke-width="2"/>
+      <line x1="450" y1="146" x2="600" y2="185" stroke="var(--line-strong)" stroke-width="2"/>
+
+      <rect x="60" y="185" width="240" height="90" rx="10" fill="var(--indigo-soft)" stroke="var(--indigo)" stroke-width="1.5"/>
+      <text x="180" y="212" text-anchor="middle" font-size="14" font-weight="700" fill="var(--indigo)">농민 운동</text>
+      <text x="180" y="232" text-anchor="middle" font-size="11" fill="var(--ink)">소작인 조합 → 농민 조합</text>
+      <text x="180" y="249" text-anchor="middle" font-size="11" fill="var(--ink)">조선 농민 총동맹(1927)</text>
+      <text x="180" y="266" text-anchor="middle" font-size="11" fill="var(--ink)">→ 혁명적 농민 조합(1930s)</text>
+
+      <rect x="460" y="185" width="240" height="90" rx="10" fill="var(--crimson-soft)" stroke="var(--crimson)" stroke-width="1.5"/>
+      <text x="580" y="212" text-anchor="middle" font-size="14" font-weight="700" fill="var(--crimson)">노동 운동</text>
+      <text x="580" y="232" text-anchor="middle" font-size="11" fill="var(--ink)">노동조합 결성</text>
+      <text x="580" y="249" text-anchor="middle" font-size="11" fill="var(--ink)">원산 총파업(1929)</text>
+      <text x="580" y="266" text-anchor="middle" font-size="11" fill="var(--ink)">→ 혁명적 노동조합(1930s)</text>
+    </svg>
+  </div>
+</section>
+
+<section id="s1" class="section">
+  <h2>1. 한눈에 보는 연표</h2>
+  <div class="timeline">
+    <div class="timeline-item" style="--dotcolor:var(--crimson)"><span class="yr">1921</span>부산 부두 노동자, 임금 삭감에 맞서 총파업</div>
+    <div class="timeline-item" style="--dotcolor:var(--indigo)"><span class="yr">1923</span>암태도 소작 쟁의 시작 — 소작인회, 소작료 인하 요구</div>
+    <div class="timeline-item" style="--dotcolor:var(--crimson)"><span class="yr">1923</span>서울 고무 공장 여성 노동자, 임금 삭감 반발 파업</div>
+    <div class="timeline-item" style="--dotcolor:var(--brass)"><span class="yr">1924</span>조선 노농 총동맹 결성 <span style="font-size:.8rem;color:var(--ink-soft)">(EBS 보완)</span></div>
+    <div class="timeline-item" style="--dotcolor:var(--indigo)"><span class="yr">1927</span>조선 농민 총동맹 결성 (조선 노농 총동맹에서 분리)</div>
+    <div class="timeline-item" style="--dotcolor:var(--crimson)"><span class="yr">1929</span>원산 총파업 — 1920년대 노동 운동의 절정</div>
+    <div class="timeline-item" style="--dotcolor:var(--crimson)"><span class="yr">1931</span>평원 고무 공장 여직공 강주룡, 을밀대 지붕 농성</div>
+  </div>
+</section>
+
+<section id="s2" class="section">
+  <h3 style="color:var(--indigo)">2. 농민 운동 — 소작료를 낮추려던 싸움</h3>
+  <div class="flow">
+    <div class="flow-step"><h4>배경</h4>토지 조사 사업과 산미 증식 계획으로 소작농이 크게 늘고, 소작료는 수확의 50%를 넘었다. 지주가 낼 토지세·수리 조합비까지 소작농이 떠안았다.</div>
+    <div class="flow-arrow">→</div>
+    <div class="causal-link">이에 맞서 한국 농민들은 소작인 조합을 중심으로 소작료 인하·소작권 보장을 요구했다</div>
+    <div class="flow-step"><h4>1920년대</h4>1923년 <strong>암태도 소작 쟁의</strong>에서 지주·경찰의 탄압에 맞서 소작료 인하를 이끌어냈다. 자작농까지 조합에 가입하며 소작인 조합은 농민 조합으로 확대되었고, 1927년 <strong>조선 농민 총동맹</strong>이 결성되어 규모와 조직이 한층 발전했다.</div>
+    <div class="flow-arrow">→</div>
+    <div class="causal-link">사회주의 세력과 연계하면서 1930년대에는 합법 조합만으로는 부족하다고 판단해 비합법 조직으로 전환했다</div>
+    <div class="flow-step"><h4>1930년대</h4>비합법 조직인 <strong>혁명적 농민 조합</strong> 중심으로 전개되며 반제국주의 항일 운동의 성격을 띠었고, 중반에는 관공서를 습격하기도 했다. 중·일 전쟁 이후 탄압이 강화되며 소작 쟁의는 크게 줄었다.</div>
+  </div>
+
+  <div class="quote-grid">
+    <div class="quote-block">암태도 소작 쟁의의 결과, 소작료를 4할로 낮추고 지주도 소작회에 참여하기로 합의했다.<cite>매일신보, 1924. 9. 2.(EBS 재구성)</cite></div>
+    <div class="quote-block">한국 농민들은 소작료는 수확의 4할 이내로, 지세는 지주가 부담하라고 요구했다.<cite>동아일보, 1923. 1. 27.</cite></div>
+  </div>
+  <div class="quote-block">1930년대 농민 조합은 토지는 농민에게 돌아가야 하며 제국주의를 타도하자고 촉구했다.<cite>양양 농민 조합 제5회 정기 대회, 1931</cite></div>
+
+  <table class="data-table">
+    <caption>소작 쟁의의 발생 (참가 인원·건수)</caption>
+    <thead><tr><th>연도</th><th>1921</th><th>1925</th><th>1930</th><th>1935</th></tr></thead>
+    <tbody>
+      <tr><th>쟁의 건수</th><td>27</td><td>11</td><td>92</td><td>71</td></tr>
+      <tr><th>참가 인원(명)</th><td>2,967</td><td>2,646</td><td>10,037</td><td>2,795</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:.85rem;color:var(--ink-soft)">국사편찬위원회, 2002</p>
+</section>
+
+<section id="s3" class="section">
+  <h3 style="color:var(--crimson)">3. 노동 운동 — 임금과 노동 시간을 지키려던 싸움</h3>
+  <div class="flow">
+    <div class="flow-step"><h4>배경</h4>식민지 공업화로 공장이 늘며 노동자 수도 증가했다. 한국인 노동자는 열악한 환경에서 장시간 노동에 시달렸고, 일본인보다 낮은 임금을 받는 민족 차별까지 겪었다.</div>
+    <div class="flow-arrow">→</div>
+    <div class="causal-link">이에 한국인 노동자들은 노동조합을 만들어 임금 인상과 노동 환경 개선을 요구했다</div>
+    <div class="flow-step"><h4>1920년대</h4>1921년 부산 부두 노동자 총파업, 1923년 서울 고무 공장 여성 노동자 파업을 거쳐, 1929년 <b>원산 총파업</b>으로 절정에 달했다. 국내외 노동 단체의 지지를 받았으나 일제가 경찰·군대·폭력배까지 동원해 탄압하면서 실패로 끝났다.</div>
+    <div class="flow-arrow">→</div>
+    <div class="causal-link">1930년대 들어 일제의 통제가 강화되면서 합법적인 노동 운동이 사실상 불가능해졌다</div>
+    <div class="flow-step"><h4>1930년대</h4>사회주의 세력과 연결된 비합법 조직인 <b>혁명적 노동조합</b>을 중심으로 전개되며 반제국주의 항일 운동의 성격을 띠었다. 중·일 전쟁 이후 탄압이 본격화되며 노동 운동은 점차 약화되었다.</div>
+  </div>
+
+  <div class="quote-grid">
+    <div class="quote-block">강주룡은 임금 삭감을 취소할 때까지 결코 지붕에서 내려가지 않겠다고 말했다.<cite>『동광』 23호, 1931. 7.</cite></div>
+    <div class="quote-block">원산 경찰은 군대까지 동원해 파업 간부들을 검속하고 시위를 진압했다.<cite>조선일보, 1929. 1. 25.</cite></div>
+  </div>
+
+  <table class="data-table">
+    <caption>노동 쟁의의 발생 (참가 인원·건수)</caption>
+    <thead><tr><th>기간</th><th>1927~1929</th><th>1930~1932</th><th>1933~1935</th><th>1936~1938</th></tr></thead>
+    <tbody>
+      <tr><th>쟁의 건수</th><td>315</td><td>517</td><td>545</td><td>327</td></tr>
+      <tr><th>참가 인원(명)</th><td>26,575</td><td>50,910</td><td>39,120</td><td>24,315</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:.85rem;color:var(--ink-soft)">김윤환 외, 1983</p>
+</section>
+
+<section id="s4" class="section">
+  <h2>4. 정리 — 무엇이 달라졌는가</h2>
+  <div class="compare-grid">
+    <div class="compare-card a">
+      <h4>1920년대</h4>
+      합법적 조합 중심의 경제 투쟁. 소작료 인하, 임금 인상 등 <strong>생존권</strong>을 지키기 위한 싸움이었다.
+    </div>
+    <div class="compare-card b">
+      <h4>1930년대</h4>
+      비합법 혁명 조직 중심의 항일 투쟁. 제국주의 타도를 내건 <strong>반제국주의</strong> 성격이 뚜렷해졌다.
+    </div>
+  </div>
+  <div class="think-box">
+    <h4>생각해보기</h4>
+    1920년대와 1930년대 농민·노동 운동은 무엇이, 왜 달라졌을까?
+  </div>
+</section>
+
+<section id="s5" class="section">
+  <h2>5. 확인하기</h2>
+  <details class="check-box"><summary>1923년 일어난 이 소작 쟁의에서 소작인회는 소작료를 낮추는 성과를 거두었다.</summary><div class="answer">정답: 암태도 소작 쟁의</div></details>
+  <details class="check-box"><summary>1927년 이것이 결성되면서 농민 운동은 규모와 조직 면에서 한층 발전하였다.</summary><div class="answer">정답: 조선 농민 총동맹</div></details>
+  <details class="check-box"><summary>1920년대 노동 운동은 1929년에 일어난 이 사건에서 절정을 이루었다.</summary><div class="answer">정답: 원산 총파업</div></details>
+  <details class="check-box"><summary>1930년대 노동 운동은 사회주의자와 연결된 비합법 조직인 이것을 중심으로 전개되었다.</summary><div class="answer">정답: 혁명적 노동조합</div></details>
+</section>
+
+<div class="sidebox">
+  <strong>더 알아보기</strong> — 1930년대 소작 쟁의·노동 쟁의 건수는 1933~34년을 정점으로 이후 급감한다. 이는 경제적 요인(공황 이후 수탈 심화)과 정치적 요인(일제의 탄압 강화, 중·일 전쟁)이 겹친 결과다.
+</div>
+
+<footer class="trust">
+  <p><strong>출처</strong> — 1차 근거: 현행 교육과정 『한국사』, 44~45쪽 / 교차 확인: EBS 개념완성 한국사Ⅰ(2022), 162~163쪽</p>
+  <p><strong>참고용(구교육과정)</strong> — 『한국 근현대사』(2006, 중앙교육), 233~238쪽. 연표·개념 구성의 기준으로 삼지 않고 배경 설명 보완에만 선택적으로 활용함.</p>
+  <p>구교육과정 자료 중 220~224쪽(청년·여성·소년·형평·민족 유일당 운동), 247~251·258쪽(국어·역사 연구, 영화)은 본 소주제 범위를 벗어나 반영하지 않았으며, 다음 소주제(Ⅱ-1-4-03)에서 다룬다.</p>
+</footer>
+
+</main>
+
+<!-- [눈으로 듣는 해설 Ver 4.3] 통합 스크롤 확장형 어댑티브 엔진 (A안 적용) -->
+<div id="focus-overlay"></div>
+<script>
+  // 농민 운동과 노동 운동 관련 해설 데이터 (s2, s3에 대응)
+  const narrativeData = {
+    "p12-2": [
+      "일제의 수탈로 <b>소작료</b> 부담이 커지자 농민들은 권리를 지키기 위해 조직적인 <b>농민 운동</b>을 전개했습니다.",
+      "1920년대 농민 운동은 생존권을 지키려는 합법적인 투쟁이 중심이었습니다.",
+      "1923년 전남 신안에서 일어난 <b>암태도 소작 쟁의</b>는 지주의 탄압에 맞서 끈질기게 싸워 결국 소작료 인하를 이끌어낸 역사적인 승리였습니다.",
+      "이러한 자신감을 바탕으로 1927년에는 전국 조직인 <b>조선 농민 총동맹</b>이 결성되었습니다.",
+      "1930년대에는 일제의 탄압에 대응해 사회주의 세력과 연계한 비합법 조직인 <b>혁명적 농민 조합</b>을 중심으로 항일 투쟁의 성격이 강해졌습니다."
+    ],
+    "p12-3": [
+      "<b>식민지 공업화</b>로 노동자가 늘었으나, 한국인들은 가혹한 <b>민족 차별</b>과 저임금에 시달렸습니다.",
+      "1920년대 노동자들은 권리를 지키기 위해 <b>노동조합</b>을 결성하고 파업을 통해 일제에 맞섰습니다.",
+      "1929년 <b>원산 총파업</b>은 우리 노동자들의 굳건한 단결력을 보여준 일제 강점기 최대 규모의 노동 운동이었습니다.",
+      "또한 1931년 평양에서는 <b>강주룡</b>이 을밀대 지붕 위에서 고공 농성을 벌이며 저항했습니다.",
+      "1930년대 노동 운동은 비합법 조직인 <b>혁명적 노동조합</b>을 중심으로 <b>반제국주의</b> 항일 투쟁으로 발전했습니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1; 
+
+  function initEngine() {
+    // 본 파일의 구조는 <section id="s2">, <section id="s3"> 형태이므로 이에 맞춰 버튼과 자막 상자를 동적 생성합니다.
+    const mapping = { "s2": "p12-2", "s3": "p12-3" };
+    
+    Object.keys(mapping).forEach(secId => {
+      const block = document.getElementById(secId);
+      if (!block) return;
+      const blockId = mapping[secId];
+      
+      if (narrativeData[blockId]) {
+        const footer = document.createElement('div');
+        footer.className = 'narrative-footer';
+        footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">👁️‍🗨️ 눈으로 듣는 해설 (집중 모드)</button>`;
+        block.appendChild(footer);
+
+        const sub = document.createElement('div');
+        sub.id = `sub-box-${blockId}`;
+        sub.className = 'subtitle-container';
+        sub.innerHTML = `
+          <div class="subtitle-ctrl-bar">
+            <span class="ctrl-title">👁️‍🗨️ 눈으로 듣는 해설 재생 중</span>
+            <div class="ctrl-btns">
+              <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+              <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+              <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+              <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+              <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+            </div>
+          </div>
+          <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+          <div class="subtitle-body"></div>
+        `;
+        block.appendChild(sub);
+      }
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('.section');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+    const overlay = document.getElementById('focus-overlay');
+
+    forceExit(); 
+    overlay.style.display = 'block';
+    block.classList.add('focus-active');
+    document.body.style.overflow = 'auto'; 
+    
+    subArea.style.display = 'flex';
+    
+    window.scrollTo({
+      top: block.getBoundingClientRect().top + window.pageYOffset - 60,
+      behavior: 'smooth'
+    });
+
+    let step = 0;
+    const scripts = narrativeData[id];
+    const totalChars = scripts.join('').replace(/<[^>]*>/g, '').length;
+    let completedChars = 0;
+
+    function play() {
+      if (step < scripts.length) {
+        const prev = subBody.querySelector('.current');
+        if (prev) prev.classList.replace('current', 'past');
+
+        const now = document.createElement('div');
+        now.className = 'sent current';
+        now.innerHTML = scripts[step];
+        subBody.appendChild(now);
+        
+        accumulateWordHighlight(block, scripts[step]);
+        
+        const pureText = scripts[step].replace(/<[^>]*>/g, '');
+        const duration = (pureText.length * currentBaseDelay) + 800;
+
+        completedChars += pureText.length;
+        const targetPercent = (completedChars / totalChars) * 100;
+        
+        progressBar.style.transition = `width ${duration}ms linear`;
+        progressBar.style.width = targetPercent + '%';
+
+        window.scrollBy({ top: 80, behavior: 'smooth' });
+        
+        step++;
+        activeTimer = setTimeout(play, duration);
+      } else {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('.section').querySelector('.narrative-run-btn'))">↺ 또</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>
+        `;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+      }
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => {
+      if(!b.classList.contains('exit-btn')) b.classList.remove('active');
+    });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.innerText);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      let nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        if (node.parentNode.className === 'doc-word-highlight' || node.parentNode.closest('b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.body.style.overflow = ''; 
+    document.querySelectorAll('.section').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => { 
+        s.querySelector('.subtitle-body').innerHTML = ''; 
+        const bar = s.querySelector('.liquid-bar');
+        if(bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+        s.style.display = 'none'; 
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if(parent) { parent.replaceChild(document.createTextNode(el.innerText), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+</html>
