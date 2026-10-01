@@ -353,7 +353,7 @@
   </div>
 </footer>
 
-<!-- [눈으로 듣는 해설 Ver 4.3] 통합 스크롤 확장형 어댑티브 엔진 (A안 적용) -->
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
 <style>
   #focus-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -362,44 +362,29 @@
   .block.focus-active {
     position: relative; z-index: 9995 !important;
     background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
-    border-radius: 12px; transform: scale(1.01);
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
     box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
     transition: all 0.4s ease; margin-bottom: 5px !important;
   }
-  
   .subtitle-container {
-    margin-top: 10px; position: relative;
-    background: #1A222E !important; 
-    display: none; flex-direction: column; 
-    max-height: none !important; overflow-y: visible !important;
-    text-align: left; border-radius: 0 0 10px 10px;
-    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3);
-    border-top: 3px solid var(--brass);
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
   }
-
   .subtitle-ctrl-bar {
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
     background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
     position: sticky; top: 0; z-index: 20;
   }
   .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
-  .ctrl-btns { display: flex; gap: 4px; align-items: center; }
-
-  .progress-wrap {
-    width: 100%; height: 5px; background: rgba(255,255,255,0.1);
-    position: sticky; top: 37px; left: 0; z-index: 15;
-  }
-  .liquid-bar {
-    width: 0%; height: 100%; background: #FFD700;
-    box-shadow: 0 0 12px #FFD700; transition: width 0s linear; 
-  }
-
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
   .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
   .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
   .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
-  .sent.current { 
-    font-size: clamp(1.2em, 2vw, 1.4em); 
-    opacity: 1; color: #FFFFFF; font-weight: 700;
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
     border-left: 6px solid #FFD700; padding-left: 15px;
   }
   .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
@@ -408,25 +393,18 @@
     font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
   }
-
-  .speed-btn {
-    background: #4A4F58; color: #fff; border: none; padding: 3px 7px;
-    border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700;
-  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
   .speed-btn.active { background: #FFD700; color: #000; }
   .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
-  
   .narrative-footer { text-align: right !important; padding: 5px 0; }
-  .narrative-run-btn {
-    background: var(--brass); color: #fff; border: none;
-    padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px;
-  }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
 </style>
 
 <div id="focus-overlay"></div>
 
 <script>
-  // 1930년대 무장 투쟁 관련 해설 데이터 (hanchina, donbuk, kmr에 대응)
+
   const narrativeData = {
     // p16-2: 한중 연합 작전
     "p16-2": [
@@ -457,41 +435,40 @@
   };
 
   let activeTimer = null;
-  let currentBaseDelay = 110 * 1.1; 
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
 
   function initEngine() {
+    // 이 파일은 섹션 번호 대신 섹션 id → 대본 키 대응표로 버튼을 붙인다
     const mapping = { "hanchina": "p16-2", "donbuk": "p16-3", "kmr": "p16-4" };
-    
     Object.keys(mapping).forEach(secId => {
       const block = document.getElementById(secId);
       if (!block) return;
       const blockId = mapping[secId];
-      
-      if (narrativeData[blockId]) {
-        const footer = document.createElement('div');
-        footer.className = 'narrative-footer';
-        footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
-        block.appendChild(footer);
+      if (!narrativeData[blockId]) return;
 
-        const sub = document.createElement('div');
-        sub.id = `sub-box-${blockId}`;
-        sub.className = 'subtitle-container';
-        sub.innerHTML = `
-          <div class="subtitle-ctrl-bar">
-            <span class="ctrl-title">📖 자막 해설 재생 중</span>
-            <div class="ctrl-btns">
-              <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
-              <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
-              <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
-              <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
-              <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
-            </div>
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
           </div>
-          <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
-          <div class="subtitle-body"></div>
-        `;
-        block.appendChild(sub);
-      }
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
     });
   }
 
@@ -500,82 +477,82 @@
     const subArea = document.getElementById(`sub-box-${id}`);
     const subBody = subArea.querySelector('.subtitle-body');
     const progressBar = document.getElementById(`bar-${id}`);
-    const overlay = document.getElementById('focus-overlay');
 
-    forceExit(); 
-    overlay.style.display = 'block';
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
     block.classList.add('focus-active');
-    document.body.style.overflow = 'auto'; 
-    
     subArea.style.display = 'flex';
-    
-    window.scrollTo({
-      top: block.getBoundingClientRect().top + window.pageYOffset - 60,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
 
-    let step = 0;
     const scripts = narrativeData[id];
-    const totalChars = scripts.join('').replace(/<[^>]*>/g, '').length;
-    let completedChars = 0;
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
 
     function play() {
-      if (step < scripts.length) {
-        const prev = subBody.querySelector('.current');
-        if (prev) prev.classList.replace('current', 'past');
-
-        const now = document.createElement('div');
-        now.className = 'sent current';
-        now.innerHTML = scripts[step];
-        subBody.appendChild(now);
-        
-        accumulateWordHighlight(block, scripts[step]);
-        
-        const pureText = scripts[step].replace(/<[^>]*>/g, '');
-        const duration = (pureText.length * currentBaseDelay) + 800;
-
-        completedChars += pureText.length;
-        const targetPercent = (completedChars / totalChars) * 100;
-        
-        progressBar.style.transition = `width ${duration}ms linear`;
-        progressBar.style.width = targetPercent + '%';
-
-        window.scrollBy({ top: 80, behavior: 'smooth' });
-        
-        step++;
-        activeTimer = setTimeout(play, duration);
-      } else {
+      if (step >= scripts.length) {
         const endUI = document.createElement('div');
         endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
         endUI.innerHTML = `
           <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
-          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>
-        `;
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
         subBody.appendChild(endUI);
         window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
       }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
     }
     play();
   }
 
   function setSpeed(val, btn) {
     currentBaseDelay = 110 * val;
-    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => {
-      if(!b.classList.contains('exit-btn')) b.classList.remove('active');
-    });
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
     btn.classList.add('active');
   }
 
   function accumulateWordHighlight(block, htmlText) {
     const temp = document.createElement('div');
     temp.innerHTML = htmlText;
-    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.innerText);
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
     keywords.forEach(kw => {
       const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
-      let nodes = [];
+      const nodes = [];
       while (walker.nextNode()) nodes.push(walker.currentNode);
       nodes.forEach(node => {
-        if (node.parentNode.className === 'doc-word-highlight' || node.parentNode.closest('b')) return;
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
         const pos = node.textContent.indexOf(kw);
         if (pos >= 0) {
           const span = document.createElement('span');
@@ -591,17 +568,16 @@
 
   function forceExit() {
     clearTimeout(activeTimer);
-    document.body.style.overflow = ''; 
-    document.querySelectorAll('section.block').forEach(b => b.classList.remove('focus-active'));
-    document.querySelectorAll('.subtitle-container').forEach(s => { 
-        s.querySelector('.subtitle-body').innerHTML = ''; 
-        const bar = s.querySelector('.liquid-bar');
-        if(bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
-        s.style.display = 'none'; 
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
     });
     document.querySelectorAll('.doc-word-highlight').forEach(el => {
       const parent = el.parentNode;
-      if(parent) { parent.replaceChild(document.createTextNode(el.innerText), el); parent.normalize(); }
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
     });
     document.getElementById('focus-overlay').style.display = 'none';
   }
