@@ -447,7 +447,7 @@
       if (narrativeData[blockId]) {
         const footer = document.createElement('div');
         footer.className = 'narrative-footer';
-        footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">👁️‍🗨️ 눈으로 듣는 해설 (집중 모드)</button>`;
+        footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
         block.appendChild(footer);
 
         const sub = document.createElement('div');
@@ -455,7 +455,7 @@
         sub.className = 'subtitle-container';
         sub.innerHTML = `
           <div class="subtitle-ctrl-bar">
-            <span class="ctrl-title">👁️‍🗨️ 눈으로 듣는 해설 재생 중</span>
+            <span class="ctrl-title">📖 자막 해설 재생 중</span>
             <div class="ctrl-btns">
               <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
               <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
@@ -525,7 +525,7 @@
         const endUI = document.createElement('div');
         endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
         endUI.innerHTML = `
-          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 또</button>
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
           <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>
         `;
         subBody.appendChild(endUI);
