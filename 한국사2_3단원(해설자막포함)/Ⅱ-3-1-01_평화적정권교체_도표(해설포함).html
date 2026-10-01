@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>평화적 정권 교체(자막 해설) | 투표로 정권을 바꿀 수 있게 되다</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅱ-3-1_6월민주항쟁이후의민주화_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#rohtaewoo">노태우 정부</a>
+  <a href="#kimyoungsam">김영삼 정부</a>
+  <a href="#kimdaejung">김대중 정부</a>
+  <a href="#rohmoohyun">노무현 정부</a>
+  <a href="#leepark">이명박·박근혜 정부</a>
+  <a href="#impeach">탄핵과 정권 교체</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅱ-3-1-02_민주주의의성장_도표(해설포함).html">다음: 민주주의의 성장 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>오늘날의 대한민국</span> · 6월 민주 항쟁 이후의 민주화</div>
+    <h1>투표로 정권을 바꿀 수 있게 되다</h1>
+    <p class="lead">6월 민주 항쟁으로 되찾은 대통령 직선제 아래에서 5년마다 대통령 선거가 치러졌다. 여당 후보가 이겨 정권이 이어지기도 하고, 야당 후보가 이겨 정권이 바뀌기도 하면서, 선거를 통해 평화적으로 정권을 교체하는 일이 제도로 자리 잡았다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1987 – 2022</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>하나의 헌법, 두 가지 선거 결과</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 정권 연장(여당 후보 당선)</strong> · <strong style="color:var(--crimson)">적색 = 여야 정권 교체(야당 후보 당선)</strong> · <strong style="color:var(--brass)">황동색 = 헌정 전환점</strong>. 정당이나 이념이 아니라 대통령 선거의 결과로 나누었다. 각 선거는 앞 선거의 결과가 다음 결과를 낳는 관계가 아니라, 같은 헌법 아래에서 그때마다 국민의 선택으로 갈렸다 — 그래서 화살표로 잇지 않고 갈래로 그렸다.</p>
+
+    <div class="branch-root">제9차 개헌(1987) · 대통령 직선제 · 5년 단임제</div>
+    <p class="branch-cause">국민이 5년마다 직접 대통령을 뽑게 되었으므로, 선거 결과에 따라 여당이 정권을 이어 가기도 하고 야당이 정권을 넘겨받기도 했다.</p>
+    <div class="branch-cols two">
+      <div class="branch-col deep">
+        <h4>정권 연장 — 여당 후보 당선</h4>
+        <p class="why">선거에서 여당 후보가 이겨 집권 세력이 이어짐</p>
+        <div class="branch-node"><b>노태우 정부(1988)</b> 야당 분열 속 민주정의당 후보 당선</div>
+        <div class="branch-node"><b>김영삼 정부(1993)</b> 3당 합당으로 만든 민주 자유당 후보 당선</div>
+        <div class="branch-node"><b>노무현 정부(2003)</b> 여당 후보 당선</div>
+        <div class="branch-node"><b>박근혜 정부(2013)</b> 여당 후보 당선</div>
+      </div>
+      <div class="branch-col crimson">
+        <h4>여야 정권 교체 — 야당 후보 당선</h4>
+        <p class="why">선거에서 야당 후보가 이겨 집권 세력이 평화적으로 바뀜</p>
+        <div class="branch-node"><b>김대중 정부(1998)</b> 정부 수립 이후 최초의 선거를 통한 평화적 여야 정권 교체</div>
+        <div class="branch-node"><b>이명박 정부(2008)</b> 10년 만의 정권 교체</div>
+        <div class="branch-node"><b>문재인 정부(2017)</b> 대통령 탄핵 이후 선거로 정권 교체</div>
+        <div class="branch-node"><b>윤석열 정부(2022)</b> 다시 정권 교체</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>두 결과가 번갈아 나타나는 동안 선거 결과에 따른 정권 이양이 반복되었고, 이는 민주주의 제도가 정치적으로 자리 잡았음을 보여 준다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">평화적 정권 교체의 정착</div>
+        <div class="step-desc">6월 민주 항쟁 이후 정치적 측면에서 민주주의 제도 확립</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 정권 연장</strong> · <strong style="color:var(--crimson)">적색 = 여야 정권 교체</strong> · <strong style="color:var(--brass)">황동색 = 헌정 전환점</strong> · <strong style="color:var(--ink-soft)">회색 = 주요 정책·사건</strong></p>
+    <div class="timeline">
+      <div class="tl-item turn"><div class="tl-year">1987</div><div class="tl-body"><div class="tl-title">10월 제9차 개헌</div><div class="tl-desc">대통령 직선제·5년 단임제</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1987</div><div class="tl-body"><div class="tl-title">12월 제13대 대통령 선거 — 노태우 당선</div><div class="tl-desc">야당 분열, 민주정의당 노태우 36.6% 득표</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">1988</div><div class="tl-body"><div class="tl-title">제13대 국회 의원 선거 · 서울 올림픽</div><div class="tl-desc">야당이 다수 의석 차지(여소야대)</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1990</div><div class="tl-body"><div class="tl-title">3당 합당</div><div class="tl-desc">민주 자유당 창당</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1993</div><div class="tl-body"><div class="tl-title">김영삼 정부(문민정부) 출범</div><div class="tl-desc">금융 실명제 실시</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">1995</div><div class="tl-body"><div class="tl-title">지방 자치제 전면 실시</div><div class="tl-desc">지방 자치 단체장 선거</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">1996</div><div class="tl-body"><div class="tl-title">경제 협력 개발 기구(OECD) 가입</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">1997</div><div class="tl-body"><div class="tl-title">외환 위기</div><div class="tl-desc">국제 통화 기금(IMF) 구제 금융</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1998</div><div class="tl-body"><div class="tl-title">김대중 정부 출범</div><div class="tl-desc">정부 수립 이후 최초의 선거를 통한 평화적 여야 정권 교체</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">2000</div><div class="tl-body"><div class="tl-title">남북 정상 회담 · 6·15 남북 공동 선언</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">2001</div><div class="tl-body"><div class="tl-title">IMF 관리 체제 종료</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">2003</div><div class="tl-body"><div class="tl-title">노무현 정부(참여 정부) 출범</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">2004</div><div class="tl-body"><div class="tl-title">노무현 대통령 탄핵 소추 — 헌법재판소 기각</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">2007</div><div class="tl-body"><div class="tl-title">10·4 남북 정상 선언</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">2008</div><div class="tl-body"><div class="tl-title">이명박 정부 출범</div><div class="tl-desc">10년 만에 다시 여야 정권 교체</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">2013</div><div class="tl-body"><div class="tl-title">박근혜 정부 출범</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">2016</div><div class="tl-body"><div class="tl-title">10월 국정 개입 사건 알려짐 · 촛불 집회</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">2017</div><div class="tl-body"><div class="tl-title">3월 헌법재판소 탄핵 결정</div><div class="tl-desc">박근혜 대통령 파면</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">2017</div><div class="tl-body"><div class="tl-title">문재인 정부 출범</div><div class="tl-desc">탄핵 이후 치러진 선거로 정권 교체</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">2020</div><div class="tl-body"><div class="tl-title">코로나19 유행</div><div class="tl-desc">국내 첫 확진자 발생(1. 20.)</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">2022</div><div class="tl-body"><div class="tl-title">윤석열 정부 출범</div><div class="tl-desc">3월 선거로 다시 정권 교체</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="rohtaewoo">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>직선제를 되찾았으나 정권은 이어지다</h2>
+    </div>
+    <p class="block-sub">노태우 정부(1988~1993) — 국민이 다시 대통령을 직접 뽑게 되었지만, 첫 선거에서 정권 교체는 이루어지지 않았다.</p>
+
+    <div class="quote-grid">
+      <div class="quote-block">
+        <h4>헌법 제9호(1980. 10. 27. 개정) 제39조</h4>
+        대통령은 대통령 선거인단에서 무기명 투표로 선거
+        <div class="src">간접 선거</div>
+      </div>
+      <div class="quote-block deep">
+        <h4>헌법 제10호(1987. 10. 29. 개정) 제67조</h4>
+        대통령은 국민의 보통·평등·직접·비밀 선거로 선출
+        <div class="src">직접 선거</div>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">제9차 개헌(1987)</div>
+        <div class="step-desc">6월 민주 항쟁의 결과, 대통령 5년 단임제·직선제</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">제13대 대통령 선거</div>
+        <div class="step-desc">김영삼·김대중의 후보 단일화 실패로 야당 분열, 신군부 출신 민주정의당 노태우 당선</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>대통령은 여당에서 나왔지만, 이듬해 국회 의원 선거에서는 야당이 더 많은 의석을 얻었다.</p></div>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-title">제13대 국회 의원 선거(1988)</div>
+        <div class="step-desc">여당 125석, 야당 합계 174석 — 여소야대</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-title">국회 청문회</div>
+        <div class="step-desc">전두환 정부의 비리, 5·18 민주화 운동 진상 규명 — 텔레비전 생중계</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>여당은 여소야대의 어려움에서 벗어나기 위해 두 야당과 합치는 길을 택했고, 국회는 다시 여당이 다수인 구도로 바뀌었다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">3당 합당(1990)</div>
+        <div class="step-desc">민주정의당(노태우) + 통일민주당(김영삼) + 신민주공화당(김종필) → 민주 자유당 창당</div>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>제13대 선거 결과 (사이버선거역사관, 2017)</caption>
+      <thead><tr><th>정당(대표 인물)</th><th>13대 대통령 선거 득표율(1987)</th><th>13대 국회 의원 선거 의석(1988)</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">민주정의당(노태우) — 여당</td><td>36.6%</td><td>125석</td></tr>
+        <tr><td class="hd">통일민주당(김영삼)</td><td>28.0%</td><td>59석</td></tr>
+        <tr><td class="hd">평화민주당(김대중)</td><td>27.0%</td><td>70석</td></tr>
+        <tr><td class="hd">신민주공화당(김종필)</td><td>8.1%</td><td>35석</td></tr>
+        <tr><td class="hd">기타</td><td>0.3%</td><td>10석</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <table class="data-table">
+      <caption>노태우 정부의 대외 정책</caption>
+      <tbody>
+        <tr><td class="hd">북방 외교</td><td>냉전 체제 해체 속 소련·중국·동유럽 등 사회주의 국가와 수교, 북한과의 관계 개선</td></tr>
+        <tr><td class="hd">서울 올림픽</td><td>1988년 개최</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="block" id="kimyoungsam">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>군인이 아닌 대통령, 문민정부</h2>
+    </div>
+    <p class="block-sub">김영삼 정부(1993~1998) — 1992년 대통령 선거에서 민주 자유당의 김영삼이 당선되면서, 윤보선 대통령 이후 31년 만에 군인이 아닌 민간인 출신 대통령이 등장하였다.</p>
+
+    <table class="data-table">
+      <caption>김영삼 정부의 개혁</caption>
+      <thead><tr><th>구분</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">공직 윤리</td><td>공직자 윤리법 개정, 고위 공직자 재산 공개</td></tr>
+        <tr><td class="hd">금융 실명제</td><td>대통령 긴급 명령으로 전면 실시(1993)</td></tr>
+        <tr><td class="hd">지방 자치제</td><td>전면 실시</td></tr>
+        <tr><td class="hd">역사 바로 세우기</td><td>조선 총독부 청사 해체, 5·18 민주화 운동 등에 관한 특별법 제정, 전두환·노태우 등 12·12 군사 반란 및 5·18 진압 관련자 처벌, '국민학교'를 '초등학교'로 개칭</td></tr>
+        <tr><td class="hd">군 개혁</td><td>군대 내 사조직 하나회 해체</td></tr>
+        <tr><td class="hd">국제 경제</td><td>경제 협력 개발 기구(OECD) 가입(1996)</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">재판받는 전직 대통령들: 대법원은 반란·내란죄 등을 적용해 전두환에게 무기 징역, 노태우에게 징역 17년을 선고. 이후 김영삼 대통령이 국민 대화합을 명분으로 두 전직 대통령을 사면.</p>
+
+    <div class="quote-block">
+      <h4>금융 실명제 실시 관련 담화문</h4>
+      금융 실명제 없이는 부정부패와 정경 유착을 근원적으로 끊을 수 없다.
+      <div class="src">김영삼 대통령, 1993 (재구성)</div>
+    </div>
+
+    <div class="sidebox">
+      <h4>더 알아보기 — 금융 실명제</h4>
+      <p>은행 등 금융 기관에서 실제 이름으로만 거래하도록 하는 제도.</p>
+      <div class="region-grid">
+        <div class="region"><b>실시 이전</b>가명·무기명 금융 거래 허용 — 뇌물, 불법 자금, 재산 은닉 등 범죄 빈번</div>
+        <div class="region"><b>실시 이후</b>투기·부정부패 자금 추적 용이, 금융 소득의 실제 소유자 확인으로 조세 형평성 향상</div>
+      </div>
+      <p style="margin-top:10px;">당시 여론: 긍정 88.6% · 부정 11.4% (『경향신문』, 1993. 8. 14.)</p>
+    </div>
+
+    <div class="causal-link"><p>그러나 임기 말 외환 위기가 닥쳐 국제 통화 기금(IMF)의 구제 금융을 받게 되었고, 바로 이 위기 속에서 다음 대통령 선거가 치러졌다.</p></div>
+
+    <div class="note-box">지방 자치제가 어떻게 확대되었는지는 <a href="Ⅱ-3-1-02_민주주의의성장_도표(해설포함).html#local">「민주주의의 성장」 — 지방 자치제가 확대되다</a>에서, 조선 총독부 청사 철거를 두고 어떤 의견이 오갔는지는 <a href="Ⅱ-3-1-02_민주주의의성장_도표(해설포함).html#govbuilding">「민주주의의 성장」 — 옛 조선 총독부 청사를 철거하다</a>에서 이어서 다룬다.</div>
+  </section>
+
+  <section class="block" id="kimdaejung">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>처음으로 선거로 정권이 바뀌다</h2>
+    </div>
+    <p class="block-sub">김대중 정부(1998~2003) — 정부 수립 이후 50년 만에 여당과 야당 사이에서 처음으로 선거를 통한 정권 교체가 이루어졌다.</p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-title">외환 위기(1997)</div>
+        <div class="step-desc">IMF 구제 금융, 국가 경제 혼란</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">제15대 대통령 선거</div>
+        <div class="step-desc">야당 김대중 후보 40.3% 득표로 당선</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">평화적 여야 정권 교체(1998)</div>
+        <div class="step-desc">정부 수립 이후 최초의 선거를 통한 정권 교체</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>여야 간 평화적 정권 교체는, 6월 민주 항쟁 이후 국민이 선거로 정권을 바꿀 수 있을 만큼 우리나라의 민주주의가 발전했음을 보여 준다.</p></div>
+
+    <div class="quote-block crimson">
+      <h4>김대중 대통령 취임사</h4>
+      정부 수립 50년 만에 처음 이루어진 여야 간 정권 교체를 국민과 함께 기뻐한다.
+      <div class="src">1998 (재구성)</div>
+    </div>
+
+    <table class="data-table">
+      <caption>김대중 정부의 정책</caption>
+      <thead><tr><th>분야</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">경제</td><td>외환 위기 극복 노력, 2001년 IMF 관리 체제 종료</td></tr>
+        <tr><td class="hd">과거사 정리</td><td>제주 4·3 사건 진상 규명 및 희생자 명예 회복에 관한 특별법 제정, 민주화 과정 의문사 진상 규명 노력</td></tr>
+        <tr><td class="hd">인권·평등</td><td>여성부 신설, 국가 인권 위원회 설치</td></tr>
+        <tr><td class="hd">대북 정책</td><td>대북 화해 협력 정책('햇볕 정책'), 2000년 평양 남북 정상 회담, 6·15 남북 공동 선언 — 노벨 평화상 수상</td></tr>
+      </tbody>
+    </table>
+
+    <div class="limit-box">
+      <h4>교과서가 함께 서술한 그늘</h4>
+      <p>외환 위기를 극복하는 과정에서 여러 은행과 기업이 외국 자본에 매각되거나 문을 닫았으며, 많은 노동자가 해고되었다. (동아출판 『한국사』)</p>
+    </div>
+
+    <div class="note-box">외환 위기를 극복하는 과정과 그 뒤에 남은 과제는 <a href="Ⅱ-3-2-01_외환위기극복과과제_도표(해설포함).html#overcome">「외환 위기 극복과 과제」</a>에서, 남북 정상 회담과 대북 화해 협력 정책은 <a href="Ⅱ-3-3-02_한반도평화를위한노력_도표(해설포함).html#summits">「한반도 평화를 위한 노력」</a>에서 자세히 다룬다.</div>
+  </section>
+
+  <section class="block" id="rohmoohyun">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>참여 정부가 출범하다</h2>
+    </div>
+    <p class="block-sub">노무현 정부(2003~2008) — '더불어 사는 균형 발전 사회' 등을 목표로 제시하였다.</p>
+
+    <table class="data-table">
+      <caption>노무현 정부의 정책</caption>
+      <thead><tr><th>구분</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">국가 기관</td><td>국가 정보원·검찰 등 국가 기관의 독립성 강화</td></tr>
+        <tr><td class="hd">균형 발전</td><td>혁신 도시 건설(2007년 10곳 지정), 주요 공공 기관 지방 이전, 행정 수도 건설 추진 — 계획 자체는 실현되지 못했으나 행정 중심 복합 도시 세종특별자치시 설치</td></tr>
+        <tr><td class="hd">과거사 정리</td><td>친일 반민족 행위 진상 규명 위원회, 진실·화해를 위한 과거사 정리 위원회 조직</td></tr>
+        <tr><td class="hd">가족 제도</td><td>호주제 폐지</td></tr>
+        <tr><td class="hd">대북 정책</td><td>김대중 정부의 대북 화해 협력 정책 계승, 2007년 평양 남북 정상 회담, 10·4 남북 정상 선언</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">2009년, 친일 반민족 행위자의 명단과 친일 행적을 담은 『친일 반민족 행위 진상 규명 보고서』 발간.</p>
+
+    <div class="limit-box">
+      <h4>교과서가 함께 서술한 평가</h4>
+      <p>부동산 가격 급등 등으로 부정적인 평가를 받기도 하였다. (동아출판 『한국사』)</p>
+    </div>
+  </section>
+
+  <section class="block" id="leepark">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>10년 만에 다시 정권이 바뀌다</h2>
+    </div>
+    <p class="block-sub">2008년 이명박 대통령 취임으로 10년 만에 다시 여야 정권 교체가 이루어졌고, 2013년에는 여당 후보였던 박근혜 정부가 출범하였다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>이명박 정부(2008~2013)</h4>
+        <dl>
+          <dt>목표</dt><dd>선진 일류 국가, 성장 위주의 경제 정책</dd>
+          <dt>주요 사항</dt><dd>4대강 살리기 사업, 자유 무역 협정(FTA) 체결 확대, 서울 G20 정상 회의 개최</dd>
+          <dt>교과서가 서술한 갈등</dt><dd>미국산 쇠고기 수입, 4대강 살리기 사업 추진 과정에서 시민 사회와 갈등</dd>
+        </dl>
+      </div>
+      <div class="compare-card deep">
+        <h4>박근혜 정부(2013~2017)</h4>
+        <dl>
+          <dt>목표</dt><dd>일자리 중심의 창조 경제, 안전과 통합의 사회</dd>
+          <dt>주요 사항</dt><dd>대한민국 최초의 여성 대통령</dd>
+          <dt>교과서가 서술한 비판</dt><dd>세월호 참사 대응, 역사 교과서 국정화 추진, 피해자 동의 없는 일본군 '위안부' 합의</dd>
+        </dl>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <caption>교과서 방주로 보는 관련 사실</caption>
+      <tbody>
+        <tr><td class="hd">4대강 살리기 사업</td><td>한강·금강·낙동강·영산강에 보 설치, 강줄기 준설, 중소 규모 다목적댐 건설, 농업용 저수지 둑 높이기</td></tr>
+        <tr><td class="hd">세월호 참사</td><td>2014년 4월 16일, 진도 인근 해상에서 여객선 침몰 — 탑승객 476명 중 304명 사망·미수습, 2017년 4월 인양</td></tr>
+        <tr><td class="hd">역사 교과서 국정화</td><td>2017년 1월 최종본 공개 → 2017년 5월 문재인 정부가 검정 체제로 전환 발표</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="block" id="impeach">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>대통령이 탄핵되고 정권이 바뀌다</h2>
+    </div>
+    <p class="block-sub">헌법이 정한 절차에 따라 대통령이 파면되고, 이어진 선거로 정권이 교체되었다.</p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-title">국정 개입 사건(2016. 10.)</div>
+        <div class="step-desc">직책 없는 민간인이 대통령과 밀착해 국정에 개입하고 부정부패를 저지른 사건 알려짐</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-title">시민들의 촛불 집회</div>
+        <div class="step-desc">대통령 탄핵과 하야 촉구 시위 지속</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>시민들의 시위가 이어지자 국회가 탄핵 소추안을 발의했고, 헌법재판소의 결정에 따라 대통령이 파면되었다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">탄핵 소추와 결정</div>
+        <div class="step-desc">국회 탄핵 소추 → 2017. 3. 10. 헌법재판소 탄핵 결정(파면), 헌정 사상 최초</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">문재인 정부 출범(2017)</div>
+        <div class="step-desc">탄핵 이후 치러진 선거로 정권 교체</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <caption>대통령 탄핵 절차 (대한민국 헌법 제65조·제113조)</caption>
+      <thead><tr><th>단계</th><th>주체</th><th>요건</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">발의</td><td>국회</td><td>재적 의원 과반수 발의</td></tr>
+        <tr><td class="hd">탄핵 소추</td><td>국회</td><td>재적 의원 3분의 2 이상 찬성</td></tr>
+        <tr><td class="hd">심판·결정</td><td>헌법재판소</td><td>재판관 9명 중 6명 이상 찬성</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note-box"><strong>탄핵이란?</strong> 대통령·법관 등 일반적인 절차로 처벌하기 어려운 고위 공무원을 국회가 소추(처벌 요구)하여 파면하거나 처벌하는 제도. 특히 대통령 탄핵은 민주적 정당성을 잃은 대통령에 대한 국민적 불신임을 보여 주는 합법적 제도.<br>
+    · 2004년 노무현 대통령 — 정치적 중립성 위반으로 탄핵 소추, 헌법재판소 기각<br>
+    · 2017년 박근혜 대통령 — 헌법과 법률 위배로 탄핵 소추, 헌법재판소 탄핵 결정<br>
+    · 대한민국 임시 정부 시기에는 이승만 대통령이 탄핵되기도 함</div>
+
+    <div class="quote-block">
+      <h4>대통령(박근혜) 탄핵 헌법재판소 결정문</h4>
+      헌법·법률 위배는 국민의 신임을 배반한 중대한 법 위배 행위이므로 피청구인을 파면한다.
+      <div class="src">헌법재판소, 2017 (재구성)</div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>문재인 정부(2017~2022)</h4>
+        <dl>
+          <dt>목표</dt><dd>더불어 잘사는 경제, 평화와 번영의 한반도</dd>
+          <dt>상황</dt><dd>2020년 초부터 코로나19 세계적 유행 — 사회·경제적 어려움</dd>
+        </dl>
+      </div>
+      <div class="compare-card crimson">
+        <h4>윤석열 정부(2022~)</h4>
+        <dl>
+          <dt>출범</dt><dd>2022년 3월 선거로 다시 정권 교체</dd>
+          <dt>국정 비전</dt><dd>다시 도약하는 대한민국, 함께 잘사는 국민의 나라</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>정리 — 6월 민주 항쟁 이후의 정부</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <thead><tr><th>정부</th><th>출범</th><th>선거 결과</th><th>핵심 정책·사건</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">노태우</td><td>1988</td><td class="deep">정권 연장</td><td>여소야대 → 3당 합당, 북방 외교, 서울 올림픽</td></tr>
+        <tr><td class="hd">김영삼</td><td>1993</td><td class="deep">정권 연장</td><td>문민정부, 금융 실명제, 지방 자치제 전면 실시, 역사 바로 세우기, 외환 위기</td></tr>
+        <tr><td class="hd">김대중</td><td>1998</td><td class="crimson">정권 교체</td><td>최초의 평화적 여야 정권 교체, 외환 위기 극복, 국가 인권 위원회, 6·15 남북 공동 선언</td></tr>
+        <tr><td class="hd">노무현</td><td>2003</td><td class="deep">정권 연장</td><td>참여 정부, 균형 발전(혁신 도시), 과거사 정리 위원회, 호주제 폐지, 10·4 남북 정상 선언</td></tr>
+        <tr><td class="hd">이명박</td><td>2008</td><td class="crimson">정권 교체</td><td>성장 위주 경제 정책, 4대강 살리기 사업, FTA 확대</td></tr>
+        <tr><td class="hd">박근혜</td><td>2013</td><td class="deep">정권 연장</td><td>최초의 여성 대통령, 창조 경제, 탄핵으로 파면(2017)</td></tr>
+        <tr><td class="hd">문재인</td><td>2017</td><td class="crimson">정권 교체</td><td>탄핵 이후 선거로 출범, 평화와 번영의 한반도, 코로나19 대응</td></tr>
+        <tr><td class="hd">윤석열</td><td>2022</td><td class="crimson">정권 교체</td><td>다시 도약하는 대한민국</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="causal-link"><p>선거를 통한 정권 교체가 거듭되면서, 6월 민주 항쟁 이후 정치적 측면에서 민주주의 제도가 확립되었고 한국 민주주의도 점차 성숙해 갔다.</p></div>
+
+    <div class="sidebox" id="candle">
+      <h4>더 알아보기 — 촛불 집회, 21세기형 민주화 투쟁</h4>
+      <p>촛불 집회는 항의나 추모를 목적으로 하는 비폭력 평화 시위의 한 방식. 한국에서는 법률로 야간 시위를 금지해 '촛불 문화제'라는 독특한 형식 등장.</p>
+      <div class="region-grid">
+        <div class="region"><b>시작과 확산</b>최초는 1970년대 종교 단체의 시국 기도회, 본격적인 촛불 집회는 2002년 미군 장갑차 사고로 숨진 여중생 추모(광화문)</div>
+        <div class="region"><b>2016~2017 촛불 집회</b>총 19차, 총인원 약 1,567만 3천 명 (『한겨레21』, 2017)</div>
+        <div class="region"><b>시민운동의 방식</b>2000년대 이후 시민이 자발적으로 참여하는 대표적인 시민운동 방식</div>
+        <div class="region"><b>코로나19가 불러온 변화</b>아바타 시위, 온라인 참여 인증, 트럭 시위 등 새로운 시위 문화</div>
+      </div>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>자유민주적 기본질서에 입각한 평화적 정권 교체는 어떻게 정착되었을까?</li>
+        <li>6월 민주 항쟁 이후 등장한 정부들은 어떤 정책을 펼쳤을까?</li>
+        <li>촛불 집회를 두고 해외 언론은 "현대 한국 역사의 맥락에서 보면 그리 놀라운 일이 아니다"(『포린폴리시』, 2016)라고 평가하였다. 여기서 말하는 '현대 한국 역사의 맥락'은 무엇일까?</li>
+        <li>오늘날 찾아볼 수 있는 새로운 시위 문화의 사례를 조사해서 발표해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">9</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 노태우 정부는 냉전 체제가 해체되는 국제 정세 속에서 (   ) 외교를 추진하였다.</summary>
+        <div class="check-answer">북방</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. (   ) 정부 시기 지방 자치제가 전면 실시되었다.</summary>
+        <div class="check-answer">김영삼</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 정부 수립 이후 최초로 선거를 통한 평화적 정권 교체로 (   ) 정부가 들어섰다.</summary>
+        <div class="check-answer">김대중</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 2003년 출범한 (   ) 정부는 혁신 도시 건설, 주요 공공 기관 지방 이전을 추진하였다.</summary>
+        <div class="check-answer">노무현</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q5. 문재인 정부는 4대강 살리기 사업을 추진하였다. (○, ×)</summary>
+        <div class="check-answer">× — 4대강 살리기 사업은 이명박 정부가 추진하였다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 2017년 (   ) 대통령이 탄핵되었다.</summary>
+        <div class="check-answer">박근혜</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q7. 노태우 정부 시기에 3당 합당이 이루어졌다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q8. 김영삼 정부는 '역사 바로 세우기'를 추진하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q9. 이명박 정부의 출범으로 최초의 여야 간 평화적 정권 교체가 이루어졌다. (○, ×)</summary>
+        <div class="check-answer">× — 최초의 여야 간 평화적 정권 교체는 김대중 정부 출범(1998)으로 이루어졌다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q10. 노태우 정부 시기에 여소야대 정국을 극복하기 위해 (민주 자유당 / 한국 민주당)이 창당되었다.</summary>
+        <div class="check-answer">민주 자유당</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q11. (노태우 / 노무현) 정부 시기에 서울 올림픽 대회가 개최되었다.</summary>
+        <div class="check-answer">노태우</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q12. (김영삼 / 노태우) 정부는 대통령 긴급 재정 경제 명령을 통해 금융 실명제를 전면 실시하였다.</summary>
+        <div class="check-answer">김영삼</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q13. (김영삼 / 김대중) 정부 시기에 국가 인권 위원회가 신설되었다.</summary>
+        <div class="check-answer">김대중</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q14. (   ) 정부 시기에 최초의 남북 정상 회담이 개최되었다.</summary>
+        <div class="check-answer">김대중</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q15. (   ) 정부 시기에 호주제가 폐지되었다.</summary>
+        <div class="check-answer">노무현</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q16. (   ) 정부는 4대강 정비 사업을 추진하였다.</summary>
+        <div class="check-answer">이명박</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사』, Ⅲ 「오늘날의 대한민국」 1 「6월 민주 항쟁 이후의 민주화」 01 「평화적 정권 교체」, 128–131쪽 — 본문·연표·사료(김영삼 금융 실명제 담화문, 김대중 취임사, 탄핵 결정문)·확인하기·생각 키우기의 기본 출처 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022), 「01 6월 민주 항쟁 이후 민주화 과정과 사회·문화 변동」, 228–229쪽 — 정부별 정책, 북방 외교·3당 합당·역사 바로 세우기 개념, 개념 체크 문항 (1차 근거)</li>
+      <li>대한민국 헌법 제65조·제113조 — 대통령 탄핵 소추·결정 요건</li>
+    </ol>
+    <div class="note">
+      함께 업로드된 2015 교육과정 『한국사』(282–283쪽)는 현행 교육과정 이전의 자료로, 김영삼·김대중의 후보 단일화 실패와 '정권 연장 / 평화적 정권 교체'의 구분 등 보충 설명에만 참고하였다. 지방 자치제 확대·시민 사회 성장·과거사 정리 위원회 관련 자료는 이 소주제 범위를 벗어나 반영하지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅱ-3-1-01)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p01-N과 대응)
+  const SECTION_PREFIX = "2-3-1-01";
+
+  const narrativeData = {
+    // 2-3-1-01-2: 직선제를 되찾았으나 정권은 이어지다 (노태우 정부)  (대본 p01-2)
+    "2-3-1-01-2": [
+      "6월 민주 항쟁의 가장 큰 성과는 국민이 다시 대통령을 직접 뽑게 되었다는 것입니다.",
+      "그런데 첫 직선제 선거에서 민주화 세력을 대표하던 김영삼과 김대중이 후보를 하나로 모으지 못했습니다.",
+      "야당 표가 갈라지면서, 결국 여당인 민주정의당의 <b>노태우</b>가 당선되었습니다.",
+      "흥미로운 것은 이듬해 국회 의원 선거에서는 야당 의석이 더 많아졌다는 점입니다. 이런 국회를 <b>여소야대</b>라고 부릅니다.",
+      "야당이 다수가 된 국회는 전두환 정부의 비리와 5·18의 진상을 묻는 <b>청문회</b>를 열었고, 이 장면은 텔레비전으로 전국에 중계되었습니다.",
+      "국회를 뜻대로 이끌기 어려워진 여당은 두 야당과 하나로 합치는 <b>3당 합당</b>으로 돌파구를 찾았습니다.",
+      "이렇게 탄생한 민주 자유당에서 다음 대통령이 나오게 되는데, 그가 바로 3당 합당에 참여했던 김영삼입니다."
+    ],
+    // 2-3-1-01-3: 군인이 아닌 대통령, 문민정부 (김영삼 정부)  (대본 p01-3)
+    "2-3-1-01-3": [
+      "1992년 선거에서 민주 자유당의 <b>김영삼</b>이 당선되면서, 31년 만에 군인 출신이 아닌 대통령이 등장했습니다.",
+      "김영삼 정부의 개혁은 크게 두 방향으로 정리할 수 있습니다. 하나는 돈과 권력이 뒤엉킨 관행을 끊는 것, 다른 하나는 잘못된 과거를 바로잡는 것입니다.",
+      "앞의 것을 대표하는 정책이 <b>금융 실명제</b>입니다. 가명으로 돈을 맡길 수 없게 되자 뇌물이나 숨긴 재산을 추적하기가 쉬워졌고, 세금도 더 공평하게 매길 수 있게 되었습니다.",
+      "뒤의 것은 <b>역사 바로 세우기</b>입니다. 조선 총독부 청사를 해체하고, 12·12 군사 반란과 5·18 진압에 관련된 전직 대통령들을 법정에 세웠습니다.",
+      "군대 안의 사조직 <b>하나회</b>를 해체해 군의 기강을 바로 세운 것도 같은 흐름에 있습니다.",
+      "그러나 임기 말 외환 위기가 닥치면서, 정부는 국제 통화 기금의 구제 금융을 받아야 했습니다.",
+      "바로 이 위기 한가운데서 치러진 다음 대통령 선거는, 정부 수립 이후 한 번도 없었던 결과를 낳게 됩니다."
+    ],
+    // 2-3-1-01-4: 처음으로 선거로 정권이 바뀌다 (김대중 정부)  (대본 p01-4)
+    "2-3-1-01-4": [
+      "1997년 대통령 선거는 외환 위기로 나라 경제가 크게 흔들리던 때에 치러졌습니다.",
+      "이 선거에서 야당의 <b>김대중</b>이 당선되었는데, 정부가 수립된 지 50년 만에 처음으로 선거를 통해 여당에서 야당으로 정권이 넘어간 것입니다.",
+      "정변이나 혁명이 아니라 투표로 정권이 바뀌었다는 점에서, 우리 민주주의가 그만큼 발전했음을 보여 주는 사건이었습니다.",
+      "새 정부의 첫 과제는 경제 위기 극복이었고, 그 결과 2001년 국제 통화 기금의 관리에서 벗어났습니다.",
+      "다만 그 과정에서 여러 은행과 기업이 외국 자본에 팔리거나 문을 닫았고, 많은 노동자가 일자리를 잃었다는 점도 함께 기억해야 합니다.",
+      "한편 이 정부는 여성부와 <b>국가 인권 위원회</b>를 만들어 인권과 평등을 중요한 가치로 내세웠습니다.",
+      "북한에 대해서는 화해와 협력을 앞세워 2000년 첫 남북 정상 회담을 열고 <b>6·15 남북 공동 선언</b>을 발표했습니다.",
+      "이 대북 정책은 다음 정부에서도 이어지게 됩니다."
+    ],
+    // 2-3-1-01-5: 참여 정부가 출범하다 (노무현 정부)  (대본 p01-5)
+    "2-3-1-01-5": [
+      "2003년에는 여당 후보였던 노무현이 당선되어 <b>참여 정부</b>가 출범했습니다.",
+      "이 정부가 내건 목표는 더불어 사는 <b>균형 발전</b> 사회였습니다.",
+      "그래서 수도권에 몰려 있던 주요 공공 기관을 지방으로 옮기고, 그 기관들이 자리 잡을 <b>혁신 도시</b>를 세웠습니다.",
+      "또 국가 정보원과 검찰 같은 국가 기관의 독립성을 강화하는 데에도 힘을 쏟았습니다.",
+      "과거사 정리도 이어졌습니다. 친일 반민족 행위와 과거 국가 폭력의 진실을 밝히기 위한 위원회가 만들어졌고, <b>호주제</b>도 폐지되었습니다.",
+      "북한과의 관계에서는 앞 정부의 화해 협력 정책을 이어받아 2007년 다시 남북 정상 회담을 열고 <b>10·4 남북 정상 선언</b>을 발표했습니다.",
+      "반면 부동산 가격이 크게 오르는 등의 문제로 부정적인 평가를 받기도 했습니다.",
+      "그리고 다음 선거에서 국민은 다시 야당 후보를 선택하게 됩니다."
+    ],
+    // 2-3-1-01-6: 10년 만에 다시 정권이 바뀌다 (이명박·박근혜 정부)  (대본 p01-6)
+    "2-3-1-01-6": [
+      "2008년 <b>이명박</b> 정부가 출범하면서, 10년 만에 다시 여야 정권 교체가 이루어졌습니다.",
+      "김대중 정부 때 처음 이루어진 선거를 통한 정권 교체가, 이제 한 번의 예외가 아니라 되풀이되는 일이 된 것입니다.",
+      "이명박 정부는 성장 위주의 경제 정책을 앞세워 <b>4대강 살리기 사업</b>과 자유 무역 협정 확대를 추진했습니다.",
+      "그러나 미국산 쇠고기 수입과 4대강 사업을 추진하는 과정에서 시민 사회와 갈등을 빚기도 했습니다.",
+      "2013년에는 여당 후보였던 <b>박근혜</b>가 당선되어 대한민국 최초의 여성 대통령이 되었습니다.",
+      "박근혜 정부는 창조 경제와 안전과 통합의 사회를 목표로 내걸었습니다.",
+      "하지만 세월호 참사 대응, 역사 교과서 국정화 추진, 피해자 동의 없는 일본군 '위안부' 합의 등으로 비판을 받았습니다.",
+      "그리고 임기 도중, 헌정 사상 처음 있는 일이 벌어지게 됩니다."
+    ],
+    // 2-3-1-01-7: 대통령이 탄핵되고 정권이 바뀌다  (대본 p01-7)
+    "2-3-1-01-7": [
+      "2016년 10월, 아무 직책도 없는 민간인이 대통령과 밀착해 국정에 개입하고 부정부패를 저지른 사실이 알려졌습니다.",
+      "이에 시민들은 광장에 모여 촛불을 들고 대통령의 탄핵과 하야를 요구했습니다.",
+      "시위가 계속 이어지자 국회는 탄핵 소추안을 발의했고, 헌법재판소는 2017년 3월 대통령을 파면했습니다.",
+      "여기서 짚어 둘 점은, 이 모든 과정이 헌법이 정한 <b>탄핵</b> 절차에 따라 이루어졌다는 것입니다.",
+      "국회에서는 재적 의원 3분의 2 이상이 찬성해야 소추할 수 있고, 헌법재판소에서는 재판관 6명 이상이 찬성해야 파면이 결정됩니다.",
+      "같은 절차를 거쳤지만, 2004년 노무현 대통령에 대한 탄핵 소추는 헌법재판소에서 기각되었습니다.",
+      "탄핵 이후 치러진 선거에서는 <b>문재인</b> 정부가 들어섰고, 2022년에는 다시 정권이 바뀌어 <b>윤석열</b> 정부가 출범했습니다.",
+      "대통령이 물러나는 큰 혼란 속에서도 헌법 절차와 선거를 통해 정권이 넘어갔다는 점이, 6월 민주 항쟁 이후 자리 잡은 평화적 정권 교체의 모습입니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 이 대목을 자막으로 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+</html>

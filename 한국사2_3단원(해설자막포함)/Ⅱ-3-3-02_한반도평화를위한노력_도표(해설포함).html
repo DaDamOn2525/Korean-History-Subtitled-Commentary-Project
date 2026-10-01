@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한반도 평화를 위한 노력(자막 해설) | 대립과 화해를 오가며 평화를 찾다</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅱ-3-3-01_북한사회의변화_도표(해설포함).html">‹ 이전: 북한 사회의 변화</a>
+  <a href="Ⅱ-3-3_한반도분단과동아시아갈등극복노력_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#principles">7·4 남북 공동 성명</a>
+  <a href="#recognize">남북 기본 합의서</a>
+  <a href="#summits">남북 정상 회담</a>
+  <a href="#change">2018년 이후</a>
+  <a href="#language">달라진 남북의 언어</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅱ-3-3-03_우리땅독도_도표(해설포함).html">다음: 우리 땅 독도 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>오늘날의 대한민국</span> · 한반도 분단과 동아시아 갈등 극복 노력</div>
+    <h1>대립과 화해를 오가며 평화를 찾다</h1>
+    <p class="lead">6·25 전쟁 이후 적대하던 남북은 국제 정세가 바뀔 때마다 대화에 나서 통일 원칙에 합의하고, 서로의 체제를 인정하고, 정상이 만나 평화를 약속하였다. 그러나 합의는 군사 도발과 핵 개발로 여러 차례 멈추었고, 남북 관계는 대립과 화해를 되풀이해 왔다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1945 – 2020</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>분단 이후 남북 관계의 세 갈래</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 대화와 합의</strong> · <strong style="color:var(--brass)">황동색 = 교류와 협력</strong> · <strong style="color:var(--crimson)">적색 = 긴장과 대립</strong>. 세 갈래는 한 방향으로 차례대로 이어진 것이 아니라, 국제 정세와 남북 정부의 정책에 따라 번갈아 나타났으므로 갈래로 그렸다.</p>
+
+    <div class="branch-root">분단과 6·25 전쟁 이후의 적대 관계</div>
+    <p class="branch-cause">냉전이 완화되거나 해체되는 등 국제 정세가 바뀌고 정부의 대북 정책이 달라질 때마다, 남북 관계는 합의와 교류, 긴장 사이를 오갔다.</p>
+    <div class="branch-cols">
+      <div class="branch-col deep">
+        <h4>대화와 합의</h4>
+        <p class="why">통일 원칙과 평화 방안을 문서로 약속함</p>
+        <div class="branch-node">7·4 남북 공동 성명(1972) → 남북 기본 합의서(1991) → 6·15 남북 공동 선언(2000) → 10·4 남북 정상 선언(2007) → 판문점 선언(2018)</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>교류와 협력</h4>
+        <p class="why">사람과 물자가 오가며 신뢰를 쌓음</p>
+        <div class="branch-node">이산가족 교환 방문(1985) → 소 떼 방북·금강산 관광(1998) → 개성 공단(2003~) → 평창 동계 올림픽 단일팀(2018)</div>
+      </div>
+      <div class="branch-col crimson">
+        <h4>긴장과 대립</h4>
+        <p class="why">군사 도발과 핵 개발로 합의가 멈춤</p>
+        <div class="branch-node">무장간첩 청와대 습격(1968) → NPT 탈퇴(1993) → 천안함 피격·연평도 포격전(2010) → 개성 공단 폐쇄(2016) → 연락 사무소 폭파(2020)</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표 — 남북 관계의 변화</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 대화와 합의</strong> · <strong style="color:var(--brass)">황동색 = 교류와 협력</strong> · <strong style="color:var(--crimson)">적색 = 긴장과 대립</strong> · <strong style="color:var(--ink-soft)">회색 = 분단의 시작</strong></p>
+    <div class="timeline">
+      <div class="tl-item mute"><div class="tl-year">1945</div><div class="tl-body"><div class="tl-title">38도선 분단</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">1948</div><div class="tl-body"><div class="tl-title">대한민국 정부 수립 · 북한 정권 수립</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1950</div><div class="tl-body"><div class="tl-title">6·25 전쟁 발발</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1968</div><div class="tl-body"><div class="tl-title">북한 무장간첩, 청와대 습격</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1972</div><div class="tl-body"><div class="tl-title">7·4 남북 공동 성명 발표</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1985</div><div class="tl-body"><div class="tl-title">분단 이후 최초로 이산가족 교환 방문</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1991</div><div class="tl-body"><div class="tl-title">남북한 유엔 동시 가입 · 남북 기본 합의서 채택</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1992</div><div class="tl-body"><div class="tl-title">한반도 비핵화 공동 선언</div><div class="tl-desc">1991년 12월 합의</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1993</div><div class="tl-body"><div class="tl-title">북한, 핵 확산 금지 조약(NPT) 탈퇴</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1996</div><div class="tl-body"><div class="tl-title">북한, 강릉 무장간첩 침투</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1998</div><div class="tl-body"><div class="tl-title">'소 떼 방북' · 금강산 관광선 첫 출항</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1999</div><div class="tl-body"><div class="tl-title">제1 연평 해전</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">2000</div><div class="tl-body"><div class="tl-title">제1차 남북 정상 회담 → 6·15 남북 공동 선언</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">2002</div><div class="tl-body"><div class="tl-title">제2 연평 해전</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">2003</div><div class="tl-body"><div class="tl-title">개성 공단 착공식</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">2007</div><div class="tl-body"><div class="tl-title">제2차 남북 정상 회담 → 10·4 남북 정상 선언</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">2008</div><div class="tl-body"><div class="tl-title">금강산 관광 중단</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">2010</div><div class="tl-body"><div class="tl-title">천안함 피격 사건 · 연평도 포격전</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">2016</div><div class="tl-body"><div class="tl-title">개성 공단 폐쇄</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">2018</div><div class="tl-body"><div class="tl-title">평창 동계 올림픽 북한 선수단 파견 · 예술 공연단 교류 · 남북 정상 회담 → 판문점 선언</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">2020</div><div class="tl-body"><div class="tl-title">북한, 개성 공단 남북 공동 연락 사무소 폭파</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="principles">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>통일의 3대 원칙을 선언하다</h2>
+    </div>
+    <p class="block-sub">6·25 전쟁 이후 남북한은 적대적 긴장 관계를 독재 체제 강화에 이용하였다. 국제 정세가 바뀐 1970년대 초에야 처음으로 마주 앉았다.</p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-title">4·19 혁명 이후</div>
+        <div class="step-desc">민간 차원의 평화 통일 운동 활발, 장면 내각은 '선 경제 건설, 후 통일'로 통일 논의에 소극적</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">박정희 정부 시기의 긴장</div>
+        <div class="step-desc">'선 건설, 후 통일', 반공을 제일의 국시로 / 북한의 무장간첩 남파 — 1968년 1·21 사태, 푸에블로호 납치, 울진·삼척 무장 공비 침투</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>1970년대를 전후하여 닉슨 독트린이 발표되고 미·중 관계가 개선되는 등 냉전 체제가 완화되자, 남과 북도 대화에 나섰다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">비밀 회담</div>
+        <div class="step-desc">남한 중앙정보부장 이후락과 북한 노동당 조직 지도 부장 김영주 측이 서울과 평양을 비밀리에 오가며 합의</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">7·4 남북 공동 성명(1972)</div>
+        <div class="step-desc">자주·평화·민족 대단결의 통일 3대 원칙 합의, 서울과 평양에서 동시 발표 — 이후 남북 대화의 기본 원칙</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-title">이후</div>
+        <div class="step-desc">남북 조절 위원회 발족(EBS), 그러나 남한은 유신 헌법, 북한은 사회주의 헌법 공포</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <caption>7·4 남북 공동 성명의 통일 3대 원칙 (요지)</caption>
+      <tbody>
+        <tr><td class="hd">자주</td><td>외세에 의존하거나 외세의 간섭을 받지 않고 자주적으로 해결</td></tr>
+        <tr><td class="hd">평화</td><td>상대를 반대하는 무력행사에 의거하지 않고 평화적 방법으로 실현</td></tr>
+        <tr><td class="hd">민족 대단결</td><td>사상·이념·제도의 차이를 초월하여 하나의 민족으로서 대단결 도모</td></tr>
+      </tbody>
+    </table>
+
+    <div class="limit-box">
+      <h4>교과서가 함께 서술한 한계</h4>
+      <p>성명 발표 이후 남한은 유신 헌법을, 북한은 사회주의 헌법을 공포하였다. (동아출판 『한국사』) — 보충(2015 교육과정 교과서): 후속 성과를 남기지 못한 채 대립이 지속되었고, 오히려 독재 권력 강화에 이용되기도 하였다.</p>
+    </div>
+
+    <p style="font-size:13.5px; color:var(--ink-soft);">전두환 정부 시기에는 1984년 수해를 입은 남한에 북한이 원조 물자를 보낸 것을 계기로, 1985년 분단 이후 처음으로 이산가족 고향 방문과 예술 공연단 교환 방문이 이루어졌다. (EBS 개념완성, 2015 교육과정 교과서 보충)</p>
+
+    <div class="think-box">
+      <h4>자료 탐구 1 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>7·4 남북 공동 성명에서 남북이 합의한 평화 통일의 3대 원칙을 찾아보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="recognize">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>남북한, 서로를 인정하다</h2>
+    </div>
+    <p class="block-sub">냉전이 해체되는 1990년 전후, 남북은 처음으로 서로의 체제를 인정하는 공식 합의에 이르렀다.</p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-title">배경 — 안</div>
+        <div class="step-desc">6월 민주 항쟁 이후 민간 중심의 통일 운동 활발</div>
+      </div>
+      <div class="causal-row h"><p>같은 시기, 바깥에서도 큰 변화가 일어났다</p></div>
+      <div class="flow-step">
+        <div class="step-title">배경 — 밖</div>
+        <div class="step-desc">사회주의 진영 해체, 남한의 북방 외교로 소련(1990)·중국(1992) 및 동구권 국가와 수교</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>사회주의 우방을 잃은 북한도 외교적 고립을 피하기 위해 남북 대화에 나섰다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">유엔 동시 가입(1991. 9.)</div>
+        <div class="step-desc">남북한이 함께 국제 사회의 일원으로</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">남북 기본 합의서(1991. 12.)</div>
+        <div class="step-desc">남북 사이의 화해와 불가침 및 교류·협력에 관한 합의서 — 상대방 체제 인정, 무력 불사용, 남북 관계를 '통일을 지향하는 과정의 잠정적 특수 관계'로 규정</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">한반도 비핵화 공동 선언(1992)</div>
+        <div class="step-desc">핵무기 시험·생산·보유 금지, 평화적 목적의 핵에너지 사용 등 합의</div>
+      </div>
+    </div>
+
+    <div class="quote-block deep">
+      <h4>남북 기본 합의서(1991)</h4>
+      남과 북은 서로 상대방의 체제를 인정·존중하고, 상대방에 대하여 무력을 사용하지 않는다.
+      <div class="src">제1조·제9조 (재구성)</div>
+    </div>
+    <p style="font-size:13.5px; color:var(--ink-soft);">남북 기본 합의서는 남북한 정부 간에 공식 합의된 최초의 문서이다(EBS). 보충(2015 교육과정 교과서): 김영삼 정부는 남북 정상 회담에 합의하였으나 1994년 김일성의 갑작스러운 사망으로 무산되었다.</p>
+
+    <div class="note-box">노태우 정부의 북방 외교는 <a href="Ⅱ-3-1-01_평화적정권교체_도표(해설포함).html#rohtaewoo">「평화적 정권 교체」 — 노태우 정부</a>에서, 북한의 NPT 탈퇴 이후 핵 개발 과정은 <a href="Ⅱ-3-3-01_북한사회의변화_도표(해설포함).html#nuclear">「북한 사회의 변화」 — 북한 핵 개발의 역사</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="summits">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>남북 정상 회담으로 평화 실천 방안을 제시하다</h2>
+    </div>
+    <p class="block-sub">1993년 북한의 핵 확산 금지 조약(NPT) 탈퇴로 얼어붙었던 남북 관계는, 1998년 김대중 정부가 들어서면서 전환점을 맞이하였다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">대북 화해 협력 정책</div>
+        <div class="step-desc">김대중 정부의 햇볕 정책으로 북한을 대화로 이끌어 냄</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">교류 협력 본격화(1998)</div>
+        <div class="step-desc">정주영의 '소 떼 방북'(두 차례, 모두 1,001마리), 금강산 관광 시작</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">6·15 남북 공동 선언(2000)</div>
+        <div class="step-desc">평양에서 분단 이후 최초의 남북 정상 회담 — 이산가족 상봉, 남북 교역 확대</div>
+      </div>
+    </div>
+
+    <div class="quote-grid">
+      <div class="quote-block deep">
+        <h4>김대중 대통령, 「노벨 평화상 수상 연설」</h4>
+        적화 통일도 흡수 통일도 아닌, 평화적 공존과 교류·협력을 추구하는 것이 햇볕 정책이다.
+        <div class="src">2000. 12. 11. (재구성)</div>
+      </div>
+      <div class="quote-block deep">
+        <h4>6·15 남북 공동 선언</h4>
+        통일 문제를 자주적으로 해결하고, 남측 연합제 안과 북측 낮은 단계 연방제 안의 공통성을 인정한다.
+        <div class="src">2000 (제1·2항 재구성)</div>
+      </div>
+    </div>
+
+    <div class="causal-link"><p>노무현 정부는 김대중 정부의 대북 정책을 이어받아 남북 경제 협력과 긴장 완화를 추구하였다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">개성 공단 조성</div>
+        <div class="step-desc">2003년 착공 — 남한의 자본과 북한의 노동력 결합, 보충: 2004년 첫 제품 생산, 경의선·동해선 철도 연결</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">10·4 남북 정상 선언(2007)</div>
+        <div class="step-desc">평양에서 두 번째 남북 정상 회담, 남북 관계 발전과 평화 번영을 위한 선언 — 정전 체제 종식과 종전 선언 추진 협력</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>그러나 이후 북한이 천안함 피격 사건과 연평도 포격전을 일으키고 잇따라 핵 실험을 하면서 남북 관계가 악화되었다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">금강산 관광 중단(2008)</div>
+        <div class="step-desc">관광객 피살 사건 이후 중단 (2015 교육과정 교과서 보충)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">천안함 피격 · 연평도 포격전(2010)</div>
+        <div class="step-desc">연평도의 해병대 기지와 민간인 마을에 포격 — 해병대 2명, 민간인 2명 사망</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">개성 공단 폐쇄(2016)</div>
+        <div class="step-desc">북한의 4차 핵 실험과 미사일 발사 이후 가동 중단</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">보충(2015 교육과정 교과서): 북한의 핵 실험과 미사일 발사가 이어지고 이명박·박근혜 정부가 대북 강경 정책을 펴면서 남북 관계가 긴장 상태에 접어들었다.</p>
+
+    <div class="note-box">김대중·노무현 정부의 다른 정책은 <a href="Ⅱ-3-1-01_평화적정권교체_도표(해설포함).html#kimdaejung">「평화적 정권 교체」 — 김대중 정부</a>, <a href="Ⅱ-3-1-01_평화적정권교체_도표(해설포함).html#rohmoohyun">노무현 정부</a>에서, 남북 경제 교류를 북한의 입장에서 본 내용은 <a href="Ⅱ-3-3-01_북한사회의변화_도표(해설포함).html#economy">「북한 사회의 변화」 — 사회주의 경제에 변화를 시도하다</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="change">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>남북 관계가 다시 변화하다</h2>
+    </div>
+    <p class="block-sub">2017년 문재인 정부가 제시한 남북 화해 협력 방안에 북한이 호응하면서 남북 관계에 다시 변화가 나타났다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">평창 동계 올림픽(2018. 2.)</div>
+        <div class="step-desc">북한 선수단 참가, 여자 아이스하키 남북 단일팀, 예술 공연단 교류</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">세 차례 남북 정상 회담(2018)</div>
+        <div class="step-desc">4월부터 판문점과 평양에서 개최 — 판문점 선언(4. 27.), 9·19 평양 공동 선언</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">다시 위기</div>
+        <div class="step-desc">2019년 북·미 정상 회담 결렬 이후 북한의 핵무기 개발 재개, 2020년 남북 공동 연락 사무소 폭파</div>
+      </div>
+    </div>
+
+    <div class="quote-block deep">
+      <h4>한반도의 평화와 번영, 통일을 위한 판문점 선언</h4>
+      군사적 긴장을 완화하고 비정상적인 정전 상태를 끝내 항구적인 평화 체제를 구축한다.
+      <div class="src">2018. 4. 27. (제2·3항 재구성)</div>
+    </div>
+
+    <table class="data-table">
+      <caption>정상 회담 선언문의 흐름</caption>
+      <thead><tr><th>선언</th><th>핵심 내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">6·15 남북 공동 선언(2000)</td><td>자주적 통일, 통일 방안의 공통성 인정, 경제 협력과 사회·문화 교류</td></tr>
+        <tr><td class="hd">10·4 남북 정상 선언(2007)</td><td>6·15 공동 선언 고수, 정전 체제 종식과 종전 선언 추진, 경제 협력 활성화</td></tr>
+        <tr><td class="hd">판문점 선언(2018)</td><td>남북 관계의 전면적 개선, 군사적 긴장 완화, 항구적 평화 체제 구축, 완전한 비핵화 목표 확인</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="block" id="language">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>달라진 남북의 언어</h2>
+    </div>
+    <p class="block-sub">자료 탐구 — 오랜 분단으로 남북한이 같은 대상을 서로 다른 말로 부르게 되었다. (통일부, 2023)</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <thead><tr><th>남한</th><th>북한</th><th>남한</th><th>북한</th></tr></thead>
+      <tbody>
+        <tr><td>거위</td><td>게사니</td><td>소시지</td><td>칼파스</td></tr>
+        <tr><td>골키퍼</td><td>문지기</td><td>어묵</td><td>물고기떡</td></tr>
+        <tr><td>녹차</td><td>푸른차</td><td>의식주</td><td>식의주</td></tr>
+        <tr><td>도넛</td><td>가락지빵</td><td>잡곡밥</td><td>얼럭밥</td></tr>
+        <tr><td>빙수</td><td>단물얼음</td><td>헬리콥터</td><td>직승비행기</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>자료 탐구 2 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>남북한의 언어가 달라진 까닭은 무엇인지 생각해 보자.</li>
+        <li>언어의 차이가 남북통일에 어떤 영향을 끼칠지 생각해 보자.</li>
+        <li>통일부 북한정보포털 누리집의 '남북한 언어 비교'에서 달라진 남북의 언어를 더 확인해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>정리 — 남북 합의의 발자취</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <thead><tr><th>정부</th><th>배경</th><th>합의·교류</th><th>의의</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">박정희</td><td>닉슨 독트린, 냉전 완화</td><td>7·4 남북 공동 성명(1972)</td><td>통일 3대 원칙 — 이후 남북 대화의 기본 원칙</td></tr>
+        <tr><td class="hd">전두환</td><td>1984년 북한의 수해 원조</td><td>이산가족 교환 방문·예술 공연단(1985)</td><td>분단 이후 최초의 이산가족 교환 방문</td></tr>
+        <tr><td class="hd">노태우</td><td>사회주의권 해체, 북방 외교</td><td>유엔 동시 가입, 남북 기본 합의서(1991), 한반도 비핵화 공동 선언(1992)</td><td>남북 정부 간 최초의 공식 합의, 상호 체제 인정</td></tr>
+        <tr><td class="hd">김대중</td><td>대북 화해 협력 정책</td><td>소 떼 방북·금강산 관광(1998), 6·15 남북 공동 선언(2000)</td><td>분단 이후 최초의 남북 정상 회담</td></tr>
+        <tr><td class="hd">노무현</td><td>대북 정책 계승</td><td>개성 공단, 10·4 남북 정상 선언(2007)</td><td>평화 번영을 위한 구체적 실천 방안</td></tr>
+        <tr><td class="hd">문재인</td><td>남북 화해 협력 방안</td><td>평창 동계 올림픽, 판문점 선언·9·19 평양 공동 선언(2018)</td><td>항구적 평화 체제와 완전한 비핵화 목표 확인</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>남북한은 평화 통일을 위해 어떤 노력을 기울여 왔을까?</li>
+        <li>남북한은 한반도 평화를 위해 어떤 노력을 해야 할까?</li>
+        <li>자료 탐구 3: 6·15 남북 공동 선언, 10·4 남북 정상 선언, 판문점 선언을 바탕으로 남북 화해와 협력, 평화 통일을 위한 선언문을 작성해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 남북은 7·4 남북 공동 성명에서 자주, (   ), 민족 대단결의 통일 원칙에 합의하였다.</summary>
+        <div class="check-answer">평화</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 남북은 1991년 (   )을/를 채택하여 상대방의 체제를 인정하였다.</summary>
+        <div class="check-answer">남북 기본 합의서</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 김대중 정부 당시 '소 떼 방북'과 금강산 관광 등 남북한 교류 협력이 본격화되기 시작하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 2018년 남북한 정상은 한반도의 평화와 번영, 통일을 위한 판문점 선언에 합의하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q5. 김정은 체제 시기에 북미 정상 회담이 개최되었다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 박정희 정부 시기에 7·4 남북 공동 성명이 발표되었다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q7. 전두환 정부 시기에 한반도 비핵화 공동 선언이 채택되었다. (○, ×)</summary>
+        <div class="check-answer">× — 한반도 비핵화 공동 선언은 노태우 정부 시기에 채택되었다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q8. 1972년 자주·평화·민족적 대단결의 통일 원칙에 합의한 (7·4 남북 공동 성명 / 남북 기본 합의서)이/가 발표되었다.</summary>
+        <div class="check-answer">7·4 남북 공동 성명</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q9. (이승만 / 노태우) 정부 시기에 남북한 유엔 동시 가입이 이루어졌다.</summary>
+        <div class="check-answer">노태우</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q10. 제1차 남북 정상 회담에서 (6·15 / 10·4) 남북 공동 선언이 발표되었다.</summary>
+        <div class="check-answer">6·15</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q11. (   ) 정부 시기에 남북 기본 합의서가 채택되었다.</summary>
+        <div class="check-answer">노태우</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q12. (   ) 정부 시기에 대북 화해 협력 정책 추진으로 금강산 관광 사업이 시작되었다.</summary>
+        <div class="check-answer">김대중</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사』, Ⅲ 「오늘날의 대한민국」 3 「한반도 분단과 동아시아 갈등 극복 노력」 02 「한반도 평화를 위한 노력」, 148–149쪽 및 155쪽(자료 탐구 1~3) — 본문·남북 관계의 변화 연표·사료·확인하기의 기본 출처 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022), 「한반도 분단 극복과 동아시아 평화를 위한 노력」, 234–235쪽 — 정부별 통일 노력, 자료 탐구(7·4 남북 공동 성명, 남북 기본 합의서), 개념 체크 문항 (1차 근거)</li>
+    </ol>
+    <div class="note">
+      함께 업로드된 2015 교육과정 『한국사』(300–303쪽)는 현행 교육과정 이전의 자료로, 7·4 남북 공동 성명의 한계, 1985년 교류의 계기, 김영삼 정부의 정상 회담 무산, 개성 공단 연혁, 2008년 이후 남북 관계 경색에 대한 보충 설명에만 활용하였다. 동아시아의 역사 갈등과 독도 관련 자료는 이 소주제 범위를 벗어나 반영하지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅱ-3-3-02)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p02-N과 대응)
+  const SECTION_PREFIX = "2-3-3-02";
+
+  const narrativeData = {
+    // 2-3-3-02-2: 통일의 3대 원칙을 선언하다  (대본 p02-2)
+    "2-3-3-02-2": [
+      "6·25 전쟁이 끝난 뒤 남과 북은 서로를 적으로 여겼고, 양쪽 정권은 이 긴장을 독재 체제를 굳히는 데 이용했습니다.",
+      "4·19 혁명 이후 민간에서 평화 통일 운동이 일어났지만, 정부는 경제 건설을 앞세우며 통일 논의에 소극적이었습니다.",
+      "1968년에는 북한 무장간첩이 청와대를 습격하는 등 한반도의 긴장은 더욱 높아졌습니다.",
+      "변화의 계기는 바깥에서 왔습니다. <b>닉슨 독트린</b>이 발표되고 미국과 중국의 관계가 개선되면서 냉전 체제가 완화된 것입니다.",
+      "이에 남북 당국자가 비밀리에 서울과 평양을 오간 끝에, 1972년 <b>7·4 남북 공동 성명</b>이 발표되었습니다.",
+      "여기서 합의한 <b>자주</b>·<b>평화</b>·<b>민족 대단결</b>의 통일 3대 원칙은 이후 남북 대화의 기본 원칙이 되었습니다.",
+      "그러나 성명 발표 뒤 남한은 유신 헌법을, 북한은 사회주의 헌법을 공포하며 각자의 체제를 굳혔습니다.",
+      "남북이 서로를 대화 상대로 인정하기까지는 다시 20년 가까운 시간이 필요했습니다."
+    ],
+    // 2-3-3-02-3: 남북한, 서로를 인정하다  (대본 p02-3)
+    "2-3-3-02-3": [
+      "1990년을 전후해 세계는 크게 바뀌었습니다. 소련과 동유럽의 사회주의 진영이 무너지고 있었던 것입니다.",
+      "남한은 <b>북방 외교</b>로 1990년 소련, 1992년 중국과 수교했습니다.",
+      "우방을 잃게 된 북한은 외교적 고립을 피하기 위해 남북 대화에 나섰습니다.",
+      "그 결과 1991년 남북한은 유엔에 동시에 가입했고, 12월에는 <b>남북 기본 합의서</b>를 채택했습니다.",
+      "이 합의서는 남북한 정부 사이에 공식적으로 맺은 첫 합의로, 서로의 체제를 인정하고 무력을 쓰지 않기로 약속했습니다.",
+      "또 남북 관계를 나라와 나라 사이가 아닌, 통일을 지향하는 과정에서 잠정적으로 형성된 특수 관계로 규정했습니다.",
+      "이어 <b>한반도 비핵화 공동 선언</b>으로 핵무기를 시험·생산·보유하지 않기로 합의했습니다.",
+      "하지만 1993년 북한이 핵 확산 금지 조약에서 탈퇴하면서, 남북 관계는 다시 얼어붙게 됩니다."
+    ],
+    // 2-3-3-02-4: 남북 정상 회담으로 평화 실천 방안을 제시하다  (대본 p02-4)
+    "2-3-3-02-4": [
+      "얼어붙은 남북 관계에 변화를 가져온 것은 1998년 김대중 정부의 <b>대북 화해 협력 정책</b>, 곧 햇볕 정책이었습니다.",
+      "김대중 대통령은 적화 통일도 흡수 통일도 아닌, 평화적 공존과 교류·협력을 추구한다고 밝혔습니다.",
+      "그해 정주영이 소 떼를 몰고 북한을 방문했고, 금강산 관광도 시작되었습니다.",
+      "그리고 2000년, 분단 이후 처음으로 남북 정상이 평양에서 만나 <b>6·15 남북 공동 선언</b>을 발표했습니다.",
+      "노무현 정부는 이 정책을 이어받아 개성 공단을 조성하고, 2007년 두 번째 정상 회담에서 <b>10·4 남북 정상 선언</b>을 채택했습니다.",
+      "10·4 선언은 정전 체제를 끝내고 종전을 선언하는 문제까지 함께 추진하기로 약속했습니다.",
+      "그러나 이후 북한의 천안함 피격 사건과 연평도 포격전, 잇따른 핵 실험으로 남북 관계는 악화되었습니다.",
+      "결국 금강산 관광은 2008년에, 남북 협력의 상징이던 <b>개성 공단</b>은 2016년에 문을 닫았습니다."
+    ],
+    // 2-3-3-02-5: 남북 관계가 다시 변화하다  (대본 p02-5)
+    "2-3-3-02-5": [
+      "끊어졌던 대화가 다시 이어진 것은 2017년 이후입니다.",
+      "문재인 정부의 남북 화해 협력 방안에 북한이 호응하면서, 2018년 <b>평창 동계 올림픽</b>에 북한 선수단이 참가하고 여자 아이스하키 단일팀도 꾸려졌습니다.",
+      "그해 4월부터 남북 정상은 판문점과 평양에서 세 차례 만났고, <b>판문점 선언</b>에 합의했습니다.",
+      "판문점 선언은 군사적 긴장을 완화하고, 비정상적인 정전 상태를 끝내 항구적인 평화 체제를 만들자고 약속했습니다.",
+      "6·15 선언과 10·4 선언, 판문점 선언을 이어 보면, 통일 원칙에서 출발한 합의가 평화 체제와 비핵화로 넓어진 것을 알 수 있습니다.",
+      "그러나 2019년 북·미 정상 회담이 결렬된 뒤 북한은 다시 핵무기 개발에 나섰고, 2020년에는 남북 공동 연락 사무소를 폭파했습니다.",
+      "남북 관계는 다시 위기를 맞고 있습니다.",
+      "대립과 화해가 되풀이된 이 역사 속에서, 평화를 지키기 위해 무엇이 필요한지 생각해 보기 바랍니다."
+    ],
+    // 2-3-3-02-6: 달라진 남북의 언어  (대본 p02-6)
+    "2-3-3-02-6": [
+      "분단이 길어지면서 남과 북은 같은 대상을 서로 다른 말로 부르게 되었습니다.",
+      "남한의 도넛을 북한에서는 <b>가락지빵</b>이라 하고, 빙수는 <b>단물얼음</b>, 헬리콥터는 <b>직승비행기</b>라고 합니다.",
+      "골키퍼는 문지기, 어묵은 물고기떡이라고 부릅니다.",
+      "분단된 지 70년이 넘는 동안 무엇이 이런 차이를 만들었는지 생각해 보기 바랍니다.",
+      "말이 다르면 마음의 거리도 멀어질 수 있습니다.",
+      "언어의 차이가 통일 이후 함께 살아가는 데 어떤 영향을 줄지, 그리고 이를 줄이려면 무엇을 해야 할지 함께 고민해 봅시다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 이 대목을 자막으로 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>
