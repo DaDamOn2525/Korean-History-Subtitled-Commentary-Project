@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사림의 성장과 붕당의 등장(자막 해설) | 네 번의 화를 겪고도, 사림이 정치의 중심에 서다</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-1-3-01_조선의성립과발전_도표(해설포함).html">‹ 이전: 조선의 성립과 발전</a>
+  <a href="Ⅰ-1-3_조선의성립과발전_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#sarim">사림의 진출</a>
+  <a href="#sahwa">사화</a>
+  <a href="#jogwangjo">조광조의 개혁</a>
+  <a href="#bungdang">붕당의 등장</a>
+  <a href="#gongron">붕당 정치</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-1-3-03_왜란과호란_도표(해설포함).html">다음: 왜란과 호란 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 이전 한국사의 이해</span> · 조선의 성립과 발전</div>
+    <h1>네 번의 화를 겪고도, 사림이 정치의 중심에 서다</h1>
+    <p class="lead">15세기 중엽 정치권력은 세조의 즉위를 도운 훈구가 쥐고 있었다. 성종이 훈구를 견제하려고 등용한 사림은 연산군·중종·명종 때 여러 차례 사화를 겪었지만, 서원과 향약을 기반으로 향촌에서 세력을 키워 선조 때 중앙 정치를 이끌게 되었다. 이후 사림은 동인과 서인으로 나뉘어 붕당을 이루고, 공론에 따른 정치를 펼쳤다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">15세기 중엽 – 16세기 후반</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>견제, 충돌, 집권, 그리고 분화</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 훈구·공신·외척</strong> · <strong style="color:var(--crimson)">적색 = 사화(충돌과 사림의 피해)</strong> · <strong style="color:var(--brass)">황동색 = 사림의 성장과 집권</strong>. 사림이 집권하기까지는 앞 단계가 다음 단계를 낳은 순서라 화살표로 이었고, 집권한 사림이 둘로 나뉜 붕당은 갈래로 그렸다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">훈구의 권력 장악</div>
+        <div class="step-desc">15세기 중엽, 주요 관직 독점</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">사림의 진출</div>
+        <div class="step-desc">성종이 훈구 견제를 위해 김종직 등 등용</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">사화</div>
+        <div class="step-desc">연산군·중종·명종 때 사림이 큰 피해</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">사림의 집권</div>
+        <div class="step-desc">서원·향약으로 향촌 기반 확대, 선조 때 중앙 정치 주도</div>
+      </div>
+    </div>
+
+    <div class="branch-root">선조 때 중앙 정치를 이끈 사림</div>
+    <p class="branch-cause">외척 세력 청산과 이조 전랑 임명 문제를 둘러싸고 대립하여, 사림이 둘로 나뉘면서 붕당이 등장하였다.</p>
+    <div class="branch-cols two">
+      <div class="branch-col brass">
+        <h4>동인</h4>
+        <p class="why">외척을 철저히 배제하자</p>
+        <div class="branch-node">조식·서경덕·이황의 학문 계승</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>서인</h4>
+        <p class="why">사림에 우호적인 외척은 포용하자</p>
+        <div class="branch-node">이이·성혼의 학문 계승</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 훈구·공신·외척</strong> · <strong style="color:var(--crimson)">적색 = 사화</strong> · <strong style="color:var(--brass)">황동색 = 사림의 성장과 집권</strong></p>
+    <div class="timeline">
+      <div class="tl-item turn"><div class="tl-year long">15세기 후반</div><div class="tl-body"><div class="tl-title">성종, 김종직 등 사림 등용</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1498</div><div class="tl-body"><div class="tl-title">무오사화</div><div class="tl-desc">「조의제문」을 구실로 사림 세력 제거</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1504</div><div class="tl-body"><div class="tl-title">갑자사화</div><div class="tl-desc">연산군 생모 윤씨의 폐비 사건과 관련</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1506</div><div class="tl-body"><div class="tl-title">중종반정</div><div class="tl-desc">연산군을 몰아내고 중종 즉위</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1519</div><div class="tl-body"><div class="tl-title">현량과 실시 · 기묘사화</div><div class="tl-desc">조광조 등 사림 세력 제거</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1545</div><div class="tl-body"><div class="tl-title">을사사화</div><div class="tl-desc">명종 때 외척 대윤과 소윤의 다툼</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1567</div><div class="tl-body"><div class="tl-title">선조 즉위</div><div class="tl-desc">이때부터 사림이 중앙 정치를 이끔, 이후 동인·서인으로 분화</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="sarim">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>사림이 중앙 정계에 진출하다</h2>
+    </div>
+    <p class="block-sub">15세기 중엽 훈구가 조선의 정치권력을 장악하였다. 성종은 이들을 견제할 새로운 세력이 필요하였다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>훈구</h4>
+        <dl>
+          <dt>뜻</dt><dd>‘공훈을 세운 나이 많은 신하’</dd>
+          <dt>출신</dt><dd>세조가 왕위에 오르는 데 공을 세운 세력</dd>
+          <dt>모습</dt><dd>주요 관직 독점, 권력을 이용해 토지와 노비 확대, 비리와 부정</dd>
+        </dl>
+      </div>
+      <div class="compare-card brass">
+        <h4>사림</h4>
+        <dl>
+          <dt>뜻</dt><dd>‘선비들의 집단’</dd>
+          <dt>출신</dt><dd>조선 건국에 반대했던 정몽주·길재 등의 학통을 이은 지방 사족</dd>
+          <dt>지향</dt><dd>성리학 연구와 교육, 왕도 정치와 향촌 자치 추구</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="causal-link"><p>성종은 훈구를 견제하기 위해 김종직 등 사림을 등용하였고, 사림은 주로 3사에 배치되어 훈구의 부정과 비리를 비판하였다.</p></div>
+    <p style="font-size:13px; color:var(--ink-soft);">왕도 정치 — 왕이 인격을 수양하고 신하와 협력하여 나라를 다스리는 것. 건국에 협력하지 않은 온건파 사대부들이 지방에서 성리학 연구와 제자 양성에 힘썼고, 그 학문을 이어받은 이들이 사림으로 성장(EBS).</p>
+    <p style="font-size:13px; color:var(--ink-soft);">훈구를 사림에 대비되는 세력으로 보는 시각이 많았지만, 훈구의 정체성이 명확하지 않아 이러한 대립 구도가 잘못이라는 의견도 제기되었다. (교과서 방주)</p>
+  </section>
+
+  <section class="block" id="sahwa">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>사화가 일어나다 — 연산군 시기</h2>
+    </div>
+    <p class="block-sub">사화는 ‘사림이 입은 화’라는 뜻이다. 자신들을 비판하던 사림을 훈구가 공격하고, 왕이 이에 동조하면서 일어났다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">연산군 즉위</div>
+        <div class="step-desc">훈구가 자신들을 비판하던 사림 공격, 사림을 못마땅하게 여긴 연산군도 동조</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">무오사화(1498)</div>
+        <div class="step-desc">김종직이 지은 「조의제문」을 문제 삼아 사림 축출</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">갑자사화(1504)</div>
+        <div class="step-desc">연산군의 생모 윤씨가 폐비된 사건과 관련 있는 훈구와 사림 세력 제거</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>두 차례 사화로 사림은 큰 피해를 입었다. 이후 중종반정(1506)으로 연산군이 쫓겨나고 중종이 즉위하였다.</p></div>
+    <p style="font-size:13px; color:var(--ink-soft);">반정 — 옳지 못한 임금을 내쫓고 새 임금을 세움. 중종반정은 훈구 세력이 연산군을 몰아내고 중종을 즉위시킨 것(EBS).</p>
+
+    <div class="quote-block crimson">
+      <h4>사료 읽기 — 무오사화의 발단</h4>
+      김일손이 사초에 스승 김종직의 「조의제문」을 실었다. 세조의 높은 덕을 희롱한 것이니 형벌을 의논하라.
+      <div class="src">『연산군일기』 (재구성)</div>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>「조의제문」</h4>
+        ‘의제를 애도한다’는 뜻. 의제는 부하 항우에게 살해된 중국 초의 왕 — 김종직은 이를 통해 신하인 세조가 단종을 살해한 것을 우회적으로 비판
+      </div>
+      <div class="compare-card">
+        <h4>사초</h4>
+        사관이 기록하여 둔 초고로, 『조선왕조실록』의 원고가 된 자료(EBS)
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="jogwangjo">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>조광조의 개혁과 기묘사화</h2>
+    </div>
+    <p class="block-sub">중종반정에서 공을 세운 신하들의 권력이 커지자, 중종은 조광조 등 사림을 등용해 이들을 견제하려 하였다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">조광조의 개혁</div>
+        <div class="step-desc">유교적 도덕 정치 실현 목표 — 현량과 실시로 사림 등용, 반정 공신 중 자격 없는 사람의 공신 칭호 박탈(위훈 삭제) 주장, 소격서 폐지</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">반발</div>
+        <div class="step-desc">공신들의 반발, 급격한 개혁에 대한 중종의 부담</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">기묘사화(1519)</div>
+        <div class="step-desc">조광조 등 많은 사림 제거</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>명종 때도 사림은 왕의 외척 사이의 다툼에 휘말려 피해를 입었다(을사사화, 1545). 인종의 외가인 대윤과 명종의 외가인 소윤의 다툼이었다.</p></div>
+    <p style="font-size:13px; color:var(--ink-soft);">현량과 — 학문과 행실이 뛰어난 인재를 추천받아 간단한 시험을 보고 관리로 등용하는 제도. 위훈 — 거짓된 공훈, 중종반정에서 실제로 큰 공이 없으나 공신으로 책봉된 사람들의 공훈(EBS). 소격서 — 도교 의식을 위해 설치한 관청.</p>
+
+    <div class="quote-grid">
+      <div class="quote-block brass">
+        <h4>조광조의 정치관</h4>
+        전하께서 도를 밝히고 홀로 있을 때 조심하면, 기강이 서고 법도가 정해질 것입니다.
+        <div class="src">『알성시책』 (재구성)</div>
+      </div>
+      <div class="quote-block brass">
+        <h4>현량과의 건의</h4>
+        재주와 행실 있는 사람을 천거받아 왕이 직접 시험하면 인물을 많이 얻을 것입니다.
+        <div class="src">『중종실록』 (재구성, EBS 자료)</div>
+      </div>
+    </div>
+    <div class="think-box">
+      <h4>질문+ — 교과서의 열린 질문</h4>
+      <ol>
+        <li>자료에서 조광조가 제시한 이상적인 정치 형태는 무엇인지 말해 보자.</li>
+      </ol>
+    </div>
+
+    <div class="sidebox">
+      <h4>역사 깊이 보기 — ‘주초위왕(走肖爲王)’, 참? 거짓?</h4>
+      <div class="quote-block crimson">
+        조광조 등을 죽이려고 꿀로 나뭇잎에 ‘주초위왕’을 써 벌레가 갉아 먹게 하고, 대궐로 흘려보내 중종을 놀라게 하였다.
+        <div class="src">『선조실록』 (재구성)</div>
+      </div>
+      <p>‘走’와 ‘肖’를 합치면 ‘趙’ — 조(趙)씨가 왕이 된다는 뜻으로, 조광조를 겨냥한 것이다. 한 대학교에서 2015년 5월부터 7월까지 이 내용이 사실인지 실험해 보았는데, ‘주초위왕’을 쓸 만큼 큰 나뭇잎이 드물고 글씨가 복잡해 곤충이 갉아 먹기 어렵다는 결과가 나왔다. 그렇다면 이런 기록이 남아 있는 까닭은 무엇일까?</p>
+    </div>
+  </section>
+
+  <section class="block" id="bungdang">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>붕당이 등장하다</h2>
+    </div>
+    <p class="block-sub">사림은 사화로 큰 피해를 입었지만, 그 뒤에도 꾸준히 세력을 키워 나갔다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">향촌 기반 확대</div>
+        <div class="step-desc">서원과 향약을 기반으로 향촌 사회에서 꾸준히 세력 확대</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">지지 확대</div>
+        <div class="step-desc">사림이 주장한 유교적 도덕 정치에 뜻을 같이하는 관리 증가</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">사림의 집권</div>
+        <div class="step-desc">선조 때부터 사림이 중앙 정치를 이끔</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>그러나 외척 세력 청산과 이조 전랑 임명 문제를 둘러싸고 사림 사이에 대립이 일어났고, 결국 사림이 동인과 서인으로 나뉘면서 붕당이 등장하였다.</p></div>
+    <p style="font-size:13px; color:var(--ink-soft);">향약 — 양반 사족이 만든 향촌의 자치 규약, 백성을 유교적으로 교화하고 향촌 사회 질서를 유지(EBS). 이조 전랑 — 문관 인사를 담당한 이조의 정5품 정랑과 정6품 좌랑. 3사 관리의 인사 추천권과 자신의 후임자 추천권을 가짐.</p>
+
+    <div class="quote-block deep">
+      <h4>사료 읽기 — 붕당의 형성</h4>
+      김효원이 전랑 후보에 오르자 외척 윤원형의 문객이라며 심의겸이 반대하였다. 뒤에 심의겸의 동생이 천거되자 외척이라며 김효원이 반대하였다. 김효원의 집이 동쪽 건천동, 심의겸의 집이 서쪽 정릉에 있어 동인·서인이라 하였다.
+      <div class="src">이긍익, 『연려실기술』 (재구성)</div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card brass">
+        <h4>동인</h4>
+        <dl>
+          <dt>정치적 입장</dt><dd>외척을 철저히 배제</dd>
+          <dt>학문</dt><dd>주로 조식·서경덕·이황의 학문 계승</dd>
+          <dt>구성(EBS)</dt><dd>선조 즉위 이후 중앙 정계에 진출한 사림, 영남 지역의 사림 중심</dd>
+        </dl>
+      </div>
+      <div class="compare-card brass">
+        <h4>서인</h4>
+        <dl>
+          <dt>정치적 입장</dt><dd>사림에 우호적인 외척 포용</dd>
+          <dt>학문</dt><dd>주로 이이·성혼의 학문을 따름</dd>
+          <dt>구성(EBS)</dt><dd>명종 때부터 정치에 참여한 사림, 경기와 충청 지방의 사림 중심</dd>
+        </dl>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">선조 시기 서인에 대한 입장 차이로 동인은 다시 북인(서인에 강경한 대응)과 남인(온건한 대처)으로 분열하였다. (교과서 방주)</p>
+    <div class="note-box">동인·서인에서 갈라진 붕당들이 이후 어떻게 공존하고 대립했는지는 <a href="Ⅰ-1-4-01_조선후기정치의변화_도표(해설포함).html#bungdang">「조선 후기 정치의 변화」 — 붕당 정치가 전개되다</a>에서 이어서 다룬다.</div>
+
+    <div class="think-box">
+      <h4>질문+ — 교과서의 열린 질문</h4>
+      <ol>
+        <li>사림이 이조 전랑 임명 문제를 중요하게 여긴 까닭을 말해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="gongron">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>공론에 따른 붕당 정치</h2>
+    </div>
+    <p class="block-sub">각 붕당은 상대 당의 정책을 비판하고 견제하며 공론에 따른 정치를 추구하였다. 또한 집권의 정당성을 마련하기 위해 지방 사족의 지지를 얻으려 하였다.</p>
+
+    <div class="branch-root">공론 — ‘성리학에 부합하는 공정한 견해’</div>
+    <p class="branch-cause">붕당, 서원 등에서 형성된 사족의 여론인 공론을 중앙 정치에 반영하는 과정에서 세 주체의 역할이 중요해졌다.</p>
+    <div class="branch-cols">
+      <div class="branch-col brass">
+        <h4>3사</h4>
+        <p class="why">중앙에서</p>
+        <div class="branch-node">언론 활동으로 공론이 중앙 정치에 반영되도록 함</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>서원</h4>
+        <p class="why">향촌에서</p>
+        <div class="branch-node">지방 사족의 견해를 모음</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>산림</h4>
+        <p class="why">사족의 대표로</p>
+        <div class="branch-node">‘학문과 덕이 높지만 벼슬을 하지 않는 선비’ — 지방 사족을 대표하고 제자들을 키워 중앙 정치에도 영향력 행사, 여론 주도</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>이처럼 붕당 정치는 상대 당에 대한 비판과 견제, 그리고 향촌 사족의 여론을 바탕으로 운영되었다.</p></div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>정리 — 사림의 성장과 붕당</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>네 차례의 사화</caption>
+      <thead><tr><th>사화</th><th>시기</th><th>원인</th></tr></thead>
+      <tbody>
+        <tr><td class="hd crimson">무오사화(1498)</td><td>연산군</td><td>김종직의 「조의제문」을 문제 삼아 사림 축출</td></tr>
+        <tr><td class="hd crimson">갑자사화(1504)</td><td>연산군</td><td>연산군 생모 윤씨의 폐비 사건과 관련된 훈구와 사림 제거</td></tr>
+        <tr><td class="hd crimson">기묘사화(1519)</td><td>중종</td><td>조광조의 급진적 개혁에 공신들이 반발</td></tr>
+        <tr><td class="hd crimson">을사사화(1545)</td><td>명종</td><td>외척 대윤과 소윤의 다툼</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>세력별 정리</caption>
+      <thead><tr><th>세력</th><th>특징</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">훈구</td><td>세조 즉위를 도운 공신, 주요 관직 독점, 토지·노비 확대</td></tr>
+        <tr><td class="hd brass">사림</td><td>정몽주·길재의 학통, 지방 사족, 왕도 정치·향촌 자치, 3사에서 훈구 비판, 서원·향약 기반</td></tr>
+        <tr><td class="hd brass">동인</td><td>외척 철저 배제, 조식·서경덕·이황의 학문</td></tr>
+        <tr><td class="hd brass">서인</td><td>우호적 외척 포용, 이이·성혼의 학문</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>사림은 어떤 과정을 거쳐 조선의 중앙 정치를 주도하게 되었을까?</li>
+        <li>붕당 정치의 모습은 어떠하였을까?</li>
+        <li>조광조와 관련해 ‘주초위왕’의 이야기가 전해지는 까닭은 무엇인지 생각해 보자.</li>
+        <li>붕당 정치와 오늘날 정당 정치의 공통점과 차이점에는 어떤 것이 있는지 생각해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 성종은 훈구를 견제하기 위해 김종직 등 (   )을/를 등용하였다.</summary>
+        <div class="check-answer">사림</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. (   )은/는 현량과 실시, 자격이 없는 사람의 공신 칭호 박탈 등의 정책을 주장하였다.</summary>
+        <div class="check-answer">조광조</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 선조 때 사림은 외척 세력 청산과 (   ) 임명 문제로 동인과 서인으로 나뉘었다.</summary>
+        <div class="check-answer">이조 전랑</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 동인은 조식, 서경덕, 이황의 학문을 계승하였고 외척을 철저히 배제하자고 주장하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q5. 훈구는 유교 윤리를 바탕으로 하여 향촌 자치를 주장하였다. (○, ×)</summary>
+        <div class="check-answer">× — 향촌 자치를 주장한 세력은 사림이다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 사림 세력은 성종 때 주로 3사에 임명되어 훈구의 비리와 부정을 비판하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q7. 훈구 세력은 연산군을 몰아내고 중종을 즉위시켰다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q8. 서인 세력은 선조 즉위 이후 중앙 정계에 진출하였으며, 척신 정치의 청산을 강력히 주장하였다. (○, ×)</summary>
+        <div class="check-answer">× — 동인에 대한 설명이다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q9. 조선 세조의 즉위를 도운 공신 세력인 (훈구 / 사림)은/는 고위 관직을 차지하며 권력을 독점하였다.</summary>
+        <div class="check-answer">훈구</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q10. 김종직이 쓴 「조의제문」을 문제 삼아 연산군과 훈구 세력이 사림 세력을 공격한 사건을 (무오 / 갑자)사화라고 한다.</summary>
+        <div class="check-answer">무오</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q11. 붕당 중 이황과 조식의 학문을 계승한 영남 지역의 사림을 (동인 / 서인)이라고 한다.</summary>
+        <div class="check-answer">동인</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q12. 고려 말 온건파 사대부의 학통을 계승하여 조선 시대에 지방에서 성리학 연구와 교육에 힘쓴 세력을 (   )(이)라 한다.</summary>
+        <div class="check-answer">사림</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q13. 조선 중종 때 등용된 조광조는 학문과 덕행이 뛰어난 인재를 추천받아 관리로 임용하는 제도인 (   )의 실시를 추진하였다.</summary>
+        <div class="check-answer">현량과</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q14. 양반 사족에 의해 만들어진 향촌 규약인 (   )은/는 서원과 함께 사림 세력의 성장 기반이 되었다.</summary>
+        <div class="check-answer">향약</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q15. 조선 선조 때 중앙 정계를 장악한 사림은 (   )의 임명 문제를 둘러싸고 대립하여 동인과 서인의 붕당을 형성하였다.</summary>
+        <div class="check-answer">이조 전랑</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅰ 「근대 이전 한국사의 이해」 「사림의 성장과 붕당의 등장」, 38–39쪽 — 본문·연표·사료·조광조의 정치관·역사 깊이 보기(주초위왕)·사료 읽기(붕당의 형성)·질문+·질문 더하기·확인하기의 기본 출처 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「조선의 정치 운영 변화」, 26–27쪽 — 훈구와 사림, 사화의 발생, 붕당의 형성과 전개, 자료 탐구, 개념 체크 문항 (1차 근거)</li>
+    </ol>
+    <div class="note">
+      함께 업로드된 이전 교육과정 교과서(112–113쪽)는 현행 교육과정 이전의 자료로, 갑자사화(1504)와 을사사화(1545)의 연도 확인에만 활용하였다. EBS 26쪽의 교육 제도 자료는 <a href="Ⅰ-1-3-01_조선의성립과발전_도표(해설포함).html">「조선의 성립과 발전」</a>에서 다루었다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-1-3-02)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p02-N과 대응)
+  const SECTION_PREFIX = "1-1-3-02";
+
+  const narrativeData = {
+    // 1-1-3-02-2: 사림이 중앙 정계에 진출하다  (대본 p02-2)
+    "1-1-3-02-2": [
+      "세조가 왕위에 오르는 과정에서 공을 세운 사람들은 그 대가로 높은 관직과 넓은 토지를 얻었습니다. 이들이 바로 <b>훈구</b>입니다.",
+      "권력이 한쪽에 몰리면 비리와 부정이 따르기 마련이었고, 성종은 이들을 견제할 세력이 필요했습니다.",
+      "그래서 불러들인 사람들이 김종직 등 <b>사림</b>입니다. 조선 건국에 반대했던 정몽주와 길재의 학통을 이어, 지방에서 성리학을 연구하고 가르치던 선비들이었지요.",
+      "왕이 인격을 닦고 신하와 함께 다스리는 왕도 정치를 꿈꾼 사림은 주로 3사에 자리 잡아, 언론의 힘으로 훈구의 잘못을 따졌습니다.",
+      "한쪽은 권력을 쥐고 있고, 다른 쪽은 그 권력을 비판하는 자리에 앉았습니다. 이 긴장은 왕이 바뀌자 곧 폭발합니다."
+    ],
+    // 1-1-3-02-3: 사화가 일어나다 — 연산군 시기  (대본 p02-3)
+    "1-1-3-02-3": [
+      "연산군이 즉위하자 훈구는 자신들을 비판해 온 사림을 공격했고, 사림의 비판을 못마땅하게 여긴 연산군도 여기에 힘을 보탰습니다.",
+      "첫 구실은 한 편의 글이었습니다. 김종직의 「조의제문」은 겉으로는 옛 중국 왕의 죽음을 애도했지만, 세조가 단종을 죽인 일을 돌려 비판한 글로 읽혔습니다.",
+      "제자 김일손이 이 글을 실록의 원고인 사초에 싣자 사림이 대거 쫓겨났습니다. 이것이 <b>무오사화</b>입니다.",
+      "이어 연산군의 생모 윤씨가 폐비된 사건이 다시 문제가 되면서 <b>갑자사화</b>가 일어났습니다.",
+      "두 차례의 화로 사림은 큰 피해를 입었고, 결국 연산군은 <b>중종반정</b>으로 쫓겨났습니다. 그렇다면 새 왕 아래에서 사림의 처지는 나아졌을까요?"
+    ],
+    // 1-1-3-02-4: 조광조의 개혁과 기묘사화  (대본 p02-4)
+    "1-1-3-02-4": [
+      "중종반정 뒤에는 반정에 공을 세운 신하들이 다시 큰 권력을 쥐었습니다. 성종이 그랬듯 중종도 사림을 불러 이들을 견제하려 했고, 그 중심에 <b>조광조</b>가 있었습니다.",
+      "조광조는 추천과 간단한 시험으로 인재를 뽑는 <b>현량과</b>를 실시해 사림을 대거 등용했습니다.",
+      "나아가 반정 공신 가운데 공이 없는 사람의 공신 칭호를 박탈하자고 했는데, 공신들에게는 자신의 지위를 직접 겨눈 주장이었습니다.",
+      "공신들은 강하게 반발했고, 급격한 개혁에 중종마저 부담을 느끼면서 1519년 <b>기묘사화</b>로 조광조 등 많은 사림이 제거되었습니다.",
+      "‘주초위왕’ 이야기가 실험으로는 사실이 아닐 가능성이 높은데도 오래 전해졌다는 점은 생각해 볼 만합니다.",
+      "명종 때 외척 다툼으로 한 번 더 피해를 입은 사림은, 이제 중앙이 아닌 다른 곳에서 힘을 기르게 됩니다."
+    ],
+    // 1-1-3-02-5: 붕당이 등장하다  (대본 p02-5)
+    "1-1-3-02-5": [
+      "사화로 중앙에서 밀려난 사림이 기댄 곳은 향촌이었습니다. <b>서원</b>과 <b>향약</b>을 기반으로 지방에서 꾸준히 세력을 넓혔습니다.",
+      "그사이 사림의 유교적 도덕 정치에 공감하는 관리도 늘어났고, 선조 때에 이르러 사림은 마침내 중앙 정치를 이끌게 됩니다.",
+      "그런데 정치를 이끌게 된 사림 안에서 의견이 갈리기 시작했습니다. 외척을 어디까지 청산할 것인가, 그리고 누구를 <b>이조 전랑</b>에 앉힐 것인가였습니다.",
+      "이조 전랑은 품계는 낮아도 3사 관리를 추천하고 후임자까지 정할 수 있는 자리였기 때문에, 이 자리를 두고 김효원과 심의겸이 맞섰습니다.",
+      "외척을 철저히 배제하자는 쪽은 <b>동인</b>, 우호적인 외척은 품자는 쪽은 <b>서인</b>이 되었습니다. 그렇다면 둘로 나뉜 사림은 어떤 방식으로 정치를 했을까요?"
+    ],
+    // 1-1-3-02-6: 공론에 따른 붕당 정치  (대본 p02-6)
+    "1-1-3-02-6": [
+      "붕당 정치에서 각 당이 내세운 기준은 <b>공론</b>, 곧 성리학에 맞는 공정한 견해였습니다.",
+      "각 붕당은 상대 당의 정책을 비판하고 견제하면서, 자신들의 주장이 공론에 맞는다는 것을 보여 주어야 했습니다.",
+      "그래서 집권의 정당성을 얻으려면 지방 사족의 지지가 필요했고, 이 연결 고리 역할을 한 것이 세 주체입니다.",
+      "중앙에서는 3사가 언론으로 공론을 정치에 반영했고, 향촌에서는 서원이 사족의 견해를 모았으며, 벼슬하지 않는 큰 학자인 <b>산림</b>이 여론을 이끌었습니다.",
+      "사화의 시대에 향촌으로 물러나 힘을 기른 사림의 경험이, 결국 향촌의 여론을 중앙으로 끌어올리는 정치 방식으로 이어진 셈입니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

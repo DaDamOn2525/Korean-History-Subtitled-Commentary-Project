@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>세도 정치와 농민 봉기(자막 해설) | 견제가 사라진 권력, 들고일어난 농민</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-1-4-01_조선후기정치의변화_도표(해설포함).html">‹ 이전: 조선 후기 정치의 변화</a>
+  <a href="Ⅰ-1-4_조선후기의변화_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#sedo">세도 정치</a>
+  <a href="#samjeong">삼정의 문란</a>
+  <a href="#hong">홍경래의 난</a>
+  <a href="#imsul">임술 농민 봉기</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 이전 한국사의 이해</span> · 조선 후기의 변화</div>
+    <h1>견제가 사라진 권력, 들고일어난 농민</h1>
+    <p class="lead">정조가 죽은 뒤 어린 순조가 즉위하자, 안동 김씨를 비롯한 소수의 가문이 60여 년간 권력을 독점하는 세도 정치가 전개되었다. 정치 기강이 무너지고 삼정이 문란해지자 백성의 고통은 더욱 심해졌고, 농민들은 홍경래의 난과 임술 농민 봉기로 저항하였다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1800 – 1862</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>권력 독점에서 농민 봉기까지</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 세도 정치</strong> · <strong style="color:var(--brass)">황동색 = 삼정의 문란</strong> · <strong style="color:var(--crimson)">적색 = 농민의 저항</strong>. 권력 독점이 기강 붕괴를, 기강 붕괴가 수탈을, 수탈이 봉기를 낳은 순서라 화살표로 이었다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">세도 정치</div>
+        <div class="step-desc">어린 순조 즉위 후 안동 김씨 등 소수 가문이 권력 독점</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">정치 기강 붕괴</div>
+        <div class="step-desc">왕권 약화, 3사의 견제 기능 상실, 과거 부정·관직 매매</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">삼정의 문란</div>
+        <div class="step-desc">수령과 아전의 과도한 세금 징수</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>지배층의 수탈과 잦은 재해로 살기 어려워진 농민들은 처음에는 소극적으로 항의하다가, 받아들여지지 않자 봉기를 일으켰다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">홍경래의 난(1811)</div>
+        <div class="step-desc">평안도 차별과 수탈에 저항</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">임술 농민 봉기(1862)</div>
+        <div class="step-desc">단성·진주에서 시작해 전국으로 확산</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-title">정부의 수습</div>
+        <div class="step-desc">안핵사·암행어사 파견, 삼정이정청 설치 → 큰 성과 없음</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 세도 정치</strong> · <strong style="color:var(--brass)">황동색 = 삼정의 문란과 수습</strong> · <strong style="color:var(--crimson)">적색 = 농민의 저항</strong></p>
+    <div class="timeline">
+      <div class="tl-item deep"><div class="tl-year">1800</div><div class="tl-body"><div class="tl-title">순조 즉위</div><div class="tl-desc">순조의 장인 김조순 중심의 안동 김씨가 권력 장악, 철종 때까지 60여 년간 세도 정치</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1811.12.</div><div class="tl-body"><div class="tl-title">홍경래 봉기</div><div class="tl-desc">한때 청천강 이북 지역 장악</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1812.4.</div><div class="tl-body"><div class="tl-title">관군, 정주성 함락</div><div class="tl-desc">홍경래의 난 진압</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1862.2.</div><div class="tl-body"><div class="tl-title">임술 농민 봉기</div><div class="tl-desc">단성·진주를 시작으로 전국에서 농민 봉기</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1862</div><div class="tl-body"><div class="tl-title">삼정이정청 설치</div><div class="tl-desc">진주에 파견된 안핵사 박규수의 건의</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="sedo">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>세도 정치가 시작되다</h2>
+    </div>
+    <p class="block-sub">정조가 죽은 뒤 순조가 어린 나이로 즉위하자 권력 다툼이 벌어졌다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">외척의 권력 장악</div>
+        <div class="step-desc">순조의 장인 김조순을 중심으로 하는 안동 김씨가 권력 장악 — 헌종 때는 풍양 조씨 등도 세도</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">세도 정치</div>
+        <div class="step-desc">철종 때까지 60여 년간(EBS: 순조·헌종·철종 3대) 소수의 가문이 권력 독점</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">권력 기반</div>
+        <div class="step-desc">비변사의 주요 관직 차지, 5군영 등 중앙군 장악(EBS: 훈련도감 등 5군영의 지휘권)</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>그 결과 왕권이 크게 약화되었으며, 3사도 비판과 견제의 기능을 잃는 등 정치 기강이 무너졌다.</p></div>
+
+    <div class="quote-block deep">
+      <h4>사료 읽기 — 안동 김씨의 나라</h4>
+      안동 김씨 출신 벼슬아치가 반이나 되니, 나라 안에서는 안동 김씨가 있는 줄만 알고 국가가 있는 줄은 몰랐다.
+      <div class="src">황현, 『오하기문』 (재구성)</div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>‘세도’의 뜻</h4>
+        원래 ‘세도(世道)’는 세상의 도리, 곧 도리에 맞게 정치를 이끌 책임을 의미 — 19세기에는 국왕을 대신해 정치를 이끈다는 뜻으로 쓰였으나, 비판하던 사람들은 권세를 뜻하는 ‘세도(勢道)’ 정치라 비판
+      </div>
+      <div class="compare-card">
+        <h4>붕당 정치와 다른 점</h4>
+        세도 정치는 붕당과 달리 비판 세력조차 없었기 때문에 세도 가문의 횡포를 견제할 수 없었음
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">『오하기문』 — 황현이 민담, 소문, 신문 기사 등을 바탕으로 세도 정치, 동학 농민 운동 등에 대해 쓴 책. 세도 정치 시기 왕비는 대부분 안동 김씨였다.</p>
+  </section>
+
+  <section class="block" id="samjeong">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>삼정이 문란해지다</h2>
+    </div>
+    <p class="block-sub">정치 기강이 무너지면서 그 부담은 결국 백성에게 돌아갔다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">과거와 관직의 타락</div>
+        <div class="step-desc">과거 시험이 공정함을 잃고, 돈을 받고 관직을 사고파는 일 증가 — 수령은 2~3만 냥, 관찰사는 5~6만 냥 정도에 거래</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">수탈</div>
+        <div class="step-desc">뇌물을 주고 관직을 산 관리들이 백성을 수탈하여 이를 보상받으려 함(EBS) — 수령과 아전이 여러 명목으로 과도하게 세금 징수</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">백성의 고통</div>
+        <div class="step-desc">삼정이 문란해져 백성의 고통이 더욱 심해짐</div>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>삼정과 그 문란</caption>
+      <thead><tr><th>삼정</th><th>뜻</th><th>문란의 모습(탐구하는 한국사 ‘심층 인터뷰’)</th></tr></thead>
+      <tbody>
+        <tr><td class="hd brass">전정</td><td>토지에 세금을 부과하는 것</td><td>토지에 갖가지 세금을 부과했는데 양반은 세금을 내지 않고 농민만 많은 세금을 냄</td></tr>
+        <tr><td class="hd brass">군정</td><td>군 복무 대신 옷감(군포)을 거두는 것</td><td>어린아이나 노인에게도 군포를 물리고, 죽은 사람의 군포를 내게 하거나 모르는 사람을 친척이라 우겨 걷기도 함 — ‘사돈의 팔촌’이라는 말이 생김</td></tr>
+        <tr><td class="hd brass">환정(환곡)</td><td>농민에게 곡식을 빌려주고 이자와 함께 돌려받는 것</td><td>수령과 향리가 환곡을 빼돌리고 부족한 곡식을 백성에게 내게 함, 강제로 빌리게 하고 높은 이자를 받음</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="sidebox">
+      <h4>자료 탐구 2 — 삼정의 문란</h4>
+      <div class="quote-block crimson">
+        시아버지는 죽어 상복을 입었고 갓난아이는 배냇물도 안 말랐는데, 삼대의 이름이 군적에 다 실렸네. 부잣집은 낱알 한 톨 바치지 않으니 이다지도 불공평한가.
+        <div class="src">정약용, 『여유당전서』 (재구성)</div>
+      </div>
+      <p>정약용이 지은 시로, 관리들이 죽은 사람과 갓난아이에게도 군포를 걷는 횡포를 고발하고, 백성은 군포로 큰 고통을 받지만 부호들은 세금을 내지 않는 모순도 묘사하고 있다.</p>
+      <ol>
+        <li>조선 후기 백성들의 삶을 어렵게 한 상황에는 어떤 것이 있는지 조사해 보자.</li>
+        <li>노래 하나를 정하고, 1에서 조사한 내용을 풍자하는 가사로 바꾸어 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="hong">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>홍경래의 난</h2>
+    </div>
+    <p class="block-sub">지배층의 수탈과 잦은 재해로 살기 어려워진 농민들은 처음에는 소극적인 방법으로 불만을 나타냈다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">소극적 항의</div>
+        <div class="step-desc">수령의 비리를 퍼뜨리거나 투서·벽보를 붙임, 밤에 산에 올라 횃불을 들고 소리쳐 항의</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">봉기(1811)</div>
+        <div class="step-desc">항의가 받아들여지지 않자 적극적인 봉기 — 평안도에 대한 차별 대우와 정부(세도 정치기 지배층)의 수탈에 저항</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">진압(1812)</div>
+        <div class="step-desc">한때 청천강 이북 지역(EBS: 곽산·정주 등) 장악 → 정주성 전투에서 관군에 패배</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>봉기에는 홍경래를 중심으로 신흥 상공업자, 광산 노동자, 가난한 농민(EBS: 평안도 지역의 몰락 양반 등) 등 다양한 세력이 참여하였다.</p></div>
+
+    <div class="sidebox">
+      <h4>자료 탐구 3 — 평안도 지역 차별과 홍경래의 난</h4>
+      <div class="quote-grid">
+        <div class="quote-block deep">
+          <h4>자료 1 — 평안도 지역 차별</h4>
+          임금께서 서북 사람을 기용하라 엄히 명령하셨지만, 실제로 채용하는 일은 없었습니다.
+          <div class="src">『승정원일기』 (재구성)</div>
+        </div>
+        <div class="quote-block crimson">
+          <h4>자료 2 — 홍경래의 격문</h4>
+          조정이 평안도를 썩은 흙처럼 버렸다. 어린 임금 아래 김조순·박종경의 무리가 권력을 제멋대로 한다.
+          <div class="src">『패림』 (재구성)</div>
+        </div>
+      </div>
+      <p>조선 시대 평안도는 많은 과거 급제자를 배출했지만 관직 진출 등에서 차별을 받았다. 또한 중국과의 무역으로 경제적으로 부유했기 때문에 세도 정권의 수탈이 심하였다. 이러한 불만이 쌓여 1811년 홍경래의 난이 일어났다.</p>
+      <ol>
+        <li>자료 2에서 홍경래가 봉기한 까닭을 찾아보자.</li>
+      </ol>
+    </div>
+
+    <div class="sidebox">
+      <h4>생각+ — 홍경래 난은 어떤 영향을 끼쳤을까?</h4>
+      <p>홍경래의 난이 진압된 이후에도 홍경래가 죽지 않았다는 소문이 퍼졌으며, 이러한 소문을 바탕으로 난을 계획하는 사람들이 나타났다. 또한 홍경래의 난으로 민중 의식이 성장하였고, 이는 이후 임술 농민 봉기 등 대규모 농민 봉기로 이어졌다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="imsul">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>임술 농민 봉기 — 농민들이 들고일어난 까닭</h2>
+    </div>
+    <p class="block-sub">탐구하는 한국사 — 임술년인 1862년 2월, 경상도 단성과 진주를 시작으로 전국에서 농민들이 봉기하였다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">발단</div>
+        <div class="step-desc">단성(산청)·진주에서 시작 — EBS: 경상 우병사 백낙신의 부정부패에 대한 항의로 진주 농민 봉기 발생</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">전국 확산</div>
+        <div class="step-desc">경상도·전라도·충청도를 중심으로 수십 곳 — EBS: 북으로는 함흥, 남으로는 제주까지</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">정부의 수습</div>
+        <div class="step-desc">안핵사 파견(EBS: 암행어사 파견), 삼정이정청을 설치해 삼정의 문란을 바로잡으려 함 → 큰 성과를 거두지 못함</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">안핵사 — 농민 봉기 수습을 위해 파견된 관리. 교과서는 “이전에는 암행어사를 서술하였으나 안핵사 파견이 더 일반적이어서 안핵사를 서술하였다”고 밝히고 있고, EBS는 암행어사 파견으로 서술한다. 삼정이정청 — 1862년 5월 진주에 안핵사로 파견된 박규수의 건의로 삼정의 폐단을 고치기 위해 임시로 만든 관청. 군정과 전정은 옛 제도를 기본으로 폐단만 고치고, 환곡은 근본적으로 개혁해 토지에 부과하는 방법을 내놓았다.</p>
+
+    <div class="quote-grid">
+      <div class="quote-block brass">
+        <h4>공주 농민의 요구</h4>
+        조세는 늘 7량 5전으로 정해 거둘 것. 군포는 집마다 균등하게 부담시킬 것. 환곡의 폐단을 없앨 것.
+        <div class="src">『용호한록』 (재구성)</div>
+      </div>
+      <div class="quote-block crimson">
+        <h4>진주 농민 봉기</h4>
+        진주 사람 수만 명이 흰 수건을 두르고 몽둥이를 들고 모여, 아전이 세금을 빼돌린 것을 꾸짖었다.
+        <div class="src">『임술록』 (재구성)</div>
+      </div>
+      <div class="quote-block deep">
+        <h4>안핵사 박규수가 본 봉기 원인</h4>
+        농민들이 죄에 빠진 까닭은 삼정이 모두 문란해졌기 때문이며, 그 고통은 환곡이 으뜸입니다.
+        <div class="src">『철종실록』 (재구성)</div>
+      </div>
+    </div>
+
+    <div class="causal-link"><p>임술 농민 봉기는 농민이 조세 제도의 폐단에 직접 저항하였다는 점과 농민의 사회의식 성장에 기여하였다는 점에서 의의를 가진다(EBS).</p></div>
+
+    <div class="think-box">
+      <h4>생각 키우기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>농민들이 봉기한 까닭을 정리해 보자.</li>
+        <li>당시 농민들의 입장에서 정부에 개선을 요청하는 현수막을 만들어 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>정리 — 세도 정치와 농민 봉기</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>19세기 두 차례의 대표적 농민 봉기</caption>
+      <thead><tr><th>구분</th><th>홍경래의 난(1811)</th><th>임술 농민 봉기(1862)</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">배경</td><td>평안도에 대한 차별 대우, 세도 정치기 지배층의 수탈</td><td>삼정의 문란으로 인한 지방관의 과도한 수탈</td></tr>
+        <tr><td class="hd">참여·발단</td><td>홍경래 중심, 신흥 상공업자·광산 노동자·가난한 농민·몰락 양반</td><td>단성·진주에서 시작(백낙신의 부정부패에 대한 항의)</td></tr>
+        <tr><td class="hd">전개</td><td>청천강 이북 장악 → 정주성에서 관군에 패배</td><td>경상·전라·충청 중심, 북으로 함흥·남으로 제주까지 확산</td></tr>
+        <tr><td class="hd">결과·영향</td><td>진압, 민중 의식 성장 → 이후 대규모 농민 봉기로 이어짐</td><td>안핵사(암행어사) 파견·삼정이정청 설치 → 큰 성과 없음</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>세도 정치의 문제점은 무엇일까?</li>
+        <li>세도 정치 시기에 농민 봉기가 자주 일어난 까닭은 무엇일까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 세도 정치기에 세도 가문은 (   )을/를 중심으로 권력을 행사하였다.</summary>
+        <div class="check-answer">비변사</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. (   )은/는 1862년 단성, 진주를 시작으로 전국에서 농민들이 봉기한 것이다.</summary>
+        <div class="check-answer">임술 농민 봉기</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅰ 「근대 이전 한국사의 이해」 4 「조선 후기의 변화」 02 「세도 정치와 농민 봉기」, 46–47쪽 — 본문·연표·지도·사료·생각+·탐구하는 한국사(농민들이 들고일어난 까닭)·확인하기의 기본 출처, 51쪽 자료 탐구 2(삼정의 문란)·3(평안도 지역 차별과 홍경래의 난) (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「세도 정치와 흥선 대원군의 통치」, 36쪽 — 세도 정치의 전개, 하층민의 봉기 (1차 근거)</li>
+    </ol>
+    <div class="note">
+      함께 업로드된 이전 교육과정 교과서(126–127쪽)는 현행 교육과정 이전의 자료로, 이 소주제에는 반영하지 않았다. EBS의 흥선 대원군 관련 자료는 이 소주제 범위를 벗어나 반영하지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-1-4-02)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p02-N과 대응)
+  const SECTION_PREFIX = "1-1-4-02";
+
+  const narrativeData = {
+    // 1-1-4-02-2: 세도 정치가 시작되다  (대본 p02-2)
+    "1-1-4-02-2": [
+      "정조는 강한 왕권으로 붕당의 대립을 눌러 두었습니다. 그런데 그 정조가 세상을 떠나고 어린 순조가 왕위에 오르자, 권력의 빈자리를 두고 다툼이 벌어졌습니다.",
+      "그 다툼의 승자는 순조의 장인 <b>김조순</b>을 중심으로 한 <b>안동 김씨</b>였습니다. 이후 철종 때까지 60여 년 동안 소수의 가문이 권력을 독점했는데, 이것이 <b>세도 정치</b>입니다.",
+      "세도 가문은 나라의 중요한 일을 결정하던 <b>비변사</b>의 주요 관직을 차지하고, 5군영 같은 중앙군까지 손에 넣었습니다.",
+      "붕당 정치 때는 그래도 서로를 비판하고 견제하는 상대가 있었지만, 세도 정치에는 그런 비판 세력조차 없었습니다. 왕권은 크게 약해졌고 3사도 견제 기능을 잃었습니다.",
+      "견제가 사라진 권력은 어디로 향했을까요? 그 답은 백성이 내는 세금에서 드러납니다."
+    ],
+    // 1-1-4-02-3: 삼정이 문란해지다  (대본 p02-3)
+    "1-1-4-02-3": [
+      "정치 기강이 무너지자 과거 시험도 공정함을 잃었고, 돈으로 관직을 사고파는 일이 늘었습니다.",
+      "큰돈을 내고 관직을 산 사람은 그 돈을 어디서 되찾으려 했을까요? 바로 백성이었습니다. 수령과 아전은 여러 명목을 붙여 지나치게 세금을 거두었고, 토지세·군포·환곡의 세 가지, 곧 <b>삼정</b>이 문란해졌습니다.",
+      "토지세인 <b>전정</b>에서는 양반은 빠지고 농민만 무거운 세금을 졌습니다. 군포를 걷는 <b>군정</b>에서는 갓난아이와 죽은 사람에게까지 군포를 물렸습니다.",
+      "가난한 농민을 돕기 위한 <b>환곡</b>마저 강제로 빌려주고 높은 이자를 받는 수탈 수단이 되었습니다.",
+      "정약용이 시에서 고발한 것처럼, 같은 백성인데도 가난한 집은 모든 것을 바치고 부잣집은 아무것도 내지 않는 불공평이 이어졌습니다. 참다못한 농민들은 결국 행동에 나서게 됩니다."
+    ],
+    // 1-1-4-02-4: 홍경래의 난  (대본 p02-4)
+    "1-1-4-02-4": [
+      "처음부터 농민들이 무기를 든 것은 아니었습니다. 수령의 비리를 소문내고, 벽보를 붙이고, 밤에 산에 올라 횃불을 들고 소리치는 방식으로 먼저 항의했습니다.",
+      "하지만 이런 항의가 받아들여지지 않자, 저항은 봉기로 바뀌었습니다.",
+      "1811년 평안도에서 <b>홍경래의 난</b>이 일어났습니다. 평안도 사람들은 과거에 많이 합격해도 관직에 나아가기 어려웠고, 무역으로 부유한 지역이라 세도 정권의 수탈도 심했습니다.",
+      "그래서 몰락 양반과 신흥 상공업자, 광산 노동자, 가난한 농민까지 함께 일어나 한때 청천강 이북을 차지했지만, 결국 <b>정주성</b>에서 관군에 진압되었습니다.",
+      "그러나 이야기는 여기서 끝나지 않았습니다. 홍경래가 살아 있다는 소문이 퍼졌고, 이 경험은 반세기 뒤 더 큰 봉기로 이어집니다."
+    ],
+    // 1-1-4-02-5: 임술 농민 봉기 — 농민들이 들고일어난 까닭  (대본 p02-5)
+    "1-1-4-02-5": [
+      "1862년 2월, 경상도 단성과 진주에서 농민들이 들고일어났습니다. 진주에서는 관리의 부정부패에 대한 항의가 불씨가 되었습니다.",
+      "봉기는 경상도, 전라도, 충청도를 중심으로 북으로는 함흥, 남으로는 제주까지 퍼져 나갔습니다. 이것이 <b>임술 농민 봉기</b>입니다.",
+      "농민들의 요구를 보면 원인이 분명히 드러납니다. 공주 농민은 조세를 정해진 대로 걷고, 군포를 고르게 나누고, 환곡의 폐단을 없애 달라고 했습니다. 정부가 보낸 박규수조차 원인을 <b>삼정</b>의 문란이라고 보았지요.",
+      "정부는 안핵사를 보내고 <b>삼정이정청</b>을 설치해 바로잡으려 했지만, 큰 성과를 거두지는 못했습니다.",
+      "그렇다고 봉기가 의미 없었던 것은 아닙니다. 농민이 잘못된 조세 제도에 직접 맞섰고, 그 과정에서 자신들의 처지를 바라보는 사회의식도 자라났기 때문입니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

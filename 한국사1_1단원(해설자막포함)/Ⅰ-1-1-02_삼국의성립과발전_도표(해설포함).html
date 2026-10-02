@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>삼국의 성립과 발전(자막 해설) | 한강을 차지하는 나라가 시대를 이끌다</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-1-1-01_선사와고조선여러나라_도표(해설포함).html">‹ 이전: 선사와 고조선, 여러 나라</a>
+  <a href="Ⅰ-1-1_고대국가의성장_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#ancient">고대 국가로의 발전</a>
+  <a href="#growth">삼국과 가야의 성장</a>
+  <a href="#rivalry">백제·고구려의 주도권</a>
+  <a href="#silla">신라의 한강 차지</a>
+  <a href="#suitang">수·당과의 전쟁</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-1-1-03_통일신라와발해_도표(해설포함).html">다음: 통일 신라와 발해 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 이전 한국사의 이해</span> · 고대 국가의 성장</div>
+    <h1>한강을 차지하는 나라가 시대를 이끌다</h1>
+    <p class="lead">여러 부가 연합한 초기 국가였던 고구려·백제·신라는 정복 전쟁을 거치며 왕권을 키우고 율령과 불교를 받아들여 중앙 집권적 고대 국가로 성장하였다. 세 나라는 한반도의 중심인 한강 유역을 두고 치열하게 다투었고, 4세기 백제, 5세기 고구려, 6세기 신라가 차례로 그 주도권을 잡았다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">기원전 1세기 – 7세기</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>세 나라의 성장, 한강을 둘러싼 경쟁</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 고구려</strong> · <strong style="color:var(--crimson)">적색 = 백제</strong> · <strong style="color:var(--brass)">황동색 = 신라</strong> · <strong style="color:var(--ink-soft)">회색 = 가야</strong>. 세 나라는 각자 고대 국가로 성장하였으므로 갈래로 그렸고, 한강 유역의 주도권은 한 나라에서 다음 나라로 넘어갔으므로 화살표로 이었다.</p>
+
+    <div class="branch-root">초기 국가 — 여러 부가 연합하여 이룬 나라</div>
+    <p class="branch-cause">주변을 정복하며 왕권이 강해지자, 각 나라는 율령을 반포하고 불교를 받아들여 왕 중심의 중앙 집권적 고대 국가로 발전하였다.</p>
+    <div class="branch-cols">
+      <div class="branch-col deep">
+        <h4>고구려</h4>
+        <p class="why">부여에서 온 주몽 세력이 건국</p>
+        <div class="branch-node">태조왕 → 소수림왕(불교·태학·율령) → 광개토 대왕·장수왕</div>
+      </div>
+      <div class="branch-col crimson">
+        <h4>백제</h4>
+        <p class="why">부여·고구려계 유이민과 한강 토착 세력이 건국</p>
+        <div class="branch-node">고이왕(관등제) → 근초고왕 → 침류왕(불교) → 성왕</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>신라</h4>
+        <p class="why">진한의 소국 사로국에서 출발</p>
+        <div class="branch-node">내물왕(마립간) → 지증왕 → 법흥왕(율령·불교) → 진흥왕</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">가야 — 변한 지역의 소국들이 연맹을 이루었으나 중앙 집권적 고대 국가로 성장하지 못한 채 신라에 병합되었다.</p>
+
+    <div class="causal-link"><p>세 나라가 서로 국경을 맞대자, 한반도의 중앙인 한강 유역을 차지하려는 다툼이 본격화되었다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">4세기 — 백제</div>
+        <div class="step-desc">근초고왕, 고구려 평양성 공격</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">5세기 — 고구려</div>
+        <div class="step-desc">광개토 대왕·장수왕, 한강 유역 전체 차지</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">6세기 — 신라</div>
+        <div class="step-desc">진흥왕, 한강 유역 차지</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 고구려</strong> · <strong style="color:var(--crimson)">적색 = 백제</strong> · <strong style="color:var(--brass)">황동색 = 신라</strong> · <strong style="color:var(--ink-soft)">회색 = 가야</strong></p>
+    <div class="timeline wide">
+      <div class="tl-item turn"><div class="tl-year">기원전 57</div><div class="tl-body"><div class="tl-title">신라 건국</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">기원전 37</div><div class="tl-body"><div class="tl-title">고구려 건국</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">기원전 18</div><div class="tl-body"><div class="tl-title">백제 건국</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1세기 후반</div><div class="tl-body"><div class="tl-title">고구려 태조왕, 옥저 복속</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">260</div><div class="tl-body"><div class="tl-title">백제, 관등제 실시(고이왕)</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">4세기 후반</div><div class="tl-body"><div class="tl-title">백제 근초고왕, 고구려 평양성 공격</div><div class="tl-desc">고국원왕 전사</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">372</div><div class="tl-body"><div class="tl-title">고구려, 불교 수용 · 태학 설립(소수림왕)</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">373</div><div class="tl-body"><div class="tl-title">고구려, 율령 반포</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">384</div><div class="tl-body"><div class="tl-title">백제, 불교 수용(침류왕)</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">400</div><div class="tl-body"><div class="tl-title">고구려 광개토 대왕, 신라 구원</div><div class="tl-desc">금관가야 약화</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">427</div><div class="tl-body"><div class="tl-title">고구려 장수왕, 평양 천도</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">433</div><div class="tl-body"><div class="tl-title">나제 동맹</div><div class="tl-desc">미래엔 교과서 보충</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">475</div><div class="tl-body"><div class="tl-title">한성 함락, 백제의 웅진 천도</div><div class="tl-desc">미래엔 교과서 보충</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">512</div><div class="tl-body"><div class="tl-title">신라, 우산국 복속(지증왕, 이사부)</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">520</div><div class="tl-body"><div class="tl-title">신라, 율령 반포(법흥왕)</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">527</div><div class="tl-body"><div class="tl-title">신라, 불교 공인</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">532</div><div class="tl-body"><div class="tl-title">신라, 금관가야 병합</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">554</div><div class="tl-body"><div class="tl-title">관산성 전투, 백제 성왕 전사</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">562</div><div class="tl-body"><div class="tl-title">신라 진흥왕, 대가야 정복</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">612</div><div class="tl-body"><div class="tl-title">살수 대첩(을지문덕)</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">645</div><div class="tl-body"><div class="tl-title">안시성 전투</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="ancient">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>초기 국가에서 중앙 집권적 고대 국가로</h2>
+    </div>
+    <p class="block-sub">삼국은 처음에 여러 부가 연합한 나라였으나, 정복 전쟁을 거치며 왕을 중심으로 한 고대 국가로 바뀌었다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h4>초기 국가</h4>
+        <dl>
+          <dt>구조</dt><dd>여러 부가 연합, 각 부의 지배자가 독자적으로 관리를 두고 백성을 다스림</dd>
+          <dt>왕</dt><dd>가장 강한 부의 지배자가 왕으로 추대, 외교와 군사 담당</dd>
+          <dt>의사 결정</dt><dd>중요한 일은 각 부의 지배자들과 합의 — 고구려의 제가 회의 등 회의 제도 발달</dd>
+        </dl>
+      </div>
+      <div class="compare-card deep">
+        <h4>중앙 집권적 고대 국가</h4>
+        <dl>
+          <dt>구조</dt><dd>왕권 강화로 각 부의 독자성 약화, 각 부와 복속 지역의 지배자는 왕 아래의 귀족이 됨</dd>
+          <dt>제도</dt><dd>왕 중심의 관등제 마련, 신분제 정비, 왕이 귀족 회의를 맡을 관리를 임명하고 결정 사항을 허락</dd>
+          <dt>통치 기반</dt><dd>율령 반포, 불교 수용</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="causal-link"><p>주변 지역을 정복하는 전쟁을 왕이 주도하면서 왕의 권력이 커졌고, 그만큼 각 부의 힘은 약해졌다.</p></div>
+
+    <table class="data-table">
+      <caption>고대 국가 체제의 두 기둥</caption>
+      <tbody>
+        <tr><td class="hd">율령</td><td>율(범죄를 처벌하는 법) + 령(행정에 관한 법), 중국에서 발전한 법률 체계 — 왕의 이름으로 반포되면서 귀족도 왕의 지배를 받는 존재가 됨. 고구려는 소수림왕, 신라는 법흥왕 때 반포, 백제는 고이왕 또는 근초고왕 무렵 반포한 것으로 추정</td></tr>
+        <tr><td class="hd">불교</td><td>왕권을 뒷받침하고 국가를 정신적으로 통합</td></tr>
+      </tbody>
+    </table>
+
+    <div class="quote-block">
+      <h4>제가 회의</h4>
+      고구려는 범죄자가 있으면 제가가 모여 논의하여 사형에 처하고, 처와 자식은 노비로 삼았다.
+      <div class="src">범엽, 『후한서』 (재구성)</div>
+    </div>
+    <p style="font-size:13.5px; color:var(--ink-soft);">삼국의 귀족 회의 — 고구려의 제가 회의, 백제의 제솔 회의(이후 정사암 회의), 신라의 제간 회의(이후 화백). (교과서 방주)</p>
+
+    <div class="sidebox">
+      <h4>생각+ — 율령이 왕권 강화와 관련된 이유는?</h4>
+      <p>율령에는 중국 왕조들이 황제 중심의 중앙 집권 체제를 정비한 내용이 담겨 있었다. 그래서 삼국이 율령을 받아들인 것은 단순히 법을 들여온 것이 아니라 중앙 집권적 통치 체제를 받아들인 것으로 본다. 또 율령이 왕의 이름으로 반포되면서 왕의 위상은 높아지고, 귀족은 그 율령의 제약을 받게 되었다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="growth">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>삼국과 가야가 성장하다</h2>
+    </div>
+    <p class="block-sub">1세기부터 4세기까지, 각 나라는 주변 세력을 아우르며 나라의 틀을 갖추어 갔다.</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <thead><tr><th>나라</th><th>건국과 출발</th><th>성장과 체제 정비</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">고구려</td><td>부여에서 온 주몽 세력이 압록강 중류 졸본에서 건국, 국내성으로 천도</td><td>1세기 후반 태조왕: 옥저 복속, 한 군현 공격 / 4세기 전연·백제의 공격으로 위기 → 4세기 후반 소수림왕: 불교 수용, 태학 설립, 율령 반포</td></tr>
+        <tr><td class="hd crimson">백제</td><td>부여·고구려계 유이민과 한강 토착 세력이 건국, 마한의 한 소국</td><td>3세기 고이왕: 관등제 정비, 등급별 관복 색(자주·붉은·푸른색), 목지국 병합으로 한강 유역 대부분 차지</td></tr>
+        <tr><td class="hd brass">신라</td><td>진한의 소국 사로국에서 출발, 초기에는 박·석·김씨가 돌아가며 왕위</td><td>4세기 말 내물왕: 김씨 왕위 세습 확립, '마립간' 칭호 / 왜와 가야를 물리치려 고구려 광개토 대왕의 도움을 받으며 고구려의 간섭을 받음</td></tr>
+        <tr><td class="hd">가야 연맹</td><td>낙동강 하류 변한 지역의 여러 소국이 연맹</td><td>초기 김해의 금관가야가 주도 — 질 좋은 철을 생산·수출하며 활발히 교류, 백제·신라와 경쟁</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">고구려 고국천왕 때 부족적 전통의 5부가 행정적 성격으로 개편되었다(EBS 개념완성). 다만 방위명 5부에 대한 실제 기록은 남아 있지 않아 추정이다(교과서 방주). '마립간'은 『삼국사기』에는 눌지왕, 『삼국유사』에는 내물왕 때부터 사용되었다고 전하며, 일반적으로 『삼국유사』를 따른다.</p>
+
+    <table class="data-table">
+      <caption>신라의 왕호 변천</caption>
+      <thead><tr><th>사용 시기</th><th>1대 박혁거세</th><th>2대 남해</th><th>3대 유리</th><th>17대 내물</th><th>22대 지증</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">호칭</td><td>거서간</td><td>차차웅</td><td>이사금</td><td>마립간</td><td>국왕</td></tr>
+        <tr><td class="hd">의미</td><td>군장, 족장</td><td>제사장</td><td>연장자</td><td>대군장</td><td>중국식 왕호</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sidebox">
+      <h4>생각+ — '삼국 시대'라 불러야 할까?</h4>
+      <p>삼국 시대로 불리는 시기의 한반도와 만주에는 부여, 가야, 탐라 등 여러 나라가 있었다. 고구려·백제·신라만 남은 것은 가야가 멸망한 6세기 이후이다. 이런 점을 보완하려고 '열국 시대'라는 말을 쓰자는 의견도 있다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="rivalry">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>백제와 고구려가 차례로 주도권을 잡다</h2>
+    </div>
+    <p class="block-sub">4세기에는 백제가, 5세기에는 고구려가 삼국 항쟁의 주도권을 잡았다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">백제 근초고왕(4세기 후반)</div>
+        <div class="step-desc">남쪽으로 마한의 남은 세력 공격, 가야에도 영향력 / 북쪽으로 고구려 평양성 공격(고국원왕 전사), 황해도 일대 차지 / 중국 동진·왜와 교류</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">백제 침류왕(4세기 말)</div>
+        <div class="step-desc">동진에서 불교 수용</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">칠지도(일본 나라) — 백제 왕세자가 왜왕에게 주려고 만들었다는 명문이 있어 백제와 왜의 교류를 보여 준다.</p>
+
+    <div class="causal-link"><p>고구려는 소수림왕 때 다져 놓은 체제를 바탕으로 영토를 크게 넓히며 동북아시아의 강대국이 되었다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">광개토 대왕(4세기 말~)</div>
+        <div class="step-desc">백제를 공격해 한강 이북 점령, 만주 대부분 차지, 400년 신라에 침입한 왜 격퇴</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">장수왕(5세기)</div>
+        <div class="step-desc">427년 평양 천도, 남진 정책 → 백제 수도 한성 함락, 한강 유역 전체 차지</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">백제의 대응</div>
+        <div class="step-desc">신라와 나제 동맹(433, 보충) → 한성을 빼앗긴 뒤 웅진(공주)으로 천도(475, 보충) → 무령왕 때 국력 회복</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>고구려의 공격으로 금관가야의 세력이 약해지면서, 5세기 후반에는 고령의 대가야가 가야를 주도하였다.</p></div>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>고구려의 세력 확장을 보여 주는 자료</h4>
+        광개토 대왕릉비(중국 지린, 장수왕이 세움), 충주 고구려비, 경주 호우총의 '광개토 대왕' 명 청동 호우 — 신라 수도의 무덤에서 나와 당시 고구려와 신라의 관계를 보여 줌
+      </div>
+      <div class="compare-card">
+        <h4>자료 탐구 2 — 고구려와 신라의 관계 (교과서 25쪽)</h4>
+        왜의 침입을 받은 신라 왕이 구원을 요청하자, 광개토 대왕이 보병과 기병 5만 명을 보내 신라를 구하고 임나가라(금관가야로 추정)의 종발성까지 추격하였다. (「광개토 대왕릉비」, 재구성)
+      </div>
+    </div>
+
+    <div class="think-box">
+      <h4>자료 탐구 2 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>자료를 바탕으로 고구려와 신라가 어떤 관계를 맺게 되었을지 생각해 보자.</li>
+        <li>이 사건이 가야 연맹에 어떤 영향을 끼쳤는지, 가야 연맹의 주도 세력 변화를 중심으로 말해 보자.</li>
+      </ol>
+    </div>
+
+    <div class="sidebox">
+      <h4>생각+ — 백제는 요서를 차지하였을까?</h4>
+      <p>중국 남조의 기록에는 백제가 요서 지역을 차지하였다는 내용이 전한다. 잘못된 기록이라는 견해, 힘의 공백을 틈타 진출했다는 견해, 상업 거점이 있었다는 견해 등이 있으나, 대체로 부정적인 의견이 많고 인정하더라도 짧은 시기로 한정해서 본다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="silla">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>신라가 한강 유역을 차지하다</h2>
+    </div>
+    <p class="block-sub">신라는 6세기에 중앙 집권 체제를 정비하고 영토를 크게 넓혀, 마침내 한강 유역을 차지하였다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">지증왕</div>
+        <div class="step-desc">나라 이름 '신라', '국왕' 칭호, 512년 이사부가 우산국 복속</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">법흥왕</div>
+        <div class="step-desc">520년 율령 반포, 527년 불교 공인으로 중앙 집권 체제 확립, 독자적 연호 '건원', 532년 금관가야 병합</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">진흥왕</div>
+        <div class="step-desc">화랑도를 국가적 조직으로 개편, 백제와 연합해 한강 상류 점령 → 백제를 공격해 한강 하류 차지, 562년 대가야 정복, 한때 함흥평야까지 진출</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>신라에 한강 하류를 빼앗긴 백제 성왕은 신라를 공격하였으나, 554년 관산성 전투에서 전사하였다.</p></div>
+    <p style="font-size:13.5px; color:var(--ink-soft);">백제 성왕 — 6세기 중엽 사비(부여)로 천도, 신라와 연합하여 한강 하류 지역을 일시적으로 되찾았으나 다시 신라에 빼앗김.</p>
+
+    <table class="data-table">
+      <caption>진흥왕 때 세워진 비석</caption>
+      <tbody>
+        <tr><td class="hd">순수비</td><td>황초령 신라 진흥왕 순수비, 마운령 신라 진흥왕 순수비, 서울 북한산 신라 진흥왕 순수비</td></tr>
+        <tr><td class="hd">그 밖의 비석</td><td>단양 신라 적성비(적성 지역 차지 기념, 순수비에는 포함되지 않음), 창녕 신라 진흥왕 척경비</td></tr>
+      </tbody>
+    </table>
+
+    <table class="data-table">
+      <caption>가야의 변화</caption>
+      <tbody>
+        <tr><td class="hd">전기 가야 연맹</td><td>김해의 금관가야가 주도 → 신라를 지원한 고구려의 공격으로 쇠퇴 → 532년 신라에 병합</td></tr>
+        <tr><td class="hd">후기 가야 연맹</td><td>5세기 후반 고령의 대가야가 주도 → 562년 신라 진흥왕에게 정복</td></tr>
+      </tbody>
+    </table>
+
+    <div class="think-box">
+      <h4>질문+ — 교과서의 열린 질문</h4>
+      <ol>
+        <li>삼국이 한강 유역을 두고 치열하게 다툰 까닭을 한강 유역의 위치를 중심으로 생각해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="suitang">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>고구려가 수·당의 침략을 물리치다</h2>
+    </div>
+    <p class="block-sub">6세기 후반 분열되었던 중국이 통일되면서 동아시아 정세에 큰 변화가 나타났다.</p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-title">수의 압박</div>
+        <div class="step-desc">중국을 통일한 수가 고구려를 복속시키려 함, 고구려 반발</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">살수 대첩(612)</div>
+        <div class="step-desc">수의 여러 차례 공격을 모두 물리침, 을지문덕이 수의 대군을 살수(청천강)에서 크게 격파</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">안시성 전투(645)</div>
+        <div class="step-desc">수를 이어 중국을 통일한 당의 여러 차례 침입을 막아 냄</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">살수 대첩을 물을 막았다 터뜨린 수공으로 이겼다는 설은 일제 강점기 무렵 널리 퍼진 것으로, 실제로는 강을 건너는 수의 군대를 고구려군이 공격하여 이긴 전투로 여겨진다. 안시성 성주의 실제 이름은 알 수 없다. (교과서 방주)</p>
+
+    <div class="sidebox">
+      <h4>생각+ — 수 양제가 동원한 100만 대군은 사실일까?</h4>
+      <p>수 양제가 고구려를 침입할 때 100만이 넘는 대군을 동원하였다고 기록되어 있다. 기록이 명확하여 긍정하는 의견이 많지만, 보급·동원 능력의 한계로 과장되었다는 의견도 있다.</p>
+    </div>
+
+    <div class="note-box">수·당과의 전쟁 이후 신라와 당의 동맹, 백제와 고구려의 멸망, 삼국 통일 과정은 <a href="Ⅰ-1-1-03_통일신라와발해_도표(해설포함).html#fall">「통일 신라와 발해」 — 백제와 고구려가 멸망하다</a>에서 이어서 다룬다.</div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>정리 — 나라별 주요 왕과 업적</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <thead><tr><th>나라</th><th>체제 정비</th><th>영토 확장과 전성기</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">고구려</td><td>태조왕(옥저 복속), 소수림왕(불교 수용·태학 설립·율령 반포)</td><td>광개토 대왕(한강 이북·만주, 신라 구원), 장수왕(평양 천도, 한강 유역 전체 차지), 살수 대첩·안시성 전투</td></tr>
+        <tr><td class="hd crimson">백제</td><td>고이왕(관등제·관복), 침류왕(불교 수용)</td><td>근초고왕(평양성 공격, 동진·왜와 교류), 웅진 천도, 성왕(사비 천도, 관산성 전사)</td></tr>
+        <tr><td class="hd brass">신라</td><td>내물왕(김씨 세습·마립간), 지증왕(국호·국왕), 법흥왕(율령·불교 공인·연호)</td><td>지증왕(우산국), 법흥왕(금관가야), 진흥왕(화랑도, 한강 유역, 대가야)</td></tr>
+        <tr><td class="hd">가야</td><td colspan="2">전기 금관가야 주도 → 후기 대가야 주도 → 신라에 병합(532, 562)</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>삼국이 중앙 집권적 고대 국가로 발전하는 과정에서 나타난 변화는 무엇일까?</li>
+        <li>삼국과 가야는 어떻게 발전하였을까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 초기 삼국에서는 고구려의 (   )과/와 같은 회의 제도가 발달하였다.</summary>
+        <div class="check-answer">제가 회의</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 삼국은 (   )을/를 반포하여 왕을 중심으로 하는 지배 체제를 확립하였다.</summary>
+        <div class="check-answer">율령</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 고구려의 (   )은/는 불교를 수용하고, 율령을 반포하였다.</summary>
+        <div class="check-answer">소수림왕</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 초기에 가야 연맹을 주도한 나라는 김해의 (   )(이)다.</summary>
+        <div class="check-answer">금관가야</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q5. 백제의 (   )은/는 고구려의 평양성을 공격하여 황해도 일대를 차지하였다.</summary>
+        <div class="check-answer">근초고왕</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 고구려의 (   )은/는 평양으로 수도를 옮겼다.</summary>
+        <div class="check-answer">장수왕</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q7. 신라는 (   ) 때 율령을 반포하였다.</summary>
+        <div class="check-answer">법흥왕</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q8. (   )은/는 612년 고구려의 을지문덕이 수의 대군을 살수에서 크게 격파한 싸움이다.</summary>
+        <div class="check-answer">살수 대첩</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q9. 고구려는 소수림왕 때 불교를 수용하여 국가 구성원의 사상적 통합을 꾀하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q10. 백제 근초고왕은 고구려의 평양성을 공격하여 황해도 지역까지 세력을 넓혔다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q11. 신라는 법흥왕 시기에 우산국(울릉도) 일대를 복속하였다. (○, ×)</summary>
+        <div class="check-answer">× — 우산국을 복속한 것은 지증왕 때(512)이다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q12. 고구려는 장수왕 때 (국내성 / 평양)으로 천도하며 적극적인 남진 정책을 펼쳤다.</summary>
+        <div class="check-answer">평양</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q13. 신라 (지증왕 / 법흥왕)은 불교를 공인하고 율령을 반포하며 통치 체제를 정비하였다.</summary>
+        <div class="check-answer">법흥왕</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q14. 전기 가야 연맹은 (금관가야 / 대가야)가 주도하였으나 신라를 지원한 고구려의 공격을 받아 쇠퇴하였다.</summary>
+        <div class="check-answer">금관가야</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q15. 성왕은 백제의 중흥을 위해 수도를 (   )(으)로 옮겼다.</summary>
+        <div class="check-answer">사비(부여)</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅰ 「근대 이전 한국사의 이해」 1 「고대 국가의 성장」 02 「삼국의 성립과 발전」, 16–19쪽 및 25쪽(자료 탐구 2 고구려와 신라의 관계) — 본문·연표·지도·사료·생각+·질문+·자료 탐구·확인하기의 기본 출처 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「삼국과 가야의 성장과 경쟁」, 10–11쪽 — 삼국의 성장과 체제 정비, 가야의 성장과 발전, 자료 탐구, 개념 체크 문항 (1차 근거)</li>
+    </ol>
+    <div class="note">
+      함께 업로드된 미래엔 『한국사』(22–27쪽)는 현행 교육과정 이전의 자료로, 나제 동맹(433)과 웅진 천도(475)의 연도에 대한 보충 설명에만 활용하였다. 신라의 삼국 통일 관련 자료는 이 소주제 범위를 벗어나 반영하지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-1-1-02)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p02-N과 대응)
+  const SECTION_PREFIX = "1-1-1-02";
+
+  const narrativeData = {
+    // 1-1-1-02-2: 초기 국가에서 중앙 집권적 고대 국가로  (대본 p02-2)
+    "1-1-1-02-2": [
+      "삼국은 처음부터 강한 왕이 다스린 나라가 아니었습니다. 여러 부가 연합해 이룬 <b>초기 국가</b>였습니다.",
+      "각 부의 지배자가 따로 관리를 두고 백성을 다스렸고, 가장 강한 부의 지배자가 왕으로 추대되었습니다.",
+      "그래서 나라의 중요한 일은 고구려의 <b>제가 회의</b>처럼 각 부의 지배자들이 함께 모여 결정했습니다.",
+      "그런데 주변을 정복하는 전쟁을 왕이 이끌면서 왕의 권력이 점점 커졌고, 각 부의 지배자는 왕 아래의 귀족이 되었습니다.",
+      "왕을 중심으로 한 <b>관등제</b>가 마련되고 신분제가 정비되면서 나라의 모습이 바뀐 것입니다.",
+      "이 변화를 굳힌 두 기둥이 <b>율령</b>과 불교입니다.",
+      "율령이 왕의 이름으로 반포되자 귀족도 왕이 정한 법의 제약을 받게 되었고, 불교는 나라 사람들의 마음을 하나로 모았습니다.",
+      "그렇다면 세 나라는 각각 언제, 어떻게 이런 고대 국가로 성장했을까요?"
+    ],
+    // 1-1-1-02-3: 삼국과 가야가 성장하다  (대본 p02-3)
+    "1-1-1-02-3": [
+      "부여에서 온 주몽 세력이 세운 <b>고구려</b>는 1세기 후반 태조왕 때 옥저를 복속하며 힘을 키웠습니다.",
+      "4세기에 전연과 백제의 공격으로 위기를 맞자, <b>소수림왕</b>은 불교를 받아들이고 태학을 세우고 율령을 반포해 나라의 틀을 다시 짰습니다.",
+      "한강 유역에서 일어난 <b>백제</b>는 3세기 고이왕 때 관등제를 정비하고, 관리의 등급에 따라 관복 색을 정했습니다.",
+      "사로국에서 출발한 <b>신라</b>는 처음에 박·석·김씨가 돌아가며 왕이 되었는데, 4세기 말 <b>내물왕</b>이 김씨의 왕위 세습을 확립하고 '마립간'이라는 칭호를 썼습니다.",
+      "신라 왕의 칭호가 거서간, 차차웅, 이사금, 마립간을 거쳐 국왕으로 바뀐 과정에서 왕권이 커져 간 모습을 읽을 수 있습니다.",
+      "낙동강 하류에서는 여러 소국이 가야 연맹을 이루었고, 처음에는 질 좋은 철을 생산하고 수출한 김해의 <b>금관가야</b>가 연맹을 이끌었습니다.",
+      "이렇게 나라의 틀을 갖춘 세 나라는 이제 서로 국경을 맞대고 본격적으로 경쟁하게 됩니다."
+    ],
+    // 1-1-1-02-4: 백제와 고구려가 차례로 주도권을 잡다  (대본 p02-4)
+    "1-1-1-02-4": [
+      "먼저 주도권을 잡은 나라는 백제였습니다.",
+      "4세기 후반 <b>근초고왕</b>은 남쪽으로 마한의 남은 세력을 공격하고, 북쪽으로는 고구려의 평양성을 공격해 고국원왕을 전사시켰습니다.",
+      "또 중국의 동진, 왜와 교류했는데, 칠지도는 백제와 왜의 활발한 교류를 보여 줍니다.",
+      "5세기에는 고구려가 앞으로 나섰습니다. <b>광개토 대왕</b>은 한강 이북을 점령하고 만주 대부분을 차지했으며, 400년에는 신라에 침입한 왜를 물리쳤습니다.",
+      "이때 고구려의 공격으로 금관가야가 약해지면서, 가야의 중심은 고령의 대가야로 옮겨 갔습니다.",
+      "뒤를 이은 <b>장수왕</b>은 427년 평양으로 수도를 옮기고 남쪽으로 세력을 넓히는 남진 정책을 펼쳤습니다.",
+      "백제와 신라가 손을 잡고 맞섰지만, 장수왕은 백제의 수도 한성을 함락하고 한강 유역 전체를 차지했습니다.",
+      "수도를 잃은 백제는 웅진으로 옮겨 가야 했습니다. 그러나 6세기에 들어서면 한강의 주인이 다시 바뀌게 됩니다."
+    ],
+    // 1-1-1-02-5: 신라가 한강 유역을 차지하다  (대본 p02-5)
+    "1-1-1-02-5": [
+      "6세기 신라는 세 왕을 거치며 빠르게 성장했습니다.",
+      "<b>지증왕</b>은 나라 이름을 신라로 정하고 국왕이라는 칭호를 썼으며, 이사부를 보내 우산국을 복속했습니다.",
+      "<b>법흥왕</b>은 율령을 반포하고 불교를 공인해 중앙 집권 체제를 확립했고, 독자적인 연호를 쓰며 금관가야를 병합했습니다.",
+      "<b>진흥왕</b>은 화랑도를 국가 조직으로 키운 뒤, 백제와 손잡고 한강 상류를 차지하고, 이어 백제를 공격해 한강 하류까지 빼앗았습니다.",
+      "사비로 수도를 옮기고 한강 하류를 잠시 되찾았던 백제 성왕은 신라를 공격했지만, 554년 관산성 전투에서 전사했습니다.",
+      "진흥왕은 562년 대가야도 정복했고, 이로써 가야 연맹은 모두 신라에 흡수되었습니다.",
+      "한강 유역은 한반도의 한가운데에 있어, 이곳을 차지한 나라가 삼국 경쟁의 주도권을 쥐었습니다.",
+      "그런데 이 무렵 중국이 통일되면서, 삼국의 경쟁은 동아시아 전체의 문제로 넓어지게 됩니다."
+    ],
+    // 1-1-1-02-6: 고구려가 수·당의 침략을 물리치다  (대본 p02-6)
+    "1-1-1-02-6": [
+      "6세기 후반 오랫동안 나뉘어 있던 중국을 수가 통일했습니다.",
+      "수는 고구려를 압박해 복속시키려 했고, 고구려가 반발하자 여러 차례 공격해 왔습니다.",
+      "고구려는 이 공격을 모두 막아 냈는데, 특히 612년 을지문덕이 수의 대군을 살수에서 크게 무찌른 <b>살수 대첩</b>이 유명합니다.",
+      "흔히 물을 막았다 터뜨려 이겼다고 알려져 있지만, 이는 일제 강점기 무렵 퍼진 설이고 실제로는 강을 건너는 수의 군대를 공격해 이긴 전투로 봅니다.",
+      "수를 이어 중국을 통일한 당도 고구려를 여러 차례 침입했습니다.",
+      "고구려는 645년 <b>안시성 전투</b> 등에서 당의 군대를 물리치며 침입을 막아 냈습니다.",
+      "그러나 거듭된 전쟁은 동아시아 정세를 크게 흔들었고, 이는 삼국 통일로 이어지는 큰 변화의 출발점이 됩니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고려의 건국과 체제 정비(자막 해설) | 호족의 나라에서 왕의 나라로</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-1-1-03_통일신라와발해_도표(해설포함).html">‹ 이전: 통일 신라와 발해 (대단원 이동)</a>
+  <a href="Ⅰ-1-2_고려의건국과발전_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#unify">후삼국 통일</a>
+  <a href="#taejo">태조</a>
+  <a href="#gwangjong">광종</a>
+  <a href="#seongjong">성종</a>
+  <a href="#system">통치 체제</a>
+  <a href="#foreign">거란과 여진</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-1-2-02_고려의동요와무신정권_도표(해설포함).html">다음: 고려의 동요와 무신 정권 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 이전 한국사의 이해</span> · 고려의 건국과 발전</div>
+    <h1>호족의 나라에서 왕의 나라로</h1>
+    <p class="lead">송악의 호족 출신 왕건은 고려를 세우고 후삼국을 통일하였다. 태조는 지방 곳곳의 호족을 끌어안으면서도 견제하였고, 광종은 호족을 누르고 왕권을 세웠으며, 성종은 유교를 바탕으로 통치 체제를 갖추었다. 이렇게 다져진 고려는 거란의 침입을 물리치고 여진과의 관계 변화에 대응하였다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">918 – 12세기</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>세 왕이 다진 나라, 세 갈래의 통치 체제</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 국가 기틀과 왕권</strong> · <strong style="color:var(--brass)">황동색 = 통치 체제</strong> · <strong style="color:var(--crimson)">적색 = 대외 관계</strong>. 태조·광종·성종은 앞 왕이 남긴 과제를 이어받아 해결해 나갔으므로 화살표로 이었고, 그 결과 갖추어진 통치 체제의 세 부분은 갈래로 그렸다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">후삼국 통일(936)</div>
+        <div class="step-desc">신라 항복, 후백제 멸망, 발해 유민 포용</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">태조</div>
+        <div class="step-desc">호족 포섭과 견제, 북진 정책</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">광종</div>
+        <div class="step-desc">노비안검법·과거제로 왕권 강화</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">성종</div>
+        <div class="step-desc">시무 28조, 유교 바탕의 통치 체제</div>
+      </div>
+    </div>
+
+    <div class="branch-root">고려의 통치 체제</div>
+    <p class="branch-cause">왕권을 세우는 과정에서 중앙과 지방, 관리를 뽑는 제도가 나란히 갖추어졌다.</p>
+    <div class="branch-cols">
+      <div class="branch-col brass">
+        <h4>중앙 행정</h4>
+        <p class="why">정책 결정과 집행, 그리고 견제</p>
+        <div class="branch-node">2성 6부, 도병마사·식목도감, 대간</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>지방 행정</h4>
+        <p class="why">호족의 땅에 지방관을</p>
+        <div class="branch-node">12목 → 5도 양계, 주현·속현, 향·부곡·소</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>관리 등용</h4>
+        <p class="why">실력과 가문</p>
+        <div class="branch-node">과거(문과 중심), 음서</div>
+      </div>
+    </div>
+
+    <div class="causal-link"><p>체제를 갖춘 고려는 북방 민족의 도전에 맞섰다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">거란의 침입(10~11세기)</div>
+        <div class="step-desc">서희의 외교 담판, 귀주 대첩 → 고려·송·거란의 세력 균형</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">여진과의 관계(12세기)</div>
+        <div class="step-desc">별무반·동북 9성 → 금의 성장, 군신 관계 수용</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 국가 기틀과 왕권</strong> · <strong style="color:var(--brass)">황동색 = 통치 체제</strong> · <strong style="color:var(--crimson)">적색 = 대외 관계</strong></p>
+    <div class="timeline">
+      <div class="tl-item deep"><div class="tl-year">918</div><div class="tl-body"><div class="tl-title">고려 건국</div><div class="tl-desc">신하들이 왕건을 추대</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">919</div><div class="tl-body"><div class="tl-title">송악(개경) 천도</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">935</div><div class="tl-body"><div class="tl-title">신라 경순왕 항복 · 견훤 귀순</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">936</div><div class="tl-body"><div class="tl-title">후삼국 통일</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">956</div><div class="tl-body"><div class="tl-title">광종, 노비안검법 실시</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">958</div><div class="tl-body"><div class="tl-title">광종, 과거제 실시</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">983</div><div class="tl-body"><div class="tl-title">성종, 12목 설치</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">993</div><div class="tl-body"><div class="tl-title">거란의 1차 침입 — 서희의 외교 담판, 강동 6주 확보</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1010</div><div class="tl-body"><div class="tl-title">거란의 2차 침입 — 개경 함락</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1018</div><div class="tl-body"><div class="tl-title">거란의 3차 침입</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1019</div><div class="tl-body"><div class="tl-title">귀주 대첩(강감찬)</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year long">12세기</div><div class="tl-body"><div class="tl-title">별무반 편성, 동북 9성 축조 → 금의 군신 관계 요구 수용</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="unify">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>고려, 후삼국을 통일하다</h2>
+    </div>
+    <p class="block-sub">후고구려를 세운 궁예는 포악한 정치로 민심을 잃었다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">고려 건국(918)</div>
+        <div class="step-desc">신하들이 송악(개성) 호족 출신 왕건을 추대 — 고구려를 계승한다는 의미로 국호 '고려', 이듬해 송악으로 천도</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">신라의 항복(935)</div>
+        <div class="step-desc">궁예·견훤과 달리 신라에 우호적인 정책 → 경순왕이 고려에 항복</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">후삼국 통일(936)</div>
+        <div class="step-desc">왕위 다툼으로 내분이 일어난 후백제를 멸망시킴</div>
+      </div>
+    </div>
+    <p style="font-size:13.5px; color:var(--ink-soft);">후백제의 견훤은 넷째 아들에게 왕위를 물려주려다 맏아들 신검의 정변으로 금산사에 갇혔다가 탈출하여 고려에 항복하였다(935). 고려는 발해 유민까지 포용하여 민족의 재통일을 이루었다. 보충(미래엔 교과서): 발해가 멸망하자 왕자 대광현이 많은 유민을 이끌고 고려에 망명해 왔다.</p>
+
+    <div class="sidebox">
+      <h4>생각+ — 궁예는 정말 포악했을까?</h4>
+      <p>궁예는 일반적으로 포악한 정치 때문에 쫓겨났다고 기록되어 있다. 하지만 왕위에 오르기 전에는 부하들과 고난을 함께하는 긍정적인 모습으로 묘사되어 있어 왕위에 오른 뒤의 모습과 크게 다르다. 이에 고려가 건국의 정당성을 내세우려고 궁예를 부정적으로 묘사했을 것이라는 의견도 있다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="taejo">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>태조, 나라의 기틀을 세우다</h2>
+    </div>
+    <p class="block-sub">태조는 오랜 혼란으로 분열된 사회를 통합하고 국가의 안정을 이루려 하였다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>호족을 끌어안다</h4>
+        <dl>
+          <dt>혼인 정책</dt><dd>유력한 호족 가문과 혼인 — 호족의 딸 29명과 혼인</dd>
+          <dt>왕씨 성 하사</dt><dd>각지의 호족을 같은 편으로 끌어들임</dd>
+        </dl>
+      </div>
+      <div class="compare-card deep">
+        <h4>호족을 견제하다</h4>
+        <dl>
+          <dt>기인 제도</dt><dd>지방 호족의 자제를 인질로 삼아 수도에 머물게 하고 출신 지역의 일을 자문하게 함</dd>
+          <dt>사심관 제도</dt><dd>중앙의 고위 관리를 연고 있는 지역의 사심관으로 임명해 지방 세력 통제</dd>
+        </dl>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">이 정책은 이후 외척 간의 왕위 계승 분쟁이 발생하는 원인이 되기도 하였다. (교과서 방주)</p>
+
+    <table class="data-table">
+      <caption>태조의 그 밖의 정책</caption>
+      <tbody>
+        <tr><td class="hd">민생 안정</td><td>세금을 줄여 오랜 전쟁에 지친 백성의 생활 안정 — 조세를 거둘 때 일정한 법도가 있어야 한다는 '취민유도'를 내세워 세율을 10분의 1로 정함. 보충(미래엔 교과서): 빈민 구제 기관 흑창 설치</td></tr>
+        <tr><td class="hd">훈요 10조</td><td>후대 왕에게 통치의 교훈으로 남김 — 불교 숭상, 중국 문화의 선택적 수용, 거란 배척, 서경 중시, 연등회·팔관회 중시 등 (EBS 개념완성)</td></tr>
+        <tr><td class="hd">북진 정책</td><td>고구려 계승을 내세워 옛 수도 평양을 서경으로 삼아 중시, 북쪽으로 영토 확장, 발해 유민 적극 수용, 발해를 멸망시킨 거란은 적대 — 거란이 보낸 낙타 50필을 만부교 아래에 매어 굶겨 죽임. 보충(미래엔 교과서): 독자적 연호 '천수' 사용</td></tr>
+      </tbody>
+    </table>
+
+    <div class="quote-block deep">
+      <h4>훈요 10조</h4>
+      우리나라는 풍속이 중국과 다르니 억지로 같게 할 필요가 없고, 거란은 짐승 같은 나라이니 본받지 말라.
+      <div class="src">『고려사절요』 (제4조, EBS 개념완성 자료, 재구성)</div>
+    </div>
+  </section>
+
+  <section class="block" id="gwangjong">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>광종, 왕권을 강화하다</h2>
+    </div>
+    <p class="block-sub">태조가 죽은 뒤 왕위를 둘러싸고 치열한 다툼이 일어났다. 불안정한 정치 상황에서 왕위에 오른 광종은 공신과 호족 세력을 누르고 왕권을 강화하려 하였다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">노비안검법(956)</div>
+        <div class="step-desc">억울하게 노비가 된 사람을 조사해 양인으로 되돌림 → 공신·호족의 경제·군사적 기반 약화, 양인 증가로 국가 재정 확충</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">과거제(958)</div>
+        <div class="step-desc">후주에서 귀화한 쌍기의 건의 — 왕에게 충성하고 유교 지식을 갖춘 사람을 관리로 선발</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">관복 색 구분</div>
+        <div class="step-desc">등급에 따라 자색·붉은색·주황색·녹색으로 상하 질서 확립</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">숙청과 황제국 표방</div>
+        <div class="step-desc">반발한 공신·호족 숙청, 독자적 연호 '광덕'·'준풍', 개경을 '황도'라 칭함</div>
+      </div>
+    </div>
+
+    <div class="quote-block deep">
+      <h4>광종의 노비 조사</h4>
+      노비를 조사해 옳고 그름을 밝히게 하자 주인을 배반하는 노비가 늘어 사람들이 원망하였다.
+      <div class="src">『고려사절요』 (재구성)</div>
+    </div>
+
+    <div class="think-box">
+      <h4>자료로 보는 역사 — 태조와 광종의 선택 (생각 키우기)</h4>
+      <ol>
+        <li>태조와 광종 중 1명을 택해, 자료의 정책을 바탕으로 그 왕의 생각을 담은 뇌 구조를 그려 보자. (태조: 기인·사심관 / 광종: 노비 조사·과거제)</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="seongjong">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>성종, 유교를 통치 이념으로 삼다</h2>
+    </div>
+    <p class="block-sub">성종은 신라 6두품 출신 유학자 최승로가 올린 시무 28조를 받아들여 유교를 바탕으로 통치 체제를 정비하였다.</p>
+
+    <div class="quote-grid">
+      <div class="quote-block deep">
+        <h4>시무 28조 제7조</h4>
+        한꺼번에 다 보낼 수 없더라도, 우선 여러 주현을 합쳐 관아를 두고 지방관을 보내소서.
+        <div class="src">『고려사절요』 (재구성)</div>
+      </div>
+      <div class="quote-block deep">
+        <h4>시무 28조 제20조</h4>
+        불교는 자신을 닦는 근본이고 유교는 나라를 다스리는 근원이니, 오늘의 급한 일은 나라를 다스리는 것이다.
+        <div class="src">『고려사절요』 (재구성)</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>성종은 이 건의를 받아들여 지방관을 파견하고 유교를 통치의 바탕으로 삼았다.</p></div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">중앙 통치 기구</div>
+        <div class="step-desc">기존 제도를 바탕으로 중국 제도를 참고하여 2성 6부로 정비</div>
+      </div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">지방 제도</div>
+        <div class="step-desc">12목 설치, 지방관 파견</div>
+      </div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">유학 교육</div>
+        <div class="step-desc">중앙의 국자감 정비, 지방에 경학박사 파견</div>
+      </div>
+    </div>
+
+    <div class="sidebox">
+      <h4>생각+ — 최승로의 시무 28조는 어떤 체제를 지향하였을까?</h4>
+      <p>최승로는 불교로 인한 사회적 폐단을 지적하고 유교에 바탕을 둔 정치를 실현하려 하였다. 또 민생 안정을 위한 여러 폐단 시정과 지방관 파견을 주장하여 중앙 집권 체제를 지향하였음을 알 수 있다. 한편 복식 제도와 신분 제도를 정비하고 군주가 신하를 공손히 대할 것을 주장하여 귀족 중심의 정치 질서를 세우려 하였다.</p>
+    </div>
+
+    <div class="think-box">
+      <h4>질문+ — 교과서의 열린 질문</h4>
+      <ol>
+        <li>시무 28조의 각 조항이 성종 때 어떻게 실현되었는지 말해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="system">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>통치 체제를 정비하다</h2>
+    </div>
+    <p class="block-sub">고려는 중앙과 지방, 군사, 관리 등용 제도를 갖추어 나라를 다스렸다.</p>
+
+    <table class="data-table">
+      <caption>고려의 중앙 행정 조직</caption>
+      <tbody>
+        <tr><td class="hd">2성 6부</td><td>중서문하성: 국가 정책 총괄(재신은 국가 중요 정책 논의, 낭사는 언론 기능) / 상서성과 6부(이·병·호·형·예·공부): 정책 집행</td></tr>
+        <tr><td class="hd">중추원 · 어사대 · 삼사</td><td>중추원: 군사 기밀(추밀)과 왕명 출납(승선) / 어사대: 풍속 교정, 관리 감찰 / 삼사: 화폐와 곡식의 출납·회계</td></tr>
+        <tr><td class="hd">도병마사 · 식목도감</td><td>고려만의 독자적인 회의 기구 — 재추(중서문하성의 재신과 중추원의 추밀)가 국방 문제, 법률·제도를 의논해 결정</td></tr>
+        <tr><td class="hd">대간</td><td>어사대의 대관과 중서문하성의 낭사(간관) — 왕과 관리의 잘못 지적, 관리 임명·해임에 동의하는 권한</td></tr>
+      </tbody>
+    </table>
+    <div class="causal-link"><p>고려는 여러 사람이 함께 결정하는 합의제와 대간 제도를 운영해 권력의 상호 견제와 균형을 추구하였다.</p></div>
+
+    <table class="data-table">
+      <caption>고려의 지방 행정과 군사 제도</caption>
+      <tbody>
+        <tr><td class="hd">지방 행정</td><td>성종 때 12목 설치 → 현종 때 군현제 정비, 5도(일반 행정 구역)와 양계(군사 행정 구역)로 나눔 / 개경 주변의 경기, 3경</td></tr>
+        <tr><td class="hd">주현과 속현</td><td>지방관이 파견된 주현보다 파견되지 않은 속현이 더 많음(1018년 기준 주현 55개, 속현 378개) — 주현이 주변 속현과 향·부곡·소를 통제, 행정 실무는 향리가 담당</td></tr>
+        <tr><td class="hd">향·부곡·소</td><td>특수 행정 구역 — 향·부곡은 농업, 소는 특산물 생산 담당, 일반 군현에 비해 차별</td></tr>
+        <tr><td class="hd">군사 제도</td><td>중앙군: 2군(국왕 친위 부대) 6위(수도 방비와 궁궐 방어 등) / 지방군: 주현군(5도), 주진군(양계) (EBS 개념완성)</td></tr>
+      </tbody>
+    </table>
+
+    <table class="data-table">
+      <caption>고려의 관리 등용 제도</caption>
+      <tbody>
+        <tr><td class="hd">과거</td><td>문신을 뽑는 문과 중심(제술과가 명경과보다 중시), 기술관을 뽑는 잡과, 승려 대상 승과 — 무관을 뽑는 무과는 거의 시행되지 않음</td></tr>
+        <tr><td class="hd">음서</td><td>왕실의 자손과 공신, 5품 이상 관리의 자손에게 시험 없이 관직을 내려 줌 — 당시에는 과거로 관직에 나가는 것을 더 명예롭게 여겨, 음서로 관직을 얻은 뒤 다시 과거에 응시하기도 함</td></tr>
+      </tbody>
+    </table>
+
+    <div class="quote-block brass">
+      <h4>자료 탐구 1 — 과거와 음서 (교과서 35쪽)</h4>
+      최종번은 음서로 벼슬을 얻었으나 과거에 뜻을 두었다. 조상이 모두 과거로 벼슬했는데 자손으로서 다른 길로 나가겠는가.
+      <div class="src">이규보, 『동국이상국집』 (재구성) — 『고려사』 열전 인물 650명의 관직 진출 경로: 과거 340명(52%), 음서 40명(6%), 기타 270명(42%) (박종기, 2008)</div>
+    </div>
+
+    <div class="think-box">
+      <h4>자료 탐구 1 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>고려 시대에 음서로 관리가 되었음에도 과거에 급제하려 한 까닭을 생각해 보자.</li>
+      </ol>
+    </div>
+
+    <div class="sidebox">
+      <h4>생각+ — 고려 시대 무관은 어떻게 뽑았을까?</h4>
+      <p>고려에서는 무과가 간혹 실시되기도 하였으나 정기적으로 시행되지는 않았다. 무관은 일반적으로 신체 조건이 뛰어나거나 재능이 있는 사람 가운데에서 뽑아 등용하였다. 이는 문신을 중심으로 정치가 이루어진 고려 사회의 특징 때문으로 여겨진다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="foreign">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>거란의 침입을 물리치고 여진과의 관계가 변화하다</h2>
+    </div>
+    <p class="block-sub">10세기 무렵 동아시아에서는 거란(요)과 송이 대립하였다. 거란은 송을 공격하기에 앞서 후방을 안정시키려고 고려를 침입하였다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">1차 침입(993)</div>
+        <div class="step-desc">서희가 거란 장수와 담판 — 송과 관계를 끊고 거란과 교류하기로 약속, 압록강 동쪽에 강동 6주 설치</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">2차 침입(1010)</div>
+        <div class="step-desc">고려가 송과 계속 교류하자 침입 — 개경 함락, 왕이 나주까지 피란, 양규 등이 돌아가는 거란군에 큰 타격</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">3차 침입(1018)</div>
+        <div class="step-desc">강동 6주 반환을 요구하며 침입 → 강감찬이 이끄는 고려군이 귀주에서 크게 격파(귀주 대첩, 1019)</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>고려가 거란의 침입을 잇따라 물리치면서 고려·송·거란 사이에 세력 균형이 이루어졌고, 동아시아 국제 질서도 안정되었다.</p></div>
+
+    <div class="quote-grid">
+      <div class="quote-block crimson">
+        <h4>서희의 외교 담판 — 거란 장수</h4>
+        고구려 땅은 우리의 것인데 너희가 침범했고, 우리와 국경을 접하면서도 바다 건너 송을 섬긴다.
+        <div class="src">『고려사』 (재구성)</div>
+      </div>
+      <div class="quote-block deep">
+        <h4>서희의 외교 담판 — 서희</h4>
+        우리가 고구려를 계승하였고, 여진이 길을 막아 교류하지 못하니 여진을 내쫓으면 사신을 보내겠다.
+        <div class="src">『고려사』 (재구성)</div>
+      </div>
+    </div>
+
+    <div class="think-box">
+      <h4>사료로 보는 역사 — 서희의 외교 담판 (생각 키우기)</h4>
+      <ol>
+        <li>자료를 바탕으로 거란 장수와 서희의 주장을 각각 정리해 보자.</li>
+        <li>자료의 외교 담판으로 고려와 거란이 얻은 성과를 말풍선에 정리해 보자.</li>
+      </ol>
+    </div>
+
+    <div class="causal-link"><p>12세기에 들어 여진이 부족을 통합하면서 고려와 자주 충돌하였다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">별무반 편성</div>
+        <div class="step-desc">윤관의 건의 — 여진을 상대하기 위한 기병 중심 부대(신기군·신보군·항마군)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">동북 9성</div>
+        <div class="step-desc">여진을 공격해 쌓음 → 여진이 반환을 요구하며 계속 침입, 조공을 약속하자 돌려줌</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">금의 요구</div>
+        <div class="step-desc">세력을 키운 여진이 금을 세움 → 형제 관계 요구는 거부, 거란을 멸망시킨 뒤 군신 관계 요구는 집권자 이자겸 등이 수용</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>정리 — 고려 초기 세 왕의 정책</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <thead><tr><th>왕</th><th>과제</th><th>주요 정책</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">태조</td><td>분열된 사회 통합, 호족 통합</td><td>혼인·왕씨 성 하사, 기인 제도·사심관 제도, 취민유도, 훈요 10조, 북진 정책</td></tr>
+        <tr><td class="hd deep">광종</td><td>왕권 강화</td><td>노비안검법, 과거제, 관복 색 구분, 공신·호족 숙청, 독자적 연호</td></tr>
+        <tr><td class="hd deep">성종</td><td>유교 통치 체제 확립</td><td>최승로의 시무 28조, 2성 6부, 12목, 국자감·경학박사</td></tr>
+        <tr><td class="hd brass">통치 체제</td><td colspan="2">중앙(2성 6부, 도병마사·식목도감, 대간) / 지방(5도 양계, 주현·속현, 향·부곡·소) / 군사(2군 6위, 주현군·주진군) / 관리 등용(과거, 음서)</td></tr>
+        <tr><td class="hd crimson">대외 관계</td><td colspan="2">거란(서희의 담판, 귀주 대첩) → 여진(별무반, 동북 9성, 금과 군신 관계)</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>고려는 어떻게 후삼국을 통일하였을까?</li>
+        <li>고려는 어떻게 나라를 다스렸을까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">9</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 왕건은 고구려를 계승한다는 의미로 나라 이름을 (   )(이)라고 하였다.</summary>
+        <div class="check-answer">고려</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 태조는 (   ) 제도를 실시하고 사심관을 임명해 지방의 호족을 견제하였다.</summary>
+        <div class="check-answer">기인</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 광종은 (   )을/를 실시하여 억울하게 노비가 된 사람들을 양인으로 되돌렸다.</summary>
+        <div class="check-answer">노비안검법</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 성종은 최승로의 (   )을/를 받아들여 유교를 바탕으로 통치 체제를 정비하였다.</summary>
+        <div class="check-answer">시무 28조</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q5. 고려만의 독자적 회의 기구로 (   )과/와 식목도감이 있었다.</summary>
+        <div class="check-answer">도병마사</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 고려는 주로 과거와 (   )을/를 통해 관리를 선발하였다.</summary>
+        <div class="check-answer">음서</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q7. 거란의 1차 침입 당시 고려는 서희의 외교 담판으로 압록강 동쪽 지역을 확보하여 (   )을/를 설치하였다.</summary>
+        <div class="check-answer">강동 6주</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q8. 윤관은 (   )을/를 이끌고 여진을 공격하여 동북 9성을 쌓았다.</summary>
+        <div class="check-answer">별무반</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q9. 왕건은 신하들의 추대를 받아 궁예를 몰아내고 고려를 건국하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q10. 고려 태조는 북진 정책을 추진하며 거란과 화친 정책을 펼쳤다. (○, ×)</summary>
+        <div class="check-answer">× — 태조는 발해를 멸망시킨 거란을 적대시하였다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q11. 고려 광종은 스스로 황제를 칭하고, '광덕', '준풍' 등의 독자적인 연호를 사용하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q12. 고려는 국왕의 친위 부대인 2군과 수도와 궁궐 방어를 위한 6위를 중앙군으로 삼았다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q13. 고려 태조는 후손들이 지켜야 할 덕목들을 담아 (훈요 10조 / 시무 28조)를 남겼다.</summary>
+        <div class="check-answer">훈요 10조</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q14. 고려는 후주 출신 쌍기의 건의를 바탕으로 (광종 / 성종) 때부터 과거제를 실시하였다.</summary>
+        <div class="check-answer">광종</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q15. 고려는 일반 행정 구역인 5도에 (안찰사 / 병마사)를 파견하여 해당 지역을 관할하도록 하였다.</summary>
+        <div class="check-answer">안찰사</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q16. 고려의 관리 감찰 기구는? (중추원 / 어사대 / 도병마사 / 식목도감)</summary>
+        <div class="check-answer">어사대</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q17. 국방·외교 문제 논의를 위한 고려의 독자적인 기구는? (중추원 / 어사대 / 도병마사 / 식목도감)</summary>
+        <div class="check-answer">도병마사</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q18. 고려는 지방 호족의 자제를 볼모로 삼아 수도에 머물게 하고, 출신 지역의 일에 대해 자문하도록 하는 (   ) 제도를 통해 호족을 견제하였다.</summary>
+        <div class="check-answer">기인</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q19. 고려 광종은 호족들의 경제력과 군사력을 약화시키기 위해 불법적으로 노비가 된 자들을 양인으로 회복시켜 주는 (   )을/를 실시하였다.</summary>
+        <div class="check-answer">노비안검법</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q20. 고려에서는 공신이나 5품 이상 관리의 자손을 과거를 거치지 않고 관리로 등용하는 (   ) 제도를 운영하였다.</summary>
+        <div class="check-answer">음서</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅰ 「근대 이전 한국사의 이해」 2 「고려의 건국과 발전」 01 「고려의 건국과 체제 정비」, 26–29쪽 및 35쪽(자료 탐구 1 과거와 음서) — 본문·연표·지도·자료로 보는 역사(태조와 광종의 선택)·사료로 보는 역사(서희의 외교 담판)·생각+·질문+·확인하기의 기본 출처 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「고려 전기의 통치 체제와 지배 세력」, 16–17쪽 — 국가 기틀의 확립, 통치 체제(군사 제도 포함), 자료 탐구(훈요 10조, 광종의 왕권 강화 정책, 시무 28조), 개념 체크 문항 (1차 근거)</li>
+    </ol>
+    <div class="note">
+      함께 업로드된 미래엔 『한국사』(42쪽~)는 현행 교육과정 이전의 자료로, 발해 왕자 대광현의 망명, 빈민 구제 기관 흑창, 태조의 연호 '천수'에 대한 보충 설명에만 활용하였다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-1-2-01)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p01-N과 대응)
+  const SECTION_PREFIX = "1-1-2-01";
+
+  const narrativeData = {
+    // 1-1-2-01-2: 고려, 후삼국을 통일하다  (대본 p01-2)
+    "1-1-2-01-2": [
+      "후고구려를 세운 궁예는 포악한 정치로 민심을 잃었습니다.",
+      "그러자 신하들이 송악의 호족 출신 <b>왕건</b>을 왕으로 추대했고, 왕건은 918년 고구려를 계승한다는 뜻을 담아 나라 이름을 <b>고려</b>라 했습니다.",
+      "왕건은 궁예나 견훤과 달리 신라에 우호적인 정책을 폈습니다.",
+      "나라를 더 이어 가기 어렵다고 판단한 신라의 경순왕은 935년 고려에 항복했습니다.",
+      "같은 해 후백제에서는 왕위 다툼으로 견훤이 아들에게 쫓겨나 고려로 귀순했고, 고려는 내분에 빠진 후백제를 멸망시켜 936년 <b>후삼국을 통일</b>했습니다.",
+      "고려는 발해 유민까지 받아들여 하나의 나라로 다시 묶어 냈습니다.",
+      "그런데 나라를 하나로 만들었다고 해서 곧바로 안정된 것은 아니었습니다. 곳곳에는 여전히 힘센 호족들이 있었기 때문입니다."
+    ],
+    // 1-1-2-01-3: 태조, 나라의 기틀을 세우다  (대본 p01-3)
+    "1-1-2-01-3": [
+      "태조 왕건에게 가장 큰 과제는 지방 곳곳에 자리 잡은 <b>호족</b>을 어떻게 다룰 것인가였습니다.",
+      "태조는 한편으로 유력한 호족 가문과 혼인하고 왕씨 성을 내려 주며 호족을 끌어안았습니다.",
+      "다른 한편으로는 호족의 자제를 수도에 머물게 하는 <b>기인 제도</b>와, 중앙의 고위 관리에게 출신 지역을 맡기는 <b>사심관</b> 제도로 호족을 견제했습니다.",
+      "또 세금을 줄여 오랜 전쟁에 지친 백성의 생활을 안정시키려 했습니다.",
+      "태조는 후대 왕들에게 <b>훈요 10조</b>를 남겨 불교를 숭상하고, 거란을 본받지 말며, 서경을 중시하라는 등의 교훈을 주었습니다.",
+      "고구려 계승을 내세운 태조는 평양을 서경으로 삼아 중시하며 <b>북진 정책</b>을 추진했고, 발해를 멸망시킨 거란은 적대했습니다.",
+      "그러나 호족과 맺은 많은 혼인 관계는, 태조가 죽은 뒤 왕위를 둘러싼 다툼의 불씨가 되었습니다."
+    ],
+    // 1-1-2-01-4: 광종, 왕권을 강화하다  (대본 p01-4)
+    "1-1-2-01-4": [
+      "태조가 죽은 뒤 왕위를 둘러싼 다툼이 치열하게 벌어졌고, 이런 불안한 상황에서 <b>광종</b>이 왕위에 올랐습니다.",
+      "광종은 공신과 호족의 힘을 누르고 왕권을 세우려 했습니다.",
+      "먼저 <b>노비안검법</b>을 실시해 억울하게 노비가 된 사람들을 양인으로 되돌렸습니다.",
+      "노비는 호족의 경제적·군사적 힘이었기 때문에, 이 법으로 호족의 기반은 약해지고 세금을 내는 양인은 늘어 나라 재정이 튼튼해졌습니다.",
+      "이어 쌍기의 건의로 <b>과거제</b>를 실시해, 왕에게 충성하고 유교 지식을 갖춘 사람을 관리로 뽑았습니다.",
+      "관리의 등급에 따라 관복의 색깔을 다르게 해 위아래 질서를 세웠고, 반발하는 공신과 호족은 숙청했습니다.",
+      "그리고 광덕, 준풍이라는 독자적인 연호를 쓰고 개경을 황도라 부르며 황제국을 내세워 왕의 권위를 높였습니다."
+    ],
+    // 1-1-2-01-5: 성종, 유교를 통치 이념으로 삼다  (대본 p01-5)
+    "1-1-2-01-5": [
+      "광종이 강한 왕권을 세웠다면, <b>성종</b>은 그 위에 나라를 다스리는 틀을 갖추었습니다.",
+      "성종은 신라 6두품 출신 유학자 <b>최승로</b>가 올린 시무 28조를 받아들였습니다.",
+      "최승로는 불교는 자신을 닦는 근본이지만 유교는 나라를 다스리는 근원이라며, 유교를 바탕으로 정치를 하자고 주장했습니다.",
+      "또 지방에 관리를 보내자고 건의했는데, 성종은 이를 받아들여 처음으로 <b>12목</b>을 설치하고 지방관을 파견했습니다.",
+      "중앙에서는 중국 제도를 참고해 2성 6부로 통치 기구를 정비했습니다.",
+      "그리고 중앙의 <b>국자감</b>을 정비하고 지방에 경학박사를 보내 유학 교육을 장려했습니다.",
+      "이렇게 고려는 유교를 통치 이념으로 삼는 나라가 되어 갔습니다."
+    ],
+    // 1-1-2-01-6: 통치 체제를 정비하다  (대본 p01-6)
+    "1-1-2-01-6": [
+      "고려는 중앙과 지방, 관리를 뽑는 제도까지 차례로 갖추었습니다.",
+      "중앙에서는 중서문하성이 정책을 총괄하고, 상서성과 6부가 이를 집행했습니다.",
+      "특히 <b>도병마사</b>와 식목도감은 고려만의 독자적인 회의 기구로, 재신과 추밀이 모여 국방 문제와 법률·제도를 함께 결정했습니다.",
+      "또 <b>대간</b>은 왕과 관리의 잘못을 지적하고 관리 임명에 동의하는 권한을 가져, 권력이 한쪽으로 쏠리지 않도록 견제했습니다.",
+      "지방은 일반 행정 구역인 <b>5도</b>와 군사 행정 구역인 <b>양계</b>로 나누었는데, 지방관이 파견된 주현보다 파견되지 않은 속현이 훨씬 많아 지역의 자율성이 컸습니다.",
+      "관리는 주로 <b>과거</b>와 <b>음서</b>로 뽑았습니다. 음서는 공신과 높은 관리의 자손에게 시험 없이 관직을 주는 제도였습니다.",
+      "그런데도 사람들은 과거로 관직에 나가는 것을 더 명예롭게 여겨, 음서로 관직을 얻은 뒤 다시 과거에 응시하기도 했습니다."
+    ],
+    // 1-1-2-01-7: 거란의 침입을 물리치고 여진과의 관계가 변화하다  (대본 p01-7)
+    "1-1-2-01-7": [
+      "10세기 무렵 동아시아에서는 거란과 송이 대립했고, 거란은 송을 공격하기 전에 고려를 먼저 침입했습니다.",
+      "993년 1차 침입 때 <b>서희</b>는 거란 장수와 담판을 벌여, 송과의 관계를 끊는 대신 압록강 동쪽 땅을 얻고 <b>강동 6주</b>를 설치했습니다.",
+      "그러나 고려가 송과 계속 교류하자 거란은 다시 쳐들어와 개경을 함락했고, 양규 등이 돌아가는 거란군에 큰 타격을 주었습니다.",
+      "1019년에는 <b>강감찬</b>이 귀주에서 거란군을 크게 무찔렀고, 이후 고려·송·거란 사이에 세력 균형이 이루어졌습니다.",
+      "12세기에는 여진이 부족을 통합하며 고려와 자주 부딪쳤습니다. 이에 윤관은 기병 중심의 <b>별무반</b>을 만들어 여진을 공격하고 동북 9성을 쌓았습니다.",
+      "하지만 여진이 계속 반환을 요구하자 결국 9성을 돌려주었습니다.",
+      "세력을 키운 여진은 금을 세우고 고려에 군신 관계를 요구했고, 당시 집권자 이자겸 등이 이를 받아들였습니다.",
+      "북방 민족의 힘이 바뀔 때마다 고려의 외교도 함께 달라졌다는 점을 기억해 두기 바랍니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

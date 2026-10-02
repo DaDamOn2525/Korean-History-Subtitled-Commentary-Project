@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>조선 후기 정치의 변화(자막 해설) | 공존에서 독점으로, 독점에서 탕평으로</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-1-3-03_왜란과호란_도표(해설포함).html">‹ 이전: 왜란과 호란 (대단원 이동)</a>
+  <a href="Ⅰ-1-4_조선후기의변화_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#bibyeonsa">비변사·5군영</a>
+  <a href="#bungdang">붕당 정치의 전개</a>
+  <a href="#decline">붕당 정치의 변질</a>
+  <a href="#climate">17세기 소빙기</a>
+  <a href="#yeongjo">영조의 탕평</a>
+  <a href="#jeongjo">정조의 탕평</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-1-4-02_세도정치와농민봉기_도표(해설포함).html">다음: 세도 정치와 농민 봉기 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 이전 한국사의 이해</span> · 조선 후기의 변화</div>
+    <h1>공존에서 독점으로, 독점에서 탕평으로</h1>
+    <p class="lead">양 난을 거치며 비변사가 통치 체제의 중심 기구가 되고 5군영이 갖추어졌다. 서인과 남인이 공존하던 붕당 정치는 예송과 환국을 거치며 한 붕당이 권력을 독점하는 형태로 변질되었다. 영조와 정조는 탕평책으로 붕당 간의 대립을 누그러뜨리려 하였다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">16세기 – 18세기 말</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>조선 후기 정치는 어떻게 바뀌었나</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 양 난 이후 체제와 붕당 정치의 전개</strong> · <strong style="color:var(--crimson)">적색 = 붕당 정치의 변질</strong> · <strong style="color:var(--brass)">황동색 = 탕평 정치</strong>. 앞 시기의 정치 상황이 다음 시기의 정치를 낳은 순서라 화살표로 이었다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">선조 ~ 광해군</div>
+        <div class="step-desc">동인·서인 분당, 동인이 북인·남인으로 분화 → 광해군 때 북인 권력 독점</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">인조 ~ 효종</div>
+        <div class="step-desc">인조반정으로 북인 몰락, 서인 중심에 남인 공존</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">현종 ~ 숙종</div>
+        <div class="step-desc">예송, 환국 — 공존 원칙 붕괴, 서인이 노론·소론으로 분열</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>붕당 간 대립이 왕위 계승에까지 번져 왕권을 위협하자, 영조와 정조는 탕평책을 본격적으로 시행하였다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">영조</div>
+        <div class="step-desc">탕평파 육성</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">정조</div>
+        <div class="step-desc">노론·소론·남인 고르게 등용</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-title">순조 ~ 철종</div>
+        <div class="step-desc">세도 가문이 정권 장악</div>
+      </div>
+    </div>
+
+    <div class="branch-root">양 난 이후 통치 체제의 변화</div>
+    <p class="branch-cause">왜란과 호란을 거치면서 국방과 국정 운영의 틀이 함께 바뀌었다.</p>
+    <div class="branch-cols two">
+      <div class="branch-col deep">
+        <h4>비변사</h4>
+        <p class="why">정치 기구의 변화</p>
+        <div class="branch-node">임시 기구 → 국가의 중요 정책을 모두 맡는 중심 기구, 의정부·6조 유명무실</div>
+      </div>
+      <div class="branch-col deep">
+        <h4>군사 제도</h4>
+        <p class="why">군사 제도의 변화</p>
+        <div class="branch-node">중앙군 5군영(훈련도감부터), 지방군 속오군</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 양 난 이후 체제와 붕당 정치의 전개</strong> · <strong style="color:var(--crimson)">적색 = 붕당 정치의 변질</strong> · <strong style="color:var(--brass)">황동색 = 탕평 정치</strong></p>
+    <div class="timeline">
+      <div class="tl-item deep"><div class="tl-year">1510</div><div class="tl-body"><div class="tl-title">비변사, 임시 기구로 설치</div><div class="tl-desc">3포 왜란을 계기로 설치, 1555년 을묘왜변으로 독립 관청</div></div></div>
+      <div class="tl-item deep"><div class="tl-year long">임진왜란 중</div><div class="tl-body"><div class="tl-title">훈련도감 설치</div><div class="tl-desc">이후 5군영 체제로 확대</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1623</div><div class="tl-body"><div class="tl-title">인조반정</div><div class="tl-desc">북인 몰락, 서인 중심에 남인 공존</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year long">현종</div><div class="tl-body"><div class="tl-title">두 차례의 예송</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1674</div><div class="tl-body"><div class="tl-title">숙종 즉위</div><div class="tl-desc">여러 차례 환국, 서인이 노론·소론으로 분열</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1724</div><div class="tl-body"><div class="tl-title">영조 즉위</div><div class="tl-desc">탕평파 육성, 탕평비 건립</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1776</div><div class="tl-body"><div class="tl-title">정조 즉위</div><div class="tl-desc">규장각 확대, 초계문신제, 장용영, 수원 화성</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="bibyeonsa">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>비변사가 강화되고 5군영이 갖춰지다</h2>
+    </div>
+    <p class="block-sub">양 난을 거치면서 비변사가 조선 통치 체제의 중심 기구로 자리 잡았고, 군사 제도도 바뀌었다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">임시 기구</div>
+        <div class="step-desc">국방 문제(EBS: 16세기 초 여진과 왜구의 침입)에 대비하기 위한 임시 기구로 설치</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">상설 기구</div>
+        <div class="step-desc">왜구의 침입을 막는 과정에서 상설 기구가 됨</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">국정의 중심</div>
+        <div class="step-desc">양 난을 거치며 참여 인원 확대, 국방뿐 아니라 국가의 중요 정책을 모두 맡음(EBS: 외교·재정·인사 등)</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>비변사가 국가의 중요한 정책을 모두 맡아보게 되면서, 의정부와 6조 중심의 행정 체계는 유명무실해졌다.</p></div>
+
+    <div class="quote-block deep">
+      <h4>사료 읽기 — 비변사의 성장</h4>
+      비변사가 크고 작은 일을 모두 맡으니, 의정부는 이름만 남고 6조는 할 일을 빼앗겼습니다. 과거 판정이나 왕비 간택까지 여기를 거칩니다.
+      <div class="src">『효종실록』 (재구성, EBS 자료 포함)</div>
+    </div>
+
+    <div class="causal-link"><p>양 난을 계기로 군사 제도도 변화하였다.</p></div>
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>중앙군 — 5군영</h4>
+        <dl>
+          <dt>시작</dt><dd>임진왜란 중 훈련도감 설치</dd>
+          <dt>훈련도감</dt><dd>급료를 받는 직업 군인, 포수(조총)·사수(활)·살수(칼)의 삼수병으로 구성(EBS)</dd>
+          <dt>확대</dt><dd>어영청·총융청·수어청·금위영이 설치되어 한성과 그 주변을 지키는 5군영 체제</dd>
+        </dl>
+      </div>
+      <div class="compare-card">
+        <h4>지방군 — 속오군(EBS)</h4>
+        <dl>
+          <dt>구성</dt><dd>양반부터 노비까지 모든 신분으로 편성</dd>
+          <dt>운영</dt><dd>평상시에는 생업에 종사하다가 적이 침입하면 전투에 동원</dd>
+        </dl>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">비변사는 1510년(중종 5) 3포 왜란을 계기로 임시 기구로 설치되었다가 을묘왜변(1555)으로 독립 관청이 되었고, 임진왜란이 일어나면서 점차 기능이 강화되었다. (교과서 방주) 군영 — 군대가 주둔하는 곳.</p>
+  </section>
+
+  <section class="block" id="bungdang">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>붕당 정치가 전개되다</h2>
+    </div>
+    <p class="block-sub">선조 대에 사림이 동인과 서인으로 나뉘면서 붕당 정치가 시작되었다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">선조</div>
+        <div class="step-desc">동인과 서인으로 나뉘어 붕당 형성, 동인이 북인과 남인으로 분화(EBS)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">광해군</div>
+        <div class="step-desc">동인에서 나뉜 북인이 권력 독점 — 북인은 광해군을 지지한 대북과 영창 대군을 지지한 소북으로 분열, 대북이 정권 주도</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">인조 ~ 효종</div>
+        <div class="step-desc">인조반정으로 북인 몰락, 반정을 주도한 서인을 중심으로 남인과 일부 북인이 공존</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>서인은 비변사의 운영을 주도하였으며, 군사를 담당하는 5군영도 장악하였다. 이 시기에는 서로의 학문적 입장을 존중하고 상대방의 정책을 비판·견제하는 방식으로 정치가 운영되었다(EBS).</p></div>
+
+    <table class="data-table">
+      <caption>붕당별 6품 이상 관직자(인조 초반, 이태진, 1985)</caption>
+      <thead><tr><th>붕당</th><th>인원</th><th>비율</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">서인</td><td>82명</td><td>64%</td></tr>
+        <tr><td class="hd">남인</td><td>35명</td><td>27%</td></tr>
+        <tr><td class="hd">소북</td><td>12명</td><td>9%</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft);">소북 — 북인의 한 갈래로 인조반정 이후에도 유지됨.</p>
+
+    <div class="sidebox">
+      <h4>생각+ — 붕당과 식민 사학의 관계는?</h4>
+      <p>일제 강점기 일제는 식민 사학을 주장하면서 한국인은 항상 분열한다는 당파성론을 제시하였고, 그 예로 조선 시기의 붕당을 들었다. 하지만 붕당과 같은 분열은 어느 나라에나 존재하는 것이었으며, 조선 시기 붕당의 대립은 공론을 바탕으로 상호 비판·견제하는 순기능을 중점적으로 보아야 한다는 비판을 받고 있다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="decline">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>붕당 정치가 변질되다</h2>
+    </div>
+    <p class="block-sub">붕당 정치는 현종 때 두 차례의 예송이 일어나면서 점차 변질되기 시작하였다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">예송(현종)</div>
+        <div class="step-desc">효종과 효종비가 죽은 뒤 효종의 새어머니(자의 대비)가 상복을 입는 기간을 둘러싼 대립 → 효종의 정통성과 연계된 논쟁으로 발전</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">환국(숙종)</div>
+        <div class="step-desc">붕당을 누르고 왕권을 강화하려 집권 붕당을 바꾸는 환국을 여러 차례 단행 — 상대 붕당에 가혹한 보복과 탄압(EBS)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">공존 원칙 붕괴</div>
+        <div class="step-desc">왕권은 일시적으로 강화, 각 붕당이 상대를 인정하지 않고 권력 독점 — 3사의 언론도 자기 붕당의 이해관계 대변(EBS)</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>붕당 간의 대립이 왕위 계승에까지 번지면서 왕권을 위협하자, 숙종 말에는 탕평론이 제기되기도 하였다(실제로 시행되지는 않음).</p></div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>두 차례의 예송</caption>
+      <thead><tr><th>구분</th><th>서인</th><th>남인</th><th>결과</th></tr></thead>
+      <tbody>
+        <tr><td class="hd crimson">1차 예송(효종 사망)</td><td>1년설</td><td>3년설</td><td>서인의 주장이 받아들여짐</td></tr>
+        <tr><td class="hd crimson">2차 예송(효종비 사망)</td><td>9개월설</td><td>1년설</td><td>남인 승리</td></tr>
+        <tr><td class="hd">입장(EBS)</td><td>국왕도 일반 사대부와 동일하게 보아야 함</td><td>국왕은 일반 사대부와 예법이 다름</td><td>둘째 아들로 왕위에 오른 효종의 정통성 논쟁</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>노론</h4>
+        남인에 대한 강경파, 대의명분과 민생 안정 중시
+      </div>
+      <div class="compare-card crimson">
+        <h4>소론</h4>
+        남인에 대한 온건파, 실리와 적극적인 북방 개척 중시
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">숙종 때 서인이 남인에 대한 대응 문제를 놓고 노론과 소론으로 분열(EBS). 경종 즉위를 둘러싸고 소론은 경종, 노론은 연잉군(영조)을 내세우며 대립. 예송 — 상복(상중에 입는 옷)을 입는 기간을 둘러싼 논쟁.</p>
+
+    <div class="quote-block crimson">
+      <h4>붕당 정치의 변질</h4>
+      한쪽 사람을 쓰면 한쪽만 모두 등용하고, 물리치면 한쪽만 모두 물리치니 당화만 늘어납니다.
+      <div class="src">『숙종실록』 (재구성, EBS 자료)</div>
+    </div>
+  </section>
+
+  <section class="block" id="climate">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>기후와 한국사, 17세기 소빙기</h2>
+    </div>
+    <p class="block-sub">내 곁의 한국사 — 오늘날 기후 변화는 사람들의 삶에 큰 영향을 끼치고 있다. 기후 변화가 한국사에 어떤 영향을 끼쳤는지 조선 시대의 사례로 살펴보자.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">소빙기</div>
+        <div class="step-desc">17세기에 들어 전 세계적으로 기온이 떨어짐 — 세계 각지에서 기근·전염병 발생</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">대기근</div>
+        <div class="step-desc">조선에서도 경신대기근(1670~1671), 을병대기근(1695~1696)이 일어나 많은 사람이 굶어 죽음</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">정부의 대응</div>
+        <div class="step-desc">대기근 극복을 위해 각종 구휼 정책 시행, 을병대기근 때는 청에서 쌀을 수입해 백성 구제</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">대기근 연도는 교과서의 ‘17세기 북반구의 여름 기온 변화’ 그래프(Global Crisis, 2013)의 표시에 따름.</p>
+
+    <div class="causal-link"><p>소빙기의 추위는 사람들의 생활에도 영향을 끼쳤다.</p></div>
+    <div class="branch-cols">
+      <div class="branch-col brass">
+        <h4>목화 재배 확대</h4>
+        <p class="why">추위를 막을 옷</p>
+        <div class="branch-node">목화를 더 키워서 솜옷을 만들어 입음</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>온돌 보급 확산</h4>
+        <p class="why">추위를 막을 집</p>
+        <div class="branch-node">추울 땐 온돌이 제격 — 온돌이 널리 퍼짐</div>
+      </div>
+      <div class="branch-col crimson">
+        <h4>산림 황폐화</h4>
+        <p class="why">땔감 수요 증가</p>
+        <div class="branch-node">장작을 얻으려 나무를 마구 베어, 비가 조금만 와도 홍수 발생</div>
+      </div>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>17세기 소빙기가 조선에 어떤 영향을 끼쳤는지 말해 보자.</li>
+        <li>한국사에서 자연이 사람들의 삶에 영향을 끼친 사례를 조사하여 발표해 보자. (예: 약 1만 년 전 빙하기가 끝나면서 신석기 시대가 시작되었다.)</li>
+        <li>오늘날 기후 변화가 사람들의 생활에 어떤 영향을 끼치는지 조사하여 발표해 보자. (TIP: 기후위기적응정보포털 누리집의 ‘기후 변화 영향과 취약성’ 참고)</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="yeongjo">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>영조의 탕평 정치</h2>
+    </div>
+    <p class="block-sub">영조와 정조 때 본격적으로 탕평책이 시행되었다. 영조는 붕당을 없애기 위해 붕당의 뿌리부터 손을 댔다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">탕평파 중심</div>
+        <div class="step-desc">탕평책에 반대하는 관료 파면, 탕평책에 따르는 사람들(탕평파)을 육성해 정치 운영 — EBS: 노론과 소론의 온건파 등용</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">붕당의 기반 약화</div>
+        <div class="step-desc">붕당에 영향력을 행사하던 산림의 존재 부정, 붕당의 지지 기반인 서원 감축, 이조 전랑의 3사 관리·후임자 추천권 폐지(EBS)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">민생 정책(EBS)</div>
+        <div class="step-desc">균역법 실시(군포를 1년에 1필로 줄임), 신문고 부활</div>
+      </div>
+    </div>
+
+    <div class="quote-grid">
+      <div class="quote-block brass">
+        <h4>탕평비(서울 종로, 성균관 앞)</h4>
+        두루 원만하고 치우치지 않는 것이 군자의 마음이요, 치우친 것은 소인의 사사로운 마음이다.
+        <div class="src">탕평비 (재구성)</div>
+      </div>
+      <div class="quote-block brass">
+        <h4>영조의 탕평 교서</h4>
+        붕당의 폐단이 지금보다 심한 적이 없다. 인사를 맡은 부서는 탕평하게 거두어 쓰라.
+        <div class="src">『영조실록』 (재구성, EBS 자료)</div>
+      </div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card brass">
+        <h4>생각+ — 탕평의 의미는?</h4>
+        『상서』 홍범구주 가운데 「황극설」의 “무편무당 왕도탕탕 무당무편 왕도평평(無偏無黨 王道蕩蕩 無黨無偏 王道平平)”에서 나온 말. 군주의 정치가 한곳에 치우침 없이 지극히 공정하고 이상적인 상황에 이른 것을 의미 — 일반적으로 이상적이고 공정한 정치를 뜻했으나, 영조 때 정책으로 추진
+      </div>
+      <div class="compare-card">
+        <h4>탕평채</h4>
+        녹두묵과 여러 채소를 섞어 만든 음식, 이름은 사색 당파(노론·소론·남인·북인)의 치우침 없는 ‘탕평’에서 유래(황필수, 『명물기략』). 청포묵·쇠고기·미나리·김이 각 당파를 뜻한다는 주장도 있으나 근거가 명확하지 않다는 의견도 있음
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="jeongjo">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>정조의 탕평 정치</h2>
+    </div>
+    <p class="block-sub">영조를 이어 즉위한 정조는 노론뿐 아니라 그동안 소외되었던 남인과 소론을 포용하는 적극적인 탕평책을 펼쳤다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">지지 세력 양성</div>
+        <div class="step-desc">규장각 확대, 초계문신제 실시, 서얼 등용 확대</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">군사·도시 기반</div>
+        <div class="step-desc">친위 부대 장용영 설치, 신도시 수원 화성을 개혁 정치의 중심지로 삼으려 함</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">제도·경제(EBS)</div>
+        <div class="step-desc">『대전통편』 편찬, 시전 상인의 특권 축소(통공 정책)</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">규장각 — 숙종 때 설치되었으나 큰 기능을 하지 않다가, 정조가 학문으로 나라를 다스린다는 이상을 실현하려 확대(창덕궁 주합루). 일종의 왕실 도서관이었으나 정조가 각종 정책을 뒷받침하는 기구로 육성(EBS). 초계문신제 — 37세 이하의 젊은 관리를 규장각에서 교육시키고 40세가 되면 졸업시키는 제도, 정조가 직접 관여해 친위 세력을 키움. 서얼 — 양반의 첩이 낳은 자손.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card brass">
+        <h4>정약용</h4>
+        남인 출신, 초계문신에 발탁, 수원 화성 건설 등에 기여
+      </div>
+      <div class="compare-card brass">
+        <h4>김조순</h4>
+        노론 출신, 초계문신에 발탁, 순조의 장인이 됨
+      </div>
+      <div class="compare-card brass">
+        <h4>박제가</h4>
+        북학파의 대표적인 학자, 서얼 출신으로 규장각 관리에 임명
+      </div>
+    </div>
+
+    <div class="sidebox">
+      <h4>자료 탐구 1 — 수원 화성</h4>
+      <p>정조는 아버지 사도 세자의 묘를 수원으로 옮기고 수원 화성을 세웠다. 그리고 화성을 정치·군사·경제적 기능을 갖춘 새로운 도시로 만들고자 하였다. 수원 화성의 계획과 건축 과정은 『화성성역의궤』에 글과 그림으로 자세히 남아 있어, 자연재해와 6·25 전쟁 등으로 파괴된 수원 화성이 옛 모습대로 복원될 수 있었다. (장안문 — 수원 화성의 정문)</p>
+      <ol>
+        <li>현재 수원 화성의 모습과 『화성성역의궤』에 묘사된 모습을 비교해 보자. (TIP: 국립중앙박물관 누리집에서 ‘화성성역의궤’로 검색)</li>
+        <li>수원 화성의 많은 부분이 후대에 복원되었음에도 유네스코 세계 유산으로 등재될 수 있었던 까닭을 조사해 보자.</li>
+      </ol>
+    </div>
+
+    <div class="causal-link"><p>영조와 정조의 탕평책으로 붕당 간의 대립은 어느 정도 완화되었다. 하지만 이는 강력한 왕권으로 붕당 간의 대립을 억누른 것에 불과하였고, 왕과 그 주변 세력에게 권력이 집중되면서 정조가 죽은 뒤 세도 정치가 나타나는 배경이 되기도 하였다.</p></div>
+    <p style="font-size:13px; color:var(--ink-soft);">세도 정치는 붕당과는 달리 비판 세력조차 없었기 때문에 세도 가문의 횡포를 견제할 수 없었다. (교과서 방주)</p>
+    <div class="note-box">정조가 죽은 뒤 세도 정치가 어떻게 전개되었는지는 <a href="Ⅰ-1-4-02_세도정치와농민봉기_도표(해설포함).html#sedo">「세도 정치와 농민 봉기」 — 세도 정치가 시작되다</a>에서 이어진다.</div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>정리 — 조선 후기 정치의 변화</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>왕대별 정치의 변화</caption>
+      <thead><tr><th>시기</th><th>단계</th><th>주요 내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">선조</td><td>붕당 정치 전개</td><td>동인·서인 분당, 동인이 북인·남인으로 분화</td></tr>
+        <tr><td class="hd deep">광해군</td><td>붕당 정치 전개</td><td>북인의 권력 독점</td></tr>
+        <tr><td class="hd deep">인조 ~ 효종</td><td>붕당 정치 전개</td><td>서인 중심에 남인 공존, 서인이 비변사·5군영 장악</td></tr>
+        <tr><td class="hd crimson">현종</td><td>붕당 정치 변질</td><td>두 차례 예송, 서인과 남인의 대립 격화</td></tr>
+        <tr><td class="hd crimson">숙종</td><td>붕당 정치 변질</td><td>환국, 공존 원칙 붕괴, 노론·소론 분열, 탕평론 제기</td></tr>
+        <tr><td class="hd brass">영조</td><td>탕평 정치</td><td>탕평파 육성, 산림 부정, 서원 감축, 이조 전랑 권한 약화, 탕평비, 균역법</td></tr>
+        <tr><td class="hd brass">정조</td><td>탕평 정치</td><td>노론·소론·남인 고르게 등용, 규장각, 초계문신제, 서얼 등용, 장용영, 수원 화성</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>붕당 정치는 어떻게 전개되었을까?</li>
+        <li>영조와 정조가 탕평책을 시행한 까닭은 무엇일까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">9</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 양 난을 거치면서 (   )이/가 조선 통치 체제의 중심 기구가 되었다.</summary>
+        <div class="check-answer">비변사</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 영조와 정조 때 본격적인 (   )이/가 실시되었다.</summary>
+        <div class="check-answer">탕평책</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q3. 비변사는 본래 외적의 침입에 대비하기 위한 임시 기구로 설치되었다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 조선 후기에는 중앙군으로 훈련도감, 어영청 등 5군영 체제를 마련하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q5. 조선 인조의 집권기에는 북인이 정국의 주도권을 장악하였다. (○, ×)</summary>
+        <div class="check-answer">× — 인조반정으로 북인이 몰락하고 서인이 권력을 장악하였다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 조선 영조는 이조 전랑의 권한을 약화시키고자 이조 전랑이 3사 관리와 자신의 후임자를 추천하던 관행을 없앴다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q7. 조선 후기 지방군은 양반부터 노비까지 포함된 (속오군 / 금위영)으로 편성되었다.</summary>
+        <div class="check-answer">속오군</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q8. 조선 숙종 시기에 붕당 간의 대립이 격화되는 과정에서 (서인 / 남인)이 노론과 소론으로 분열하였다.</summary>
+        <div class="check-answer">서인</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q9. 조선 (영조 / 정조)는 노론과 소론의 온건파를 등용하여 탕평파를 육성하는 탕평책을 추진하였다.</summary>
+        <div class="check-answer">영조</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q10. 조선 정조는 일종의 왕실 도서관 기능을 담당하던 (규장각 / 장용영)을 자신의 개혁 정책을 뒷받침하는 기구로 육성하였다.</summary>
+        <div class="check-answer">규장각</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q11. 양 난 이후 (   )은/는 군사뿐만 아니라 외교, 재정, 인사 등 모든 행정 업무를 총괄하는 기구로 격상되었다.</summary>
+        <div class="check-answer">비변사</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q12. 조선 현종 때에는 효종과 효종비의 장례에서 자의 대비가 상복 입는 기간을 둘러싼 대립인 (   )이/가 일어나며 붕당 간의 대립이 격화되었다.</summary>
+        <div class="check-answer">예송</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q13. 조선 숙종 때에는 집권 붕당이 급격하게 교체되는 (   )이/가 여러 차례 발생하였다.</summary>
+        <div class="check-answer">환국</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q14. 조선 정조는 젊고 재능 있는 관리들을 규장각에 소속시켜 재교육하는 제도인 (   )을/를 실시하여 개혁 세력을 육성하고자 하였다.</summary>
+        <div class="check-answer">초계문신제</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅰ 「근대 이전 한국사의 이해」 4 「조선 후기의 변화」 01 「조선 후기 정치의 변화」, 44–45쪽 — 본문·연표·사료 읽기·도표·영조와 정조의 정책·생각+·확인하기의 기본 출처, 50쪽 내 곁의 한국사(기후와 한국사, 17세기 소빙기), 51쪽 자료 탐구 1(수원 화성) (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「양 난 이후 통치 체제의 변화와 붕당 정치」, 34–35쪽 — 비변사의 기능 강화, 군사 제도의 변화, 붕당 정치의 전개와 변질, 탕평 정치의 전개, 자료 탐구, 개념 체크 문항 (1차 근거)</li>
+    </ol>
+    <div class="note">
+      함께 업로드된 이전 교육과정 교과서(122–125쪽)는 현행 교육과정 이전의 자료로, 이 소주제에는 반영하지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-1-4-01)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p01-N과 대응)
+  const SECTION_PREFIX = "1-1-4-01";
+
+  const narrativeData = {
+    // 1-1-4-01-2: 비변사가 강화되고 5군영이 갖춰지다  (대본 p01-2)
+    "1-1-4-01-2": [
+      "두 번의 큰 전쟁은 나라를 다스리는 방식까지 바꾸어 놓았습니다.",
+      "<b>비변사</b>는 본래 국방 문제에 대비하려고 잠시 만든 회의 기구였습니다. 그런데 왜구를 막으며 상설 기구가 되었고, 양 난을 거치면서 참여하는 사람이 늘어 나라의 중요한 일을 모두 맡게 되었습니다.",
+      "전쟁 중에는 모든 일이 곧 국방과 연결되었기 때문이지요. 그 결과 원래 국정을 이끌던 의정부와 6조는 이름만 남게 되었습니다.",
+      "군사 제도도 바뀌었습니다. 임진왜란 중 급료를 받는 직업 군인으로 이루어진 <b>훈련도감</b>이 생겼고, 이어 군영들이 더해지며 한성을 지키는 <b>5군영</b> 체제가 갖추어졌습니다.",
+      "이처럼 권력과 군사력이 모인 비변사와 5군영을 누가 쥐느냐가 이후 정치의 중요한 열쇠가 됩니다."
+    ],
+    // 1-1-4-01-3: 붕당 정치가 전개되다  (대본 p01-3)
+    "1-1-4-01-3": [
+      "선조 때 동인과 서인으로 나뉜 사림은 곧 동인이 다시 북인과 남인으로 갈라졌습니다.",
+      "광해군 때는 <b>북인</b>이 권력을 독점했지만, 인조반정으로 함께 몰락했습니다.",
+      "반정을 이끈 <b>서인</b>은 권력을 잡은 뒤에도 남인과 일부 북인을 정치에 참여시켰습니다. 인조 초반 관직자의 3분의 2 가까이가 서인이었지만, 남인도 4분의 1 이상을 차지했지요.",
+      "서인은 비변사와 5군영을 장악해 정국을 이끌었고, 붕당들은 서로의 학문을 존중하면서 상대의 정책을 비판하고 견제했습니다.",
+      "일제는 이런 붕당을 한국인이 늘 분열한다는 증거로 삼았지만, 공론을 바탕으로 서로 견제한 순기능을 보아야 한다는 비판이 있습니다.",
+      "그런데 이 공존의 균형은 왕실의 상복 문제를 계기로 흔들리기 시작합니다."
+    ],
+    // 1-1-4-01-4: 붕당 정치가 변질되다  (대본 p01-4)
+    "1-1-4-01-4": [
+      "현종 때 효종과 효종비가 죽자, 효종의 새어머니가 상복을 얼마나 입어야 하는지를 두고 논쟁이 벌어졌습니다. 이것이 <b>예송</b>입니다.",
+      "상복 기간은 사소해 보이지만, 둘째 아들로 왕위에 오른 효종의 정통성을 어떻게 볼 것인가와 이어져 있었기 때문에 서인과 남인은 물러설 수 없었습니다.",
+      "숙종은 이 대립을 이용해 집권 붕당을 한꺼번에 바꾸는 <b>환국</b>을 여러 차례 일으켰습니다. 왕권은 잠시 강해졌지만, 정권이 바뀔 때마다 상대에 대한 보복이 이어졌습니다.",
+      "이제 붕당은 서로를 인정하지 않고 권력을 독점하려 했고, 그 과정에서 서인도 <b>노론</b>과 <b>소론</b>으로 갈라졌습니다.",
+      "대립이 왕위 계승 문제에까지 번져 왕권을 위협하자, 숙종 말에는 치우침 없는 정치, 곧 탕평이 필요하다는 주장이 나오기 시작했습니다."
+    ],
+    // 1-1-4-01-5: 기후와 한국사, 17세기 소빙기  (대본 p01-5)
+    "1-1-4-01-5": [
+      "붕당의 대립이 깊어지던 17세기, 조선 사람들은 또 다른 시련을 겪고 있었습니다. 바로 추위였습니다.",
+      "17세기에는 전 세계적으로 기온이 떨어지는 <b>소빙기</b>가 찾아와, 세계 곳곳에서 기근과 전염병이 일어났습니다.",
+      "조선에서도 <b>경신대기근</b>과 을병대기근으로 많은 사람이 굶어 죽었고, 정부는 각종 구휼 정책을 펴고 청에서 쌀을 들여오기까지 했습니다.",
+      "추위는 생활 모습도 바꾸었습니다. 솜옷을 만들려고 목화를 더 키웠고, 온돌이 널리 퍼졌습니다.",
+      "하지만 땔감을 얻으려 나무를 마구 베면서 산이 헐벗어, 비가 조금만 와도 홍수가 나는 문제가 생겼습니다.",
+      "기후 변화가 사람들의 삶을 흔드는 일은 오늘날에도 이어지고 있다는 점에서, 이 이야기는 지금의 우리와도 맞닿아 있습니다."
+    ],
+    // 1-1-4-01-6: 영조의 탕평 정치  (대본 p01-6)
+    "1-1-4-01-6": [
+      "숙종 말에 말로만 나왔던 탕평은 영조 때 비로소 정책이 되었습니다.",
+      "영조는 탕평에 반대하는 관료를 내보내고, 자신의 뜻을 따르는 <b>탕평파</b>를 키워 이들을 중심으로 정치를 이끌었습니다.",
+      "나아가 붕당이 다시 자라지 못하도록 뿌리를 잘랐습니다. 붕당에 영향력을 끼치던 산림의 존재를 인정하지 않았고, 붕당의 지지 기반인 <b>서원</b>을 줄였으며, 인사를 좌우하던 이조 전랑의 권한도 약하게 만들었습니다.",
+      "성균관 앞에 세운 <b>탕평비</b>에는 치우치지 않는 것이 군자의 마음이라는 뜻을 새겨 자신의 의지를 알렸습니다.",
+      "또 군포 부담을 1년에 1필로 줄인 균역법을 실시하고 신문고를 되살렸습니다. 영조의 뒤를 이은 정조는 여기서 한 걸음 더 나아갑니다."
+    ],
+    // 1-1-4-01-7: 정조의 탕평 정치  (대본 p01-7)
+    "1-1-4-01-7": [
+      "정조는 노론뿐 아니라 그동안 밀려나 있던 남인과 소론까지 끌어안는 적극적인 탕평을 펼쳤습니다.",
+      "이를 위해 먼저 자기 사람을 길렀습니다. <b>규장각</b>을 키우고, 젊은 관리를 다시 교육하는 <b>초계문신제</b>를 실시했으며, 서얼 출신도 등용했습니다. 남인 정약용, 서얼 박제가가 그렇게 발탁된 인물입니다.",
+      "또 친위 부대 <b>장용영</b>으로 군사적 기반을 다지고, 신도시 <b>수원 화성</b>을 개혁 정치의 중심지로 삼으려 했습니다.",
+      "덕분에 붕당 간의 대립은 어느 정도 누그러졌습니다. 하지만 그것은 강한 왕권으로 대립을 눌러 둔 것이었고, 권력이 왕과 그 주변에 모이는 결과를 낳았습니다.",
+      "그래서 정조가 세상을 떠나자, 그 빈자리를 몇몇 가문이 차지하는 세도 정치가 나타나게 됩니다. 노론 출신 초계문신 김조순이 순조의 장인이 되었다는 사실도 기억해 둡시다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>
