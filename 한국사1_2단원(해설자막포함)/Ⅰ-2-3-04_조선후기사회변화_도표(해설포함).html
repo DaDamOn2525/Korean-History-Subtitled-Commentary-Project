@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>조선 후기 사회 변화(자막 해설) | 양반은 늘고 노비는 줄다 — 흔들리는 신분제, 다시 짜이는 향촌과 가족</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-2-3-03_조선전기의신분과사회_도표(해설포함).html">‹ 이전: 조선 전기의 신분과 사회</a>
+  <a href="Ⅰ-2-3_신분제와사회구조_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#change">신분제의 변화</a>
+  <a href="#split">양반층의 분화</a>
+  <a href="#rise">신분 상승 운동</a>
+  <a href="#hyangchon">향촌 질서의 재편</a>
+  <a href="#family">가족 제도</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-2-4-01_고대의사상과문화_도표(해설포함).html">다음: 고대의 사상과 문화 (대단원 이동) ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 이전 한국사의 탐구</span> · 신분제와 사회 구조</div>
+    <h1>양반은 늘고 노비는 줄다 — 흔들리는 신분제, 다시 짜이는 향촌과 가족</h1>
+    <p class="lead">양 난 이후 농업 생산력이 증가하고 상품 화폐 경제가 발달하면서 부를 쌓은 상민이 양반이 되어 양반의 수는 크게 늘고 상민의 수는 줄었다. 양반층은 분화하였고, 서얼·기술직 중인·노비는 신분 상승을 꾀하였으며, 정부는 노비종모법과 공노비 해방으로 노비의 수를 줄였다. 향촌에서는 신향과 구향이 다투는 향전 속에 수령의 힘이 커졌고, 성리학적 윤리가 강조되면서 부계 중심의 가족 제도가 강화되었다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">조선 후기(17~19세기)</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>흔들리는 신분제와 다시 짜이는 사회 질서</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 신분 구조의 동요</strong> · <strong style="color:var(--brass)">황동색 = 신분 상승 운동과 정부의 대응</strong> · <strong style="color:var(--crimson)">적색 = 사회 질서의 재편(향촌·가족)</strong>. 같은 배경에서 세 가지 변화가 함께 나타났으므로 세 갈래로 나누었다.</p>
+
+    <div class="branch-root">양 난 이후 조선 사회의 변화</div>
+    <p class="branch-cause">양 난 이후 농업 생산력이 증가하고 상품 화폐 경제가 발달하였으며, 붕당 정치가 변질되고 성리학적 윤리가 강조되었다.</p>
+    <div class="branch-cols">
+      <div class="branch-col deep">
+        <h4>신분 구조의 동요</h4>
+        <div class="branch-node">부를 쌓은 상민이 공명첩·납속·족보로 양반이 됨</div>
+        <div class="branch-node">양반 증가, 상민 감소</div>
+        <div class="branch-node">양반층 분화 — 권반·향반·잔반</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>신분 상승 운동</h4>
+        <div class="branch-node">서얼·기술직 중인의 집단 상소 운동</div>
+        <div class="branch-node">노비의 군공·납속·도망</div>
+        <div class="branch-node">노비종모법(영조), 공노비 해방(순조)</div>
+      </div>
+      <div class="branch-col crimson">
+        <h4>사회 질서의 재편</h4>
+        <div class="branch-node">신향과 구향의 향전 → 수령이 향촌 주도</div>
+        <div class="branch-node">장자 중심 상속·제사, 양자 입양 — 부계 중심 가족 제도</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 변화의 배경(양 난)</strong> · <strong style="color:var(--brass)">황동색 = 노비 정책</strong></p>
+    <div class="timeline">
+      <div class="tl-item deep"><div class="tl-year">1592</div><div class="tl-body"><div class="tl-title">임진왜란</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1636</div><div class="tl-body"><div class="tl-title">병자호란</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1731</div><div class="tl-body"><div class="tl-title">노비종모법 실시</div><div class="tl-desc">영조</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1801</div><div class="tl-body"><div class="tl-title">공노비 해방</div><div class="tl-desc">순조, 중앙 관청 공노비 6만여 명</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="change">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>신분제에 변화가 나타나다</h2>
+    </div>
+    <p class="block-sub">조선 정부는 재정이 부족해지자 대가를 받고 벼슬을 주는 납속을 실시하였다. 양반 수의 증가는 조선 사회에 어떤 영향을 끼쳤을까?</p>
+
+    <div class="quote-block deep">
+      <h4>도입 사료 — 넘쳐 나는 관직</h4>
+      납속의 많고 적음에 따라 벼슬을 주니, 관직이 너무 넘치게 되었다.
+      <div class="src">『선조실록』 (재구성)</div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">배경</div>
+        <div class="step-desc">양 난 이후 농업 생산력 증가, 상품 화폐 경제 발달 → 상민 가운데 부를 축적하는 사람 등장</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">신분 상승의 방법</div>
+        <div class="step-desc">사회적 인정과 군역 면제를 얻으려고 공명첩 구입, 납속 — 족보를 사거나 위조</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">결과</div>
+        <div class="step-desc">상민의 수 감소, 양반의 수 크게 증가</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">공명첩 — 받는 사람의 이름이 비어 있는 관직 임명장으로, 왜란을 계기로 재정 부족을 해결하려고 발급하였다(교과서). 납속 — 국가의 재정 부족을 해결하기 위해 곡식을 바치게 하고, 그 대가로 일정한 혜택을 주던 정책(EBS).</p>
+
+    <div class="compare-grid">
+      <div class="quote-block deep">
+        <h4>신분 상승 움직임(EBS 자료)</h4>
+        돈 있는 백성이 호적을 위조해 ‘유학’으로 올리고 군역을 면한다.
+        <div class="src">『일성록』 (재구성) — 유학: 관직에 오르지 못하고 유학을 공부하던 유생</div>
+      </div>
+      <div class="compare-card deep">
+        <h4>대구 지역 직역별 호구 구성비(EBS 자료)</h4>
+        1690년(숙종 16) → 1729년(영조 5) → 1783년(정조 7) → 1858년(철종 9) — 양반 호구의 비율은 급격히 늘고, 상민과 노비 호구의 비율은 크게 줄어듦
+      </div>
+    </div>
+
+    <div class="causal-link"><p>같은 경제 변화 속에서 부를 쌓은 사람은 신분을 높였지만, 그렇지 못한 다수 농민은 오히려 형편이 나빠졌다.</p></div>
+    <p style="font-size:13px; color:var(--ink-soft);">일부 농민은 부농으로 성장하였으나 다수 농민은 빈농으로 전락하는 농민층의 분화가 나타났다(EBS). 참고(이전 교육과정 교과서): 많은 농민이 농토에서 밀려나 임노동자나 영세 상인으로 몰락하였다.</p>
+
+    <div class="note-box">조선 후기 농업 경제의 변화와 상품 화폐 경제의 발달은 <a href="Ⅰ-2-2-04_조선후기수취체제개편과경제변화_도표(해설포함).html#farming">「조선 후기 수취 체제 개편과 경제 변화」 — 농업 경제가 변화하다</a>와 <a href="Ⅰ-2-2-04_조선후기수취체제개편과경제변화_도표(해설포함).html#market">상품 화폐 경제가 발달하다</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="split">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>양반층이 분화하다</h2>
+    </div>
+    <p class="block-sub">양반의 수가 늘어나는 동안, 양반들 사이의 처지는 크게 벌어졌다.</p>
+
+    <div class="causal-link"><p>붕당 정치가 변질되어 일부 세력이 권력을 차지하였으므로, 양반층도 분화하였다.</p></div>
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>권반</h4>
+        중앙 관직을 차지하고 권력을 유지한 양반 — 권력을 차지하고 권세를 누림
+      </div>
+      <div class="compare-card deep">
+        <h4>향반</h4>
+        권력에서 밀려났지만 향촌에서 위세를 유지한 양반 — 향촌 사회에서 권위를 간신히 유지
+      </div>
+      <div class="compare-card deep">
+        <h4>잔반</h4>
+        경제적으로도 몰락하여 일반 농민과 다를 바 없는 양반
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">권반·향반·잔반의 구분은 EBS, 처지의 서술은 교과서에 따랐다. 교과서: 일부 양반은 권력을 차지하고 권세를 누렸지만, 대다수 양반은 몰락하여 향촌 사회에서 권위를 간신히 유지하거나 일반 농민과 차이가 없는 처지가 되었다.</p>
+
+    <div class="sidebox">
+      <h4>자료 탐구 3 — 양반층의 분화(교과서 85쪽)</h4>
+      <div class="compare-grid">
+        <div class="compare-card">
+          <h4>자료 1 — 「노상알현도」(김득신)</h4>
+          길에서 양반에게 절하는 사람들을 그린 것으로 추정되는 그림 — 양반의 권위를 보여 줌
+        </div>
+        <div class="quote-block">
+          <h4>자료 2 — 몰락한 양반의 모습</h4>
+          글 읽기만 좋아하고 관청 곡식 갚을 방법은 모르니, 양반이란 한 푼 값어치도 못 된다.
+          <div class="src">박지원, 『양반전』 (재구성) — 조선 후기 경제적으로 몰락한 양반의 모습</div>
+        </div>
+        <div class="compare-card">
+          <h4>「자리 짜기」(김홍도)</h4>
+          양반이 쓰는 관을 쓴 남편이 자리를 짜고, 아내는 실을 잣고 있으며, 뒤의 아이는 책을 읽고 있음
+        </div>
+      </div>
+    </div>
+
+    <div class="think-box">
+      <h4>자료 탐구 3</h4>
+      <ol>
+        <li>자료와 같이 조선 후기 양반층이 분화한 까닭을 말해 보자.</li>
+        <li>「자리 짜기」는 조선 후기 양반의 몰락을 보여 주는 풍속화이다. 조선 후기 사회 변화 모습을 담아 그림 속 인물들의 말풍선을 채워 보자.</li>
+      </ol>
+    </div>
+
+    <div class="note-box">붕당 정치가 변질되어 일당 전제화로 나아간 과정은 <a href="../한국사1_1단원(해설자막포함)/Ⅰ-1-4-01_조선후기정치의변화_도표(해설포함).html#decline">「조선 후기 정치의 변화」 — 붕당 정치가 변질되다</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="rise">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>신분 상승 운동을 펼치다</h2>
+    </div>
+    <p class="block-sub">중인들은 집단행동으로 신분 상승을 꾀했고, 노비들도 신분의 속박에서 벗어나려 하였다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card brass">
+        <h4>서얼</h4>
+        관직 진출에 제한 — 3사 등 청요직에 임명될 수 있게 해 달라고 집단 상소 운동 — 정조 때 유득공, 박제가 등이 규장각 검서관으로 진출 — 19세기 청요직 임명 허용
+      </div>
+      <div class="compare-card brass">
+        <h4>기술직 중인</h4>
+        중앙 고위 관직으로 진출할 수 있게 해 달라며 집단 상소 운동 — 성과를 거두지 못함 — EBS: 대규모 소청 운동 → 좌절
+      </div>
+      <div class="compare-card brass">
+        <h4>노비</h4>
+        군공, 납속 등으로 신분 상승 — 도망
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">청요직 — 청렴해야 하는 중요한 자리라는 의미로 3사의 중하위직과 이조 전랑 등을 말하며, 청요직을 거쳐야만 고위 관직에 오를 수 있었다(교과서). 참고(이전 교육과정 교과서): 기술직 중인은 축적된 경제력과 전문 지식을 토대로 문화와 예술 분야에서 독자적인 문화를 누렸고, 서양 문물의 소개와 개화사상의 형성에 기여하였다.</p>
+
+    <div class="causal-link"><p>조선 정부도 노비의 수를 줄이고 상민의 수를 늘려 국가 재정을 확보하려고 하였으므로, 노비를 양인으로 풀어 주는 정책을 폈다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">노비종모법(영조)</div>
+        <div class="step-desc">아버지가 노비라도 어머니가 양인이면 그 자녀도 양인</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">공노비 해방(순조)</div>
+        <div class="step-desc">중앙 관청에 소속된 공노비 6만여 명 해방</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">남아 있는 노비 제도</div>
+        <div class="step-desc">갑오개혁으로 신분제가 폐지될 때까지 노비 제도 존속</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 18세기 후반 공노비의 합법적인 신분 상승과 도망으로 정부는 신공을 거의 거둘 수 없게 되었고, 이에 순조 때 중앙 관서의 공노비를 해방하였다. 갑오개혁과 신분제의 폐지는 「갑오개혁」 소주제에서 다룬다.</p>
+
+    <div class="quote-block brass">
+      <h4>사료 읽기 — 노비종모법</h4>
+      노비의 양인 처가 낳은 자식은 어머니 신분을 따르게 하여 양인 장정을 늘리자.
+      <div class="src">『영조실록』 (재구성) — 김상성이 군역의 폐단을 아뢰며 건의</div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>노비 신분 세습 원칙의 변화</caption>
+      <thead><tr><th>시기</th><th>원칙·정책</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd crimson">고려 ~ 조선 전기</td><td>일천즉천</td><td>부모 중 한쪽이 노비면 자녀도 노비</td></tr>
+        <tr><td class="hd brass">조선 후기(영조)</td><td>노비종모법</td><td>아버지가 노비라도 어머니가 양인이면 자녀는 양인 — 어머니의 신분을 따름</td></tr>
+        <tr><td class="hd brass">조선 후기(순조)</td><td>공노비 해방</td><td>중앙 관청 공노비 6만여 명 해방</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>질문+</h4>
+      <ol>
+        <li>자료를 바탕으로 노비종모법을 실시한 까닭을 말해 보자.</li>
+      </ol>
+    </div>
+
+    <div class="note-box">정조의 규장각 운영과 서얼 등용은 <a href="../한국사1_1단원(해설자막포함)/Ⅰ-1-4-01_조선후기정치의변화_도표(해설포함).html#jeongjo">「조선 후기 정치의 변화」 — 정조의 탕평 정치</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="hyangchon">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>향촌 지배 질서가 재편되다</h2>
+    </div>
+    <p class="block-sub">양 난을 거치면서 사족을 중심으로 하는 향촌 지배 체제가 크게 흔들렸다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>사족(구향)의 대응</h4>
+        동족 마을(친족끼리 모여 사는 마을) 형성 — 문중을 중심으로 서원 건립 — 친족 간 결속을 강화하여 향촌 사회에서 권위 유지
+      </div>
+      <div class="compare-card crimson">
+        <h4>새로운 세력(신향)의 도전</h4>
+        서얼이나 경제적으로 성장한 부농층 — 향안에 이름을 올리고 향회 장악 — 기존 사족의 향촌 지배에 도전
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">향안 — 향회를 운영하는 사족의 명부로, 향안에 이름을 올려야 양반으로 대우받을 수 있었다(교과서).</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">향전</div>
+        <div class="step-desc">신향과 구향이 향회의 주도권을 두고 대립</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">사족의 약화</div>
+        <div class="step-desc">사족의 향촌 사회에 대한 영향력 약화 — 수령이 향촌 사회 주도(EBS: 수령과 향리의 권한 강화)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">향회의 변질</div>
+        <div class="step-desc">수령을 견제하는 기능을 잃고, 세금을 부과할 때 의견을 묻는 자문 기구가 됨</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 부농층은 수령과 결탁해 향회에 참여하고 향임직에도 진출하였으나 향촌 사회를 완전히 장악하지는 못하였다. 사족의 힘이 약해지고 새로운 세력의 힘도 충분하지 못한 상황에서 수령과 향리의 권한이 더욱 강해졌다.</p>
+
+    <div class="quote-block crimson">
+      <h4>향전(EBS 자료)</h4>
+      영덕의 신향이 향교를 주관하면서 오래된 가문인 구향과 마찰을 빚었다.
+      <div class="src">『승정원일기』 (재구성) — 기존에 향촌 지배권을 가지고 있던 구향이 사회적·경제적으로 급성장한 신향의 도전을 받음(EBS)</div>
+    </div>
+
+    <div class="causal-link"><p>향회가 수령을 견제하지 못하게 되었으므로, 이는 세도 정치 시기 수령의 농민 수탈이 심해지는 한 원인이 되었다.</p></div>
+
+    <div class="note-box">세도 정치 시기 수령과 향리의 수탈, 삼정의 문란은 <a href="../한국사1_1단원(해설자막포함)/Ⅰ-1-4-02_세도정치와농민봉기_도표(해설포함).html#sedo">「세도 정치와 농민 봉기」 — 세도 정치가 시작되다</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="family">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>부계 중심의 가족 제도가 강화되다</h2>
+    </div>
+    <p class="block-sub">조선 전기에는 고려와 마찬가지로 부계와 모계가 모두 중시되었다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">조선 전기</div>
+        <div class="step-desc">부계와 모계 모두 중시 — 균분 상속이 원칙으로 『경국대전』에 규정</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">양 난 이후</div>
+        <div class="step-desc">성리학적 윤리 강조 → 점차 부계 중시</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">조선 후기</div>
+        <div class="step-desc">재산 상속과 제사는 장자 중심 — 아들이 없으면 양자를 들여 가문을 잇는 것이 일반화</div>
+      </div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>여성의 지위</h4>
+        성리학적 윤리가 강화되면서 여성의 재혼이 더욱 어려워짐 — 여성의 지위도 점차 낮아짐
+      </div>
+      <div class="compare-card crimson">
+        <h4>혼인 풍속</h4>
+        조선 전기: 혼인하면 신랑이 신부 집에서 몇 달 또는 몇 년간 머무는 경우가 많음 — 조선 후기: 신부가 신부 집에서 3일을 보내고 곧장 신랑 집으로 가서 생활하는 경우 증가
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 부인과 첩은 엄격하게 구분되었으며, 첩의 자식인 서얼은 재산 상속과 제사 등에서도 차별을 받았다.</p>
+
+    <div class="quote-grid">
+      <div class="quote-block crimson">
+        <h4>『경국대전』의 상속 규정</h4>
+        자녀의 생존 여부와 상관없이 노비를 똑같이 나누어 준다.
+        <div class="src">『경국대전』 형전 (재구성)</div>
+      </div>
+      <div class="quote-block crimson">
+        <h4>조선 후기 재산 상속</h4>
+        봉양도 제사도 하지 않는 딸은 재산의 3분의 1만 나누어 갖도록 하라.
+        <div class="src">『부안 김씨 고문서』 (재구성)</div>
+      </div>
+    </div>
+
+    <div class="think-box">
+      <h4>생각 키우기 — 조선 후기 가족 제도의 변화</h4>
+      <ol>
+        <li>자료를 바탕으로 조선 후기 가족 제도와 조선 전기, 오늘날의 가족 제도를 상속 제도와 혼인 제도로 나누어 비교해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>정리 — 조선 후기 사회 변화</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>조선 후기 사회 변화</caption>
+      <thead><tr><th>구분</th><th>변화</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">신분 구조</td><td>공명첩·납속·족보로 양반 증가, 상민 감소 / 양반층 분화(권반·향반·잔반)</td></tr>
+        <tr><td class="hd brass">중인·서얼</td><td>서얼: 집단 상소 → 규장각 검서관(정조), 청요직 허용(19세기) / 기술직 중인: 집단 상소(소청) 운동 좌절</td></tr>
+        <tr><td class="hd brass">노비</td><td>군공·납속·도망 / 노비종모법(영조), 공노비 6만여 명 해방(순조) / 노비 제도는 갑오개혁 때까지 존속</td></tr>
+        <tr><td class="hd crimson">향촌</td><td>사족의 동족 마을·문중 서원 / 신향과 구향의 향전 → 수령의 향촌 주도, 향회는 자문 기구로</td></tr>
+        <tr><td class="hd crimson">가족</td><td>장자 중심 상속·제사, 양자 입양 일반화 / 여성 재혼이 더욱 어려워짐, 신부가 곧장 신랑 집으로</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>신분제와 사회 구조 — 고대에서 조선 후기까지</caption>
+      <thead><tr><th>시기</th><th>신분 제도</th><th>특징</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">고대</td><td>왕족·귀족 / 평민 / 천민, 신라의 골품제</td><td>신분 세습, 혈통에 따른 지위 — 신라 말 골품제 해체</td></tr>
+        <tr><td class="hd">고려</td><td>양천제(문벌·중간 계층·양민 / 천인)</td><td>제한적 신분 상승, 본관제, 부계와 모계가 동등한 가족 제도</td></tr>
+        <tr><td class="hd">조선 전기</td><td>양천제 법제화 → 양반·중인·상민·천민의 4신분제</td><td>양반의 고위 관직 독점, 사족의 향촌 지배, 부계와 모계 모두 중시</td></tr>
+        <tr><td class="hd">조선 후기</td><td>4신분제의 동요</td><td>양반 증가·분화, 신분 상승 운동, 노비종모법·공노비 해방, 부계 중심 가족 제도</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 길잡이 질문</h4>
+      <ol>
+        <li>조선 후기 신분 제도에는 어떤 변화가 나타났을까?</li>
+        <li>조선 후기에 부계 중심의 가족 제도가 강화된 까닭은 무엇일까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 조선 후기에는 상민의 수가 늘어나고, 양반의 수는 줄어들었다. (○, ×)</summary>
+        <div class="check-answer">× — 상민의 수는 줄어들고 양반의 수는 크게 늘어났다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 조선은 영조 때 아버지가 노비라도 어머니가 양인이면 그 자녀도 양인이 되게 하는 (   )을/를 실시하였다.</summary>
+        <div class="check-answer">노비종모법</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 조선 후기에는 신향과 구향이 향촌 사회의 주도권을 두고 대립하는 (   )이/가 벌어졌다.</summary>
+        <div class="check-answer">향전</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 조선 후기에는 성리학적 지배 질서가 강화되면서 점차 (   ) 중심의 가족 제도가 강화되었다.</summary>
+        <div class="check-answer">부계</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q5. 조선 후기에 기술직 중인이 대규모 소청 운동을 전개하였으나 좌절되었다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+
+      <div class="check-group">자료 탐구</div>
+      <div class="check-item"><details><summary>Q6. 조선 후기 양반층이 분화한 까닭은 무엇일까?</summary>
+        <div class="check-answer">붕당 정치가 변질되어 일부 양반만 권력을 차지하였고, 대다수 양반은 관직에 나가지 못한 채 몰락하였기 때문이다. 상품 화폐 경제의 발달로 부를 쌓은 상민이 양반이 되면서 양반의 수가 크게 늘어난 것도 배경이 되었다.</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅱ 「근대 이전 한국사의 탐구」 3 「신분제와 사회 구조」 04 「조선 후기 사회 변화」, 82–83쪽 — 본문·연표·도입 사료·공명첩·청요직·사료 읽기(노비종모법)·질문+·향안·조선 후기 가족 제도의 변화·생각 키우기·확인하기의 기본 출처 (1차 근거)</li>
+      <li>동아출판 고등학교 『한국사1』, 자료로 보는 한국사 「신분제와 사회 구조」 자료 탐구 3(양반층의 분화), 85쪽 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「신분제와 사회 구조」 중 「조선 후기의 사회 변화」, 66–67쪽 — 신분제의 변화, 권반·향반·잔반, 신분 상승 움직임, 향촌 지배 질서의 변화, 공명첩·납속 곁글, 자료(신분 상승 움직임, 향전), 개념 체크 문항 (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국사』, 145–149쪽 (참고용) — 농민의 몰락, 기술직 중인의 문화 활동과 개화사상 기여, 공노비 해방의 배경, 부농층의 향촌 진출과 수령 권한 강화의 배경, 첩·서얼 차별에만 활용</li>
+    </ol>
+    <div class="note">
+      이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다. 대구 지역 직역별 호구 구성비는 그래프의 추세만 옮겼다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-2-3-04)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p04-N과 대응)
+  const SECTION_PREFIX = "1-2-3-04";
+
+  const narrativeData = {
+    // 1-2-3-04-2: 신분제에 변화가 나타나다  (대본 p04-2)
+    "1-2-3-04-2": [
+      "임진왜란과 병자호란이 끝난 뒤 조선의 농업 생산력은 늘어났고, 상품 화폐 경제도 발달했습니다. 그러자 상민 가운데에도 큰 재산을 모은 사람들이 나타났습니다.",
+      "이들이 바란 것은 사회적 인정과 군역 면제였습니다. 양반이 되면 그 두 가지를 얻을 수 있었습니다.",
+      "마침 재정이 부족해진 정부는 곡식을 받고 벼슬을 주는 <b>납속</b>을 실시하고, 이름 칸이 비어 있는 관직 임명장인 <b>공명첩</b>을 발급했습니다. 돈 있는 상민은 이것을 사들였고, 족보를 사거나 위조하는 사람도 있었습니다.",
+      "그 결과 양반은 크게 늘고 상민은 줄었습니다. 대구 지역의 호구 구성비를 보면 1690년부터 1858년 사이에 양반 호구의 비율은 급격히 늘고, 상민과 노비의 비율은 크게 줄어듭니다.",
+      "하지만 같은 경제 변화가 모두에게 기회였던 것은 아닙니다. 다수 농민은 오히려 빈농으로 밀려나 품을 팔거나 작은 장사로 살아가야 했습니다.",
+      "양반이 늘어난 만큼, 양반들 사이의 처지도 같지 않았습니다."
+    ],
+    // 1-2-3-04-3: 양반층이 분화하다  (대본 p04-3)
+    "1-2-3-04-3": [
+      "양반의 수가 늘어나는 동안 양반들 사이의 처지는 크게 벌어졌습니다. 그 계기는 정치였습니다.",
+      "붕당 정치가 변질되면서 권력은 일부 세력에게 몰렸습니다. 그 결과 중앙 관직을 차지해 권세를 누린 <b>권반</b>, 권력에서 밀려났지만 향촌에서 위세를 지킨 <b>향반</b>, 경제적으로도 몰락해 농민과 다를 바 없게 된 <b>잔반</b>으로 양반층이 나뉘었습니다.",
+      "관직에 나가지 못하면 양반이라도 생계를 꾸리기 어려웠습니다. 박지원의 『양반전』에는 글 읽기만 좋아하다 관청에서 빌린 곡식을 갚지 못한 양반이 나옵니다.",
+      "김홍도의 「자리 짜기」에서는 양반의 관을 쓴 남편이 직접 자리를 짜고, 아내는 실을 잣고 있습니다. 그 뒤에서 책을 읽는 아이는 무엇을 뜻할까요? 말풍선을 채우며 생각해 보면 좋겠습니다.",
+      "반면 「노상알현도」처럼 길에서 양반에게 절하는 장면은 양반의 권위가 여전했음을 보여 줍니다. 같은 양반이라도 누구는 절을 받고, 누구는 손수 자리를 짜야 했던 것입니다.",
+      "위에서 양반층이 흔들리는 동안, 아래에서는 신분의 벽을 넘으려는 움직임이 커지고 있었습니다."
+    ],
+    // 1-2-3-04-4: 신분 상승 운동을 펼치다  (대본 p04-4)
+    "1-2-3-04-4": [
+      "신분 상승을 꾀한 것은 부유한 상민만이 아니었습니다. 관직에 제한을 받던 중인들은 여럿이 함께 목소리를 냈습니다.",
+      "<b>서얼</b>은 청요직에 임명될 수 있게 해 달라며 집단 상소 운동을 벌였습니다. <b>청요직</b>은 고위 관직에 오르려면 거쳐야 하는 자리였기 때문입니다. 정조 때 유득공, 박제가 등이 <b>규장각 검서관</b>으로 진출했고, 19세기에는 청요직 임명이 허용되었습니다.",
+      "<b>기술직 중인</b>도 고위 관직 진출을 요구하며 집단 상소 운동을 벌였지만 성과를 거두지 못했습니다. 다만 이들은 쌓은 경제력과 전문 지식으로 독자적인 문화를 누렸고, 뒷날 서양 문물을 소개하고 개화사상이 형성되는 데 기여합니다.",
+      "노비들은 군공이나 납속으로 양인이 되거나 도망을 쳤습니다. 정부도 노비를 줄이고 상민을 늘려야 국가 재정을 확보할 수 있었습니다.",
+      "그래서 영조는 <b>노비종모법</b>을 실시했습니다. 고려 이후 이어진 일천즉천에서는 부모 중 한쪽만 노비여도 자녀가 노비였지만, 이제는 아버지가 노비라도 어머니가 양인이면 자녀는 양인이 되었습니다. 노비가 되는 길 하나를 법으로 막은 것입니다.",
+      "이어 공노비의 신분 상승과 도망으로 신공을 거의 거둘 수 없게 되자, 순조는 중앙 관청의 <b>공노비</b> 6만여 명을 해방했습니다. 그러나 노비 제도 자체는 갑오개혁으로 신분제가 폐지될 때까지 남아 있었습니다.",
+      "신분의 위아래가 이렇게 흔들리자, 향촌을 이끌던 질서에도 변화가 찾아옵니다."
+    ],
+    // 1-2-3-04-5: 향촌 지배 질서가 재편되다  (대본 p04-5)
+    "1-2-3-04-5": [
+      "조선 전기 향촌을 이끈 것은 사족이었습니다. 하지만 양 난을 거치며 사족 중심의 향촌 지배 체제는 크게 흔들렸습니다.",
+      "사족은 친족끼리 모여 사는 <b>동족 마을</b>을 만들고 문중을 중심으로 서원을 세워 결속을 다졌습니다. 친족의 힘으로 향촌에서 권위를 지키려 한 것입니다.",
+      "그 틈을 파고든 것이 서얼이나 경제적으로 성장한 부농층 같은 <b>신향</b>입니다. 이들은 향안에 이름을 올리고 향회를 장악하려 했고, 기존 사족인 <b>구향</b>과 주도권을 다투는 <b>향전</b>이 자주 벌어졌습니다.",
+      "결과는 뜻밖이었습니다. 구향은 힘을 잃었지만 신향도 향촌을 완전히 장악하지 못했고, 그 사이에서 힘을 얻은 것은 <b>수령</b>이었습니다.",
+      "향회는 수령을 견제하던 기능을 잃고, 세금을 매길 때 의견을 묻는 자문 기구가 되었습니다. 수령을 견제할 장치가 약해진 것은 세도 정치 시기 수령의 농민 수탈이 심해지는 한 원인이 되었습니다.",
+      "향촌의 질서가 바뀌던 이 무렵, 집 안의 질서도 크게 달라지고 있었습니다."
+    ],
+    // 1-2-3-04-6: 부계 중심의 가족 제도가 강화되다  (대본 p04-6)
+    "1-2-3-04-6": [
+      "고려에서는 아들딸 구분 없이 재산을 나누고, 혼인하면 신랑이 신부 집에서 살았습니다. 조선 전기까지도 이런 모습이 이어져, 『경국대전』은 노비를 자녀에게 똑같이 나누도록 정했습니다.",
+      "그런데 양 난 이후 성리학적 윤리가 강조되면서 아버지 쪽 혈통, 곧 <b>부계</b>가 중시되기 시작했습니다.",
+      "재산 상속과 제사는 큰아들인 <b>장자</b>를 중심으로 이루어졌고, 아들이 없으면 <b>양자</b>를 들여 가문을 잇는 것이 일반화되었습니다.",
+      "부안 김씨 집안의 문서는 그 까닭을 보여 줍니다. 딸은 부모를 봉양하지도, 제사를 지내지도 않으니 재산의 3분의 1만 주라는 것입니다. 제사를 누가 맡느냐가 상속의 몫을 정하게 된 것입니다.",
+      "여성의 재혼은 더욱 어려워졌고, 혼인하면 신부가 사흘 만에 신랑 집으로 가서 사는 경우가 늘었습니다. 첩의 자식인 서얼이 상속과 제사에서 차별받은 것도 같은 흐름 속에 있었습니다.",
+      "고대의 골품제에서 조선 후기의 부계 중심 가족 제도까지, 신분과 가족의 질서는 시대마다 모습을 바꾸어 왔습니다. 오늘날 우리의 가족 제도와 비교해 보면, 무엇이 이어지고 무엇이 달라졌을까요?"
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

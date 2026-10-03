@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>조선 전기의 신분과 사회(자막 해설) | 법은 양천제, 현실은 4신분제 — 사족이 향촌을 이끌다</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-2-3-02_고려의신분과사회_도표(해설포함).html">‹ 이전: 고려의 신분과 사회</a>
+  <a href="Ⅰ-2-3_신분제와사회구조_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#fourclass">4신분제</a>
+  <a href="#ruling">양반과 중인</a>
+  <a href="#ruled">상민과 천민</a>
+  <a href="#hyangchon">사족의 향촌 지배</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-2-3-04_조선후기사회변화_도표(해설포함).html">다음: 조선 후기 사회 변화 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 이전 한국사의 탐구</span> · 신분제와 사회 구조</div>
+    <h1>법은 양천제, 현실은 4신분제 — 사족이 향촌을 이끌다</h1>
+    <p class="lead">조선은 법적으로 양천제를 시행하여 신분을 양인과 천인으로 나누었다. 그러나 시간이 지나면서 양반과 중인이 신분으로 굳어져 양반, 중인, 상민, 천민의 4신분제가 정착되었다. 향촌 사회는 사족을 중심으로 운영되었는데, 사족은 유향소를 만들어 지방관을 보좌하고, 16세기 이후에는 서원과 향약을 바탕으로 향촌 사회를 주도하였다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">조선 전기(15~16세기)</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>양천제에서 4신분제로, 그리고 사족의 향촌 지배</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 지배층(양반·중인)</strong> · <strong style="color:var(--crimson)">적색 = 피지배층(상민·천민)</strong> · <strong style="color:var(--brass)">황동색 = 사족의 향촌 지배</strong>. 법적 구분이 4신분제로 굳어진 순서는 화살표로, 4신분제 아래의 지배층·피지배층과 향촌 지배는 세 갈래로 나누었다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">양천제</div>
+        <div class="step-desc">법적으로 양인과 천인으로 신분 구분</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">양반·중인의 신분화</div>
+        <div class="step-desc">관직을 가진 사람을 뜻하던 양반과 이를 보좌하는 중인이 신분으로 굳어짐 — EBS: 반상제의 일반화</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">4신분제 정착</div>
+        <div class="step-desc">양반, 중인, 상민, 천민</div>
+      </div>
+    </div>
+
+    <div class="branch-cols">
+      <div class="branch-col deep">
+        <h4>지배층</h4>
+        <div class="branch-node"><b>양반</b> — 문반·무반과 그 가족, 고위 관직 독점</div>
+        <div class="branch-node"><b>중인</b> — 기술관, 서리·향리 등 하급 지배층, 서얼은 중인과 비슷한 대우</div>
+      </div>
+      <div class="branch-col crimson">
+        <h4>피지배층</h4>
+        <div class="branch-node"><b>상민</b> — 농민·수공업자·상인, 신량역천</div>
+        <div class="branch-node"><b>천민</b> — 대부분 노비</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>향촌 지배</h4>
+        <div class="branch-node">사족이 유향소·향회로 향촌 운영</div>
+        <div class="branch-node">16세기 이후 서원과 향약으로 향촌 사회 주도</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 신분 질서의 운영</strong> · <strong style="color:var(--brass)">황동색 = 사족의 향촌 지배</strong></p>
+    <div class="timeline">
+      <div class="tl-item deep"><div class="tl-year">1392</div><div class="tl-body"><div class="tl-title">조선 건국</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1413</div><div class="tl-body"><div class="tl-title">태종, 호패법 실시</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1517</div><div class="tl-body"><div class="tl-title">향약 시행 건의</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1543</div><div class="tl-body"><div class="tl-title">백운동 서원 건립</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1550</div><div class="tl-body"><div class="tl-title">백운동 서원에 사액(소수 서원)</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="fourclass">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>양천제에서 4신분제로</h2>
+    </div>
+    <p class="block-sub">조선은 법적으로 양천제를 시행하였다. 그런데 실제 사회는 네 신분으로 나뉘어 갔다.</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>양인과 천인(교과서·EBS)</caption>
+      <thead><tr><th>구분</th><th>성격</th><th>조세·공납·역</th><th>과거 응시·관직 진출</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">양인</td><td>자유민</td><td>의무를 짐</td><td>제약이 없음</td></tr>
+        <tr><td class="hd crimson">천인</td><td>비자유민 — EBS: 천역 담당</td><td>의무를 지지 않음</td><td>불가능</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 조선은 조세와 국역을 담당하는 양인층을 늘려 국가 기반을 안정시키려 하였다. 이 과정에서 고려 말 조선 초에 많은 노비가 해방되고 양인의 지위도 향상되었으며, 양천제가 법제화되었다.</p>
+
+    <div class="causal-link"><p>시간이 지나면서 관직을 가진 사람을 의미하던 양반과 양반을 보좌하는 중인이 신분으로 굳어졌으므로, 양반, 중인, 상민, 천민의 4신분제가 정착되었다.</p></div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>조선의 신분 제도(교과서 도식)</caption>
+      <thead><tr><th>법적 구분</th><th>신분</th><th>구성</th><th>지배 관계</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep" rowspan="3">양인</td><td class="deep">양반</td><td>문반, 무반</td><td rowspan="2">지배층</td></tr>
+        <tr><td class="deep">중인</td><td>서리·향리, 하급 장교, 기술관, 서얼</td></tr>
+        <tr><td class="crimson">상민</td><td>농민, 상인, 수공업자</td><td rowspan="2">피지배층</td></tr>
+        <tr><td class="hd crimson">천인</td><td class="crimson">천민</td><td>대부분 노비</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 양반은 자신들의 기득권을 지키기 위해 문·무반직을 받은 자만을 양반(사족)으로 인정하고, 향리와 서리 등 하급 지배 신분을 중인으로 격하시켜 지배층의 수가 늘어나는 것을 막았다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">호패법</div>
+        <div class="step-desc">태종 때부터 16세 이상 모든 남자에게 호패를 지니고 다니게 함</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">기록 내용</div>
+        <div class="step-desc">이름, 태어난 때, 과거 급제 시기와 과거 종류, 호패 발행 시기 — 신분에 따라 상아·뿔·나무 등 재질이 다름</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">목적</div>
+        <div class="step-desc">효과적인 인구 파악과 역 부과</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="ruling">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>양반과 중인이 지배층을 이루다</h2>
+    </div>
+    <p class="block-sub">양반은 최고 지배층, 중인은 하급 지배층으로 자리 잡았다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>양반</h4>
+        문반(문신 관료)과 무반(무신 관료)을 함께 부르던 말 → 점차 문무반과 그 가족까지 포함하는 지배층의 호칭 — 최고 지배층으로 군역 면제 — 과거로 관직에 진출하여 고위 관직 독점 — EBS: 주요 관직 차지, 각종 특권 보장
+      </div>
+      <div class="compare-card deep">
+        <h4>중인</h4>
+        넓은 의미: 양반과 상민의 중간 신분 — 좁은 의미: 잡과로 선발된 기술관, 일반 관리보다 지위가 낮고 승진에 제한 — 중앙 관청의 서리, 지방 관청의 향리 등과 함께 하급 지배층 — EBS: 직역 세습, 같은 신분끼리 혼인
+      </div>
+      <div class="compare-card deep">
+        <h4>서얼</h4>
+        양반의 첩에게서 태어난 자녀 — 무과와 잡과에만 응시 가능 — 중인과 비슷한 대우 — EBS: 양인 첩에게서 태어난 서자와 천민 첩에게서 태어난 얼자를 함께 부르는 말
+      </div>
+    </div>
+
+    <div class="quote-block deep">
+      <h4>서얼의 지위(EBS 자료)</h4>
+      서얼 자손의 벼슬길을 막는 것은 옛 법이 아니다. 『경국대전』 이후 벼슬을 못 하게 되었다.
+      <div class="src">어숙권, 『패관잡기』 (재구성) — 고려 시대까지는 서얼에 대한 차별이 없었으나 『경국대전』에 서얼의 문과 응시가 금지되면서 능력 있는 서얼의 관직 진출이 제한되었다(EBS).</div>
+    </div>
+  </section>
+
+  <section class="block" id="ruled">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>상민과 천민이 피지배 계층의 삶을 살다</h2>
+    </div>
+    <p class="block-sub">상민은 생산 활동을 담당하였고, 천민의 대다수는 노비였다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>상민</h4>
+        농민, 수공업자, 상인 등 생산 활동을 담당한 계층 — 대다수는 농민으로 조세·공납·역 부담 — 원칙적으로 과거 응시 가능, 그러나 과거 준비의 어려움으로 실제 응시는 거의 없음 — EBS: 수공업자·상인은 중농 정책으로 농민보다 낮은 대우
+      </div>
+      <div class="compare-card crimson">
+        <h4>신량역천</h4>
+        신분은 양인이지만 관청의 잡일, 수군, 봉수·조운·역의 업무 등 천역(누구나 기피하는 힘든 일)을 담당 — 사실상 천민 취급 — EBS: 수군, 조례(관청 잡역), 나장(형사 업무), 일수(지방 고을 잡역), 봉수군, 역졸, 조졸
+      </div>
+      <div class="compare-card crimson">
+        <h4>천민</h4>
+        대다수가 노비 — 관청에 속한 공노비와 개인에게 소속된 사노비 — 재산으로 여겨져 매매·상속·증여의 대상 — 부모 중 한쪽이 노비면 그 자식도 노비가 되는 것이 일반적 — EBS: 백정·광대·무당 등도 천민으로 간주
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">고려에서 백정은 직역을 맡지 않은 양인 농민을 가리켰으나, 조선에서는 천민으로 간주되었다(EBS 개념 체크).</p>
+
+    <div class="sidebox">
+      <h4>참고(이전 교육과정 교과서) — 자신이 노비임을 주장했던 여인, 다물사리(1586)</h4>
+      <div class="compare-grid">
+        <div class="compare-card">
+          <h4>다물사리의 주장</h4>
+          자신은 성균관에 소속된 노비 — 노비끼리 혼인한 경우에는 어머니의 주인이 소유권 → 자손은 모두 성균관의 공노비
+        </div>
+        <div class="compare-card">
+          <h4>양반 이지도의 주장</h4>
+          다물사리는 양인으로 자기 집 노비 윤필의 처 — 양인 여성이 노비와 혼인하면 자손은 노비, 아버지의 주인이 소유권 → 자손은 모두 이지도의 사노비
+        </div>
+      </div>
+      <p>사노비보다 공노비가 비교적 나은 처지에 있었으므로 다물사리는 자손을 위해 스스로 노비라고 주장하였다. 그러나 판관은 다물사리를 양인으로 판결하였고, 다물사리의 자손은 모두 이지도의 사노비가 되었다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="hyangchon">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>사족이 향촌을 지배하다</h2>
+    </div>
+    <p class="block-sub">선현에 제사 지내고 유학을 익히던 서원이 유네스코 세계 유산으로 등재되었다. 조선 시대에 서원은 어떤 역할을 하였을까?</p>
+
+    <div class="quote-block brass">
+      <h4>도입 자료 — 한국의 서원, 유네스코 세계 유산 목록 올랐다</h4>
+      한국의 서원이 성리학 관련 문화적 전통의 증거로 인정받아 세계 유산에 올랐다.
+      <div class="src">『한겨레』, 2019. 7. 6. (재구성)</div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">유향소</div>
+        <div class="step-desc">사족이 만든 향촌 자치 기구 — 지방관 보좌, 향리의 비리 감시</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">향회</div>
+        <div class="step-desc">지역 사족의 모임 — 결속을 다짐</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">경재소</div>
+        <div class="step-desc">정부가 지방 사족을 견제하고 중앙 집권을 강화하려고 수도에 설치 — 현직 중앙 관료가 출신지의 유향소 통제</div>
+      </div>
+    </div>
+
+    <div class="causal-link"><p>사림 세력이 성장하면서 16세기 이후 각 지방에 서원이 세워지고 향약이 보급되었으므로, 사족은 서원과 향약을 바탕으로 향촌 사회를 주도하였다.</p></div>
+    <div class="compare-grid">
+      <div class="compare-card brass">
+        <h4>서원</h4>
+        이름 있는 유학자를 제사 지내고 유학을 교육하는 공간 — 사족이 서원을 중심으로 세력을 모으고 권위를 높임, 유학 교육과 교화를 내세워 활동을 합리화 — 정부도 성리학 이념을 보급하려고 사액(현판을 내려 주는 것)과 함께 토지·노비 등을 내려 주어 지원 — 조선 후기에는 무분별하게 세워져 서원을 정리하려는 움직임도 나타남
+      </div>
+      <div class="compare-card brass">
+        <h4>향약</h4>
+        ‘향촌 규약’을 줄인 말, 16세기 이후 널리 시행 — 전통적인 공동 조직과 사회 풍속을 유교식으로 고친 규약 — 사족이 향약을 통해 자치를 보장받고 향촌 사회를 통제 — 사족 중심의 향촌 지배 체제 확립
+      </div>
+    </div>
+
+    <div class="quote-grid">
+      <div class="quote-block brass">
+        <h4>소수 서원의 사액</h4>
+        이황이 백운동 서원에 현판·책·토지·노비를 청하자, 명종이 소수 서원 현판을 내렸다.
+        <div class="src">이긍익, 『연려실기술』 (재구성) — 이때부터 서원에 현판과 책을 내리는 일이 시작됨</div>
+      </div>
+      <div class="quote-block brass">
+        <h4>향약의 처벌 대상</h4>
+        선비의 기풍을 더럽히는 자, 유향소의 결정에 복종하지 않는 자, 벼슬 없는 사람으로 사족을 능멸하는 자
+        <div class="src">이황, 『퇴계 선생 문집』 (재구성)</div>
+      </div>
+    </div>
+
+    <div class="think-box">
+      <h4>생각 키우기 — 사족의 향촌 지배</h4>
+      <ol>
+        <li>자료를 바탕으로 사족들이 향약을 시행한 목적을 말해 보자.</li>
+        <li>조선 시대에 서원이 전국 곳곳에 세워진 까닭을 정리해 보자.</li>
+        <li>조선 시대 서원이 무분별하게 세워지면서 어떤 부작용이 나타났을지 생각해 보자.</li>
+      </ol>
+    </div>
+
+    <div class="note-box">사림 세력의 성장과 서원·향약을 기반으로 한 향촌 활동은 <a href="../한국사1_1단원(해설자막포함)/Ⅰ-1-3-02_사림의성장과붕당의등장_도표(해설포함).html#sarim">「사림의 성장과 붕당의 등장」 — 사림이 중앙 정계에 진출하다</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>정리 — 조선 전기의 신분 구조</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>조선의 4신분</caption>
+      <thead><tr><th>신분</th><th>구성</th><th>권리·의무</th><th>특징</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">양반</td><td>문반·무반과 그 가족</td><td>군역 면제, 과거로 관직 진출</td><td>최고 지배층, 고위 관직 독점</td></tr>
+        <tr><td class="hd deep">중인</td><td>기술관, 서리·향리, 하급 장교 / 서얼은 중인과 비슷한 대우</td><td>직역 세습, 같은 신분끼리 혼인(EBS)</td><td>하급 지배층, 승진에 제한 / 서얼은 무과·잡과만 응시</td></tr>
+        <tr><td class="hd crimson">상민</td><td>농민·수공업자·상인, 신량역천</td><td>조세·공납·역 부담, 원칙적으로 과거 응시 가능</td><td>실제 과거 응시는 거의 없음, 신량역천은 사실상 천민 취급</td></tr>
+        <tr><td class="hd crimson">천민</td><td>대부분 노비, 백정·광대·무당 등</td><td>조세·공납·역 의무 없음, 과거 응시·관직 진출 불가</td><td>노비는 매매·상속·증여 대상, 부모 중 한쪽이 노비면 자식도 노비</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>고려에서 조선으로 — 무엇이 이어지고 무엇이 달라졌나</caption>
+      <thead><tr><th>구분</th><th>고려</th><th>조선 전기</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">신분 제도</td><td>양천제 — 양인(문벌·중간 계층·양민)과 천인</td><td>양천제 법제화 → 양반·중인·상민·천민의 4신분제 정착</td></tr>
+        <tr><td class="hd">향리</td><td>지방의 토착 세력으로 각 지역을 실질적으로 운영</td><td>서리 등과 함께 하급 지배층(중인)</td></tr>
+        <tr><td class="hd">백정</td><td>직역을 맡지 않은 양인 농민</td><td>광대·무당 등과 함께 천민으로 간주</td></tr>
+        <tr><td class="hd">노비 세습</td><td>부모 중 한쪽이 노비면 자녀도 노비</td><td>부모 중 한쪽이 노비면 자식도 노비가 되는 것이 일반적</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 길잡이 질문</h4>
+      <ol>
+        <li>조선 시대 신분제의 특징은 무엇일까?</li>
+        <li>조선 시대 사족은 어떻게 향촌 사회를 지배하였을까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 조선 시대에는 양반, 중인, 상민, 천민의 4신분제가 정착되었다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 조선 시대에는 양반의 첩에게 태어난 (   )도 중인 취급을 받았다.</summary>
+        <div class="check-answer">서얼</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. (   )은/는 신분은 양인이지만 천역을 담당한 계층이다.</summary>
+        <div class="check-answer">신량역천</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 사족은 향촌 자치 기구인 (   )을/를 만들어 지방관을 보좌하고, 향리의 비리를 감시하였다.</summary>
+        <div class="check-answer">유향소</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q5. 조선 시대에 천인은 원칙적으로 과거 응시가 가능하였다. (○, ×)</summary>
+        <div class="check-answer">× — 천인은 과거에 응시하거나 관직에 오를 수 없었다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 중인은 넓은 의미로는 양반과 상민의 중간 신분, 좁은 의미로는 잡과 출신 기술관을 말한다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q7. 조선 시대의 백정은 직역이 없는 양인 농민을 가리킨다. (○, ×)</summary>
+        <div class="check-answer">× — 직역이 없는 양인 농민을 백정이라 부른 것은 고려 시대이다. 조선 시대에 백정은 천민으로 간주되었다.</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅱ 「근대 이전 한국사의 탐구」 3 「신분제와 사회 구조」 03 「조선 전기의 신분과 사회」, 80–81쪽 — 본문·연표·도입 자료·조선의 신분 제도·호패·사족의 향촌 지배(향약·서원)·생각 키우기·확인하기의 기본 출처 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「신분제와 사회 구조」 중 「조선 전기의 신분제와 사회 구조」 — 양천제의 법제화, 신분 구조, 서얼·신량역천 곁글, 자료(서얼의 지위), 개념 체크 문항 (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국사』, 142–144쪽 (참고용) — 양천제 법제화의 배경, 향리·서리가 중인으로 격하된 배경, 다물사리 소송 사례에만 활용</li>
+    </ol>
+    <div class="note">
+      이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다. EBS 개념 체크 중 조선 후기 기술직 중인의 소청 운동 문항은 이 소주제 범위를 벗어나 반영하지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-2-3-03)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p03-N과 대응)
+  const SECTION_PREFIX = "1-2-3-03";
+
+  const narrativeData = {
+    // 1-2-3-03-2: 양천제에서 4신분제로  (대본 p03-2)
+    "1-2-3-03-2": [
+      "조선은 사람을 양인과 천인 둘로 나누는 <b>양천제</b>를 법으로 정했습니다. 조세와 국역을 질 양인을 늘려야 나라의 기반이 튼튼해지기 때문에, 고려 말부터 조선 초에 걸쳐 많은 노비를 풀어 주고 양인의 지위도 높였습니다.",
+      "법대로라면 양인은 누구나 과거를 보고 관직에 오를 수 있었습니다. 그런데 현실은 달랐습니다.",
+      "원래 '관직을 가진 사람'을 뜻하던 <b>양반</b>이 점차 하나의 신분이 되었고, 양반을 보좌하던 사람들은 <b>중인</b>이라는 신분으로 굳어졌습니다.",
+      "여기에는 양반의 이해관계가 작용했습니다. 문·무반직을 받은 사람만 양반으로 인정하고 향리와 서리를 중인으로 낮추어, 지배층의 수가 늘어나는 것을 막은 것입니다.",
+      "그 결과 양반, 중인, 상민, 천민의 <b>4신분제</b>가 자리 잡았습니다. 법으로는 둘, 현실로는 넷으로 나뉜 셈입니다.",
+      "나라는 태종 때부터 16세 이상 모든 남자에게 <b>호패</b>를 지니게 하여 인구를 파악하고 역을 부과했습니다. 호패의 재질마저 신분에 따라 달랐습니다. 그렇다면 지배층이 된 양반과 중인은 어떤 사람들이었을까요?"
+    ],
+    // 1-2-3-03-3: 양반과 중인이 지배층을 이루다  (대본 p03-3)
+    "1-2-3-03-3": [
+      "<b>양반</b>은 본래 문반과 무반을 함께 부르던 말이었지만, 점차 그 가족까지 포함하는 지배층의 이름이 되었습니다. 양반은 군역을 면제받고, 과거를 통해 고위 관직을 독점했습니다.",
+      "<b>중인</b>은 넓게 보면 양반과 상민 사이의 신분이고, 좁게 보면 잡과로 뽑힌 기술관입니다. 전문 지식을 갖추었지만 일반 관리보다 지위가 낮고 승진에도 제한이 있었습니다.",
+      "중앙 관청의 서리와 지방의 향리도 중인과 함께 하급 지배층이 되었습니다. 고려에서 향리가 지방을 실질적으로 운영했던 것과 비교하면, 향리의 지위가 낮아진 것을 알 수 있습니다.",
+      "양반의 자식이라도 첩에게서 태어난 <b>서얼</b>은 무과와 잡과에만 응시할 수 있어 중인과 비슷한 대우를 받았습니다.",
+      "고려까지는 서얼을 차별하지 않았지만, 『경국대전』이 서얼의 문과 응시를 막으면서 능력 있는 서얼도 관직에 나아가기 어려워졌습니다. 아버지가 양반이어도 어머니가 처인지 첩인지에 따라 앞날이 갈린 것입니다.",
+      "지배층 안에서도 이렇게 층이 나뉘었다면, 그 아래 피지배층의 삶은 어땠을까요?"
+    ],
+    // 1-2-3-03-4: 상민과 천민이 피지배 계층의 삶을 살다  (대본 p03-4)
+    "1-2-3-03-4": [
+      "<b>상민</b>은 농민, 수공업자, 상인처럼 생산을 맡은 사람들로, 대부분은 농민이었습니다. 이들은 조세와 공납, 역을 부담했습니다.",
+      "법으로는 상민도 과거에 응시할 수 있었습니다. 하지만 과거를 준비하기가 어려웠기 때문에 실제로 과거를 보는 경우는 거의 없었습니다. 법이 열어 둔 문과 현실의 문이 달랐던 것입니다.",
+      "양인인데도 천민처럼 대우받은 사람들도 있었습니다. 수군이나 봉수, 조운처럼 누구나 꺼리는 힘든 일을 맡은 <b>신량역천</b>입니다.",
+      "천민의 대다수는 노비였습니다. 노비는 여전히 재산으로 사고팔렸고, 부모 중 한쪽만 노비여도 자식이 노비가 되는 원칙도 고려에서 그대로 이어졌습니다.",
+      "한편 고려에서 양인 농민을 뜻하던 <b>백정</b>은 조선에서는 광대, 무당과 함께 천민으로 여겨졌습니다. 같은 말이라도 시대에 따라 가리키는 사람이 달라진 것입니다.",
+      "1586년 <b>다물사리</b>라는 여성은 스스로 노비라고 주장하는 소송을 벌였습니다. 노비끼리 혼인하면 자식은 어머니의 주인에게 속하므로, 자신이 성균관의 노비로 인정받으면 자식들이 사노비보다 나은 처지의 공노비가 될 수 있었기 때문입니다.",
+      "그러나 판관은 그녀를 양인으로 판결했고, 양인 여성과 노비 사이의 자식은 아버지의 주인에게 속한다는 원칙에 따라 자식들은 모두 양반 이지도의 사노비가 되었습니다. 그렇다면 이런 신분 사회에서 향촌을 실제로 이끈 사람들은 누구였을까요?"
+    ],
+    // 1-2-3-03-5: 사족이 향촌을 지배하다  (대본 p03-5)
+    "1-2-3-03-5": [
+      "조선의 향촌 사회는 <b>사족</b>을 중심으로 운영되었습니다.",
+      "사족은 <b>유향소</b>를 만들어 지방관을 돕고 향리의 비리를 감시했으며, 향회를 열어 서로 결속을 다졌습니다.",
+      "그런데 지방 사족의 힘이 커지면 중앙 정부로서는 부담이 됩니다. 그래서 정부는 수도에 <b>경재소</b>를 두고, 현직 관료가 자기 출신지의 유향소를 통제하게 했습니다.",
+      "16세기에 사림이 성장하자 사족의 향촌 지배는 더 단단해졌습니다. 그 바탕이 된 것이 <b>서원</b>과 <b>향약</b>입니다.",
+      "서원은 이름난 유학자를 제사 지내고 유학을 가르치는 곳이었지만, 동시에 사족이 모여 세력을 키우는 근거지였습니다. 정부도 성리학 이념을 보급하려고 소수 서원처럼 현판을 내려 주고 토지와 노비를 지원했습니다.",
+      "향약은 전통적인 공동 조직과 풍속을 유교식으로 고친 규약입니다. 사족을 능멸하거나 유향소의 결정을 따르지 않는 사람을 처벌 대상으로 삼은 조항에서 보듯, 향약은 사족이 향촌을 통제하는 수단이 되었습니다.",
+      "하지만 조선 후기에 서원이 무분별하게 세워지면서 정리하려는 움직임도 나타납니다. 신분 질서와 향촌 사회는 조선 후기에 어떻게 달라졌을까요? 다음 소주제에서 살펴보겠습니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

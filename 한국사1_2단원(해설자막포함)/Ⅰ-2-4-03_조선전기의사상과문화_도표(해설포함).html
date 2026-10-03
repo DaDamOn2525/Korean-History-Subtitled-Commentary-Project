@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>조선 전기의 사상과 문화(자막 해설) | 성리학으로 나라의 틀을 세우고, 한글과 과학으로 백성을 향하다</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-2-4-02_고려의사상과문화_도표(해설포함).html">‹ 이전: 고려의 사상과 문화</a>
+  <a href="Ⅰ-2-4_사상과문화_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#neo">성리학</a>
+  <a href="#hangul">훈민정음</a>
+  <a href="#books">역사서·지리서</a>
+  <a href="#science">과학 기술</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-2-4-04_조선후기의사상과문화_도표(해설포함).html">다음: 조선 후기의 사상과 문화 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 이전 한국사의 탐구</span> · 사상과 문화</div>
+    <h1>성리학으로 나라의 틀을 세우고, 한글과 과학으로 백성을 향하다</h1>
+    <p class="lead">조선 시대에는 성리학이 통치 이념으로 정착하면서 국가와 양반이 유교 윤리를 보급하고 의례를 정비하였다. 세종은 백성이 쉽게 익혀 쓸 수 있는 훈민정음을 창제하였고, 조선은 건국의 정당성을 보이고 지방 통치와 국방에 활용하려고 역사서와 지리서를 편찬하였다. 또한 백성의 생활을 안정시키고 나라를 부강하게 하려고 천문학과 농업 기술 등 과학 기술을 발전시켰다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">조선 전기(15~16세기)</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>성리학의 나라, 백성을 향한 문화</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--brass)">황동색 = 성리학과 유교 윤리</strong> · <strong style="color:var(--indigo)">남색 = 훈민정음과 편찬 사업</strong> · <strong style="color:var(--crimson)">적색 = 과학 기술</strong>. 황동색은 「사상과 문화」 묶음 전체에서 유학을 가리키는 색과 같고, 이 소주제의 교과서·EBS 서술에는 불교·도교 단락이 없어 남색·적색은 이 소주제의 갈래에 맞게 새로 정하였다. 세 분야가 함께 발달하였으므로 세 갈래로 나누었다.</p>
+
+    <div class="branch-root">성리학이 통치 이념으로 정착한 조선 전기</div>
+    <p class="branch-cause">조선은 성리학을 바탕으로 나라의 틀을 세우면서, 백성을 교화하고 백성의 생활을 안정시키는 데 힘을 기울였다.</p>
+    <div class="branch-cols">
+      <div class="branch-col brass">
+        <h4>성리학과 유교 윤리</h4>
+        <div class="branch-node">국가: 『삼강행실도』, 『국조오례의』</div>
+        <div class="branch-node">양반: 『소학』, 『주자가례』 보급</div>
+        <div class="branch-node">학자: 이황·이이가 조선의 성리학 발전</div>
+      </div>
+      <div class="branch-col deep">
+        <h4>훈민정음과 편찬 사업</h4>
+        <div class="branch-node">세종의 훈민정음 창제와 보급</div>
+        <div class="branch-node">『고려사』·『동국통감』·『조선왕조실록』</div>
+        <div class="branch-node">『동국여지승람』, 「혼일강리역대국도지도」</div>
+      </div>
+      <div class="branch-col crimson">
+        <h4>과학 기술</h4>
+        <div class="branch-node">천문: 「천상열차분야지도」, 『칠정산』</div>
+        <div class="branch-node">농업: 『농사직설』, 측우기</div>
+        <div class="branch-node">시간 측정 기구, 무기 개량</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--crimson)">적색 = 과학 기술</strong> · <strong style="color:var(--indigo)">남색 = 훈민정음과 편찬 사업</strong></p>
+    <div class="timeline">
+      <div class="tl-item crimson"><div class="tl-year">1441</div><div class="tl-body"><div class="tl-title">측우기 제작</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1443</div><div class="tl-body"><div class="tl-title">훈민정음 창제</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1481</div><div class="tl-body"><div class="tl-title">『동국여지승람』 완성</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1484</div><div class="tl-body"><div class="tl-title">『동국통감』 완성</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="neo">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>성리학이 자리 잡다</h2>
+    </div>
+    <p class="block-sub">조선 시대에는 성리학이 통치 이념으로 정착하면서 국가적으로 유교 윤리를 보급하고, 의례(행사 방식)를 정비하였다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card brass">
+        <h4>국가</h4>
+        세종: 『삼강행실도』를 편찬하여 백성에게 유교 윤리 보급 — 성종: 국가와 왕실의 각종 행사를 유교적 예법에 맞게 정비한 『국조오례의』 간행
+      </div>
+      <div class="compare-card brass">
+        <h4>양반</h4>
+        유학의 기초를 가르치려고 『소학』 보급, 여러 윤리서 제작 — 남송의 주희가 편찬한 예법서인 『주자가례』를 보급하여 가정에서도 유교적 예법을 따르게 함
+      </div>
+      <div class="compare-card brass">
+        <h4>학자</h4>
+        이황과 이이 등이 조선의 성리학을 크게 발전시킴 — 이황의 학문은 일본 성리학에 큰 영향 — EBS: 이황은 『성학십도』를 저술, 이이는 현실 사회 문제 개혁에 관심
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">『삼강행실도』 — 중국과 우리나라의 효자, 충신, 열녀의 사례를 그림과 글로 표현한 책으로, 백성들이 읽기 쉽게 한글로도 편찬하였다(교과서). 『국조오례의』 — 제사 의식인 길례, 관례와 혼례 등의 가례, 사신 접대 의례인 빈례, 군사 의식인 군례, 상례 의식인 흉례 등 국가와 왕실의 다섯 가지 의례를 정리한 책(EBS). 『성학십도』 — 국왕인 선조가 성리학의 원리를 쉽게 이해할 수 있도록 그림과 함께 설명한 것(EBS).</p>
+
+    <div class="quote-block brass">
+      <h4>『삼강행실도』의 편찬(EBS 자료)</h4>
+      효자·충신·열녀 각 110명을 뽑아 앞에는 그림, 뒤에는 그 사실을 적었다.
+      <div class="src">「『삼강행실도』 서문」 (재구성) — 조선 성종 때에는 한글 번역이 추가되어 간행되었으며, 백성을 교화하는 기본 지침서로 널리 보급됨(EBS)</div>
+    </div>
+
+    <div class="causal-link"><p>16세기 이후에는 사족이 서원과 향약을 통해 성리학을 연구하고 향촌 질서를 이끌었다.</p></div>
+    <p style="font-size:13px; color:var(--ink-soft);">EBS: 서원은 훌륭한 유학자 제사, 성리학 연구와 인재 양성, 사족의 여론 수렴에 기여하였고(주세붕의 백운동 서원 → 소수 서원으로 사액), 향약은 지방 사족의 주도로 마련된 향촌 자치 규약으로 풍속 교화와 향촌 질서 유지에 기여하였다.</p>
+
+    <div class="note-box">사족이 서원과 향약을 바탕으로 향촌 사회를 주도한 모습은 <a href="Ⅰ-2-3-03_조선전기의신분과사회_도표(해설포함).html#hyangchon">「조선 전기의 신분과 사회」 — 사족이 향촌을 지배하다</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="hangul">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>훈민정음(한글)을 창제하다</h2>
+    </div>
+    <p class="block-sub">세종이 우리글인 한글을 만들었다. 한글을 만든 까닭은 무엇일까?</p>
+
+    <div class="quote-block deep">
+      <h4>도입 사료 — 훈민정음 서문</h4>
+      나랏말이 중국과 달라 백성이 뜻을 펴지 못하니, 28자를 새로 만들었다.
+      <div class="src">『세종실록』 (재구성)</div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">배경</div>
+        <div class="step-desc">일찍부터 한자를 사용하였지만 대부분의 백성은 한자를 알지 못함</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">창제(1443)</div>
+        <div class="step-desc">세종이 우리글인 훈민정음(백성을 가르치는 바른 소리) 창제 — EBS: 창제하여 반포</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">효과</div>
+        <div class="step-desc">정부는 국가의 통치 이념을 쉽게 백성에게 전달 — 백성은 자기 생각을 쉽게 글로 표현</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">보급</div>
+        <div class="step-desc">『용비어천가』를 비롯한 각종 서적을 훈민정음으로 간행 — 서리를 채용할 때 훈민정음 시험, 실무에도 사용 — EBS: 유교 윤리 보급, 행정 실무에 사용</div>
+      </div>
+    </div>
+
+    <div class="quote-grid">
+      <div class="quote-block deep">
+        <h4>사료 읽기 — 훈민정음 창제 반대 주장</h4>
+        ① 따로 글을 만드는 것은 중국을 섬기는 태도가 아니다. ② 언문을 만들면 오랑캐와 같아진다. ③ 언문을 배우면 유학 공부에 방해가 된다.
+        <div class="src">『세종실록』 (재구성)</div>
+      </div>
+      <div class="quote-block deep">
+        <h4>참고(이전 교육과정 교과서) — 판결문과 훈민정음</h4>
+        판결문을 훈민정음으로 써서 읽어 주면 백성이 억울한 일을 당하지 않을 것이다.
+        <div class="src">『세종실록』 (재구성) — 판결문을 이두로 쓰면 글을 모르는 백성이 한 글자의 착오로 원통한 일을 당할 수 있다는 내용</div>
+      </div>
+    </div>
+
+    <div class="think-box">
+      <h4>질문+</h4>
+      <ol>
+        <li>훈민정음 창제 당시 위와 같은 반대 주장이 제시된 까닭을 말해 보자.</li>
+      </ol>
+    </div>
+
+    <div class="note-box">세종이 의정부 서사제 등으로 왕권과 신권의 조화를 꾀한 정치는 <a href="../한국사1_1단원(해설자막포함)/Ⅰ-1-3-01_조선의성립과발전_도표(해설포함).html#kingship">「조선의 성립과 발전」 — 왕이 이끌까, 재상이 이끌까</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="books">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>역사서와 지리서를 편찬하다</h2>
+    </div>
+    <p class="block-sub">조선은 국가 차원에서 역사서와 지리서, 지도를 편찬하였다.</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>조선 전기의 편찬 사업(교과서)</caption>
+      <thead><tr><th>구분</th><th>목적</th><th>대표 서적·지도</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">역사서</td><td>건국의 정당성을 보이고 성리학적 통치 규범을 정착시키려 함</td><td>『고려사』·『고려사절요』(고려의 역사), 『동국통감』(고조선부터 고려 말까지), 『조선왕조실록』(각 국왕 때의 사실)</td></tr>
+        <tr><td class="hd deep">지리서·지도</td><td>지방 통치와 국방을 위해 국토의 자연환경과 인문 지리 정보를 정리</td><td>『동국여지승람』 등 지리서, 「팔도도」, 「혼일강리역대국도지도」 등 지도</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="causal-link"><p>다양한 책이 출판되면서 금속 활자 인쇄술도 발달하였다.</p></div>
+
+    <div class="sidebox">
+      <h4>탐구 — 『조선왕조실록』</h4>
+      <p>『조선왕조실록』은 조선 태조부터 철종까지 25대 472년간의 역사를 기록한 책이다. ‘실록(實錄)’은 ‘사실 그대로 기록하였다’는 뜻으로, 조선은 후대가 평가하고 참고할 수 있도록 실록을 편찬하였다. 방대한 분량과 충실한 내용 등을 인정받아 유네스코 세계 기록 유산으로 등재되었다(교과서).</p>
+      <div class="flow">
+        <div class="flow-step" style="border-color:var(--indigo)">
+          <div class="step-title">사초</div>
+          <div class="step-desc">사관이 작성한 기록으로 실록 편찬의 기초 자료 — 왕도 볼 수 없음 — 사관은 실력, 인품, 집안 등을 고려해 선발</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step" style="border-color:var(--indigo)">
+          <div class="step-title">편찬</div>
+          <div class="step-desc">왕이 사망하면 사초와 다양한 기록을 모아 실록 편찬 — 편찬 이후 사초는 폐기</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step" style="border-color:var(--indigo)">
+          <div class="step-title">보관</div>
+          <div class="step-desc">실록은 여러 곳의 사고에 나누어 보관 — 평창 오대산 사고 등</div>
+        </div>
+      </div>
+      <div class="quote-grid">
+        <div class="quote-block deep">
+          <h4>『태종실록』</h4>
+          말에서 떨어진 태종이 “사관이 알게 하지 말라.”라고 하였다.
+          <div class="src">『태종실록』 (재구성)</div>
+        </div>
+        <div class="quote-block deep">
+          <h4>『연산군일기』</h4>
+          예로부터 임금은 스스로 사초를 보지 못합니다.
+          <div class="src">『연산군일기』 (재구성)</div>
+        </div>
+      </div>
+    </div>
+    <div class="think-box">
+      <h4>생각 키우기 — 『조선왕조실록』</h4>
+      <ol>
+        <li>조선 시대에 왕도 사초를 볼 수 없게 한 까닭을 말해 보자.</li>
+        <li>『조선왕조실록』이 잇따른 전란에도 오늘날까지 전해질 수 있었던 까닭을 조사해 보자.</li>
+        <li>『조선왕조실록』 누리집에서 교과서에 나온 조선 시대 인물과 사건을 검색해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="science">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>과학 기술이 발달하다</h2>
+    </div>
+    <p class="block-sub">조선 전기에는 백성의 생활을 안정시키고 나라를 부강하게 하려고 과학 기술을 중시하였다.</p>
+
+    <div class="causal-link"><p>국왕의 권위를 높이고 농업에 도움을 줄 수 있었으므로, 조선은 특히 천문학에 많은 관심을 기울였다.</p></div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>조선 전기의 과학 기술(교과서·EBS)</caption>
+      <thead><tr><th>분야</th><th>성과</th></tr></thead>
+      <tbody>
+        <tr><td class="hd crimson">천문·역법</td><td>태조: 천문도인 「천상열차분야지도」 — 세종: 원과 명, 아라비아의 역법을 바탕으로 한성을 기준으로 한 역법서 『칠정산』</td></tr>
+        <tr><td class="hd crimson">시간 측정</td><td>앙부일구 등 시간 측정 기구 — EBS: 앙부일구·자격루</td></tr>
+        <tr><td class="hd crimson">농업</td><td>세종: 우리나라의 풍토에 맞는 농사법을 정리한 『농사직설』 편찬 — 강수량을 측정하는 측우기를 만들어 전국에 보급</td></tr>
+        <tr><td class="hd crimson">국방</td><td>다양한 무기를 만들고 개량하여 국방 강화 — 화차</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 세종 때 이천은 천문 기구와 갑인자 제작을 주도하였고, 노비 출신인 장영실은 신분의 벽을 뛰어넘어 측우기·자격루·앙부일구 등의 제작에 참여하였으며, 이순지는 『칠정산』을 편찬하였다. 그러나 16세기 이후 기술을 천시하는 경향이 퍼지면서 과학 기술은 점차 침체에 빠졌다.</p>
+
+    <div class="sidebox">
+      <h4>자료 탐구 3 — 「천상열차분야지도」(교과서 101쪽)</h4>
+      <div class="quote-block crimson">
+        제왕이 하늘을 받들어 백성을 다스릴 때 천문으로 때를 알리는 일이 가장 급하다.
+        <div class="src">「천상열차분야지도」에 새겨진 글 (재구성)</div>
+      </div>
+      <p>「천상열차분야지도」는 조선 태조 때 돌에 새긴 천문도이다. 유교에서는 국왕이 하늘의 명을 받아 백성을 다스린다고 여겼다. 또한 천문 현상은 농업과 밀접한 관련이 있었다. 이에 조선은 천체를 관측하고 천문도를 만들어 국가의 권위를 세우고, 농업을 발전시키려 하였다(교과서).</p>
+    </div>
+    <div class="think-box">
+      <h4>자료 탐구 3</h4>
+      <ol>
+        <li>조선 시대 사람들이 천문학을 중시한 까닭을 정리해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>정리 — 조선 전기의 사상과 문화</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>조선 전기의 사상과 문화</caption>
+      <thead><tr><th>분야</th><th>대표 성과</th><th>목적</th></tr></thead>
+      <tbody>
+        <tr><td class="hd brass">성리학·유교 윤리</td><td>『삼강행실도』(세종), 『국조오례의』(성종), 『소학』·『주자가례』, 이황·이이</td><td>유교 윤리 보급, 의례 정비</td></tr>
+        <tr><td class="hd deep">훈민정음</td><td>세종의 창제(1443), 『용비어천가』 간행, 서리 시험·실무에 사용</td><td>통치 이념 전달, 백성이 쉽게 뜻을 표현</td></tr>
+        <tr><td class="hd deep">역사서·지리서</td><td>『고려사』·『고려사절요』, 『동국통감』, 『조선왕조실록』 / 『동국여지승람』, 「팔도도」, 「혼일강리역대국도지도」</td><td>건국의 정당성, 성리학적 통치 규범 / 지방 통치와 국방</td></tr>
+        <tr><td class="hd crimson">과학 기술</td><td>「천상열차분야지도」, 『칠정산』, 앙부일구, 『농사직설』, 측우기, 화차</td><td>국왕의 권위, 농업 발전, 국방 강화</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 길잡이 질문</h4>
+      <ol>
+        <li>조선 전기 성리학은 어떻게 발전하였을까?</li>
+        <li>훈민정음을 창제한 목적은 무엇일까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 세종은 백성에게 유교 윤리를 보급하기 위하여 『삼강행실도』를 편찬하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 이황의 학문은 일본 성리학에 큰 영향을 끼쳤다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 『조선왕조실록』은 고조선부터 고려 말까지 역사를 담은 역사서이다. (○, ×)</summary>
+        <div class="check-answer">× — 고조선부터 고려 말까지의 역사를 담은 역사서는 『동국통감』이다. 『조선왕조실록』은 각 국왕 때의 사실을 기록하였다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 세종 때 한성을 기준으로 한 역법서인 (   )을/를 제작하였다.</summary>
+        <div class="check-answer">『칠정산』</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q5. 『성학십도』를 저술한 이이의 사상은 일본 성리학 발달에 기여하였다. (○, ×)</summary>
+        <div class="check-answer">× — 『성학십도』를 저술하고 일본 성리학 발달에 기여한 사람은 이황이다.</div>
+      </details></div>
+
+      <div class="check-group">자료 탐구</div>
+      <div class="check-item"><details><summary>Q6. 조선 시대 사람들이 천문학을 중시한 까닭은 무엇일까?</summary>
+        <div class="check-answer">유교에서는 국왕이 하늘의 명을 받아 백성을 다스린다고 여겼고, 천문 현상은 농업과 밀접한 관련이 있었기 때문이다. 그래서 천체를 관측하고 천문도를 만들어 국가의 권위를 세우고 농업을 발전시키려 하였다.</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅱ 「근대 이전 한국사의 탐구」 4 「사상과 문화」 03 「조선 전기의 사상과 문화」, 94–95쪽 — 본문·연표·도입 사료·『삼강행실도』·사료 읽기(훈민정음 창제 반대 주장)·질문+·앙부일구·측우기·화차·탐구(『조선왕조실록』)·생각 키우기·확인하기의 기본 출처 (1차 근거)</li>
+      <li>동아출판 고등학교 『한국사1』, 자료로 보는 한국사 「사상과 문화」 자료 탐구 3(「천상열차분야지도」), 101쪽 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「다양한 사상과 문화 교류」 중 「조선 전기의 사상과 문화 교류」 — 성리학의 발달, 유교 윤리의 보급, 서원과 향약, 조선 전기의 문화유산, 『삼강행실도』·『국조오례의』 곁글, 자료(『삼강행실도』의 편찬), 개념 체크 문항 (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국사』, 150–155쪽 (참고용) — 판결문과 훈민정음 사례, 세종 때의 과학자, 16세기 이후 과학 기술의 침체에만 활용</li>
+    </ol>
+    <div class="note">
+      이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다. EBS의 조선 후기 사상 자료는 이 소주제 범위를 벗어나 반영하지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-2-4-03)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p03-N과 대응)
+  const SECTION_PREFIX = "1-2-4-03";
+
+  const narrativeData = {
+    // 1-2-4-03-2: 성리학이 자리 잡다  (대본 p03-2)
+    "1-2-4-03-2": [
+      "조선은 <b>성리학</b>을 통치 이념으로 삼았습니다. 그런데 이념을 정하는 것과, 그것을 백성의 생활 속에 뿌리내리게 하는 것은 다른 일입니다.",
+      "그래서 나라가 먼저 나섰습니다. 세종은 효자·충신·열녀의 이야기를 그림과 글로 엮은 <b>『삼강행실도』</b>를 편찬했고, 성종은 나라와 왕실의 행사를 유교 예법에 맞게 정비한 <b>『국조오례의』</b>를 간행했습니다.",
+      "『삼강행실도』는 백성이 읽기 쉽도록 한글로도 펴냈습니다. 유교 윤리를 백성에게까지 전하려는 뜻이 담겨 있었습니다.",
+      "양반들도 유학의 기초를 가르치는 <b>『소학』</b>과, 주희가 편찬한 예법서인 <b>『주자가례』</b>를 보급해 가정에서도 유교 예법을 따르게 했습니다.",
+      "학문도 깊어졌습니다. <b>이황</b>은 『성학십도』를 지었고 그의 학문은 일본 성리학에 큰 영향을 주었으며, <b>이이</b>는 현실 사회의 문제를 고치는 데 관심을 기울였습니다.",
+      "16세기에는 지방의 사족이 서원과 향약을 통해 향촌을 이끌었습니다. 이렇게 성리학은 나라에서 집안까지 퍼져 나갔습니다. 그런데 백성에게 이 가르침을 전하려면 무엇이 더 필요했을까요?"
+    ],
+    // 1-2-4-03-3: 훈민정음(한글)을 창제하다  (대본 p03-3)
+    "1-2-4-03-3": [
+      "우리나라는 오래전부터 한자를 썼지만, 대부분의 백성은 한자를 알지 못했습니다. 말은 있어도 그 말을 적을 쉬운 글자가 없었던 셈입니다.",
+      "세종은 이를 딱하게 여겨 1443년 <b>훈민정음</b>, 곧 '백성을 가르치는 바른 소리'를 만들었습니다. 사람들이 쉽게 익혀 날마다 편하게 쓰게 하려는 뜻이었습니다.",
+      "판결문을 어려운 이두로 쓰면 글 모르는 백성은 한 글자의 착오로 억울한 일을 당할 수 있었습니다. 훈민정음으로 써서 읽어 주면 그런 일이 줄어들 것이라는 기대도 있었습니다.",
+      "정부에게도 훈민정음은 쓸모가 컸습니다. 나라의 통치 이념을 백성에게 쉽게 전달할 수 있었기 때문입니다. 그래서 <b>『용비어천가』</b>를 비롯한 책을 훈민정음으로 간행하고, 서리를 뽑을 때 훈민정음을 시험 보며 실무에도 쓰게 했습니다.",
+      "물론 반대도 있었습니다. 일부 신하들은 중국의 제도를 따라야 하고, 따로 글을 만들면 유학 공부에 방해가 된다고 주장했습니다. 그럼에도 훈민정음은 백성이 자기 생각을 글로 표현하는 길을 열었습니다.",
+      "말과 생각을 기록하는 일은, 나라의 역사와 땅을 기록하는 일로도 이어졌습니다."
+    ],
+    // 1-2-4-03-4: 역사서와 지리서를 편찬하다  (대본 p03-4)
+    "1-2-4-03-4": [
+      "새 왕조는 자신이 왜 정당한지 보여 줄 필요가 있었습니다. 조선은 그 답을 역사서에서 찾았습니다.",
+      "고려의 역사를 정리한 <b>『고려사』</b>와 『고려사절요』, 고조선부터 고려 말까지를 담은 <b>『동국통감』</b>을 편찬해 건국의 정당성을 보이고 성리학적 통치 규범을 자리 잡게 하려 했습니다.",
+      "나라를 다스리려면 땅도 알아야 했습니다. 지방을 통치하고 국방을 튼튼히 하려고 <b>『동국여지승람』</b> 같은 지리서와 「혼일강리역대국도지도」 같은 지도를 만들었습니다. 책이 많아지자 금속 활자 인쇄술도 발달했습니다.",
+      "그 가운데 <b>『조선왕조실록』</b>은 태조부터 철종까지 472년의 역사를 사실 그대로 기록한 책입니다. 실록의 기초 자료인 <b>사초</b>는 왕조차 볼 수 없었습니다. 말에서 떨어진 태종이 '사관이 알게 하지 말라'고 한 말까지 실록에 남아 있습니다.",
+      "왕도 사초를 볼 수 없게 한 까닭은 무엇이었을까요? 편찬을 마친 실록은 여러 사고에 나누어 보관되었고, 방대한 분량과 충실한 내용을 인정받아 유네스코 세계 기록 유산이 되었습니다.",
+      "기록으로 나라의 틀을 다진 조선은, 하늘과 땅을 재는 과학에도 힘을 기울였습니다."
+    ],
+    // 1-2-4-03-5: 과학 기술이 발달하다  (대본 p03-5)
+    "1-2-4-03-5": [
+      "조선이 과학 기술을 중시한 목적은 백성의 생활을 안정시키고 나라를 부강하게 하는 것이었습니다.",
+      "특히 천문학에 관심이 컸습니다. 유교에서는 국왕이 하늘의 명을 받아 백성을 다스린다고 여겼고, 천문 현상은 농업과도 밀접했기 때문입니다. 그래서 태조는 천문도인 <b>「천상열차분야지도」</b>를 돌에 새겼고, 세종은 한성을 기준으로 한 역법서 <b>『칠정산』</b>을 만들었습니다.",
+      "농업을 위해서는 우리 풍토에 맞는 농사법을 정리한 <b>『농사직설』</b>을 펴내고, 강수량을 재는 <b>측우기</b>를 전국에 보급했습니다. 앙부일구 같은 시간 측정 기구와 화차 같은 무기도 만들었습니다.",
+      "이 성과 뒤에는 사람들이 있었습니다. 세종 때 이천, 장영실, 이순지가 활약했는데, 특히 장영실은 노비 출신으로 신분의 벽을 넘어 측우기와 자격루 등의 제작에 참여했습니다.",
+      "하늘을 관측해 국왕의 권위를 세우고, 비와 땅을 살펴 농사를 돕는 것, 조선 전기의 과학 기술은 결국 백성의 생활과 나라의 안정으로 모였습니다.",
+      "그러나 16세기 이후 기술을 천시하는 경향이 퍼지면서 과학 기술은 점차 침체했습니다. 양 난을 겪은 뒤 조선의 학문은 어떤 새로운 길을 찾았을까요? 다음 소주제에서 살펴보겠습니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

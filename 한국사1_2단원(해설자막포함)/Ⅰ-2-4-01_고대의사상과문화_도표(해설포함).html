@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고대의 사상과 문화(자막 해설) | 불교로 하나 되고 유학으로 다스리다 — 사상이 열어 준 교류의 길</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-2-3-04_조선후기사회변화_도표(해설포함).html">‹ 이전: 조선 후기 사회 변화 (대단원 이동)</a>
+  <a href="Ⅰ-2-4_사상과문화_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#buddhism">삼국의 불교</a>
+  <a href="#popular">통일 신라·발해의 불교</a>
+  <a href="#confucian">유학</a>
+  <a href="#taoism">도교·풍수지리설</a>
+  <a href="#exchange">국제 교류</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-2-4-02_고려의사상과문화_도표(해설포함).html">다음: 고려의 사상과 문화 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 이전 한국사의 탐구</span> · 사상과 문화</div>
+    <h1>불교로 하나 되고 유학으로 다스리다 — 사상이 열어 준 교류의 길</h1>
+    <p class="lead">삼국은 고대 국가로 발전하는 과정에서 국가를 통합할 종교로 불교를 받아들였고, 통일 신라 때 불교는 백성에게 널리 퍼졌다. 유학은 국가 체제를 정비하고 충성하는 인재를 키우는 바탕이 되었으며, 도교는 귀족 사회에서 유행하였다. 신라 말에는 선종과 풍수지리설이 호족을 사상적으로 뒷받침하였다. 고대 국가는 이러한 사상과 종교를 바탕으로 중국, 서역, 일본 등과 문화를 주고받았다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">삼국 시대 – 신라 말</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>고대 국가의 사상과 종교, 그리고 교류</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 불교</strong> · <strong style="color:var(--brass)">황동색 = 유학</strong> · <strong style="color:var(--crimson)">적색 = 도교·풍수지리설</strong>. 세 사상은 각기 다른 역할을 하며 함께 발달하였으므로 세 갈래로 나누고, 세 사상이 모두 바탕이 된 국제 교류를 아래에 두었다.</p>
+
+    <div class="branch-root">고대 국가의 사상과 종교</div>
+    <p class="branch-cause">고대 국가는 중국 및 서역 여러 나라와 교류하며 불교, 유교, 도교 등 다양한 학문과 종교를 받아들여 한국 문화의 기틀을 마련하였다.</p>
+    <div class="branch-cols">
+      <div class="branch-col deep">
+        <h4>불교</h4>
+        <p class="why">국가 통합과 왕권 강화</p>
+        <div class="branch-node">삼국: 왕실 중심으로 수용, 왕즉불 사상</div>
+        <div class="branch-node">통일 신라: 원효·의상, 불교의 대중화</div>
+        <div class="branch-node">신라 말: 선종 확산, 호족의 호응</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>유학</h4>
+        <p class="why">국가 체제 정비와 인재 양성</p>
+        <div class="branch-node">삼국: 태학·경당, 오경박사, 임신서기석</div>
+        <div class="branch-node">통일 신라: 국학, 독서삼품과</div>
+        <div class="branch-node">발해: 주자감, 유교 덕목을 붙인 6부</div>
+      </div>
+      <div class="branch-col crimson">
+        <h4>도교·풍수지리설</h4>
+        <p class="why">귀족 사회의 유행 / 호족의 사상적 기반</p>
+        <div class="branch-node">도교: 사신도, 금동 대향로, 산수무늬 벽돌</div>
+        <div class="branch-node">풍수지리설: 신라 말 호족을 뒷받침</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>고대 시기에는 사상과 종교를 바탕으로 다양한 문화가 전파되고 상호 교류가 확대되었다.</p></div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 불교</strong> · <strong style="color:var(--brass)">황동색 = 유학</strong></p>
+    <div class="timeline">
+      <div class="tl-item deep"><div class="tl-year">372</div><div class="tl-body"><div class="tl-title">고구려, 불교 수용·태학 설립</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">384</div><div class="tl-body"><div class="tl-title">백제, 불교 수용</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">527</div><div class="tl-body"><div class="tl-title">신라, 불교 공인</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">682</div><div class="tl-body"><div class="tl-title">신라, 국학 설립</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">788</div><div class="tl-body"><div class="tl-title">신라, 독서삼품과 실시</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="buddhism">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>삼국이 불교를 받아들이다</h2>
+    </div>
+    <p class="block-sub">‘사유의 방’은 삼국 시대의 불상을 활용한 전시 공간이다. 현대인들이 삼국 시대의 문화유산에 감동하는 까닭은 무엇일까?</p>
+
+    <div class="quote-block deep">
+      <h4>도입 자료 — 사유의 방</h4>
+      국립중앙박물관이 국보 반가사유상 두 점을 함께 전시하는 ‘사유의 방’을 열었다.
+      <div class="src">『뉴시스』, 2021. 11. 11. (재구성)</div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">초기의 통합 방식</div>
+        <div class="step-desc">각 왕실이 하늘의 자손임을 내세우고 제천 행사를 주도하여 나라를 통합하고 권위를 높임</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">새 종교의 필요</div>
+        <div class="step-desc">고대 국가로 발전하는 과정에서 지역별로 다른 토착 신앙을 대신해 국가를 통합할 수 있는 새로운 종교 필요</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">불교 수용</div>
+        <div class="step-desc">왕실을 중심으로 불교를 받아들임 — EBS: 왕권 강화에 이용</div>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>삼국의 불교 수용(EBS)</caption>
+      <thead><tr><th>나라</th><th>수용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">고구려</td><td>4세기 후반 소수림왕 때 수용(372, 전진에서)</td></tr>
+        <tr><td class="hd deep">백제</td><td>4세기 후반 침류왕 때 수용(384)</td></tr>
+        <tr><td class="hd deep">신라</td><td>고구려로부터 전래 → 6세기 법흥왕 때 이차돈의 순교를 계기로 공인(527)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 신라는 토착 귀족 세력의 반발로 6세기 법흥왕 때에 이르러서야 불교를 공인하였다.</p>
+
+    <div class="causal-link"><p>삼국 시대 불교는 왕권을 뒷받침하고 귀족 중심의 신분 질서를 합리화하는 사상으로 자리 잡았다.</p></div>
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>왕권을 뒷받침하다</h4>
+        신라는 불교식 왕명 사용(EBS: 법흥왕~진덕 여왕) — 왕즉불(왕이 곧 부처) 사상을 바탕으로 왕실의 권위를 높임
+      </div>
+      <div class="compare-card deep">
+        <h4>신분 질서를 합리화하다</h4>
+        귀족 중심의 신분 질서를 합리화 — 참고(이전 교육과정 교과서): 귀족들은 전생에 지은 행위의 결과를 현세에서 받는다는 업설을 자신들에게 유리하게 해석
+      </div>
+      <div class="compare-card deep">
+        <h4>불교문화를 받아들이다</h4>
+        탑과 불상 등 불교문화 수용 — 왕실과 귀족의 지원으로 다양한 불교 예술 발달(교과서 화보)
+      </div>
+    </div>
+
+    <div class="quote-block deep">
+      <h4>사료 읽기 — 불교와 왕실</h4>
+      진평왕의 이름은 백정, 왕비는 마야 부인이다.
+      <div class="src">『삼국사기』 (재구성) — 백정은 석가모니 아버지의 이름, 마야 부인은 석가모니 어머니의 이름</div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>삼국 시대의 불교문화(교과서 화보·EBS)</caption>
+      <thead><tr><th>문화유산</th><th>특징</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">금동 연가 7년명 여래 입상</td><td>고구려의 불상, 뒷면에 연가 7년(539)이라는 글씨</td></tr>
+        <tr><td class="hd deep">서산 용현리 마애여래 삼존상</td><td>백제의 불상, ‘백제의 미소’로 알려짐</td></tr>
+        <tr><td class="hd deep">부여 정림사지 5층 석탑</td><td>목탑의 모습이 남아 있는 석탑 — 삼국은 초기에 중국의 영향으로 목탑을 만들었으나 점차 석탑을 주로 세움</td></tr>
+        <tr><td class="hd deep">황룡사와 황룡사 9층 목탑</td><td>신라의 대규모 사찰과 목탑(EBS)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 미륵불이 나타나 중생을 구제하고 이상적인 불국토를 건설한다는 미륵 신앙도 널리 수용되어, 미륵보살 반가사유상이 많이 제작되었다.</p>
+
+    <div class="think-box">
+      <h4>질문+</h4>
+      <ol>
+        <li>신라 왕실이 부처 가족의 이름을 사용한 까닭을 말해 보자.</li>
+      </ol>
+    </div>
+
+    <div class="note-box">불교 수용과 율령 반포로 중앙 집권적 고대 국가가 성립한 과정은 <a href="../한국사1_1단원(해설자막포함)/Ⅰ-1-1-02_삼국의성립과발전_도표(해설포함).html#ancient">「삼국의 성립과 발전」 — 초기 국가에서 중앙 집권적 고대 국가로</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="popular">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>통일 신라와 발해의 불교</h2>
+    </div>
+    <p class="block-sub">신라는 삼국 통일을 전후하여 불교에 대한 이해가 깊어졌으며, 불교가 백성에게 널리 퍼졌다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>원효</h4>
+        ‘나무아미타불’만 외면 극락왕생한다는 아미타 신앙 전파 → 불교 대중화에 크게 기여 — EBS: 일심 사상 주장, 불교 종파 간의 대립을 완화하려 노력
+      </div>
+      <div class="compare-card deep">
+        <h4>의상</h4>
+        당에 유학한 뒤 신라로 돌아와 화엄종을 엶 — ‘관세음보살’을 부르면 구제받는다는 관음 신앙 전파 — EBS: 화엄 사상 정립
+      </div>
+    </div>
+
+    <div class="quote-block deep">
+      <h4>불교의 대중화(EBS 자료)</h4>
+      원효가 노래와 춤으로 가르침을 전해, 가난한 이들도 ‘나무아미타불’을 외웠다.
+      <div class="src">『삼국유사』 (재구성) — 나무아미타불: 극락세계를 관장하는 아미타불에 귀의한다는 의미</div>
+    </div>
+
+    <div class="causal-link"><p>신라 말에는 왕실 등의 후원으로 선종이 널리 퍼졌는데, 선종은 호족의 호응을 얻었으며 풍수지리설과 함께 호족을 사상적으로 뒷받침하였다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">선종</div>
+        <div class="step-desc">참선 수행으로 깨달음을 얻는 것을 중시하는 불교 종파 — EBS: 참선 수행 및 개인의 깨달음 중시</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">호족의 후원</div>
+        <div class="step-desc">EBS: 호족의 후원, 9산 선문 성립</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">승탑과 탑비</div>
+        <div class="step-desc">승려의 사리 등을 안치하는 승탑 건립 유행 — 화순 쌍봉사 철감선사탑</div>
+      </div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>통일 신라의 불교문화</h4>
+        경주 불국사, 석굴암 건립(EBS) — 경주 석굴암: 통일 신라 때 세운 인공 석굴 사원, 석굴 본존불 — 경주 불국사 3층 석탑: 통일 신라 탑의 모습을 보여 주는 대표적인 탑
+      </div>
+      <div class="compare-card deep">
+        <h4>발해의 불교</h4>
+        왕실과 귀족을 중심으로 유행 — 5경 등 주요 지역에 많은 사찰 — 문왕은 불교를 적극 장려하여 왕권 강화 — 남아 있는 문화유산에서 고구려 불교의 영향 — 이불병좌상(두 부처가 나란히 앉은 모습), 상경성 절터의 거대한 석등
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="confucian">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>유학을 바탕으로 나라를 정비하다</h2>
+    </div>
+    <p class="block-sub">삼국은 중국에서 유학을 받아들여 국가 체제를 정비하고, 나라에 충성하는 인재를 키우려고 하였다.</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>고대 국가의 유학(교과서·EBS)</caption>
+      <thead><tr><th>나라</th><th>유학 교육과 활동</th></tr></thead>
+      <tbody>
+        <tr><td class="hd brass">고구려</td><td>중앙에 태학, 지방에 경당을 두어 유학 등을 가르침</td></tr>
+        <tr><td class="hd brass">백제</td><td>오경박사를 두어 유교 경전을 가르침, 일본에 유교 경전을 전해 줌</td></tr>
+        <tr><td class="hd brass">신라</td><td>임신서기석 — 신라 사람들이 유교 경전을 공부한 내용</td></tr>
+        <tr><td class="hd brass">통일 신라</td><td>유학을 장려해 왕권 강화·체제 안정 — 신문왕 때 국학 설치, 원성왕 때 독서삼품과 실시 — 당에 유학하거나 빈공과에 합격하는 신라인이 많음, 최치원은 빈공과에 합격하고 문장으로 이름을 떨침</td></tr>
+        <tr><td class="hd brass">발해</td><td>유학을 정치 이념으로 받아들여 중앙 집권 체제 강화 — 중앙 통치 기구인 6부의 명칭에 ‘충·인·의·지·예·신’의 유교 덕목 — 주자감을 두어 유교 경전을 가르침 — 당에 유학생 파견, 빈공과 급제 순위를 두고 신라와 다툼</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">오경박사 — 오경(유교의 다섯 가지 경전)에 능통한 사람에게 준 관직. 빈공과 — 당이 외국인을 대상으로 실시한 과거 시험. 삼국은 국왕의 권위를 높이고 국력을 과시하려고 역사서를 편찬하였지만, 현재는 전하지 않는다(교과서).</p>
+
+    <div class="quote-grid">
+      <div class="quote-block brass">
+        <h4>임신서기석</h4>
+        『시경』·『상서』·『예기』·『춘추전』을 3년 안에 차례로 익히기로 맹세하였다.
+        <div class="src">임신서기석 (재구성) — 신라 시대 두 사람이 유교 경전을 익힐 것을 맹세하고 돌에 새긴 것으로, 신라 유학의 발달을 보여 줌</div>
+      </div>
+      <div class="quote-block brass">
+        <h4>사료 읽기 — 독서삼품과의 실시</h4>
+        국학의 학생이 글을 읽어 세 등급으로 벼슬에 나아가게 하였다.
+        <div class="src">『삼국사기』 (재구성)</div>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>독서삼품과의 등급(『삼국사기』)</caption>
+      <thead><tr><th>등급</th><th>기준</th></tr></thead>
+      <tbody>
+        <tr><td class="hd brass">상품</td><td>『춘추좌씨전』이나 『예기』, 『문선』을 읽어 뜻에 능통하고 『논어』와 『효경』에도 밝은 자</td></tr>
+        <tr><td class="hd brass">중품</td><td>『곡례』, 『논어』, 『효경』을 읽은 자</td></tr>
+        <tr><td class="hd brass">하품</td><td>『곡례』, 『효경』을 읽은 자</td></tr>
+        <tr><td class="hd brass">특채</td><td>오경과 삼사, 제자백가의 책을 모두 통달한 자는 등급을 넘어 발탁</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="causal-link"><p>독서삼품과는 신분이 아닌 학문적 능력으로 관리를 등용하는 제도였지만, 골품제의 제약은 여전하여 높은 관직은 진골 귀족이 독점하였다.</p></div>
+
+    <div class="think-box">
+      <h4>질문+</h4>
+      <ol>
+        <li>독서삼품과 실시에 진골과 6두품이 각각 어떻게 반응하였을지 생각해 보자.</li>
+      </ol>
+    </div>
+
+    <div class="sidebox">
+      <h4>자료 탐구 1 — 언어로 보는 불교와 유교의 영향(교과서 101쪽)</h4>
+      <div class="compare-grid">
+        <div class="compare-card deep">
+          <h4>불교 — 야단법석</h4>
+          의미: 많은 사람이 모여 떠들썩한 모습 — 어원: 부처의 가르침을 들으려고 모인 사람들을 묘사한 불교 용어에서 비롯됨
+        </div>
+        <div class="compare-card brass">
+          <h4>유교 — 남의 제사에 감 놓아라 배 놓아라 한다</h4>
+          의미: 남의 일에 괜히 간섭하여 나서는 것을 비유하는 속담 — 어원: 조상을 모시는 유교적 의례인 제사에서 비롯됨
+        </div>
+      </div>
+      <p>삼국 시대에 들어온 불교와 유교는 사람들의 삶에 큰 영향을 끼쳤다. 이에 언어, 속담 등에서도 불교, 유교의 영향을 찾아볼 수 있다(교과서).</p>
+    </div>
+    <div class="think-box">
+      <h4>자료 탐구 1</h4>
+      <ol>
+        <li>불교나 유교의 영향을 받은 단어나 속담 등을 찾아보자.</li>
+        <li>종교와 사상이 우리 삶에 어떤 영향을 끼치고 있는지 조사하여 발표해 보자.</li>
+      </ol>
+    </div>
+
+    <div class="note-box">독서삼품과가 제 기능을 하지 못한 배경인 골품제와 6두품의 처지는 <a href="Ⅰ-2-3-01_고대의신분과사회_도표(해설포함).html#change">「고대의 신분과 사회」 — 통일 이후 신라 사회가 변화하다</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="taoism">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>도교와 풍수지리설</h2>
+    </div>
+    <p class="block-sub">불교와 유학 외에도 도교가 귀족 사회에서 유행하였고, 신라 말에는 풍수지리설이 널리 퍼졌다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>도교</h4>
+        불로장생을 추구하는 신선 사상과 노장사상 등이 결합 — 삼국 시대 귀족 사회를 중심으로 유행 — EBS: 불로장생과 신선이 되기를 추구
+      </div>
+      <div class="compare-card crimson">
+        <h4>도교의 영향을 받은 문화유산</h4>
+        고구려 고분 벽화의 사신도(강서대묘 「청룡」·「현무」 등) — 백제 산수무늬 벽돌 — 백제 금동 대향로(도교와 불교의 상징을 조화롭게 표현)
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">사신 — 도교에서 동서남북을 수호하는 상상의 동물로, 청룡(동)·백호(서)·주작(남)·현무(북)를 말한다(EBS).</p>
+
+    <div class="causal-link"><p>풍수지리설은 경주 대신 다른 지역이 새 왕조의 중심지가 될 것이라는 예언의 형태로 퍼졌으므로, 지방에서 성장한 호족을 사상적으로 뒷받침하였다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">풍수지리설의 의미</div>
+        <div class="step-desc">땅, 하천 등 자연 조건이 인간의 길흉화복에 영향을 미친다는 사상 — EBS: 산이나 물·땅의 모양 등을 살펴 도읍, 주거지, 묘지 등을 정하는 이론</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">예언의 형태</div>
+        <div class="step-desc">경주가 더는 나라의 중심지가 될 수 없고, 다른 지역이 새 왕조의 중심지가 될 것이라는 예언</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">영향</div>
+        <div class="step-desc">호족을 사상적으로 뒷받침 — EBS: 금성(경주) 중심의 국토관에 변화를 가져와 지방의 중요성 부각</div>
+      </div>
+    </div>
+
+    <div class="note-box">신라 말 호족의 성장과 후삼국의 성립은 <a href="../한국사1_1단원(해설자막포함)/Ⅰ-1-1-03_통일신라와발해_도표(해설포함).html#decline">「통일 신라와 발해」 — 신라가 흔들리고 후삼국 시대가 시작되다</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="exchange">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>사상·종교와 국제 교류</h2>
+    </div>
+    <p class="block-sub">우리나라의 고대 국가들은 중국, 일본 등 이웃 나라뿐만 아니라 북방 민족, 서역 등과도 문화를 주고받았다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>혜초(불교)</h4>
+        신라의 승려 — 인도와 중앙아시아 등을 방문 — 돌아와 『왕오천축국전』을 남김(중국 둔황 석굴에서 발견)
+      </div>
+      <div class="compare-card deep">
+        <h4>원효(불교)</h4>
+        원효의 불교 연구가 동아시아 불교 발전에 큰 영향 — 여러 승려가 중국에 유학
+      </div>
+      <div class="compare-card brass">
+        <h4>최치원(유학)</h4>
+        6두품 출신으로 당에 유학하여 빈공과에 합격 — 「토황소격문」 등 문장으로 이름을 알림
+      </div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>고대 문화의 전파와 교류(교과서 화보·EBS)</caption>
+      <thead><tr><th>방향</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">일본으로</td><td>백제가 일본에 유교 경전을 전해 줌 — 금동 미륵보살 반가사유상과 일본 고류사 목조 미륵보살 반가사유상: 삼국의 불교문화가 일본 불교문화에 영향 — EBS: 삼국과 가야 문화는 일본 아스카 문화 발전에 기여, 통일 신라 문화는 일본 하쿠호 문화 발전에 영향</td></tr>
+        <tr><td class="hd">서역과</td><td>경주 계림로 보검 — 유럽과 서아시아에서 제작된 단검의 모습, 카자흐스탄에서 발견된 검과 비슷함</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">하쿠호 문화 — 7세기 후반~8세기 초에 발달한 일본의 고대 문화로, 당시 일본은 당과의 관계가 원만하지 못해 주로 신라를 통해 유교와 불교 등 선진 문물을 받아들였다(EBS).</p>
+
+    <div class="think-box">
+      <h4>생각 키우기 — 사상·종교와 국제 교류</h4>
+      <ol>
+        <li>고대 시기 다양한 사상·종교의 교류가 가능했던 까닭은 무엇일지 생각해 보자.</li>
+        <li>자료 외에 고대 시기 다양한 사상·종교의 교류를 보여 주는 사례를 조사해 보자.</li>
+      </ol>
+    </div>
+
+    <div class="sidebox">
+      <h4>활동 — 큐레이터가 되어 고대의 문화유산 소개하기(교과서 화보)</h4>
+      <p>① e뮤지엄 누리집에서 소개할 문화유산을 골라 관심 소장품으로 등록한다. ② ‘내가 해보는 전시’에 들어가 원하는 전시 유형으로 꾸민다. ③ 만든 전시를 친구들에게 소개한다.</p>
+    </div>
+
+    <div class="note-box">삼국과 가야, 통일 신라와 발해가 여러 나라와 교류한 모습은 <a href="Ⅰ-2-1-01_고대의대외관계_도표(해설포함).html#exchange">「고대의 대외 관계」 — 삼국과 가야, 여러 나라와 교류하다</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>정리 — 고대의 사상과 문화</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>고대 국가의 사상</caption>
+      <thead><tr><th>구분</th><th>삼국</th><th>통일 신라</th><th>발해</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">불교</td><td>왕실 중심 수용(고구려 소수림왕, 백제 침류왕, 신라 법흥왕 공인), 왕즉불·불교식 왕명</td><td>원효(아미타 신앙·일심 사상), 의상(화엄종·관음 신앙), 신라 말 선종과 승탑, 불국사·석굴암</td><td>왕실·귀족 중심, 문왕의 장려, 고구려 불교의 영향, 이불병좌상</td></tr>
+        <tr><td class="hd brass">유학</td><td>고구려 태학·경당, 백제 오경박사, 신라 임신서기석</td><td>국학(신문왕), 독서삼품과(원성왕), 빈공과 합격자·최치원</td><td>6부에 유교 덕목, 주자감, 당에 유학생 파견</td></tr>
+        <tr><td class="hd crimson">도교·풍수지리설</td><td>도교: 귀족 사회 중심 유행, 사신도·산수무늬 벽돌·금동 대향로</td><td>신라 말 풍수지리설 — 선종과 함께 호족을 뒷받침</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 길잡이 질문</h4>
+      <ol>
+        <li>불교와 유학은 고대 국가에 어떤 영향을 끼쳤을까?</li>
+        <li>사상과 종교는 고대의 국제 교류에서 어떤 역할을 하였을까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. (   )은/는 아미타 신앙을 전파하여 불교의 대중화에 크게 기여하였다.</summary>
+        <div class="check-answer">원효</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 신라 말기 불교 종파 중 (   )이/가 호족에게 큰 호응을 받았다.</summary>
+        <div class="check-answer">선종</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 고구려는 중앙에 (   )을/를 두어 유학을 가르쳤다.</summary>
+        <div class="check-answer">태학</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 삼국 통일 이후 신라는 (   )을/를 설치하여 유학을 교육하였다.</summary>
+        <div class="check-answer">국학</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q5. 고구려는 (소수림왕 / 침류왕) 때 중국의 전진으로부터 불교를 수용하였다.</summary>
+        <div class="check-answer">소수림왕</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. (원효 / 의상)은/는 일심 사상을 주장하고 아미타 신앙을 전파하여 불교 대중화에 기여하였다.</summary>
+        <div class="check-answer">원효</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q7. 고구려 고분의 사신도는 (불교 / 도교)에서 동서남북을 수호하는 상상의 동물을 그린 것이다.</summary>
+        <div class="check-answer">도교</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q8. 통일 신라의 문화는 일본의 (아스카 / 하쿠호) 문화 발전에 기여하였다.</summary>
+        <div class="check-answer">하쿠호</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q9. 신라는 6세기 법흥왕 때 (   )의 순교를 계기로 불교를 공인하였다.</summary>
+        <div class="check-answer">이차돈</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q10. 신라 말 유행한 (   )은/는 금성(경주) 중심의 국토관에 변화를 가져왔다.</summary>
+        <div class="check-answer">풍수지리설</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q11. 다음 국가와 관련 있는 내용을 연결해 보자. 고구려 · 백제 · 신라 · 발해 — 경당 · 금동 대향로 · 임신서기석 · 주자감</summary>
+        <div class="check-answer">고구려 — 경당 / 백제 — 금동 대향로 / 신라 — 임신서기석 / 발해 — 주자감</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅱ 「근대 이전 한국사의 탐구」 4 「사상과 문화」 01 「고대의 사상과 문화」, 86–87쪽 — 본문·연표·도입 자료·사료 읽기(불교와 왕실, 독서삼품과의 실시)·질문+·선종·풍수지리설·오경박사 용어 풀이·임신서기석·역사 깊이 보기(사상·종교와 국제 교류)·생각 키우기·확인하기의 기본 출처 (1차 근거)</li>
+      <li>동아출판 고등학교 『한국사1』, 「고대의 문화」 화보(불교문화, 도교, 다양한 나라와의 교류), 88–89쪽 (1차 근거)</li>
+      <li>동아출판 고등학교 『한국사1』, 자료로 보는 한국사 「사상과 문화」 자료 탐구 1(언어로 보는 불교와 유교의 영향), 101쪽 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「다양한 사상과 문화 교류」 중 「고대의 사상과 문화 교류」, 70–71쪽 — 불교의 수용과 발달, 유학의 발달, 도교, 풍수지리설, 고대의 문화 교류, 곁글, 자료(불교의 대중화, 독서삼품과 실시, 도교의 영향을 받은 문화유산), 개념 체크 문항 (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국사』, 49–57쪽 (참고용) — 신라의 불교 공인이 늦어진 배경, 업설, 미륵 신앙과 반가사유상에만 활용</li>
+    </ol>
+    <div class="note">
+      이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다. 자료로 보는 한국사의 자료 탐구 2~4와 EBS의 고려 시대 이후 자료는 이 소주제 범위를 벗어나 반영하지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-2-4-01)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p01-N과 대응)
+  const SECTION_PREFIX = "1-2-4-01";
+
+  const narrativeData = {
+    // 1-2-4-01-2: 삼국이 불교를 받아들이다  (대본 p01-2)
+    "1-2-4-01-2": [
+      "삼국 초기의 왕실은 스스로 하늘의 자손이라 내세우고 제천 행사를 이끌며 나라를 묶었습니다. 그런데 나라가 커지자 지역마다 다른 토착 신앙으로는 하나의 나라를 묶기 어려워졌습니다.",
+      "그래서 왕실이 앞장서 <b>불교</b>를 받아들였습니다. 고구려는 소수림왕, 백제는 침류왕 때인 4세기 후반이었고, 신라는 토착 귀족의 반발로 늦어져 6세기 법흥왕 때 <b>이차돈</b>의 순교를 계기로 공인했습니다.",
+      "불교는 왕의 권위를 높이는 데 쓰였습니다. 신라는 '왕이 곧 부처'라는 <b>왕즉불</b> 사상을 내세웠고, 진평왕은 석가모니 아버지의 이름인 '백정'을, 왕비는 어머니의 이름인 '마야 부인'을 썼습니다.",
+      "귀족에게도 불교는 쓸모가 있었습니다. 전생의 행위가 현세를 결정한다는 업설을 내세우면, 귀족으로 태어난 것을 전생에 쌓은 공덕의 결과로 설명할 수 있었기 때문입니다.",
+      "불교와 함께 탑과 불상도 들어왔습니다. 처음에는 목탑을 세웠지만 점차 석탑으로 바뀌었고, 미륵 신앙이 퍼지면서 <b>반가사유상</b>도 많이 만들어졌습니다. 오늘날 '사유의 방'에서 만나는 바로 그 불상입니다.",
+      "이렇게 왕실과 귀족의 종교로 시작한 불교는, 통일 이후 백성에게로 퍼져 나갑니다."
+    ],
+    // 1-2-4-01-3: 통일 신라와 발해의 불교  (대본 p01-3)
+    "1-2-4-01-3": [
+      "통일 무렵 신라에서는 불교를 깊이 이해한 승려들이 나타나, 불교를 백성 곁으로 가져갔습니다.",
+      "<b>원효</b>는 어려운 경전을 몰라도 '나무아미타불'만 외면 극락에 갈 수 있다는 <b>아미타 신앙</b>을 전했습니다. 노래와 춤으로 가르침을 전하니 가난한 사람들까지 부처의 이름을 외게 되었습니다.",
+      "<b>의상</b>은 당에서 공부하고 돌아와 화엄종을 열고, '관세음보살'을 부르면 고난에서 구제받는다는 <b>관음 신앙</b>을 퍼뜨렸습니다. 두 사람 덕분에 불교는 귀족만의 종교가 아니게 되었습니다.",
+      "신라 말에는 <b>선종</b>이 널리 퍼졌습니다. 선종은 참선 수행을 통한 개인의 깨달음을 중시했는데, 지방에서 독자적인 세력을 키우던 호족의 호응을 얻었습니다. 각지에 9산 선문이 세워지고 승려의 승탑도 많이 만들어졌습니다.",
+      "발해에서도 불교는 왕실과 귀족을 중심으로 유행했고, 문왕은 불교를 장려해 왕권을 강화했습니다. 발해의 불교 문화유산에서는 고구려 불교의 영향을 찾아볼 수 있습니다.",
+      "불교가 사람들의 마음을 모았다면, 나라를 다스리는 틀은 다른 사상에서 왔습니다."
+    ],
+    // 1-2-4-01-4: 유학을 바탕으로 나라를 정비하다  (대본 p01-4)
+    "1-2-4-01-4": [
+      "나라가 커지면 제도를 운영하고 나라에 충성할 인재가 필요합니다. 삼국은 그 바탕을 <b>유학</b>에서 찾았습니다.",
+      "고구려는 수도에 <b>태학</b>, 지방에 경당을 두었고, 백제는 <b>오경박사</b>를 두어 유교 경전을 가르치고 일본에도 전했습니다. 신라의 두 사람은 유교 경전을 3년 안에 익히겠다고 돌에 새겨 맹세했는데, 이것이 <b>임신서기석</b>입니다.",
+      "통일 후 신라는 신문왕 때 <b>국학</b>을 세웠고, 원성왕 때는 유교 경전을 얼마나 이해했는지에 따라 관리를 뽑는 <b>독서삼품과</b>를 실시했습니다. 신분이 아니라 학문적 능력으로 사람을 쓰겠다는 시도였습니다.",
+      "하지만 골품제의 제약은 여전했습니다. 높은 관직은 진골이 독점했기에, 실력을 갖춘 6두품도 높은 자리에 오르기는 어려웠습니다. 진골과 6두품은 이 제도를 각각 어떻게 바라보았을까요?",
+      "발해도 유학을 정치 이념으로 삼아, 6부의 이름에 충·인·의·지·예·신을 붙이고 주자감에서 유교 경전을 가르쳤습니다.",
+      "이렇게 들어온 불교와 유교는 오늘날 우리말에도 남아 있습니다. 떠들썩한 모습을 뜻하는 '야단법석'은 불교 용어에서, '남의 제사에 감 놓아라 배 놓아라 한다'는 속담은 유교의 제사에서 비롯되었습니다."
+    ],
+    // 1-2-4-01-5: 도교와 풍수지리설  (대본 p01-5)
+    "1-2-4-01-5": [
+      "불교와 유학 말고도 귀족 사회에서 유행한 사상이 있었습니다. 늙지 않고 오래 살며 신선이 되기를 추구한 <b>도교</b>입니다.",
+      "도교는 신선 사상과 노장사상 등이 결합한 것으로, 고구려 고분 벽화의 <b>사신도</b>, 백제 산수무늬 벽돌, 백제 <b>금동 대향로</b>에 그 흔적이 남아 있습니다. 동서남북을 지키는 청룡·백호·주작·현무가 바로 도교의 방위신입니다.",
+      "신라 말에는 <b>풍수지리설</b>이 널리 퍼졌습니다. 땅과 하천 같은 자연 조건이 사람의 길흉화복에 영향을 준다는 사상입니다.",
+      "이 사상은 곧 정치적인 의미를 띠었습니다. 경주는 더 이상 나라의 중심이 될 수 없고 다른 지역이 새 왕조의 중심지가 된다는 예언의 형태로 퍼지면서, 지방에서 힘을 키우던 호족을 사상적으로 뒷받침했습니다.",
+      "앞에서 본 선종을 떠올려 보세요. 불교의 선종과 풍수지리설은 서로 다른 데서 출발했지만, 신라 말 호족이라는 한 지점에서 만났습니다. 「고대의 신분과 사회」에서 본, 골품제를 비판하며 호족을 지원한 6두품 지식인까지 함께 떠올리면 새로운 시대가 다가오고 있었음을 알 수 있습니다."
+    ],
+    // 1-2-4-01-6: 사상·종교와 국제 교류  (대본 p01-6)
+    "1-2-4-01-6": [
+      "사상과 종교는 국경 안에만 머물지 않았습니다. 불교를 더 깊이 배우려는 승려들은 중국으로, 멀리 인도까지 떠났습니다.",
+      "신라의 <b>혜초</b>는 인도와 중앙아시아를 돌아보고 『<b>왕오천축국전</b>』을 남겼습니다. 이 기록은 훗날 중국 둔황 석굴에서 발견되었습니다.",
+      "유학을 익힌 <b>최치원</b>은 당의 빈공과에 합격해 문장으로 이름을 알렸고, 원효의 불교 연구는 동아시아 불교 발전에 영향을 주었습니다.",
+      "문화는 일본으로도 흘러갔습니다. 백제는 유교 경전을 전했고, 우리 반가사유상과 닮은 불상이 일본 고류사에 있습니다. 삼국과 가야의 문화는 아스카 문화에, 통일 신라의 문화는 <b>하쿠호 문화</b>에 영향을 주었습니다.",
+      "서쪽으로는 유럽과 서아시아의 단검 모양을 한 경주 계림로 보검이 먼 서역과의 교류를 보여 줍니다.",
+      "이처럼 고대의 사상과 종교는 사람과 문화를 잇는 길이 되었습니다. 고려는 이 유산을 이어받아 어떤 사상과 문화를 꽃피웠을까요? 다음 소주제에서 살펴보겠습니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

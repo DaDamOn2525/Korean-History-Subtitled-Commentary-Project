@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고대의 신분과 사회(자막 해설) | 혈통이 지위를 정한 사회, 골품제가 흔들리다</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-2-2-04_조선후기수취체제개편과경제변화_도표(해설포함).html">‹ 이전: 조선 후기 수취 체제 개편과 경제 변화 (대단원 이동)</a>
+  <a href="Ⅰ-2-3_신분제와사회구조_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#classes">신분제의 형성</a>
+  <a href="#golpum">골품제</a>
+  <a href="#change">통일 이후 신라</a>
+  <a href="#balhae">발해 사회</a>
+  <a href="#mural">고분 벽화</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-2-3-02_고려의신분과사회_도표(해설포함).html">다음: 고려의 신분과 사회 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 이전 한국사의 탐구</span> · 신분제와 사회 구조</div>
+    <h1>혈통이 지위를 정한 사회, 골품제가 흔들리다</h1>
+    <p class="lead">청동기 시대에 지배층과 피지배층이 나뉘면서 신분제가 자리 잡았다. 고대의 신분은 대대로 세습되었고, 개인의 지위는 능력보다 혈통에 따라 정해졌다. 신라는 골품제로 지배층 안에서도 차별을 두었는데, 통일 이후 6두품의 역할이 커지고 신라 말 호족이 성장하면서 골품제를 바탕으로 한 신분제는 해체되어 갔다. 발해는 고구려계가 지배층의 중심을 이루었다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">청동기 시대 – 신라 말</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>신분제의 형성에서 골품제의 해체까지</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 삼국 시대의 신분제</strong> · <strong style="color:var(--crimson)">적색 = 신라의 골품제</strong> · <strong style="color:var(--brass)">황동색 = 통일 이후의 변화(신라·발해)</strong>. 신분제가 형성되고 신라에서 골품제로 굳어진 순서는 화살표로, 통일 이후 신라와 발해는 각각의 갈래로 나누었다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">청동기 시대</div>
+        <div class="step-desc">잉여 생산물 증가 → 빈부 차, 지배층과 피지배층 분화</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">삼국의 신분제</div>
+        <div class="step-desc">왕족·귀족 / 평민 / 천민, 신분 세습, 혈통에 따른 지위</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">신라의 골품제</div>
+        <div class="step-desc">지배층을 골과 품으로 세분, 승진과 일상생활 제한</div>
+      </div>
+    </div>
+
+    <div class="branch-root">통일 이후 남북국의 신분제</div>
+    <p class="branch-cause">남북국 모두 지배층인 귀족·관인층, 피지배층인 평민과 천민으로 구분되었지만(EBS), 신라는 골품제가 흔들렸고 발해는 고구려계와 말갈계가 함께 사회를 이루었다.</p>
+    <div class="branch-cols two">
+      <div class="branch-col brass">
+        <h4>통일 신라</h4>
+        <p class="why">골품제 유지 → 신라 말 해체</p>
+        <div class="branch-node">성골 소멸, 3~1두품 사실상 평민화</div>
+        <div class="branch-node">6두품의 정치적 역할 확대, 승진에는 한계</div>
+        <div class="branch-node">신라 말 호족 성장, 6두품의 골품제 비판</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>발해</h4>
+        <p class="why">고구려인 중심, 말갈인과 함께 건국</p>
+        <div class="branch-node">지배층: 왕족 대씨, 귀족 고씨 등 고구려계 중심</div>
+        <div class="branch-node">피지배층: 고구려인과 말갈인</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 삼국 시대</strong> · <strong style="color:var(--brass)">황동색 = 통일 이후</strong></p>
+    <div class="timeline">
+      <div class="tl-item deep"><div class="tl-year">194</div><div class="tl-body"><div class="tl-title">고구려, 진대법 실시</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">676</div><div class="tl-body"><div class="tl-title">신라, 삼국 통일</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">698</div><div class="tl-body"><div class="tl-title">발해 건국</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">889</div><div class="tl-body"><div class="tl-title">원종과 애노의 난</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="classes">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>신분제가 형성되고 다양한 신분으로 나뉘다</h2>
+    </div>
+    <p class="block-sub">오늘날 다양한 차별을 신라의 신분제인 ‘골품제’에 빗대어 말하기도 한다. 고대의 신분제는 어떤 모습이었을까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">빈부의 차이</div>
+        <div class="step-desc">청동기 시대 농경 발달로 잉여 생산물 증가 → 빈부 차, 지배층과 피지배층 분화</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">전쟁과 서열</div>
+        <div class="step-desc">부족 간 잦은 전쟁 → 지배층 사이에도 서열, 전쟁 포로·일반 농민의 노비화</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">신분제 확립</div>
+        <div class="step-desc">EBS: 청동기 시대에 발생한 계급이 신분제로 발전</div>
+      </div>
+    </div>
+
+    <div class="causal-link"><p>고대의 신분은 대대로 세습되었고, 개인의 사회적 지위는 능력보다 혈통에 따라 정해졌으므로 혈통을 넘어 신분이 오르는 경우는 거의 없었다.</p></div>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>왕족과 귀족(지배층)</h4>
+        고구려는 왕족 고씨와 5부 출신 귀족, 백제는 왕족 부여씨와 8개 주요 가문, 신라는 김·박·석씨 등이 최고 지배층 — EBS: 정치권력 독점, 사회·경제적 특권
+      </div>
+      <div class="compare-card deep">
+        <h4>평민(피지배층)</h4>
+        대부분 농민, 조세와 토산물 부담 — 성인 남성은 궁궐·성 쌓기에 동원, 일정 기간 군 복무 — 자연재해와 지배층의 수탈로 빚을 갚지 못하면 노비로 전락
+      </div>
+      <div class="compare-card deep">
+        <h4>천민(피지배층)</h4>
+        대부분 노비, 주로 전쟁 포로·죄인 출신 — 국가나 개인의 소유로 갖은 노역, 재산처럼 취급되어 매매·증여·상속 가능
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">지배층을 왕족과 귀족, 관인층 등으로 구분하는 의견도 있다(교과서). EBS는 고대의 지배층을 ‘귀족 및 관인층’으로 정리한다. 노비 — 삼국 시대에는 주로 전쟁 포로나 죄인, 귀족에게 진 빚을 갚지 못한 사람 등이 노비가 되었고, 삼국 통일 이후에는 귀족에게 진 빚을 갚지 못해 노비가 되는 경우가 많았다(EBS).</p>
+
+    <div class="causal-link"><p>자연재해와 지배층의 수탈로 평민이 노비가 되기도 하자, 삼국은 백성의 생활을 안정시키고 재정을 튼튼히 하려고 고구려의 진대법 등 다양한 정책을 펼쳤다.</p></div>
+    <div class="quote-block deep">
+      <h4>사료 읽기 — 진대법</h4>
+      봄 3월부터 7월까지 관청 곡식을 식구 수에 따라 빌려주고, 겨울 10월에 갚게 하였다.
+      <div class="src">『삼국사기』 (재구성) — 고구려가 가난한 백성을 도우려고 실시한 제도</div>
+    </div>
+
+    <div class="note-box">진대법은 수취 체제의 관점에서 <a href="Ⅰ-2-2-01_고대의수취체제와경제_도표(해설포함).html#threekingdoms">「고대의 수취 체제와 경제」 — 삼국이 수취 체제를 정비하다</a>에서도 다루었다.</div>
+  </section>
+
+  <section class="block" id="golpum">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>혈통으로 나눈 신라의 골품제</h2>
+    </div>
+    <p class="block-sub">신라에서는 지배층 사이에도 혈통에 따른 차별이 있었다.</p>
+
+    <div class="quote-block crimson">
+      <h4>도입 사료 — 중국 역사서가 본 신라의 골품</h4>
+      관직 임명에 왕의 친족을 우선했다. 왕족은 제1골이며, 제2골의 여자와는 혼인하지 않았다.
+      <div class="src">『신당서』 (재구성)</div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>골품제의 짜임</h4>
+        신라가 고대 국가로 발전하는 과정에서 형성 — 왕족을 비롯한 지배층을 세분하려고 만든 신분제 — 성골·진골의 ‘골’과 6두품~1두품의 ‘품’으로 편성
+      </div>
+      <div class="compare-card crimson">
+        <h4>골품에 따른 제약</h4>
+        능력이 뛰어나도 골품이 낮으면 승진에 한계 — 집·수레·의복 등 일상생활까지 제약 — 고구려와 백제에도 비슷한 신분제가 있었을 것으로 짐작
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 신라의 왕족인 김씨·박씨·석씨 등이 지방 족장 세력을 통합·편제하는 과정에서 골품제가 마련되었다. 왕족은 성골·진골이 되었고, 족장은 세력 크기에 따라 6~1두품으로 편성되었다.</p>
+
+    <div class="causal-link"><p>골품제는 관등제와 밀접하게 연관되어 있었으므로, 골품에 따라 오를 수 있는 관등의 상한이 정해져 있었다(EBS).</p></div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>골품과 관등(교과서·EBS 자료)</caption>
+      <thead><tr><th>골품</th><th>오를 수 있는 최고 관등</th><th>입을 수 있는 공복</th></tr></thead>
+      <tbody>
+        <tr><td class="hd crimson">진골</td><td>1등급 이벌찬까지(제한 없음)</td><td>자색·비색·청색·황색</td></tr>
+        <tr><td class="hd crimson">6두품</td><td>6등급 아찬까지</td><td>비색·청색·황색</td></tr>
+        <tr><td class="hd crimson">5두품</td><td>10등급 대나마까지</td><td>청색·황색</td></tr>
+        <tr><td class="hd crimson">4두품</td><td>12등급 대사까지</td><td>황색</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">공복의 색: 1~5등급 자색, 6~9등급 비색, 10~11등급 청색, 12~17등급 황색. 주요 부서의 장관은 5등급 대아찬 이상의 관등을 가져야 했다(교과서).</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>골품에 따른 가옥 규제(교과서 그림)</caption>
+      <thead><tr><th>구분</th><th>4두품</th><th>5두품</th><th>6두품</th><th>진골</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">방의 길이·너비</td><td>15척</td><td>18척</td><td>21척</td><td>24척</td></tr>
+        <tr><td class="hd">담장 높이</td><td>6척</td><td>7척</td><td>8척</td><td rowspan="2">제한 없음</td></tr>
+        <tr><td class="hd">마구간</td><td>말 2마리</td><td>말 3마리</td><td>말 5마리</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="quote-grid">
+      <div class="quote-block crimson">
+        <h4>가옥 규정</h4>
+        진골의 방은 길이·너비 24척, 6두품은 21척을 넘지 못한다.
+        <div class="src">『삼국사기』 (재구성)</div>
+      </div>
+      <div class="quote-block crimson">
+        <h4>골품제에 대한 반발 — 설계두</h4>
+        신라는 골품을 따져, 큰 재주와 공이 있어도 신분을 넘을 수 없다.
+        <div class="src">『삼국사기』 (재구성) — 6두품으로 추정되는 설계두는 중국으로 건너가 당과 고구려의 전쟁에서 공을 세우고 전사</div>
+      </div>
+    </div>
+
+    <div class="think-box">
+      <h4>생각 키우기 — 신라의 골품제</h4>
+      <ol>
+        <li>자료를 바탕으로 골품제의 특징을 말해 보자.</li>
+        <li>자료를 바탕으로 골품제의 문제점을 정리해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="change">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>통일 이후 신라 사회가 변화하다</h2>
+    </div>
+    <p class="block-sub">삼국 통일은 신라의 골품제에도 변화를 가져왔다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">통합 노력</div>
+        <div class="step-desc">삼국 통일 과정에서 백제와 고구려의 옛 지배층에게 신라의 관등 수여</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">골품제의 변화</div>
+        <div class="step-desc">통일 무렵 성골 소멸(EBS), 3두품~1두품은 사실상 평민화</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">6두품의 성장</div>
+        <div class="step-desc">왕권 강화로 정치적 역할 확대, 뛰어난 학문과 실무 능력으로 왕 보좌</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 관직 진출이 4두품까지로 제한되면서 3~1두품은 점차 평민으로 간주되었다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card brass">
+        <h4>진골</h4>
+        EBS: 통일 이후 최고 신분층 — 나라의 중요한 일을 결정하며 특권 — 높은 관직 독점
+      </div>
+      <div class="compare-card crimson">
+        <h4>6두품</h4>
+        골품제의 제약은 여전 — 승진에 한계
+      </div>
+    </div>
+
+    <div class="causal-link"><p>이후 왕위 다툼과 농민 봉기로 신라 사회가 흔들리면서, 골품제를 바탕으로 한 신분제에도 변화가 나타났다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">호족의 성장</div>
+        <div class="step-desc">각지에서 독자적 세력인 호족 성장</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">6두품의 비판</div>
+        <div class="step-desc">일부 6두품 지식인이 골품제를 비판하며 호족 지원 — EBS: 신라 말 골품제 사회 비판(반신라적 태도)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">신분제의 해체</div>
+        <div class="step-desc">골품제를 바탕으로 한 신라의 신분제 해체</div>
+      </div>
+    </div>
+
+    <div class="note-box">신라 말 왕위 다툼과 농민 봉기, 호족의 성장과 후삼국의 성립은 <a href="../한국사1_1단원(해설자막포함)/Ⅰ-1-1-03_통일신라와발해_도표(해설포함).html#decline">「통일 신라와 발해」 — 신라가 흔들리고 후삼국 시대가 시작되다</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="balhae">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>고구려인과 말갈인이 발해를 이루다</h2>
+    </div>
+    <p class="block-sub">발해는 고구려인이 중심이 되어 말갈인과 힘을 합쳐 세운 나라였다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card brass">
+        <h4>지배층</h4>
+        왕족인 대씨와 귀족인 고씨 등 고구려계의 비중이 높음 — 말갈인 가운데 지배층이 된 사람도 있음
+      </div>
+      <div class="compare-card brass">
+        <h4>피지배층</h4>
+        고구려인과 말갈인으로 구성 — 말갈인 가운데는 고구려에 살던 사람이 많음
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">EBS: 발해의 신분제도 지배층인 귀족 및 관인층, 피지배층인 평민과 천민으로 구분된다.</p>
+
+    <div class="sidebox">
+      <h4>말갈인은 누구일까?</h4>
+      <div class="compare-grid">
+        <div class="compare-card">
+          <h4>사는 곳</h4>
+          한반도 북부, 만주 지역에 살던 종족
+        </div>
+        <div class="compare-card">
+          <h4>정체성</h4>
+          발해 건국에 동참한 말갈인 중 일부는 고구려인이라는 정체성을 가졌을 것으로 추정
+        </div>
+        <div class="compare-card">
+          <h4>지위</h4>
+          일부는 고구려나 발해의 지배층이 됨
+        </div>
+      </div>
+      <p>청동 부절(러시아 연해주 출토) — 부절은 군대 동원 등에 쓰인 증표이다. 말갈인으로 여겨지는 ‘섭리계’가 고위 무관인 ‘좌효위장군’으로 새겨져 있어, 발해의 지배층이 된 말갈인도 있었음을 보여 준다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="mural">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>고분 벽화로 보는 고대 사회</h2>
+    </div>
+    <p class="block-sub">자료 탐구 1(교과서 85쪽) — 그림 속 인물의 크기에서 무엇을 읽어 낼 수 있을까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">자료</div>
+        <div class="step-desc">수산리 고분 벽화(평남 남포), 5세기 무렵 만들어진 고구려 고분 벽화</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">장면</div>
+        <div class="step-desc">묘 주인이 곡예를 보는 장면</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">표현 방식</div>
+        <div class="step-desc">묘 주인은 크게, 다른 사람들은 작게 그림</div>
+      </div>
+    </div>
+
+    <div class="think-box">
+      <h4>자료 탐구 1</h4>
+      <ol>
+        <li>자료에서 묘 주인은 크게, 다른 사람들은 작게 그린 까닭을 말해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>정리 — 고대의 신분 구조</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>삼국·통일 신라·발해의 신분 구조</caption>
+      <thead><tr><th>구분</th><th>삼국</th><th>통일 신라</th><th>발해</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">지배층</td><td>왕족·귀족(고구려 고씨와 5부, 백제 부여씨와 8개 가문, 신라 김·박·석씨)</td><td>진골이 최고 신분층, 높은 관직 독점 / 6두품은 왕을 보좌했으나 승진에 한계</td><td>대씨·고씨 등 고구려계 비중이 높음, 일부 말갈인</td></tr>
+        <tr><td class="hd">평민</td><td>대부분 농민, 조세·토산물 부담, 축성 동원·군 복무</td><td>3~1두품은 사실상 평민화</td><td rowspan="2">고구려인과 말갈인으로 구성된 피지배층(평민·천민)</td></tr>
+        <tr><td class="hd">천민</td><td>대부분 노비(전쟁 포로·죄인 등), 매매·증여·상속 가능</td><td>귀족에게 진 빚을 갚지 못해 노비가 되는 경우가 많음(EBS)</td></tr>
+        <tr><td class="hd">신분제의 특징·변화</td><td>신분 세습, 혈통에 따른 지위 / 신라 골품제</td><td>성골 소멸 → 신라 말 호족 성장과 6두품의 골품제 비판 → 신분제 해체</td><td>고구려인이 중심이 되어 말갈인과 함께 건국</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 길잡이 질문</h4>
+      <ol>
+        <li>고대의 신분제는 어떤 모습이었을까?</li>
+        <li>통일 이후 신라 사회는 어떻게 변하였을까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 삼국 시대에는 일반적으로 신분이 대대로 세습되었다. (○, ×)</summary>
+        <div class="check-answer">○ — 개인의 사회적 지위는 능력보다 혈통에 따라 결정되었다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 고구려는 (   )을/를 실시하여 백성의 생활을 안정시키려 하였다.</summary>
+        <div class="check-answer">진대법</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 신라 말에는 지방에서 독자적 세력인 (   )이/가 성장하였다.</summary>
+        <div class="check-answer">호족</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 발해 지배층에서는 고구려계가 높은 비중을 차지하였다. (○, ×)</summary>
+        <div class="check-answer">○ — 왕족인 대씨와 귀족인 고씨 등 고구려계의 비중이 높았다.</div>
+      </details></div>
+
+      <div class="check-group">자료 탐구</div>
+      <div class="check-item"><details><summary>Q5. 수산리 고분 벽화에서 묘 주인은 크게, 다른 사람들은 작게 그린 까닭은 무엇일까?</summary>
+        <div class="check-answer">신분의 차이를 그림 속 인물의 크기로 나타냈기 때문이다 — 신분에 따라 사람을 다르게 대한 고대 사회의 모습이 벽화에도 반영되었다.</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅱ 「근대 이전 한국사의 탐구」 3 「신분제와 사회 구조」 01 「고대의 신분과 사회」, 76–77쪽 — 본문·연표·도입 사료·사료 읽기(진대법)·신라의 골품제·골품제에 대한 반발·말갈인·생각 키우기·확인하기의 기본 출처 (1차 근거)</li>
+      <li>동아출판 고등학교 『한국사1』, 자료로 보는 한국사 「신분제와 사회 구조」 자료 탐구 1(고분 벽화로 보는 고대 사회), 85쪽 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「신분제와 사회 구조」 중 「고대의 신분제와 사회 구조」 — 삼국·통일 신라·발해의 신분제, 노비 곁글, 자료(신라의 골품제) (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국사』, 43–45쪽 (참고용) — 골품제의 형성 배경과 3~1두품이 평민으로 간주된 배경 설명에만 활용</li>
+    </ol>
+    <div class="note">
+      이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다. 자료로 보는 한국사의 자료 탐구 2·3과 EBS의 고려 시대 신분제 자료는 이 소주제 범위를 벗어나 반영하지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-2-3-01)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p01-N과 대응)
+  const SECTION_PREFIX = "1-2-3-01";
+
+  const narrativeData = {
+    // 1-2-3-01-2: 신분제가 형성되고 다양한 신분으로 나뉘다  (대본 p01-2)
+    "1-2-3-01-2": [
+      "청동기 시대에 농사가 발달하자 먹고 남는 생산물이 생겼습니다. 그 몫을 누가 더 많이 갖느냐에 따라 빈부의 차이가 벌어졌고, 사람들은 지배하는 쪽과 지배받는 쪽으로 나뉘었습니다.",
+      "부족끼리 전쟁이 잦아지자 지배층 안에도 서열이 생겼고, 전쟁 포로는 노비가 되었습니다. 이렇게 굳어진 차이가 바로 <b>신분제</b>입니다.",
+      "고대 신분제의 핵심은 <b>세습</b>이었습니다. 부모의 신분이 곧 자식의 신분이었고, 아무리 능력이 뛰어나도 혈통을 넘어 신분이 오르기는 어려웠습니다.",
+      "평민은 세금과 노동, 군 복무를 함께 부담했습니다. 그런데 자연재해나 수탈로 빚을 갚지 못하면 노비로 떨어졌고, 노비는 재산처럼 사고팔리는 처지였습니다.",
+      "그래서 삼국은 백성의 생활을 안정시키고 나라 살림도 지키려 했습니다. 고구려가 봄에 곡식을 빌려주고 겨울에 돌려받은 <b>진대법</b>이 그 예입니다.",
+      "그렇다면 지배층 안의 차별은 어떤 모습이었을까요? 신라의 골품제가 그 답을 보여 줍니다."
+    ],
+    // 1-2-3-01-3: 혈통으로 나눈 신라의 골품제  (대본 p01-3)
+    "1-2-3-01-3": [
+      "신라는 지방의 여러 세력을 하나로 묶으며 성장했습니다. 이때 왕족은 성골과 진골이 되고, 지방 족장들은 세력 크기에 따라 6두품에서 1두품으로 편성되었습니다. 이것이 <b>골품제</b>입니다.",
+      "골품은 단순한 이름표가 아니었습니다. 골품마다 오를 수 있는 관등의 끝이 정해져 있어서, 진골은 최고 관등까지 오를 수 있었지만 <b>6두품</b>은 6등급 아찬에서 멈춰야 했습니다.",
+      "주요 부서의 장관은 대아찬 이상이어야 했으니, 6두품은 아무리 유능해도 나라의 핵심 자리에는 오를 수 없었던 셈입니다.",
+      "차별은 생활 속까지 이어져, 방의 크기와 담장 높이, 마구간에 둘 수 있는 말의 수까지 골품에 따라 달랐습니다.",
+      "그래서 <b>설계두</b>처럼 신라를 떠나 당에서 능력을 인정받으려 한 사람도 나왔습니다. 이 골품제의 벽은 삼국 통일 이후에도 그대로 유지되었을까요?"
+    ],
+    // 1-2-3-01-4: 통일 이후 신라 사회가 변화하다  (대본 p01-4)
+    "1-2-3-01-4": [
+      "삼국을 통일하는 과정에서 신라는 백제와 고구려의 옛 지배층에게도 신라의 관등을 주며 하나의 나라로 묶으려 했습니다.",
+      "그사이 골품제의 모습도 달라졌습니다. 최고 신분이던 <b>성골</b>은 사라졌고, 관직 진출이 4두품까지로 제한되면서 3두품에서 1두품은 사실상 평민과 다름없게 되었습니다.",
+      "통일 과정에서 왕권이 강해지자, 왕은 학문과 실무 능력을 갖춘 <b>6두품</b>의 보좌를 받으며 정치를 이끌었습니다. 하지만 높은 관직은 여전히 <b>진골</b>의 차지였습니다.",
+      "신라 말 왕위 다툼과 농민 봉기로 나라가 흔들리자, 지방에서는 <b>호족</b>이 독자적인 세력으로 자라났습니다.",
+      "이때 골품제의 벽에 막혀 있던 일부 6두품 지식인이 골품제를 비판하며 호족을 지원했습니다. 능력이 있어도 승진하지 못한 사람들과 지방에서 독자적인 힘을 키운 세력이 손을 잡은 것입니다.",
+      "이렇게 골품제를 바탕으로 한 신라의 신분제는 해체되어 갔습니다. 그렇다면 북쪽의 발해는 어떤 사람들로 이루어진 사회였을까요?"
+    ],
+    // 1-2-3-01-5: 고구려인과 말갈인이 발해를 이루다  (대본 p01-5)
+    "1-2-3-01-5": [
+      "발해는 고구려인이 중심이 되어 말갈인과 힘을 합쳐 세운 나라입니다.",
+      "그래서 발해 사회의 위쪽에는 왕족 대씨와 귀족 고씨처럼 <b>고구려계</b> 사람들이 많았고, 아래쪽에는 고구려인과 <b>말갈인</b>이 함께 살았습니다.",
+      "말갈인은 한반도 북부와 만주에 살던 종족인데, 그 가운데에는 고구려에 살던 사람이 많았습니다. 발해 건국에 함께한 말갈인 일부는 스스로를 고구려인으로 여겼을 것으로 보기도 합니다.",
+      "그렇다고 말갈인이 모두 아래에만 머문 것은 아니었습니다. 연해주에서 나온 <b>청동 부절</b>에는 말갈인으로 여겨지는 인물이 고위 무관으로 새겨져 있어, 지배층에 오른 말갈인도 있었음을 알 수 있습니다.",
+      "발해 역시 귀족과 평민, 천민으로 나뉜 신분 사회였습니다. 이러한 신분의 차이는 기록뿐 아니라 그림에도 남아 있는데, 다음 자료에서 확인해 보겠습니다."
+    ],
+    // 1-2-3-01-6: 고분 벽화로 보는 고대 사회  (대본 p01-6)
+    "1-2-3-01-6": [
+      "신분의 차이는 글로 된 기록에만 남아 있지 않습니다. 5세기 무렵 만들어진 고구려의 <b>수산리 고분 벽화</b>에도 그 흔적이 있습니다.",
+      "벽화에는 무덤의 주인이 곡예를 구경하는 장면이 그려져 있습니다. 눈여겨볼 것은 사람의 크기입니다. 묘 주인은 크게, 다른 사람들은 작게 그려져 있습니다.",
+      "실제 키가 그만큼 달랐던 것은 아닙니다. 그림을 그린 사람은 인물의 크기로 신분의 높고 낮음을 나타낸 것입니다.",
+      "다시 말해, 신분에 따라 사람을 다르게 대하던 고대 사회의 질서가 무덤 속 그림에까지 반영된 셈입니다. 혈통이 지위를 정하는 사회는 그림을 그리는 방식까지 바꾸어 놓았습니다.",
+      "그렇다면 고대가 끝난 뒤, 신분 질서는 고려에서 어떻게 달라졌을까요? 다음 소주제에서 고려의 신분과 사회를 살펴보겠습니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>
