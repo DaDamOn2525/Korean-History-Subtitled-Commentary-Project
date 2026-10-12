@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4·19 혁명 | 부정 선거에 맞선 시민의 손으로 독재 정권을 무너뜨리다</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* 확인 필요 태그 — 원문에 인과가 명시되지 않은 지점 */
+  .need-check{ display:none; /* 2026-09-23: 학생 화면에는 숨김 — 근거 없는 인과를 지어내지 않기 위한 내부(교사용) 표시라 노출하지 않음. 원래 inline-block이었음 */ font-size:11.5px; font-weight:700; color:var(--brass); border:1px solid var(--brass); border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
+  /* EBS 전용 개념 표식 — 현행 교과서에 없고 EBS 개념완성에만 있는 내용 */
+  .ebs-only{ display:inline-block; font-size:11px; font-weight:700; color:var(--paper-card); background:var(--brass); border-radius:4px; padding:1px 6px; margin-left:4px; vertical-align:middle; }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  @media (max-width:760px){.branch-cols{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.soft{border-top-color:var(--indigo-soft); border-top-width:5px;}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.soft h4{color:var(--indigo);}
+  .branch-col.brass h4{color:var(--brass);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); }
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.num{text-align:right; font-variant-numeric:tabular-nums;}
+  table.data-table tr.deep td.hd{color:var(--indigo);}
+  table.data-table tr.crimson td.hd{color:var(--crimson);}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:700px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-grid .quote-block{margin-bottom:0;}
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson .src{color:var(--crimson);}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox table.data-table{margin:10px 0 0;}
+  .sidebox p{margin:8px 0 0; font-size:13.5px; color:var(--ink-soft);}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+  .think-item{margin-bottom:10px; font-size:14px;}
+  .think-item summary{cursor:pointer; list-style:none; padding:2px 0; font-weight:500; color:var(--ink);}
+  .think-item summary::-webkit-details-marker{display:none;}
+  .think-item summary::before{content:"▸ "; color:var(--indigo);}
+  .think-item[open] summary::before{content:"▾ ";}
+  .think-answer{margin-top:6px; padding:9px 13px; background:rgba(255,255,255,0.6); border-left:3px solid var(--indigo); border-radius:3px; font-size:13.5px; color:var(--ink-soft);}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅱ-2-2-02_전후남북한의정치와경제_도표.html" style="color:var(--brass);">‹ 이전 소주제</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#fraud">3·15 부정 선거</a>
+  <a href="#resist">저항</a>
+  <a href="#april">4월의 혁명</a>
+  <a href="#together">모두가 함께</a>
+  <a href="#jang">장면 내각</a>
+  <a href="#summary">정리·확인</a>
+  <a href="#more">더 알아보기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅱ-2-3-02_516군사정변_도표.html" class="sib" style="color:var(--brass); pointer-events:auto;">다음 소주제 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>대한민국의 발전</span> · 민주주의의 시련과 민주화 운동 · 4·19 혁명</div>
+    <h1>부정 선거에 맞선 시민의 손으로, 독재 정권이 무너졌다</h1>
+    <p class="lead">1960년 이승만 정부와 자유당은 이기붕을 부통령에 당선시키려고 3·15 부정 선거를 저질렀다. 대구의 고등학생들에서 시작된 저항은 마산의 3·15 의거와 김주열 학생의 죽음을 거치며 전국으로 번졌고, 4월 19일 서울의 대규모 시위와 교수단의 시국 선언 끝에 이승만 대통령이 물러났다. 이후 장면 내각이 들어섰지만 시민의 요구를 제대로 받아 안지 못했다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1960 – 1961</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>하나의 혁명, 세 갈래의 결과</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--crimson)">적색 = 이승만 정부·자유당(부정 선거·발포·계엄)</strong> · <strong style="color:var(--indigo)">남색 = 시민·학생·교수(저항하는 쪽)</strong> · <strong style="color:var(--brass)">황동색 = 전환점·새 정부(과도 정부·장면 내각)</strong>. 이 소주제의 적색은 앞선 냉전 소주제와 달리 <strong>정부 측</strong>을 뜻한다. 결과의 세 갈래는 <strong>황동 = 정치 체제의 변화, 옅은 남색 = 억눌렸던 요구의 분출, 진한 남색 = 역사적 의의</strong>로 구분했다. 세 결과는 서로가 서로를 낳은 것이 아니라, 아래 하나의 사건에서 각자 갈라져 나왔다 — 그래서 화살표로 잇지 않고 갈래로 그렸다.</p>
+
+    <div class="branch-root">4·19 혁명 — 이승만 대통령 하야(1960.4.26.)</div>
+    <p class="branch-cause">독재 정권이 시민의 힘으로 무너지자, 새 정부를 세우는 일과 그동안 억눌려 왔던 요구, 그리고 이 사건이 남긴 의미가 동시에 나타났다.</p>
+    <div class="branch-cols">
+      <div class="branch-col brass">
+        <h4>정치 체제의 변화</h4>
+        <p class="why">왜: 대통령이 물러나 새 정부를 구성해야 했고, 헌법 자체가 바뀜</p>
+        <div class="branch-node">허정 중심의 과도 정부 → 양원제·내각 책임제 개헌 → 민주당 승리 → 장면 내각(1960.8.)</div>
+      </div>
+      <div class="branch-col soft">
+        <h4>억눌렸던 요구의 분출</h4>
+        <p class="why">왜: 독재 체제에서 억눌려 왔던 다양한 요구가 쏟아지기 시작함</p>
+        <div class="branch-node">평화 통일 운동·노동 운동 등 분출, 장면 내각의 소극적 대응, 시민·학생 시위 지속</div>
+      </div>
+      <div class="branch-col deep">
+        <h4>역사적 의의</h4>
+        <p class="why">왜: 학생뿐 아니라 다양한 계층의 시민이 함께 참여함</p>
+        <div class="branch-node">시민의 손으로 독재 정권을 무너뜨린 민주 혁명, 이후 민주화 운동의 주춧돌, 오늘날까지 헌법 정신으로 남음</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item deep"><div class="tl-year">1960</div><div class="tl-body"><div class="tl-title">2월 28일 2·28 민주 운동</div><div class="tl-desc">선거 유세 중 대구 지역 고등학생들의 시위</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1960</div><div class="tl-body"><div class="tl-title">3월 15일 3·15 부정 선거</div><div class="tl-desc">제4대 대통령 선거, 이기붕을 부통령에 당선시키려 대대적 부정</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1960</div><div class="tl-body"><div class="tl-title">3월 15일 ~ 4월 13일 3·15 의거</div><div class="tl-desc">마산(창원) 학생·시민의 부정 선거 항거, 경찰 발포로 사상자 발생</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1960</div><div class="tl-body"><div class="tl-title">4월 11일 김주열 학생 시신 발견</div><div class="tl-desc">마산 앞바다에서 최루탄에 맞아 숨진 채 발견, 시민 분노 폭발</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1960</div><div class="tl-body"><div class="tl-title">4월 19일 4·19 혁명</div><div class="tl-desc">서울에서 학생·시민 수만 명이 시위, 경찰 발포로 수많은 희생자 발생, 비상계엄 선포</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1960</div><div class="tl-body"><div class="tl-title">4월 25일 대학 교수단 시국 선언</div><div class="tl-desc">이승만 대통령의 퇴진과 재선거 요구</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1960</div><div class="tl-body"><div class="tl-title">4월 26일 이승만 대통령 하야</div><div class="tl-desc">"국민이 원한다면 물러나겠다" 발표 뒤 미국으로 망명</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1960</div><div class="tl-body"><div class="tl-title">8월 19일 장면 내각 출범</div><div class="tl-desc">허정 과도 정부의 개헌과 총선을 거쳐 성립</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1961</div><div class="tl-body"><div class="tl-title">5·16 군사정변 <span class="ebs-only">EBS</span></div><div class="tl-desc">장면 내각 붕괴(EBS 표기)</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="fraud">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>3·15 부정 선거를 저지르다</h2>
+    </div>
+    <p class="block-sub">교과서 배울 내용 Q1 "4·19 혁명이 일어난 까닭은 무엇일까?"에 답하는 첫 블록이다. EBS는 배경을 "반공을 앞세운 이승만 정부의 독재, 경기 침체에 따른 불만 고조"로 요약한다 <span class="ebs-only">EBS</span></p>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">제4대 대통령 선거(1960)</div>
+        <div class="step-desc">선거 운동 중 야당 후보가 병으로 사망, 이승만의 대통령 당선 확실</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">부통령 자리에 대한 걱정</div>
+        <div class="step-desc">나이가 많은 이승만의 건강에 문제가 생기면 헌법에 따라 부통령이 대통령직을 이음</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>이를 걱정한 이승만 정부와 자유당은 자유당 후보 이기붕을 부통령에 당선시키려고 선거 과정에서 대대적인 부정을 저질렀다.</p></div>
+    <table class="data-table">
+      <caption>3·15 부정 선거의 유형</caption>
+      <thead><tr><th>유형</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr class="crimson"><td class="hd">3인조·9인조 공개 투표</td><td>3인조·9인조로 묶어 공개적으로 투표</td></tr>
+        <tr class="crimson"><td class="hd">4할(40%) 사전 투표</td><td>투표 전에 투표함의 40%를 이기붕 지지표로 채워 넣음 <span class="ebs-only">EBS</span></td></tr>
+        <tr class="crimson"><td class="hd">투표함 바꾸기</td><td>개표 전 투표함을 바꿔치기함 <span class="ebs-only">EBS</span></td></tr>
+        <tr class="crimson"><td class="hd">동원</td><td>경찰과 공무원, 마을 이장 등을 동원(EBS 용어로는 관권 선거·금권 선거 <span class="ebs-only">EBS</span>)</td></tr>
+        <tr class="crimson"><td class="hd">결과</td><td>이기붕이 100%에 가까운 득표율로 부통령에 당선되자 득표율을 79%로 조정</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">이승만 정부가 반공을 앞세워 독재를 강화한 과정과 1950년대 후반 경제의 위기는 <a href="Ⅱ-2-2-02_전후남북한의정치와경제_도표.html">「전후 남북한의 정치와 경제」</a> 소주제에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="resist">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>시민들, 부정 선거에 저항하다</h2>
+    </div>
+    <div class="quote-block deep">
+      <h4>대구 고등학생들의 시위(2월 28일)</h4>
+      <p style="margin:0;">"약 1천 명 이상의 고등학생들이 공휴일에도 등교하라는 지시를 비난하며 시위를 전개했다."</p>
+      <div class="src">『조선일보』, 1960. 2. 29. (교과서 재구성)</div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-8px;">학생들은 학교 당국이 야당인 민주당의 정치 집회에 참가하지 못하도록 막으려고 공휴일에도 등교하라고 지시했다고 비난했다(교과서 도입 인용문). 교과서 도입 질문 — 학생들이 시위에 나선 까닭은 무엇일까?</p>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">2·28 민주 운동</div>
+        <div class="step-desc">선거 유세 중이던 2월 28일 대구 지역 고등학생들이 시위</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">전국으로 확산</div>
+        <div class="step-desc">이를 계기로 대전의 3·8 민주 의거 등 중·고등학생들의 시위가 전국으로 퍼짐</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>선거 당일에도 부정행위가 계속되자, 항의는 학생을 넘어 전국의 시민들에게로 번졌다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">3월 15일 전국 시위</div>
+        <div class="step-desc">전국 곳곳에서 부정 선거를 비판하는 시위</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">3·15 의거</div>
+        <div class="step-desc">마산(창원)에서 경찰이 시위대에 발포해 사상자 발생, 3월 15일부터 4월 13일까지 마산 학생·시민이 부정 선거에 항거한 민주화 운동. 선거 당일 마산·광주 등지에서 규탄 시위 <span class="ebs-only">EBS</span></div>
+      </div>
+    </div>
+    <div class="causal-link"><p>시위 도중 실종되었던 김주열 학생이 숨진 채 발견되자 시민의 분노가 폭발했고, 정부는 시위의 배후에 공산당이 있는 것처럼 몰아갔지만 오히려 시위는 더 거세졌다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">김주열 학생 시신 발견(4.11.)</div>
+        <div class="step-desc">부정 선거 반대 시위에 참여했다가 실종된 학생이 최루탄에 맞아 숨진 채 마산 앞바다에서 발견 <span class="need-check">확인 필요</span> 실종에서 발견까지의 경위는 교과서에 서술되어 있지 않음</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">정부의 탄압</div>
+        <div class="step-desc">시민들의 시위를 공산당이 조종한 것처럼 몰아가며 탄압 <span class="ebs-only">EBS</span> 시위 배후에 공산주의자가 있다고 주장</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">시위의 확산</div>
+        <div class="step-desc">시민들이 정부의 주장을 믿지 않아 시위 더욱 거세짐, 시위가 전국으로 확산 <span class="ebs-only">EBS</span></div>
+      </div>
+    </div>
+    <div class="quote-block crimson">
+      <h4>시위에 대한 정부의 태도</h4>
+      <p style="margin:0;">"정부가 마산 사건을 공산당과 결부시켜 선전하는 것은 부정 선거 항의를 공산당으로 몰겠다는 위협으로 느껴진다."</p>
+      <div class="src">『조선일보』, 1960. 4. 16. (교과서 재구성)</div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-8px;">최루탄은 눈물을 흘리게 하는 물질을 넣은 탄환이다(교과서 각주).</p>
+  </section>
+
+  <section class="block" id="april">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>1960년 4월, 독재 정권을 무너뜨리다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">4월 19일 서울의 시위</div>
+        <div class="step-desc">학생과 시민 수만 명이 부정 선거와 독재 정치를 규탄하며 경무대(대통령 집무실)로 향함</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">경찰의 발포</div>
+        <div class="step-desc">경찰이 시위대에 발포해 수많은 희생자 발생</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-4px;">경무대는 이승만 정부 시기의 대통령 집무실 이름으로, 4·19 혁명 이후 청와대로 바뀌었다 <span class="ebs-only">EBS</span> 규탄은 잘못을 꾸짖는 것이다(교과서 각주).</p>
+    <div class="causal-link"><p>시위가 전국으로 퍼지자 정부는 군대를 앞세워 누르려 했지만, 군대를 이끄는 계엄 사령관이 발포를 막았다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">비상계엄 선포</div>
+        <div class="step-desc">이승만 정부가 비상계엄을 선포하고 군대 동원 <span class="ebs-only">EBS</span> 비상계엄은 전쟁이나 이에 준하는 비상사태에서 사회 질서를 유지하려고 군대를 동원하는 것</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">계엄 사령관의 지시</div>
+        <div class="step-desc">시위대를 마주한 계엄 사령관이 군대에 발포하지 말도록 지시</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>계엄령 아래에서도 저항은 멈추지 않았고, 교수들까지 나서면서 대통령의 퇴진 요구가 힘을 얻었다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">대학 교수단의 시국 선언(4.25.)</div>
+        <div class="step-desc">대학교수들이 이승만 대통령의 퇴진과 재선거를 요구하는 시국 선언 발표(시국은 현재의 국내외 상황), 초등학생까지 시위에 참여(4.25.) <span class="ebs-only">EBS</span></div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">이승만 대통령 하야(4.26.)</div>
+        <div class="step-desc">"국민이 원한다면 물러나겠다"고 발표한 뒤 미국으로 망명, 미국도 이승만에 대한 지지를 철회 <span class="ebs-only">EBS</span></div>
+      </div>
+    </div>
+    <div class="quote-grid">
+      <div class="quote-block deep">
+        <h4>대학 교수단의 시국 선언문 제2항</h4>
+        <p style="margin:0;">"이 데모를 공산당의 조종이나 야당의 사주로 보는 것은 고의적인 왜곡이다."</p>
+        <div class="src">「대학교수단 선언문」(1960. 4. 25.) (교과서 111쪽 자료 탐구 1, 재구성)</div>
+      </div>
+      <div class="quote-block deep">
+        <h4>대학 교수단의 시국 선언문 제5항</h4>
+        <p style="margin:0;">"3·15는 부정 선거다. 공명선거로 정·부통령 선거를 실시하라."</p>
+        <div class="src">「대학교수단 선언문」(1960. 4. 25.) (교과서 111쪽 자료 탐구 1, 재구성)</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">시국 선언문의 전체 내용은 아래 <a href="#more" style="color:var(--brass); font-weight:700; text-decoration:none;">「더 알아보기」</a>에 실었다.</p>
+    <div class="note-box"><strong>교과서의 평가</strong> — 시민의 손으로 독재 정권을 무너뜨린 민주 혁명, 이후 민주화 운동의 주춧돌, 오늘날까지 대한민국의 중요한 헌법 정신으로 남음.</div>
+    <table class="data-table">
+      <caption>4·19 혁명 희생자의 직업 분포(단위: 명, 『한국 현대사 2』, 1991) <span class="ebs-only">EBS</span></caption>
+      <thead><tr><th>초등·중학생</th><th>고등학생</th><th>대학생</th><th>회사원·학원</th><th>하층 노동자</th><th>무직자</th><th>미상</th></tr></thead>
+      <tbody>
+        <tr><td class="num">19</td><td class="num">36</td><td class="num">22</td><td class="num">10</td><td class="num">61</td><td class="num">33</td><td class="num">5</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">EBS는 4·19 혁명에 학생뿐 아니라 전국의 다양한 계층이 참여했으며, 특히 구두닦이와 같은 하층 노동자와 무직자 등이 대거 참여했다고 서술한다 <span class="ebs-only">EBS</span></p>
+  </section>
+
+  <section class="block" id="together">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>모두가 함께한 4·19 혁명</h2>
+    </div>
+    <div class="sidebox">
+      <h4>수송초등학교 학생들의 시위</h4>
+      <p>4월 19일 경찰의 무차별 발포로 같은 학교 학생이 사망하자 수송초등학교 학생 100여 명이 시위에 나섰다.</p>
+      <div class="quote-block" style="margin:14px 0 0;">
+        <h4>수송초등학교 강명희 학생의 글</h4>
+        <p style="margin:0;">"엄마 아빠가 말 안 해도 오빠와 언니들이 왜 피를 흘렸는지 우리는 알아요."</p>
+        <div class="src">강명희(수송초등학교) (교과서 재구성)</div>
+      </div>
+    </div>
+    <div class="sidebox">
+      <h4>4월 혁명 연구반의 「4·19 혁명 참여자 구술서」</h4>
+      <p>4·19 혁명 직후 4월 혁명 연구반을 구성한 대학생들이 4·19 혁명에 참여한 시민과 학생을 직접 면담하고 작성한 기록이다. 2023년에 이를 포함한 4·19 혁명 기록물이 유네스코 세계 기록 유산으로 등재되었다.</p>
+      <table class="data-table">
+        <thead><tr><th>참여자</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td class="hd">문○○ (일반인, 35세)</td><td>3월 15일 오후 5시 30분 집을 나온 뒤 데모대와 합류해 행렬에 참가, 밤 9시 총에 맞아 부상, 시위 당시 경찰의 '무차별 사격'을 목격</td></tr>
+          <tr><td class="hd">노○○ (고등학교 3학년, 마산)</td><td>'3·15 부정 선거에 대한 격앙된 감정'과 '김주열 학생의 무참한 시체 발견'을 계기로 참가</td></tr>
+          <tr><td class="hd">이○○ (만 17세, 부산)</td><td>'자발적' 참가, 부패가 극도에 달한 사회와 정치를 개혁해 올바른 조국 발전을 이루는 데 학생들이 선봉에 서야 한다고 봄</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="think-box">
+      <h4>생각 키우기 — 모두가 함께한 4·19 혁명</h4>
+      <ol>
+        <li>4·19 혁명에 다양한 사람들이 참여한 까닭을 생각해 보자.</li>
+        <li>4·19 혁명이 이후 민주화 운동의 주춧돌이라는 평가를 받는 까닭을 말해 보자.</li>
+        <li>국립 4·19 민주 묘지 누리집에서 4·19 혁명의 모습을 살펴보고 추모 편지를 남겨 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="jang">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>장면 내각이 세워지다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">허정 중심의 과도 정부</div>
+        <div class="step-desc">4·19 혁명 이후 구성, 3·15 부정 선거 무효화 <span class="ebs-only">EBS</span></div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">개헌</div>
+        <div class="step-desc">양원제 국회(국회를 상·하원으로 구성)와 내각 책임제(국회 다수당이 내각을 구성)를 중심으로 헌법 개정</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">총선거</div>
+        <div class="step-desc">새 헌법에 따라 실시된 총선거에서 민주당이 크게 승리</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>총선에서 이긴 민주당이 국회를 이끌면서, 국회가 대통령을 뽑고 대통령이 지명한 사람이 국무총리로 인준을 받아 내각이 세워졌다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">윤보선 대통령 선출</div>
+        <div class="step-desc">국회에서 대통령으로 선출</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">장면 국무총리 인준</div>
+        <div class="step-desc">윤보선이 지명한 장면이 국회의 인준(임명 등에 대한 동의)을 받음</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">장면 내각(1960.8.19.)</div>
+        <div class="step-desc">민주화와 경제 발전을 국정 지표로 제시</div>
+      </div>
+    </div>
+    <table class="data-table">
+      <caption>장면 내각의 정책과 한계</caption>
+      <thead><tr><th>구분</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">정책</td><td>지방 자치제 시행, 경제 개발 5개년 계획 마련 <span class="ebs-only">EBS</span> 공무원 공개 채용 제도 도입, 예산 등의 문제로 5개년 계획에 착수하지 못했고 이후 군사 정부가 이를 일부 수정해 추진</td></tr>
+        <tr><td class="hd">쏟아진 요구</td><td>평화 통일 운동, 노동 운동 등 독재로 억눌려 왔던 다양한 요구 분출</td></tr>
+        <tr><td class="hd">한계</td><td>요구에 적절히 대응하지 못함, 부정 선거 책임자와 부정 축재자(재물을 부정하게 쌓은 사람) 처벌에 소극적, 집권당인 민주당의 분열(파벌 싸움으로 정치적 혼란 <span class="ebs-only">EBS</span>)</td></tr>
+        <tr><td class="hd">결과</td><td>시민과 학생의 시위 지속, 5·16 군사정변으로 붕괴 <span class="ebs-only">EBS</span></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">EBS는 이 시기의 통일 운동을 다음과 같이 보충한다 <span class="ebs-only">EBS</span> 북진 통일을 내세웠던 이승만 정부의 붕괴 이후 여러 사회단체와 청년·학생 중심으로 통일 운동이 전개되었다. 이들은 자주·평화적 통일과 남북 교류 등을 요구했고 중립화 통일과 남북 직접 협상을 주장했다. 장면 내각은 이를 수용하는 데 소극적이었고, 5·16 군사정변 이후 통일 운동에 대한 탄압이 거세졌다.</p>
+    <div class="note-box">5·16 군사정변과 그 이후의 전개는 <a href="Ⅱ-2-3-02_516군사정변_도표.html">「5·16 군사정변」</a> 소주제에서 다룬다.</div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>정리 — 4·19 혁명의 전개와 확인하기</h2>
+    </div>
+    <table class="data-table">
+      <thead><tr><th></th><th>내용</th></tr></thead>
+      <tbody>
+        <tr class="crimson"><td class="hd">배경</td><td>이승만 정부의 독재와 경기 침체에 따른 불만 <span class="ebs-only">EBS</span>, 3·15 부정 선거(이기붕 부통령 당선 목적)</td></tr>
+        <tr class="deep"><td class="hd">시위의 전개</td><td>2·28 민주 운동 → 대전 3·8 민주 의거 → 3·15 의거(마산) → 김주열 학생 시신 발견(4.11.) → 4월 19일 서울의 대규모 시위</td></tr>
+        <tr class="crimson"><td class="hd">정부의 대응</td><td>시위를 공산당의 조종으로 몰아 탄압, 경찰의 발포, 비상계엄 선포와 군대 동원</td></tr>
+        <tr class="deep"><td class="hd">시위의 재점화</td><td>4월 25일 대학 교수단의 시국 선언 — 이승만 대통령의 퇴진과 재선거 요구</td></tr>
+        <tr><td class="hd">결과</td><td>4월 26일 이승만 대통령 하야·미국 망명 → 허정 과도 정부 → 개헌(양원제·내각 책임제) → 장면 내각</td></tr>
+        <tr class="deep"><td class="hd">의의</td><td>학생뿐 아니라 다양한 계층의 시민이 참여한 민주 혁명, 이후 민주화 운동의 주춧돌, 오늘날까지 헌법 정신으로 남음</td></tr>
+        <tr><td class="hd">장면 내각의 한계</td><td>분출된 요구에 대한 소극적 대응, 부정 선거 책임자·부정 축재자 처벌에 소극적, 민주당의 분열</td></tr>
+      </tbody>
+    </table>
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>4·19 혁명이 일어난 까닭은 무엇일까?</li>
+        <li>4·19 혁명은 한국 민주주의의 역사에서 어떤 의미를 가질까?</li>
+        <li>1960년 2월 28일 대구의 고등학생들이 일제히 시위에 나섰다. 학생들이 시위에 나선 까닭은 무엇일까?</li>
+      </ol>
+    </div>
+    <details class="check-item">
+      <summary style="font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px;">스스로 확인하기</summary>
+      <div class="check-box" style="margin-top:14px;">
+        <div class="check-item"><details><summary>Q1. 이승만 정부와 자유당은 부통령에 (      )을/를 당선시키기 위해 3·15 부정 선거를 저질렀다.</summary>
+          <div class="check-answer">이기붕이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q2. 4월 11일에는 마산 앞바다에서 (      ) 학생이 최루탄에 맞아 숨진 채 발견되었다.</summary>
+          <div class="check-answer">김주열이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q3. 4·19 혁명으로 이승만 대통령이 물러났다. (O, X)</summary>
+          <div class="check-answer">O이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q4. 4·19 혁명 이후 구성된 과도 정부는 양원제와 내각 책임제를 중심으로 개헌을 실시하였다. (O, X)</summary>
+          <div class="check-answer">O이다.</div>
+        </details></div>
+      </div>
+    </details>
+  </section>
+
+  <section class="block" id="more">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>더 알아보기 — 대학교수단의 시국 선언</h2>
+    </div>
+    <p class="block-sub">교과서 「자료로 보는 한국사 — 자료 탐구 1」(111쪽)의 내용이다.</p>
+    <div class="sidebox">
+      <h4>1960년 4월 25일, 교수들의 시국 선언</h4>
+      <p>1960년 4월 25일 전국 27개 대학 258명의 교수가 서울대학교 교수회관에 모여 시국 선언문을 발표했다. 그리고 '학생의 피에 보답하라'라고 쓴 펼침막(플래카드)을 들고 국회까지 행진했다.</p>
+      <table class="data-table">
+        <caption>「대학교수단 선언문」(1960.4.25., 발췌·재구성)</caption>
+        <thead><tr><th>항</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td class="hd">1항</td><td>마산·서울 등 각지의 데모는 주권을 빼앗긴 국민의 울분을 대신해 궐기한 학생들의 순수한 정의감의 발로이며, 불의에 항거하는 민족정기의 표현</td></tr>
+          <tr><td class="hd">2항</td><td>이 데모를 공산당의 조종이나 야당의 사주로 보는 것은 고의적인 왜곡이며 학생들의 정의감에 대한 모독</td></tr>
+          <tr><td class="hd">5항</td><td>3·15는 부정 선거이므로 공명선거에 의해 정·부통령 선거를 실시</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">이 시국 선언의 배경이 된 정부의 "공산당 조종" 주장과 시위의 전개는 위 「1960년 4월, 독재 정권을 무너뜨리다」 블록에서 다루었다.</div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>고등학교 『한국사』 교과서(동아출판사, 2022 개정 교육과정), Ⅱ. 대한민국의 발전, 3. 민주주의의 시련과 민주화 운동 「01 4·19 혁명」, 98–99쪽 — 본문·연표·사료(『조선일보』 1960.2.29.·1960.4.16.)·모두가 함께한 4·19 혁명·생각 키우기·확인하기의 기본 출처</li>
+      <li>EBS 개념완성 한국사Ⅱ (2022), 「민주화를 위한 노력」, 200–201쪽 — 3·15 부정 선거·4·19 혁명·장면 내각의 성립과 붕괴 사실 관계 교차 확인. 교과서에 없고 EBS에만 있는 내용에는 <span class="ebs-only">EBS</span> 표식을 달았다.</li>
+    </ol>
+    <div class="note">
+      함께 업로드된 2006년 『한국 근현대사』(중앙교육) 297–301쪽은 2007 개정 이전 교육과정의 자료이므로 본문에 반영하지 않고 배경 확인용으로만 참고했다. 개념어는 첨부 CSV 53개와 대조해, 교과서에 수록된 34개는 전량 반영하고 관권 선거·금권 선거·5·16 군사 정변 3개는 EBS 근거로 반영했다. 고려 대학교 학생 시위·신민당·교원 노조 운동·대리 투표·조병옥·민의원·참의원·민족 통일 연맹·민족 자주 통일 중앙 협의회 9개는 구교육과정에서 유래한 개념, 안재홍·송진우 2개는 교과서·EBS에 없는 개념, 반민 특위·최인규·이강학·한희석·곽영주 5개는 이 자료의 범위 밖 신문 사료에서 온 개념이라 반영하지 않았다. 수송초등학교 학생들의 시위 시점은 교과서(4월 19일 발포로 같은 학교 학생 사망 뒤)와 EBS(초등학생 시위 4.25.)가 다르게 서술해 본문에는 날짜 없이 교과서 서술을 두고 EBS 표기를 병기했다. 교과서 111쪽 「자료 탐구 1 대학교수단의 시국 선언」은 「6월 민주 항쟁」 소주제의 PDF에 실려 있어 「더 알아보기」로 반영했고, 시국 선언문 인용은 교과서 근거로 정정했다. 희생자 직업 분포는 EBS 자료 탐구 3에 근거한다.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

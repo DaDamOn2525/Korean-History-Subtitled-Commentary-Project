@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6·25 전쟁 | 같은 민족끼리의 전쟁, 3년 뒤 더 굳어진 분단</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* 확인 필요 태그 — 원문에 인과가 명시되지 않은 지점 */
+  .need-check{ display:none; /* 2026-09-23: 학생 화면에는 숨김 — 근거 없는 인과를 지어내지 않기 위한 내부(교사용) 표시라 노출하지 않음. 원래 inline-block이었음 */ font-size:11.5px; font-weight:700; color:var(--brass); border:1px solid var(--brass); border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
+  /* EBS 전용 개념 표식 — 현행 교과서에 없고 EBS 개념완성에만 있는 내용 */
+  .ebs-only{ display:inline-block; font-size:11px; font-weight:700; color:var(--paper-card); background:var(--brass); border-radius:4px; padding:1px 6px; margin-left:4px; vertical-align:middle; }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  @media (max-width:760px){.branch-cols{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.mute{border-top-color:var(--ink-soft); border-top-style:dashed;}
+  .branch-col.brass-soft{border-top-color:var(--brass-soft); border-top-width:5px;}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.brass h4{color:var(--brass);}
+  .branch-col.mute h4{color:var(--ink-soft);}
+  .branch-col.brass-soft h4{color:var(--brass);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); }
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.num{text-align:right; font-variant-numeric:tabular-nums;}
+  table.data-table tr.deep td.hd{color:var(--indigo);}
+  table.data-table tr.crimson td.hd{color:var(--crimson);}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:700px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-grid .quote-block{margin-bottom:0;}
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson .src{color:var(--crimson);}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox table.data-table{margin:10px 0 0;}
+  .sidebox p{margin:8px 0 0; font-size:13.5px; color:var(--ink-soft);}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+  .think-item{margin-bottom:10px; font-size:14px;}
+  .think-item summary{cursor:pointer; list-style:none; padding:2px 0; font-weight:500; color:var(--ink);}
+  .think-item summary::-webkit-details-marker{display:none;}
+  .think-item summary::before{content:"▸ "; color:var(--indigo);}
+  .think-item[open] summary::before{content:"▾ ";}
+  .think-answer{margin-top:6px; padding:9px 13px; background:rgba(255,255,255,0.6); border-left:3px solid var(--indigo); border-radius:3px; font-size:13.5px; color:var(--ink-soft);}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅱ-2-1-05_대한민국의수립_도표.html" style="color:var(--brass);">‹ 이전 소주제</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#prepare">남침 준비</a>
+  <a href="#war">전개</a>
+  <a href="#armistice">정전 협정</a>
+  <a href="#ruin">황폐화·분단</a>
+  <a href="#massacre">집단 학살</a>
+  <a href="#society">사회 변화</a>
+  <a href="#summary">정리·확인</a>
+  <a href="#more">더 알아보기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅱ-2-2-02_전후남북한의정치와경제_도표.html" class="sib" style="color:var(--brass); pointer-events:auto;">다음 소주제 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>대한민국의 발전</span> · 6·25 전쟁과 분단의 고착화 · 6·25 전쟁</div>
+    <h1>같은 민족끼리의 전쟁은, 분단을 더 단단히 굳혔다</h1>
+    <p class="lead">남과 북에 각각 정부가 들어선 뒤 북한이 소련·중국의 지원을 받아 남침을 준비했고, 1950년 6월 25일 전쟁이 일어났다. 유엔군의 참전과 중국군의 개입으로 전선이 오르내리다 38도선 부근에서 교착되었고, 3년 만에 정전 협정이 체결되었다. 전쟁은 한반도를 황폐하게 만들었고 분단은 더욱 굳어졌다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1950 – 1953</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>하나의 전쟁, 세 갈래의 영향</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 국군·유엔군(대한민국·미국 포함)</strong> · <strong style="color:var(--crimson)">적색 = 북한군·소련·중국</strong> · <strong style="color:var(--brass)">황동색 = 전환점·전쟁의 영향</strong>. 영향의 세 갈래는 황동색 선의 모양으로 구분한다 — <strong>실선 = 황폐화, 굵은 옅은 선 = 분단의 고착화와 국제 정세 변화, 점선 = 사회 변화</strong>. 세 영향은 서로가 서로를 낳은 것이 아니라, 아래 하나의 전쟁에서 각자 갈라져 나왔다 — 그래서 화살표로 잇지 않고 갈래로 그렸다.</p>
+
+    <div class="branch-root">6·25 전쟁(1950.6.25. ~ 1953.7.27.)</div>
+    <p class="branch-cause">3년간의 전쟁은 정전 협정으로 멈췄지만, 그 영향은 사람과 시설의 피해, 남북 관계와 주변 나라의 위상, 사람들의 삶과 사회라는 세 방향으로 이어졌다.</p>
+    <div class="branch-cols">
+      <div class="branch-col brass">
+        <h4>한반도의 황폐화</h4>
+        <p class="why">왜: 군인과 민간인을 합쳐 수백만 명이 희생되고, 전선이 한반도 전역을 오르내림</p>
+        <div class="branch-node">이산가족·전쟁고아 발생, 농촌 황폐화, 산업 시설·사회 기반 시설 파괴</div>
+      </div>
+      <div class="branch-col brass-soft">
+        <h4>분단의 고착화와 국제 정세 변화</h4>
+        <p class="why">왜: 전쟁 과정에서 남북의 이념 대립과 적대감이 더욱 깊어짐</p>
+        <div class="branch-node">남북 모두 적대감을 독재 체제 강화에 이용, 미국의 영향력 강화, 일본의 경제 부흥, 북한에서 중국의 영향력 확대</div>
+      </div>
+      <div class="branch-col mute">
+        <h4>사회 변화</h4>
+        <p class="why">왜: 많은 사람이 피란을 떠나고 남성이 전쟁터로 끌려감</p>
+        <div class="branch-node">촌락·대가족 공동체 해체, 미국 대중문화 유입, 여성의 역할 확대</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item deep"><div class="tl-year">1950</div><div class="tl-body"><div class="tl-title">1월 애치슨 선언 <span class="ebs-only">EBS</span></div><div class="tl-desc">미국의 태평양 방위선에서 한반도와 타이완 제외(날짜는 EBS 표기)</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1950</div><div class="tl-body"><div class="tl-title">6월 25일 6·25 전쟁 발발</div><div class="tl-desc">북한군이 38도선을 넘어 기습 남침</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1950</div><div class="tl-body"><div class="tl-title">9월 인천 상륙 작전</div><div class="tl-desc">국군과 유엔군의 전세 역전, 서울 수복</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1950</div><div class="tl-body"><div class="tl-title">10월 중국군 참전</div><div class="tl-desc">국군과 유엔군이 압록강까지 진격한 뒤 중국군 개입</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1951</div><div class="tl-body"><div class="tl-title">1월 4일 1·4 후퇴 <span class="ebs-only">EBS</span></div><div class="tl-desc">서울 재함락, 한강 이남으로 후퇴(날짜는 EBS 표기)</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1951</div><div class="tl-body"><div class="tl-title">7월 정전 회담 시작 <span class="ebs-only">EBS</span></div><div class="tl-desc">소련의 제안으로 시작, 회담은 2년 동안 계속(시작 시기는 EBS 표기)</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1953</div><div class="tl-body"><div class="tl-title">7월 27일 정전 협정 체결</div><div class="tl-desc">휴전선 확정, 비무장 지대 설치</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1953</div><div class="tl-body"><div class="tl-title">10월 한·미 상호 방위 조약 체결</div><div class="tl-desc">이승만 정부가 정전 협정 준수를 발표하며 약속받은 조약</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="prepare">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>북한이 남침을 준비하다</h2>
+    </div>
+    <p class="block-sub">교과서 배울 내용 Q1 "한반도에서 같은 민족끼리의 전쟁이 일어난 까닭은 무엇일까?"에 답하는 블록이다. 교과서는 「형제의 상」(전쟁기념관)을 소개하며 시작한다 — 한국군 장교였던 형과 인민군 병사였던 아우가 전쟁터에서 극적으로 만난 순간을 표현한 조형물이다.</p>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">미·소 양국 군의 철수</div>
+        <div class="step-desc">남과 북에 대한민국 정부와 북한 정권이 각각 들어서면서 한반도에서 철수</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">38도선 부근의 무력 충돌</div>
+        <div class="step-desc">이념과 체제를 달리하는 남북이 서로 비난하며 크고 작은 충돌</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>남북이 서로를 적대시하는 가운데, 북한은 전쟁에 필요한 군사력과 국제적 뒷받침을 갖춰 나갔다.</p></div>
+    <table class="data-table">
+      <caption>전쟁 발발의 배경</caption>
+      <thead><tr><th>구분</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr class="crimson"><td class="hd">북한의 군사력 강화</td><td>소련·중국의 군사 지원, 국·공 내전에 참여했던 조선 의용군 편입 <span class="ebs-only">EBS</span> 소련은 최신 무기를 제공</td></tr>
+        <tr class="crimson"><td class="hd">소련·중국의 태도</td><td>소련은 북한의 남침 계획에 동의, 중국은 필요할 경우 참전 약속 <span class="ebs-only">EBS</span> 중국은 미국 개입 시 참전을 약속</td></tr>
+        <tr class="deep"><td class="hd">남한의 군사력 <span class="ebs-only">EBS</span></td><td>국방 경비대를 국군으로 확대·개편, 한·미 상호 방위 원조 협정 체결</td></tr>
+        <tr class="deep"><td class="hd">미국의 애치슨 선언</td><td>태평양 방위선에서 한반도와 타이완 제외</td></tr>
+      </tbody>
+    </table>
+    <div class="causal-link"><p>미국이 태평양 방위선에서 한반도를 제외한다는 선언을 내놓자, 북한은 전쟁이 벌어져도 미국이 개입하지 않을 것이라 판단했다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">애치슨 선언(1950.1.) <span class="ebs-only">EBS</span></div>
+        <div class="step-desc">미국 국무 장관 애치슨이 발표한 태평양 방위선, 한반도와 타이완 제외</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">북한의 판단</div>
+        <div class="step-desc">한반도에서 전쟁이 벌어져도 미국이 개입하지 않을 것이라 판단</div>
+      </div>
+    </div>
+    <div class="quote-grid">
+      <div class="quote-block crimson">
+        <h4>스탈린의 발언</h4>
+        <p style="margin:0;">"전쟁은 기습적이고 신속해야 하며, 남조선과 미국이 정신 차릴 틈을 주지 말아야 한다."</p>
+        <div class="src">『구소련 문서』 (교과서 재구성)</div>
+      </div>
+      <div class="quote-block deep">
+        <h4>애치슨 선언 <span class="ebs-only">EBS</span></h4>
+        <p style="margin:0;">"이 방위선은 알류샨 열도에서 일본을 거쳐 오키나와, 필리핀 군도로 이어진다."</p>
+        <div class="src">애치슨 선언(1950. 1.) (EBS 자료 탐구 1, 재구성)</div>
+      </div>
+    </div>
+    <div class="note-box">동아시아의 냉전과 중국의 공산화, 미국의 대일 정책은 <a href="Ⅱ-2-1-01_냉전체제와동아시아_도표.html">「냉전 체제와 동아시아」</a> 소주제에서, 조선 의용군은 <a href="Ⅱ-1-5-03_1930년대무장투쟁_도표.html">「1930년대 무장 투쟁」</a> 소주제에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="war">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>6·25 전쟁이 발발하고 전개되다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">북한군의 남침(1950.6.25.)</div>
+        <div class="step-desc">새벽에 38도선을 넘어 기습 남침, 탱크를 앞세워 3일 만에 서울 점령, 낙동강 부근까지 남하</div>
+      </div>
+    </div>
+    <div class="quote-block deep" style="margin-top:12px;">
+      <h4>전쟁 발발 당일의 방송</h4>
+      <p style="margin:0;">"오늘 새벽 북한 공산군이 삼팔선 전역에서 남침을 시작했으나 국군이 건재하니 안심하라."</p>
+      <div class="src">『중앙방송』, 1950. 6. 25. (교과서 재구성)</div>
+    </div>
+    <div class="causal-link"><p>전쟁이 일어나자 유엔이 곧바로 움직여, 북한을 침략자로 규정하고 병력을 보냈다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">유엔 안전 보장 이사회</div>
+        <div class="step-desc">북한을 침략자로 규정, 국제 평화를 위해 유엔군 파병 결의</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">유엔군 참전</div>
+        <div class="step-desc">미국을 중심으로 16개국 참전, 병력 지원 16개국을 포함해 총 63개국이 대한민국 지원</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>유엔군이 가세하면서 전세가 뒤집혔지만, 중국군이 개입하자 다시 밀렸고 결국 전선은 38도선 부근에서 굳어졌다.</p></div>
+    <table class="data-table">
+      <caption>전쟁의 전개</caption>
+      <thead><tr><th>시기</th><th>전개</th></tr></thead>
+      <tbody>
+        <tr class="crimson"><td class="hd">1950.6.</td><td>북한군의 남침, 3일 만에 서울 점령(서울 함락 6.28. <span class="ebs-only">EBS</span>), 낙동강 부근까지 남하 <span class="ebs-only">EBS</span> 낙동강 방어선 구축</td></tr>
+        <tr class="deep"><td class="hd">1950.9.</td><td>국군과 유엔군의 인천 상륙 작전으로 전세 역전, 서울 수복(인천 상륙 9.15., 서울 수복 9.28. <span class="ebs-only">EBS</span>)</td></tr>
+        <tr class="deep"><td class="hd">1950.10.</td><td>38도선을 넘어 평양 점령, 압록강까지 진격</td></tr>
+        <tr class="crimson"><td class="hd">1950.10. 이후</td><td>중국군 개입으로 서울을 다시 빼앗기고 한강 이남으로 후퇴(1·4 후퇴), 국군·유엔군·피란민을 구출하기 위한 흥남 철수 작전</td></tr>
+        <tr class="deep"><td class="hd">1951.</td><td>국군과 유엔군이 서울을 되찾았으나 38도선 부근에서 교착 상태(서울 수복 1951.3. <span class="ebs-only">EBS</span>)</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">흥남 철수 작전을 기념하는 비석은 거제 포로수용소 유적 공원에 세워져 있다(교과서 사진 설명). 6·25 전쟁 중 남한은 국군의 작전 지휘권을 유엔군 사령관에게 넘겼다 <span class="ebs-only">EBS</span></p>
+    <div class="note-box">「랜선 답사」 — 전쟁기념관 누리집의 '이달의 호국 인물' 코너에서 6·25 전쟁 당시 나라를 지킨 사람들을 찾아보자(교과서).</div>
+  </section>
+
+  <section class="block" id="armistice">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>정전 협정을 체결하다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">교착 상태</div>
+        <div class="step-desc">38도선 부근에서 전선 고착</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">소련의 제안</div>
+        <div class="step-desc">정전 협상 시작(1951.7.) <span class="ebs-only">EBS</span></div>
+      </div>
+    </div>
+    <div class="causal-link"><p>협상은 시작되었지만 두 가지를 두고 입장이 갈렸고, 이 때문에 회담은 2년 동안 이어졌다.</p></div>
+    <table class="data-table">
+      <caption>정전 회담의 쟁점</caption>
+      <thead><tr><th>쟁점</th><th>유엔군</th><th>공산군(중국·북한)</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">포로 송환 방식</td><td>포로의 자유의사</td><td>무조건 본국 송환</td></tr>
+        <tr><td class="hd">군사 분계선 <span class="ebs-only">EBS</span></td><td>전투가 벌어지던 전선</td><td>38도선</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">교과서는 휴전선 설정과 포로 송환 방식에 대한 입장 차이로 회담이 길어졌다고 서술한다. 정전 회담이 진행되는 동안 38도선 부근에서는 치열한 전투가 벌어져 많은 희생자가 발생했다.</p>
+    <div class="causal-link"><p>한편 이승만 정부는 정전 자체에 반대해 북한 송환을 거부하는 반공 포로를 일방적으로 석방했지만, 결국 미국에서 조약 체결을 약속받고 협정을 지키겠다고 밝혔다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">이승만 정부의 정전 반대</div>
+        <div class="step-desc">북진 통일 주장 <span class="ebs-only">EBS</span>, 북한 송환을 거부하는 반공 포로 일방 석방</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">정전 협정 체결(1953.7.27.)</div>
+        <div class="step-desc">휴전선 확정, 비무장 지대(DMZ) 설치, 포로 송환은 자유의사 존중</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">한·미 상호 방위 조약 약속</div>
+        <div class="step-desc">이승만 정부가 조약 체결을 약속받고 정전 협정 준수 발표, 협정은 유엔군·북한군·중국군 사령관이 서명하고 남한은 준수 입장 <span class="ebs-only">EBS</span></div>
+      </div>
+    </div>
+    <div class="quote-grid">
+      <div class="quote-block">
+        <h4>정전 협정문 제1조 1항</h4>
+        <p style="margin:0;">"한 개의 군사 분계선을 확정하고 쌍방이 2km씩 후퇴해 비무장 지대를 설정한다."</p>
+        <div class="src">정전 협정문(1953, 요약) (교과서 재구성)</div>
+      </div>
+      <div class="quote-block">
+        <h4>정전 협정문 제3조 51항</h4>
+        <p style="margin:0;">"송환을 원하는 포로는 소속 일방에 직접 송환하고 나머지는 중립국 송환 위원회에 넘긴다."</p>
+        <div class="src">정전 협정문(1953, 요약) (교과서 재구성)</div>
+      </div>
+    </div>
+    <div class="note-box">이승만 정부의 반공 체제 강화는 <a href="Ⅱ-2-1-05_대한민국의수립_도표.html">「대한민국의 수립」</a> 소주제에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="ruin">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>전쟁이 한반도를 황폐화시키고, 분단이 굳어지다</h2>
+    </div>
+    <p class="block-sub">교과서 배울 내용 Q2 "6·25 전쟁은 남과 북에 어떤 영향을 끼쳤을까?"에 답하는 블록이다.</p>
+    <table class="data-table">
+      <caption>6·25 전쟁의 인명 피해(단위: 천 명, 국방부 군사편찬연구소, 2023)</caption>
+      <thead><tr><th>구분</th><th>민간인</th><th>군인</th></tr></thead>
+      <tbody>
+        <tr class="deep"><td class="hd">남한</td><td class="num">991</td><td class="num">589.2</td></tr>
+        <tr class="crimson"><td class="hd">북한</td><td class="num">1,798</td><td class="num">640</td></tr>
+        <tr class="crimson"><td class="hd">중국</td><td class="num">—</td><td class="num">972.6</td></tr>
+        <tr class="deep"><td class="hd">유엔</td><td class="num">—</td><td class="num">154</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">교과서 도표에서 중국과 유엔은 군인 수치만 표시된다. EBS 도표는 남한 민간인 990.9·군인 589.1로 표기해 교과서와 소수점 차이가 있다.</p>
+    <table class="data-table">
+      <caption>피해의 내용</caption>
+      <tbody>
+        <tr><td class="hd">인명 피해</td><td>군인과 민간인을 합쳐 수백만 명 희생, 수많은 이산가족과 전쟁고아 발생 <span class="ebs-only">EBS</span> 국민 보도 연맹 사건·거창 양민 학살 사건·북한군의 인민재판 등 민간인 학살 사건 발생. 이산가족 상봉의 역사는 <a href="#more" style="color:var(--brass); font-weight:700; text-decoration:none;">「더 알아보기」</a>에서 이어진다.</td></tr>
+        <tr><td class="hd">물적 피해</td><td>농촌이 황폐해져 식량 생산이 크게 감소, 산업 시설과 사회 기반 시설(도로·철도·발전소 등) 파괴로 물자가 더욱 부족</td></tr>
+      </tbody>
+    </table>
+    <div class="causal-link"><p>전쟁이 이어지는 동안 남북의 이념 대립과 적대감은 깊어졌고, 전쟁이 끝난 뒤에도 그 적대감은 사라지지 않았다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">이념 대립·적대감 심화</div>
+        <div class="step-desc">전쟁 과정에서 남북의 이념 대립과 적대감이 더욱 깊어짐</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">전쟁 이후의 대립</div>
+        <div class="step-desc">남북이 각각 북진 통일과 적화 통일을 주장, 군사력을 키우며 대립</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">적대감의 이용</div>
+        <div class="step-desc">서로에 대한 적대감을 독재 체제 강화에 활용</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">분단의 고착화</div>
+        <div class="step-desc">분단이 더욱 굳어짐</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-4px;">북진은 북쪽으로 진출함, 적화는 공산화, 고착은 상황이 굳어져 변화가 없음을 뜻한다(교과서 각주).</p>
+    <table class="data-table">
+      <caption>전쟁 이후 국제 정세의 변화</caption>
+      <thead><tr><th>나라</th><th>변화</th></tr></thead>
+      <tbody>
+        <tr class="deep"><td class="hd">미국</td><td>한·미 상호 방위 조약을 근거로 남한에 군대를 계속 주둔, 동아시아에서 영향력 강화</td></tr>
+        <tr class="deep"><td class="hd">일본</td><td>6·25 전쟁 당시 전쟁 물자를 수출하며 경제 부흥, 아시아의 반공 거점 <span class="ebs-only">EBS</span> 전쟁 중 샌프란시스코 강화 조약으로 주권 회복</td></tr>
+        <tr class="crimson"><td class="hd">중국</td><td>북한에서 전쟁을 도와준 중국의 영향력 확대 <span class="ebs-only">EBS</span> 아시아 공산주의의 맹주로 성장</td></tr>
+      </tbody>
+    </table>
+    <div class="quote-block deep">
+      <h4>한·미 상호 방위 조약(1953) 제3·4조</h4>
+      <p style="margin:0;">"각 당사국은 공통한 위험에 각자의 헌법상 절차에 따라 행동할 것을 선언한다."</p>
+      <p style="margin:8px 0 0;">"미합중국의 육·해·공군을 대한민국 영토 내와 부근에 배치하는 권리를 허락한다."</p>
+      <div class="src">한·미 상호 방위 조약(1953) (교과서 재구성)</div>
+    </div>
+    <div class="note-box">일본의 반공 기지화와 샌프란시스코 강화 조약의 배경은 <a href="Ⅱ-2-1-01_냉전체제와동아시아_도표.html">「냉전 체제와 동아시아」</a> 소주제에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="massacre">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>전쟁 중에 일어난 집단 학살</h2>
+    </div>
+    <p class="block-sub">교과서 「사료로 보는 역사」의 두 사례이다. 두 사례는 학살을 자행한 쪽이 서로 다르다. 표 색은 학살을 자행한 쪽의 진영이며, 사건의 옳고 그름을 나누는 색이 아니다.</p>
+    <div class="quote-grid">
+      <div class="quote-block crimson">
+        <h4>서울대학교 병원 학살</h4>
+        <p style="margin:0;">"남아 있던 중상자와 일반 환자들은 뒤늦게 침입한 북한군에 의해 학살당했다."</p>
+        <div class="src">국방부, 『한국 전쟁사』 (교과서 재구성)</div>
+      </div>
+      <div class="quote-block deep">
+        <h4>국민 보도 연맹 학살</h4>
+        <p style="margin:0;">"북한에 협력할 가능성이 있다는 구실로 법적 절차 없이 연행·구금해 수만 명을 학살했다."</p>
+        <div class="src">교과서 서술 재구성</div>
+      </div>
+    </div>
+    <table class="data-table">
+      <caption>두 사례 비교</caption>
+      <thead><tr><th>구분</th><th>서울대학교 병원 학살</th><th>국민 보도 연맹 학살</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">경과</td><td>1개 소대 규모의 경비병이 병원을 지키던 중 새벽에 적이 시내에 침입, 움직일 수 있는 전상자 80여 명이 병원 뒷산에서 저지하다 전사, 남은 중상자·일반 환자는 뒤늦게 침입한 북한군에 의해 학살</td><td>전쟁이 일어나자 이승만 정부가 국민 보도 연맹원을 법적 절차 없이 연행·구금, 수만 명 학살</td></tr>
+        <tr><td class="hd">학살이 일어난 까닭</td><td>교과서 사료에 까닭이 서술되어 있지 않음 <span class="need-check">확인 필요</span></td><td>북한에 협력할 가능성이 있다는 구실</td></tr>
+        <tr><td class="hd">이후</td><td>'이름 모를 자유 전사의 비'(서울대학교 병원)</td><td>전쟁 뒤에도 희생자 가족들이 감시 속에서 살아야 함, 민주화와 함께 점차 진상이 밝혀지고 2008년 노무현 대통령이 사과, 대전 동구 산내 골령골에 유골 봉안소</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">국민 보도 연맹이 조직된 배경(사회주의 사상을 가진 사람들을 등록시켜 사상을 개조한다는 명분)은 <a href="Ⅱ-2-1-05_대한민국의수립_도표.html">「대한민국의 수립」</a> 소주제의 「국민 보도 연맹」 코너에서 다루었다. EBS는 이 밖에 거창 양민 학살 사건을 함께 든다 <span class="ebs-only">EBS</span></div>
+    <div class="think-box">
+      <h4>생각 키우기 — 6·25 전쟁 중에 일어난 집단 학살</h4>
+      <ol>
+        <li>전쟁 과정에서 학살이 일어난 까닭은 무엇인지 생각해 보자.</li>
+        <li>제시된 내용을 바탕으로 이 땅에서 전쟁이 다시는 일어나지 않기를 바라는 포스터를 그려 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="society">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>전쟁으로 사회가 변하다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">피란</div>
+        <div class="step-desc">많은 사람이 전쟁을 피해 고향을 떠남</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">공동체의 해체</div>
+        <div class="step-desc">전통적인 촌락 공동체와 대가족 중심 가족 공동체 해체</div>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">미군을 통한 문화 유입</div>
+        <div class="step-desc">미국의 대중문화가 빠르게 유입</div>
+      </div>
+      <div class="causal-row h"><p>한편</p></div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">여성의 역할 확대</div>
+        <div class="step-desc">많은 남성이 전쟁에 끌려가고 여성이 생계를 책임지면서 가정과 사회에서 여성의 역할 확대</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>정리 — 전쟁의 흐름과 확인하기</h2>
+    </div>
+    <table class="data-table">
+      <thead><tr><th></th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">배경</td><td>남북의 무력 충돌, 소련·중국의 군사 지원과 남침 동의·참전 약속, 미국의 애치슨 선언과 북한의 판단</td></tr>
+        <tr><td class="hd">전개</td><td>남침 → 유엔군 참전 → 인천 상륙 작전 → 평양 점령·압록강 진격 → 중국군 개입·1·4 후퇴 → 38도선 부근 교착</td></tr>
+        <tr><td class="hd">정전</td><td>소련의 제안, 휴전선·포로 송환 방식 쟁점, 이승만 정부의 반대, 1953.7.27. 정전 협정, 한·미 상호 방위 조약</td></tr>
+        <tr><td class="hd">영향</td><td>인명·물적 피해와 이산가족·전쟁고아, 분단의 고착화, 미국·일본·중국의 위상 변화, 공동체 해체·대중문화 유입·여성 역할 확대</td></tr>
+      </tbody>
+    </table>
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>한반도에서 같은 민족끼리의 전쟁이 일어난 까닭은 무엇일까?</li>
+        <li>6·25 전쟁은 남과 북에 어떤 영향을 끼쳤을까?</li>
+        <li>형제가 서로 다른 편에서 싸우는 비극이 일어난 까닭은 무엇일까? (형제의 상, 전쟁기념관)</li>
+      </ol>
+    </div>
+    <details class="check-item">
+      <summary style="font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px;">스스로 확인하기</summary>
+      <div class="check-box" style="margin-top:14px;">
+        <div class="check-item"><details><summary>Q1. 소련은 북한의 남침 계획에 동의하였다. (O, X)</summary>
+          <div class="check-answer">O이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q2. 미국은 한반도를 미국의 태평양 방위선에서 제외한다는 (      ) 선언을 발표하였다.</summary>
+          <div class="check-answer">애치슨이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q3. 국군과 유엔군은 (      )(으)로 전세를 역전시켰다.</summary>
+          <div class="check-answer">인천 상륙 작전이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q4. 이승만 정부는 (      ) 체결을 약속받고 정전 협정을 지키겠다고 발표하였다.</summary>
+          <div class="check-answer">한·미 상호 방위 조약이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q5. 전쟁으로 가족이 흩어져 수많은 (      )이/가 발생하였다.</summary>
+          <div class="check-answer">이산가족이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q6. 전쟁 이후 남북한은 서로에 대한 적대감을 독재 체제를 강화하는 데 활용하였다. (O, X)</summary>
+          <div class="check-answer">O이다.</div>
+        </details></div>
+      </div>
+    </details>
+  </section>
+
+  <section class="block" id="more">
+    <div class="block-head">
+      <span class="block-num">9</span>
+      <h2>더 알아보기 — 전쟁의 시간을 살아간 사람들</h2>
+    </div>
+    <p class="block-sub">교과서 「탐구하는 한국사」(91쪽)는 "전쟁은 사람들의 일생을 파괴하고, 송두리째 바꾸어 놓는다"는 서술로 시작한다. 6·25 전쟁을 살아간 사람들의 삶을 살핀다.</p>
+    <div class="sidebox">
+      <h4>네 부류의 사람들</h4>
+      <table class="data-table">
+        <thead><tr><th>부류</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td class="hd">피란민</td><td>전쟁을 피해 고향을 떠남, 거주지가 부족해 판잣집 등을 만들어 살았고 생활 물자가 턱없이 부족, 부산 서구 아미동 비석 문화 마을은 일본인 공동묘지 위에 집을 짓고 살던 곳, 국수틀은 미군 물자를 재활용해 만든 것(전쟁기념관)</td></tr>
+          <tr><td class="hd">여성</td><td>남성들이 전쟁터로 끌려가면서 생계를 책임지게 됨, 시장 바닥에서 떡장사 등을 하며 새벽 2~3시까지 일했다는 증언(전쟁기념관 『사람을 만나다』)</td></tr>
+          <tr><td class="hd">전쟁고아</td><td>전쟁 중 부모가 사망하거나 실종되어 수많은 어린이가 고아가 됨, 어려운 삶을 살았고 이들을 돕기 위한 다양한 노력 존재, 영화 『아일라』(2017)는 6·25 전쟁에 참전한 튀르키예 군인과 한국인 전쟁고아 사이의 실화를 바탕으로 함</td></tr>
+          <tr><td class="hd">학도 의용군</td><td>수많은 학생이 학도 의용군으로 참전, 이우근은 포항 전투에서 전사, 그의 품에서 어머니에게 보내는 편지 발견</td></tr>
+        </tbody>
+      </table>
+      <div class="quote-block" style="margin:14px 0 0;">
+        <h4>이우근, 「어머니에게 남긴 편지」</h4>
+        <p style="margin:0;">"어머님! 나는 사람을 죽였습니다. 같은 언어와 같은 피를 나눈 동족이라 가슴이 무겁습니다."</p>
+        <div class="src">「어머니에게 남긴 편지」 (교과서 재구성)</div>
+      </div>
+    </div>
+    <div class="think-box">
+      <h4>생각 키우기 — 전쟁의 시간을 살아간 사람들</h4>
+      <ol>
+        <li>6·25 전쟁이 당시 사람들의 삶에 어떤 영향을 끼쳤는지 말해 보자.</li>
+        <li>6·25 전쟁을 겪은 사람을 찾아보고, 6·25 전쟁을 어떻게 기억하고 있는지 조사해 보자. (TIP: 전쟁기념관 누리집 등을 참고)</li>
+      </ol>
+    </div>
+
+    <p class="block-sub" style="margin-top:36px;">아래 세 자료는 교과서 「6·25 전쟁과 분단의 고착화」 단원의 마지막 쪽(96~97쪽)에 실려 있으며, 본문(90쪽)이 「96쪽 내 곁의 한국사」·「97쪽 자료 탐구 1·2」로 직접 가리킨다.</p>
+
+    <div class="sidebox">
+      <h4>내 곁의 한국사 — 6·25 전쟁과 문화</h4>
+      <p>6·25 전쟁은 문화와 예술에도 영향을 끼쳤다. 문화·예술인들이 전쟁의 모습을 어떻게 묘사했는지 살핀다.</p>
+      <table class="data-table">
+        <thead><tr><th>자료</th><th>장르</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td class="hd">「피난열차」(김환기)</td><td>미술</td><td>화가가 1·4 후퇴 때 부산으로 피란한 경험을 담은 작품, 어둡고 차분한 색조로 열차 지붕에 올라탄 피란민을 그림</td></tr>
+          <tr><td class="hd">『수난이대』(하근찬)</td><td>소설</td><td>일제 강점기와 6·25 전쟁이 아버지와 아들에게 남긴 비극을 담은 작품, 작가는 6·25 전쟁 중 아버지를 잃었고 직접 국민 방위군 사건을 겪음</td></tr>
+          <tr><td class="hd">『피아골』</td><td>영화</td><td>지리산에서 활동한 빨치산이 소재, 반공 영화였지만 빨치산 대장의 인간적인 모습을 묘사했다고 하여 반공 의식이 부족하다는 비판을 받음(사천왕상을 보고 양심의 가책을 느끼는 대장의 모습)</td></tr>
+        </tbody>
+      </table>
+      <div class="quote-grid" style="margin-top:14px;">
+        <div class="quote-block">
+          <h4>『수난이대』의 한 장면</h4>
+          <p style="margin:0;">"어찌 살긴 뭘 어찌 살아? 목숨만 붙어 있으면 다 사는 거다."</p>
+          <div class="src">하근찬, 『수난이대』 (교과서 재구성)</div>
+        </div>
+        <div class="quote-block">
+          <h4>『피아골』 상영 중지</h4>
+          <p style="margin:0;">"치안 당국의 견해와 내무부의 권유로 문교부가 상영 중지 조치를 취했다."</p>
+          <div class="src">『조선일보』, 1955. 8. 25. (교과서 재구성)</div>
+        </div>
+      </div>
+    </div>
+    <div class="think-box">
+      <h4>생각해 보기 — 6·25 전쟁과 문화</h4>
+      <ol>
+        <li>「피난열차」에서 작가가 피란민의 얼굴을 그려 넣지 않은 까닭은 무엇일지 생각해 보자.</li>
+        <li>『수난이대』의 밑줄 친 부분(목숨만 붙어 있으면 다 사는 거다)에서 작가가 말하고자 하는 바는 무엇일지 생각해 보자.</li>
+        <li>『피아골』에 상영 중지 조치가 내려진 까닭을 당시 사회 분위기를 바탕으로 말해 보자.</li>
+        <li>6·25 전쟁을 소재로 한 작품을 찾아보고, 전쟁을 어떻게 묘사하고 있는지 조사해 보자. (작품명·장르·인상적인 장면·작가의 의도)</li>
+      </ol>
+    </div>
+    <div class="note-box">『피아골』의 상영이 중지된 시기의 반공 분위기는 <a href="Ⅱ-2-2-02_전후남북한의정치와경제_도표.html#anticomm">「전후 남북한의 정치와 경제」</a> 소주제에서 다룬다. 『수난이대』의 작가가 겪은 국민 방위군 사건도 같은 소주제에서 다룬다.</div>
+
+    <div class="sidebox">
+      <h4>자료 탐구 1 — 이산가족 상봉의 역사</h4>
+      <table class="data-table">
+        <thead><tr><th>시기</th><th>사건</th></tr></thead>
+        <tbody>
+          <tr><td class="hd">1964</td><td>신금단 부녀, 도쿄에서 상봉</td></tr>
+          <tr><td class="hd">1971</td><td>한필성·한필화 남매 통화</td></tr>
+          <tr><td class="hd">1983</td><td>KBS 특별 생방송 『이산가족을 찾습니다』 — 남한 내 이산가족 상봉을 위한 방송, 전쟁의 참상을 알리고 인권과 보편적 인류애를 높였다는 평가, 2015년 관련 기록물이 유네스코 세계 기록 유산으로 등재</td></tr>
+          <tr><td class="hd">1985</td><td>첫 남북 이산가족 상봉 — 서울·평양 고향 방문단 교환 과정에서 처음으로 남북 이산가족이 상봉, 이후 남북한 사이의 긴장 관계로 한동안 상봉이 이루어지지 않음</td></tr>
+          <tr><td class="hd">2000</td><td>제1차 남북 이산가족 상봉</td></tr>
+        </tbody>
+      </table>
+      <table class="data-table">
+        <caption>이산가족 연령별 현황(이산가족정보통합시스템, 2023)</caption>
+        <thead><tr><th>구분</th><th>90세 이상</th><th>89~80세</th><th>79~70세</th><th>69~60세</th><th>59세 이하</th><th>계</th></tr></thead>
+        <tbody>
+          <tr><td class="hd">인원(명)</td><td class="num">13,296</td><td class="num">15,006</td><td class="num">7,526</td><td class="num">3,822</td><td class="num">2,250</td><td class="num">41,900</td></tr>
+          <tr><td class="hd">비율(%)</td><td class="num">31.7</td><td class="num">35.8</td><td class="num">18.0</td><td class="num">9.1</td><td class="num">5.4</td><td class="num">100</td></tr>
+        </tbody>
+      </table>
+      <p>「랜선 답사」 — KBS 이산가족찾기에서 『이산가족을 찾습니다』 방송 관련 기록물을 살펴보고 유네스코 세계 기록 유산으로 등재된 까닭을 알아보자. 이산가족정보통합시스템의 '디지털박물관' 코너에서 이산가족 상봉의 모습을 살펴보자(교과서).</p>
+    </div>
+    <div class="think-box">
+      <h4>생각해 보기 — 이산가족 상봉의 역사</h4>
+      <ol>
+        <li>6·25 전쟁 이후 이산가족 상봉까지 오랜 시간이 걸린 까닭을 말해 보자.</li>
+        <li>연령별 이산가족 현황 자료를 보고 남북 이산가족 문제를 시급히 해결해야 하는 까닭을 말해 보자.</li>
+      </ol>
+    </div>
+
+    <div class="sidebox">
+      <h4>자료 탐구 2 — 6·25 전쟁과 음식 문화</h4>
+      <p>6·25 전쟁은 사람들의 생활에도 큰 영향을 끼쳤다. 전쟁 과정에서 수많은 사람이 북에서 남으로 넘어왔고, 이들을 통해 밀면, 아바이순대 등 다양한 음식이 만들어졌다.</p>
+      <table class="data-table">
+        <thead><tr><th>음식</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td class="hd">밀면</td><td>북한 출신 실향민이 만든 것으로 추정, 메밀 대신 원조로 들어온 밀가루와 감자 전분을 섞어 면을 뽑음</td></tr>
+          <tr><td class="hd">아바이순대</td><td>함경도 출신 피란민들이 만든 음식, '아바이'는 할아버지를 부르는 함경도 사투리</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="think-box">
+      <h4>생각해 보기 — 6·25 전쟁과 음식 문화</h4>
+      <ol>
+        <li>자료와 같은 음식이 만들어진 까닭을 말해 보자.</li>
+        <li>오늘날 북한 지역의 지명이 남아 있는 음식에는 어떤 것이 있는지 말해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>고등학교 『한국사』 교과서(동아출판사, 2022 개정 교육과정), Ⅱ. 대한민국의 발전, 2. 6·25 전쟁과 분단의 고착화 「01 6·25 전쟁」, 88–90쪽 — 본문·연표·지도·사료(스탈린의 발언, 중앙방송, 정전 협정문, 한·미 상호 방위 조약, 집단 학살 사례)·생각 키우기·확인하기의 기본 출처. 91쪽 「탐구하는 한국사 — 전쟁의 시간을 살아간 사람들」과 96쪽 「내 곁의 한국사 — 6·25 전쟁과 문화」, 97쪽 「자료 탐구 1 이산가족 상봉의 역사」·「자료 탐구 2 6·25 전쟁과 음식 문화」는 「더 알아보기」의 출처</li>
+      <li>EBS 개념완성 한국사Ⅱ (2022), 「6·25 전쟁과 남북 분단의 고착화」, 194–195쪽 — 전쟁의 전개·정전 협정·전쟁의 영향 사실 관계 교차 확인. 교과서에 없고 EBS에만 있는 내용에는 <span class="ebs-only">EBS</span> 표식을 달았다.</li>
+    </ol>
+    <div class="note">
+      함께 업로드된 2006년 『한국 근현대사』(중앙교육) 287–292쪽은 2007 개정 이전 교육과정의 자료이므로 본문에 반영하지 않고 배경 확인용으로만 참고했다. 이 소주제에는 개념어 CSV가 제공되지 않아, 교과서 강조 용어와 EBS 핵심 개념(애치슨 선언·인천 상륙 작전·정전 협정·한·미 상호 방위 조약)의 합집합으로 대조했고 모두 반영했다. 교과서 96–97쪽(내 곁의 한국사·자료 탐구 1·2)은 「전후 남북한의 정치와 경제」 소주제의 PDF에 실려 있던 것을 본문이 직접 가리키는 자료로 보아 「더 알아보기」에 반영했고, 같은 폴더의 다른 형식 학습 자료는 교과서에 없는 서술이 섞여 있어 근거로 삼지 않았다. 인명 피해 수치는 교과서 도표(남한 민간인 991천 명·군인 589.2천 명)를 따랐다.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

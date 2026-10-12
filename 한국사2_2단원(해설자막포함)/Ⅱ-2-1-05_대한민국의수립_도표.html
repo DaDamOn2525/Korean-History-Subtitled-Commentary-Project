@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>대한민국 정부 수립 | 광복 3년 만에 남과 북에 각각 세워진 정부</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* 확인 필요 태그 — 원문에 인과가 명시되지 않은 지점 */
+  .need-check{ display:none; /* 2026-09-23: 학생 화면에는 숨김 — 근거 없는 인과를 지어내지 않기 위한 내부(교사용) 표시라 노출하지 않음. 원래 inline-block이었음 */ font-size:11.5px; font-weight:700; color:var(--brass); border:1px solid var(--brass); border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
+  /* EBS 전용 개념 표식 — 현행 교과서에 없고 EBS 개념완성에만 있는 내용 */
+  .ebs-only{ display:inline-block; font-size:11px; font-weight:700; color:var(--paper-card); background:var(--brass); border-radius:4px; padding:1px 6px; margin-left:4px; vertical-align:middle; }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  @media (max-width:760px){.branch-cols{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.mute{border-top-color:var(--ink-soft); border-top-style:dashed;}
+  .branch-col.brass-soft{border-top-color:var(--brass-soft); border-top-width:5px;}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.brass h4{color:var(--brass);}
+  .branch-col.mute h4{color:var(--ink-soft);}
+  .branch-col.brass-soft h4{color:var(--brass);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); }
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:700px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-grid .quote-block{margin-bottom:0;}
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson .src{color:var(--crimson);}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox table.data-table{margin:10px 0 0;}
+  .sidebox p{margin:8px 0 0; font-size:13.5px; color:var(--ink-soft);}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+  .think-item{margin-bottom:10px; font-size:14px;}
+  .think-item summary{cursor:pointer; list-style:none; padding:2px 0; font-weight:500; color:var(--ink);}
+  .think-item summary::-webkit-details-marker{display:none;}
+  .think-item summary::before{content:"▸ "; color:var(--indigo);}
+  .think-item[open] summary::before{content:"▾ ";}
+  .think-answer{margin-top:6px; padding:9px 13px; background:rgba(255,255,255,0.6); border-left:3px solid var(--indigo); border-radius:3px; font-size:13.5px; color:var(--ink-soft);}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅱ-2-1-04_통일정부수립을위한노력_도표.html" style="color:var(--brass);">‹ 이전 소주제</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#election">총선거</a>
+  <a href="#gov">정부 수립</a>
+  <a href="#north">북한 정권</a>
+  <a href="#anti">반공 체제</a>
+  <a href="#chinil">친일 청산</a>
+  <a href="#land">농지 개혁</a>
+  <a href="#summary">정리·확인</a>
+  <a href="#more">더 알아보기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅱ-2-2-01_625전쟁_도표.html" class="sib" style="color:var(--brass); pointer-events:auto;">다음 소주제 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>대한민국의 발전</span> · 8·15 광복과 대한민국 정부의 수립 · 대한민국 정부 수립</div>
+    <h1>광복 3년 만에, 남과 북에 각각 정부가 세워졌다</h1>
+    <p class="lead">유엔 한국 임시 위원단의 감시 아래 치러진 5·10 총선거로 제헌 국회가 구성되었고, 1948년 8월 15일 대한민국 정부가 수립되었다. 한 달이 채 지나기 전에 북한에서도 조선 민주주의 인민 공화국이 세워졌다. 정부를 세운 뒤 대한민국은 반공 체제 강화, 친일 반민족 행위자 청산, 농지 개혁이라는 과제를 마주했고, 그 결과는 과제마다 달랐다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1948 – 1951</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>하나의 정부, 세 가지 과제</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 미국·미군정·유엔</strong> · <strong style="color:var(--crimson)">적색 = 소련·북한</strong> · <strong style="color:var(--brass)">황동색 = 대한민국 정부·한국인 세력</strong>. 황동색 선의 모양은 세 과제를 구분한다(앞 소주제와 같은 방식) — <strong>실선 = 반공 체제 강화, 굵은 옅은 선 = 친일 청산, 점선 = 농지 개혁</strong>. 세 과제는 서로가 서로를 낳은 것이 아니라, 아래 하나의 출발점에서 각자 진행되었다 — 그래서 화살표로 잇지 않고 갈래로 그렸다.</p>
+
+    <div class="branch-root">대한민국 정부 수립(1948.8.15)</div>
+    <p class="branch-cause">정부 수립 이후 이승만 정부와 제헌 국회는 성격이 다른 과제들을 마주했다. 과제를 다룬 방식도, 결과도 서로 달랐다.</p>
+    <div class="branch-cols">
+      <div class="branch-col brass">
+        <h4>반공 체제 강화</h4>
+        <p class="why">왜: 제주 4·3 사건 진압을 위한 부대 파견에 부대 내 좌익 세력 등이 반발하며 여수·순천 10·19 사건이 일어남</p>
+        <div class="branch-node">군대 내 좌익 세력 제거, 국가 보안법 제정, 국민 보도 연맹 조직</div>
+      </div>
+      <div class="branch-col brass-soft">
+        <h4>친일 반민족 행위자 청산</h4>
+        <p class="why">왜: 친일 반민족 행위자 처벌은 온 민족의 열망이었고, 제헌 헌법이 특별법 제정의 근거를 둠</p>
+        <div class="branch-node">반민족 행위 처벌법·반민 특위 활동, 이승만 정부의 방해로 청산 실패</div>
+      </div>
+      <div class="branch-col mute">
+        <h4>농지 개혁</h4>
+        <p class="why">왜: 광복 당시 경작지의 60% 이상이 소작지였고 농민들이 경자유전 원칙의 실현을 원함</p>
+        <div class="branch-node">농지 개혁법 제정(1949), 개정법 바탕의 실시(1950), 지주·소작제 거의 소멸</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">1948</div><div class="tl-body"><div class="tl-title">5월 10일 5·10 총선거</div><div class="tl-desc">유엔 한국 임시 위원단 감시, 우리 역사 최초의 민주 선거</div></div></div>
+      <div class="tl-item"><div class="tl-year">1948</div><div class="tl-body"><div class="tl-title">7월 17일 제헌 헌법 선포</div><div class="tl-desc">임시 정부 법통 계승 민주 공화국 명시</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1948</div><div class="tl-body"><div class="tl-title">8월 15일 대한민국 정부 수립</div><div class="tl-desc">이승만 대통령의 정부 수립 선포</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1948</div><div class="tl-body"><div class="tl-title">9월 9일 북한 정권 수립</div><div class="tl-desc">조선 민주주의 인민 공화국 수립 선포</div></div></div>
+      <div class="tl-item"><div class="tl-year">1948</div><div class="tl-body"><div class="tl-title">9월 반민족 행위 처벌법 제정</div><div class="tl-desc">10월 국회 직속 반민 특위 설치</div></div></div>
+      <div class="tl-item"><div class="tl-year">1948</div><div class="tl-body"><div class="tl-title">10월 여수·순천 10·19 사건</div><div class="tl-desc">군대 내 좌익 세력 제거 계기</div></div></div>
+      <div class="tl-item"><div class="tl-year">1948</div><div class="tl-body"><div class="tl-title">12월 국가 보안법 공포</div><div class="tl-desc">반공 체제 강화</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1948</div><div class="tl-body"><div class="tl-title">연말 유엔 총회의 정부 승인</div><div class="tl-desc">대한민국 정부를 '한반도의 유일한 합법 정부'로 승인</div></div></div>
+      <div class="tl-item"><div class="tl-year">1949</div><div class="tl-body"><div class="tl-title">6월 농지 개혁법 제정</div><div class="tl-desc">제헌 헌법 86조에 근거</div></div></div>
+      <div class="tl-item"><div class="tl-year">1950</div><div class="tl-body"><div class="tl-title">3월 농지 개혁 실시</div><div class="tl-desc">개정된 법 바탕, 유상 매입·유상 분배</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1951</div><div class="tl-body"><div class="tl-title">반민족 행위 처벌법 폐지</div><div class="tl-desc">친일 반민족 행위자 청산 실패</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="election">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>5·10 총선거가 실시되다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">5·10 총선거(1948.5.10.)</div>
+        <div class="step-desc">유엔 한국 임시 위원단의 감시 아래 남한에서 국회의원 선출, 만 21세 이상 국민이 보통·평등·직접·비밀 선거 원칙으로 참여, 우리 역사 최초의 민주 선거</div>
+      </div>
+      <div class="causal-row h"><p>다만</p></div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">선거에 참여하지 않은 세력</div>
+        <div class="step-desc">김구·김규식 등 남북 협상파, 일부 좌익 세력</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>이 선거로 제헌 국회가 구성되었는데, 정원은 남북 전체를 기준으로 정해졌지만 실제로 선출된 의원은 남한 지역에서만 나왔다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">제헌 국회의 정원</div>
+        <div class="step-desc">총 300석, 인구 비례로 38도선 이남 200석·이북 100석 배정</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">실제 선출</div>
+        <div class="step-desc">제주도 2곳을 제외한 선거구에서 198명 선출, 38도선 이북 지역 의원은 선거가 가능해질 때 선출하기로 함</div>
+      </div>
+    </div>
+    <table class="data-table">
+      <caption>제헌 국회 의석 구성(교과서 도표, 전체 의석 200석 기준)</caption>
+      <thead><tr><th>구분</th><th>의석</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">무소속</td><td>85석</td></tr>
+        <tr><td class="hd">대한 독립 촉성 국민회</td><td>55석</td></tr>
+        <tr><td class="hd">한국 민주당</td><td>29석</td></tr>
+        <tr><td class="hd">대동 청년단</td><td>12석</td></tr>
+        <tr><td class="hd">기타</td><td>19석</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">문맹률이 높아 투표소에서 작대기로 기호를 표시했다(교과서 사진 설명).</p>
+    <div class="note-box">5·10 총선거에 이르는 과정(유엔 소총회의 결정·남북 협상·제주 4·3 사건)은 <a href="Ⅱ-2-1-04_통일정부수립을위한노력_도표.html">「통일 정부 수립을 위한 노력」</a> 소주제에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="gov">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>제헌 헌법을 만들고, 정부를 세우다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">제헌 국회</div>
+        <div class="step-desc">5·10 총선거로 구성, 나라 이름을 대한민국으로 결정, 제헌 헌법 제정·선포(1948.7.17.)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">제헌 헌법</div>
+        <div class="step-desc">3·1 운동으로 수립된 대한민국 임시 정부의 법통을 계승한 민주 공화국 명시, 삼권 분립·대통령 중심제 채택, 대통령은 국회에서 선출하는 간접 선거제</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">대통령·부통령 선출</div>
+        <div class="step-desc">국회의 간접 선거로 이승만 대통령, 이시영 부통령 선출</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>헌법에 따라 대통령이 선출되자, 이승만 대통령은 내각을 구성해 정부 수립을 선포했고 그해 말 유엔의 승인까지 받았다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">대한민국 정부 수립(1948.8.15.)</div>
+        <div class="step-desc">이승만 대통령이 내각을 구성하고 정부 수립 선포</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">유엔 총회의 승인</div>
+        <div class="step-desc">그해 말 '한반도의 유일한 합법 정부'로 승인, EBS 표현은 "선거가 가능했던 지역에서의 유일한 합법 정부" <span class="ebs-only">EBS</span></div>
+      </div>
+    </div>
+    <div class="quote-block">
+      <h4>대한민국 정부 수립 국민 축하식 기념사</h4>
+      <p style="margin:0;">"대한민국 정부는 40여 년 희생적으로 투쟁해 온 결실이다."</p>
+      <div class="src">이승만 대통령, 1948. 8. 15. (교과서 재구성)</div>
+    </div>
+    <table class="data-table">
+      <caption>제헌 헌법(1948.7.17.)</caption>
+      <thead><tr><th>조항</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">서문</td><td>기미 삼일 운동으로 대한민국을 건립해 세계에 선포한 독립 정신 계승 → 대한민국 임시 정부의 법통 계승</td></tr>
+        <tr><td class="hd">제1조</td><td>대한민국은 민주 공화국 — 나라 이름과 정부 형태 규정</td></tr>
+        <tr><td class="hd">제2조</td><td>주권은 국민에게 있고 모든 권력은 국민으로부터 나옴 — 국민 주권 강조</td></tr>
+        <tr><td class="hd">제4조</td><td>영토는 한반도와 그 부속 도서</td></tr>
+        <tr><td class="hd">제8조</td><td>모든 국민은 법률 앞에 평등, 성별·신앙·사회적 신분에 따른 차별 금지</td></tr>
+        <tr><td class="hd">제86조</td><td>농지는 농민에게 분배 — 농지 개혁법 제정의 근거</td></tr>
+        <tr><td class="hd">제101조</td><td>1945.8.15 이전의 악질적인 반민족 행위를 처벌하는 특별법 제정 가능 — 반민족 행위 처벌법 제정의 근거</td></tr>
+      </tbody>
+    </table>
+    <table class="data-table">
+      <caption>대한민국 임시 헌법(1919.9.11.) 요약</caption>
+      <tbody>
+        <tr><td class="hd">제1조</td><td>대한민국은 대한 인민으로 조직</td></tr>
+        <tr><td class="hd">제2조</td><td>대한민국의 주권은 대한 인민 전체에 있음</td></tr>
+        <tr><td class="hd">제3조</td><td>대한민국의 강토는 구한국의 판도</td></tr>
+        <tr><td class="hd">제4조</td><td>대한민국의 인민은 일체 평등</td></tr>
+        <tr><td class="hd">제5조</td><td>입법권은 의정원, 행정권은 국무원, 사법권은 법원이 행사</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">정부 수립 당시 3부 요인과 장관 가운데 국회 의장은 신익희, 대법원장은 김병로, 부통령은 이시영, 대통령은 이승만이었다(교과서 사진 설명).</p>
+    <div class="note-box">제헌 헌법이 계승했다고 밝힌 3·1 운동과 대한민국 임시 정부는 <a href="Ⅱ-1-2-02_3.1운동_도표.html">「3·1 운동」</a>·<a href="Ⅱ-1-2-03_대한민국임시정부_도표.html">「대한민국 임시 정부」</a> 소주제에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="north">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>북한 정권이 수립되다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">평안남도 건국 준비 위원회</div>
+        <div class="step-desc">광복 이후 평양에서 조만식 등이 결성</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">각 지역의 인민 위원회</div>
+        <div class="step-desc">소련이 행정권을 넘겨 자치 인정</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>그런데 조만식이 신탁 통치 반대 운동을 벌이다 연금되자, 김일성을 위원장으로 하는 위원회가 조직되면서 실질적인 북한 정권 수립 작업이 시작되었다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">북조선 임시 인민 위원회(1946.2.)</div>
+        <div class="step-desc">김일성을 위원장으로 조직, 토지 개혁(5정보 초과 토지 무상 몰수·무상 분배), 주요 산업·각종 자원 국유화</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">북조선 인민 위원회(1947)</div>
+        <div class="step-desc">임시 인민 위원회를 개편, 헌법 초안 마련</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">조선 인민군 창설(1948)</div>
+        <div class="step-desc">단독 정권 수립 준비 완료</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-4px;">분배한 토지의 소유권은 경작권에 가까운 것으로, 매매·소작·저당 등이 금지되었다(교과서 본문). 5정보는 약 9,900㎡이다.</p>
+    <table class="data-table">
+      <caption>북한의 통일 정부 수립 주장과 실제 준비</caption>
+      <thead><tr><th>구분</th><th>표방</th><th>실상</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">정권 수립 방향</td><td>남북 협상에 참여하는 등 표면적으로 통일 정부 수립 주장</td><td>1947 북조선 인민 위원회로 개편·헌법 초안 마련, 1948 조선 인민군 창설 등 단독 정권 수립 준비 완료</td></tr>
+      </tbody>
+    </table>
+    <div class="causal-link"><p>대한민국 정부가 수립되자 북한도 곧바로 정권 수립 절차를 밟았다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">최고 인민 회의 대의원 선거(1948.8.25.)</div>
+        <div class="step-desc">대한민국 정부 수립 직후 실시</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">헌법 제정·수상 선출(9월 초)</div>
+        <div class="step-desc">헌법을 제정하고 김일성을 수상으로 선출</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">북한 정권 수립 선포(1948.9.9.)</div>
+        <div class="step-desc">김일성 중심 내각 구성, '조선 민주주의 인민 공화국' 수립 선포</div>
+      </div>
+    </div>
+    <table class="data-table">
+      <caption>1948년 남과 북의 정부 수립 비교</caption>
+      <thead><tr><th>구분</th><th>대한민국</th><th>북한</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">기반</td><td>5·10 총선거(유엔 한국 임시 위원단 감시)로 구성한 제헌 국회</td><td>북조선 임시 인민 위원회(1946.2.) → 북조선 인민 위원회(1947)</td></tr>
+        <tr><td class="hd">헌법</td><td>제헌 헌법 선포(1948.7.17.)</td><td>1947 헌법 초안 마련, 1948.9 초 헌법 제정</td></tr>
+        <tr><td class="hd">수반 선출</td><td>국회의 간접 선거로 이승만 대통령 선출</td><td>최고 인민 회의 대의원 선거(1948.8.25.) 후 김일성 수상 선출</td></tr>
+        <tr><td class="hd">수립 선포</td><td>1948.8.15.</td><td>1948.9.9.</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">북한의 초대 내각 사진에는 홍명희·김일성·박헌영·김원봉 등이 표시되어 있다(교과서 사진 표기).</p>
+  </section>
+
+  <section class="block" id="anti">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>반공 체제를 강화하다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">부대 파견(1948.10.)</div>
+        <div class="step-desc">이승만 정부가 제주 4·3 사건 진압을 위해 여수 주둔 부대를 제주도에 파견하려 함</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>그러자 부대 안의 좌익 세력 등이 파견에 반대하며 여수·순천 지역을 점령했다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">여수·순천 10·19 사건</div>
+        <div class="step-desc">부대 내 좌익 세력 등이 '제주도 출동 반대'·'통일 정부 수립'을 내세우며 여수·순천 지역 점령</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">진압</div>
+        <div class="step-desc">곧 진압, 일부는 지리산 등으로 이동해 빨치산으로 활동 지속, 진압 과정에서 많은 민간인 희생</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>이승만 정부는 이 사건을 계기로 군대 안의 좌익 세력을 제거하고 반공 체제를 강화해 나갔다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">반공 체제 강화</div>
+        <div class="step-desc">군대 내 좌익 세력 제거, 국가 보안법 제정(1948.12.), 국민 보도 연맹 조직</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-4px;">빨치산은 비정규군을 뜻하며, 한국에서는 공산 게릴라를 의미한다. 여수·순천 10·19 사건의 진상을 규명하고 희생자와 유족의 명예를 회복시키는 것을 목적으로 한 특별법이 2021년 국회에서 여야 합의로 통과되었다(교과서 각주).</p>
+    <div class="note-box">여수 주둔 부대가 진압을 명령받은 제주 4·3 사건은 <a href="Ⅱ-2-1-04_통일정부수립을위한노력_도표.html">「통일 정부 수립을 위한 노력」</a> 소주제에서 다루었다.</div>
+    <div class="sidebox">
+      <h4>역사 깊이 보기 — 국민 보도 연맹</h4>
+      <p>국민 보도 연맹은 사회주의 사상을 가진 사람들을 등록시켜 사상을 개조한다는 명분으로 조직한 단체이다. 하지만 가입 과정에서 할당량을 채우기 위해 아무 상관 없는 사람을 가입시키기도 했다.</p>
+      <div class="quote-block" style="margin:14px 0 0;">
+        <h4>경북 영천 국민 보도 연맹 사건 증언</h4>
+        <p style="margin:0;">"결국 전쟁이 나자 동장은 살고 우리 아버지는 죽었다."</p>
+        <div class="src">진실·화해를 위한 과거사 정리 위원회, 『경북 영천 국민 보도 연맹 사건』 (교과서 재구성)</div>
+      </div>
+      <p>6·25 전쟁 중 국민 보도 연맹원 학살은 <a href="Ⅱ-2-2-01_625전쟁_도표.html" style="color:var(--brass); font-weight:700; text-decoration:none;">「6·25 전쟁」</a> 소주제에서 다룬다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="chinil">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>친일 반민족 행위자 청산이 좌절되다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">제헌 헌법 101조</div>
+        <div class="step-desc">친일 반민족 행위자 처벌을 위한 특별법 제정 조항 명시</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">반민족 행위 처벌법(1948.9.)</div>
+        <div class="step-desc">제헌 헌법 조항에 따라 제정</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">반민 특위(1948.10.)</div>
+        <div class="step-desc">반민족 행위 특별 조사 위원회, 국회 직속으로 설치</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>친일 반민족 행위자를 처벌하는 것은 온 민족의 열망이었기에, 반민 특위는 국민들의 호응을 받으며 활동을 시작했다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">반민 특위의 검거</div>
+        <div class="step-desc">국민들의 호응 속에 친일 반민족 행위자 검거, 노덕술·김연수 등 친일 혐의자 체포·조사 <span class="ebs-only">EBS</span></div>
+      </div>
+    </div>
+    <div class="causal-link"><p>그러나 이승만 정부는 반공을 우선시하며 반민 특위의 활동을 방해했다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">이승만 정부의 방해</div>
+        <div class="step-desc">반민 특위 소속 국회의원 일부를 공산당과 내통했다는 혐의로 구속(국회 프락치 사건), 경찰이 반민 특위 사무실 습격, 노덕술이 검거되자 반공과 치안을 앞세워 법 개정 요구 <span class="ebs-only">EBS</span></div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">처벌법 개정</div>
+        <div class="step-desc">반민 특위 활동 기한 단축, 반민족 행위의 범위 축소</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">처벌법 폐지(1951)</div>
+        <div class="step-desc">친일 반민족 행위자 청산 실패, 실형을 받은 친일파 대부분이 감형·보석·형 집행 정지 등으로 석방 <span class="ebs-only">EBS</span></div>
+      </div>
+    </div>
+    <div class="quote-grid">
+      <div class="quote-block">
+        <h4>이승만 대통령 담화(1949.2.20.)</h4>
+        <p style="margin:0;">"공산당은 밖에서 경찰을 살해하고, 국회의원들은 안에서 경찰을 살 수 없게 한다."</p>
+        <div class="src">『동아일보』, 1949. 2. 22. (교과서 재구성)</div>
+      </div>
+      <div class="quote-block">
+        <h4>이승만 대통령 담화문 <span class="ebs-only">EBS</span></h4>
+        <p style="margin:0;">"반민법이 상당한 법이라도 치안에 관계될 때는 임시로 정지하는 것이 마땅하다."</p>
+        <div class="src">EBS 개념완성 189쪽 자료 탐구 2 (재구성)</div>
+      </div>
+    </div>
+    <div class="note-box">친일 반민족 행위 청산 노력을 더 살펴보는 교과서의 「내 곁의 한국사」는 아래 <a href="#more">「더 알아보기」</a>에 실었다.</div>
+  </section>
+
+  <section class="block" id="land">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>농지 개혁을 실시하다</h2>
+    </div>
+    <div class="note-box"><strong>경자유전(耕者有田)</strong> — 농사짓는 사람이 농지를 소유한다는 뜻. <strong>유상 매입·유상 분배</strong> — 국가가 대가를 주고 토지를 사들인 뒤, 농민에게 대가를 받고 분배하는 방식.</div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">광복 당시의 농촌</div>
+        <div class="step-desc">일제 강점기 지주제 강화로 전체 경작지의 60% 이상이 소작지, 대다수 농민이 '경자유전' 원칙 실현 희망</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">북한의 토지 개혁</div>
+        <div class="step-desc">북한에서 토지 개혁 진행</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">남한의 요구</div>
+        <div class="step-desc">남한에서도 토지 개혁을 원하는 목소리 고조</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>이에 미군정이 먼저 일본인 소유 농지를 나눠 주었고, 정부 수립 과정에서 개혁이 본격화되었다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">미군정</div>
+        <div class="step-desc">일본인이 소유했던 농지를 농민에게 유상 분배</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">제헌 헌법 86조</div>
+        <div class="step-desc">농민에게 농지를 분배한다는 내용 명시</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">농지 개혁법 제정(1949.6.)</div>
+        <div class="step-desc">제헌 국회가 제정</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">농지 개혁 실시(1950.3.)</div>
+        <div class="step-desc">개정된 법 바탕, 유상 매입·유상 분배, 가구당 3정보 소유 상한, 초과 농지는 국가가 지가 증권을 발급해 매입</div>
+      </div>
+    </div>
+    <table class="data-table">
+      <caption>자·소작지 면적 변화(한국농촌경제연구원, 1989)</caption>
+      <thead><tr><th>시기</th><th>자작지 면적(천 정보)</th><th>소작지 면적(천 정보)</th><th>소작지 비율(%)</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">1945년 말</td><td>779</td><td>1,447</td><td>65</td></tr>
+        <tr><td class="hd">1947년 말</td><td>868</td><td>1,325</td><td>60</td></tr>
+        <tr><td class="hd">1949년 6월</td><td>1,400</td><td>671</td><td>32</td></tr>
+        <tr><td class="hd">1951년 말</td><td>1,800</td><td>158</td><td>8</td></tr>
+      </tbody>
+    </table>
+    <table class="data-table">
+      <caption>농지 개혁의 성과와 한계</caption>
+      <tbody>
+        <tr><td class="hd">성과</td><td>지주·소작제 거의 소멸, 농민 대부분이 자기 농지를 갖게 되어 생산 의욕 상승</td></tr>
+        <tr><td class="hd">한계</td><td>농지를 제외한 토지는 개혁 대상에서 제외, 6·25 전쟁 등으로 시행이 늦어지면서 지주가 토지를 미리 처분하거나 숨김, 유상 분배의 부담으로 분배받은 농지를 다시 파는 농민도 발생</td></tr>
+      </tbody>
+    </table>
+    <table class="data-table">
+      <caption>농지 개혁법(1949.6.21., 요약)</caption>
+      <tbody>
+        <tr><td class="hd">제1조(목적)</td><td>헌법에 의해 농지를 농민에게 적절히 분배해 농가 경제의 자립과 농업 생산력 증진, 농민 생활 향상, 국민 경제의 균형과 발전 도모</td></tr>
+        <tr><td class="hd">제5조(취득)</td><td>정부가 적당한 보상으로 매수하는 농지 — 농가 아닌 자의 농지, 자경하지 않는 자의 농지, 법 규정 한도를 초과하는 부분의 농지</td></tr>
+        <tr><td class="hd">제13조(상환)</td><td>분배받은 농지의 상환액은 주생산물 생산량의 125%, 5년간 납입</td></tr>
+        <tr><td class="hd">EBS 서술 <span class="ebs-only">EBS</span></td><td>상환액은 평년작 주생산물의 1.5배, 5년 동안 균등 상환(연평균 수확량의 30%씩), 농가 희망·정부 인정 사유에 따라 일시 상환 기간 단축 가능 <span class="need-check">확인 필요</span> 교과서 자료의 125%와 EBS의 1.5배가 어떤 관계(개정 여부)인지는 두 자료에 명시되어 있지 않음</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">출처: 『농지 개혁법』(1949. 6. 21.) — 교과서 자료 탐구 2 재구성, EBS 개념완성 189쪽 자료 탐구 3. 농지 개혁법은 1949년 6월에 공포되었고 1950년 3월에 개정되었다(EBS).</p>
+    <table class="data-table">
+      <caption>귀속 재산 처리 <span class="ebs-only">EBS</span></caption>
+      <tbody>
+        <tr><td class="hd">귀속 재산</td><td>일본인이 남기고 간 토지·건물 등 부동산과 기업·유가 증권 등, 미군정이 관리하다가 대한민국 정부에 이양</td></tr>
+        <tr><td class="hd">처리</td><td>농지를 제외한 나머지를 민간에 불하, 정부가 매긴 가격보다 낮게 불하해 특정 기업에 대한 특혜 발생</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">6·25 전쟁은 <a href="Ⅱ-2-2-01_625전쟁_도표.html">「6·25 전쟁」</a> 소주제에서 다룬다. 교과서는 이 전쟁 등으로 농지 개혁 시행이 늦어졌다고 서술한다.</div>
+    <div class="sidebox">
+      <h4>역사 깊이 보기 — 화폐로 보는 광복</h4>
+      <p>광복 이후 한국에서는 한동안 일제 강점기에 발행한 화폐를 사용했다. 1946년부터 일제를 상징하는 일부 도안을 변경했지만 전체적으로는 큰 차이가 없었고, 1949년 9월부터는 도안을 크게 바꾼 화폐를 발행하기 시작했다. 이후 우리나라의 화폐는 몇 차례의 변경을 거쳐 오늘날에 이르고 있다.</p>
+      <table class="data-table">
+        <thead><tr><th>시기</th><th>화폐</th><th>도안의 특징</th></tr></thead>
+        <tbody>
+          <tr><td class="hd">1944</td><td>일제 강점기 조선은행권</td><td>장수를 상징하는 노인(추정)의 모습</td></tr>
+          <tr><td class="hd">1946</td><td>광복 직후 사용된 조선은행권</td><td>① 일본 정부의 상징인 오동꽃을 무궁화로 변경 ② 일본은행권으로 바꿔 준다는 규정 삭제 ③ 도안 속 인물은 유지</td></tr>
+          <tr><td class="hd">1949.9.</td><td>바뀐 조선은행권</td><td>도안을 독립문으로 변경</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>정리 — 세 과제의 비교와 확인하기</h2>
+    </div>
+    <table class="data-table">
+      <thead><tr><th></th><th>계기·근거</th><th>조치</th><th>결과</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">반공 체제 강화</td><td>여수·순천 10·19 사건(1948.10.)</td><td>군대 내 좌익 세력 제거, 국가 보안법 제정, 국민 보도 연맹 조직</td><td>반공 체제 강화</td></tr>
+        <tr><td class="hd">친일 반민족 행위자 청산</td><td>제헌 헌법 101조, 온 민족의 열망</td><td>반민족 행위 처벌법 제정, 반민 특위 설치</td><td>이승만 정부의 방해, 처벌법 개정·폐지(1951)로 청산 실패</td></tr>
+        <tr><td class="hd">농지 개혁</td><td>제헌 헌법 86조, 토지 개혁 요구 고조</td><td>농지 개혁법 제정(1949.6.), 유상 매입·유상 분배 실시(1950.3.)</td><td>지주·소작제 거의 소멸, 개혁 대상 제한·시행 지연 등의 한계</td></tr>
+      </tbody>
+    </table>
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <p style="margin:8px 0; font-size:14px;">자유민주주의에 기초한 대한민국 정부의 수립 과정은 어떠하였을까?</p>
+      <details class="think-item">
+        <summary>새로 태어난 정부 앞에는 어떤 숙제들이 쌓여 있었을까?</summary>
+        <div class="think-answer">교과서는 반공 체제 강화, 친일 반민족 행위자 청산, 농지 개혁 세 가지를 대한민국 정부가 마주한 과제로 제시한다. 성격이 다른 이 과제들은 다뤄진 방식도, 결과도 서로 달랐다.</div>
+      </details>
+    </div>
+    <div class="think-box">
+      <h4>생각 키우기</h4>
+      <p style="margin:8px 0; font-size:14px;">[제헌 헌법] 대한민국이 대한민국 임시 정부의 법통을 계승하였음을 밝힌 부분을 찾아 밑줄을 그어 보자.</p>
+      <p style="margin:8px 0; font-size:14px;">[제헌 헌법] 대한민국 임시 정부의 헌법과 제헌 헌법의 공통점을 찾아보자.</p>
+      <p style="margin:8px 0; font-size:14px;">[국민 보도 연맹] 국민 보도 연맹에서 '보도'의 의미를 조사해 보자.</p>
+      <details class="think-item">
+        <summary>[국민 보도 연맹] 사회주의 사상을 가진 사람만 가입했을까?</summary>
+        <div class="think-answer">아니다. 가입 과정에서 할당량을 채우기 위해 아무 상관 없는 사람을 가입시키기도 했다. 경북 영천의 한 증언은 "결국 전쟁이 나자 동장은 살고 우리 아버지는 죽었다"고 전한다.</div>
+      </details>
+      <p style="margin:8px 0; font-size:14px;">[질문+] 자료(이승만 대통령 담화)에서 이승만 대통령이 반민 특위의 활동에 반대한 까닭을 찾아보자.</p>
+    </div>
+    <div class="think-box">
+      <h4>자료 탐구 — 농지 개혁법</h4>
+      <details class="think-item">
+        <summary>제1조가 말하는 "농지를 농민에게 적절히 분배함"이라는 원칙에는 이름이 있을까?</summary>
+        <div class="think-answer">경자유전(耕者有田) — 농사짓는 사람이 농지를 소유한다는 원칙이다.</div>
+      </details>
+      <details class="think-item">
+        <summary>정부는 지주의 땅을 그냥 빼앗아 나눠 줬을까?</summary>
+        <div class="think-answer">아니다. 제5조는 정부가 적당한 보상으로 농지를 사들이도록 했고(유상 매입), 제13조는 분배받은 농지의 상환액을 주생산물 생산량의 125%로 정해 5년간 나눠 내게 했다(유상 분배).</div>
+      </details>
+      <p style="margin:8px 0; font-size:14px;">당시 지주 또는 소작농의 입장 중 하나를 택해 '농지 개혁'으로 4행시를 지어 보자.</p>
+    </div>
+    <details class="check-item">
+      <summary style="font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px;">스스로 확인하기</summary>
+      <div class="check-box" style="margin-top:14px;">
+        <div class="check-item"><details><summary>Q1. (      )은/는 우리 역사 최초의 국회의원을 뽑기 위한 민주적인 총선거였다.</summary>
+          <div class="check-answer">5·10 총선거이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q2. 제헌 국회는 나라 이름을 (      )(으)로 정하였다.</summary>
+          <div class="check-answer">대한민국이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q3. 북한은 유상 몰수, 유상 분배의 형식으로 토지 개혁을 실시하였다. (O, X)</summary>
+          <div class="check-answer">X. 북한은 5정보를 초과하는 토지를 무상 몰수해 농민에게 무상 분배했다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q4. 북한은 대한민국 정부 수립 이후 헌법 초안을 마련하였다. (O, X)</summary>
+          <div class="check-answer">X. 북한은 1947년에 헌법 초안을 마련했고, 정부 수립 이후에는 9월 초 헌법을 제정했다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q5. 이승만 정부는 여수·순천 10·19 사건을 계기로 (      )을/를 제정하였다.</summary>
+          <div class="check-answer">국가 보안법이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q6. 친일 반민족 행위자 처벌을 위해 국회 직속으로 (      )을/를 설치하였다.</summary>
+          <div class="check-answer">반민족 행위 특별 조사 위원회(반민 특위)이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q7. 농지 개혁은 (      ) 매입, 유상 분배의 원칙으로 진행되었다.</summary>
+          <div class="check-answer">유상이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q8. 농지 개혁으로 지주·소작제가 거의 사라졌다. (O, X)</summary>
+          <div class="check-answer">O이다.</div>
+        </details></div>
+      </div>
+    </details>
+  </section>
+
+  <section class="block" id="more">
+    <div class="block-head">
+      <span class="block-num">9</span>
+      <h2>더 알아보기</h2>
+    </div>
+
+    <div class="sidebox">
+      <h4>내 곁의 한국사 — 친일 반민족 행위 청산 노력</h4>
+      <table class="data-table">
+        <thead><tr><th>시기</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td class="hd">1948</td><td>반민족 행위 처벌법 제정 — 제헌 국회가 제헌 헌법 101조에 따라 제정, 그러나 친일 반민족 행위자 처벌은 제대로 이루어지지 못함</td></tr>
+          <tr><td class="hd">2004</td><td>일제 강점하 반민족 행위 진상 규명에 관한 특별법 제정 — 일본 제국주의의 국권 침탈 전후부터 1945.8.14까지의 친일 반민족 행위 진상 규명이 목적, 친일 반민족 행위 진상 규명 위원회 조직·명단 발표</td></tr>
+        </tbody>
+      </table>
+      <table class="data-table">
+        <caption>반민족 행위 처벌법 제4조(발췌)</caption>
+        <tbody>
+          <tr><td class="hd">처벌</td><td>다음 각호 가운데 하나에 해당하는 자는 10년 이하의 징역 또는 15년 이하의 공민권 정지, 재산의 전부 혹은 일부 몰수 가능</td></tr>
+          <tr><td class="hd">⑴</td><td>일제에 작위를 받은 자</td></tr>
+          <tr><td class="hd">⑷</td><td>밀정 행위로 독립운동을 방해한 자</td></tr>
+          <tr><td class="hd">⑹</td><td>군·경찰의 관리로서 악질적인 행위로 민족에게 해를 가한 자</td></tr>
+          <tr><td class="hd">⑽</td><td>일본 국책을 추진시킬 목적으로 설립된 각 단체 본부의 수뇌 간부로서 악질적인 지도적 행동을 한 자</td></tr>
+          <tr><td class="hd">⑾</td><td>민족적 정신과 신념을 배반하고 일본 침략주의와 그 시책을 수행하는 데 협력하기 위해 악질적인 반민족적 언론·저작과 기타 방법으로 지도한 자</td></tr>
+        </tbody>
+      </table>
+      <table class="data-table">
+        <caption>외국의 처벌 사례</caption>
+        <tbody>
+          <tr><td class="hd">중국</td><td>친일 부역자를 한간(매국노)이라 부름, 중·일 전쟁 이후 약 1만 5천 명 처벌, 이후 공산 정권이 성립하자 다시 처벌</td></tr>
+          <tr><td class="hd">프랑스</td><td>나치 독일 협력자를 '콜라보시옹'이라 부름, 종전 이후 약 10만 명 유죄 처벌, 언론인·작가는 프랑스 정신을 타락시켰다는 이유로 더 강력한 처벌</td></tr>
+        </tbody>
+      </table>
+      <table class="data-table">
+        <caption>생각해 보기에 실린 인물</caption>
+        <tbody>
+          <tr><td class="hd">김덕기</td><td>평안북도에서 경찰로 근무, 조선 총독부의 고위 관료, 독립운동가 체포로 표창</td></tr>
+          <tr><td class="hd">박춘금</td><td>일본 중의원에 당선, 지원병제 청원, 일제의 침략 전쟁 승리를 기원하는 친일 행사 주도</td></tr>
+          <tr><td class="hd">김동환</td><td>일제의 전시 협력 단체 출범에 기여, 친일 단체 간부, 『삼천리』·『대동아』 등 친일 잡지 발행</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="think-box">
+      <h4>생각해 보기 — 친일 반민족 행위 청산</h4>
+      <ol>
+        <li>위 세 인물이 반민족 행위 처벌법의 어떤 항목에 해당하는지 검사가 되어 기소해 보자.</li>
+        <li>내가 판사라면 위 인물들에게 어떤 처벌을 할지 선고해 보자.</li>
+        <li>친일 반민족 행위자에게 어떤 처벌을 내릴지 친구와 토의해 보자. (1명 선정 → 행위 조사 → 처벌법 해당 항목 정리 → 처벌 결정 → 친구와 바꾸어 의견 청취 → 의견 종합)</li>
+      </ol>
+    </div>
+
+    <div class="sidebox">
+      <h4>자료 탐구 — 연표로 정리하기</h4>
+      <table class="data-table">
+        <thead><tr><th>시기</th><th>사건</th></tr></thead>
+        <tbody>
+          <tr><td class="hd">1945.8.15.</td><td>8·15 광복</td></tr>
+          <tr><td class="hd">1945.9.</td><td>미군정 실시</td></tr>
+          <tr><td class="hd">1945.10.</td><td>이승만 귀국</td></tr>
+          <tr><td class="hd">1945.11.</td><td>김구 등 대한민국 임시 정부 요인 귀국</td></tr>
+          <tr><td class="hd">1945.12.</td><td>모스크바 3국 외상 회의</td></tr>
+          <tr><td class="hd">1946.2.</td><td>북조선 임시 인민 위원회 조직</td></tr>
+          <tr><td class="hd">1946.3.</td><td>제1차 미·소 공동 위원회 개최</td></tr>
+          <tr><td class="hd">1946.5.</td><td>제1차 미·소 공동 위원회 무기한 휴회 선언</td></tr>
+          <tr><td class="hd">1946.6.</td><td>이승만, 정읍 발언</td></tr>
+          <tr><td class="hd">1946.7.</td><td>좌우 합작 위원회 조직</td></tr>
+          <tr><td class="hd">1946.10.</td><td>좌우 합작 7원칙 발표</td></tr>
+          <tr><td class="hd">1947.11.</td><td>유엔 총회, 남북 총선거안 결의</td></tr>
+          <tr><td class="hd">1947.12.</td><td>북한, 임시 헌법 초안 작성</td></tr>
+          <tr><td class="hd">1948.1.</td><td>유엔 한국 임시 위원단 내한</td></tr>
+          <tr><td class="hd">1948.2.</td><td>유엔 소총회, 선거 감시가 가능한 지역에서만 우선 선거 결의</td></tr>
+          <tr><td class="hd">1948.4.</td><td>제주 4·3 사건 발생, 남북 협상</td></tr>
+          <tr><td class="hd">1948.5.10.</td><td>5·10 총선거</td></tr>
+          <tr><td class="hd">1948.7.17.</td><td>제헌 헌법 공포</td></tr>
+          <tr><td class="hd">1948.8.15.</td><td>대한민국 정부 수립</td></tr>
+          <tr><td class="hd">1948.9.9.</td><td>북한 정권 수립</td></tr>
+          <tr><td class="hd">1948.9.</td><td>반민족 행위 처벌법 공포</td></tr>
+          <tr><td class="hd">1948.10.</td><td>여수·순천 10·19 사건</td></tr>
+          <tr><td class="hd">1948.12.</td><td>국가 보안법 공포</td></tr>
+          <tr><td class="hd">1949.6.</td><td>농지 개혁법 공포</td></tr>
+        </tbody>
+      </table>
+      <p>출처: 교과서 「자료로 보는 한국사 — 연표로 정리하기」(87쪽)</p>
+    </div>
+    <div class="note-box">이 연표의 1945~1948년 사건은 <a href="Ⅱ-2-1-02_815광복_도표.html">「8·15 광복」</a>, <a href="Ⅱ-2-1-03_모스크바3국외상회의_도표.html">「모스크바 3국 외상 회의」</a>, <a href="Ⅱ-2-1-04_통일정부수립을위한노력_도표.html">「통일 정부 수립을 위한 노력」</a> 소주제에서 다루었다.</div>
+    <div class="think-box">
+      <h4>생각해 보기 — 연표로 정리하기</h4>
+      <ol>
+        <li>연표에서 가장 중요하다고 생각되는 사건 세 개를 뽑고 그 까닭을 말해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>고등학교 『한국사』 교과서(동아출판사, 2022 개정 교육과정), Ⅱ. 대한민국의 발전, 1. 8·15 광복과 대한민국 정부의 수립 「05 대한민국 정부 수립」, 82–85쪽 — 본문·연표·사료·역사 깊이 보기(국민 보도 연맹, 화폐로 보는 광복)·생각 키우기·확인하기의 기본 출처. 86쪽 「내 곁의 한국사」와 87쪽 「자료로 보는 한국사」(농지 개혁법, 연표로 정리하기)는 각각 해당 블록과 「더 알아보기」의 출처</li>
+      <li>EBS 개념완성 한국사Ⅱ (2022), 「냉전 체제와 대한민국 정부 수립」, 188–189쪽 — 정부 수립·북한 정권 수립·친일 청산·농지 개혁 사실 관계 교차 확인. 교과서에 없고 EBS에만 있는 내용에는 <span class="ebs-only">EBS</span> 표식을 달았다.</li>
+    </ol>
+    <div class="note">
+      함께 업로드된 2006년 『한국 근현대사』(중앙교육) 284–286쪽은 2007 개정 이전 교육과정의 자료이므로 본문에 반영하지 않고 배경 확인용으로만 참고했다. 개념어는 첨부 CSV 57개와 대조해 교과서에 수록된 54개를 반영했고, 노덕술·김연수 2개는 EBS 근거로 반영했으며, 최린은 교과서와 EBS에 없어 반영하지 않았다. 유엔 총회의 정부 승인 범위는 교과서("한반도의 유일한 합법 정부")와 EBS("선거가 가능했던 지역에서의 유일한 합법 정부")의 표현이 달라 두 서술을 함께 적었다. 87쪽 「자료 탐구 1 광복의 분위기」는 「8·15 광복」 소주제의 자료이므로 그쪽에서 다룬다.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

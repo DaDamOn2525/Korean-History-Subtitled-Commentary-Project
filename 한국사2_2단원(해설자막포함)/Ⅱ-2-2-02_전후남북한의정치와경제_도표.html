@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전후 남북한의 정치와 경제 | 전쟁이 끝난 뒤, 남과 북은 각자 다른 길로 권력을 굳혔다</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* 확인 필요 태그 — 원문에 인과가 명시되지 않은 지점 */
+  .need-check{ display:none; /* 2026-09-23: 학생 화면에는 숨김 — 근거 없는 인과를 지어내지 않기 위한 내부(교사용) 표시라 노출하지 않음. 원래 inline-block이었음 */ font-size:11.5px; font-weight:700; color:var(--brass); border:1px solid var(--brass); border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
+  /* EBS 전용 개념 표식 — 현행 교과서에 없고 EBS 개념완성에만 있는 내용 */
+  .ebs-only{ display:inline-block; font-size:11px; font-weight:700; color:var(--paper-card); background:var(--brass); border-radius:4px; padding:1px 6px; margin-left:4px; vertical-align:middle; }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  @media (max-width:760px){.branch-cols{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.soft{border-top-color:var(--indigo-soft); border-top-width:5px;}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.soft h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); }
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.soft .tl-year::after{background:var(--indigo-soft); border-color:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.soft .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.num{text-align:right; font-variant-numeric:tabular-nums;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:700px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-grid .quote-block{margin-bottom:0;}
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson .src{color:var(--crimson);}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box ul{margin:0; padding-left:20px;}
+  .limit-box li{margin-bottom:4px;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox table.data-table{margin:10px 0 0;}
+  .sidebox p{margin:8px 0 0; font-size:13.5px; color:var(--ink-soft);}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+  .think-item{margin-bottom:10px; font-size:14px;}
+  .think-item summary{cursor:pointer; list-style:none; padding:2px 0; font-weight:500; color:var(--ink);}
+  .think-item summary::-webkit-details-marker{display:none;}
+  .think-item summary::before{content:"▸ "; color:var(--indigo);}
+  .think-item[open] summary::before{content:"▾ ";}
+  .think-answer{margin-top:6px; padding:9px 13px; background:rgba(255,255,255,0.6); border-left:3px solid var(--indigo); border-radius:3px; font-size:13.5px; color:var(--ink-soft);}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅱ-2-2-01_625전쟁_도표.html" style="color:var(--brass);">‹ 이전 소주제</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#extend">발췌 개헌</a>
+  <a href="#lifelong">사사오입 개헌</a>
+  <a href="#anticomm">반공과 독재</a>
+  <a href="#recovery">남한의 전후 복구</a>
+  <a href="#aid">미국 원조</a>
+  <a href="#northpol">북한의 정치</a>
+  <a href="#northeco">북한의 경제</a>
+  <a href="#summary">정리·확인</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅱ-2-3-01_419혁명_도표.html" class="sib" style="color:var(--brass); pointer-events:auto;">다음 소주제 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>대한민국의 발전</span> · 6·25 전쟁과 분단의 고착화 · 전후 남북한의 정치와 경제</div>
+    <h1>전쟁이 끝난 뒤, 남과 북은 각자 다른 길로 권력을 굳혔다</h1>
+    <p class="lead">남한에서는 이승만 정부가 두 차례의 개헌으로 정권을 연장하고 반공을 앞세워 반대 세력을 탄압했으며, 미국의 원조를 바탕으로 전쟁 피해를 복구했다. 북한에서는 김일성이 반대 세력을 숙청해 1인 독재 체제를 세우고 소련·중국의 원조로 사회주의 경제를 구축했다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1950 – 1959</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>같은 전쟁 뒤, 세 갈래의 길</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">진한 남색 = 남한의 정치(이승만 정부)</strong> · <strong style="color:var(--indigo)">옅은 남색 = 남한의 경제</strong> · <strong style="color:var(--crimson)">적색 = 북한(김일성 정권·소련·중국)</strong> · <strong style="color:var(--brass)">황동색 = 전환점</strong>. 세 갈래는 서로가 서로를 낳은 것이 아니라, 아래 하나의 상황에서 각자 갈라져 나왔다 — 그래서 화살표로 잇지 않고 갈래로 그렸다.</p>
+
+    <div class="branch-root">6·25 전쟁 이후(1950년대)</div>
+    <p class="branch-cause">전쟁은 남과 북 모두에 큰 피해를 남겼고, 두 정권은 피해를 복구하는 동시에 권력을 유지하는 방식을 각자 다르게 택했다.</p>
+    <div class="branch-cols">
+      <div class="branch-col deep">
+        <h4>남한의 정치</h4>
+        <p class="why">왜: 국회에서 이승만 지지 세력이 줄고 정부에 대한 여론이 나빠져, 이승만 정부가 간선제로는 재선이 어렵다고 판단함</p>
+        <div class="branch-node">발췌 개헌(1952)·사사오입 개헌(1954)으로 장기 집권 추구, 반공을 내세워 반대 세력 탄압</div>
+      </div>
+      <div class="branch-col soft">
+        <h4>남한의 경제</h4>
+        <p class="why">왜: 농경지가 황폐해지고 산업 시설이 파괴되어 물자 부족과 실업 확대</p>
+        <div class="branch-node">귀속 재산 매각과 미국 원조 물자 분배로 복구, 삼백 산업 발달, 특정 기업 혜택 집중과 원조 의존의 위기</div>
+      </div>
+      <div class="branch-col crimson">
+        <h4>북한의 정치와 경제</h4>
+        <p class="why">왜: 전쟁으로 북한 전역이 폐허가 되고, 김일성이 전쟁을 거치며 반대 세력을 제거해 권력 기반을 강화함</p>
+        <div class="branch-node">반대파 숙청과 1인 독재 체제, 소련·중국 원조로 복구, 천리마 운동과 협동조합 중심의 사회주의 경제 확립</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item deep"><div class="tl-year">1950</div><div class="tl-body"><div class="tl-title">5월 제2대 국회의원 선거</div><div class="tl-desc">중도파 민족주의자·이승만 정부에 비판적인 무소속 다수 당선</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1950</div><div class="tl-body"><div class="tl-title">6월 6·25 전쟁 발발</div><div class="tl-desc">전쟁 중 거창 학살 사건·국민 방위군 사건 폭로</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1952</div><div class="tl-body"><div class="tl-title">발췌 개헌</div><div class="tl-desc">기립 표결로 대통령 직선제 개헌안 통과</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1953</div><div class="tl-body"><div class="tl-title">정전 협정 체결</div><div class="tl-desc">이후 남한은 원조 바탕의 전후 복구, 북한은 전후 복구 3개년 계획 추진</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1954</div><div class="tl-body"><div class="tl-title">사사오입 개헌</div><div class="tl-desc">개헌 당시 대통령에 한해 중임 제한을 없애는 개헌안 통과</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1956</div><div class="tl-body"><div class="tl-title">제3대 대통령 선거</div><div class="tl-desc">이승만 세 번째 당선, 무소속 조봉암이 경쟁자로 부상</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1956</div><div class="tl-body"><div class="tl-title">북한 천리마 운동 추진 시작</div><div class="tl-desc">대중의 노동력을 동원해 생산성을 높이려는 운동</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1958</div><div class="tl-body"><div class="tl-title">1월 진보당 사건 · 12월 국가 보안법 개정</div><div class="tl-desc">진보당 해체, 비판 세력 탄압 강화</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1959</div><div class="tl-body"><div class="tl-title">조봉암 사형</div><div class="tl-desc">2007년 조작 사건 발표, 2011년 간첩 혐의 무죄</div></div></div>
+      <div class="tl-item soft"><div class="tl-year">1950년대 후반</div><div class="tl-body"><div class="tl-title">주요 산업 시설 복구 · 무상 원조의 유상 차관 전환</div><div class="tl-desc">원조에 크게 의존하던 한국 경제의 위기</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="extend">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>발췌 개헌으로 정권이 연장되다</h2>
+    </div>
+    <p class="block-sub">교과서 배울 내용 Q1 "남북한의 정치는 어떻게 변화하였을까?"에 답하는 첫 블록이다.</p>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">제2대 국회의원 선거(1950.5.)</div>
+        <div class="step-desc">5·10 총선거에 참여하지 않았던 중도파 민족주의자와 이승만 정부에 비판적인 무소속 출신 다수 당선</div>
+      </div>
+      <div class="causal-row h"><p>전쟁 중에는 폭로가 잇따름</p></div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">거창 학살 사건 · 국민 방위군 사건 폭로</div>
+        <div class="step-desc">6·25 전쟁 중 일어난 두 사건이 폭로되면서 이승만 정부에 대한 여론 악화</div>
+      </div>
+    </div>
+    <div class="note-box">
+      <strong>거창 학살 사건</strong> — 국군이 빨치산 토벌을 명분으로 거창·산청·함양 등지에서 민간인을 학살한 사건. 거창 지역 국회의원의 폭로로 알려졌고, 국군이 진상 조사단을 습격하는 등 은폐를 시도해 더 큰 파문을 일으켰다.<br>
+      <strong>국민 방위군 사건</strong> — 국민 방위군은 6·25 전쟁 당시 예비군 편성을 위해 징집한 부대이다. 고위 간부들이 보급품을 빼돌려 수많은 국민 방위군이 기아·질병 등으로 사망했다.
+    </div>
+    <div class="causal-link"><p>국회에서 이승만을 지지하는 세력이 줄고 여론까지 나빠지자, 이승만 정부는 국회가 대통령을 뽑는 방식으로는 재선이 어렵다고 판단했다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">이승만 정부의 판단</div>
+        <div class="step-desc">국회에서 대통령을 뽑는 간선제로는 이승만의 재선 곤란</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">자유당 창당 · 직선제 개헌안 제출</div>
+        <div class="step-desc">지지 기반을 넓히려 자유당 창당(1951, 임시 수도 부산) <span class="ebs-only">EBS</span>, 대통령 직선제 개헌안을 국회에 제출</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">국회의 부결</div>
+        <div class="step-desc">국회가 개헌안을 부결하고 내각제 개헌 추진</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>국회가 직선제 개헌안을 거부하자, 이승만 정부는 강압적인 수단을 동원해 개헌안을 통과시켰다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">공포 분위기 조성</div>
+        <div class="step-desc">계엄령 선포, 헌병을 동원해 야당 의원들이 탄 통근 버스 강제 연행, 야당 의원 간첩 혐의 구속(부산 정치 파동 <span class="ebs-only">EBS</span>, EBS는 "공산당 관련 혐의"로 서술)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">발췌 개헌(1952)</div>
+        <div class="step-desc">국회 의사당을 군인과 경찰이 완전히 포위한 상태에서 기립 표결로 직선제 개헌안 통과</div>
+      </div>
+    </div>
+    <table class="data-table">
+      <caption>대통령 선출 방식의 변화</caption>
+      <thead><tr><th>구분</th><th>제53조</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">제헌 헌법(1948)</td><td>대통령과 부통령은 국회에서 무기명 투표로 각각 선거</td></tr>
+        <tr><td class="hd">발췌 개헌안(1952)</td><td>대통령과 부통령은 국민의 보통·평등·직접·비밀 투표에 의해 각각 선거</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">발췌 개헌은 정부와 국회의 개헌안을 발췌했다는 뜻이지만, 정부의 대통령 직선제 안이 핵심이었다(교과서 각주). 야당의 내각 책임제 안과 자유당의 직선제 안의 일부 요소를 뽑았기 때문에 붙은 이름이며, 직선제는 바로 실시되었으나 국회를 양원으로 구성하는 것은 <a href="Ⅱ-2-3-01_419혁명_도표.html" style="color:var(--brass); font-weight:700; text-decoration:none;">4·19 혁명</a> 후에야 이루어졌다 <span class="ebs-only">EBS</span> 제헌 헌법의 대통령 임기는 4년이고 1회 중임할 수 있었다 <span class="ebs-only">EBS</span></p>
+    <div class="note-box">5·10 총선거와 제헌 헌법(대통령을 국회에서 선출하는 간접 선거제)은 <a href="Ⅱ-2-1-05_대한민국의수립_도표.html">「대한민국의 수립」</a> 소주제에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="lifelong">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>종신 집권을 추구하다 — 사사오입 개헌</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">제2대 대통령 선거</div>
+        <div class="step-desc">발췌 개헌 이후 치러진 선거에서 이승만이 반공을 내세우며 두 번째 당선</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">자유당의 개헌안 제출</div>
+        <div class="step-desc">이승만의 종신 집권을 위해 개헌 당시 대통령에 한해 중임 제한을 없애는 내용</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>개헌안이 통과되려면 재적 의원 2/3의 찬성이 필요했는데 1표가 모자라 부결되자, 자유당은 계산 방식을 바꿔 통과를 선언했다.</p></div>
+    <table class="data-table">
+      <caption>사사오입 개헌안의 표결(1954)</caption>
+      <thead><tr><th>구분</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">개헌안 표결</td><td>재적 의원 203명에 찬성 135명, 개헌 요건인 재적 의원 2/3(135.333…)에 미달해 부결</td></tr>
+        <tr><td class="hd">사사오입(반올림)</td><td>135.333…에 반올림을 적용해 재적 의원 2/3를 135명으로 해석, 개헌안 통과</td></tr>
+      </tbody>
+    </table>
+    <div class="quote-grid">
+      <div class="quote-block deep">
+        <h4>사사오입 개헌안(1954) 제55조 1항</h4>
+        <p style="margin:0;">"대통령·부통령의 임기는 4년이며 재선으로 1차 중임할 수 있다."</p>
+        <div class="src">사사오입 개헌안(1954) (교과서 재구성)</div>
+      </div>
+      <div class="quote-block deep">
+        <h4>사사오입 개헌안(1954) 부칙</h4>
+        <p style="margin:0;">"이 헌법 공포 당시의 대통령에는 중임 제한을 적용하지 않는다."</p>
+        <div class="src">사사오입 개헌안(1954) (교과서 재구성)</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">교과서 질문+ — 부칙의 '이 헌법 공포 당시의 대통령'이 누구인지 말해 보자. (본문: 자유당이 개헌 당시 대통령에 한해 중임 제한을 없애려 했다.)</p>
+    <div class="causal-link"><p>이 개헌은 이승만 정부에 대한 불신과 불만을 키웠고, 야당 세력이 하나로 모이는 계기가 되었다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">사사오입 개헌(1954)</div>
+        <div class="step-desc">1954년 총선에서 자유당이 국회 다수당이 된 뒤의 일 <span class="ebs-only">EBS</span></div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">이승만 정부에 대한 불신 고조</div>
+        <div class="step-desc">불신과 불만 고조 <span class="ebs-only">EBS</span></div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">민주당 창당</div>
+        <div class="step-desc">야당 주도로 창당 <span class="ebs-only">EBS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="anticomm">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>반공을 내세워 독재를 강화하다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">제3대 대통령 선거(1956)</div>
+        <div class="step-desc">사사오입 개헌 이후 치러진 선거에서 이승만이 세 번째 당선</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">조봉암의 부상</div>
+        <div class="step-desc">무소속 조봉암이 예상보다 많은 표를 얻어 경쟁자로 부상</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-4px;">EBS는 이 선거를 다음과 같이 보충한다 <span class="ebs-only">EBS</span> 자유당의 이승만, 민주당의 신익희, 진보 세력의 지원을 받은 조봉암이 출마했다. 선거 기간 중 신익희가 갑작스럽게 사망한 상황에서 이승만이 대통령에 당선되었고, 조봉암은 유효표의 30% 가량을 얻었다. 부통령 선거에서는 민주당의 장면이 자유당의 이기붕을 누르고 당선되었다.</p>
+    <div class="causal-link"><p>위기를 느낀 이승만 정부는 반공을 앞세워 반대 세력을 탄압하는 쪽으로 나아갔다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">진보당 사건</div>
+        <div class="step-desc">조봉암이 평화 통일을 주장하며 진보당 창당 → 진보당 해체, 조봉암에게 간첩 혐의 등을 씌워 사형(1959)</div>
+      </div>
+      <div class="flow-arrow">·</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">국가 보안법 개정</div>
+        <div class="step-desc">비판 세력 탄압, 정부 비판까지 처벌할 수 있도록 처벌 범위 확대</div>
+      </div>
+      <div class="flow-arrow">·</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">언론 통제와 국민반</div>
+        <div class="step-desc">『경향신문』 폐간, 동 단위 국민반을 조직해 주민 동원·감시, 정부 정책 선전·선거 동원 등 독재 체제 강화에 이용</div>
+      </div>
+    </div>
+    <div class="quote-block deep">
+      <h4>국가 보안법(1959년 시행) 제22조</h4>
+      <p style="margin:0;">"결사·단체를 위해 공연히 대통령·국회 의장·대법원장의 명예를 훼손한 자는 10년 이하 징역에 처한다."</p>
+      <div class="src">국가 보안법(1959년 시행) (교과서 재구성)</div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-8px;">EBS 요약 <span class="ebs-only">EBS</span> 제6조는 국헌을 위배하여 정부를 참칭하거나 국가를 변란할 목적으로 결사 또는 집단을 구성한 자를 처벌한다.</p>
+    <div class="sidebox">
+      <h4>역사 속 사람 — 조봉암의 사형, 그리고 무죄 판결</h4>
+      <table class="data-table">
+        <thead><tr><th>시기</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td class="hd">제3대 대통령 선거 이후</td><td>조봉암이 평화 통일을 주장하며 진보당 창당, 이승만 정부가 국가 변란 목적 진보당 창당 및 간첩 혐의를 씌움</td></tr>
+          <tr><td class="hd">1959</td><td>조봉암 사형</td></tr>
+          <tr><td class="hd">2007</td><td>진실·화해를 위한 과거사 정리 위원회가 '이승만 정권이 정적을 제거하기 위해 저지른 조작 사건'이라고 발표</td></tr>
+          <tr><td class="hd">2011</td><td>대법원이 조봉암의 간첩 혐의에 무죄 선고</td></tr>
+        </tbody>
+      </table>
+      <div class="quote-grid" style="margin-top:14px;">
+        <div class="quote-block">
+          <h4>과거사 정리 위원회 결정 요지(2007)</h4>
+          <p style="margin:0;">"정권에 위협이 되는 야당 정치인을 제거하려는 의도로 사형에 처한 정치 탄압 사건이다."</p>
+          <div class="src">진실·화해를 위한 과거사 정리 위원회 (교과서 재구성)</div>
+        </div>
+        <div class="quote-block">
+          <h4>대법원 재심 판결문(2011.1.20.)</h4>
+          <p style="margin:0;">"이 사건 재심에서 공소 사실 대부분이 무죄로 밝혀졌으므로 뒤늦게나마 그 잘못을 바로잡는다."</p>
+          <div class="src">대법원 재심 판결문 (교과서 재구성)</div>
+        </div>
+      </div>
+    </div>
+    <div class="quote-block deep">
+      <h4>이승만 대통령 동상 제막(1956)</h4>
+      <p style="margin:0;">"동상은 10여 개월에 걸쳐 7만여 명의 인원이 들어 높이 81척, 부지 3천여 평으로 건립되었다."</p>
+      <div class="src">『경향신문』, 1956. 8. 17. (교과서 재구성)</div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-8px;">교과서 도입 사진 설명 — 1956년 이승만 대통령 취임일에 서울 남산에서 약 25m 높이의 동상을 공개했다.</p>
+    <div class="note-box">이승만 정부의 반공 체제(국가 보안법 제정·국민 보도 연맹)는 <a href="Ⅱ-2-1-05_대한민국의수립_도표.html">「대한민국의 수립」</a> 소주제에서, 반공 분위기 속에서 영화 『피아골』의 상영이 중지된 사례는 <a href="Ⅱ-2-2-01_625전쟁_도표.html#more">「6·25 전쟁」</a> 소주제의 「더 알아보기」에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="recovery">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>남한에서 전후 복구를 위해 노력하다</h2>
+    </div>
+    <p class="block-sub">교과서 배울 내용 Q2 "남북한은 어떻게 전쟁의 피해를 복구하였을까?"에 답하는 블록이다.</p>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">전쟁의 피해</div>
+        <div class="step-desc">대부분의 농경지 황폐, 산업 시설 파괴, 식량 등 물자 부족, 실업자 급증</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo-soft)">
+        <div class="step-title">이승만 정부의 복구 노력</div>
+        <div class="step-desc">귀속 재산을 민간에 매각, 원조로 들어온 물자를 분배해 전후 복구 자금 마련, 민간 중심의 경제 발전 유도</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo-soft)">
+        <div class="step-title">복구의 성과</div>
+        <div class="step-desc">1950년대 후반 주요 산업 시설이 어느 정도 복구</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>그러나 매각과 분배를 정부가 맡으면서 특정 기업이 혜택을 독차지했고, 그 과정에서 정치인과 기업 사이의 부도덕한 관계가 나타났다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo-soft)">
+        <div class="step-title">귀속 재산 매각·원조 물자 분배</div>
+        <div class="step-desc">과정에서 특정 기업에 혜택 집중</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo-soft)">
+        <div class="step-title">정경 유착·독과점</div>
+        <div class="step-desc">정경 유착은 정치인과 기업 사이의 부도덕한 관계</div>
+      </div>
+    </div>
+    <div class="note-box">귀속 재산(미군정이 적산으로 압류한 일본인 소유 재산, 정부 수립 이후 이승만 정부에 이관)의 처리와 농지 개혁은 <a href="Ⅱ-2-1-05_대한민국의수립_도표.html">「대한민국의 수립」</a> 소주제에서 다루었다. 전쟁의 피해는 <a href="Ⅱ-2-2-01_625전쟁_도표.html">「6·25 전쟁」</a> 소주제에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="aid">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>미국의 원조가 전후 복구의 큰 힘이 되다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">미국의 원조</div>
+        <div class="step-desc">한국 경제를 재건하고 공산주의 확산을 막으려는 목적, 가장 많이 들어온 물자는 밀·사탕수수·면화 등 미국의 잉여 농산물</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>잉여 농산물이 들어오자 식량 문제가 풀리고 이를 가공하는 산업이 자랐지만, 그 값싼 농산물 때문에 농촌은 오히려 타격을 입었다.</p></div>
+    <table class="data-table">
+      <caption>미국 원조의 명암</caption>
+      <thead><tr><th>구분</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">도움</td><td>식량 문제 해결, 삼백 산업(밀가루·설탕·면직물, 생산물이 흰색이어서 붙은 이름) 등 소비재 산업 발달</td></tr>
+        <tr><td class="hd">부작용</td><td>미국 농산물의 대량 유입으로 국내 농산물 가격 폭락, 농촌 경제가 큰 타격</td></tr>
+        <tr><td class="hd">전환</td><td>미국의 경제 불황으로 1950년대 말부터 무상 원조가 유상 차관으로 전환, 원조에 크게 의존하던 한국 경제가 위기를 맞음</td></tr>
+      </tbody>
+    </table>
+    <table class="data-table">
+      <caption>원면 소비량(단위: 천 파운드, 한국개발연구원, 1995)</caption>
+      <thead><tr><th>연도</th><th>국내산</th><th>외국산</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">1955</td><td class="num">2,210</td><td class="num">66,408</td></tr>
+        <tr><td class="hd">1956</td><td class="num">1,723</td><td class="num">76,905</td></tr>
+        <tr><td class="hd">1957</td><td class="num">110</td><td class="num">105,271</td></tr>
+        <tr><td class="hd">1958</td><td class="num">80</td><td class="num">110,690</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">원조로 값싼 면화가 들어오면서 국내산 면화 사용이 크게 줄었다(교과서 도표 설명). 교과서의 「원조 경제 규모」 도표(1953~1960, 백만 달러)는 미국의 원조가 줄자 수입이 늘어 무역 수지가 악화되었음을 보여 준다.</p>
+    <table class="data-table">
+      <caption>미국의 경제 원조 추이 <span class="ebs-only">EBS</span></caption>
+      <thead><tr><th>연도</th><th>1946</th><th>1949</th><th>1952</th><th>1955</th><th>1958</th><th>1961</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">원조액(EBS 도표 표기)</td><td class="num">4,950</td><td class="num">11,651</td><td class="num">16,133</td><td class="num">23,671</td><td class="num">32,127</td><td class="num">19,925</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">출처: EBS 개념완성 197쪽 자료 탐구 3(『경제 통계 연보』, 2018). 단위는 EBS 도표의 표기를 따랐다.</p>
+    <table class="data-table">
+      <caption>전후 사회 변화 <span class="ebs-only">EBS</span></caption>
+      <tbody>
+        <tr><td class="hd">내용</td><td>서울·부산 등 도시 인구 증가, 초등학교 의무 교육 실시, 반공 교육 강화, 가정과 사회에서 여성의 역할 증대, 미국 문화 확산</td></tr>
+        <tr><td class="hd">덧붙임</td><td>6·25 전쟁 중 남성 사상자가 대거 발생해 여성의 사회적 역할이 커졌는데, 이를 두고 논쟁이 벌어지기도 했다.</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">전쟁으로 인한 여성의 역할 확대와 미국 대중문화 유입은 <a href="Ⅱ-2-2-01_625전쟁_도표.html#society">「6·25 전쟁」</a> 소주제의 「전쟁으로 사회가 변하다」에서 다루었다.</div>
+    <div class="sidebox">
+      <h4>역사 깊이 보기 — 교육, 한국 재건의 원동력</h4>
+      <p>6·25 전쟁 중에도 많은 학생이 피란지에 세워진 임시 학교에 다녔으며, 전쟁 중 초등학교 의무 교육이 실질적으로 시행되었다. 이러한 한국인의 교육열과 교육 제도의 정비는 전후 한국 경제가 빠르게 발달하는 원동력이 되었다.</p>
+      <div class="quote-block" style="margin:14px 0 0;">
+        <h4>임시 학교의 수업 풍경</h4>
+        <p style="margin:0;">"어디를 가든, 정거장에서도 천막 속에서도 묘지에서도 수업을 하고 있다."</p>
+        <div class="src">『뉴욕타임스』, 1951. 4. 23. (교과서 재구성)</div>
+      </div>
+      <p>전시 학생증(부산광역시립박물관)은 전쟁 중 징집을 유예하고 학생의 신분을 보장하기 위해 발급했다. 「랜선 답사」 — e영상역사관의 '대한뉴스관' 코너에서 1950년대 한국 경제의 모습을 살펴보자(교과서).</p>
+    </div>
+  </section>
+
+  <section class="block" id="northpol">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>북한에서 사회주의 독재 체제가 강화되다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">초기 북한 정권</div>
+        <div class="step-desc">소련의 지원을 받은 김일성을 중심으로 한 다양한 세력의 연합</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">6·25 전쟁 중</div>
+        <div class="step-desc">김일성이 전쟁을 거치면서 반대 세력을 제거해 권력 기반 강화</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>스탈린이 죽은 뒤 소련에서 개인숭배 비판이 일자 북한에서도 김일성을 비판하는 움직임이 나타났고, 김일성은 이를 반대 세력을 없앨 구실로 삼았다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">스탈린 개인숭배 비판</div>
+        <div class="step-desc">스탈린 사후 소련에서 비판, 북한에서도 김일성 비판 움직임</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">반대 세력의 대대적 숙청</div>
+        <div class="step-desc">김일성이 비판 움직임을 빌미로 숙청(숙청은 반대파를 제거함)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">1인 독재 체제 강화</div>
+        <div class="step-desc">중국과 소련이 대립하는 틈을 타 독자 노선 강조</div>
+      </div>
+    </div>
+    <table class="data-table">
+      <caption>김일성에게 숙청된 사람들(교과서 「역사 속 사람」)</caption>
+      <thead><tr><th>인물</th><th>광복 전</th><th>광복 후 · 북한에서의 활동</th><th>이후</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">박헌영</td><td>일제 강점기 사회주의자로 활동</td><td>광복 이후에도 남한에서 남로당을 결성하는 등 사회주의 활동, 월북해 북한 정권의 부수상까지 오름</td><td>6·25 전쟁 이후 숙청</td></tr>
+        <tr><td class="hd">김두봉</td><td>한글 학자이자 독립운동가</td><td>김일성 종합 대학 초대 총장, 북한 정권 수립 당시 초대 최고 인민 회의 상임 위원장(명목상 국가 수반)</td><td>6·25 전쟁 이후 김일성을 비판하다가 숙청</td></tr>
+        <tr><td class="hd">김원봉</td><td>일제 강점기 의열단 등 독립운동</td><td>월북해 북한 정권 수립에 참여, 국가 검열상(감사원장)·최고 인민 회의 부의장(국회 부의장) 등</td><td>6·25 전쟁 이후 숙청당한 것으로 알려져 있음</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">박헌영이 좌익 세력으로 활동한 광복 직후의 정치 세력은 <a href="Ⅱ-2-1-02_815광복_도표.html">「8·15 광복」</a>, 북한 정권의 수립은 <a href="Ⅱ-2-1-05_대한민국의수립_도표.html">「대한민국의 수립」</a>, 김원봉의 의열단 활동과 조선 의용대는 <a href="Ⅱ-1-3-01_무장독립투쟁과의열투쟁_도표.html">「무장 독립 투쟁과 의열 투쟁」</a>·<a href="Ⅱ-1-5-03_1930년대무장투쟁_도표.html">「1930년대 무장 투쟁」</a> 소주제에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="northeco">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>북한에서 전후 복구가 이루어지다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">전쟁의 피해</div>
+        <div class="step-desc">북한 전역이 거의 폐허, 경제가 소련과 중국 등 사회주의 국가의 원조에 크게 의존</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">복구 계획</div>
+        <div class="step-desc">전후 복구 3개년 계획과 경제 개발 5개년 계획 추진, 사회주의 경제 기반 마련</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">천리마 운동(1956~)</div>
+        <div class="step-desc">'하루에 천 리를 달리는 말'을 뜻하는 운동, 대중의 노동력을 동원해 생산성 제고</div>
+      </div>
+    </div>
+    <div class="limit-box">
+      <h4>천리마 운동의 한계 — 교과서 서술</h4>
+      <ul>
+        <li>초기에는 어느 정도 효과를 거둠</li>
+        <li>자본 투자와 기술 혁신이 이루어지지 않아 한계에 부딪힘</li>
+      </ul>
+      <div style="margin-top:8px; font-size:12.5px;">출처: 교과서 95쪽</div>
+    </div>
+    <div class="causal-link"><p>복구 과정에서 북한은 경제 체제 자체도 바꿔, 개인이 생산 수단을 갖지 못하게 했다.</p></div>
+    <table class="data-table">
+      <caption>북한 사회주의 경제 체제의 강화</caption>
+      <thead><tr><th>구분</th><th>6·25 전쟁 이전</th><th>전후 복구 과정</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">사유 재산</td><td>상당 부분 인정</td><td>개인이 생산 수단을 소유하는 것 금지</td></tr>
+        <tr><td class="hd">농지</td><td>—</td><td>협동조합 소유로 전환</td></tr>
+        <tr><td class="hd">소규모 개인 상공업</td><td>—</td><td>생산 협동조합으로 전환</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">9</span>
+      <h2>정리 — 남북한의 비교와 확인하기</h2>
+    </div>
+    <table class="data-table">
+      <thead><tr><th></th><th>남한(이승만 정부)</th><th>북한(김일성 정권)</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">권력 유지 방식</td><td>발췌 개헌(1952)·사사오입 개헌(1954)으로 장기 집권 추구</td><td>6·25 전쟁을 거치며 반대 세력을 제거해 권력 기반 강화</td></tr>
+        <tr><td class="hd">반대 세력에 대한 조치</td><td>반공을 앞세워 진보당 해체·조봉암 사형, 국가 보안법 개정, 경향신문 폐간</td><td>스탈린 개인숭배 비판을 빌미로 반대 세력 대대적 숙청</td></tr>
+        <tr><td class="hd">주민 통제·동원</td><td>동 단위 국민반으로 주민 동원·감시</td><td>천리마 운동으로 대중의 노동력 동원</td></tr>
+        <tr><td class="hd">전후 복구의 외부 의존</td><td>미국의 원조(잉여 농산물), 원조 물자 분배·귀속 재산 매각</td><td>소련·중국 등 사회주의 국가의 원조</td></tr>
+        <tr><td class="hd">경제 체제</td><td>민간을 중심으로 경제 발전, 삼백 산업 발달</td><td>농지·소규모 상공업의 협동조합화, 개인의 생산 수단 소유 금지</td></tr>
+        <tr><td class="hd">한계</td><td>정경 유착·독과점, 농촌 경제 타격, 무상 원조의 유상 차관 전환으로 인한 위기</td><td>자본 투자와 기술 혁신 부족으로 천리마 운동의 한계</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">전쟁 이후 남북한이 서로에 대한 적대감을 독재 체제를 강화하는 데 활용하며 분단이 고착되어 갔다는 서술은 <a href="Ⅱ-2-2-01_625전쟁_도표.html#ruin">「6·25 전쟁」</a> 소주제에서 다루었다.</div>
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>남북한의 정치는 어떻게 변화하였을까?</li>
+        <li>남북한은 어떻게 전쟁의 피해를 복구하였을까?</li>
+        <li>1956년 이승만 대통령 취임일에 서울 남산에서 약 25m 높이의 동상이 공개되었다. 이렇게 거대한 동상을 세운 까닭은 무엇일까?</li>
+        <li>[질문+] 사사오입 개헌안 부칙의 '이 헌법 공포 당시의 대통령'이 누구인지 말해 보자.</li>
+      </ol>
+    </div>
+    <details class="check-item">
+      <summary style="font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px;">스스로 확인하기</summary>
+      <div class="check-box" style="margin-top:14px;">
+        <div class="check-item"><details><summary>Q1. 제2대 국회의원 선거에서는 이승만 정부에 비판적인 (      ) 출신이 많이 당선되었다.</summary>
+          <div class="check-answer">무소속이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q2. 발췌 개헌으로 대통령 선출 방식이 간선제에서 (      )(으)로 바뀌었다.</summary>
+          <div class="check-answer">직선제이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q3. 자유당은 이승만 대통령의 종신 집권을 위해 (      ) 개헌안을 통과시켰다.</summary>
+          <div class="check-answer">사사오입이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q4. 이승만 정부는 주민을 효율적으로 동원·감시하려 국민반을 조직하였다. (O, X)</summary>
+          <div class="check-answer">O이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q5. 미국의 원조를 바탕으로 밀가루, 설탕, 면직물의 (      ) 산업이 발달하였다.</summary>
+          <div class="check-answer">삼백이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q6. 1950년대 말 미국의 무상 원조가 유상 차관으로 전환되었다. (O, X)</summary>
+          <div class="check-answer">O이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q7. 김일성은 6·25 전쟁을 거치면서 반대 세력을 제거하여 권력 기반을 강화해 나갔다. (O, X)</summary>
+          <div class="check-answer">O이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q8. (      ) 운동은 초기에는 어느 정도 효과를 거두었으나 자본 투자와 기술 혁신이 이루어지지 않아 한계를 맞았다.</summary>
+          <div class="check-answer">천리마이다.</div>
+        </details></div>
+      </div>
+    </details>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:14px;">이승만 정부의 독재에 저항한 <a href="Ⅱ-2-3-01_419혁명_도표.html" style="color:var(--brass); font-weight:700; text-decoration:none;">「4·19 혁명」</a>은 별도 소주제에서 다룬다.</p>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>고등학교 『한국사』 교과서(동아출판사, 2022 개정 교육과정), Ⅱ. 대한민국의 발전, 2. 6·25 전쟁과 분단의 고착화 「02 전후 남북한의 정치와 경제」, 92–95쪽 — 본문·연표·사료(사사오입 개헌안, 국가 보안법, 조봉암 관련 결정 요지와 판결문, 『경향신문』 동상 기사, 『뉴욕타임스』)·역사 속 사람·역사 깊이 보기·확인하기의 기본 출처</li>
+      <li>EBS 개념완성 한국사Ⅱ (2022), 「6·25 전쟁과 남북 분단의 고착화」, 196–197쪽 — 발췌 개헌·사사오입 개헌·반공 체제 강화·전후 경제 복구·북한의 정치와 경제 사실 관계 교차 확인. 교과서에 없고 EBS에만 있는 내용에는 <span class="ebs-only">EBS</span> 표식을 달았다.</li>
+    </ol>
+    <div class="note">
+      함께 업로드된 2006년 『한국 근현대사』(중앙교육) 294–296쪽·338–341쪽은 2007 개정 이전 교육과정의 자료이므로 본문에 반영하지 않고 배경 확인용으로만 참고했다. 이 소주제에는 개념어 CSV가 제공되지 않아, 교과서 강조 용어와 EBS 핵심 개념(발췌 개헌·사사오입 개헌·진보당 사건·삼백 산업·국민 방위군 사건)의 합집합으로 대조했고 모두 반영했다. 발췌 개헌 때 야당 의원을 구속한 혐의를 교과서는 "간첩 혐의", EBS는 "공산당 관련 혐의"로 서술해 본문에는 교과서 표현을 두고 EBS 표현을 병기했다. 교과서 96–97쪽(내 곁의 한국사·자료 탐구 1·2)은 「6·25 전쟁」 소주제의 본문이 직접 가리키는 자료여서 그쪽의 「더 알아보기」에 실었다.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

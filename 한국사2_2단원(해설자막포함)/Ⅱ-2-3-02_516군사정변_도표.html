@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5·16 군사정변과 10월 유신 | 정변에서 유신, 그리고 10·26까지</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* 확인 필요 태그 — 원문에 인과가 명시되지 않은 지점 */
+  .need-check{ display:none; /* 2026-09-23: 학생 화면에는 숨김 — 근거 없는 인과를 지어내지 않기 위한 내부(교사용) 표시라 노출하지 않음. 원래 inline-block이었음 */ font-size:11.5px; font-weight:700; color:var(--brass); border:1px solid var(--brass); border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle; }
+  /* EBS 전용 개념 표식 — 현행 교과서에 없고 EBS 개념완성에만 있는 내용 */
+  .ebs-only{ display:inline-block; font-size:11px; font-weight:700; color:var(--paper-card); background:var(--brass); border-radius:4px; padding:1px 6px; margin-left:4px; vertical-align:middle; }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  @media (max-width:760px){.branch-cols{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col.crimson-soft{border-top-color:var(--crimson-soft); border-top-width:5px;}
+  .branch-col.crimson-dash{border-top-color:var(--crimson); border-top-style:dashed;}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px; color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); }
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.num{text-align:right; font-variant-numeric:tabular-nums;}
+  table.data-table tr.deep td.hd{color:var(--indigo);}
+  table.data-table tr.crimson td.hd{color:var(--crimson);}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:700px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-grid .quote-block{margin-bottom:0;}
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block p{margin:0 0 6px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson .src{color:var(--crimson);}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox table.data-table{margin:10px 0 0;}
+  .sidebox p{margin:8px 0 0; font-size:13.5px; color:var(--ink-soft);}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+  .think-item{margin-bottom:10px; font-size:14px;}
+  .think-item summary{cursor:pointer; list-style:none; padding:2px 0; font-weight:500; color:var(--ink);}
+  .think-item summary::-webkit-details-marker{display:none;}
+  .think-item summary::before{content:"▸ "; color:var(--indigo);}
+  .think-item[open] summary::before{content:"▾ ";}
+  .think-answer{margin-top:6px; padding:9px 13px; background:rgba(255,255,255,0.6); border-left:3px solid var(--indigo); border-radius:3px; font-size:13.5px; color:var(--ink-soft);}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅱ-2-3-01_419혁명_도표.html" style="color:var(--brass);">‹ 이전 소주제</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#coup">5·16 군사 정변</a>
+  <a href="#hanil">한·일 협정</a>
+  <a href="#vietnam">베트남 파병</a>
+  <a href="#third">3선 개헌</a>
+  <a href="#yushin">10월 유신</a>
+  <a href="#resist">저항과 탄압</a>
+  <a href="#end">유신 체제의 종말</a>
+  <a href="#summary">정리·확인</a>
+  <a href="#more">더 알아보기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅱ-2-3-03_518민주화운동_도표.html" class="sib" style="color:var(--brass); pointer-events:auto;">다음 소주제 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>대한민국의 발전</span> · 민주주의의 시련과 민주화 운동 · 5·16 군사정변과 10월 유신</div>
+    <h1>정변으로 잡은 권력은, 유신 체제로 굳어졌다가 10·26으로 끝났다</h1>
+    <p class="lead">1961년 박정희를 중심으로 한 일부 군부 세력이 정변을 일으켜 권력을 잡았다. 박정희 정부는 경제 개발과 한·일 협정·베트남 파병으로 정당성을 확보하려 했고, 3선 개헌과 10월 유신으로 장기 집권 구도를 만들었으며, 반공을 앞세워 반대 세력을 탄압했다. 이에 맞선 민주화 운동은 부·마 민주 항쟁으로 이어졌고, 1979년 10·26 사태로 유신 체제는 막을 내렸다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1961 – 1979</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>하나의 정변, 집권을 이어 간 세 가지 방법</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--crimson)">적색 = 박정희 정부(정부 측)</strong> · <strong style="color:var(--indigo)">남색 = 시민·학생·재야(저항하는 쪽)</strong> · <strong style="color:var(--brass)">황동색 = 전환점</strong> · <strong style="color:var(--ink-soft)">무채색 = 외부 요인(미국·일본·북한)</strong>. 4·19 혁명 소주제와 같이 이 소주제의 적색은 <strong>정부 측</strong>을 뜻한다. 정부가 집권을 이어 간 세 방법은 적색 선의 모양으로 구분했다 — <strong>실선 = 경제 개발과 대외 관계, 굵은 옅은 선 = 헌법을 고친 장기 집권, 점선 = 반공과 탄압</strong>. 세 방법은 서로가 서로를 낳은 것이 아니라, 아래 하나의 출발점에서 함께 쓰였다 — 그래서 화살표로 잇지 않고 갈래로 그렸다. 교과서 배울 내용 Q1 "박정희 정부는 어떻게 독재 체제를 강화해 나갔을까?"에 대응한다.</p>
+
+    <div class="branch-root">5·16 군사 정변(1961)으로 집권한 박정희 정부</div>
+    <p class="branch-cause">군사 정변으로 권력을 잡은 정부는 집권의 정당성을 확보하고 권력을 이어 가려고 여러 방법을 함께 썼다.</p>
+    <div class="branch-cols">
+      <div class="branch-col crimson">
+        <h4>경제 개발과 대외 관계</h4>
+        <p class="why">왜: 집권의 정당성을 확보하기 위해 경제 개발을 추진하고 그 자금과 지지가 필요함</p>
+        <div class="branch-node">한·일 협정(1965)으로 국교 정상화, 베트남 파병으로 미국의 지지·차관·외화 확보</div>
+      </div>
+      <div class="branch-col crimson-soft">
+        <h4>헌법을 고친 장기 집권</h4>
+        <p class="why">왜: 대통령 임기와 선출 방식을 바꿔야 집권을 이어 갈 수 있음</p>
+        <div class="branch-node">군정 헌법(대통령 중심제·단원제), 3선 개헌(1969), 유신 헌법(1972)</div>
+      </div>
+      <div class="branch-col crimson-dash">
+        <h4>반공과 탄압</h4>
+        <p class="why">왜: 정변과 개헌에 대한 반대와 저항이 이어지고 북한의 도발이 계속됨</p>
+        <div class="branch-node">중앙정보부, 반공 교육 강화, 긴급 조치, 조작한 간첩 사건</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item crimson"><div class="tl-year">1961</div><div class="tl-body"><div class="tl-title">5월 16일 5·16 군사 정변</div><div class="tl-desc">비상계엄 선포, 국가 재건 최고 회의 설치, 군정 실시</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1962</div><div class="tl-body"><div class="tl-title">김종필-오히라 메모</div><div class="tl-desc">중앙정보부장 김종필과 일본 외무상 오히라의 비밀 합의</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1963</div><div class="tl-body"><div class="tl-title">박정희 대통령 당선</div><div class="tl-desc">전역 직후 민주공화당 후보로 출마해 당선</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1964</div><div class="tl-body"><div class="tl-title">베트남 파병 시작(~1973) <span class="ebs-only">EBS</span></div><div class="tl-desc">미국의 요청에 따른 국군 파병(EBS 표기)</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1965</div><div class="tl-body"><div class="tl-title">한·일 협정 체결</div><div class="tl-desc">앞서 학생들의 6·3 시위, 계엄 선포로 억누름</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1966</div><div class="tl-body"><div class="tl-title">브라운 각서</div><div class="tl-desc">주한 미국 대사 브라운이 한국 정부에 전달한 각서</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1968</div><div class="tl-body"><div class="tl-title">청와대 습격 · 반공 정책 강화</div><div class="tl-desc">북한 특수 부대의 청와대 습격, 향토 예비군 창설·주민 등록 제도 강화·국민 교육 헌장 제정</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1969</div><div class="tl-body"><div class="tl-title">3선 개헌</div><div class="tl-desc">대통령 3회 연임 허용 개헌안을 편법으로 통과</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1972</div><div class="tl-body"><div class="tl-title">7·4 남북 공동 성명 · 10월 유신</div><div class="tl-desc">그해 10월 비상계엄·국회 해산·헌법 개정</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1975</div><div class="tl-body"><div class="tl-title">제2차 인혁당 사건</div><div class="tl-desc">누명을 쓴 8명에게 형 확정 약 20시간 만에 사형 집행</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1976</div><div class="tl-body"><div class="tl-title">3·1 민주 구국 선언</div><div class="tl-desc">함석헌·김대중 등이 명동 성당에서 발표</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1978</div><div class="tl-body"><div class="tl-title">10대 국회의원 선거</div><div class="tl-desc">직접 선거에서 야당인 신민당의 득표율이 여당보다 높음</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1979</div><div class="tl-body"><div class="tl-title">YH 무역 노동자 시위 · 부·마 민주 항쟁</div><div class="tl-desc">신민당 총재 김영삼 제명, 10월 16일 부산·마산 시위</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1979</div><div class="tl-body"><div class="tl-title">10월 26일 10·26 사태</div><div class="tl-desc">박정희 대통령 피살, 유신 체제가 막을 내림</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="coup">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>5·16 군사 정변이 일어나다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">5·16 군사 정변(1961.5.16.)</div>
+        <div class="step-desc">박정희를 중심으로 한 일부 군부 세력이 새벽에 사회 혼란 수습을 구실로 정변을 일으켜 권력 장악 <span class="need-check">확인 필요</span> 구실인 '사회 혼란'의 구체적 내용은 교과서에 서술되어 있지 않음</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">비상계엄·군정</div>
+        <div class="step-desc">전국에 비상계엄을 선포해 헌법의 기능 정지, 국가 재건 최고 회의를 설치해 입법·사법·행정권 장악</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-4px;">정변은 비합법적으로 일어난 정치적 변동을 뜻한다(교과서 각주). EBS는 정변 세력이 반공·경제 개발·민정 이양을 골자로 하는 '혁명 공약'을 발표했다고 서술한다 <span class="ebs-only">EBS</span></p>
+    <div class="quote-block crimson">
+      <h4>혁명 공약(1961.5.16., 일부)</h4>
+      <p>"반공을 국시의 제일의로 삼고 반공 태세를 재정비 강화할 것입니다."</p>
+      <p>"민생고를 시급히 해결하고 국가 자주 경제 재건에 총력을 경주할 것입니다."</p>
+      <p>"과업이 성취되면 양심적인 정치인들에게 정권을 이양하고 본연의 임무에 복귀할 준비를 갖추겠습니다."</p>
+      <div class="src">『중앙방송』, 1961. 5. 16. (교과서 재구성)</div>
+    </div>
+    <div class="causal-link"><p>정변 세력은 군정을 시작한 뒤, 반대 세력을 누르는 한편 다음 집권을 위한 기구와 제도를 갖춰 나갔다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">반대 세력 탄압</div>
+        <div class="step-desc">정치인의 활동 금지, 언론 압박</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">기구·제도 정비</div>
+        <div class="step-desc">중앙정보부 설치, 비밀리에 민주공화당 창당, 대통령 중심제와 국회 단원제로 헌법 개정(단원제는 하나의 의회만 두는 것)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">박정희 대통령 당선(1963)</div>
+        <div class="step-desc">정변 당시 민정(민간인에 의한 정치)에 참여하지 않겠다고 했으나 전역 직후 민주공화당 후보로 출마해 당선, EBS는 윤보선을 누르고 당선되었다고 서술 <span class="ebs-only">EBS</span></div>
+      </div>
+    </div>
+    <div class="note-box">장면 내각이 5·16 군사정변으로 무너지기까지의 과정은 <a href="Ⅱ-2-3-01_419혁명_도표.html">「4·19 혁명」</a> 소주제에서 다루었다. 그 소주제에서 EBS가 서술한 경제 개발 5개년 계획은 장면 내각이 착수하지 못했고 군사 정부가 일부 수정해 추진했다.</div>
+  </section>
+
+  <section class="block" id="hanil">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>한·일 협정을 체결하다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">경제 개발 추진</div>
+        <div class="step-desc">박정희 정부가 집권의 정당성을 확보하기 위해 추진</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">일본과 국교 정상화 추진</div>
+        <div class="step-desc">경제 개발 자금 마련이 목적</div>
+      </div>
+      <div class="causal-row h"><p>미국도 지지</p></div>
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">미국의 지지</div>
+        <div class="step-desc">한·미·일 안보 협력 체제 강화를 위해 국교 정상화를 적극 지지</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>회담이 진행되는 동안 배상과 사과 없이 합의가 이루어졌다는 사실이 알려지자, 학생들이 거리로 나섰다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">김종필-오히라 메모(1962)</div>
+        <div class="step-desc">중앙정보부장 김종필이 일본 외무상 오히라와 비밀리에 합의, 무상 3억 달러·유상 2억 달러·민간 차관 1억 달러 이상</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">6·3 시위</div>
+        <div class="step-desc">일제 식민 지배에 대한 배상·사과 없는 합의가 알려지자 학생들이 '굴욕적 한·일 외교 반대', '불법적 친일 정권 반대' 등을 내세워 대대적 시위</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">계엄과 협정 체결(1965)</div>
+        <div class="step-desc">박정희 정부가 계엄을 선포해 시위를 억누르고 한·일 협정을 체결, 일본과 국교 수립</div>
+      </div>
+    </div>
+    <table class="data-table">
+      <caption>한·일 협정의 쟁점들 — 한국과 일본의 해석</caption>
+      <thead><tr><th>조약</th><th>조항(재구성)</th><th>한국의 해석</th><th>일본의 해석</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">대한민국과 일본국 간의 기본 관계에 관한 조약</td><td>"1910년 8월 22일 및 그 이전의 조약과 협정이 이미 무효임을 확인한다."(제2조)</td><td>1910년 체결 당시부터 완전 무효</td><td>1910년 체결 당시는 유효·합법이었으나 일제의 항복(1945)으로 무효</td></tr>
+        <tr><td class="hd">재산 및 청구권에 관한 문제의 해결과 경제 협력에 관한 협정</td><td>"양 체약국과 그 국민의 재산·권리·청구권 문제가 완전히 그리고 최종적으로 해결된 것을 확인한다."(제2조 1항, 샌프란시스코 평화 조약 제4조 (a)에 규정된 것을 포함)</td><td>개인의 청구권은 논의 대상이 아니었으며 소멸된 적이 없음(2018년 대법원 판결)</td><td>국가뿐 아니라 개인의 청구권도 해결된(또는 포기한) 것으로 해석</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">출처: 교과서 「사료로 보는 역사 — 한·일 협정의 쟁점들」(101쪽), EBS 개념완성 203쪽 자료 탐구 1(같은 조약 조항과 해석 차이) <span class="ebs-only">EBS</span></p>
+    <div class="note-box">1951년 샌프란시스코 강화 조약에서 한국이 연합국으로 인정받지 못해 참여하지 못한 배경과 청구권 조항은 <a href="Ⅱ-2-1-01_냉전체제와동아시아_도표.html">「냉전 체제와 동아시아」</a> 소주제에서 다루었다.</div>
+    <div class="think-box">
+      <h4>생각 키우기 — 한·일 협정의 쟁점들</h4>
+      <ol>
+        <li>자료와 같이 한국과 일본이 한·일 협정을 다르게 해석하는 까닭을 정리해 보자.</li>
+        <li>청구권 협정 제2조의 해석과 관련해 다음에 대한 한국과 일본 정부의 입장을 조사하고 모둠별로 발표해 보자. (일본군 '위안부', 강제 동원)</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="vietnam">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>베트남 전쟁에 국군을 파병하다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">미국의 요청</div>
+        <div class="step-desc">박정희 정부가 미국의 요청에 따라 베트남 전쟁에 국군 파병(1964~1973) <span class="ebs-only">EBS</span></div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">파병으로 얻은 것</div>
+        <div class="step-desc">미국의 지지를 얻어 정권 안정, 경제 개발에 필요한 기술과 차관 제공, 파병 군인의 송금·군수 물자 수출·건설 사업 참여로 벌어들인 외화</div>
+      </div>
+    </div>
+    <div class="quote-block">
+      <h4>브라운 각서(1966) — 미국이 약속한 것</h4>
+      <p>"한국군 현대화를 위해 상당량의 장비를 제공하며 파병 경비를 부담한다."</p>
+      <p>"베트남 전쟁 보급 물자와 용역, 장비를 한국에서 구매한다."</p>
+      <p>"한국의 경제 발전을 지원하기 위해 차관을 제공한다."</p>
+      <div class="src">브라운 각서 (교과서 재구성) — 1966년 주한 미국 대사 브라운이 한국 정부에 전달한 각서. EBS는 브라운과 한국 외무 장관이 체결한 각서로 서술한다 <span class="ebs-only">EBS</span></div>
+    </div>
+    <div class="causal-link"><p>다만 파병에는 큰 대가도 따랐다.</p></div>
+    <table class="data-table">
+      <caption>베트남 파병의 영향</caption>
+      <thead><tr><th>구분</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr class="crimson"><td class="hd">경제·정치</td><td>미국의 지지로 정권 안정, 기술·차관 제공, 외화 획득이 경제 개발에 큰 도움 <span class="ebs-only">EBS</span> 기업의 해외 진출과 수출 증대</td></tr>
+        <tr><td class="hd">희생과 후유증</td><td>수많은 젊은이의 희생, 고엽제(식물의 잎을 제거하는 약품) 피해로 지금까지 고통받는 사람, 베트남 민간인 희생, 라이따이한(한국인 2세) 문제</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">동아시아 냉전과 베트남의 분단·전쟁은 <a href="Ⅱ-2-1-01_냉전체제와동아시아_도표.html">「냉전 체제와 동아시아」</a> 소주제에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="third">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>3선 개헌으로 장기 집권을 꾀하다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">1967 재선</div>
+        <div class="step-desc">박정희가 경제 성장을 기반으로 다시 대통령에 선출</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">1968 북한의 도발</div>
+        <div class="step-desc">북한 특수 부대가 청와대를 습격하는 등 도발 지속</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>박정희 정부는 북한의 도발을 계기로 반공 정책을 강화하고, 국민을 통제하는 수단을 늘려 갔다.</p></div>
+    <table class="data-table">
+      <caption>1968년 이후 강화된 반공 정책</caption>
+      <tbody>
+        <tr><td class="hd">향토 예비군</td><td>창설</td></tr>
+        <tr><td class="hd">학생 군사 교육</td><td>학생에게 군사 교육 실시</td></tr>
+        <tr><td class="hd">주민 등록 제도</td><td>강화</td></tr>
+        <tr><td class="hd">국민 교육 헌장</td><td>국민을 통제하고 반공 교육을 강화하기 위해 제정</td></tr>
+      </tbody>
+    </table>
+    <div class="causal-link"><p>이후 정부는 안보와 경제 발전을 내세워 헌법을 고치려 했고, 반대를 무릅쓰고 편법으로 통과시켰다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">3선 개헌 추진</div>
+        <div class="step-desc">국가 안보와 지속적인 경제 발전을 구실로 대통령 3회 연임 허용을 중심으로 개헌 추진</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">반대</div>
+        <div class="step-desc">야당과 시민, 학생들이 장기 독재를 위한 개헌이라며 반대</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">편법 통과(1969)</div>
+        <div class="step-desc">여당이 편법을 동원해 개헌안 통과, 이후 대통령 선거에서 세 번째 당선 <span class="ebs-only">EBS</span> 1971년 김대중을 힘겹게 누르고 당선</div>
+      </div>
+    </div>
+    <table class="data-table">
+      <caption>편법으로 통과된 3선 개헌안(1969.9.14.)</caption>
+      <tbody>
+        <tr><td class="hd">시각·장소</td><td>새벽 3시, 국회 의사당 별관</td></tr>
+        <tr><td class="hd">참석자</td><td>농성 중인 야당 의원들 몰래 여당인 공화당과 친여 무소속 의원 122명이 모임</td></tr>
+        <tr><td class="hd">표결</td><td>토론 없이 찬반 투표, 상정 2분 만에 찬성 122표·반대 0표로 가결</td></tr>
+        <tr><td class="hd">선포</td><td>의사봉을 준비하지 못한 국회 의장이 주전자 뚜껑을 세 번 두들겨 가결 선포</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">EBS는 박정희가 1967년 1회의 중임을 허용한 당시 헌법 규정에 따라 대통령 선거에 출마해 다시 당선되었다고 보충한다 <span class="ebs-only">EBS</span> 이승만 정부의 사사오입 개헌은 <a href="Ⅱ-2-2-02_전후남북한의정치와경제_도표.html" style="color:var(--brass); font-weight:700; text-decoration:none;">「전후 남북한의 정치와 경제」</a> 소주제에서 다루었다.</p>
+  </section>
+
+  <section class="block" id="yushin">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>10월 유신으로 장기 독재를 꾀하다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">닉슨 독트린(1969)</div>
+        <div class="step-desc">미국이 아시아에서 직접적·군사적 개입을 하지 않겠다고 선언, 냉전 완화의 시작</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">미국의 조치</div>
+        <div class="step-desc">북한과의 화해 권고, 주한 미군 일부 철수</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>미국의 태도가 바뀌면서 박정희 정부는 반공 정책을 계속 추진하기 어려워졌고, 장기 집권과 경제 침체로 국민의 불만도 커졌다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">7·4 남북 공동 성명(1972)</div>
+        <div class="step-desc">북한과 평화 통일 원칙에 합의</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">10월 유신(1972.10.)</div>
+        <div class="step-desc">현행 헌법이 평화 통일을 뒷받침할 수 없다는 명분으로 전국에 비상계엄 선포, 국회 해산, 헌법 개정 <span class="ebs-only">EBS</span> 비상 국무 회의에서 유신 헌법 제정 → 국민 투표로 확정 → 박정희 선출</div>
+      </div>
+    </div>
+    <table class="data-table">
+      <caption>유신 헌법(제4공화국 헌법)의 주요 내용</caption>
+      <thead><tr><th>구분</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr class="crimson"><td class="hd">임기</td><td>대통령 임기 6년, 중임 횟수 제한 없어짐 <span class="ebs-only">EBS</span> 종신 집권 가능</td></tr>
+        <tr class="crimson"><td class="hd">선출 방법</td><td>직접 선거에서 통일 주체 국민회의에서 선출하는 간접 선거로 변경 <span class="ebs-only">EBS</span> 대통령은 토론 없이 무기명 투표로 선거(제39조), 통일 주체 국민회의는 국회 의원 정수의 1/3에 해당하는 국회 의원을 선거(제40조)</td></tr>
+        <tr class="crimson"><td class="hd">대통령의 권한</td><td>국회의원 1/3 추천권, 국회 해산권, 법관 인사권 → 삼권 분립 무력화</td></tr>
+        <tr class="crimson"><td class="hd">긴급 조치권</td><td>헌법에 보장된 국민의 기본권을 제한할 수 있음</td></tr>
+      </tbody>
+    </table>
+    <table class="data-table">
+      <caption>통일 주체 국민회의의 대통령 선출(중앙선거관리위원회, 2023)</caption>
+      <thead><tr><th>구분</th><th>후보</th><th>득표율</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">8대</td><td>박정희(단독 출마)</td><td class="num">99.92%</td></tr>
+        <tr><td class="hd">9대</td><td>박정희(단독 출마)</td><td class="num">99.85%</td></tr>
+      </tbody>
+    </table>
+    <table class="data-table">
+      <caption>제3공화국 헌법과 유신 헌법(제4공화국 헌법)의 조항 비교(재구성)</caption>
+      <thead><tr><th>조항</th><th>제3공화국 헌법</th><th>유신 헌법</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">제1조 ②(주권)</td><td>주권은 국민에게 있고 모든 권력은 국민으로부터 나온다.</td><td>주권은 국민에게 있고, 국민은 그 대표자나 국민 투표에 의하여 주권을 행사한다.</td></tr>
+        <tr><td class="hd">제32조 ②(자유와 권리의 제한)</td><td>질서 유지 또는 공공복리를 위해 필요한 경우에 한해 법률로 제한할 수 있으며, 제한하는 경우에도 자유와 권리의 본질적인 내용을 침해할 수 없다.</td><td>자유와 권리를 제한하는 법률의 제정은 국가 안전 보장·질서 유지 또는 공공복리를 위해 필요한 경우에 한한다.</td></tr>
+        <tr><td class="hd">긴급한 조치의 발동</td><td>(제73조 ①) 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한해, 대통령은 최소한으로 필요한 법률의 효력을 가지는 명령을 발할 수 있다.</td><td>(제53조 ①) 대통령이 신속한 조치를 할 필요가 있다고 판단할 때에는 필요한 긴급 조치를 할 수 있다.</td></tr>
+        <tr><td class="hd">국회의 통제</td><td>(제73조 ④) 국회의 승인을 얻지 못한 명령 또는 처분은 그때부터 효력을 상실한다.</td><td>(제53조 ⑥) 국회는 재적 의원 과반수의 찬성으로 긴급 조치의 해제를 건의할 수 있으며, 대통령은 특별한 사유가 없는 한 이에 응하여야 한다.</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">출처: 교과서 「사료로 보는 역사 — 국민의 기본권을 제한한 유신 헌법」(102쪽). EBS는 유신 헌법이 삼권 분립을 무력화하고 대통령이 국민의 기본권마저 제한할 수 있게 해 권위주의적 독재 체제가 성립되었다고 요약한다 <span class="ebs-only">EBS</span></p>
+    <div class="think-box">
+      <h4>생각 키우기 — 국민의 기본권을 제한한 유신 헌법</h4>
+      <ol>
+        <li>제3공화국 헌법과 유신 헌법을 비교하여 어떤 부분이 바뀌었는지 정리해 보자.</li>
+        <li>위에서 비교한 내용을 바탕으로 유신 헌법이 국민의 기본권을 어떻게 제한하였는지 말해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="resist">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>유신 체제에 맞서 민주화 운동이 일어나다</h2>
+    </div>
+    <p class="block-sub">교과서 배울 내용 Q2 "유신 체제에 맞서 국민들은 어떻게 저항하였을까?"에 답하는 블록이다.</p>
+    <table class="data-table">
+      <caption>유신 체제에 대한 저항과 탄압</caption>
+      <thead><tr><th>구분</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr class="deep"><td class="hd">저항</td><td>중앙정보부가 유신 체제를 비판하던 김대중을 일본에서 납치하자 해명을 요구하는 대학생 시위 / 장준하·백기완 등이 중심이 된 개헌 청원 100만 인 서명 운동 / 천주교 사제들의 천주교 정의 구현 전국 사제단 조직 / 언론인들의 언론 자유 수호 투쟁 / 함석헌·김대중 등이 명동 성당에서 3·1 민주 구국 선언 발표(1976)</td></tr>
+        <tr class="crimson"><td class="hd">탄압</td><td>잇따라 긴급 조치를 발표해 정부를 향한 비판 억압 / 제2차 인혁당 사건 등 간첩 사건을 조작해 민주화 운동 탄압 <span class="ebs-only">EBS</span> 민청학련 사건</td></tr>
+      </tbody>
+    </table>
+    <div class="sidebox">
+      <h4>제2차 인혁당 사건(1975)</h4>
+      <table class="data-table">
+        <thead><tr><th>구분</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td class="hd">의미</td><td>인민 혁명당이라는 간첩단을 조직했다는 누명을 쓴 8명에게 대법원에서 형이 확정된 지 약 20시간 만에 사형을 집행한 사건 <span class="ebs-only">EBS</span> 북한의 지령을 받아 반국가 단체를 조직했다는 누명을 씌워 많은 사람을 가혹하게 처벌</td></tr>
+          <tr><td class="hd">영향</td><td>국제법학자협회가 8명이 사형된 1975년 4월 9일을 '사법사상 암흑의 날'로 지정, 2007년 대한민국 법원이 이 사건을 무죄로 판결</td></tr>
+        </tbody>
+      </table>
+      <p>EBS는 민청학련 사건을 다음과 같이 보충한다 <span class="ebs-only">EBS</span> 중앙정보부가 전국민주청년학생총연맹이라는 불법 단체가 불순 세력의 조종을 받아 정부 전복을 모의했다고 발표하고 180명을 구속 기소해 일부를 처벌했으나, 2009년 사법부는 이들에게 무죄를 선고했다.</p>
+    </div>
+    <div class="quote-block deep">
+      <h4>3·1 민주 구국 선언(1976.3.1.)</h4>
+      <p>"대한민국의 정통성은 민주주의에 있다."</p>
+      <div class="src">함석헌 외, 「민주 구국 선언」 (교과서 111쪽 자료 탐구 3, 재구성)</div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-8px;">EBS는 이 선언에 경제 성장만 앞세운 유신 체제를 비판하고 민주주의와 민족 통일을 요구하는 내용이 담겼다고 서술하며, 제3항을 "민족 통일은 오늘 이 겨레가 짊어진 지상의 과업이다"로 발췌한다 <span class="ebs-only">EBS</span> 선언문과 긴급 조치의 자료는 아래 <a href="#more" style="color:var(--brass); font-weight:700; text-decoration:none;">「더 알아보기」</a>에 실었다.</p>
+  </section>
+
+  <section class="block" id="end">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>유신 체제가 막을 내리다</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">직접 선거의 결과(1978)</div>
+        <div class="step-desc">박정희는 통일 주체 국민회의의 간접 선거로 다섯 번째 대통령에 당선되었으나, 직접 선거인 국회의원 선거에서는 야당이 여당보다 많은 표를 얻음</div>
+      </div>
+      <div class="flow-arrow">·</div>
+      <div class="flow-step" style="border-color:var(--ink)">
+        <div class="step-title">경제·국제 사정</div>
+        <div class="step-desc">제2차 석유 파동으로 경제가 어려워져 국민의 불만 증가, 미국이 박정희 정부의 인권 탄압을 비판하는 등 국제 사회의 여론 악화</div>
+      </div>
+    </div>
+    <table class="data-table">
+      <caption>10대 국회의원 선거 결과(1978, 서중석, 2005)</caption>
+      <thead><tr><th>정당</th><th>의석수</th><th>득표율</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">유신 정우회</td><td class="num">77석</td><td class="num">—</td></tr>
+        <tr><td class="hd">민주공화당</td><td class="num">68석</td><td class="num">31.7%</td></tr>
+        <tr><td class="hd">신민당</td><td class="num">61석</td><td class="num">32.8%</td></tr>
+        <tr><td class="hd">민주통일당</td><td class="num">3석</td><td class="num">7.4%</td></tr>
+        <tr><td class="hd">무소속</td><td class="num">22석</td><td class="num">28.1%</td></tr>
+        <tr><td class="hd">전체</td><td class="num">231석</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:-16px;">국회의원 1/3은 대통령의 추천을 받아 통일 주체 국민회의에서 선출했다(유신 정우회). 야당인 신민당의 득표율이 여당인 민주공화당보다 높다(교과서 도표 설명).</p>
+    <div class="causal-link"><p>위기에 몰린 정부가 노동자들의 시위와 야당 총재까지 누르려 하면서, 저항은 부산과 마산의 거리로 번졌다.</p></div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">YH 무역 노동자 시위(1979)</div>
+        <div class="step-desc">부당한 공장 폐쇄에 맞서 야당인 신민당 당사에서 시위 <span class="ebs-only">EBS</span> 회사 측의 일방적 폐업에 반발하던 노동자들이 당사에서 농성하던 중 경찰에 진압되었고, 이 과정에서 여성 노동자 1명 사망</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">정부의 대응</div>
+        <div class="step-desc">시위를 강제로 진압, 항의하던 신민당 총재 김영삼을 국회의원에서 제명</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">부·마 민주 항쟁</div>
+        <div class="step-desc">유신 체제에 대한 불만으로 부산과 마산(창원)에서 대학생 중심 시위, 장기 독재와 경기 침체로 불만이 높아진 시민도 참여</div>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">정권 내부의 갈등</div>
+        <div class="step-desc">시위 수습 방안을 놓고 갈등 발생 <span class="need-check">확인 필요</span> 갈등의 구체적 내용은 교과서에 서술되어 있지 않음</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">10·26 사태(1979.10.26.)</div>
+        <div class="step-desc">박정희 대통령이 중앙정보부장 김재규에게 피살, 유신 체제가 막을 내림 <span class="need-check">확인 필요</span> 사태의 경위는 교과서에 서술되어 있지 않음</div>
+      </div>
+    </div>
+    <div class="note-box">YH 무역 노동자 시위를 낳은 저임금·장시간 노동의 배경과 노동 운동의 흐름은 <a href="Ⅱ-2-4-01_산업화와사회변화_도표.html">「산업화와 사회 변화」</a> 소주제(노동 운동이 확산되다)에서 다룬다.</div>
+    <div class="sidebox">
+      <h4>부·마 민주 항쟁</h4>
+      <table class="data-table">
+        <thead><tr><th>구분</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td class="hd">전개</td><td>1979.10.15. 부산대학교에서 민주 투쟁 선언문 등 배포 → 10.16. 오전 10시 학생들이 '유신 철폐', '독재 타도' 등이 적힌 선언문을 나누어 주며 반독재 시위 → 학생들이 학교 밖으로 나오자 시민들도 합류</td></tr>
+          <tr><td class="hd">정부의 대응</td><td>부산 일대에 비상계엄을 선포하고 공수 부대와 탱크·장갑차 투입, 그러나 시위는 마산·창원 등 다른 지역까지 확산</td></tr>
+          <tr><td class="hd">평가</td><td>유신 체제의 몰락을 알리는 신호탄이자 독재 정권에 맞선 시민들의 민주 항쟁으로 평가, 2019년 항쟁이 일어난 10월 16일이 국가 기념일로 지정</td></tr>
+        </tbody>
+      </table>
+      <table class="data-table">
+        <caption>부·마 민주 항쟁 당시 선언문(7개항)</caption>
+        <tbody>
+          <tr><td class="hd">1</td><td>유신 헌법 철폐</td></tr>
+          <tr><td class="hd">2</td><td>안정 성장 정책과 공평한 소득 분배</td></tr>
+          <tr><td class="hd">3</td><td>학원 사찰 중지</td></tr>
+          <tr><td class="hd">4</td><td>학도 호국단 폐지</td></tr>
+          <tr><td class="hd">5</td><td>언론·집회·결사의 완전한 자유와 보장</td></tr>
+          <tr><td class="hd">6</td><td>YH 사건에서와 같은 반윤리적 기업주 엄단</td></tr>
+          <tr><td class="hd">7</td><td>전 국민에 대한 정치적 보복 중지</td></tr>
+        </tbody>
+      </table>
+      <p>「부·마 민주 항쟁의 기억」(교과서, 김민수 외 『우리들의 부마 1979』) — 시민이 자발적으로 참여한 진정한 시민 항쟁 / 유신 체제를 종식시킨 시민들의 저항 / 새로운 민주주의의 틀을 잡은 역사적 전환점 / 한국인들은 민주주의를 포기하지 않는다는 것을 보여 준 사건</p>
+    </div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">9</span>
+      <h2>정리 — 집권의 방식과 저항, 그리고 확인하기</h2>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>시기</th><th>집권을 이어 간 방식·명분</th><th>반대와 저항</th><th>결과</th></tr></thead>
+      <tbody>
+        <tr class="crimson"><td class="hd">5·16 군사 정변(1961)</td><td>사회 혼란 수습을 구실로 정변, 비상계엄·군정, 혁명 공약</td><td>정치인 활동 금지·언론 압박 등으로 반대 세력 탄압</td><td>중앙정보부·민주공화당·헌법 개정, 박정희 대통령 당선(1963)</td></tr>
+        <tr class="crimson"><td class="hd">한·일 협정(1965)</td><td>경제 개발 자금 마련을 위한 국교 정상화</td><td>학생들의 6·3 시위</td><td>계엄으로 억누르고 협정 체결</td></tr>
+        <tr class="crimson"><td class="hd">베트남 파병(1964~1973)</td><td>미국의 요청, 정권 안정과 경제 개발 자금 확보</td><td>—</td><td>브라운 각서, 외화 획득 / 희생·고엽제·라이따이한 문제</td></tr>
+        <tr class="crimson"><td class="hd">3선 개헌(1969)</td><td>국가 안보와 지속적인 경제 발전을 구실로 3회 연임 허용</td><td>야당·시민·학생의 반대</td><td>편법 통과, 세 번째 당선</td></tr>
+        <tr class="crimson"><td class="hd">10월 유신(1972)</td><td>평화 통일을 뒷받침한다는 명분, 비상계엄·국회 해산</td><td>김대중 납치 항의 시위, 개헌 청원 100만 인 서명, 3·1 민주 구국 선언 등</td><td>긴급 조치·조작 사건으로 탄압, 통일 주체 국민회의로 대통령 선출</td></tr>
+        <tr class="deep"><td class="hd">부·마 민주 항쟁·10·26(1979)</td><td>경제 침체와 국제 여론 악화 속에서 정부가 YH 시위 진압·김영삼 제명</td><td>부산·마산의 대학생과 시민 시위</td><td>박정희 대통령 피살, 유신 체제가 막을 내림</td></tr>
+      </tbody>
+    </table>
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 열린 질문</h4>
+      <ol>
+        <li>박정희 정부는 어떻게 독재 체제를 강화해 나갔을까?</li>
+        <li>유신 체제에 맞서 국민들은 어떻게 저항하였을까?</li>
+        <li>5월 16일 새벽 박정희와 일부 군인이 혁명 공약을 내세우며 정변을 일으켰다. 과연 이 공약들이 지켜졌을까?</li>
+      </ol>
+    </div>
+    <details class="check-item">
+      <summary style="font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px;">스스로 확인하기</summary>
+      <div class="check-box" style="margin-top:14px;">
+        <div class="check-item"><details><summary>Q1. (      )은/는 박정희를 중심으로 한 일부 군부 세력이 군사 정변으로 정권을 장악한 사건이다.</summary>
+          <div class="check-answer">5·16 군사 정변이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q2. 박정희 정부는 (      )과/와 국교를 정상화하여 경제 개발 자금을 마련하려고 하였다.</summary>
+          <div class="check-answer">일본이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q3. 박정희 정부는 (      )에 국군을 파병하여 경제 개발 자금을 마련하였다.</summary>
+          <div class="check-answer">베트남(베트남 전쟁)이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q4. 1969년에 대통령 (      )회 연임 허용을 중심으로 하는 개헌안이 통과되었다.</summary>
+          <div class="check-answer">3회이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q5. 유신 헌법으로 대통령 선출 방식이 직접 선거로 바뀌었다. (O, X)</summary>
+          <div class="check-answer">X. 직접 선거에서 통일 주체 국민회의에서 선출하는 간접 선거로 바뀌었다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q6. 유신 헌법은 대통령에게 긴급 조치권을 부여하여 국민의 (      )을/를 제한할 수 있도록 하였다.</summary>
+          <div class="check-answer">기본권이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q7. 1976년 함석헌, 김대중 등은 명동 성당에서 (      )을/를 발표하였다.</summary>
+          <div class="check-answer">3·1 민주 구국 선언이다.</div>
+        </details></div>
+        <div class="check-item"><details><summary>Q8. (      )은/는 1979년 부산과 마산의 대학생을 중심으로 시작되었다.</summary>
+          <div class="check-answer">부·마 민주 항쟁이다.</div>
+        </details></div>
+      </div>
+    </details>
+  </section>
+
+  <section class="block" id="more">
+    <div class="block-head">
+      <span class="block-num">10</span>
+      <h2>더 알아보기 — 긴급 조치와 3·1 민주 구국 선언</h2>
+    </div>
+    <p class="block-sub">교과서 「자료로 보는 한국사 — 자료 탐구 2·3」(111쪽)의 내용이다. 유신 헌법이 대통령에게 준 긴급 조치권이 실제로 어떻게 쓰였는지, 이에 저항한 선언이 무엇을 요구했는지를 본다.</p>
+    <div class="sidebox">
+      <h4>자료 탐구 2 — 긴급 조치</h4>
+      <table class="data-table">
+        <caption>대통령 긴급 조치 제1호(1974, 요약·재구성)</caption>
+        <thead><tr><th>항</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td class="hd">1항</td><td>대한민국 헌법을 부정·반대·왜곡·비방하는 일체의 행위 금지</td></tr>
+          <tr><td class="hd">3항</td><td>유언비어를 날조·유포하는 일체의 행위 금지</td></tr>
+          <tr><td class="hd">4항</td><td>금지된 행위를 권유·선동·선전하거나 방송·보도·출판 등으로 타인에게 알리는 일체의 언동 금지</td></tr>
+          <tr><td class="hd">5항</td><td>위반한 자와 이 조치를 비방한 자는 법관의 영장 없이 체포·구속·압수·수색, 15년 이하의 징역</td></tr>
+        </tbody>
+      </table>
+      <table class="data-table">
+        <caption>긴급 조치 처벌 사례(『한겨레』, 2020.1.28. 재구성)</caption>
+        <tbody>
+          <tr><td class="hd">사례</td><td>오○○는 평택으로 가는 버스에서 정부의 분식 장려 정책을 비판하는 발언을 한 혐의로 중앙정보부에 불법 연행·구금되어 고문을 받아 허위 자백했고, 징역 3년에 처해짐</td></tr>
+        </tbody>
+      </table>
+      <p>교과서 설명 — 유신 헌법은 대통령에게 헌법상의 국민의 자유와 권리를 잠정적으로 정지할 수 있는 긴급 조치를 발동할 권리를 주었다. 긴급 조치는 국민들의 정권 비판을 막고, 유신 체제를 강화하는 도구로 활용되었다.</p>
+    </div>
+    <div class="think-box">
+      <h4>생각해 보기 — 긴급 조치</h4>
+      <ol>
+        <li>1970년대 긴급 조치 위반 사례에는 어떤 것이 있는지 조사하여 발표해 보자.</li>
+      </ol>
+    </div>
+    <div class="sidebox">
+      <h4>자료 탐구 3 — 3·1 민주 구국 선언(1976.3.1.)</h4>
+      <div class="quote-block deep" style="margin:0 0 12px;">
+        <h4>선언문의 요구</h4>
+        <p>"긴급 조치를 곧 철폐하고 투옥된 민주 인사들과 학생들을 석방하라고 요구한다."</p>
+        <p>"국민의 의사가 자유롭게 표명될 수 있도록 언론·집회·출판의 자유를 돌리라고 요구한다."</p>
+        <div class="src">함석헌 외, 「민주 구국 선언」 (교과서 재구성)</div>
+      </div>
+      <p>교과서 설명 — 1976년 3월 1일 민주화 인사들이 발표한 선언으로 유신 체제를 비판하고 긴급 조치 철폐, 박정희 정권 퇴진을 요구했다. 이를 통해 박정희 정부의 탄압에도 유신 체제에 대한 저항이 광범위하게 진행되고 있음을 국내외에 알렸다.</p>
+      <p>선언문은 6·25 동란의 피해를 딛고 일어섰고 4·19 학생 의거로 이승만 독재를 무너뜨려 '자유민주주의'에 대한 신념을 가슴에 새겼지만, 그것도 잠깐 이 민족은 또다시 독재 정권의 쇠사슬에 매이게 되었고 삼권 분립은 허울만 남았다고 진단한다(교과서 재구성).</p>
+    </div>
+    <div class="note-box">4·19 혁명과 이승만 독재의 무너짐은 <a href="Ⅱ-2-3-01_419혁명_도표.html">「4·19 혁명」</a> 소주제에서 다루었다.</div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>고등학교 『한국사』 교과서(동아출판사, 2022 개정 교육과정), Ⅱ. 대한민국의 발전, 3. 민주주의의 시련과 민주화 운동 「02 5·16 군사 정변과 10월 유신」, 100–103쪽 — 본문·연표·사료(혁명 공약, 브라운 각서, 한·일 협정의 쟁점들, 유신 헌법과 제3공화국 헌법)·생각 키우기·확인하기의 기본 출처</li>
+      <li>EBS 개념완성 한국사Ⅱ (2022), 「민주화를 위한 노력」, 202–203쪽 — 5·16 군사 정변·박정희 정부·유신 체제 사실 관계 교차 확인. 교과서에 없고 EBS에만 있는 내용에는 <span class="ebs-only">EBS</span> 표식을 달았다.</li>
+    </ol>
+    <div class="note">
+      함께 업로드된 2006년 『한국 근현대사』(중앙교육) 302–308쪽은 2007 개정 이전 교육과정의 자료이므로 본문에 반영하지 않고 배경 확인용으로만 참고했다. 개념어는 첨부 CSV 70개와 대조해, 교과서에 수록된 61개는 전량 반영하고 민청학련 사건 1개는 EBS 근거로 반영했다. 명동 사건·한국적 민주주의·새마을 운동·민주 회복 국민 회의·양심범 가족 협의회·자유 실천 문인 협의회·카터 7개는 구교육과정에서 유래한 개념, 장도영 1개는 교과서·EBS에 없는 개념이라 반영하지 않았다. 한·일 기본 조약과 재산 및 청구권 협정은 CSV에 EBS 전용으로 표시되어 있으나 교과서 101쪽에 조약 제목으로 실려 있어 교과서 근거로 반영했다. 브라운 각서는 교과서가 "주한 미국 대사 브라운이 한국 정부에 전달한 각서", EBS가 "브라운과 한국 외무 장관이 체결한 각서"로 서술해 교과서 표현을 본문에 두고 EBS 표현을 병기했다. 한·일 협정 자금 수치는 교과서의 김종필-오히라 메모를 따랐고, 구교육과정의 협정 결과 수치는 반영하지 않았다. 6·3 시위의 연도는 교과서와 EBS에 없어 표기하지 않았다. 교과서 111쪽 「자료 탐구 2 긴급 조치」·「자료 탐구 3 3·1 민주 구국 선언」은 「6월 민주 항쟁」 소주제의 PDF에 실려 있어 「더 알아보기」로 반영했다. 3·1 민주 구국 선언의 EBS 제3항 발췌는 EBS 표식과 함께 남겼다.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
