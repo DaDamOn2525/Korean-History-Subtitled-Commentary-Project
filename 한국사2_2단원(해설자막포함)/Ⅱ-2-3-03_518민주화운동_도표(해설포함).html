@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5·18 민주화 운동(자막 해설) | 짧았던 서울의 봄, 홀로 맞선 광주 — 신군부의 등장과 5·18 민주화 운동</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅱ-2-3-02_516군사정변_도표(해설포함).html">‹ 이전: 5·16 군사 정변과 10월 유신</a>
+  <a href="Ⅱ-2-3_민주주의의시련과민주화운동_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#spring">12·12와 서울의 봄</a>
+  <a href="#gwangju">5·18 민주화 운동</a>
+  <a href="#memory">5·18의 기억</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅱ-2-3-04_6월민주항쟁_도표(해설포함).html">다음: 6월 민주 항쟁 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>대한민국의 발전</span> · 민주주의의 시련과 민주화 운동</div>
+    <h1>짧았던 서울의 봄, 홀로 맞선 광주 — 신군부의 등장과 5·18 민주화 운동</h1>
+    <p class="lead">10·26 사태 이후 국민들은 민주주의의 회복을 기대하였으나, 전두환을 중심으로 한 신군부가 12·12 군사 반란으로 권력을 장악하였다. 1980년 5월 17일 신군부가 비상계엄을 전국으로 확대하면서 '서울의 봄'은 막을 내렸다. 5월 18일 광주에서 시작된 시위를 신군부가 공수 부대로 폭력 진압하자 시민들은 시민군을 조직해 맞섰고, 5월 27일 계엄군의 무력 진압으로 5·18 민주화 운동은 끝이 났다. 그러나 5·18 민주화 운동은 이후 민주화 운동의 토대가 되었다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1979 – 1980</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>기대에서 좌절로, 좌절에서 기억으로</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--crimson)">적색 = 신군부·계엄군</strong> · <strong style="color:var(--indigo)">남색 = 학생·시민</strong> · <strong style="color:var(--brass)">황동색 = 기억과 계승</strong>. 신군부가 권력을 한 단계씩 장악할 때마다 시민의 저항이 맞섰다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">민주화의 기대</div>
+        <div class="step-desc">10·26 사태로 유신 체제 붕괴 — 군사 독재가 끝나리라는 기대</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">12·12 군사 반란</div>
+        <div class="step-desc">전두환 중심 신군부의 권력 장악 → 서울의 봄 시위 → 5·17 비상계엄 전국 확대</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">5·18 민주화 운동</div>
+        <div class="step-desc">광주의 학생·시민이 계엄군의 폭력에 맞섬 → 5월 27일 무력 진압</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">기억과 계승</div>
+        <div class="step-desc">1980년대 민주화 운동의 토대, 특별법·국가 기념일·세계 기록 유산</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>민주주의를 기대하던 시민들의 요구가 신군부의 무력에 가로막히면서, 광주에서는 국가 폭력에 맞선 시민들의 항쟁이 일어났다.</p></div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--crimson)">적색 = 신군부·계엄군</strong> · <strong style="color:var(--indigo)">남색 = 학생·시민</strong> · <strong style="color:var(--brass)">황동색 = 기억과 계승</strong></p>
+    <div class="timeline wide">
+      <div class="tl-item mute"><div class="tl-year">1979. 10. 26.</div><div class="tl-body"><div class="tl-title">10·26 사태 — 제주도를 제외한 전국에 비상계엄</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1979. 12. 12.</div><div class="tl-body"><div class="tl-title">12·12 군사 반란 — 신군부의 권력 장악</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1980. 5. 15.</div><div class="tl-body"><div class="tl-title">서울역 시위 — 학생·시민 10만여 명</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1980. 5. 17.</div><div class="tl-body"><div class="tl-title">비상계엄 전국 확대, 야당 인사·시위 주모자 체포</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1980. 5. 18.</div><div class="tl-body"><div class="tl-title">광주 전남대학교 앞 시위, 5·18 민주화 운동 시작</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1980. 5. 21.</div><div class="tl-body"><div class="tl-title">계엄군, 전남도청 앞 시민에게 무차별 발포 → 시민군 조직</div><div class="tl-desc">EBS</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1980. 5. 27.</div><div class="tl-body"><div class="tl-title">계엄군의 전남도청 무력 진압</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1995</div><div class="tl-body"><div class="tl-title">5·18 민주화 운동 등에 관한 특별법 제정</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1997</div><div class="tl-body"><div class="tl-title">5·18 민주화 운동 국가 기념일 지정</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">2011</div><div class="tl-body"><div class="tl-title">5·18 민주화 운동 기록물 유네스코 세계 기록 유산 등재</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="spring">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>12·12 군사 반란이 일어나다</h2>
+    </div>
+    <p class="block-sub">"비상계엄 해제하라! 유신 잔당 물러나라! 정치군인 물러가라!" — 서울의 봄 당시의 주요 구호(교과서). 유신 체제가 무너진 뒤 사람들은 무엇을 기대하였을까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">기대</div>
+        <div class="step-desc">10·26 사태 이후 제주도를 제외한 전국에 비상계엄, 국무총리 최규하가 대통령으로 선출 — 군사 독재가 끝나고 민주주의가 회복되리라는 기대(EBS: 긴급 조치 해제, 해직 교수 복직, 제적 학생 복교 등)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">12·12 군사 반란(1979)</div>
+        <div class="step-desc">전두환을 중심으로 한 신군부가 반란을 일으켜 권력 장악</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">서울의 봄</div>
+        <div class="step-desc">학생·시민이 '비상계엄 해제', '전두환 퇴진'을 요구하며 전국에서 시위 — 5월 15일 서울역 앞 10만여 명</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">5·17 비상계엄 확대(1980)</div>
+        <div class="step-desc">제주도를 포함한 전국으로 비상계엄 확대, 야당 주요 인사와 시위 주모자 체포 → 서울의 봄 종결(EBS: 김대중 등 체포, 정치 활동 금지, 언론·출판 검열 강화, 휴교령)</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>유신이 끝난 자리를 또 다른 군부가 차지하자 시민들은 다시 거리로 나섰지만, 신군부는 비상계엄을 전국으로 넓혀 민주화의 요구를 눌러 버렸다.</p></div>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>서울의 봄</h4>
+        체코슬로바키아의 민주화 운동인 '프라하의 봄'에서 따온 말 — 10·26 사태부터 1980년 5월 17일 비상계엄 확대까지 민주화에 대한 기대가 높았던 시기(교과서 각주·EBS)
+      </div>
+      <div class="compare-card deep">
+        <h4>서울역 회군(1980. 5. 15.)</h4>
+        10만여 명의 학생과 시민이 서울역 앞에서 조속한 민주화 요구 — 학생 대표들이 신군부의 개입을 우려해 해산 결정(교과서 교사용 자료). EBS: 신군부 등을 유신 잔당으로 규정하고 비상계엄 해제와 개헌을 통한 민주화 요구
+      </div>
+      <div class="compare-card crimson">
+        <h4>신군부</h4>
+        5·16 군사 정변 때의 군부 세력과 구분하기 위한 표현(교과서 각주) — 전두환·노태우 등이 중심이 되어 조직한 군대 안의 사조직 하나회가 중심, 하나회는 김영삼 정부 때 해체(교과서 교사용 자료)
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">교과서 교사용 자료: 전두환은 5·16 군사 정변 당시 육사 생도들을 조직해 지지 시가행진을 벌였고, 박정희의 비호를 받아 군부 실세로 성장하였으며, 국군 보안 사령관 겸 합동 수사 본부장으로 10·26 사태 수사를 주도하였다. 참고(이전 교육과정 교과서): 신군부는 12·12 사태 때 계엄 사령관 정승화를 체포하고 군부를 장악하였다.</p>
+  </section>
+
+  <section class="block" id="gwangju">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>5·18 민주화 운동이 일어나다</h2>
+    </div>
+    <p class="block-sub">1980년 5월, 수많은 광주 시민이 전남도청 앞에 모였다(교과서 도입 자료). 시민들은 왜 그곳에 모였을까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">5월 18일</div>
+        <div class="step-desc">광주 전남대학교 앞에서 학생들이 '비상계엄 해제', '전두환 퇴진'을 외치며 시위</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">폭력 진압</div>
+        <div class="step-desc">신군부가 공수 부대를 동원해 시위를 폭력적으로 진압(EBS: 대학생 구타) → 분노한 시민 참여, 시위 확산</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">발포와 시민군</div>
+        <div class="step-desc">계엄군의 발포로 수많은 사상자 발생(EBS: 5월 21일 전남도청 앞 무차별 발포) → 시민들이 무기를 확보해 시민군 조직(EBS: 경찰서·예비군 무기고에서 무기 획득)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">고립 속의 자치</div>
+        <div class="step-desc">계엄군이 교통·통신을 차단해 광주 고립(EBS: 시내에서 철수해 외곽 봉쇄) — 시민들은 스스로 치안을 유지하며 평화적 해결을 위해 협상 시도(EBS: 시민 수습 대책 위원회)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">5월 27일</div>
+        <div class="step-desc">새벽, 계엄군이 탱크와 헬기까지 동원해 시민군을 공격하고 전남도청 장악 → 5·18 민주화 운동 종결</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>공수 부대의 폭력과 발포가 오히려 더 많은 시민을 거리로 불러냈고, 시민들은 고립된 상황에서도 스스로 질서를 지키며 끝까지 맞섰다.</p></div>
+
+    <div class="quote-block deep">
+      <h4>광주 시민군의 궐기문 — 「우리는 왜 총을 들 수밖에 없었는가?」(1980. 5. 25.)</h4>
+      무자비한 만행을 더 이상 보고만 있을 수 없어 너도나도 총을 들고 나섰다.
+      <div class="src">교과서·EBS (재구성) — 계엄 당국의 발포 명령과 무차별 발포를 고발함</div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">교과서 교사용 자료: 당시 계엄군의 작전명은 '화려한 휴가'였다. 생각+ — 5·18 민주화 운동은 광주 지역을 중심으로 일어났지만, 광주의 사정이 주변 지역으로 전파되며 그곳에서도 시위가 전개되었고, 특히 목포에서는 시위가 장기적으로 이어졌다(목포 5·18 민주화 운동).</p>
+  </section>
+
+  <section class="block" id="memory">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>5·18 민주화 운동의 기억</h2>
+    </div>
+    <p class="block-sub">탐구하는 한국사(교과서 105쪽) — 5·18 민주화 운동은 그 자리에 있던 사람들의 기억으로, 그리고 국가와 세계의 기억으로 이어지고 있다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>시위대에 폭력을 행사하는 군인들</h4>
+        신군부는 광주에 군대를 투입해 항의하는 국민에게 폭력을 행사하고 총을 쏨 — 계엄군의 증언: "정신 교육을 받은 대로 시민을 '적'이나 '빨갱이'로 여기며 폭력을 행사하는 동료들을 막을 수 없었다"(『시사인』, 2019. 5. 15., 재구성)
+      </div>
+      <div class="compare-card deep">
+        <h4>주먹밥을 만드는 시민들</h4>
+        신군부의 무력 탄압으로 행정력이 마비되었지만 시민들은 스스로 질서를 유지하며 '대동 세상'을 이루려 함 — 고등학생의 증언: "치안이 없었지만 사람들 사이에 더 끈끈한 연대가 있었다"(『15인 시민의 기억』, 재구성)
+      </div>
+      <div class="compare-card brass">
+        <h4>희생자들의 관</h4>
+        태극기와 '무명 용사'라고 쓴 천으로 덮은 관 — 계엄군의 공격으로 끝났지만 5·18 민주화 운동은 이후 민주화 운동의 토대가 됨. 직장인의 일기: "모두 나와 행진하는 이들에게 환호하였다"(박연철, 『5월 일기』, 재구성)
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">특별법 제정(1995)</div>
+        <div class="step-desc">12·12 군사 반란과 5·18 민주화 운동 당시 피해자의 명예 회복과 진상 규명을 위해 제정</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">국가 기념일(1997)</div>
+        <div class="step-desc">운동이 일어난 지 17년 만에 5월 18일을 국가 기념일로 제정</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">세계 기록 유산(2011)</div>
+        <div class="step-desc">5·18 민주화 운동 관련 기록물이 유네스코 세계 기록 유산으로 등재 — 교과서: 대한민국과 아시아 여러 나라의 민주화에 큰 영향 / EBS 자료: 대한민국과 동남아시아 여러 나라의 민주화에 큰 영향</div>
+      </div>
+    </div>
+
+    <div class="limit-box">
+      <h4>5·18 민주화 운동의 영향(EBS)</h4>
+      <p>6월 민주 항쟁 등 1980년대 민주화 운동의 토대가 되었고, 아시아 여러 나라의 민주화 운동에 영향을 주었다. 국군의 작전 통제권을 가진 미국이 진압을 묵인했다고 판단한 일부 대학생들은 반미 운동을 전개하였다. EBS 자료: 당시 한 고등학생은 "왜 신문은 사실을 사실대로 보도하지 않는가"라고 일기에 적었다(광주여고 3학년의 일기, 재구성).</p>
+    </div>
+    <div class="note-box">5·18 민주화 운동을 무력으로 진압한 신군부가 정권을 장악하는 과정은 다음 소주제 <a href="Ⅱ-2-3-04_6월민주항쟁_도표(해설포함).html">「6월 민주 항쟁」</a>에서 이어진다.</div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>정리 — 신군부와 시민의 대결</h2>
+    </div>
+    <p class="block-sub">10·26 사태부터 5·18 민주화 운동까지, 신군부의 움직임과 시민의 대응을 나란히 놓고 보자.</p>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>1979. 10. ~ 1980. 5. 신군부와 시민 — 교과서·EBS의 내용을 날짜순으로 풀어 쓴 정리(풀이)</caption>
+      <thead><tr><th>시기</th><th>신군부(계엄군)</th><th>학생·시민</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">1979. 10.~12.</td><td class="crimson">12·12 군사 반란으로 권력 장악</td><td class="deep">민주주의 회복 기대</td></tr>
+        <tr><td class="hd">1980. 5. 15.</td><td>—</td><td class="deep">서울역 시위(10만여 명) 후 해산</td></tr>
+        <tr><td class="hd">1980. 5. 17.</td><td class="crimson">비상계엄 전국 확대, 야당 인사 체포</td><td>서울의 봄 종결</td></tr>
+        <tr><td class="hd">1980. 5. 18.~21.</td><td class="crimson">공수 부대의 폭력 진압, 발포</td><td class="deep">시위 확산, 시민군 조직</td></tr>
+        <tr><td class="hd">1980. 5. 21.~26.</td><td class="crimson">광주 고립(교통·통신 차단)</td><td class="deep">자치와 협상 시도</td></tr>
+        <tr><td class="hd">1980. 5. 27.</td><td class="crimson">탱크·헬기로 전남도청 진압</td><td>항쟁 종결</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각 키우기 — 5·18 민주화 운동의 기억(105쪽)</h4>
+      <ol>
+        <li>5·18 민주화 운동 당시 광주를 '대동 세상'이라고 표현하는 까닭은 무엇인지 생각해 보자.</li>
+        <li>5·18 민주화 운동을 잊지 않고 바르게 기억하려는 노력에는 어떠한 것이 있는지 조사해 보자.</li>
+      </ol>
+      <h4>생각해 보기 — 교과서의 길잡이 질문</h4>
+      <ol>
+        <li>광주 시민들이 전남도청 앞에 모인 이유는 무엇일까?</li>
+        <li>신군부는 어떻게 정권을 장악하였을까?</li>
+        <li>5·18 민주화 운동이 일어난 까닭은 무엇일까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 신군부가 군사 반란을 일으켜 권력을 장악한 사건을 (　　　)(이)라고 한다.</summary>
+        <div class="check-answer">12·12 군사 반란</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 10·26 사태 이후 찾아온 민주화의 바람을 '(　　　)'(이)라고 표현한다.</summary>
+        <div class="check-answer">서울의 봄</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q3. 1979년 박정희 등 일부 군인들이 쿠데타를 일으켜 정권을 장악하였다. (○, ×)</summary>
+        <div class="check-answer">× — 1979년 12·12 군사 반란은 전두환 등 신군부가 일으켰다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 1980년 서울역에 모인 학생과 시민들은 사사오입 개헌을 비판하였다. (○, ×)</summary>
+        <div class="check-answer">× — 비상계엄 해제와 개헌을 통한 민주화를 요구하였다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q5. 5·18 민주화 운동 이후 일부 대학생들이 반미 운동을 전개하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 5·18 민주화 운동은 필리핀 등 여러 나라의 민주화 운동에 영향을 끼쳤다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q7. 10·26 사태 이후 민주화에 대한 기대가 높았던 시기를 (서울 / 부산)의 봄이라고 한다.</summary>
+        <div class="check-answer">서울</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q8. 신군부에 맞서 (광주 / 마산) 시민들이 전개한 민주화 운동을 5·18 민주화 운동이라고 한다.</summary>
+        <div class="check-answer">광주</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q9. 1979년 신민당 총재였던 (김대중 / 김영삼)은 국회 의원직에서 제명되었다.</summary>
+        <div class="check-answer">김영삼</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q10. 10·26 사태 직후 국무총리였던 (　　　)이/가 대통령으로 선출되었다.</summary>
+        <div class="check-answer">최규하</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q11. 전두환, 노태우 등 (　　　) 세력은 12·12 사태를 일으켰다.</summary>
+        <div class="check-answer">신군부</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q12. 계엄군은 1980년 5월 27일 탱크 등을 앞세워 (　　　)에서 저항하던 시민군을 무력 진압하였다.</summary>
+        <div class="check-answer">전남도청</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사』(2022 개정 교육과정), Ⅱ 「대한민국의 발전」 3 「민주주의의 시련과 민주화 운동」 03 「5·18 민주화 운동」, 104쪽 — 본문·연표·도입 자료·서울의 봄 구호·각주(서울의 봄, 신군부)·시민군 궐기문·확인하기의 기본 출처, 교사용 자료(서울역 회군, 하나회, 전두환, 작전명, 생각+ 목포) (1차 근거)</li>
+      <li>동아출판 고등학교 『한국사』, 탐구하는 한국사 「5·18 민주화 운동의 기억」, 105쪽 — 계엄군·고등학생 증언, 직장인 일기, 특별법·국가 기념일·세계 기록 유산, 생각 키우기 (1차 근거)</li>
+      <li>EBS 개념완성 한국사Ⅱ (2022 개정), 「민주화를 위한 노력」 중 「신군부 세력의 등장」「5·18 민주화 운동(1980)」, 204–205쪽 — 최규하 정부의 조치, 서울역 시위, 5·17 이후 조치, 5월 21일 발포와 시민군, 시민 수습 대책 위원회, 영향, 개념 체크 (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국 근현대사』(중앙교육, 2006), 309–310쪽 (참고용) — 12·12 사태 때 계엄 사령관 체포에만 활용</li>
+    </ol>
+    <div class="note">
+      「신군부와 시민」 표는 교과서·EBS의 내용을 이해하기 쉽도록 풀어 쓴 정리이다. 이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅱ-2-3-03)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p03-N과 대응)
+  const SECTION_PREFIX = "2-2-3-03";
+
+  const narrativeData = {
+    // 2-2-3-03-2: 12·12 군사 반란이 일어나다  (대본 p03-2)
+    "2-2-3-03-2": [
+      "10·26 사태로 유신 체제가 무너지자 국무총리였던 최규하가 대통령이 되었습니다. 긴급 조치가 풀리고 쫓겨났던 교수와 학생들이 돌아오면서, 사람들은 이제 군사 독재가 끝나고 민주주의가 돌아오리라 기대했습니다.",
+      "그러나 1979년 12월 12일, 전두환을 중심으로 한 <b>신군부</b>가 반란을 일으켜 권력을 장악했습니다. 이것이 <b>12·12 군사 반란</b>입니다. 학생과 시민들은 비상계엄을 풀고 전두환은 물러나라며 전국에서 시위에 나섰고, 1980년 5월 15일에는 10만여 명이 서울역 앞에 모였습니다.",
+      "그러자 신군부는 5월 17일 비상계엄을 전국으로 넓히고 김대중 등 야당 인사와 시위 주모자들을 체포했습니다. 민주화의 기대가 부풀었던 <b>서울의 봄</b>은 이렇게 막을 내렸습니다. 바로 다음 날, 광주에서 학생들이 다시 거리로 나섰습니다."
+    ],
+    // 2-2-3-03-3: 5·18 민주화 운동이 일어나다  (대본 p03-3)
+    "2-2-3-03-3": [
+      "1980년 5월 18일, 광주 전남대학교 앞에서 학생들이 비상계엄 해제와 전두환 퇴진을 외쳤습니다. 신군부는 <b>공수 부대</b>를 보내 시위를 폭력적으로 눌렀고, 이에 분노한 시민들이 함께하면서 시위는 오히려 더 커졌습니다.",
+      "계엄군이 시민들에게 총을 쏘아 수많은 사상자가 나오자, 시민들은 무기를 구해 <b>시민군</b>을 만들었습니다. 계엄군은 교통과 통신을 끊어 광주를 고립시켰지만, 시민들은 스스로 치안을 지키고 주먹밥을 나누며 평화적으로 해결하려고 계엄군과 협상을 시도했습니다.",
+      "그러나 5월 27일 새벽, 계엄군은 탱크와 헬기까지 앞세워 <b>전남도청</b>을 공격했고, 이곳에서 끝까지 저항하던 시민군을 무력으로 진압했습니다. 5·18 민주화 운동은 이렇게 끝났지만, 그 기억은 끝나지 않았습니다."
+    ],
+    // 2-2-3-03-4: 5·18 민주화 운동의 기억  (대본 p03-4)
+    "2-2-3-03-4": [
+      "당시 계엄군으로 투입된 한 군인은 시민을 적이나 빨갱이로 여기며 폭력을 휘두르는 동료들을 막을 수 없었다고 증언했습니다. 반대로 고립된 광주에서 시민들은 주먹밥을 나누고 스스로 질서를 지키며 <b>대동 세상</b>을 이루려 했습니다.",
+      "진실이 알려지기까지는 오랜 시간이 걸렸습니다. 1995년 피해자의 명예를 회복하고 진상을 밝히기 위한 특별법이 만들어졌고, 1997년 5월 18일은 국가 기념일이 되었습니다. 2011년에는 관련 기록물이 <b>유네스코 세계 기록 유산</b>으로 등재되었습니다.",
+      "5·18 민주화 운동은 6월 민주 항쟁 등 1980년대 민주화 운동의 토대가 되었고, 아시아 여러 나라의 민주화에도 영향을 주었습니다. 진압을 미국이 묵인했다고 본 일부 대학생들은 <b>반미 운동</b>에 나서기도 했습니다. 그렇다면 광주를 진압한 신군부는 그 뒤 어떻게 권력을 이어 갔을까요?"
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

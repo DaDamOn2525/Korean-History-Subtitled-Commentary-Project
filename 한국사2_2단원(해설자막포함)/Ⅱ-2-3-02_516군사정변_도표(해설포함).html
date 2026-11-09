@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5·16 군사 정변과 10월 유신(자막 해설) | 군사 정변으로 시작된 18년 — 경제 개발과 장기 독재, 그리고 유신의 몰락</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅱ-2-3-01_419혁명_도표(해설포함).html">‹ 이전: 4·19 혁명</a>
+  <a href="Ⅱ-2-3_민주주의의시련과민주화운동_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#coup">5·16 군사 정변</a>
+  <a href="#treaty">한·일 협정</a>
+  <a href="#vietnam">베트남 파병</a>
+  <a href="#threeterm">3선 개헌</a>
+  <a href="#yushin">10월 유신</a>
+  <a href="#resist">유신 반대 운동</a>
+  <a href="#fall">유신 체제의 붕괴</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅱ-2-3-03_518민주화운동_도표(해설포함).html">다음: 5·18 민주화 운동 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>대한민국의 발전</span> · 민주주의의 시련과 민주화 운동</div>
+    <h1>군사 정변으로 시작된 18년 — 경제 개발과 장기 독재, 그리고 유신의 몰락</h1>
+    <p class="lead">1961년 5·16 군사 정변으로 권력을 잡은 박정희는 1963년 대통령에 당선된 뒤 한·일 협정과 베트남 파병으로 경제 개발 자금을 마련하였다. 3선 개헌으로 집권을 연장한 박정희 정부는 1972년 10월 유신으로 대통령에게 막강한 권한을 몰아주었다. 학생과 시민, 종교인과 언론인은 탄압 속에서도 유신 체제에 맞섰고, 1979년 부·마 민주 항쟁과 10·26 사태로 유신 체제는 막을 내렸다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1961 – 1979</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>권력을 늘려 간 18년, 그리고 저항</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--crimson)">적색 = 박정희 정부의 집권·독재 강화</strong> · <strong style="color:var(--brass)">황동색 = 경제 개발과 대외 관계</strong> · <strong style="color:var(--indigo)">남색 = 민주화 운동</strong>. 집권 연장은 단계마다 다음 단계를 불렀고, 경제 개발과 저항이 그 곁을 함께 흘렀다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">5·16 군사 정변(1961)</div>
+        <div class="step-desc">군정 실시 → 민정 불참 약속을 어기고 대통령 당선(1963)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">3선 개헌(1969)</div>
+        <div class="step-desc">대통령 3회 연임 허용 → 세 번째 당선</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">10월 유신(1972)</div>
+        <div class="step-desc">중임 제한 없는 6년 임기, 간접 선거, 긴급 조치권</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">유신 체제의 붕괴(1979)</div>
+        <div class="step-desc">부·마 민주 항쟁 → 10·26 사태</div>
+      </div>
+    </div>
+    <div class="branch-cols two">
+      <div class="branch-col brass">
+        <h4>경제 개발과 대외 관계</h4>
+        <p class="why">집권의 정당성을 경제에서 찾다</p>
+        <div class="branch-node">한·일 협정(1965) — 경제 개발 자금, 배상·사과 없는 합의</div>
+        <div class="branch-node">베트남 파병 — 미국의 지지와 외화, 그늘로 남은 희생</div>
+      </div>
+      <div class="branch-col deep">
+        <h4>민주화 운동</h4>
+        <p class="why">탄압 속에서도 이어진 저항</p>
+        <div class="branch-node">6·3 시위, 3선 개헌 반대</div>
+        <div class="branch-node">개헌 청원 운동, 3·1 민주 구국 선언, 부·마 민주 항쟁</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--crimson)">적색 = 집권·독재 강화</strong> · <strong style="color:var(--brass)">황동색 = 경제 개발과 대외 관계</strong> · <strong style="color:var(--indigo)">남색 = 민주화 운동</strong> · 회색 = 국내외 정세</p>
+    <div class="timeline wide">
+      <div class="tl-item crimson"><div class="tl-year">1961. 5. 16.</div><div class="tl-body"><div class="tl-title">5·16 군사 정변</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1962</div><div class="tl-body"><div class="tl-title">김종필-오히라 메모</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1963</div><div class="tl-body"><div class="tl-title">박정희, 대통령 당선</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1964. 6. 3.</div><div class="tl-body"><div class="tl-title">6·3 시위 — 한·일 회담 반대</div><div class="tl-desc">날짜는 참고(이전 교육과정 교과서)</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1964~1973</div><div class="tl-body"><div class="tl-title">베트남 파병</div><div class="tl-desc">EBS</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1965</div><div class="tl-body"><div class="tl-title">한·일 협정 체결</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1966</div><div class="tl-body"><div class="tl-title">브라운 각서</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">1968</div><div class="tl-body"><div class="tl-title">북한 특수 부대의 청와대 습격</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1969</div><div class="tl-body"><div class="tl-title">3선 개헌</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">1969</div><div class="tl-body"><div class="tl-title">닉슨 독트린</div></div></div>
+      <div class="tl-item mute"><div class="tl-year">1972. 7.</div><div class="tl-body"><div class="tl-title">7·4 남북 공동 성명</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1972. 10.</div><div class="tl-body"><div class="tl-title">10월 유신</div><div class="tl-desc">선포일 10. 17.은 참고(이전 교육과정 교과서)</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1974</div><div class="tl-body"><div class="tl-title">대통령 긴급 조치 제1호</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1975</div><div class="tl-body"><div class="tl-title">2차 인혁당 사건</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1976. 3. 1.</div><div class="tl-body"><div class="tl-title">3·1 민주 구국 선언</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1979. 10. 16.</div><div class="tl-body"><div class="tl-title">부·마 민주 항쟁</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1979. 10. 26.</div><div class="tl-body"><div class="tl-title">10·26 사태 — 유신 체제 종말</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="coup">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>5·16 군사 정변이 일어나다</h2>
+    </div>
+    <p class="block-sub">1961년 5월 16일 새벽, 박정희와 일부 군인이 혁명 공약을 내세우며 정변을 일으켰다(교과서 도입 자료). 과연 이 공약들은 지켜졌을까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">정변</div>
+        <div class="step-desc">박정희 중심의 일부 군부 세력이 사회 혼란 수습을 구실로 권력 장악 — 전국에 비상계엄, 헌법 기능 정지</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">군정</div>
+        <div class="step-desc">국가 재건 최고 회의가 입법·사법·행정권 장악 — 정치인 활동 금지, 언론 압박, 중앙정보부 설치</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">민정 준비</div>
+        <div class="step-desc">비밀리에 민주공화당 창당, 대통령 중심제·국회 단원제로 헌법 개정</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">박정희 정부(1963)</div>
+        <div class="step-desc">민정에 참여하지 않겠다던 박정희가 전역 직후 민주공화당 후보로 출마해 당선(EBS: 윤보선을 누름)</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>정권을 양심적인 정치인에게 넘기겠다던 약속과 달리, 군정 세력은 스스로 정당을 만들고 헌법을 고쳐 민간 정부의 주인이 되었다.</p></div>
+
+    <div class="quote-block crimson">
+      <h4>혁명 공약 — 『중앙방송』(1961. 5. 16.)</h4>
+      반공을 국시로 삼고, 민생고를 해결하며, 과업이 이루어지면 정권을 이양하고 본연의 임무로 돌아간다.
+      <div class="src">혁명 공약 1·4·6항 (교과서 재구성)</div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">중앙정보부 — 1961년 국가 안전 보장을 목적으로 설치되어 박정희 정권의 권력 기반 강화에 활용되었다(EBS). 민정 — 민간인에 의한 정치(교과서 각주).</p>
+  </section>
+
+  <section class="block" id="treaty">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>한·일 협정을 체결하다</h2>
+    </div>
+    <p class="block-sub">박정희 정부는 집권의 정당성을 확보하려고 경제 개발을 추진하였다. 그 자금은 어디에서 마련하려 했을까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">배경</div>
+        <div class="step-desc">일본과 국교를 정상화해 경제 개발 자금 마련 — 미국도 한·미·일 안보 협력 체제 강화를 위해 적극 지지</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">한·일 회담</div>
+        <div class="step-desc">김종필(중앙정보부장)-오히라(일본 외무상) 비밀 합의(1962) — 식민 지배에 대한 배상과 사과 없이 합의한 사실이 알려짐</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">6·3 시위</div>
+        <div class="step-desc">학생들이 '굴욕적 한·일 외교 반대', '불법적 친일 정권 반대'를 내세워 대대적 시위</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">한·일 협정(1965)</div>
+        <div class="step-desc">계엄을 선포해 시위를 억누르고 협정 체결, 일본과 국교 수립</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">김종필-오히라 메모 — '무상 3억 달러, 유상 2억 달러, 민간 차관 1억 달러 이상'을 받기로 한 비밀 합의의 기록(교과서). 참고(이전 교육과정 교과서): 박정희 정부는 1964년 6월 3일 계엄령을 선포하고 다수의 학생과 언론인을 체포하였다.</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>사료로 보는 역사 — 한·일 협정의 쟁점들(교과서 101쪽)</caption>
+      <thead><tr><th>조항</th><th>내용(재구성)</th><th>한국의 해석</th><th>일본의 해석</th></tr></thead>
+      <tbody>
+        <tr><td class="hd brass">한·일 기본 조약 제2조</td><td>1910년 8월 22일 및 그 이전의 조약·협정은 이미 무효임을 확인</td><td>1910년 체결 당시부터 완전 무효</td><td>체결 당시는 유효·합법, 일제의 항복(1945)으로 무효</td></tr>
+        <tr><td class="hd brass">청구권 협정 제2조</td><td>양국과 국민 사이의 청구권 문제는 완전히 최종적으로 해결됨</td><td>개인의 청구권은 논의 대상이 아니었으며 소멸된 적 없음(2018년 대법원 판결)</td><td>국가뿐 아니라 개인의 청구권도 해결된(또는 포기한) 것</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section class="block" id="vietnam">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>베트남 전쟁에 국군을 파병하다</h2>
+    </div>
+    <p class="block-sub">박정희 정부는 미국의 요청에 따라 베트남 전쟁에 국군을 보냈다. 파병은 무엇을 얻게 했고, 무엇을 남겼을까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">파병</div>
+        <div class="step-desc">미국의 요청에 따라 베트남 전쟁에 국군 파병(EBS: 1964~1973)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">얻은 것</div>
+        <div class="step-desc">미국의 지지로 정권 안정, 경제 개발에 필요한 기술·차관 제공 — 군인 송금·군수 물자 수출·건설 사업 참여로 번 외화가 경제 개발에 도움</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">남은 그늘</div>
+        <div class="step-desc">수많은 젊은이 희생, 고엽제 피해로 지금까지 고통 — 베트남 민간인 희생, 라이따이한(한국인 2세) 문제</div>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <h4>브라운 각서(1966)</h4>
+      국군 현대화 장비를 제공하고, 전쟁 물자를 한국에서 사며, 경제 발전을 위한 차관을 제공한다.
+      <div class="src">브라운 각서 (교과서 재구성) — 교과서: 주한 미국 대사 브라운이 한국 정부에 전달한 각서 / EBS: 브라운과 한국 외무 장관이 체결한 각서, 베트남 추가 파병의 대가</div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">EBS: 파병으로 기업의 해외 진출과 수출이 늘었지만 라이따이한·고엽제 피해자 문제 등이 발생하였다. 라이따이한 — 한국인과 베트남 여성 사이에서 태어난 자녀. 고엽제 — 식물의 잎을 제거하는 약품(교과서 각주).</p>
+  </section>
+
+  <section class="block" id="threeterm">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>3선 개헌으로 장기 집권을 꾀하다</h2>
+    </div>
+    <p class="block-sub">1967년 박정희는 경제 성장을 기반으로 다시 대통령에 선출되었다. 헌법이 허용한 두 번의 임기가 끝나 갈 무렵, 정부는 무엇을 하였을까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">안보 위기와 반공 강화</div>
+        <div class="step-desc">1968년 북한 특수 부대의 청와대 습격 등 도발 → 향토 예비군 창설, 학생 군사 교육, 주민 등록 제도 강화, 국민 교육 헌장 제정</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">개헌 추진</div>
+        <div class="step-desc">국가 안보와 지속적인 경제 발전을 구실로 대통령 3회 연임 허용 개헌 추진 — 야당·시민·학생은 장기 독재를 위한 것이라며 반대</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">3선 개헌(1969)</div>
+        <div class="step-desc">여당이 편법을 동원해 개헌안 통과 → 박정희, 세 번째로 대통령 당선(EBS: 1971년 김대중을 힘겹게 누름)</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>북한의 도발로 높아진 안보 위기감은 반공 체제를 강화하는 계기가 되었고, 정부는 같은 안보 논리를 내세워 대통령의 연임 제한까지 풀었다.</p></div>
+
+    <div class="sidebox">
+      <h4>편법으로 통과된 3선 개헌안(교과서 각주)</h4>
+      <p>1969년 9월 14일 새벽 3시, 농성 중인 야당 의원들 몰래 여당인 공화당과 친여 무소속 의원 122명이 국회 의사당 별관에 모였다. 개헌안은 토론 없이 상정 2분 만에 찬성 122표, 반대 0표로 가결되었다. 의사봉을 준비하지 못한 국회 의장은 주전자 뚜껑을 세 번 두들겨 가결을 선포하였다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="yushin">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>10월 유신으로 장기 독재를 꾀하다</h2>
+    </div>
+    <p class="block-sub">냉전이 누그러지자 반공을 앞세운 통치는 오히려 어려워졌다. 박정희 정부는 어떤 길을 택하였을까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--ink-soft)">
+        <div class="step-title">국제 정세의 변화</div>
+        <div class="step-desc">닉슨 독트린(1969)으로 냉전 완화 — 미국이 북한과의 화해를 권고하고 주한 미군 일부 철수 → 반공 정책을 계속하기 어려워짐</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">국내의 불만</div>
+        <div class="step-desc">장기 집권과 경제 침체로 국민 불만 증가</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--ink-soft)">
+        <div class="step-title">7·4 남북 공동 성명(1972)</div>
+        <div class="step-desc">북한과 평화 통일 원칙에 합의</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">10월 유신(1972)</div>
+        <div class="step-desc">현행 헌법이 평화 통일을 뒷받침할 수 없다는 명분으로 전국 비상계엄, 국회 해산, 헌법 개정(EBS: 비상 국무 회의에서 제정 → 국민 투표로 확정)</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>냉전이 누그러지며 반공만으로 통치하기 어려워지자, 박정희 정부는 평화 통일을 명분으로 내세워 오히려 권력을 대통령에게 집중시켰다.</p></div>
+
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>임기와 선출</h4>
+        대통령 임기 6년, 중임 횟수 제한 없음 — 직접 선거에서 통일 주체 국민회의의 간접 선거로 변경
+      </div>
+      <div class="compare-card crimson">
+        <h4>삼권 분립의 무력화</h4>
+        대통령에게 국회의원 1/3 추천권, 국회 해산권, 법관 인사권 부여
+      </div>
+      <div class="compare-card crimson">
+        <h4>긴급 조치권</h4>
+        헌법에 보장된 국민의 기본권을 제한할 수 있는 긴급 조치권 부여
+      </div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>사료로 보는 역사 — 국민의 기본권을 제한한 유신 헌법(교과서 102쪽, 재구성)</caption>
+      <thead><tr><th>조항</th><th>제3공화국 헌법</th><th>제4공화국 헌법(유신 헌법)</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">주권의 행사</td><td>주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다.</td><td>주권은 국민에게 있고, 국민은 그 대표자나 국민 투표로 주권을 행사한다.</td></tr>
+        <tr><td class="hd">기본권의 제한</td><td>필요한 경우에 한해 법률로 제한하되, 본질적인 내용은 침해할 수 없다.</td><td>국가 안전 보장·질서 유지·공공복리를 위해 필요하면 제한하는 법률을 만들 수 있다(본질적 내용 보장 조항 없음).</td></tr>
+        <tr><td class="hd">대통령의 긴급 권한</td><td>국회를 기다릴 여유가 없을 때만 최소한의 명령, 국회 승인을 얻지 못하면 효력 상실</td><td>필요하다고 판단할 때 긴급 조치 — 국회는 해제를 '건의'만 할 수 있음</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">통일 주체 국민회의의 대통령 선출(중앙선거관리위원회, 2023): 8대 박정희 99.92%, 9대 박정희 99.85% — 단독 출마. 닉슨 독트린 — 1969년 닉슨 대통령이 아시아에서 베트남 전쟁과 같은 직접적·군사적 개입을 하지 않겠다고 선언한 것(교과서 각주).</p>
+  </section>
+
+  <section class="block" id="resist">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>유신 체제에 맞서 민주화 운동이 일어나다</h2>
+    </div>
+    <p class="block-sub">학생과 시민, 종교인과 언론인은 유신 체제에 어떻게 맞섰고, 정부는 어떻게 탄압하였을까?</p>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>저항</h4>
+        중앙정보부가 김대중을 일본에서 납치하자 해명을 요구하는 대학생 시위 — 장준하·백기완 등의 개헌 청원 100만 인 서명 운동 — 천주교 정의 구현 전국 사제단 조직, 언론인의 언론 자유 수호 투쟁 — 함석헌·김대중 등이 명동 성당에서 3·1 민주 구국 선언 발표(1976)
+      </div>
+      <div class="compare-card crimson">
+        <h4>탄압</h4>
+        잇따른 긴급 조치로 정부 비판 억압 — 2차 인혁당 사건 등 간첩 사건 조작 — EBS: 민청학련 사건(180명 구속 기소, 2009년 무죄)
+      </div>
+    </div>
+    <div class="causal-link"><p>저항이 커질수록 정부는 긴급 조치와 조작 사건으로 맞섰지만, 민주화 운동은 탄압에도 그치지 않고 종교계와 언론계로까지 이어졌다.</p></div>
+    <p style="font-size:13px; color:var(--ink-soft);">2차 인혁당 사건(1975) — 인민 혁명당이라는 간첩단을 조직했다는 누명을 쓴 8명에게 대법원에서 형이 확정된 지 약 20시간 만에 사형을 집행하였다. 국제법학자협회는 1975년 4월 9일을 '사법사상 암흑의 날'로 지정하였고, 2007년 법원은 이 사건을 무죄로 판결하였다(교과서 각주). 참고(이전 교육과정 교과서): 김대중 납치 사건은 1973년 8월, 개헌 청원 100만 인 서명 운동은 1973년 12월에 일어났다.</p>
+
+    <div class="sidebox">
+      <h4>자료 탐구 2 — 긴급 조치(교과서 111쪽)</h4>
+      <p>대통령 긴급 조치 제1호(1974): 헌법을 부정·반대·비방하는 모든 행위와 이를 알리는 행위를 금지하고, 위반자와 비방자는 법관의 영장 없이 체포해 15년 이하의 징역에 처한다(재구성).</p>
+      <p>처벌 사례: 버스 안에서 정부의 분식 장려 정책을 비판한 사람이 중앙정보부에 불법 연행되어 고문 끝에 허위 자백하고 징역 3년에 처해졌다. 긴급 조치는 국민의 정권 비판을 막고 유신 체제를 강화하는 도구로 활용되었다.</p>
+    </div>
+    <div class="sidebox">
+      <h4>자료 탐구 3 — 3·1 민주 구국 선언(1976. 3. 1., 교과서 111쪽)</h4>
+      <p>"대한민국의 정통성은 민주주의에 있다. 긴급 조치를 철폐하고 투옥된 민주 인사와 학생을 석방하라."(함석헌 외, 「민주 구국 선언」, 재구성) — 유신 체제를 비판하고 긴급 조치 철폐와 박정희 정권 퇴진을 요구하여, 탄압 속에서도 저항이 광범위하게 이어지고 있음을 국내외에 알렸다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="fall">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>유신 체제가 막을 내리다</h2>
+    </div>
+    <p class="block-sub">1970년대 후반, 유신 체제는 안팎에서 한계에 부딪혔다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">체제의 한계</div>
+        <div class="step-desc">간접 선거로 다섯 번째 당선, 그러나 직접 선거인 국회의원 선거(1978)에서 야당이 더 많은 표 획득 — 제2차 석유 파동으로 경제 악화, 미국의 인권 탄압 비판</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">YH 무역 사건(1979)</div>
+        <div class="step-desc">부당한 공장 폐쇄에 맞서 신민당 당사에서 농성하던 노동자 강제 진압(EBS: 여성 노동자 1명 사망) → 항의한 신민당 총재 김영삼을 국회의원에서 제명</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">부·마 민주 항쟁</div>
+        <div class="step-desc">부산과 마산(창원)에서 대학생 중심으로 '유신 철폐', '독재 타도' 시위 — 장기 독재와 경기 침체로 불만이 높아진 시민들도 참여</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">10·26 사태</div>
+        <div class="step-desc">시위 수습 방안을 놓고 정권 내부 갈등 → 박정희 대통령이 중앙정보부장 김재규에게 피살</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>선거와 경제, 국제 여론에서 모두 밀리던 유신 체제는 부·마 민주 항쟁에 대한 대응을 두고 권력 내부가 갈라지면서 무너졌다.</p></div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>10대 국회의원 선거 결과(1978) — 교과서 그래프(서중석, 2005)</caption>
+      <thead><tr><th>정당</th><th>득표율</th><th>의석</th></tr></thead>
+      <tbody>
+        <tr><td class="hd crimson">민주공화당</td><td>31.7%</td><td>68석</td></tr>
+        <tr><td class="hd deep">신민당</td><td>32.8%</td><td>61석</td></tr>
+        <tr><td class="hd">민주통일당</td><td>7.4%</td><td>3석</td></tr>
+        <tr><td class="hd">무소속</td><td>28.1%</td><td>22석</td></tr>
+        <tr><td class="hd crimson">유신 정우회</td><td>—(대통령 추천, 통일 주체 국민회의 선출)</td><td>77석</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">야당인 신민당의 득표율이 더 높았다. 한편 국회의원의 1/3(유신 정우회 77석)은 대통령의 추천을 받아 통일 주체 국민회의에서 선출하였다(교과서 그래프 설명).</p>
+
+    <div class="sidebox">
+      <h4>부·마 민주 항쟁의 기억(교과서 103쪽)</h4>
+      <p>1979년 10월 16일 부산대학교 학생들이 '유신 철폐', '독재 타도'가 적힌 선언문을 나누어 주며 시위를 벌였고, 학교 밖으로 나오자 시민들도 합류하였다. 정부는 부산 일대에 비상계엄을 선포하고 공수 부대와 탱크·장갑차를 투입하였지만, 시위는 마산·창원까지 번졌다.</p>
+      <p>부·마 민주 항쟁은 유신 체제의 몰락을 알리는 신호탄이자 독재 정권에 맞선 시민들의 민주 항쟁으로 평가받으며, 2019년 10월 16일이 국가 기념일로 지정되었다. 당시 선언문은 유신 헌법 철폐, 공평한 소득 분배, 언론·집회·결사의 자유 등을 요구하였다.</p>
+    </div>
+    <div class="note-box">10·26 사태 이후 신군부가 등장하는 과정은 다음 소주제 <a href="Ⅱ-2-3-03_518민주화운동_도표(해설포함).html">「5·18 민주화 운동」</a>에서 이어진다.</div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">9</span>
+      <h2>정리 — 박정희 정부 18년의 권력 강화와 저항</h2>
+    </div>
+    <p class="block-sub">권력을 늘린 수단과 명분, 그에 맞선 저항을 시기별로 정리해 보자.</p>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>박정희 정부의 권력 강화와 저항 — 교과서·EBS의 내용을 시기별로 풀어 쓴 정리(풀이)</caption>
+      <thead><tr><th>시기</th><th>권력 강화 수단</th><th>내세운 명분</th><th>저항</th></tr></thead>
+      <tbody>
+        <tr><td class="hd crimson">1961~1963</td><td>5·16 군사 정변, 군정, 민주공화당 창당</td><td>사회 혼란 수습, 반공, 민생고 해결</td><td>—</td></tr>
+        <tr><td class="hd brass">1964~1965</td><td>계엄 선포 후 한·일 협정 체결</td><td>경제 개발 자금 마련</td><td>6·3 시위</td></tr>
+        <tr><td class="hd crimson">1969</td><td>편법으로 3선 개헌 통과</td><td>국가 안보와 지속적인 경제 발전</td><td>야당·시민·학생의 개헌 반대</td></tr>
+        <tr><td class="hd crimson">1972~1979</td><td>10월 유신, 긴급 조치, 조작 사건</td><td>평화 통일 뒷받침</td><td>개헌 청원 운동, 3·1 민주 구국 선언, 부·마 민주 항쟁</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="limit-box">
+      <h4>경제 개발의 그늘</h4>
+      <p>교과서: 한·일 협정은 식민 지배에 대한 배상과 사과 없이 체결되어, 기본 조약과 청구권 협정의 해석을 둘러싼 한·일 간의 쟁점이 오늘날까지 남아 있다. 베트남 파병으로 수많은 젊은이가 희생되었고 고엽제 피해, 베트남 민간인 희생, 라이따이한 문제가 일어났다.</p>
+    </div>
+
+    <div class="think-box">
+      <h4>생각 키우기 — 한·일 협정의 쟁점들(101쪽)</h4>
+      <ol>
+        <li>한국과 일본이 한·일 협정을 다르게 해석하는 까닭을 정리해 보자.</li>
+        <li>청구권 협정의 해석과 관련해 일본군 '위안부', 강제 동원에 대한 한국과 일본 정부의 입장을 조사하고 모둠별로 발표해 보자.</li>
+      </ol>
+      <h4>생각 키우기 — 국민의 기본권을 제한한 유신 헌법(102쪽)</h4>
+      <ol>
+        <li>제3공화국 헌법과 유신 헌법을 비교하여 어떤 부분이 바뀌었는지 정리해 보자.</li>
+        <li>유신 헌법이 국민의 기본권을 어떻게 제한하였는지 말해 보자.</li>
+      </ol>
+      <h4>자료 탐구 2 · 길잡이 질문</h4>
+      <ol>
+        <li>1970년대 긴급 조치 위반 사례에는 어떤 것이 있는지 조사하여 발표해 보자.</li>
+        <li>박정희 정부는 어떻게 독재 체제를 강화해 나갔을까?</li>
+        <li>유신 체제에 맞서 국민들은 어떻게 저항하였을까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">10</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. (　　　)은/는 박정희를 중심으로 한 일부 군부 세력이 군사 정변으로 정권을 장악한 사건이다.</summary>
+        <div class="check-answer">5·16 군사 정변</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 박정희 정부는 (　　　)과/와 국교를 정상화하여 경제 개발 자금을 마련하려고 하였다.</summary>
+        <div class="check-answer">일본</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 박정희 정부는 (　　　)에 국군을 파병하여 경제 개발 자금을 마련하였다.</summary>
+        <div class="check-answer">베트남 전쟁</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 1969년에 대통령 (　　　)회 연임 허용을 중심으로 하는 개헌안이 통과되었다.</summary>
+        <div class="check-answer">3</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q5. 유신 헌법으로 대통령 선출 방식이 직접 선거로 바뀌었다. (○, ×)</summary>
+        <div class="check-answer">× — 통일 주체 국민회의에서 선출하는 간접 선거로 바뀌었다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 유신 헌법은 대통령에게 긴급 조치권을 부여하여 국민의 (　　　)을/를 제한할 수 있도록 하였다.</summary>
+        <div class="check-answer">기본권</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q7. 1976년 함석헌, 김대중 등은 명동 성당에서 (　　　)을/를 발표하였다.</summary>
+        <div class="check-answer">3·1 민주 구국 선언</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q8. (　　　)은/는 1979년 부산과 마산의 대학생을 중심으로 시작되었다.</summary>
+        <div class="check-answer">부·마 민주 항쟁</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q9. 5·16 군사 정변을 일으킨 세력은 국가 재건 최고 회의를 설치하고 군정을 실시하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q10. 중앙정보부장 윤보선과 일본 외무 장관 오히라 사이에 비밀 회담이 전개되었다. (○, ×)</summary>
+        <div class="check-answer">× — 중앙정보부장은 김종필이었다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q11. 유신 헌법은 대통령에게 긴급 조치권을 부여하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q12. 유신 체제에 맞서 3·1 민주 구국 선언이 발표되었다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사』(2022 개정 교육과정), Ⅱ 「대한민국의 발전」 3 「민주주의의 시련과 민주화 운동」 02 「5·16 군사 정변과 10월 유신」, 100–103쪽 — 본문·연표·도입 자료(혁명 공약)·김종필-오히라 메모·사료로 보는 역사(한·일 협정의 쟁점들, 유신 헌법)·브라운 각서·각주(3선 개헌, 닉슨 독트린, 2차 인혁당 사건)·「부·마 민주 항쟁의 기억」·10대 국회의원 선거 결과·생각 키우기·확인하기의 기본 출처 (1차 근거)</li>
+      <li>동아출판 고등학교 『한국사』, 자료로 보는 한국사 자료 탐구 2 「긴급 조치」·자료 탐구 3 「3·1 민주 구국 선언」, 111쪽 (1차 근거)</li>
+      <li>EBS 개념완성 한국사Ⅱ (2022 개정), 「민주화를 위한 노력」 중 「5·16 군사 정변(1961)과 박정희 정부」「유신 체제(1972)」, 202–203쪽, 유신 체제의 붕괴, 204쪽 — 중앙정보부, 브라운 각서, 파병 기간, 1963·1971년 대통령 선거, 민청학련 사건, YH 무역 사건, 개념 체크 (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국 근현대사』(중앙교육, 2006), 302–308쪽 (참고용) — 6·3 시위 날짜, 10월 유신 선포일, 김대중 납치 사건과 개헌 청원 운동의 시기에만 활용</li>
+    </ol>
+    <div class="note">
+      「박정희 정부의 권력 강화와 저항」 표는 교과서·EBS의 내용을 이해하기 쉽도록 풀어 쓴 정리이다. 이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅱ-2-3-02)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p02-N과 대응)
+  const SECTION_PREFIX = "2-2-3-02";
+
+  const narrativeData = {
+    // 2-2-3-02-2: 5·16 군사 정변이 일어나다  (대본 p02-2)
+    "2-2-3-02-2": [
+      "1961년 5월 16일 새벽, 박정희를 중심으로 한 일부 군인들이 사회 혼란을 수습하겠다는 구실로 군대를 움직여 권력을 잡았습니다. 이것이 <b>5·16 군사 정변</b>입니다. 이들은 반공과 민생 해결을 내세우고, 일이 끝나면 정권을 넘기고 군으로 돌아가겠다는 혁명 공약을 발표했습니다.",
+      "그러나 실제는 달랐습니다. 이들은 비상계엄을 선포해 헌법을 멈추고 <b>국가 재건 최고 회의</b>로 입법·사법·행정권을 모두 쥐었습니다. 정치인의 활동을 막고 언론을 누르는 한편, <b>중앙정보부</b>를 만들고 비밀리에 민주공화당을 창당했습니다.",
+      "그리고 민정에 참여하지 않겠다던 박정희는 전역 직후 민주공화당 후보로 나서 1963년 대통령에 당선되었습니다. 군사 정변 세력이 그대로 민간 정부의 주인이 된 것입니다. 정권의 정당성을 얻기 위해, 박정희 정부는 경제 개발에 힘을 쏟기 시작합니다."
+    ],
+    // 2-2-3-02-3: 한·일 협정을 체결하다  (대본 p02-3)
+    "2-2-3-02-3": [
+      "경제 개발에는 돈이 필요했습니다. 박정희 정부는 일본과 국교를 맺어 그 자금을 마련하려 했고, 한·미·일 안보 협력을 원한 미국도 이를 적극 지지했습니다.",
+      "그런데 회담 과정에서 일제의 식민 지배에 대한 배상과 사과 없이 합의가 이루어졌다는 사실이 알려졌습니다. 1962년 김종필과 오히라가 비밀리에 합의한 메모에는 무상 3억 달러, 유상 2억 달러 등을 받기로 한 내용이 담겨 있었습니다. 학생들은 굴욕 외교라며 대대적인 <b>6·3 시위</b>를 벌였습니다.",
+      "정부는 계엄을 선포해 시위를 누르고 1965년 <b>한·일 협정</b>을 체결했습니다. 그러나 1910년 조약의 무효 시점, 개인의 청구권이 남아 있는지를 두고 두 나라는 지금도 서로 다르게 해석하고 있습니다. 경제 개발 자금을 얻은 또 다른 길은 베트남이었습니다."
+    ],
+    // 2-2-3-02-4: 베트남 전쟁에 국군을 파병하다  (대본 p02-4)
+    "2-2-3-02-4": [
+      "박정희 정부는 미국의 요청에 따라 <b>베트남 전쟁</b>에 국군을 보냈습니다. 그 대가로 미국은 국군의 현대화를 돕고 경제 발전을 위한 차관을 주겠다고 약속했는데, 이를 담은 문서가 <b>브라운 각서</b>입니다.",
+      "파병으로 정부는 미국의 지지를 얻어 정권을 안정시켰고, 파병 군인의 송금과 군수 물자 수출, 건설 사업 참여로 벌어들인 외화는 경제 개발에 큰 도움이 되었습니다.",
+      "하지만 그 대가는 컸습니다. 수많은 젊은이가 목숨을 잃었고, 많은 사람이 <b>고엽제</b> 피해로 지금까지 고통받고 있습니다. 베트남 민간인의 희생과 한국인 2세인 라이따이한 문제도 남았습니다. 경제 성장을 이룬 정부는 이제 권력을 더 오래 유지하려 했습니다."
+    ],
+    // 2-2-3-02-5: 3선 개헌으로 장기 집권을 꾀하다  (대본 p02-5)
+    "2-2-3-02-5": [
+      "1967년 박정희는 경제 성장을 바탕으로 다시 대통령에 당선되었습니다. 이듬해 북한 특수 부대가 청와대를 습격하는 등 도발이 이어지자, 정부는 이를 계기로 향토 예비군을 만들고 학생에게 군사 교육을 시키며 주민 등록 제도를 강화했습니다. <b>국민 교육 헌장</b>도 만들었습니다.",
+      "그리고 국가 안보와 지속적인 경제 발전을 내세워 대통령이 세 번까지 연임할 수 있도록 헌법을 바꾸려 했습니다. 야당과 시민, 학생들은 장기 독재를 위한 것이라며 반대했습니다.",
+      "그러자 여당 의원들은 1969년 새벽, 농성 중인 야당 의원들 몰래 국회 별관에 모여 단 2분 만에 개헌안을 통과시켰습니다. 의사봉 대신 주전자 뚜껑을 두드렸을 정도였습니다. 이 <b>3선 개헌</b>으로 박정희는 세 번째 대통령이 되었지만, 더 큰 변화가 기다리고 있었습니다."
+    ],
+    // 2-2-3-02-6: 10월 유신으로 장기 독재를 꾀하다  (대본 p02-6)
+    "2-2-3-02-6": [
+      "1969년 미국이 <b>닉슨 독트린</b>을 발표하면서 냉전이 누그러지기 시작했습니다. 미국이 북한과의 화해를 권하고 주한 미군 일부를 철수하자, 반공을 앞세운 통치는 어려워졌습니다. 장기 집권과 경제 침체로 국민의 불만도 커졌습니다.",
+      "박정희 정부는 1972년 북한과 7·4 남북 공동 성명을 발표한 뒤, 그해 10월 지금의 헌법으로는 평화 통일을 뒷받침할 수 없다는 명분으로 비상계엄을 선포하고 국회를 해산하고 헌법을 바꾸었습니다. 이것이 <b>10월 유신</b>입니다.",
+      "<b>유신 헌법</b>으로 대통령은 임기 6년에 횟수 제한 없이 연임할 수 있게 되었고, 국민이 아니라 통일 주체 국민회의가 대통령을 뽑았습니다. 대통령은 국회의원 3분의 1을 추천하고 국회를 해산하며 법관을 임명했고, 긴급 조치로 국민의 기본권까지 제한할 수 있었습니다. 삼권 분립이 무너진 것입니다. 국민은 이에 어떻게 맞섰을까요?"
+    ],
+    // 2-2-3-02-7: 유신 체제에 맞서 민주화 운동이 일어나다  (대본 p02-7)
+    "2-2-3-02-7": [
+      "중앙정보부가 유신 체제를 비판하던 김대중을 일본에서 납치하자, 대학생들은 해명을 요구하며 시위에 나섰습니다. 장준하, 백기완 등은 헌법을 고치자는 개헌 청원 100만 인 서명 운동을 벌였습니다.",
+      "정부는 <b>긴급 조치</b>를 잇따라 발표해 비판을 막았습니다. 버스 안에서 정부 정책을 비판한 시민이 징역을 살 정도였습니다. 간첩 사건도 조작했는데, <b>2차 인혁당 사건</b>에서는 누명을 쓴 8명이 형이 확정된 지 약 20시간 만에 사형되었고, 훗날 법원은 이들에게 무죄를 선고했습니다.",
+      "그래도 저항은 그치지 않았습니다. 천주교 사제들은 정의 구현 사제단을 만들었고, 언론인들은 언론 자유를 지키려 싸웠으며, 1976년 함석헌과 김대중 등은 명동 성당에서 <b>3·1 민주 구국 선언</b>을 발표했습니다. 그리고 1970년대 말, 유신 체제는 한계에 다다릅니다."
+    ],
+    // 2-2-3-02-8: 유신 체제가 막을 내리다  (대본 p02-8)
+    "2-2-3-02-8": [
+      "박정희는 간접 선거로 다섯 번째 대통령이 되었지만, 1978년 국민이 직접 뽑는 국회의원 선거에서는 야당이 여당보다 더 많은 표를 얻었습니다. 제2차 석유 파동으로 경제가 어려워졌고, 미국도 인권 탄압을 비판했습니다.",
+      "1979년 공장 폐쇄에 맞서 야당 당사에서 농성하던 <b>YH 무역</b> 노동자들이 강제로 진압되었고, 이에 항의한 신민당 총재 김영삼은 국회의원에서 제명되었습니다. 그러자 부산과 마산에서 대학생들이 유신 철폐와 독재 타도를 외쳤고 시민들도 함께했습니다. 이것이 <b>부·마 민주 항쟁</b>입니다.",
+      "시위를 어떻게 수습할지를 두고 권력 내부가 갈라졌고, 그 과정에서 박정희 대통령이 중앙정보부장 김재규에게 피살되었습니다. 이 <b>10·26 사태</b>로 유신 체제는 막을 내렸습니다. 사람들은 이제 민주주의가 올 것이라 기대했습니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

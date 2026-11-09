@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6·25 전쟁(자막 해설) | 형제가 서로 총을 겨눈 3년 — 6·25 전쟁과 굳어진 분단</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅱ-2-1-05_대한민국의수립_도표(해설포함).html">‹ 이전: 대한민국 정부 수립 (대단원 이동)</a>
+  <a href="Ⅱ-2-2_625전쟁과분단의고착화_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#prepare">남침 준비</a>
+  <a href="#war">발발과 전개</a>
+  <a href="#armistice">정전 협정</a>
+  <a href="#impact">황폐화와 분단</a>
+  <a href="#massacre">집단 학살</a>
+  <a href="#society">사회 변화</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#more">더 알아보기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅱ-2-2-02_전후남북한의정치와경제_도표(해설포함).html">다음: 전후 남북한의 정치와 경제 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>대한민국의 발전</span> · 6·25 전쟁과 분단의 고착화</div>
+    <h1>형제가 서로 총을 겨눈 3년 — 6·25 전쟁과 굳어진 분단</h1>
+    <p class="lead">남과 북에 각각 정부가 들어서고 미국과 소련이 군대를 철수하자, 소련과 중국의 지원을 받은 북한은 1950년 6월 25일 기습적으로 남침하였다. 유엔군의 참전과 인천 상륙 작전, 중국군의 개입으로 전선이 오르내린 끝에 전쟁은 38도선 부근에서 교착 상태에 빠졌고, 1953년 7월 정전 협정이 체결되었다. 전쟁은 한반도를 황폐화시키고 남북의 적대감을 깊게 하여 분단을 더욱 굳혔다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1950 – 1953</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>하나의 전쟁, 세 갈래의 상처</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 국군·유엔군(대한민국·미국)</strong> · <strong style="color:var(--crimson)">적색 = 북한군·중국군·소련</strong> · <strong style="color:var(--brass)">황동색 = 전환점·전쟁의 영향</strong>. 전쟁은 준비 → 발발·전개 → 정전의 순서로 이어졌고, 그 결과는 세 갈래로 나타났다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">남침 준비</div>
+        <div class="step-desc">미·소 양군 철수, 38도선 부근 무력 충돌 — 소련·중국의 군사 지원, 애치슨 선언</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">발발·전개(1950~1951)</div>
+        <div class="step-desc">북한군의 기습 남침 → 인천 상륙 작전 → 중국군 개입·1·4 후퇴 → 38도선 부근 교착</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">정전(1953)</div>
+        <div class="step-desc">2년간의 회담 끝에 정전 협정 체결 — 휴전선·비무장 지대 설정</div>
+      </div>
+    </div>
+    <p class="branch-cause">정전으로 포성은 멎었지만, 전쟁이 남긴 결과는 서로 다른 세 방향으로 동시에 나타났다.</p>
+    <div class="branch-cols">
+      <div class="branch-col brass">
+        <h4>황폐화</h4>
+        <p class="why">사람과 땅이 입은 피해</p>
+        <div class="branch-node">수백만 명 희생, 이산가족·전쟁고아</div>
+        <div class="branch-node">농촌 황폐화, 산업·사회 기반 시설 파괴</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>분단의 고착·국제 정세</h4>
+        <p class="why">더 깊어진 대립</p>
+        <div class="branch-node">북진 통일 vs 적화 통일, 적대감을 독재 강화에 이용</div>
+        <div class="branch-node">미군 주둔, 일본의 경제 부흥, 북한에 대한 중국의 영향력 증대</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>사회 변화</h4>
+        <p class="why">바뀐 삶의 모습</p>
+        <div class="branch-node">촌락·대가족 공동체 해체</div>
+        <div class="branch-node">미국 대중문화 유입, 여성의 역할 증대</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 국군·유엔군</strong> · <strong style="color:var(--crimson)">적색 = 북한군·중국군·소련</strong> · <strong style="color:var(--brass)">황동색 = 전환점</strong></p>
+    <div class="timeline wide">
+      <div class="tl-item turn"><div class="tl-year">1950. 1.</div><div class="tl-body"><div class="tl-title">애치슨 선언</div><div class="tl-desc">미국의 태평양 방위선에서 한반도와 타이완 제외</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1950. 6. 25.</div><div class="tl-body"><div class="tl-title">북한군의 기습 남침, 6·25 전쟁 발발</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1950. 6. 28.</div><div class="tl-body"><div class="tl-title">서울 함락</div><div class="tl-desc">EBS</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1950. 9. 15.</div><div class="tl-body"><div class="tl-title">인천 상륙 작전</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1950. 9. 28.</div><div class="tl-body"><div class="tl-title">서울 수복</div><div class="tl-desc">EBS</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1950. 10.</div><div class="tl-body"><div class="tl-title">중국군 참전</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1951. 1. 4.</div><div class="tl-body"><div class="tl-title">1·4 후퇴 — 서울 재함락</div><div class="tl-desc">EBS</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1951. 3.</div><div class="tl-body"><div class="tl-title">서울 재수복, 이후 38도선 부근 교착</div><div class="tl-desc">EBS</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1951. 7.</div><div class="tl-body"><div class="tl-title">소련의 제안으로 정전 회담 시작</div><div class="tl-desc">EBS</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1953. 6. 18.</div><div class="tl-body"><div class="tl-title">이승만 정부, 반공 포로 석방</div><div class="tl-desc">날짜는 참고(이전 교육과정 교과서)</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1953. 7. 27.</div><div class="tl-body"><div class="tl-title">정전 협정 체결</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1953. 10.</div><div class="tl-body"><div class="tl-title">한·미 상호 방위 조약 체결</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="prepare">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>북한이 남침을 준비하다</h2>
+    </div>
+    <p class="block-sub">형제의 상(전쟁기념관)은 한국군 장교였던 형과 인민군 병사였던 아우가 전쟁터에서 극적으로 만난 실화를 바탕으로 만들었다(교과서 도입 자료). 형제가 서로 다른 편에서 싸우는 비극은 어떻게 시작되었을까?</p>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>국내 요인</h4>
+        남북에 각각 정부가 들어서면서 미국과 소련이 한반도에서 군대 철수 — 이념과 체제를 달리하는 남북이 서로 비난하며 38도선 부근에서 크고 작은 무력 충돌 — 남북 군사력 강화: 남한은 국방 경비대를 국군으로 확대·개편하고 한미 상호 방위 원조 협정 체결(EBS), 북한은 국·공 내전에 참여한 조선 의용군을 인민군에 편입
+      </div>
+      <div class="compare-card crimson">
+        <h4>국외 요인</h4>
+        북한이 소련과 중국에서 군사 지원을 받음 — 소련은 북한의 남침 계획에 동의하고 최신 무기 제공(EBS), 중국은 필요할 경우 참전 약속 — 미국은 태평양 방위선에서 한반도와 타이완을 제외한다는 애치슨 선언 발표(1950. 1.)
+      </div>
+    </div>
+    <div class="causal-link"><p>이러한 상황에서 북한은 한반도에서 전쟁이 벌어져도 미국이 개입하지 않을 것이라 판단하였다.</p></div>
+
+    <div class="quote-grid">
+      <div class="quote-block crimson">
+        <h4>스탈린의 발언</h4>
+        전쟁은 기습적이고 신속해야 하며, 저항과 국제적 지원이 모일 틈을 주지 말라.
+        <div class="src">『구소련 문서』 (재구성)</div>
+      </div>
+      <div class="quote-block">
+        <h4>애치슨 선언(1950. 1.)</h4>
+        방위선은 알류샨 열도에서 일본, 오키나와, 필리핀으로 이어진다.
+        <div class="src">EBS 개념완성 (재구성) — 그 밖의 태평양 지역은 군사적 공격으로부터 안전을 보장할 수 없다고 밝혀, 미국이 한국 전쟁에 개입하지 않을 것이라고 해석될 여지가 있었다.</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 북한은 38도선 이북을 혁명 기지로 강화한 뒤 남한을 공산화하겠다는 '민주기지론'을 내걸고 남침을 준비하였다.</p>
+
+    <div class="note-box">일본이 미국의 반공 기지가 되어 간 동아시아의 냉전은 <a href="Ⅱ-2-1-01_냉전체제와동아시아_도표(해설포함).html#japan">「냉전 체제와 동아시아」</a>에서 볼 수 있다.</div>
+  </section>
+
+  <section class="block" id="war">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>6·25 전쟁이 발발하다</h2>
+    </div>
+    <p class="block-sub">1950년 6월 25일 새벽, 북한군이 38도선을 넘어 기습적으로 남침하였다. 전선은 낙동강에서 압록강까지 오르내렸다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">① 북한군의 남침</div>
+        <div class="step-desc">탱크를 앞세워 3일 만에 서울 점령, 빠른 속도로 낙동강 부근까지 남하 — 유엔 안전 보장 이사회가 북한을 침략자로 규정하고 유엔군 파병 결의, 미국 중심 16개국 참전 → 국군·유엔군의 낙동강 방어선 구축(EBS)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">② 국군·유엔군의 반격</div>
+        <div class="step-desc">인천 상륙 작전으로 전세 역전, 서울 수복 → 38도선을 넘어 평양 점령, 압록강까지 진격</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">③ 중국군의 개입</div>
+        <div class="step-desc">다시 서울을 빼앗기고 한강 이남으로 후퇴(1·4 후퇴) — 흥남 철수 작전으로 국군·유엔군과 피란민 철수</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">④ 전선의 교착</div>
+        <div class="step-desc">국군·유엔군이 서울을 되찾았으나 전쟁은 38도선 부근에서 교착 상태</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>인천 상륙 작전으로 뒤집힌 전세는 중국군의 개입으로 다시 뒤집혔고, 어느 쪽도 상대를 밀어내지 못하자 전선은 38도선 부근에 묶이게 되었다.</p></div>
+
+    <div class="quote-block deep">
+      <h4>전쟁 발발을 알린 방송 — 『중앙방송』(1950. 6. 25.)</h4>
+      북한 공산군이 남침을 시작했으나, 국군이 건재하니 국민 여러분 안심하시오.
+      <div class="src">『중앙방송』 (재구성)</div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">유엔군 — 병력 지원 16개국을 포함해 총 63개국이 대한민국을 지원하였다(교과서 각주). EBS: 6·25 전쟁 중 남한은 국군의 작전 지휘권을 유엔군 사령관에게 넘겼다. 교과서 사진: 흥남 철수 작전 기념비(경남 거제, 거제 포로수용소 유적 공원).</p>
+  </section>
+
+  <section class="block" id="armistice">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>정전 협정을 체결하다</h2>
+    </div>
+    <p class="block-sub">정전은 일시적으로 전투를 멈추는 것이다. 정전 회담은 무엇 때문에 2년이나 이어졌을까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">회담 시작(1951. 7.)</div>
+        <div class="step-desc">전쟁이 교착 상태에 빠지자 소련의 제안으로 정전 협상 시작</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">2년간의 줄다리기</div>
+        <div class="step-desc">휴전선 설정·포로 송환 방식에 대한 입장 차이로 회담 장기화 — 그사이 38도선 부근에서 치열한 전투, 많은 희생자 발생</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">이승만 정부의 반대</div>
+        <div class="step-desc">북진 통일을 주장하며 정전 반대(EBS), 북한 송환을 거부하는 반공 포로 일방적 석방 → 미국에서 한·미 상호 방위 조약 체결을 약속받고 정전 협정 준수 발표</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">정전 협정(1953. 7. 27.)</div>
+        <div class="step-desc">휴전선 확정, 비무장 지대(DMZ) 설치, 포로는 자유의사에 따라 송환</div>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>정전 회담의 쟁점 — 교과서 각주와 EBS 정리</caption>
+      <thead><tr><th>쟁점</th><th>공산군 측(북한·중국)</th><th>유엔군 측</th><th>결과</th></tr></thead>
+      <tbody>
+        <tr><td class="hd brass">군사 분계선</td><td>38도선(EBS)</td><td>전투가 벌어지던 전선(EBS)</td><td>양측 군대가 대치하던 전선을 경계로 휴전선 확정(EBS)</td></tr>
+        <tr><td class="hd brass">포로 송환</td><td>무조건 본국 송환</td><td>포로의 자유의사</td><td>송환을 원하는 포로는 직접 송환, 나머지는 중립국 송환 위원회에 넘김</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="quote-block">
+      <h4>정전 협정문(1953, 요약)</h4>
+      군사 분계선에서 쌍방이 2km씩 물러나 비무장 지대를 설정한다.
+      <div class="src">정전 협정문 1조 1항 (교과서 재구성) — 3조 51항: 송환을 원하는 포로는 직접 송환하고 나머지는 중립국 송환 위원회에 넘긴다.</div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">EBS: 정전 협정은 유엔군·북한군·중국군 사령관이 서명하였고, 남한은 협정 내용을 준수한다는 입장을 밝혔다. 참고(이전 교육과정 교과서): 이승만 대통령은 1953년 6월 18일 반공 포로 2만 5천여 명을 석방하였고, 미국으로부터 한·미 상호 방위 조약 체결과 장기간의 경제 원조, 한국군 증강 등을 약속받고 휴전에 동의하였다.</p>
+  </section>
+
+  <section class="block" id="impact">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>전쟁이 한반도를 황폐화시키다</h2>
+    </div>
+    <p class="block-sub">전쟁은 수많은 목숨과 삶의 터전을 앗아 갔을 뿐 아니라, 남과 북을 더 깊은 적대 속으로 몰아넣었다.</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>6·25 전쟁의 인명 피해(단위: 천 명) — 교과서 그래프(국방부 군사편찬연구소, 2023)</caption>
+      <thead><tr><th>구분</th><th>민간인</th><th>군인</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">남한</td><td>991</td><td>589.2</td></tr>
+        <tr><td class="hd crimson">북한</td><td>1,798</td><td>640</td></tr>
+        <tr><td class="hd crimson">중국</td><td>—</td><td>972.6</td></tr>
+        <tr><td class="hd deep">유엔</td><td>—</td><td>154</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">EBS는 같은 통계를 남한 민간인 990.9, 군인 589.1(천 명)로 싣고 있다(『6·25 전쟁 통계 자료집』, 2023).</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">황폐화</div>
+        <div class="step-desc">군인·민간인 수백만 명 희생, 수많은 이산가족·전쟁고아 발생 — 농촌 황폐화로 식량 생산 감소, 산업·사회 기반 시설 파괴로 물자 부족</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">적대감의 심화</div>
+        <div class="step-desc">전쟁 과정에서 남북한의 이념 대립과 적대감 심화 — 전쟁 이후에도 남은 북진 통일, 북은 적화 통일을 주장하며 군사력 강화</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">분단의 고착</div>
+        <div class="step-desc">남북한이 서로에 대한 적대감을 독재 체제 강화에 이용 → 분단이 더욱 고착</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>전쟁이 남긴 적대감은 남북 모두에서 독재를 정당화하는 데 쓰였고, 그만큼 분단은 더 단단해졌다.</p></div>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>미국</h4>
+        한·미 상호 방위 조약을 근거로 남한에 군대를 계속 주둔하며 동아시아에서 영향력 강화
+      </div>
+      <div class="compare-card brass">
+        <h4>일본</h4>
+        전쟁 물자를 수출하며 경제 부흥, 아시아의 반공 거점 — EBS: 6·25 전쟁 중 샌프란시스코 강화 조약으로 주권 회복
+      </div>
+      <div class="compare-card crimson">
+        <h4>북한·중국</h4>
+        북한에서 전쟁을 도와준 중국의 영향력 증대 — EBS: 중국이 아시아 공산주의의 맹주로 성장
+      </div>
+    </div>
+
+    <div class="quote-block deep">
+      <h4>한·미 상호 방위 조약(1953)</h4>
+      미국 군대를 대한민국 영토 안과 그 부근에 배치하는 권리를 허락하고 수락한다.
+      <div class="src">한·미 상호 방위 조약 제4조 (교과서 재구성) — 제3조: 공통의 위험에 각자의 헌법상 절차에 따라 대처한다.</div>
+    </div>
+  </section>
+
+  <section class="block" id="massacre">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>6·25 전쟁 중에 일어난 집단 학살</h2>
+    </div>
+    <p class="block-sub">사료로 보는 역사(교과서 90쪽) — 전쟁 중에는 전투에 나선 군인뿐 아니라 수많은 민간인이 집단으로 학살되었다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>국민 보도 연맹 학살</h4>
+        전쟁이 일어나자 이승만 정부가 북한에 협력할 가능성이 있다는 구실로 법적 절차 없이 국민 보도 연맹원을 연행·구금, 수만 명 학살 — 전쟁 뒤에도 희생자 가족들은 감시 속에서 생활 — 민주화와 함께 진상이 밝혀졌고 2008년 노무현 대통령이 사과
+      </div>
+      <div class="compare-card crimson">
+        <h4>서울대학교 병원 학살</h4>
+        북한군이 서울에 침입하자 움직일 수 있는 전상자 80여 명이 병원 뒷산에서 끝까지 저지하다 전사 — 남아 있던 중상자와 일반 환자들은 뒤늦게 들어온 북한군에게 학살됨(국방부, 『한국 전쟁사』)
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">EBS: 국민 보도 연맹 사건·거창 양민 학살 사건·북한군의 인민재판 등 민간인 학살 사건이 일어났다. 교과서 사진: 이름 모를 자유 전사의 비(서울대학교 병원), 산내 골령골 국민 보도 연맹 학살지 유골 봉안소(대전 동구). 참고(이전 교육과정 교과서): 국군도 서울 수복 후 북진하면서 부역자 등을 처형하였는데, 이 과정에서 어쩔 수 없이 공산군에 협력한 양민들까지 피해를 입어 민족 간의 원한과 불신이 깊어졌다.</p>
+
+    <div class="note-box">국민 보도 연맹이 조직된 과정은 <a href="Ⅱ-2-1-05_대한민국의수립_도표(해설포함).html#anti">「대한민국 정부 수립」</a>에서 볼 수 있다.</div>
+  </section>
+
+  <section class="block" id="society">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>전쟁으로 사회가 변하다</h2>
+    </div>
+    <p class="block-sub">전쟁은 사람들의 일생을 파괴하고 송두리째 바꾸어 놓았다. 6·25 전쟁을 살아간 사람들의 삶을 살펴보자(탐구하는 한국사, 교과서 91쪽).</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">공동체의 해체</div>
+        <div class="step-desc">많은 사람이 전쟁을 피해 고향을 떠남 → 전통적인 촌락 공동체와 대가족 중심 가족 공동체 해체</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">미국 문화의 유입</div>
+        <div class="step-desc">미군을 통해 미국의 대중문화가 빠르게 유입</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">여성의 역할 증대</div>
+        <div class="step-desc">많은 남성이 전쟁에 끌려가고 여성이 생계를 책임지면서 가정과 사회에서 여성의 역할 확대</div>
+      </div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card brass">
+        <h4>피란민</h4>
+        거주지가 부족해 판잣집 등을 짓고 살았고, 생활 물자도 턱없이 부족 — 아미동 비석 문화 마을(부산 서구): 일본인 공동묘지 위에 집을 짓고 산 곳
+      </div>
+      <div class="compare-card brass">
+        <h4>여성</h4>
+        남성들이 전쟁터로 끌려가면서 생계를 책임짐 — "큰아이는 할머니께 맡기고 시장에서 새벽 2~3시까지 장사를 했다"(전쟁기념관, 『사람을 만나다』, 재구성)
+      </div>
+      <div class="compare-card brass">
+        <h4>학도 의용군</h4>
+        수많은 학생이 전쟁에 참여 — 포항 전투에서 전사한 이우근의 품에서 어머니에게 보내는 편지 발견: "같은 언어와 같은 피를 나눈 동족이라 생각하니 가슴이 무겁다"(재구성)
+      </div>
+      <div class="compare-card brass">
+        <h4>전쟁고아</h4>
+        부모가 사망하거나 실종되어 수많은 어린이가 고아가 됨 — 영화 『아일라』(2017): 튀르키예 군인과 한국인 전쟁고아의 실화
+      </div>
+    </div>
+
+    <div class="sidebox">
+      <h4>자료 탐구 2 — 6·25 전쟁과 음식 문화(교과서 97쪽)</h4>
+      <p>전쟁 과정에서 수많은 사람이 북에서 남으로 넘어왔으며, 이들을 통해 다양한 음식이 만들어졌다. 밀면은 북한 출신 실향민이 메밀 대신 원조로 들어온 밀가루와 감자 전분을 섞어 만든 것으로 추정되고, 아바이순대는 함경도 출신 피란민들이 만든 음식이다('아바이'는 할아버지를 부르는 함경도 사투리).</p>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 피난민의 이동과 북한 주민의 월남으로 지방의 전통문화와 권위 질서가 무너지고 촌락 공동체 의식이 약해져 한국 사회 구조가 급속도로 변화하였다.</p>
+    <div class="note-box">전쟁 이후 남북한의 정치와 경제의 변화는 다음 소주제 <a href="Ⅱ-2-2-02_전후남북한의정치와경제_도표(해설포함).html">「전후 남북한의 정치와 경제」</a>에서 이어진다.</div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>정리 — 전쟁의 흐름</h2>
+    </div>
+    <p class="block-sub">전선이 어떻게 움직였고, 무엇이 전세를 바꾸었는지 한 표로 정리해 보자.</p>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>6·25 전쟁의 흐름 — 교과서·EBS의 내용을 단계별로 풀어 쓴 정리(풀이)</caption>
+      <thead><tr><th>단계</th><th>시기</th><th>전선의 움직임</th><th>결정적 계기</th></tr></thead>
+      <tbody>
+        <tr><td class="hd crimson">① 남침</td><td>1950. 6. ~ 9.</td><td>38도선 → 서울 → 낙동강</td><td>북한군의 기습 남침, 유엔군 파병</td></tr>
+        <tr><td class="hd deep">② 반격</td><td>1950. 9. ~ 10.</td><td>낙동강 → 서울 → 평양 → 압록강</td><td>인천 상륙 작전</td></tr>
+        <tr><td class="hd crimson">③ 후퇴</td><td>1950. 10. ~ 1951. 1.</td><td>압록강 → 한강 이남(1·4 후퇴)</td><td>중국군의 개입</td></tr>
+        <tr><td class="hd brass">④ 교착</td><td>1951. 3. ~ 1953. 7.</td><td>38도선 부근에서 고착</td><td>소련의 제안으로 정전 회담, 정전 협정 체결</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각 키우기 — 6·25 전쟁 중에 일어난 집단 학살(90쪽)</h4>
+      <ol>
+        <li>전쟁 과정에서 학살이 일어난 까닭은 무엇인지 생각해 보자.</li>
+        <li>제시된 내용을 바탕으로 이 땅에서 전쟁이 다시는 일어나지 않기를 바라는 포스터를 그려 보자.</li>
+      </ol>
+      <h4>생각 키우기 — 전쟁의 시간을 살아간 사람들(91쪽)</h4>
+      <ol>
+        <li>6·25 전쟁이 당시 사람들의 삶에 어떤 영향을 끼쳤는지 말해 보자.</li>
+        <li>6·25 전쟁을 겪은 사람을 찾아보고, 6·25 전쟁을 어떻게 기억하고 있는지 조사해 보자.</li>
+      </ol>
+      <h4>생각해 보기 — 교과서의 길잡이 질문</h4>
+      <ol>
+        <li>형제가 서로 다른 편에서 싸우는 비극이 일어난 까닭은 무엇일까?</li>
+        <li>한반도에서 같은 민족끼리의 전쟁이 일어난 까닭은 무엇일까?</li>
+        <li>6·25 전쟁은 남과 북에 어떤 영향을 끼쳤을까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">9</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 소련은 북한의 남침 계획에 동의하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 미국은 한반도를 미국의 태평양 방위선에서 제외한다는 (　　　) 선언을 발표하였다.</summary>
+        <div class="check-answer">애치슨</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 국군과 유엔군은 (　　　)(으)로 전세를 역전시켰다.</summary>
+        <div class="check-answer">인천 상륙 작전</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 이승만 정부는 (　　　) 체결을 약속받고 정전 협정을 지키겠다고 발표하였다.</summary>
+        <div class="check-answer">한·미 상호 방위 조약</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q5. 전쟁으로 가족이 흩어져 수많은 (　　　)이/가 발생하였다.</summary>
+        <div class="check-answer">이산가족</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 전쟁 이후 남북한은 서로에 대한 적대감을 독재 체제를 강화하는 데 활용하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q7. 미국은 1950년 한국을 자국의 태평양 방위선에서 제외한다고 발표하였다. (○, ×)</summary>
+        <div class="check-answer">○ — 애치슨 선언(1950. 1.)</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q8. 중국군의 개입으로 서울을 빼앗긴 국군과 유엔군은 인천 상륙 작전을 전개하였다. (○, ×)</summary>
+        <div class="check-answer">× — 인천 상륙 작전(1950. 9.)으로 서울을 수복한 뒤에 중국군이 개입하였다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q9. 미국의 제안으로 1951년부터 정전 회담이 시작되었다. (○, ×)</summary>
+        <div class="check-answer">× — 소련의 제안으로 시작되었다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q10. 정전 회담 당시 유엔군은 포로의 본국 송환을 주장하였다. (○, ×)</summary>
+        <div class="check-answer">× — 유엔군은 포로의 자유로운 선택을, 중국·북한은 본국 송환을 주장하였다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q11. 6·25 전쟁 이후 한국과 미국 사이에 한미 상호 방위 조약이 체결되었다. (○, ×)</summary>
+        <div class="check-answer">○ — 1953년 10월</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q12. 다음 사건을 일어난 순서대로 나열해 보자. ㄱ. 중국군의 개입 ㄴ. 정전 협정 체결 ㄷ. 애치슨 선언 발표 ㄹ. 인천 상륙 작전 전개</summary>
+        <div class="check-answer">ㄷ → ㄹ → ㄱ → ㄴ</div>
+      </details></div>
+    </div>
+  </section>
+
+  <section class="block" id="more">
+    <div class="block-head">
+      <span class="block-num">10</span>
+      <h2>더 알아보기 — 전쟁이 남긴 기억</h2>
+    </div>
+    <p class="block-sub">내 곁의 한국사(교과서 96쪽) — 6·25 전쟁은 문화와 예술에도 영향을 끼쳤다.</p>
+    <div class="compare-grid">
+      <div class="compare-card brass">
+        <h4>미술 「피난열차」(김환기)</h4>
+        1·4 후퇴 때 부산으로 피란한 경험을 담은 작품 — 어둡고 차분한 색조로 열차 지붕에 올라탄 피란민의 모습을 그림
+      </div>
+      <div class="compare-card brass">
+        <h4>소설 『수난이대』(하근찬)</h4>
+        일제 강점기와 6·25 전쟁이 아버지와 아들에게 남긴 비극 — 작가는 전쟁 중 아버지를 잃었고 국민 방위군 사건을 직접 겪음
+      </div>
+      <div class="compare-card brass">
+        <h4>영화 『피아골』</h4>
+        지리산 빨치산을 소재로 한 반공 영화였지만, 빨치산 대장의 인간적인 모습을 묘사했다고 하여 반공 의식이 부족하다는 비판을 받고 상영 중지 조치(『조선일보』, 1955. 8. 25.)
+      </div>
+    </div>
+
+    <div class="sidebox">
+      <h4>자료 탐구 1 — 이산가족 상봉의 역사(교과서 97쪽)</h4>
+      <p>1964 신금단 부녀 도쿄 상봉 → 1971 한필성·한필화 남매 통화 → 1983 KBS 특별 생방송 『이산가족을 찾습니다』 → 1985 첫 남북 이산가족 상봉 → 2000 제1차 남북 이산가족 상봉</p>
+      <p>1983년 방송은 전쟁의 참상을 알리고 인권과 보편적 인류애를 높였다는 평가를 받았으며, 관련 기록물은 2015년 유네스코 세계 기록 유산으로 등재되었다. 1985년 서울·평양 고향 방문단 교환으로 처음 남북 이산가족이 상봉하였으나, 이후 남북 사이의 긴장으로 한동안 상봉이 이루어지지 않았다.</p>
+      <p>이산가족 생존자 41,900명 가운데 80세 이상이 67.5%(90세 이상 31.7%, 80~89세 35.8%)를 차지한다(이산가족정보통합시스템, 2023).</p>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 내 곁의 한국사·자료 탐구(96~97쪽)</h4>
+      <ol>
+        <li>「피난열차」에서 작가가 피란민의 얼굴을 그려 넣지 않은 까닭은 무엇일지 생각해 보자.</li>
+        <li>영화 『피아골』에 상영 중지 조치가 내려진 까닭을 당시 사회 분위기를 바탕으로 말해 보자.</li>
+        <li>6·25 전쟁 이후 이산가족 상봉까지 오랜 시간이 걸린 까닭을 말해 보자.</li>
+        <li>남북 이산가족 문제를 시급히 해결해야 하는 까닭을 말해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사』(2022 개정 교육과정), Ⅱ 「대한민국의 발전」 2 「6·25 전쟁과 분단의 고착화」 01 「6·25 전쟁」, 88–90쪽 — 본문·연표·도입 자료(형제의 상)·지도·사료(스탈린의 발언, 『중앙방송』, 정전 협정문, 한·미 상호 방위 조약)·사료로 보는 역사(집단 학살)·인명 피해 그래프·생각 키우기·확인하기의 기본 출처 (1차 근거)</li>
+      <li>동아출판 고등학교 『한국사』, 탐구하는 한국사 「전쟁의 시간을 살아간 사람들」 91쪽, 내 곁의 한국사 「6·25 전쟁과 문화」 96쪽, 자료로 보는 한국사 자료 탐구 1 「이산가족 상봉의 역사」·자료 탐구 2 「6·25 전쟁과 음식 문화」 97쪽 (1차 근거)</li>
+      <li>EBS 개념완성 한국사Ⅱ (2022 개정), 「6·25 전쟁과 남북 분단의 고착화」, 194–195쪽 — 전쟁의 배경, 날짜별 전개, 정전 회담의 쟁점, 전쟁의 영향, 애치슨 선언, 개념 체크 (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국 근현대사』(중앙교육, 2006), 287–292쪽 (참고용) — 민주기지론, 반공 포로 석방 날짜와 규모, 휴전 동의 조건, 국군의 부역자 처형, 전쟁에 따른 사회 구조 변화에만 활용</li>
+    </ol>
+    <div class="note">
+      「6·25 전쟁의 흐름」 표는 교과서·EBS의 내용을 이해하기 쉽도록 풀어 쓴 정리이다. 이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅱ-2-2-01)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p01-N과 대응)
+  const SECTION_PREFIX = "2-2-2-01";
+
+  const narrativeData = {
+    // 2-2-2-01-2: 북한이 남침을 준비하다  (대본 p01-2)
+    "2-2-2-01-2": [
+      "남과 북에 각각 정부가 들어서자 미국과 소련은 한반도에서 군대를 철수했습니다. 그러나 이념과 체제가 다른 남북은 서로를 비난하며 38도선 부근에서 크고 작은 무력 충돌을 이어 갔고, 양쪽 모두 군사력을 키웠습니다.",
+      "이 경쟁에서 북한은 밖의 도움을 얻었습니다. 소련은 북한의 남침 계획에 동의하고 최신 무기를 주었고, 중국은 필요하면 참전하겠다고 약속했습니다. 국·공 내전에 참여했던 <b>조선 의용군</b>도 인민군에 편입되었습니다.",
+      "마침 미국은 태평양 방위선에서 한반도와 타이완을 뺀다는 <b>애치슨 선언</b>을 발표했습니다. 북한은 이를 보고 전쟁이 일어나도 미국이 개입하지 않을 것이라고 판단했습니다. 기습적이고 신속한 전쟁을 강조한 스탈린의 말처럼, 남침은 이렇게 준비되고 있었습니다."
+    ],
+    // 2-2-2-01-3: 6·25 전쟁이 발발하다  (대본 p01-3)
+    "2-2-2-01-3": [
+      "1950년 6월 25일 새벽, 북한군은 탱크를 앞세워 38도선을 넘었고 3일 만에 서울을 점령한 뒤 낙동강 부근까지 내려왔습니다. 그러자 유엔 안전 보장 이사회는 북한을 침략자로 규정하고, 미국을 중심으로 16개국이 <b>유엔군</b>으로 참전했습니다.",
+      "낙동강에서 버티던 국군과 유엔군은 <b>인천 상륙 작전</b>으로 전세를 뒤집어 서울을 되찾고, 38도선을 넘어 압록강까지 진격했습니다.",
+      "그러나 <b>중국군</b>이 개입하면서 다시 서울을 빼앗기고 한강 이남으로 물러났습니다. 이것이 <b>1·4 후퇴</b>입니다. 이후 서울을 되찾았지만 어느 쪽도 상대를 밀어내지 못해, 전쟁은 38도선 부근에서 교착 상태에 빠졌습니다. 이 교착 속에서 전쟁을 멈추기 위한 회담이 시작됩니다."
+    ],
+    // 2-2-2-01-4: 정전 협정을 체결하다  (대본 p01-4)
+    "2-2-2-01-4": [
+      "전쟁이 교착 상태에 빠지자 1951년 7월 소련의 제안으로 정전 회담이 시작되었습니다. 그런데 회담은 2년이나 이어졌습니다. 휴전선을 38도선으로 할지 전투가 벌어지던 전선으로 할지, 포로를 무조건 본국으로 보낼지 포로의 자유의사에 맡길지를 두고 양측이 맞섰기 때문입니다.",
+      "회담이 이어지는 동안에도 38도선 부근에서는 치열한 전투가 벌어져 많은 희생자가 나왔습니다. 이승만 정부는 정전에 반대하며 <b>반공 포로</b>를 일방적으로 석방하기도 했지만, 미국에서 <b>한·미 상호 방위 조약</b> 체결을 약속받고 정전 협정을 지키겠다고 발표했습니다.",
+      "마침내 1953년 7월 27일 <b>정전 협정</b>이 체결되어 휴전선이 정해지고 <b>비무장 지대</b>가 설치되었습니다. 포성은 멎었지만, 전쟁이 남긴 상처는 이제부터 드러나기 시작했습니다."
+    ],
+    // 2-2-2-01-5: 전쟁이 한반도를 황폐화시키다  (대본 p01-5)
+    "2-2-2-01-5": [
+      "6·25 전쟁으로 군인과 민간인을 합쳐 수백만 명이 희생되었고, 수많은 <b>이산가족</b>과 <b>전쟁고아</b>가 생겼습니다. 농촌이 황폐해져 식량 생산이 줄었고, 산업 시설과 사회 기반 시설이 파괴되어 물자는 더욱 부족해졌습니다.",
+      "피해는 눈에 보이는 것에 그치지 않았습니다. 전쟁을 거치며 남북의 적대감은 더 깊어졌고, 전쟁 뒤에도 남은 북진 통일을, 북은 적화 통일을 주장하며 군사력을 키웠습니다. 남북한이 이 적대감을 독재 체제를 강화하는 데 이용하면서 분단은 더욱 굳어졌습니다.",
+      "주변국에도 변화가 생겼습니다. 미국은 <b>한·미 상호 방위 조약</b>을 근거로 남한에 군대를 계속 두었고, 일본은 전쟁 물자를 수출하며 경제를 되살렸으며, 북한에서는 중국의 영향력이 커졌습니다. 그런데 이 전쟁의 희생자 가운데에는 전투와 상관없이 학살된 민간인도 많았습니다."
+    ],
+    // 2-2-2-01-6: 6·25 전쟁 중에 일어난 집단 학살  (대본 p01-6)
+    "2-2-2-01-6": [
+      "6·25 전쟁의 희생은 전쟁터의 군인에게만 돌아가지 않았습니다. 전쟁 중에는 민간인을 겨눈 집단 학살이 곳곳에서 벌어졌습니다.",
+      "전쟁이 일어나자 이승만 정부는 북한에 협력할 가능성이 있다는 구실로 <b>국민 보도 연맹</b>원을 법적 절차 없이 연행·구금하고 수만 명을 학살했습니다. 희생자의 가족들은 전쟁이 끝난 뒤에도 감시 속에서 살아야 했고, 민주화와 함께 진상이 밝혀져 2008년 대통령이 사과했습니다.",
+      "북한군도 서울에 들어온 뒤 <b>서울대학교 병원</b>에 남아 있던 중상자와 환자들을 학살했습니다. EBS는 거창 양민 학살 사건과 북한군의 인민재판도 함께 들고 있습니다. 왜 이런 일이 일어났는지는 생각 키우기 질문으로 남아 있습니다. 학살의 기억과 함께, 전쟁은 살아남은 사람들의 삶도 크게 바꾸어 놓았습니다."
+    ],
+    // 2-2-2-01-7: 전쟁으로 사회가 변하다  (대본 p01-7)
+    "2-2-2-01-7": [
+      "전쟁을 피해 많은 사람이 고향을 떠나면서, 오랫동안 이어져 온 <b>촌락 공동체</b>와 대가족 중심의 가족 공동체가 무너졌습니다. 피란민들은 판잣집을 짓고 부족한 물자 속에서 버텼고, 미군을 통해 미국의 대중문화도 빠르게 들어왔습니다.",
+      "많은 남성이 전쟁터로 끌려가자 여성이 시장에 나가 생계를 책임졌고, 그 과정에서 가정과 사회에서 <b>여성의 역할</b>이 커지기 시작했습니다. 어린 학생들은 <b>학도 의용군</b>으로 전쟁에 나섰고, 부모를 잃은 수많은 아이들이 전쟁고아가 되었습니다.",
+      "북에서 내려온 피란민들은 원조 밀가루로 만든 밀면이나 아바이순대 같은 음식을 남기기도 했습니다. 이렇게 전쟁은 사람들이 사는 방식 자체를 바꾸어 놓았습니다. 전쟁이 끝난 뒤 남과 북의 정치와 경제는 어떻게 달라졌을까요?"
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>
