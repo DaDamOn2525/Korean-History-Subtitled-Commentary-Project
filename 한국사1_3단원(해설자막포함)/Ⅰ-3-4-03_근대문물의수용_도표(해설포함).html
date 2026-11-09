@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>근대 문물의 수용(자막 해설) | 두 얼굴의 근대화 — 생활을 바꾼 근대 문물, 침략의 길이 된 근대 문물</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-3-4-02_경제적구국운동_도표(해설포함).html">‹ 이전: 경제적 구국 운동</a>
+  <a href="Ⅰ-3-4_개항이후의변화_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#modern">두 얼굴의 근대화</a>
+  <a href="#life">생활의 변화</a>
+  <a href="#railway">철도의 양면성</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-3-4-04_근대의식의확산_도표(해설포함).html">다음: 근대 의식의 확산 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 국가 수립의 노력</span> · 개항 이후의 변화</div>
+    <h1>두 얼굴의 근대화 — 생활을 바꾼 근대 문물, 침략의 길이 된 근대 문물</h1>
+    <p class="lead">개항 이후 다양한 근대 문물이 들어왔고, 대한 제국 시기에 식산흥업이 강조되면서 많은 근대 시설이 본격적으로 도입되었다. 의복·음식·건축이 바뀌고 근대적 시간관념이 생기는 등 사람들의 생활과 의식에 많은 변화가 나타났다. 그러나 근대 문물의 수용은 외세의 이권 침탈이나 침략과 연결되기도 하였으며, 특히 철도는 일본의 자원 수탈과 침략에 핵심적인 역할을 하였다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1883 – 1906</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>같은 문물, 두 얼굴</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 생활의 변화</strong> · <strong style="color:var(--crimson)">적색 = 침략과의 연결</strong> · <strong style="color:var(--brass)">황동색 = 정부·대한 제국의 도입</strong>. 같은 근대 문물이 두 가지 결과를 동시에 낳았으므로 두 갈래로 나누어 보자.</p>
+
+    <div class="branch-root">근대 문물의 도입 — 대한 제국 시기 식산흥업 강조로 근대 시설 본격 도입</div>
+    <p class="branch-cause">근대 문물은 사람들의 생활을 편리하게 바꾸었지만, 상당수가 외국의 기술과 자본으로 세워졌기 때문에 열강의 이권 침탈과 침략에도 이용되었다.</p>
+    <div class="branch-cols two">
+      <div class="branch-col deep">
+        <h4>생활의 변화</h4>
+        <p class="why">근대 문물의 밝은 면</p>
+        <div class="branch-node">의복·건축·음식 등 생활 모습의 변화</div>
+        <div class="branch-node">지리·공간 감각의 변화, 근대적 시간관념</div>
+        <div class="branch-node">철도·전차 — 신분 관념과 남녀유별 의식 약화</div>
+      </div>
+      <div class="branch-col crimson">
+        <h4>침략과의 연결</h4>
+        <p class="why">근대 문물의 그림자</p>
+        <div class="branch-node">외세의 이권 침탈과 연결</div>
+        <div class="branch-node">철도 — 일본의 자원 수탈과 침략에 핵심 역할</div>
+        <div class="branch-node">부설 과정의 폭력성과 수탈 → 민중의 반발</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>그래서 같은 철도를 두고도 어떤 사람은 문명개화의 상징으로, 어떤 사람은 침략의 도구로 받아들였다.</p></div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--brass)">황동색 = 정부·대한 제국의 도입</strong> · <strong style="color:var(--indigo)">남색 = 생활의 변화</strong> · <strong style="color:var(--crimson)">적색 = 침략과의 연결</strong></p>
+    <div class="timeline">
+      <div class="tl-item turn"><div class="tl-year">1883</div><div class="tl-body"><div class="tl-title">박문국·기기창·전환국 설치</div><div class="tl-desc">참고(이전 교육과정 교과서)</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1884</div><div class="tl-body"><div class="tl-title">우정총국 설치</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1885</div><div class="tl-body"><div class="tl-title">전신 가설, 광혜원 설립</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1887</div><div class="tl-body"><div class="tl-title">경복궁 전등 설치</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1895</div><div class="tl-body"><div class="tl-title">우편 사무 재개</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1896</div><div class="tl-body"><div class="tl-title">경운궁 내 전화 가설</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1899</div><div class="tl-body"><div class="tl-title">전차 운행, 경인선 개통</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1905·1906</div><div class="tl-body"><div class="tl-title">경부선·경의선 개통</div><div class="tl-desc">참고(이전 교육과정 교과서)</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="modern">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>두 얼굴의 근대화, 근대 문물이 도입되다</h2>
+    </div>
+    <p class="block-sub">짜장면은 중국 산둥 지방에서 건너온 화교들이 국수에 채소와 된장을 얹어 비벼 먹던 ‘작장면’에서 유래하였다(교과서 도입 자료, 『한겨레』 2022. 2. 11.). 개항 이후 사람들의 생활 모습은 어떻게 달라졌을까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">도입</div>
+        <div class="step-desc">개항 이후 다양한 근대 문물 유입 — 특히 대한 제국 시기 식산흥업(생산을 늘리고 산업을 일으킴) 강조 → 많은 근대 시설의 본격 도입</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">생활의 변화</div>
+        <div class="step-desc">갑오개혁으로 신분에 따른 일상생활 규제 폐지, 다양한 근대 문물 수용 → 개항장과 한성을 중심으로 외국의 영향을 받은 의복·건축 양식·음식 등장</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">의식의 변화</div>
+        <div class="step-desc">지리와 공간 감각이 달라짐 — 근대적 시간관념 형성</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">또 다른 얼굴</div>
+        <div class="step-desc">외세의 이권 침탈이나 침략과 연결 — 특히 철도는 일본의 자원 수탈과 침략에 핵심적인 역할</div>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>근대 시설의 도입 — EBS 정리, 오른쪽 열은 이전 교육과정 교과서의 설치 연도·주체(참고)</caption>
+      <thead><tr><th>분야</th><th>근대 시설(EBS)</th><th>참고(이전 교육과정 교과서)</th></tr></thead>
+      <tbody>
+        <tr><td class="hd brass">교통·통신</td><td>전신(국내 및 청, 일본과 연결), 우편(우정총국), 전차(서대문~청량리 구간 등), 철도(경인선, 경부선, 경의선) 등 도입</td><td>전신: 일본~부산(1884, 일본), 인천~서울~의주(1885, 청) — 조선에 대한 영향력 확대를 노린 청과 일본이 경쟁적으로 가설 / 우편: 갑신정변으로 중단되었다가 1895년 재개, 이후 만국 우편 연합 가입 / 전차: 한성 전기 회사가 서대문~청량리에 가설(1899) / 철도: 경인선(1899), 경부선(1905), 경의선(1906)</td></tr>
+        <tr><td class="hd brass">전기</td><td>경복궁에 전등 설치, 한성 전기 회사 설립</td><td>전등: 경복궁(1887) — 한성 전기 회사는 황실과 미국인의 합작으로 세워져 발전소를 세우고 서울에 전등과 전차 가설</td></tr>
+        <tr><td class="hd brass">의료 시설</td><td>광혜원(제중원), 대한 의원 등 설립</td><td>광혜원(1885)</td></tr>
+        <tr><td class="hd brass">건축</td><td>독립문, 명동 성당, 덕수궁 석조전 건립</td><td>—</td></tr>
+        <tr><td class="hd brass">기타</td><td>—</td><td>박문국(1883, 『한성순보』 발간), 기기창(1883, 무기 공장), 전환국(1883, 화폐 발행)</td></tr>
+        <tr><td class="hd crimson">의의와 한계</td><td>일상생활의 편리, 근대적 시간관념 등 근대 의식의 확산 — 외세 침략에 이용</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">광혜원 — 갑신정변 당시 중상을 입은 민영익을 선교사 알렌이 치료한 것을 계기로 설립된 최초의 서양식 관립 병원이었다. 건물은 홍영식의 집(지금의 헌법 재판소 자리)을 사용하도록 하였고, 광혜원이라는 명칭은 제중원으로 변경되었다(EBS). 교과서 자료: 시계와 자전거 광고(『제국신문』, 1902. 8. 25.).</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h4>1890년대의 종로</h4>
+        근대 시설이 들어서기 전의 거리(교과서 사진)
+      </div>
+      <div class="compare-card deep">
+        <h4>1904년 종로</h4>
+        같은 거리에 새롭게 도입된 근대 문물이 보임 — 질문+: 두 사진을 비교하여 새롭게 도입된 근대 문물을 찾아보자(교과서 사진)
+      </div>
+    </div>
+
+    <div class="note-box">1880년대 정부가 세운 기기창·박문국·전환국은 <a href="Ⅰ-3-1-04_개화정책의추진_도표(해설포함).html#policy">「개화 정책의 추진」</a>에서, 대한 제국의 식산흥업 정책은 <a href="Ⅰ-3-2-04_대한제국과광무개혁_도표(해설포함).html#gwangmu">「대한 제국과 광무개혁」</a>에서, 알렌의 주선으로 미국에 넘어간 전기·철도 부설권은 <a href="Ⅰ-3-4-01_열강의경제침탈_도표(해설포함).html#concession">「열강의 경제 침탈」 — 아관 파천 이후, 열강이 이권을 다투어 가져가다</a>에서 볼 수 있다.</div>
+  </section>
+
+  <section class="block" id="life">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>근대 문물의 수용과 생활의 변화</h2>
+    </div>
+    <p class="block-sub">탐구하는 한국사(교과서 153쪽) — 개항 이후 새로운 근대 문물들이 들어와 사람들의 삶을 크게 바꾸었다. 개항 이후 들어온 문물에는 어떤 것이 있는지 살펴보자.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>의복</h4>
+        갑오개혁으로 간소화된 관복이 광무개혁 시기에 완전한 양복으로 바뀜 — 일상에서도 양복을 입고 단발하는 사람 증가 — 여성 의복은 뒷도리가 점차 길어지고, 장옷·쓰개치마 대신 검정 우산 사용 — 양복은 개화 지식인의 표상
+      </div>
+      <div class="compare-card deep">
+        <h4>음식</h4>
+        궁중과 개화 지식인을 중심으로 외국 음식 확산 — 커피와 홍차, 과자와 빵, 스테이크 등 서양 음식 보급 — 중국에서 유래한 호떡, 짜장면도 인기 — 서양식 오찬: 전통적 독상이 아닌 넓은 식탁에 둘러앉아 먹음
+      </div>
+      <div class="compare-card deep">
+        <h4>건축</h4>
+        개항장과 한성에 공사관을 비롯하여 호텔, 성당 등 건축 — 서양 건축 양식이 궁궐에도 영향, 경운궁(덕수궁)에 중명전·정관헌·석조전 건축 — 중명전: 왕실의 연회 공간, 을사늑약이 체결된 장소
+      </div>
+      <div class="compare-card deep">
+        <h4>철도</h4>
+        경인선을 시작으로 경부선·경의선이 차례로 놓임 — 근대적 시간관념 형성과 신분 관념 약화에 영향 — 철도를 놓는 과정에서 나타난 폭력성으로 민중의 반감이 큼 — 최초의 기차: 1899년 경인선 개통 당시 노량진~제물포 운행
+      </div>
+      <div class="compare-card deep">
+        <h4>전기와 전차</h4>
+        경복궁에 처음 전등을 가설하면서 전기 도입 — 대한 제국 시기 한·미 합작으로 세운 한성 전기 회사가 발전소 건설, 서대문과 청량리 구간 전차 운행 — 남녀노소 누구나 탈 수 있는 전차는 남녀유별과 신분 관념을 약화
+      </div>
+      <div class="compare-card deep">
+        <h4>전화</h4>
+        1896년 경운궁과 정부 기관을 연결하여 공무용으로 이용 — 전화기 판매 광고: “전기로 천 리 밖 사람과도 이야기할 수 있는 전화기를 준비”(재구성)
+      </div>
+    </div>
+    <div class="causal-link"><p>이처럼 근대 문물은 먹고 입고 사는 모습뿐 아니라, 시간을 재는 방식과 사람 사이의 관계까지 바꾸어 놓았다.</p></div>
+  </section>
+
+  <section class="block" id="railway">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>철도의 양면성</h2>
+    </div>
+    <p class="block-sub">내 곁의 한국사(교과서 156쪽) — 철도는 한국인의 삶을 크게 바꾸어 놓은 근대 문물이지만, 한편으로는 일본이 대한 제국을 침략하는 도구였다. 철도의 긍정적인 면과 부정적인 면을 살펴보자.</p>
+
+    <div class="branch-cols two">
+      <div class="branch-col deep">
+        <h4>철도, 문명의 길</h4>
+        <div class="branch-node">시와 분 단위로 운행하는 철도를 이용하며 근대적 시간관념을 익힘</div>
+        <div class="branch-node">각 지역을 이동하는 시간이 크게 줄면서 공간 관념 변화</div>
+        <div class="branch-node">표만 있으면 신분과 남녀에 관계없이 누구나 탑승 → 전통적 신분 관념과 남녀유별 의식 약화</div>
+        <div class="branch-node">일부 사람들은 철도를 문명개화의 상징으로 받아들임</div>
+      </div>
+      <div class="branch-col crimson">
+        <h4>철도, 침략의 길</h4>
+        <div class="branch-node">경인선·경부선·경의선 등 대한 제국의 철도 부설권이 일본에 넘어감 → 침략의 길로 만듦</div>
+        <div class="branch-node">부설 과정에서 폭력성으로 수많은 민중의 반발</div>
+        <div class="branch-node">일본은 대한 제국을 침략하는 데 철도 이용 → 민중과 의병들의 공격 대상</div>
+        <div class="branch-node">1904년 애국지사 3명(김성삼, 이춘근, 안순서)이 철도 파괴 혐의로 처형 — 일본은 철도 파괴 행위에 극단적으로 대응</div>
+      </div>
+    </div>
+
+    <div class="quote-grid">
+      <div class="quote-block deep">
+        <h4>경부 철도 광고 — 『황성신문』(1905. 1. 20.)</h4>
+        영등포역에서 갈아타면 경성~부산 간 연결 열차로 직통 운전함.
+        <div class="src">『황성신문』 (재구성) — 부산행 경성 출발 오전 7시 30분, 남대문 출발 7시 45분, 용산 출발 7시 54분</div>
+      </div>
+      <div class="quote-block deep">
+        <h4>경부 철도가 — 최남선</h4>
+        우렁차게 토하는 기적 소리에 남대문을 등지고 떠나가서
+        <div class="src">「경부 철도가」 (재구성) — 늙은이와 젊은이가 섞여 앉고, 우리 내외 외국인이 같이 탔다고 노래함</div>
+      </div>
+      <div class="quote-block crimson">
+        <h4>일본의 철도 부설 목적 — 야마가타 아리토모</h4>
+        부산에서 의주 사이의 철도는 동아시아 대륙으로 통하는 큰길이다.
+        <div class="src">『조선정책상주』 (재구성) — 장래 중국을 횡단하여 인도에 도달하는 길로 삼아야 한다고 주장</div>
+      </div>
+      <div class="quote-block crimson">
+        <h4>경부 철도 건설 과정 — 「일본 고등학생의 보고서」(1906)</h4>
+        한국인 노동자들은 극히 위험한 일에 종사했고, 생명은 일고도 하지 않았다.
+        <div class="src">「일본 고등학생의 보고서」 (재구성) — 일본 감독의 휘두르는 곤봉에 얻어맞아 허무하게 이슬로 사라져 갔다고 기록</div>
+      </div>
+    </div>
+
+    <div class="quote-grid">
+      <div class="quote-block deep">
+        <h4>참고(이전 교육과정 교과서) — 『독립신문』(1899. 9.)의 기차 탑승기</h4>
+        차창 밖 산천초목이 모두 움직이는 것 같고, 나는 새도 미처 따르지 못하더라.
+        <div class="src">『독립신문』 (재구성) — 당시 기차의 평균 시속은 20km/h 정도였다고 한다.</div>
+      </div>
+      <div class="quote-block crimson">
+        <h4>참고(이전 교육과정 교과서) — 「아리랑」</h4>
+        밭은 헐려서 신작로 되고, 집은 헐려서 정거장 되네.
+        <div class="src">「아리랑」 가사 — 철도 부지로 엄청난 토지가 수용되어 민중의 생활 기반을 파괴했기 때문에 철도에 대한 민중의 반감은 매우 컸다.</div>
+      </div>
+    </div>
+
+    <div class="note-box">일본이 경인선·경부선·경의선 부설권을 차례로 차지해 간 과정은 같은 소단원의 <a href="Ⅰ-3-4-01_열강의경제침탈_도표(해설포함).html#concession">「열강의 경제 침탈」 — 아관 파천 이후, 열강이 이권을 다투어 가져가다</a>에서 볼 수 있다.</div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>정리 — 근대 문물이 바꾼 것</h2>
+    </div>
+    <p class="block-sub">앞 소단원에서 갑오개혁·광무개혁이 세운 근대 국가의 기둥을 보았다면, 이번에는 근대 문물이 사람들의 감각과 생활을 어떻게 바꾸었는지 정리해 보자.</p>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>근대 문물이 바꾼 것 — 교과서·EBS의 내용을 근대 사회의 감각에 따라 풀어 쓴 정리(풀이)</caption>
+      <thead><tr><th>달라진 감각</th><th>바꾼 문물</th><th>무엇이 달라졌나</th><th>그림자</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">시간</td><td>철도(시·분 단위 운행), 시계</td><td>근대적 시간관념 형성</td><td rowspan="2">철도 부설권이 일본에 넘어가 자원 수탈과 침략의 길이 됨</td></tr>
+        <tr><td class="hd deep">공간</td><td>철도, 전신, 우편, 전화</td><td>이동 시간 단축, 지리와 공간 감각의 변화</td></tr>
+        <tr><td class="hd deep">사람 사이</td><td>철도, 전차</td><td>표만 있으면 누구나 탑승 → 신분 관념과 남녀유별 의식 약화</td><td>부설 과정의 폭력성, 토지 수용으로 민중의 생활 기반 파괴(참고)</td></tr>
+        <tr><td class="hd deep">일상</td><td>양복·단발, 서양 음식, 서양식 건축, 전등</td><td>개항장과 한성을 중심으로 의식주 생활 변화</td><td>전신은 청과 일본이 영향력 확대를 위해 경쟁적으로 가설(참고)</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="limit-box">
+      <h4>근대 시설 수용의 한계</h4>
+      <p>EBS: 근대 시설은 일상생활의 편리와 근대 의식의 확산을 가져왔으나, 외세 침략에 이용되었다. 참고(이전 교육과정 교과서): 근대 시설은 국내 기술과 자본의 부족으로 대부분 외국의 기술과 자본에 의존하였고, 일본 등 제국주의 열강이 정치·경제·군사적 침략을 목적으로 설치한 것이 많았다.</p>
+    </div>
+
+    <div class="think-box">
+      <h4>생각 키우기 — 근대 문물의 수용과 생활의 변화(153쪽)</h4>
+      <ol>
+        <li>개항 이후 들어온 근대 문물에는 어떤 것이 있는지 찾아보자.</li>
+        <li>개항 이후 들어온 문물을 대중에게 소개하는 광고를 만들어 보자.</li>
+      </ol>
+      <h4>생각해 보기 — 철도의 양면성(156쪽)</h4>
+      <ol>
+        <li>철도를 긍정적·부정적으로 받아들인 사람들은 각각 누구일지 생각해 보자.</li>
+        <li>오늘날 새롭게 등장한 문물 중 하나를 정하고(예: 인공 지능), 긍정적·부정적 측면을 각각 정리해 보자.</li>
+      </ol>
+      <h4>생각해 보기 — 교과서의 길잡이 질문</h4>
+      <ol>
+        <li>근대 문물은 제국주의 열강의 침략에 어떻게 이용되었을까?</li>
+        <li>근대 문물의 수용으로 사람들의 생활은 어떻게 변화하였을까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 대한 제국 시기에 식산흥업이 강조되면서 근대 시설이 본격적으로 도입되었다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 철도는 제국주의 열강의 이권 침탈과 침략적 성격을 잘 보여 준다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+
+      <div class="check-group">교과서 질문+ · 생각해 보기</div>
+      <div class="check-item"><details><summary>Q3. 1890년대와 1904년 종로 사진을 비교하여, 1904년 사진에서 새롭게 도입된 근대 문물을 찾아보자.</summary>
+        <div class="check-answer">전차와 전차 선로, 전신주(전봇대) 등 — 1899년 서대문~청량리 구간에서 전차가 운행되었다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 자료를 바탕으로 일본이 철도를 부설하고자 한 까닭을 말해 보자.</summary>
+        <div class="check-answer">대한 제국의 자원을 수탈하고 침략하기 위해서였다. 야마가타 아리토모는 부산~의주 철도를 동아시아 대륙으로 통하는 큰길로 만들어 중국을 지나 인도까지 이르는 길로 삼고자 하였다.</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅲ 「근대 국가 수립의 노력」 4 「개항 이후의 변화」 03 「근대 문물의 수용」, 152쪽 — 본문·연표·도입 자료(짜장면)·식산흥업 곁글·시계와 자전거 광고·1890년대와 1904년 종로 사진·질문+·확인하기의 기본 출처 (1차 근거)</li>
+      <li>동아출판 고등학교 『한국사1』, 탐구하는 한국사 「근대 문물의 수용과 생활의 변화」, 153쪽 — 의복·음식·건축·철도·전기와 전차·전화, 생각 키우기 (1차 근거)</li>
+      <li>동아출판 고등학교 『한국사1』, 내 곁의 한국사 「철도의 양면성」, 156쪽 — 철도, 문명의 길과 침략의 길, 경부 철도 광고·경부 철도가·『조선정책상주』·일본 고등학생의 보고서, 철도 파괴 혐의로 처형된 한국인들, 생각해 보기 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「개항 이후 사회·경제의 변화와 문화 변동」 중 「서구 문물의 도입과 사회·문화 변화」, 112쪽 — 근대 시설의 도입, 의식주 생활의 변화, 광혜원 곁글 (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국사』, 「근대 문물의 수용」, 228–229쪽 (참고용) — 근대 시설의 설치 연도와 주체, 『독립신문』의 기차 탑승기, 「아리랑」 가사와 철도 부지 수용, 근대 시설 수용의 한계에만 활용</li>
+    </ol>
+    <div class="note">
+      「근대 문물이 바꾼 것」 표는 교과서·EBS의 내용을 이해하기 쉽도록 풀어 쓴 정리이다. 이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다. 같은 쪽의 EBS 종교계의 변화와 국민 의식·민권 의식의 확산은 <a href="Ⅰ-3-4-04_근대의식의확산_도표(해설포함).html">「근대 의식의 확산」</a>에서 다룬다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-3-4-03)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p03-N과 대응)
+  const SECTION_PREFIX = "1-3-4-03";
+
+  const narrativeData = {
+    // 1-3-4-03-2: 두 얼굴의 근대화, 근대 문물이 도입되다  (대본 p03-2)
+    "1-3-4-03-2": [
+      "오늘날 우리가 즐겨 먹는 짜장면도 개항기에 들어온 외국 문물에서 시작되었습니다. 개항 이후 들어온 새로운 문물은 이처럼 생활 깊숙이 스며들었습니다.",
+      "근대 시설이 본격적으로 들어선 것은 대한 제국 시기였습니다. 생산을 늘리고 산업을 일으키자는 <b>식산흥업</b>이 강조되면서 전신, 우편, 전차, 철도, 전등 같은 시설이 차례로 도입되었습니다.",
+      "여기에 갑오개혁으로 신분에 따라 옷차림과 생활을 규제하던 제도가 사라지자, 개항장과 한성을 중심으로 새로운 의복과 건축, 음식이 퍼졌습니다. 사람들의 생각도 달라져 지리와 공간을 느끼는 감각이 바뀌고, <b>근대적 시간관념</b>이 생겨났습니다.",
+      "그러나 근대 문물에는 다른 얼굴도 있었습니다. 국내 기술과 자본이 부족해 많은 시설을 외국의 손을 빌려 세웠고, 그 과정은 열강의 <b>이권 침탈</b>과 맞물렸습니다. 전신만 해도 조선에 영향력을 넓히려던 청과 일본이 경쟁적으로 가설한 것이었습니다.",
+      "편리함과 침략이 한 몸에 담긴 이 두 얼굴은 같은 시설을 보는 사람들의 시선도 둘로 갈라 놓았습니다. 먼저 생활이 어떻게 바뀌었는지부터 살펴보겠습니다."
+    ],
+    // 1-3-4-03-3: 근대 문물의 수용과 생활의 변화  (대본 p03-3)
+    "1-3-4-03-3": [
+      "근대 문물이 가장 먼저 눈에 띈 곳은 옷차림이었습니다. 갑오개혁으로 간소해진 관복은 광무개혁 시기에 <b>양복</b>으로 바뀌었고, 일상에서도 양복을 입고 단발하는 사람이 늘었습니다. 여성들은 얼굴을 가리던 장옷과 쓰개치마 대신 검정 우산을 들었습니다.",
+      "식탁도 달라졌습니다. 궁중과 개화 지식인을 중심으로 커피와 홍차, 빵과 스테이크가 퍼졌고, 혼자 받던 독상 대신 넓은 식탁에 둘러앉아 먹는 서양식 오찬이 소개되었습니다. 경운궁에는 중명전, 석조전 같은 서양식 건물이 들어섰습니다.",
+      "더 큰 변화는 탈것에서 일어났습니다. 1899년 경인선이 개통되고 서대문과 청량리 사이에 <b>전차</b>가 다니기 시작했습니다. 표만 있으면 양반과 상민, 남자와 여자가 한 칸에 함께 탔습니다. 전차와 철도가 오랫동안 이어져 온 신분 관념과 남녀유별 의식을 약하게 만든 까닭입니다.",
+      "1896년에는 경운궁과 정부 기관 사이에 전화가 놓여, 천 리 밖 사람과도 이야기할 수 있게 되었습니다.",
+      "이렇게 근대 문물은 먹고 입고 사는 모습은 물론 사람 사이의 관계까지 바꾸어 놓았습니다. 그런데 그 변화의 한가운데에 있던 철도는 왜 침략의 도구로도 불렸을까요?"
+    ],
+    // 1-3-4-03-4: 철도의 양면성  (대본 p03-4)
+    "1-3-4-03-4": [
+      "철도는 근대 문물의 두 얼굴을 가장 잘 보여 줍니다.",
+      "먼저 문명의 길입니다. 기차는 시와 분 단위로 정해진 시각에 출발했습니다. 사람들은 해와 계절이 아니라 시계에 맞춰 움직이는 법을 익혔고, 며칠 걸리던 길이 몇 시간으로 줄면서 거리에 대한 감각도 달라졌습니다. 최남선이 「경부 철도가」에서 늙은이와 젊은이, 우리와 외국인이 함께 탔다고 노래한 것처럼, 철도는 문명개화의 상징이었습니다.",
+      "하지만 그 철도의 부설권은 대부분 일본의 손에 있었습니다. 일본의 야마가타 아리토모는 부산에서 의주에 이르는 철도를 대륙으로 통하는 큰길로 만들어야 한다고 했습니다. 철도는 처음부터 대륙 침략을 내다본 길이었던 것입니다.",
+      "철도를 놓는 과정도 폭력적이었습니다. 철도 부지로 땅을 빼앗겼고, 위험한 공사에 동원된 한국인 노동자의 목숨은 가볍게 여겨졌습니다. 그래서 철도는 민중과 의병의 공격 대상이 되었고, 일본은 1904년 철도를 파괴했다는 이유로 김성삼, 이춘근, 안순서를 처형했습니다.",
+      "같은 기차를 보며 누군가는 문명을, 누군가는 침략을 떠올렸던 셈입니다. 이렇게 생활이 바뀌는 동안, 학교와 신문을 통해 사람들의 생각도 깨어나고 있었습니다. 다음 소주제에서는 근대 의식의 확산을 살펴보겠습니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

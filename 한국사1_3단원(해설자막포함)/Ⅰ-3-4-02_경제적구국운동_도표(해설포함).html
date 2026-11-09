@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>경제적 구국 운동(자막 해설) | 침탈마다 맞선 대응 — 상권·곡물·이권·나랏빚을 지키려 한 경제적 구국 운동</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-3-4-01_열강의경제침탈_도표(해설포함).html">‹ 이전: 열강의 경제 침탈</a>
+  <a href="Ⅰ-3-4_개항이후의변화_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#commerce">상권 수호</a>
+  <a href="#grain">방곡령</a>
+  <a href="#rights">이권 수호</a>
+  <a href="#debt">국채 보상</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-3-4-03_근대문물의수용_도표(해설포함).html">다음: 근대 문물의 수용 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 국가 수립의 노력</span> · 개항 이후의 변화</div>
+    <h1>침탈마다 맞선 대응 — 상권·곡물·이권·나랏빚을 지키려 한 경제적 구국 운동</h1>
+    <p class="lead">외국 상인의 내지 통상으로 타격을 입은 상인들은 상회사와 은행을 세워 상권을 지키려 하였고, 지방관들은 곡물 유출을 막으려고 방곡령을 내렸다. 독립 협회와 보안회는 열강의 이권 침탈에 맞서 이권 수호 운동을 펼쳤으며, 일본에 진 나랏빚이 1년 예산과 맞먹게 되자 국민의 힘으로 빚을 갚자는 국채 보상 운동이 전국으로 퍼져 나갔다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1883 – 1907</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>침탈의 종류만큼 대응도 달랐다</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 민간의 경제 주권 수호 운동</strong> · <strong style="color:var(--brass)">황동색 = 정부·지방관의 조치</strong> · <strong style="color:var(--crimson)">적색 = 일본·열강의 압박과 탄압</strong>. 네 갈래는 서로 원인과 결과로 이어진 것이 아니라, 각각 다른 침탈에 맞서 따로 일어났다.</p>
+
+    <div class="branch-root">열강의 경제 침탈(앞 소주제 「열강의 경제 침탈」)</div>
+    <p class="branch-cause">침탈의 종류가 달랐기 때문에 대응의 주체와 방식도 달랐다. 상권을 잃은 상인, 곡물 유출을 걱정한 지방관, 이권 침탈에 분노한 단체, 나랏빚을 걱정한 국민이 각자의 자리에서 맞섰다.</p>
+    <div class="branch-cols two">
+      <div class="branch-col deep">
+        <h4>상권 수호</h4>
+        <p class="why">내지 통상으로 상권 위협 →</p>
+        <div class="branch-node">상회사, 시전 상인의 철시 운동·황국 중앙 총상회</div>
+        <div class="branch-node">근대적 회사와 은행 설립</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>방곡령</h4>
+        <p class="why">곡물 유출과 흉년으로 곡식 가격 폭등 →</p>
+        <div class="branch-node">함경도·황해도 지방관의 방곡령(1889~1890)</div>
+        <div class="branch-node">일본의 압박으로 철회, 배상금 지급</div>
+      </div>
+      <div class="branch-col deep">
+        <h4>이권 수호 운동</h4>
+        <p class="why">열강의 이권 침탈 →</p>
+        <div class="branch-node">독립 협회 — 한러 은행 폐쇄, 절영도 조차 요구 저지</div>
+        <div class="branch-node">보안회 — 일본의 황무지 개간권 요구 철회(1904)</div>
+      </div>
+      <div class="branch-col deep">
+        <h4>국채 보상 운동</h4>
+        <p class="why">일본 차관으로 나랏빚 1,300만 원 →</p>
+        <div class="branch-node">대구에서 시작, 국채 보상 기성회와 언론의 후원으로 전국 확산(1907)</div>
+        <div class="branch-node">통감부의 탄압으로 중단</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>네 갈래의 대응은 일부 성과를 거두기도 했지만, 대부분 일본의 압박과 방해로 목적을 다 이루지 못하였다.</p></div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 민간의 경제 주권 수호 운동</strong> · <strong style="color:var(--brass)">황동색 = 정부·지방관의 조치</strong></p>
+    <div class="timeline">
+      <div class="tl-item deep"><div class="tl-year">1883</div><div class="tl-body"><div class="tl-title">대동 상회 설립(평안도 상인)</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1889~1890</div><div class="tl-body"><div class="tl-title">함경도·황해도 방곡령 사건</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1890</div><div class="tl-body"><div class="tl-title">시전 상인, 철시 운동</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1896</div><div class="tl-body"><div class="tl-title">조선은행 설립</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1898</div><div class="tl-body"><div class="tl-title">황국 중앙 총상회 조직, 독립 협회의 이권 수호 운동</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1899</div><div class="tl-body"><div class="tl-title">대한천일은행 설립 청원</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1904</div><div class="tl-body"><div class="tl-title">보안회, 일본의 황무지 개간권 요구 반대</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1907</div><div class="tl-body"><div class="tl-title">국채 보상 운동</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="commerce">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>상권을 수호하고, 근대적 회사와 은행을 세우자</h2>
+    </div>
+    <p class="block-sub">서울 종로의 광통관은 일본 금융업계의 진출에 맞서 세워진 대한천일은행이 있던 곳이다(교과서 도입 자료).</p>
+
+    <div class="quote-block deep">
+      <h4>도입 자료 — 대한천일은행 설립 청원(1899. 1. 22.)</h4>
+      화폐 융통은 상업을 흥하게 하는 근본이므로 은행을 세우고자 합니다.
+      <div class="src">「대한천일은행 설립 청원」 (재구성)</div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">배경</div>
+        <div class="step-desc">외국 상인의 내지 통상 허용 → 개항장 객주 등 중간 상인과 한성의 시전 상인이 큰 타격</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">상인의 대응</div>
+        <div class="step-desc">자본을 모아 대동 상회, 장통 상회 등 상회사를 세워 외국 상인과 경쟁 — 서울의 시전 상인은 철시 운동으로 외국 상인의 철수 요구, 황국 중앙 총상회를 조직해 상권 보호·외국 상인의 불법 행위 방지 — 경강상인은 일본의 세곡 운반 독점에 맞서 증기선 구입</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">회사와 은행</div>
+        <div class="step-desc">철도·선박·섬유 등의 분야에서 국내 자본으로 회사 설립 — 일본 금융 기관의 진출에 맞서 최초의 근대적 은행인 조선은행을 시작으로 한성은행, 대한천일은행 등 설립</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">대한 제국의 시도</div>
+        <div class="step-desc">중앙은행을 세워 열강의 금융 침탈을 막고 화폐 제도를 근대화하려 함 → 일본의 방해로 실패</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">상회사 — 상인들이 모여 세운 회사. 철시 — 상점 문을 닫음. 세곡 — 세금으로 거둔 곡식(교과서). EBS: 대동 상회는 1883년 평안도 상인 20명이 자금을 출자해 설립한 유통 회사로, 전국 곳곳에 직원을 보내 쌀이나 쇠가죽을 사고팔았으며 해외 무역에도 관여하였다. 시전 상인들은 1898년에 황국 중앙 총상회를 조직하였다(EBS). 참고(이전 교육과정 교과서): 1894년 이전까지 상회사 수가 30여 개에 달하였다. 조선은행(1896)은 최초의 민간 은행이었으나, 은행들은 일제의 화폐 정리 사업으로 대부분 몰락하였다.</p>
+
+    <div class="note-box">은행과 상공업자를 무너뜨린 화폐 정리 사업은 같은 소단원의 <a href="Ⅰ-3-4-01_열강의경제침탈_도표(해설포함).html#finance">「열강의 경제 침탈」 — 일본, 금융·재정·토지를 장악하다</a>에서 볼 수 있다.</div>
+  </section>
+
+  <section class="block" id="grain">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>방곡령, 국내 곡물 공급을 안정시키자</h2>
+    </div>
+    <p class="block-sub">방곡령 — 가뭄, 수해 등의 자연재해나 병란 등으로 식량 결핍이 우려될 때 지방관이 그 지방에서 생산된 곡식이 다른 지방이나 다른 나라로 유출되는 것을 금지한 조치이다(EBS).</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">배경</div>
+        <div class="step-desc">개항 이후 일본이 많은 양의 곡물을 수입해 감 → 국내 곡식 가격 상승 — 특히 흉년에는 곡식 가격 폭등, 식량 사정 악화</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">방곡령 선포</div>
+        <div class="step-desc">지방관들이 조·일 통상 장정에 따라 방곡령을 내려 곡식 유출을 막으려 함 — 함경도(1889)·황해도(1890) 등지</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">일본의 압박</div>
+        <div class="step-desc">조선과 일본 사이의 외교 문제로 번짐 — 일본은 조·일 통상 장정의 규정보다 방곡령의 통보가 늦었다는 구실로 조선 정부를 압박 — EBS: ‘1개월 전 통지’ 규정 위반을 내세움</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">결과</div>
+        <div class="step-desc">방곡령 철회, 오히려 일본에 배상금까지 지급</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">교과서 지도(경제적 구국 운동과 방곡령): 방곡령은 함경도와 황해도 외에도 여러 지역에서 선포되었다. 참고(이전 교육과정 교과서): 함경도 관찰사 조병식은 개정된 조·일 통상 장정에 따라 1개월 전에 외교 담당 관청에 통고하고 방곡령을 실시하였다(1889).</p>
+
+    <div class="quote-block deep">
+      <h4>자료 탐구 1 — 방곡령(1889)</h4>
+      함경도 기근이 심해 ㉠조약에 근거해 외교 담당 부서에 알리고, 원산항 수출을 1년간 금지하였다.
+      <div class="src">『고종실록』 (재구성) — 자료는 1889년 함경도 방곡령 실시 당시의 상황이다. 방곡령은 자연재해로 식량이 부족해질 것이 우려될 때 곡물의 수출을 금지하는 조치이다(교과서 157쪽).</div>
+    </div>
+
+    <div class="note-box">방곡령의 근거가 된 조·일 통상 장정 제37관과 ‘1개월 전 통보’ 조항은 같은 소단원의 <a href="Ⅰ-3-4-01_열강의경제침탈_도표(해설포함).html#inland">「열강의 경제 침탈」 — 개항장을 넘어</a>에서 볼 수 있다.</div>
+  </section>
+
+  <section class="block" id="rights">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>이권 수호 운동을 벌이다</h2>
+    </div>
+    <p class="block-sub">아관 파천 이후 열강이 이권을 다투어 가져가자, 단체를 중심으로 이권을 지키려는 운동이 일어났다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>독립 협회(아관 파천 이후)</h4>
+        열강의 이권 침탈에 맞서 만민 공동회를 여는 등 다양한 방법으로 이권 수호 운동 — 한러 은행 폐쇄, 러시아의 절영도 조차 요구 저지 — 프랑스·독일의 광산 채굴권 요구도 저지
+      </div>
+      <div class="compare-card deep">
+        <h4>보안회(1904)</h4>
+        러·일 전쟁 중 일본이 황무지 개간권을 요구하자 조직 → 일본의 요구를 철회시킴
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 독립 협회가 고종에게 건의한 헌의 6조에는 열강의 이권 침탈을 제도적으로 막으려는 조항도 담겨 있었다. 보안회의 반대 운동과 함께 정부 관리들은 농광 회사를 세워 직접 황무지 개간에 나서기도 하였고, 일제가 친일 인사들로 단체를 급히 만들어 방해하였으나 보안회는 반대 운동을 계속하였다.</p>
+
+    <p class="block-sub">자료 탐구 3 — 일본은 러·일 전쟁 중인 1904년 대한 제국에 황무지 개간권을 요구하였다. 그 목적은 무엇이었을까(교과서 157쪽)?</p>
+    <div class="quote-grid">
+      <div class="quote-block crimson">
+        <h4>자료 1 — 황무지 개간권 요구의 목적</h4>
+        일본 농민을 한국 내지로 옮겨 남는 인구를 정착시키고, 부족한 식량 공급을 늘린다.
+        <div class="src">「대한시설강령」 (재구성) — 일본이 대한 제국의 식민지화를 위해 수립한 기본 계획(교과서)</div>
+      </div>
+      <div class="quote-block crimson">
+        <h4>자료 2 — 황무지 개간권 요구(1904)</h4>
+        전국 13도의 관유·민유지 외 산림과 원야의 개간권을 나가모리에게, 기한은 50년.
+        <div class="src">『황성신문』, 1904. 6. 23. (재구성) — 개간 후 5년째부터 세금을 납부하게 함. 일본은 나가모리라는 일본인을 내세워 황무지 개간권을 요구하였다(교과서).</div>
+      </div>
+    </div>
+
+    <p class="block-sub">자료 탐구 2 — 이권 수호 운동 찬반. 열강에 이권을 넘겨주는 문제를 두고 당시에도 생각이 갈렸다(교과서 157쪽).</p>
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>자료 1 — 활빈당 선언서</h4>
+        금광 채굴로 백성의 논밭이 망가졌으니 채굴을 금지할 것 — 철도 부설권을 다른 나라에 주지 말 것
+        <div class="src">활빈당, 「대한사민논설」 (재구성)</div>
+      </div>
+      <div class="compare-card">
+        <h4>자료 2 — 몰라요 씨의 의견</h4>
+        광산·철도를 넘긴 일보다 백성을 도탄에 빠뜨리는 것이 나라를 망하게 함 — 철도·광산 문제로 세월을 보내지 말고 정치를 새롭게 하자는 주장
+        <div class="src">『독립신문』, 1898. 9. 15. (재구성)</div>
+      </div>
+    </div>
+
+    <div class="note-box">독립 협회의 만민 공동회는 <a href="Ⅰ-3-2-03_독립협회_도표(해설포함).html#manmin">「독립 협회」 — 만민 공동회</a>에서, 보안회를 비롯한 애국 계몽 운동 단체는 <a href="Ⅰ-3-3-03_애국계몽운동_도표(해설포함).html#gyemong">「애국 계몽 운동」</a>에서, 열강이 차지한 이권은 <a href="Ⅰ-3-4-01_열강의경제침탈_도표(해설포함).html#concession">「열강의 경제 침탈」 — 아관 파천 이후, 열강이 이권을 다투어 가져가다</a>에서 볼 수 있다.</div>
+  </section>
+
+  <section class="block" id="debt">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>국채 보상 운동, 우리 힘으로 나랏빚을 갚자</h2>
+    </div>
+    <p class="block-sub">일본은 대한 제국을 경제적으로 종속시키기 위해 많은 빚을 지게 하였다. 이에 맞서 국채 보상 운동이 일어났다(교과서).</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">배경</div>
+        <div class="step-desc">을사늑약 이후 일본이 식민지화 정책에 필요한 비용을 일본 차관으로 충당 → 1907년 대한 제국이 일본에 진 빚이 1년 예산과 맞먹는 수준(1,300만 원) — EBS: 차관 도입 강요, 일본에 대한 경제적 예속 심화</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">시작(1907)</div>
+        <div class="step-desc">대구에서 김광제, 서상돈 등을 중심으로 나랏빚을 갚아 국권을 지키자는 국채 보상 운동 제창</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">확산</div>
+        <div class="step-desc">국채 보상 기성회 설립(EBS: 서울), 애국 계몽 운동 단체와 『대한매일신보』 등 언론사의 후원 → 전국 확산 — EBS: 남성은 금연 운동, 여성은 가락지·비녀를 성금으로 내어 동참</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">탄압과 중단</div>
+        <div class="step-desc">통감부는 일본에 대항하는 운동으로 여김 → 모금에 앞장선 『대한매일신보』의 양기탁에게 횡령 혐의를 씌워 구속 → 목적을 이루지 못하고 중단</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">기성회 — 뜻을 같이하는 사람들의 모임(교과서).</p>
+
+    <div class="quote-grid">
+      <div class="quote-block deep">
+        <h4>국채 보상 취지서 — 『대한매일신보』(1907. 2. 21.)</h4>
+        국채 1,300만 원은 나라의 존망에 직결된다. 2천만이 3개월 담배를 끊으면 갚을 수 있다.
+        <div class="src">『대한매일신보』 (재구성) — 1,300만 원은 대한 제국의 1년 예산과 맞먹는 금액이었다(EBS).</div>
+      </div>
+      <div class="quote-block deep">
+        <h4>우리 부인 동포에게 알림 — 『대한매일신보』(1907. 3. 8.)</h4>
+        나라 위하는 마음에 어찌 남녀가 다르리오, 패물로 의연금을 모아 국채를 갚자.
+        <div class="src">『대한매일신보』 (재구성)</div>
+      </div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>범민족적 운동</h4>
+        지식인과 상인뿐 아니라 고종에서부터 당시 사회적으로 차별받던 백정까지 참여 — 여성의 참여 활발: 각지에서 부인회 결성, 기생들도 적극 동참(교과서)
+      </div>
+      <div class="compare-card deep">
+        <h4>오늘날의 평가</h4>
+        관련 기록물이 2017년 유네스코 세계 기록 유산으로 등재(교과서) — 참고(이전 교육과정 교과서): 유교적 통념 아래 사회 참여에 제한을 받던 여성이 당당히 행동하기 시작하여, 근대 여성 운동의 시작으로 평가되기도 함
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">교과서 자료: 국채 보상 운동 의연금 영수증(강화군 하도면 장곶동, 1907년 4월 4일, 금 64원), 국채 보상 기성회 취지서(국채보상운동기념관), 국채 보상 운동 여성 기념비(대구 중구). 참고(이전 교육과정 교과서): 대구 광문사 부사장 서상돈은 석 달간 담배를 끊어 국채를 갚자고 제안하면서 본인이 먼저 800원을 기부하였다.</p>
+
+    <div class="sidebox">
+      <h4>참고(이전 교육과정 교과서) — ‘제2의 국채 보상 운동’, 금 모으기 운동</h4>
+      <p>1997년 닥친 외환 위기를 극복하기 위해 국민이 자발적으로 금 모으기 운동을 벌였고, 당시 이를 ‘제2의 국채 보상 운동’이라고 불렀다. 옛 장군의 ‘별’, 가게의 금붙이, 자녀의 돌 반지까지 수집 창구마다 모였다는 당시 보도(1998. 1. 9.)가 남아 있다. 약 90년의 시간을 두고, 나라의 빚을 국민의 힘으로 갚으려 한 두 운동을 견주어 볼 수 있다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>정리 — 침탈과 대응</h2>
+    </div>
+    <p class="block-sub">앞 소주제의 「경제 주권과 그 침탈」 표와 행을 맞추어, 빼앗긴 권리마다 어떤 대응이 있었는지 짝지어 보자.</p>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>침탈과 대응 — 앞 소주제 표와 짝지은 정리(풀이)</caption>
+      <thead><tr><th>빼앗긴 권리(앞 소주제)</th><th>대응</th><th>주체</th><th>결과</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">상권(내지 통상)</td><td>상회사, 철시 운동, 황국 중앙 총상회, 회사·은행 설립</td><td>상인, 민간 자본</td><td>일본의 방해로 중앙은행 설립 실패, 화폐 정리 사업으로 은행 대부분 몰락(참고)</td></tr>
+        <tr><td class="hd brass">식량(곡물 유출)</td><td>방곡령(1889~1890)</td><td>지방관</td><td>일본의 압박으로 철회, 배상금 지급</td></tr>
+        <tr><td class="hd deep">자원·토지(이권 침탈)</td><td>독립 협회의 이권 수호 운동, 보안회</td><td>독립 협회, 보안회</td><td>한러 은행 폐쇄, 절영도 조차 요구 저지, 황무지 개간권 요구 철회</td></tr>
+        <tr><td class="hd deep">재정(차관)</td><td>국채 보상 운동(1907)</td><td>국민(고종에서 백정까지, 여성)</td><td>통감부의 탄압으로 중단</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각 키우기 — 국채 보상 운동</h4>
+      <ol>
+        <li>국채 보상 운동 관련 기록물이 유네스코 세계 기록 유산으로 등재된 까닭을 조사해 보자.</li>
+      </ol>
+      <h4>자료 탐구 2 — 이권 수호 운동 찬반</h4>
+      <ol>
+        <li>활빈당 선언서와 몰라요 씨의 의견의 주장을 각각 정리해 보자.</li>
+        <li>몰라요 씨의 주장에 대한 나의 생각을 말해 보자.</li>
+      </ol>
+      <h4>생각해 보기 — 교과서의 길잡이 질문</h4>
+      <ol>
+        <li>외세의 경제 침투에 한국인들은 어떻게 대응하였을까?</li>
+        <li>국채 보상 운동이 일어난 까닭은 무엇일까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 경강상인들이 황국 중앙 총상회를 세웠다. (○, ×)</summary>
+        <div class="check-answer">× — 황국 중앙 총상회는 서울의 시전 상인들이 조직하였다. 경강상인은 일본의 세곡 운반 독점에 맞서 증기선을 구입하였다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 지방관들은 곡식의 유출을 막기 위해 조·일 통상 장정에 따라 (   )을/를 내렸다.</summary>
+        <div class="check-answer">방곡령</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 독립 협회는 러시아 등 열강의 이권 침탈에 반발해 이권 수호 운동을 벌였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 국채 보상 운동은 『대한매일신보』 등 언론사의 후원으로 확산되었다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+
+      <div class="check-group">교과서 자료 탐구(157쪽)</div>
+      <div class="check-item"><details><summary>Q5. 자료 탐구 1에서 함경도에 방곡령을 내린 까닭을 찾아보자.</summary>
+        <div class="check-answer">함경도에 기근이 들어 콩 생산 상황이 심각해지자, 식량 부족을 막기 위해 곡물 수출을 금지하였다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 「대한시설강령」에서 일본이 황무지 개간권을 요구한 까닭을 찾아보자.</summary>
+        <div class="check-answer">일본 농민을 한국으로 옮겨 넘치는 인구를 정착시키고, 부족한 식량 공급을 늘리며, 황무지를 일본인이 경영하게 하려는 것이었다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q7. 일본의 황무지 개간권 요구에 맞서 조직되어 그 요구를 철회시킨 단체는?</summary>
+        <div class="check-answer">보안회(1904)</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q8. 외국 상인의 내륙 진출에 대해 객주, 보부상 등은 (상회사 / 동양 척식 주식회사)를 설립하여 대응하였다.</summary>
+        <div class="check-answer">상회사</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q9. 시전 상인들이 외국 상인의 내륙 상업 활동을 막기 위해 (황국 협회 / 황국 중앙 총상회)를 조직하였다.</summary>
+        <div class="check-answer">황국 중앙 총상회</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q10. 함경도와 황해도 등지의 지방관이 방곡령을 선포하였으나 일본은 (   )의 ‘1개월 전 통지’ 규정 위반을 내세워 방곡령 철회를 요구하였다.</summary>
+        <div class="check-answer">조·일 통상 장정(1883)</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅲ 「근대 국가 수립의 노력」 4 「개항 이후의 변화」 02 「경제적 구국 운동」, 150–151쪽, 자료로 보는 한국사 157쪽 — 본문·연표·도입 자료(대한천일은행 설립 청원)·경제적 구국 운동과 방곡령 지도·국채 보상 운동(취지서, 우리 부인 동포에게 알림, 의연금 영수증, 여성 기념비)·생각 키우기·확인하기, 자료 탐구 1(방곡령)·2(이권 수호 운동 찬반)·3(황무지 개간권 요구)의 기본 출처 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「개항 이후 사회·경제의 변화와 문화 변동」 중 「경제 주권 수호 운동」, 110–111쪽 — 상권 수호 운동, 방곡령 실시, 대동 상회·방곡령 곁글, 개념 체크 문항 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「국권 침탈과 국권 수호 운동」 중 「국채 보상 운동」, 120–121쪽 — 국채 보상 운동의 배경·전개·결과, 자료 3(국채 보상 취지서) (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국사』, 「경제적 구국 운동의 전개」, 223–225쪽 (참고용) — 상회사 수, 조선은행과 은행들의 몰락, 조병식의 방곡령, 헌의 6조와 농광 회사, 서상돈의 기부와 근대 여성 운동이라는 평가, 금 모으기 운동 기사에만 활용</li>
+    </ol>
+    <div class="note">
+      「침탈과 대응」 표는 교과서·EBS의 내용을 앞 소주제의 표와 짝지어 풀어 쓴 정리이다. 이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-3-4-02)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p02-N과 대응)
+  const SECTION_PREFIX = "1-3-4-02";
+
+  const narrativeData = {
+    // 1-3-4-02-2: 상권을 수호하고, 근대적 회사와 은행을 세우자  (대본 p02-2)
+    "1-3-4-02-2": [
+      "앞 소주제에서 외국 상인이 내지 통상을 허용받아 내륙 시장까지 들어온 과정을 보았습니다. 가장 먼저 타격을 입은 사람은 개항장 객주 같은 중간 상인과 한성의 시전 상인이었습니다.",
+      "상인들은 흩어져서는 외국 자본을 이길 수 없다고 보고 돈을 모았습니다. 대동 상회, 장통 상회 같은 <b>상회사</b>가 그렇게 생겨났고, 평안도 상인들이 세운 대동 상회는 해외 무역에까지 손을 뻗었습니다.",
+      "서울의 시전 상인들은 가게 문을 닫는 <b>철시</b>로 외국 상인의 철수를 요구했고, 1898년에는 <b>황국 중앙 총상회</b>를 조직해 상권을 지키려 했습니다. 경강상인은 일본이 세곡 운반을 독점하자 직접 증기선을 사들여 맞섰습니다.",
+      "돈의 흐름을 외국 은행에 맡길 수 없다는 생각도 커졌습니다. 조선은행을 시작으로 한성은행, <b>대한천일은행</b>이 세워졌고, 대한 제국도 중앙은행을 세워 화폐 제도를 근대화하려 했습니다.",
+      "그러나 중앙은행 설립은 일본의 방해로 실패했고, 민간 은행들도 화폐 정리 사업을 거치며 대부분 몰락했습니다. 상인들이 시장을 지키려 애쓰는 동안, 지방에서는 또 다른 위기, 곡물 문제가 터지고 있었습니다."
+    ],
+    // 1-3-4-02-3: 방곡령, 국내 곡물 공급을 안정시키자  (대본 p02-3)
+    "1-3-4-02-3": [
+      "일본 상인이 곡물을 대량으로 사 가면서 국내 곡식 가격이 올랐고, 흉년이 들면 값이 폭등해 백성이 먹을 것을 구하기 어려웠습니다.",
+      "이때 지방관들이 꺼낸 카드가 <b>방곡령</b>이었습니다. 식량이 모자랄 때 그 지방의 곡식이 밖으로 나가지 못하게 막는 조치입니다. 근거는 1883년 조선이 어렵게 얻어 낸 조·일 통상 장정의 조항이었습니다.",
+      "1889년 함경도, 1890년 황해도에서 방곡령이 내려지자 일본은 강하게 반발했습니다. 조약에 따르면 1개월 전에 알려야 하는데 통보가 늦었다는 것이 구실이었습니다.",
+      "조약에 근거한 정당한 조치였는데도, 조선 정부는 일본의 압박에 밀려 방곡령을 철회했고 오히려 일본에 배상금까지 물어야 했습니다. 조약의 권리를 가지고 있어도 그것을 지켜 낼 힘이 없으면 쓸 수 없다는 사실이 드러난 것입니다.",
+      "곡물에 이어, 아관 파천 이후에는 나라의 자원과 땅까지 넘어가기 시작합니다. 이번에는 누가 나섰을까요?"
+    ],
+    // 1-3-4-02-4: 이권 수호 운동을 벌이다  (대본 p02-4)
+    "1-3-4-02-4": [
+      "아관 파천 이후 열강이 광산과 삼림, 철도를 다투어 가져가자, 이번에는 단체가 앞장섰습니다.",
+      "먼저 <b>독립 협회</b>입니다. 독립 협회는 만민 공동회를 열어 민중의 힘을 모았고, 그 결과 러시아가 세운 <b>한러 은행</b>을 폐쇄시키고 부산 앞바다의 절영도를 빌려 달라는 러시아의 요구를 막아 냈습니다. 프랑스와 독일의 광산 채굴권 요구도 저지했습니다.",
+      "러·일 전쟁 중이던 1904년에는 일본이 나라와 황실이 가진 황무지를 개간할 권리를 요구했습니다. 일본이 세운 식민지화 계획인 「대한시설강령」에는 일본 농민을 한국으로 옮겨 정착시키고 부족한 식량을 채우겠다는 목적이 적혀 있었습니다. 버려진 땅을 일군다는 명분과 달리, 실제 목적은 식민지화를 위한 것이었습니다. 이에 <b>보안회</b>가 조직되어 반대 운동을 벌였고, 결국 일본의 요구를 철회시켰습니다.",
+      "앞의 상권 수호와 방곡령이 대부분 일본의 압박에 꺾인 것과 달리, 이권 수호 운동은 열강의 요구를 실제로 막아 낸 성과를 남겼습니다.",
+      "하지만 을사늑약 이후 일본이 들여온 차관은 나라 살림 전체를 위협하기에 이릅니다. 그 빚 앞에서 국민은 어떻게 했을까요?"
+    ],
+    // 1-3-4-02-5: 국채 보상 운동, 우리 힘으로 나랏빚을 갚자  (대본 p02-5)
+    "1-3-4-02-5": [
+      "을사늑약 이후 통감부는 식민지화에 필요한 돈을 일본 차관으로 들여왔고, 1907년 대한 제국의 빚은 1년 예산과 맞먹는 1,300만 원이 되었습니다. 빚을 갚지 못하면 나라가 일본에 더 깊이 묶일 수밖에 없었습니다.",
+      "그해 대구에서 김광제, 서상돈 등이 국민의 힘으로 나랏빚을 갚자며 <b>국채 보상 운동</b>을 제창했습니다. 취지서는 2천만 국민이 석 달만 담배를 끊으면 갚을 수 있다고 호소했습니다.",
+      "서울에서 <b>국채 보상 기성회</b>가 만들어지고 애국 계몽 운동 단체와 <b>『대한매일신보』</b>가 후원하면서 운동은 전국으로 퍼졌습니다. 남성은 금연으로, 여성은 가락지와 비녀로 참여했고, 고종에서 차별받던 백정, 기생까지 함께했습니다. 그래서 이 운동은 신분과 성별을 넘어선 범민족적 운동이었다고 평가받고, 관련 기록물은 2017년 유네스코 세계 기록 유산이 되었습니다.",
+      "통감부는 이 운동을 일본에 맞서는 움직임으로 보고, 모금에 앞장선 양기탁에게 횡령 혐의를 씌워 구속했습니다. 결국 운동은 목적을 이루지 못하고 중단되었습니다.",
+      "이렇게 경제 침탈에 맞서는 동안, 개항 이후 들어온 전신과 철도, 전기 같은 근대 문물은 사람들의 생활을 바꾸어 가고 있었습니다. 다음 소주제에서는 근대 문물의 수용을 살펴보겠습니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

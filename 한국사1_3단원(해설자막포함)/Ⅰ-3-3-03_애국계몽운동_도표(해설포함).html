@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>애국 계몽 운동(자막 해설) | 실력을 길러 국권을 되찾자 — 애국 계몽 운동과 신민회</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-3-3-02_항일의병운동과의열투쟁_도표(해설포함).html">‹ 이전: 항일 의병 운동과 의열 투쟁</a>
+  <a href="Ⅰ-3-3_일본의국권침탈과국권수호운동_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#gyemong">실력 양성 단체</a>
+  <a href="#edu">교육과 언론</a>
+  <a href="#sinminhoe">신민회</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-3-3-04_독도와간도_도표(해설포함).html">다음: 독도와 간도 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 국가 수립의 노력</span> · 일본의 국권 침탈과 국권 수호 운동</div>
+    <h1>실력을 길러 국권을 되찾자 — 애국 계몽 운동과 신민회</h1>
+    <p class="lead">을사늑약을 전후하여 개화 지식인 사이에서 실력을 키워 국권을 회복하자는 애국 계몽 운동이 나타났다. 보안회, 헌정 연구회, 대한 자강회 등은 학교를 세우고 신문과 잡지를 발간하여 국민을 계몽하고, 산업을 진흥하여 경제적 실력을 키우려 하였다. 1907년에 조직된 비밀 결사 신민회는 국내에서 실력 양성 운동을 펼치는 한편, 국외에 독립운동 기지를 건설하여 독립 전쟁을 준비함으로써 애국 계몽 운동의 한계를 극복하였다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1904 – 1911</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>애국 계몽 운동의 흐름</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--brass)">황동색 = 실력 양성 단체</strong> · <strong style="color:var(--indigo)">남색 = 교육·언론 활동과 일제의 탄압</strong> · <strong style="color:var(--crimson)">적색 = 신민회</strong>. 적색은 앞 소주제에서 의병 전쟁을 나타낸 색으로, 실력 양성과 무장 투쟁 준비를 함께 한 신민회에 썼다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">보안회(1904)</div>
+        <div class="step-desc">황무지 개간권 반대 운동</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">헌정 연구회(1905)</div>
+        <div class="step-desc">헌법 제정 목표, 을사늑약 반대</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">대한 자강회(1906)</div>
+        <div class="step-desc">대중 계몽 운동, 고종 강제 퇴위 반대 운동</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">신민회(1907)</div>
+        <div class="step-desc">국권 회복·공화정 수립 목표, 민족 교육·민족 산업 육성, 국외 독립운동 기지 건설</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>애국 계몽 운동가들은 학교와 언론으로 국민을 깨우치려 하였으나, 통감부는 각종 법령으로 이를 억눌렀다. 신민회의 국내 조직도 일제가 조작한 105인 사건으로 무너졌다(1911).</p></div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--brass)">황동색 = 실력 양성 단체</strong> · <strong style="color:var(--crimson)">적색 = 신민회</strong></p>
+    <div class="timeline">
+      <div class="tl-item turn"><div class="tl-year">1904</div><div class="tl-body"><div class="tl-title">보안회 조직</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1905</div><div class="tl-body"><div class="tl-title">헌정 연구회 결성</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1906</div><div class="tl-body"><div class="tl-title">대한 자강회 결성</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1907</div><div class="tl-body"><div class="tl-title">신민회 결성</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1910</div><div class="tl-body"><div class="tl-title">국권 피탈</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1911</div><div class="tl-body"><div class="tl-title">105인 사건</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="gyemong">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>애국 계몽 운동, 실력 양성만이 살길이다</h2>
+    </div>
+    <p class="block-sub">신민회에서 실력 양성을 위해 세운 대성 학교의 모습이다. 애국 계몽 운동가들은 어떻게 국권을 회복하려 했을까?</p>
+
+    <div class="quote-block brass">
+      <h4>도입 자료 — 대성 학교 광고</h4>
+      안창호 등이 평양에 사립 중학교를 세우기로 하였으니, 지원하는 학생은 지원서를 제출해 주십시오.
+      <div class="src">『황성신문』, 1908. 9. 15. (재구성)</div>
+    </div>
+
+    <div class="causal-link"><p>을사늑약을 전후하여 개화 지식인 사이에서 실력을 키워 국권을 회복하자는 애국 계몽 운동이 나타나, 학교를 설립하고 신문과 잡지를 발간하여 국민을 계몽하고 산업을 진흥하여 경제적인 실력을 키우고자 하였다.</p></div>
+    <p style="font-size:13px; color:var(--ink-soft);">EBS: 을사늑약을 전후하여 관료, 지식인 등이 사회 진화론의 관점에서 실력 양성을 통한 국권 수호를 모색하였다. 참고(이전 교육과정 교과서): 박은식은 「서우」 제1호(1906)에서 “승자는 주인이 되고 패자는 노예가 되었다.”라고 하여, 자연 생태계처럼 나라와 민족 사이에도 강자가 약자를 지배하게 된다는 적자생존의 논리를 받아들였다.</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>애국 계몽 운동 단체(교과서·EBS)</caption>
+      <thead><tr><th>단체</th><th>활동</th><th>결과</th></tr></thead>
+      <tbody>
+        <tr><td class="hd brass">보안회(1904)</td><td>러·일 전쟁 당시 일본이 대한 제국에 황무지 개간권을 요구하자, 관료와 유생들이 중심이 되어 조직하고 일본의 요구를 저지</td><td>일본의 압력으로 해산되었지만, 이후 일본의 국권 침탈에 맞서 여러 단체가 설립되는 계기</td></tr>
+        <tr><td class="hd brass">헌정 연구회(1905)</td><td>독립 협회의 정신을 계승, 서구 열강이 부강한 요인이 입헌 체제에 있다고 보아 헌법 제정을 목표로 활동 — 한국이 일본의 보호를 받아들여야 한다는 선언서를 발표한 일진회(송병준, 이용구 등이 세운 친일 단체)를 강력하게 규탄</td><td>EBS: 일제의 탄압으로 활동 중단</td></tr>
+        <tr><td class="hd brass">대한 자강회(1906)</td><td>을사늑약 이후 헌정 연구회가 해산되자 그 회원들이 중심이 되어 조직 — 전국에 지회를 두었으며, 월보(매달 발행하는 인쇄물)를 발행하고 정기적으로 연설회를 여는 등 교육과 계몽 활동</td><td>1907년에 고종 강제 퇴위 반대 운동을 벌이다 강제로 해산당함 — 참고(이전 교육과정 교과서): 후신으로 대한 협회가 조직되었으나 일제의 탄압으로 국권 수호의 목표 의식은 약해짐</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="quote-block brass">
+      <h4>사료 읽기 — 대한 자강회 취지서</h4>
+      나라의 독립은 자강에 달려 있고, 자강의 방법은 교육을 진작하고 산업을 일으키는 데 있다.
+      <div class="src">『황성신문』, 1906. 4. 2. (재구성)</div>
+    </div>
+
+    <div class="causal-link"><p>일본의 탄압이 심해지자 대다수 애국 계몽 운동가는 일본이 허용하는 범위 안에서 실력 양성에 집중하였고, 실력을 갖추지 못한 상황에서 일본에 대한 직접적 투쟁은 무모하다고 판단하여 의병 운동을 비판하기도 하였다.</p></div>
+  </section>
+
+  <section class="block" id="edu">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>교육과 언론 활동을 벌이다</h2>
+    </div>
+    <p class="block-sub">애국 계몽 운동가들은 국권 회복을 위해서는 민중을 계몽하고 근대 교육을 실시하는 것이 가장 필요하다고 보았다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>교육</h4>
+        각지에 학회를 설립하여 월보를 간행하고, 강연회를 열어 민중을 계몽 — 학교를 설립하여 근대 의식과 애국심을 높임 — 참고(이전 교육과정 교과서): 기호 흥학회, 서북 학회 등 많은 학회가 설립되었고, 1910년경에는 전국에 2,000여 개나 되는 사립 학교가 들어섬
+      </div>
+      <div class="compare-card deep">
+        <h4>언론</h4>
+        『황성신문』은 「시일야방성대곡」을 실어 을사늑약을 강하게 비판 — 『대한매일신보』는 일본의 침략 행위를 적극적으로 비판하고 의병 활동에 호의적인 보도
+      </div>
+    </div>
+
+    <div class="causal-link"><p>통감부는 애국 계몽 단체의 활동을 막기 위해 대한 제국에 각종 법령을 제정하게 하고, 신문을 검열하거나 발행을 막기도 하였다.</p></div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>자료 탐구 3 — 일본의 애국 계몽 운동 탄압(교과서 145쪽, 『관보』, 재구성)</caption>
+      <thead><tr><th>법령</th><th>주요 내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">신문지법(1907. 7.)</td><td>내부대신은 신문지가 안녕, 질서를 방해하거나 풍속을 어지럽게 한다고 인정될 때는 발행을 정지 혹은 금지할 수 있다. 이 법의 규정은 정기 발행의 잡지류에도 적용한다.</td></tr>
+        <tr><td class="hd deep">보안법(1907. 7.)</td><td>내부대신은 질서 유지를 위해 필요한 경우에 결사의 해산을 명할 수 있다. 경찰관은 집회 또는 여러 사람의 운동 또는 군집을 제한, 금지하거나 해산할 수 있다.</td></tr>
+        <tr><td class="hd deep">학회령(1908. 8.)</td><td>학회를 설립하고자 하는 자는 학부대신의 허가를 받아야 한다. 학회가 공익을 해친다고 인정되는 행위를 할 때에는 학부대신은 인가를 취소할 수 있다.</td></tr>
+        <tr><td class="hd deep">출판법(1909. 2.)</td><td>문서·도서를 출판하고자 할 때에는 내부대신에게 허가를 신청해야 한다. 내부대신은 법을 위반하고 출판한 문서나 도서의 발매 또는 배포를 금하고, 인쇄본을 압수할 수 있다.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">자료는 통감부가 대한 제국에 제정을 강요한 법령들이다. 이들 법령을 통해 일본은 한국인들의 국권 회복 노력을 억눌렀다(교과서).</p>
+
+    <div class="think-box">
+      <h4>자료 탐구 3</h4>
+      <ol>
+        <li>다음 상황에서 일본이 위 법령을 어떻게 이용했을지 생각해 보자. — 의병 활동을 호의적으로 묘사한 신문 발행(예: 신문지법을 이용해 신문을 정간·폐간시켰을 거야.) / 근대 의식과 애국심을 높이는 활동을 하는 학회 설립 / 고종 강제 퇴위 반대 운동을 벌이는 단체 / 일본의 침략 행위를 풍자하는 내용의 책 발간</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="sinminhoe">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>신민회, 애국 계몽 운동의 한계를 극복하다</h2>
+    </div>
+    <p class="block-sub">1907년에 안창호와 양기탁의 주도로 비밀 결사인 신민회가 조직되었다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">결성(1907)</div>
+        <div class="step-desc">안창호, 양기탁이 주도한 비밀 결사 — 국권 회복과 공화정 수립을 목표</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">국내 실력 양성</div>
+        <div class="step-desc">오산 학교, 대성 학교 등을 세워 민족 교육 실시 — 자기 회사, 태극 서관(서점) 등을 운영하여 민족 산업을 키우려 함</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">국외 독립운동 기지</div>
+        <div class="step-desc">독립 전쟁 전략을 수립하고, 국외에 독립군 기지와 무관 학교를 설립하기로 함 → 이회영 등 많은 회원이 만주로 이주하여 독립운동 기지 건설 — EBS: 남만주(서간도) 삼원보에 신흥 강습소 설립</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">해체(1911)</div>
+        <div class="step-desc">신민회의 국내 조직은 일제가 조작한 105인 사건으로 무너짐</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">태극 서관 — 이승훈, 안태국 등이 평양 등지에 설립한 서점으로, 신민회의 산하 기관 역할을 하였으며 신민회 회원들의 연락 장소와 집회 장소로 활용되었다(EBS).</p>
+
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>105인 사건(1911)</h4>
+        일제가 총독 암살 혐의를 조작해 황해도와 평안도 지방의 민족 운동가들을 기소한 사건(교과서) — EBS: 데라우치 총독의 암살을 모의하였다고 일제가 조작, 수백 명의 애국지사를 검거하여 그중 105명에게 1심에서 유죄 판결 → 비밀 조직인 신민회가 드러나 와해
+      </div>
+      <div class="compare-card crimson">
+        <h4>사건의 계기(이전 교육과정 교과서, 참고용)</h4>
+        안중근의 사촌 안명근이 독립 자금을 모금하다가 적발되자, 일제는 이를 총독 암살 미수 사건으로 날조하고 수백 명의 애국지사를 검거하여 그중 105인을 구속하였다. 끌려가는 신민회 회원들은 얼굴을 가리는 용수를 쓰고 있었다(교과서 사진).
+      </div>
+    </div>
+
+    <div class="sidebox">
+      <h4>탐구 — 신민회, 애국 계몽 운동의 한계를 넘어서</h4>
+      <p>을사늑약을 전후하여 애국 계몽 운동이 나타났다. 애국 계몽 운동은 실력 양성으로 국권을 회복하려 하였으며, 의병의 무력 투쟁을 비판하기도 하였다. 일본의 침략이 심해지면서 애국 계몽 운동에서도 변화가 나타났다. 그 대표적인 단체가 신민회이다. 신민회는 표면적으로는 교육과 산업 육성을 위한 활동을 펼쳤다. 그러나 한편으로는 독립 전쟁으로 국권을 회복하기 위해 국외에 독립운동 기지를 세우려고 하였다(교과서).</p>
+      <div class="quote-grid">
+        <div class="quote-block brass">
+          <h4>자료 1 — 의병에게 충고하는 글</h4>
+          눈앞의 치욕을 참고 무기를 버리고 고향으로 돌아가, 각자 산업에 힘써 실력을 양성하면 독립을 기대할 수 있다.
+          <div class="src">『황성신문』, 1907. 9. 25. (재구성)</div>
+        </div>
+        <div class="quote-block crimson">
+          <h4>자료 2 — 신민회의 활동</h4>
+          서간도에 단체로 이주하여 학교와 무관 학교를 세우고, 기회를 타서 독립 전쟁을 일으키고자 하였다.
+          <div class="src">「경성지방재판소 판결문」(1911) (재구성)</div>
+        </div>
+      </div>
+      <p>이회영 — 형제들과 함께 재산을 처분하고 서간도 삼원보로 이주하여 독립운동 기지를 개척하였다(교과서). “우리 2천만 동포는 총궐기하여 마지막 한 사람까지 왜적에 분투하여 조국을 되찾아야 한다.”(김삼웅, 『우당 이회영 평전』, 재구성)</p>
+    </div>
+
+    <div class="limit-box">
+      <h4>애국 계몽 운동의 한계와 신민회(이전 교육과정 교과서, 참고용)</h4>
+      <p>사회 진화론을 신봉하던 일부 지식인은 을사늑약 이후 강대국 일본에 의한 약소국 한국의 지배를 필연적 현실로 받아들여, 경제·문화적 실력 양성에만 주력하고 의병 투쟁을 격렬히 비판하는 경향이 있었다. 이러한 한계는 장기적인 독립 전쟁을 준비하고 공화정체의 독립된 민족 국가 건설을 제시한 신민회 활동을 통해 극복되었다.</p>
+    </div>
+
+    <div class="think-box">
+      <h4>생각 키우기 — 신민회, 애국 계몽 운동의 한계를 넘어서</h4>
+      <ol>
+        <li>자료 1에서 제시한 국권 회복 방법을 말해 보자.</li>
+        <li>자료 2를 바탕으로 신민회가 국권 회복을 위해 벌인 활동을 정리해 보자.</li>
+        <li>Q1, Q2에서 답한 내용을 바탕으로 신민회가 기존 애국 계몽 운동의 한계를 넘었다고 평가받는 까닭을 말해 보자.</li>
+      </ol>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">국권 피탈 전후 간도와 연해주로 옮겨 간 의병의 활동은 같은 소단원의 「항일 의병 운동과 의열 투쟁」에서 볼 수 있다.</p>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>정리 — 애국 계몽 운동</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>애국 계몽 운동 단체 비교</caption>
+      <thead><tr><th>단체</th><th>목표</th><th>활동</th><th>결과</th></tr></thead>
+      <tbody>
+        <tr><td class="hd brass">보안회(1904)</td><td>일본의 황무지 개간권 요구 저지</td><td>반대 운동</td><td>요구 저지, 일본의 압력으로 해산</td></tr>
+        <tr><td class="hd brass">헌정 연구회(1905)</td><td>헌법 제정, 입헌 체제</td><td>일진회 규탄, 을사늑약 반대</td><td>해산</td></tr>
+        <tr><td class="hd brass">대한 자강회(1906)</td><td>교육과 식산흥업으로 자강</td><td>지회 설치, 월보 발행, 연설회</td><td>고종 강제 퇴위 반대 운동으로 강제 해산(1907)</td></tr>
+        <tr><td class="hd crimson">신민회(1907)</td><td>국권 회복, 공화정 수립</td><td>오산·대성 학교, 자기 회사·태극 서관, 국외 독립운동 기지(삼원보)</td><td>105인 사건으로 국내 조직 와해(1911)</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>국권 수호 운동의 두 갈래와 신민회</caption>
+      <thead><tr><th>구분</th><th>의병 운동</th><th>애국 계몽 운동</th><th>신민회</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">방법</td><td>무장 투쟁</td><td>교육·언론·산업으로 실력 양성</td><td>국내 실력 양성 + 국외 독립 전쟁 준비</td></tr>
+        <tr><td class="hd">서로에 대한 시각</td><td>—</td><td>실력 없는 직접 투쟁은 무모하다며 의병을 비판하기도 함</td><td>두 방법을 결합</td></tr>
+        <tr><td class="hd">이후</td><td>간도·연해주에서 무장 독립 투쟁으로</td><td>일제의 법령으로 크게 위축</td><td>국외 독립운동 기지가 무장 독립 투쟁의 바탕</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 길잡이 질문</h4>
+      <ol>
+        <li>애국 계몽 운동가들은 국권 회복을 위해 무엇이 필요하다고 생각했을까?</li>
+        <li>신민회는 애국 계몽 운동의 한계를 어떻게 극복하였을까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 독립 협회를 계승하여 세워진 (   )은/는 헌법 제정을 목표로 활동하였다.</summary>
+        <div class="check-answer">헌정 연구회</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 대한 자강회는 고종 강제 퇴위 반대 운동을 벌이다 강제로 해산당하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 『황성신문』은 「시일야방성대곡」을 실어 을사늑약을 비판하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. (   )은/는 국권 회복과 공화정 수립을 목표로 조직되었다.</summary>
+        <div class="check-answer">신민회</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅲ 「근대 국가 수립의 노력」 3 「일본의 국권 침탈과 국권 수호 운동」 03 「애국 계몽 운동」, 140–141쪽 — 본문·연표·도입 자료(대성 학교 광고)·애국 계몽 운동의 흐름·사료 읽기(대한 자강회 취지서)·일진회·월보 용어 풀이·105인 사건으로 끌려가는 신민회 회원·탐구(신민회, 애국 계몽 운동의 한계를 넘어서)·생각 키우기·확인하기의 기본 출처 (1차 근거)</li>
+      <li>동아출판 고등학교 『한국사1』, 자료로 보는 한국사 「일본의 국권 침탈과 국권 수호 운동」 자료 탐구 3(일본의 애국 계몽 운동 탄압), 145쪽 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「국권 침탈과 국권 수호 운동」 중 「애국 계몽 운동」, 120–121쪽 — 특징, 주요 애국 계몽 운동 단체의 활동, 105인 사건·태극 서관 곁글, 자료(신민회) (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국사』, 「애국 계몽 운동」, 216–219쪽 (참고용) — 사회 진화론(박은식 「서우」), 대한 협회, 학회와 사립 학교, 애국 계몽 운동의 한계와 신민회, 105인 사건의 계기에만 활용</li>
+    </ol>
+    <div class="note">
+      이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다. 같은 쪽의 EBS 국채 보상 운동 자료는 <a href="Ⅰ-3-4-02_경제적구국운동_도표(해설포함).html#debt">「경제적 구국 운동」</a>에서 다룬다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-3-3-03)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p03-N과 대응)
+  const SECTION_PREFIX = "1-3-3-03";
+
+  const narrativeData = {
+    // 1-3-3-03-2: 애국 계몽 운동, 실력 양성만이 살길이다  (대본 p03-2)
+    "1-3-3-03-2": [
+      "의병들이 총을 들었을 때, 다른 길을 고민한 사람들도 있었습니다. 나라를 지키려면 먼저 실력을 키워야 한다고 본 개화 지식인들입니다. 이들의 활동을 <b>애국 계몽 운동</b>이라고 합니다.",
+      "이들의 생각 바탕에는 이긴 자가 주인이 되고 진 자는 노예가 된다는 <b>사회 진화론</b>이 있었습니다. 강한 나라가 약한 나라를 지배하는 세상이니, 교육과 산업으로 힘을 길러야 살아남는다고 본 것입니다.",
+      "러·일 전쟁 중 일본이 황무지를 개간할 권리를 요구하자 <b>보안회</b>가 나서 이를 막아 냈습니다. 이어 <b>헌정 연구회</b>는 헌법을 만들어 입헌 정치를 하자고 주장하며 친일 단체 일진회를 규탄했습니다.",
+      "그 뒤를 이은 <b>대한 자강회</b>는 나라의 독립은 스스로 강해지는 데 달려 있고, 그 방법은 교육과 산업이라고 외쳤습니다. 전국에 지회를 두고 월보와 연설회로 계몽 활동을 펼쳤지만, 고종의 강제 퇴위에 반대하다 해산되었습니다.",
+      "탄압이 거세지자 많은 계몽 운동가는 일본이 허용하는 범위 안에서 실력을 키우는 데 집중했습니다. 그러면서 실력도 없이 맞서는 것은 무모하다며 의병을 비판하기도 했습니다."
+    ],
+    // 1-3-3-03-3: 교육과 언론 활동을 벌이다  (대본 p03-3)
+    "1-3-3-03-3": [
+      "애국 계몽 운동가들이 가장 먼저 해야 할 일로 꼽은 것은 민중을 깨우치는 일이었습니다.",
+      "그래서 곳곳에 학회를 세워 월보를 펴내고 강연회를 열었으며, 학교를 세워 근대 의식과 애국심을 길렀습니다. 1910년 무렵에는 전국의 사립 학교가 2,000여 곳에 이르렀습니다.",
+      "언론도 앞장섰습니다. 『황성신문』은 「시일야방성대곡」으로 을사늑약을 비판했고, <b>『대한매일신보』</b>는 일본의 침략을 꾸짖으며 의병을 호의적으로 보도했습니다.",
+      "통감부는 이 움직임을 법으로 묶었습니다. <b>신문지법</b>으로 신문 발행을 멈추게 하고, <b>보안법</b>으로 단체와 집회를 해산시킬 수 있게 했습니다. 이어 학회령으로 학회 설립을, 출판법으로 책 출판을 허가받게 했습니다.",
+      "교육과 언론으로 실력을 키우려던 길조차 점점 막혀 가자, 이제 새로운 방식이 필요해졌습니다."
+    ],
+    // 1-3-3-03-4: 신민회, 애국 계몽 운동의 한계를 극복하다  (대본 p03-4)
+    "1-3-3-03-4": [
+      "1907년 안창호와 양기탁이 중심이 되어 비밀 결사 <b>신민회</b>를 만들었습니다. 신민회는 국권 회복과 함께, 황제가 아닌 국민이 주인인 <b>공화정</b>을 세우는 것을 목표로 삼았습니다.",
+      "겉으로는 다른 계몽 단체처럼 오산 학교와 <b>대성 학교</b>를 세워 민족 교육을 하고, 자기 회사와 태극 서관을 운영해 민족 산업을 키웠습니다.",
+      "그러나 신민회는 여기서 멈추지 않았습니다. 언젠가 독립 전쟁을 벌이려면 군대가 필요하다고 보고, 나라 밖에 독립운동 기지와 무관 학교를 세우기로 했습니다. 이회영 형제는 재산을 모두 처분하고 서간도 <b>삼원보</b>로 건너가 기지를 일구었습니다.",
+      "실력을 키우자던 계몽 운동과 무기를 든 의병은 서로를 비판하기도 했지만, 신민회의 국외 기지에서 두 흐름이 하나로 만났습니다. 실력을 기르면서 동시에 독립 전쟁을 준비한 것, 이것이 신민회가 애국 계몽 운동의 한계를 넘었다는 평가를 받는 까닭입니다.",
+      "일제는 1911년 안중근의 사촌 안명근이 독립 자금을 모으다 붙잡힌 일을 총독 암살 음모로 꾸며, 수백 명을 잡아들이고 105인을 구속했습니다. 이 <b>105인 사건</b>으로 신민회의 국내 조직은 무너졌지만, 그들이 세운 국외 기지는 훗날 무장 독립 투쟁의 바탕이 됩니다. 다음 소주제에서는 우리 영토인 독도와 간도를 살펴보겠습니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

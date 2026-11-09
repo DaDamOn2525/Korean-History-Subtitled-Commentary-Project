@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>조선의 개항(자막 해설) | 강요된 문, 스스로 연 문 — 강화도 조약에서 조·미 조약까지</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-3-1-02_서구열강의침략과대응_도표(해설포함).html">‹ 이전: 서구 열강의 침략과 대응</a>
+  <a href="Ⅰ-3-1_조선의개항과근대화_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#change">대외 정책의 변화</a>
+  <a href="#ganghwa">강화도 조약</a>
+  <a href="#unequal">불평등 조약</a>
+  <a href="#west">서양과의 수교</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-3-1-04_개화정책의추진_도표(해설포함).html">다음: 개화 정책의 추진 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 국가 수립의 노력</span> · 조선의 개항과 근대화</div>
+    <h1>강요된 문, 스스로 연 문 — 강화도 조약에서 조·미 조약까지</h1>
+    <p class="lead">흥선 대원군이 물러나고 고종이 직접 정치에 나서면서 조선의 통상 수교 거부 정책에 변화의 조짐이 나타났다. 일본은 운요호 사건을 일으켜 조선에 개항을 요구하였고, 조선은 최초의 근대적 조약이자 불평등 조약인 강화도 조약을 맺었다. 이후 『조선책략』이 들어오면서 조선은 서양 국가로는 처음으로 미국과 조약을 맺었고, 이어 여러 서양 나라와 수교하였으나 이들 조약도 모두 불평등 조약이었다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1873 – 1882</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>조선이 문을 열기까지</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--brass)">황동색 = 조선 내부의 변화</strong> · <strong style="color:var(--crimson)">적색 = 일본과의 조약</strong> · <strong style="color:var(--indigo)">남색 = 서양과의 조약</strong>. 앞 소주제와 달리 이 소주제에서는 일본과의 조약이 중심이라 색을 새로 정하였다. 조선 안의 변화가 일본, 이어 서양과의 조약으로 이어진 순서라 화살표로 이었다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">조선의 변화</div>
+        <div class="step-desc">흥선 대원군이 물러나고 고종이 직접 정치(1873), 통상 개화론 대두</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">일본에 개항</div>
+        <div class="step-desc">운요호 사건(1875) → 강화도 조약(1876) → 조·일 수호 조규 부록, 조·일 무역 규칙</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">서양과 수교</div>
+        <div class="step-desc">『조선책략』 유포(1880) → 조·미 수호 통상 조약(1882) → 영국·독일·러시아·프랑스와 수교</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>조선이 일본, 서양 여러 나라와 맺은 조약은 모두 조선에 불리한 불평등 조약이었다.</p></div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--crimson)">적색 = 일본과의 조약</strong> · <strong style="color:var(--indigo)">남색 = 서양과의 조약</strong></p>
+    <div class="timeline">
+      <div class="tl-item crimson"><div class="tl-year">1875</div><div class="tl-body"><div class="tl-title">운요호 사건</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1876</div><div class="tl-body"><div class="tl-title">강화도 조약</div><div class="tl-desc">조·일 수호 조규</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1880</div><div class="tl-body"><div class="tl-title">『조선책략』 유포</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1882</div><div class="tl-body"><div class="tl-title">조·미 수호 통상 조약</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="change">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>조선의 대외 정책에 변화가 나타나다</h2>
+    </div>
+    <p class="block-sub">일본 군함 운요호가 초지진을 포격하고, 영종도에 상륙하여 살인과 약탈을 저질렀다. 일본이 운요호 사건을 일으킨 까닭은 무엇일까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">서계 사건</div>
+        <div class="step-desc">메이지 유신 이후 일본이 새 정부 수립을 알리는 서계(외교 문서)를 보냄 → 일본이 협의 없이 외교 문서의 형식을 바꾸고, 일왕을 황제를 뜻하는 ‘황상’으로 표현하는 등 기존의 교린 관계를 부정하는 용어가 들어 있다며 조선 정부가 접수 거부</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">정한론</div>
+        <div class="step-desc">일본에서 조선을 무력으로 침략하자는 ‘정한론’이 일어남</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 정한론은 무사 계층의 불평을 해외로 돌리기 위해 일어났으나, 단행할 시기를 둘러싸고 반대에 부딪혀 당장 실현되지는 않았다.</p>
+
+    <div class="causal-link"><p>한편 1873년 흥선 대원군이 물러나고 고종이 직접 정치에 나서면서, 조선의 통상 수교 거부 정책에 변화의 조짐이 나타났다.</p></div>
+    <div class="compare-grid">
+      <div class="compare-card brass">
+        <h4>통상 개화론</h4>
+        서양 문물을 수용하여 부국강병을 이루자는 주장 — EBS: 북학파 실학사상의 영향, 박규수(고위 관료)·오경석(역관)·유홍기 등
+      </div>
+      <div class="compare-card brass">
+        <h4>문호 개방의 필요성 공감(EBS)</h4>
+        청에 왕래하면서 세계정세 인식 — 오경석이 청에서 『해국도지』, 『영환지략』 등의 서적을 들여옴
+      </div>
+      <div class="compare-card brass">
+        <h4>개화파 형성(EBS)</h4>
+        박규수 등의 영향을 받은 양반 자제(김옥균, 박영효, 홍영식 등)가 정부의 개화 정책 추진 당시 관료로 활동
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">박규수 — 조선 후기 북학파 실학자 박지원의 손자로, 청에 왕래하며 서양 기술의 우수성을 경험하고 서양과 통상해야 한다고 주장하였다(EBS). 『해국도지』 — 청의 학자 위원이 저술한 책으로 각국의 정치, 경제, 인구, 종교, 지리 등을 설명한 지리서. 『영환지략』 — 청의 지방관이었던 서계여가 지은 세계 지리 관련 책(EBS).</p>
+
+    <div class="quote-block brass">
+      <h4>참고(이전 교육과정 교과서) — 박규수의 자주적 개국론</h4>
+      우리가 주도권을 잡고 능동적으로 개국하지 않으면, 일본이 무력으로 개항을 요구할 것이다.
+      <div class="src">박규수, 『환재집』 (재구성)</div>
+    </div>
+
+    <div class="note-box">청과 서양의 문물을 받아들여 조선을 개혁하자고 주장한 북학파 실학자들은 <a href="../한국사1_2단원(해설자막포함)/Ⅰ-2-4-04_조선후기의사상과문화_도표(해설포함).html#silhak">「조선 후기의 사상과 문화」 — 실학이 등장하다</a>에서 다루었다.</div>
+  </section>
+
+  <section class="block" id="ganghwa">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>강화도 조약을 맺다</h2>
+    </div>
+    <p class="block-sub">1875년 일본은 조선을 강제로 개항하기 위해 군함인 운요호를 강화도에 파견하였다.</p>
+
+    <div class="quote-block crimson">
+      <h4>도입 자료 — 영종도 방어 실패 보고</h4>
+      적이 갑자기 돌격해 무너뜨리니, 외진 성의 적은 군사로는 막아 낼 길이 없었습니다.
+      <div class="src">『승정원일기』 (재구성)</div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">운요호 사건(1875)</div>
+        <div class="step-desc">운요호가 정체를 밝히지 않고 접근 → 강화도의 조선군이 경고 사격 → 일본군이 이를 구실로 초지진을 포격해 파괴하고, 영종도에 상륙하여 살인과 약탈, 방화 — EBS: 조선 측의 발포를 유도한 포함 외교</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">개항 요구</div>
+        <div class="step-desc">운요호 사건 이후 일본이 피해 배상과 문호(외부와 교류하는 통로) 개방을 요구하며 경기도 해안 등지에서 무력시위</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">강화도 조약(1876)</div>
+        <div class="step-desc">조선 정부가 논의 끝에 개항을 결정하고, 일본과 강화도 조약(조·일 수호 조규)을 맺음</div>
+      </div>
+    </div>
+
+    <div class="quote-block crimson">
+      <h4>참고(이전 교육과정 교과서) — 일본 외무성 관리의 군함 파견 건의서(1875. 4.)</h4>
+      지금 군함 1~2척을 조선에 보내 두면, 뒷날 대규모로 보내야 할 근심이 없을 것이다.
+      <div class="src">일본 외무성 관리의 건의서 (재구성) — 이에 따라 일본은 1875년 운요호를 강화도에 파견하였다.</div>
+    </div>
+
+    <div class="sidebox">
+      <h4>개항을 둘러싼 논란(교과서)</h4>
+      <div class="quote-grid">
+        <div class="quote-block">
+          <h4>반대 — 최익현</h4>
+          왜인이라 하나 실은 서양 오랑캐이니, 한번 화친하면 사학이 전국에 퍼질 것이다.
+          <div class="src">최익현, 『면암 선생 문집』 (재구성)</div>
+        </div>
+        <div class="quote-block">
+          <h4>찬성</h4>
+          왜인을 제어하는 일과 서양인을 배척하는 일은 따로이니, 각각 대처할 방도가 있다.
+          <div class="src">『승정원일기』 (재구성)</div>
+        </div>
+      </div>
+      <p>최익현 등 유생들의 개항 반대 운동은 <a href="Ⅰ-3-1-05_개화정책에대한반발_도표(해설포함).html#wijeong">「개화 정책에 대한 반발」 — 유생들, 위정척사 운동을 펼치다</a>에서 다룬다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="unequal">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>강화도 조약으로 불평등 조약 체제에 편입되다</h2>
+    </div>
+    <p class="block-sub">강화도 조약은 조선이 맺은 최초의 근대적 조약이자 불평등 조약이었다.</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>강화도 조약(조·일 수호 조규, 1876)의 주요 내용(교과서·EBS)</caption>
+      <thead><tr><th>조항</th><th>주요 내용</th><th>의미</th></tr></thead>
+      <tbody>
+        <tr><td class="hd crimson">제1조</td><td>조선은 자주국이며 일본국과 평등한 권리를 가진다.</td><td>동아시아의 전통 외교 질서에서 벗어난 근대적 조약임을 보여 줌 — EBS: 청의 종주권 부인, 일본의 영향력 강화 의도</td></tr>
+        <tr><td class="hd crimson">제4조</td><td>(부산 외) 2곳의 항구를 개항하고 일본국 인민이 오가며 자유로이 통상하도록 허가</td><td>1880년 원산, 1883년 인천 추가 개항 — EBS: 경제·군사·정치적 거점 확보 의도</td></tr>
+        <tr><td class="hd crimson">제7조</td><td>조선국 연해를 일본국 항해자가 자유롭게 측량하고 지도를 제작하도록 허가</td><td>해안 측량권 허용 — EBS: 주권 침해, 일본의 침략 의도</td></tr>
+        <tr><td class="hd crimson">제10조</td><td>일본국 인민이 조선국이 지정한 항구에서 조선국 인민과 관계된 죄를 범한 경우 일본국 관원이 심판</td><td>영사 재판권 조항 — EBS: 주권 침해</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">영사 재판권(치외 법권) — 영사가 주재국에 거주하는 자국민을 주재국의 법이 아니라 본국의 법에 따라 재판하는 권한(EBS). 이후 일본은 원산과 인천을 추가로 개항할 것을 요구하여 정치적·군사적 침략 의도를 드러냈다(교과서).</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">강화도 조약(1876. 2.)</div>
+        <div class="step-desc">조선과 일본 사이에 새로운 국교 수립</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">조·일 수호 조규 부록(1876. 7.)</div>
+        <div class="step-desc">강화도 조약을 보완 — EBS: 개항장 내 일본인의 거류지 설정, 일본 화폐 유통 허용</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">조·일 무역 규칙(1876. 7.)</div>
+        <div class="step-desc">조선과 일본 간의 무역에 관한 사항 — EBS: 일본 상인의 양곡 수출입 허용, 사실상 무관세 허용</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">거류지 — 조약에 의해 특정 영토에서의 일부 주권을 외국에 양도하고 외국인의 거주와 영업을 허용한 곳으로, 중국에서는 조계라 불렸다(EBS).</p>
+
+    <div class="causal-link"><p>이들 조약 역시 개항장에서 일본 화폐 사용과 곡물의 무제한 유출을 허용하고, 관세에 관련된 내용을 담지 않는 등 조선에 불리한 것이었다.</p></div>
+    <div class="quote-grid">
+      <div class="quote-block crimson">
+        <h4>조·일 수호 조규 부록(EBS 자료)</h4>
+        일본인이 다닐 수 있는 거리는 부두에서 사방 10리로 한다. 일본인은 본국 화폐로 조선 물자를 교환할 수 있다.
+        <div class="src">조·일 수호 조규 부록, 제4관·제7관 (재구성)</div>
+      </div>
+      <div class="quote-block crimson">
+        <h4>조·일 무역 규칙(EBS 자료)</h4>
+        조선 항구의 일본인은 쌀과 잡곡을 수출입할 수 있다. 일본 정부 소속 선박은 항세를 내지 않는다.
+        <div class="src">조·일 무역 규칙, 제6칙·제7칙 (재구성)</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="west">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>서양 여러 나라와 수교하다</h2>
+    </div>
+    <p class="block-sub">조선이 개항하자 미국도 조선과 통상 조약을 체결하려 하였다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">청의 권유</div>
+        <div class="step-desc">청이 일본과 러시아를 견제하려고 조선에 미국과의 수교를 적극 권함</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">『조선책략』</div>
+        <div class="step-desc">제2차 수신사로 일본에 파견된 김홍집이 청의 외교관(황준헌)이 쓴 『조선책략』을 들여옴 — 조선이 중국·일본·미국과 힘을 합쳐 러시아를 견제해야 한다는 내용</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">조·미 수호 통상 조약(1882)</div>
+        <div class="step-desc">조선 정부 내에서 미국과의 수교가 필요하다는 여론 형성 → 서양 국가로는 처음으로 미국과 조약 체결</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">서양 여러 나라와 수교</div>
+        <div class="step-desc">청의 중재로 영국, 독일과 수교, 러시아, 프랑스와도 수교 — 모두 불평등 조약</div>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>조·미 수호 통상 조약(1882)의 주요 내용(교과서·EBS)</caption>
+      <thead><tr><th>조항</th><th>주요 내용</th><th>의미</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">제1조</td><td>타국이 불공평하거나 경멸하는 일이 있을 때 일단 확인하고 서로 도와주며, 중간에서 잘 조처하여 두터운 우의를 보여 준다.</td><td>거중 조정 조항 — 조약 당사국과 다른 국가 사이에 분쟁이 생기는 경우 중재한다는 내용</td></tr>
+        <tr><td class="hd deep">제4조</td><td>미국인이 조선 인민의 생명과 재산에 손해를 끼치면 미국 영사관 등이 미국 법률에 따라 조사하고 처벌</td><td>영사 재판권 조항</td></tr>
+        <tr><td class="hd deep">제5조</td><td>미국 상인과 상선이 조선에 와서 무역할 때 입출항하는 화물은 모두 세금을 바쳐야 한다.</td><td>관세 부과 규정</td></tr>
+        <tr><td class="hd deep">제14조</td><td>조선이 어떤 특혜 및 이익을 다른 나라 혹은 그 나라 상인에게 베풀 때 미국의 관민도 혜택을 균등하게 받는다.</td><td>최혜국 대우 조항 — EBS: 최초로 최혜국 대우 인정</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">거중 조정 — 조약을 맺은 두 나라 중 한 나라가 제3국과 분쟁이 있을 경우, 다른 나라가 중간에서 조정하고 해결을 주선하는 것. 최혜국 대우 — 조약을 맺은 한 나라가 제3국에 부여한 가장 유리한 대우를 조약 상대국에도 부여하는 것(EBS).</p>
+
+    <div class="causal-link"><p>조·미 수호 통상 조약에는 강화도 조약과 달리 거중 조정, 관세 부과 조항이 포함되었지만, 영사 재판권, 최혜국 대우 등이 포함된 불평등 조약이었다.</p></div>
+
+    <div class="think-box">
+      <h4>생각 키우기 — 조선의 개항과 조약</h4>
+      <ol>
+        <li>강화도 조약과 조·미 수호 통상 조약에서 조선에 불리한 조항에 V표 하고, 그 까닭을 말해 보자.</li>
+        <li>조·미 수호 통상 조약에서 조선의 요구가 받아들여진 조항을 찾아보자.</li>
+        <li>두 조약에서 조선에 불리한 조항 중 하나를 골라, 두 나라 모두에 평등한 조항으로 바꾸어 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>정리 — 강화도 조약과 조·미 수호 통상 조약</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>두 조약의 비교</caption>
+      <thead><tr><th>구분</th><th>강화도 조약(조·일 수호 조규)</th><th>조·미 수호 통상 조약</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">체결</td><td>1876, 일본</td><td>1882, 미국</td></tr>
+        <tr><td class="hd">배경</td><td>운요호 사건, 일본의 무력시위(포함 외교)</td><td>청의 권유, 『조선책략』 유포</td></tr>
+        <tr><td class="hd">주요 조항</td><td>자주국 규정, 부산 외 2곳 개항(원산·인천), 해안 측량권, 영사 재판권</td><td>거중 조정, 영사 재판권, 관세 부과, 최혜국 대우</td></tr>
+        <tr><td class="hd">부속 조약·이후</td><td>조·일 수호 조규 부록(거류지, 일본 화폐 유통), 조·일 무역 규칙(양곡 유출, 사실상 무관세)</td><td>영국, 독일, 러시아, 프랑스와 수교</td></tr>
+        <tr><td class="hd">성격</td><td>조선이 맺은 최초의 근대적 조약이자 불평등 조약</td><td>조선이 서양과 맺은 최초의 조약이자 불평등 조약</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 길잡이 질문</h4>
+      <ol>
+        <li>조선이 개항하게 된 배경은 무엇일까?</li>
+        <li>강화도 조약과 조·미 수호 통상 조약의 특징은 무엇일까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 흥선 대원군이 물러나고 고종이 직접 정치에 나서며 조선의 대외 정책에 변화의 조짐이 나타났다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 일본은 조선을 강제로 개항하기 위해 (   ) 사건을 일으켰다.</summary>
+        <div class="check-answer">운요호</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. (   )은/는 조선이 맺은 최초의 근대적 조약이자 불평등 조약이다.</summary>
+        <div class="check-answer">강화도 조약(조·일 수호 조규)</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. (   )은/는 조선이 서양과 맺은 최초의 조약이다.</summary>
+        <div class="check-answer">조·미 수호 통상 조약</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q5. 일본은 운요호 사건을 구실로 조선에 개항을 요구하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 강화도 조약에는 관세 조항과 거중 조정 조항이 포함되어 있다. (○, ×)</summary>
+        <div class="check-answer">× — 관세 부과와 거중 조정 조항이 포함된 것은 조·미 수호 통상 조약이다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q7. 『조선책략』에서는 러시아와 일본을 견제하기 위해 조선에 미국과 연합할 것을 권하였다. (○, ×)</summary>
+        <div class="check-answer">○ — 『조선책략』은 러시아를 막으려면 청과 친하고, 일본과 관계를 맺고, 미국과 연합해야 한다고 제안하였다(EBS).</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q8. 조·미 수호 통상 조약에는 해안 측량권과 영사 재판권 허용 등이 들어 있다. (○, ×)</summary>
+        <div class="check-answer">× — 해안 측량권은 강화도 조약에 들어 있다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q9. 19세기 조선에서 (박규수 / 유형원)을/를 비롯해 오경석, 유홍기 등은 통상 개화론을 주장하였다.</summary>
+        <div class="check-answer">박규수</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q10. (조·일 수호 조규 부록 / 조·일 무역 규칙)으로 일본 상품에 대한 사실상의 무관세가 규정되었다.</summary>
+        <div class="check-answer">조·일 무역 규칙</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q11. 조선은 조·미 수호 통상 조약에서 최초로 (치외 법권 / 최혜국 대우)을/를 규정하였다.</summary>
+        <div class="check-answer">최혜국 대우</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q12. 조선이 1876년에 일본과 체결한 강화도 조약에 따라 (   ), 원산, 인천이 차례로 개항되었다.</summary>
+        <div class="check-answer">부산</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q13. 제2차 수신사로 일본에 갔던 김홍집은 황준헌이 쓴 (   )을/를 국내에 가지고 왔다.</summary>
+        <div class="check-answer">『조선책략』</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅲ 「근대 국가 수립의 노력」 1 「조선의 개항과 근대화」 03 「조선의 개항」, 110–111쪽 — 본문·연표·도입 자료(『승정원일기』)·일본이 보낸 서계 사본·개항을 둘러싼 논란·운요호·강화도 조약과 부속 조약·탐구(조선의 개항과 조약)·생각 키우기·확인하기의 기본 출처 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「국제 질서의 변동과 개항」 중 「강화도 조약의 체결」, 90–91쪽 — 통상 개화론 대두, 조선의 정세 변화와 운요호 사건, 강화도 조약과 부속 조약, 서양 열강과의 수교, 영사 재판권·거류지·거중 조정·최혜국 대우 곁글, 자료(강화도 조약, 강화도 조약의 부속 조약, 조·미 수호 통상 조약), 개념 체크 문항 (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국사』, 「개항과 불평등 체제의 성립」, 178–180쪽 (참고용) — 정한론의 배경, 일본 외무성 관리의 군함 파견 건의서, 박규수의 자주적 개국론에만 활용</li>
+    </ol>
+    <div class="note">
+      이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다. 같은 쪽의 보빙사와 『조선책략』에 대한 유생의 반발은 이 소주제 범위를 벗어나 반영하지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-3-1-03)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p03-N과 대응)
+  const SECTION_PREFIX = "1-3-1-03";
+
+  const narrativeData = {
+    // 1-3-1-03-2: 조선의 대외 정책에 변화가 나타나다  (대본 p03-2)
+    "1-3-1-03-2": [
+      "메이지 유신으로 새 정부를 세운 일본은 조선에 이를 알리는 외교 문서, 곧 서계를 보냈습니다. 그런데 문서 형식이 협의 없이 바뀌었고, 일왕을 황제를 뜻하는 '황상'으로 적어 기존의 교린 관계를 부정하고 있었습니다.",
+      "조선 정부가 서계 접수를 거부하자, 일본에서는 조선을 무력으로 치자는 <b>정한론</b>이 일어났습니다. 무사들의 불만을 밖으로 돌리려는 의도도 있었지만, 이때는 시기 문제로 당장 실행되지 않았습니다.",
+      "조선 안에서도 변화가 일어났습니다. 1873년 흥선 대원군이 물러나고 <b>고종</b>이 직접 정치에 나서면서, 통상 수교 거부 정책에 변화의 조짐이 보이기 시작했습니다.",
+      "그 배경에는 서양 문물을 받아들여 부국강병을 이루자는 <b>통상 개화론</b>이 있었습니다. 북학파 박지원의 손자인 <b>박규수</b>는 우리가 먼저 주도권을 잡고 문을 열지 않으면 일본이 무력으로 개항을 요구할 것이라고 경고했습니다. 역관 오경석은 청에서 세계 지리서를 들여왔고, 이들의 영향을 받은 젊은 양반들이 개화파를 이루었습니다.",
+      "그런데 박규수가 걱정한 일은 곧 현실이 되었습니다."
+    ],
+    // 1-3-1-03-3: 강화도 조약을 맺다  (대본 p03-3)
+    "1-3-1-03-3": [
+      "1875년 일본은 군함 <b>운요호</b>를 강화도에 보냈습니다. 일본 관리는 미리 군함 한두 척을 보내 두면 나중에 대규모 병력을 보낼 근심이 없을 것이라고 건의했으니, 이 사건은 미리 계획된 것이었습니다.",
+      "운요호가 정체를 밝히지 않고 다가오자 조선군은 경고 사격을 했습니다. 일본군은 이를 구실로 초지진을 포격하고 영종도에 상륙해 살인과 약탈, 방화를 저질렀습니다. 이것이 <b>운요호 사건</b>입니다.",
+      "이어 일본은 피해 배상과 문호 개방을 요구하며 해안에서 무력시위를 벌였습니다. 군함의 위협으로 개항을 끌어내는 <b>포함 외교</b>, 바로 미국이 페리 함대로 일본을 개항시킨 방식이었습니다. 서양에게 당한 방식을 일본이 조선에 그대로 쓴 것입니다.",
+      "조정에서는 의견이 갈렸습니다. 최익현은 왜인이 곧 서양 오랑캐라며 반대했고, 왜인과 서양인은 따로 대처할 수 있다는 주장도 있었습니다.",
+      "결국 조선 정부는 논의 끝에 개항을 결정하고, 1876년 일본과 <b>강화도 조약</b>을 맺었습니다. 그렇다면 이 조약에는 어떤 내용이 담겼을까요?"
+    ],
+    // 1-3-1-03-4: 강화도 조약으로 불평등 조약 체제에 편입되다  (대본 p03-4)
+    "1-3-1-03-4": [
+      "강화도 조약은 조선이 맺은 최초의 <b>근대적 조약</b>이자 <b>불평등 조약</b>이었습니다.",
+      "제1조는 '조선은 자주국'이라고 적었습니다. 겉으로는 조선을 높이는 말 같지만, 청이 조선에 간섭할 수 없게 하여 일본의 영향력을 키우려는 뜻이 담겨 있었습니다.",
+      "부산 외에 두 항구를 더 열게 해 원산과 인천이 차례로 개항되었고, 일본이 조선 해안을 마음대로 측량할 수 있게 했으며, 일본인이 개항장에서 죄를 지어도 일본 관원이 재판하는 <b>영사 재판권</b>을 인정했습니다. 앞 소주제에서 본 불평등 조약의 내용이 그대로 조선에 적용된 것입니다.",
+      "같은 해 맺은 <b>조·일 수호 조규 부록</b>과 <b>조·일 무역 규칙</b>은 더 불리했습니다. 개항장에서 일본 화폐를 쓸 수 있게 하고, 쌀과 곡물이 제한 없이 빠져나갈 수 있게 했으며, 관세에 관한 내용은 아예 담지 않았습니다.",
+      "일본에 문을 연 조선은, 이제 서양 나라들과의 관계도 새로 맺어야 했습니다."
+    ],
+    // 1-3-1-03-5: 서양 여러 나라와 수교하다  (대본 p03-5)
+    "1-3-1-03-5": [
+      "조선이 개항하자 미국도 조선과 통상 조약을 맺으려 했습니다. 청은 일본과 러시아를 견제하려고 조선에 미국과의 수교를 적극 권했습니다.",
+      "마침 제2차 수신사로 일본에 다녀온 김홍집이 청의 외교관 황준헌이 쓴 <b>『조선책략』</b>을 들여왔습니다. 조선이 중국·일본·미국과 힘을 합쳐 러시아를 막아야 한다는 내용이었고, 이후 정부 안에서 미국과 수교해야 한다는 여론이 생겼습니다.",
+      "그 결과 1882년 조선은 서양 국가로는 처음으로 미국과 <b>조·미 수호 통상 조약</b>을 맺었습니다.",
+      "이 조약에는 강화도 조약에 없던 내용이 들어갔습니다. 다른 나라와 분쟁이 생기면 중재한다는 <b>거중 조정</b>, 그리고 <b>관세</b>를 부과한다는 조항입니다. 하지만 영사 재판권과, 다른 나라에 준 혜택을 미국도 똑같이 받는 <b>최혜국 대우</b>가 들어 있어 여전히 불평등 조약이었습니다.",
+      "이어 조선은 청의 중재로 영국, 독일과 수교했고 러시아, 프랑스와도 조약을 맺었지만 모두 불평등 조약이었습니다. 이렇게 문을 연 조선은 이제 새로운 문물을 배우러 나서게 됩니다. 다음 소주제에서 개화 정책을 살펴보겠습니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

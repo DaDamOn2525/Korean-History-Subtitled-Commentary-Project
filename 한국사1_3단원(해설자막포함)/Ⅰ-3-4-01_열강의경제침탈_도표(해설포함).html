@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>열강의 경제 침탈(자막 해설) | 개항장에서 국가 재정까지 — 상권에서 시작된 침탈이 경제 주권 전체로 번지다</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-3-3-04_독도와간도_도표(해설포함).html">‹ 이전: 독도와 간도 (대단원 이동)</a>
+  <a href="Ⅰ-3-4_개항이후의변화_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#trade">거류지 무역</a>
+  <a href="#inland">내지 통상</a>
+  <a href="#concession">이권 침탈</a>
+  <a href="#finance">금융·재정·토지</a>
+  <a href="#sovereignty">경제 주권</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-3-4-02_경제적구국운동_도표(해설포함).html">다음: 경제적 구국 운동 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 국가 수립의 노력</span> · 개항 이후의 변화</div>
+    <h1>개항장에서 국가 재정까지 — 상권에서 시작된 침탈이 경제 주권 전체로 번지다</h1>
+    <p class="lead">개항 초기 외국 상인은 개항장 10리 이내에서만 활동할 수 있었으나, 임오군란 이후 조·청 상민 수륙 무역 장정과 최혜국 대우 조항을 거치며 청·일 상인이 내륙 시장까지 진출하였다. 아관 파천 이후에는 제국주의 열강이 광산·삼림·철도 등의 이권을 경쟁적으로 차지하였고, 러·일 전쟁 이후 일본은 화폐 정리 사업과 차관, 동양 척식 주식회사를 통해 대한 제국의 금융·재정·토지를 장악하였다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1876 – 1908</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>침탈은 이렇게 넓어졌다</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--crimson)">적색 = 일본</strong> · <strong style="color:var(--indigo)">남색 = 청과 서양 열강</strong> · <strong style="color:var(--brass)">황동색 = 조선(대한 제국) 정부의 대응·전환점</strong>. 앞 단계가 다음 단계의 발판이 되었으므로 순서대로 이어 보자.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">① 거류지 무역(1876~)</div>
+        <div class="step-desc">개항장 10리 이내에서만 활동 — 일본 상인이 무역 독점, 일본 화폐 사용·무관세·곡물 유출 특권</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">② 내지 통상과 청·일 경쟁(1882~)</div>
+        <div class="step-desc">조·청 상민 수륙 무역 장정 → 최혜국 대우로 각국 상인이 내륙 시장에 진출</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">③ 열강의 이권 침탈(1896~)</div>
+        <div class="step-desc">아관 파천 이후 광산·삼림·철도·전기 등 각종 이권 침탈</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">④ 일본의 경제 장악(1904~)</div>
+        <div class="step-desc">화폐 정리 사업, 차관 제공, 토지 약탈과 동양 척식 주식회사</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>최혜국 대우 조항 때문에 한 나라에 허용한 권리는 곧 모든 나라의 권리가 되었고, 아관 파천 이후 열강은 이 조항을 내세워 이권을 다투어 가져갔다. 러·일 전쟁 이후에는 일본이 이 경쟁에서 앞서며 대한 제국의 금융과 재정, 토지까지 장악하였다.</p></div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--crimson)">적색 = 일본</strong> · <strong style="color:var(--indigo)">남색 = 청과 서양 열강</strong> · <strong style="color:var(--brass)">황동색 = 조선(대한 제국) 정부의 대응·전환점</strong></p>
+    <div class="timeline">
+      <div class="tl-item crimson"><div class="tl-year">1876</div><div class="tl-body"><div class="tl-title">강화도 조약, 조·일 수호 조규 부록·조·일 무역 규칙</div><div class="tl-desc">부산 개항, 이후 원산(1880)·인천(1883) 개항</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1882</div><div class="tl-body"><div class="tl-title">조·청 상민 수륙 무역 장정</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1883</div><div class="tl-body"><div class="tl-title">조·일 통상 장정, 조·영 수호 통상 조약</div><div class="tl-desc">관세 부과·방곡령 조항 / 영국에 내지 통상 허용</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1895</div><div class="tl-body"><div class="tl-title">운산 금광 채굴권, 미국으로</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1896</div><div class="tl-body"><div class="tl-title">아관 파천 — 열강의 이권 침탈 본격화</div><div class="tl-desc">러시아 삼림 채벌권, 미국 경인선·프랑스 경의선 부설권</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1898</div><div class="tl-body"><div class="tl-title">일본, 경인선 부설권 매수·경부선 부설권 획득</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1903</div><div class="tl-body"><div class="tl-title">러시아, 용암포 점령 시도</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1904</div><div class="tl-body"><div class="tl-title">러·일 전쟁, 경의선·경원선 부설권 차지</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1905</div><div class="tl-body"><div class="tl-title">화폐 정리 사업, 경부선 개통·부관 연락선 운항</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1907</div><div class="tl-body"><div class="tl-title">대한 제국의 빚이 1,300만 원에 이름</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1908</div><div class="tl-body"><div class="tl-title">동양 척식 주식회사 설립</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="trade">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>거류지 무역, 일본 상인이 시장을 차지하다</h2>
+    </div>
+    <p class="block-sub">인천 개항장은 수탈의 아픔을 보여 주는 장소이면서, 외국 문물이 가장 빨리 들어온 곳이기도 했다(교과서 도입 자료, 『한겨레』 2022. 2. 11.). 개항 이후 조선의 무역 방식은 어떻게 바뀌었을까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">거류지 무역</div>
+        <div class="step-desc">부산·원산·인천 차례로 개항 — 개항 초기 외국 상인은 개항장 10리(약 4km) 이내에서만 상업 활동 → 개항장 객주 등 조선인 중간 상인을 통해 상품 매매, 이 과정에서 일부 조선 상인은 부 축적</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">일본 상인의 특권</div>
+        <div class="step-desc">개항 초기 무역은 일본 상인 중심 — ① 일본 화폐 사용 ② 쌀과 잡곡을 제한 없이 구입(곡물의 무제한 유출) ③ 관련 조항이 없어 관세를 내지 않음(무관세)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">결과</div>
+        <div class="step-desc">일본 상인은 영국산 면직물을 팔고 곡물을 대량으로 사 감 — 일부 지주는 곡물을 팔아 부 축적, 그러나 곡물 가격이 크게 올라 대다수 백성이 어려움을 겪음 — 면직물을 짜서 팔던 농민도 큰 타격</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">거류지 — 조약으로 외국인의 거주와 영업을 허가한 지역이다(교과서). EBS: 개항장에서 외국인의 거주와 무역권을 인정한 지역으로, 치외 법권 지역이었다. 일본 상인은 객주, 여각, 보부상 등 조선 상인의 중개로 무역하였다. 강화도 조약과 부속 조약을 통해 영사 재판권, 일본 화폐 사용 등 각종 특권이 일본 상인에게 부여되었다(EBS).</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>일본과의 교역 품목(1879, 단위: %) — 국사편찬위원회, 1999</caption>
+      <thead><tr><th>구분</th><th>주요 품목</th><th>기타</th></tr></thead>
+      <tbody>
+        <tr><td class="hd crimson">수출액(조선 → 일본)</td><td>쌀 58.6, 콩 16.2</td><td>25.2</td></tr>
+        <tr><td class="hd crimson">수입액(일본 → 조선)</td><td>면제품 84.2</td><td>15.8</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">일본은 조선의 곡물을 싼값에 들여와 노동자의 임금을 낮게 유지하였다. 또한 자국의 쌀은 유럽에 비싸게 수출해 자본을 축적하였다. 이는 일본이 산업화를 이루는 기초가 되었다(교과서). 참고(이전 교육과정 교과서): 일본으로 쌀 유출이 늘어 쌀값이 폭등하자 지주는 판매할 쌀을 확보하려고 소작인에 대한 수탈을 강화하였고, 쌀을 팔아 얻은 이익금으로 토지를 사들여 지주제가 확대되었다.</p>
+
+    <div class="causal-link"><p>이처럼 외국 상인은 처음에는 개항장 안에 묶여 있었으나, 임오군란 이후 맺은 조약들로 그 울타리가 사라지게 된다.</p></div>
+  </section>
+
+  <section class="block" id="inland">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>개항장을 넘어 — 내지 통상과 청·일 상권 경쟁</h2>
+    </div>
+    <p class="block-sub">임오군란 이후 맺은 조약들로 외국 상인은 개항장을 벗어나 내륙(내지)에서도 장사할 수 있게 되었다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card deep">
+        <h4>조·청 상민 수륙 무역 장정(1882)</h4>
+        임오군란 이후 청의 영향력 강화 속에 체결 — 청 상인이 양화진과 한성에 점포 개설, 허가를 받으면 개항장 밖에서도 활동 → 일본 상인이 독점하던 조선 시장을 빠르게 차지 — EBS: 영사 재판권 인정
+      </div>
+      <div class="compare-card brass">
+        <h4>조·일 통상 장정(1883)</h4>
+        조선이 요구한 관세 부과와 방곡령 조항 수용 — 대신 일본이 최혜국 대우를 얻어 냄 — EBS: 1876년 조·일 무역 규칙의 불리한 내용을 시정하려고 노력한 결과
+      </div>
+      <div class="compare-card deep">
+        <h4>조·영 수호 통상 조약(1883)</h4>
+        영국에 내지 통상 허용 — 일본 상인은 최혜국 대우로 내지 통상 가능, 청도 조·청 상민 수륙 무역 장정을 개정하여 내지 통상을 인정받음
+      </div>
+    </div>
+
+    <div class="note-box"><strong>풀이 — 최혜국 대우의 연쇄.</strong> 최혜국 대우는 ‘다른 나라에 준 가장 좋은 대우를 우리에게도 똑같이 준다’는 약속이다. 그래서 조선이 1883년 영국에 내지 통상을 허용하자, 최혜국 대우를 이미 얻어 둔 일본 상인도 곧바로 내지 통상을 할 수 있게 되었고, 청도 장정을 고쳐 같은 권리를 인정받았다(교과서 147쪽 서술 순서). 한 나라에 연 문이 모든 나라에 열린 것이다. 아관 파천 이후 열강이 이권을 다투어 차지할 때에도 이 조항이 근거가 되었다.</div>
+
+    <div class="quote-grid">
+      <div class="quote-block deep">
+        <h4>사료 읽기 — 조·청 상민 수륙 무역 장정(1882)</h4>
+        이 장정은 중국이 속방을 우대하는 뜻이며, 각국이 같은 이익을 보는 데 있지 않다.
+        <div class="src">『고종실록』 (재구성) — 조선을 ‘속방’으로 표현, 판매는 명시되지 않음(교과서)</div>
+      </div>
+      <div class="quote-block deep">
+        <h4>사료 읽기 — 같은 장정 제4관</h4>
+        청 상인은 양화진과 한성 외에는 점포 금지, 허가증을 받으면 내지에서 토산물 구입.
+        <div class="src">『고종실록』 (재구성)</div>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>사료로 보는 역사 — 조·일 통상 장정(1883)의 조항과 의미(의미 열: EBS 자료 2 해설)</caption>
+      <thead><tr><th>조항</th><th>내용(재구성)</th><th>의미</th></tr></thead>
+      <tbody>
+        <tr><td class="hd brass">제9관</td><td>들고 나는 화물이 해관을 통과할 때 세칙에 따라 관세 납부</td><td>관세권 설정 — 무관세 무역의 문제 해결</td></tr>
+        <tr><td class="hd brass">제37관</td><td>가뭄·홍수·전쟁 등으로 식량이 부족하면 쌀 수출을 일시 금지, 1개월 전 일본 영사관에 통보</td><td>방곡령 — 자연재해 등으로 곡식 수출 금지 가능</td></tr>
+        <tr><td class="hd crimson">제42관</td><td>조선이 다른 나라에 베푸는 권리·특전은 일본도 모두 받음</td><td>최혜국 대우 — 일본의 요구로 포함</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">방곡령의 ‘1개월 전 통보’ 조항이 실제로 어떤 갈등을 낳았는지는 같은 소단원의 <a href="Ⅰ-3-4-02_경제적구국운동_도표(해설포함).html#grain">「경제적 구국 운동」 — 방곡령, 국내 곡물 공급을 안정시키자</a>에서 다룬다.</p>
+
+    <div class="causal-link"><p>외국 상인이 내륙까지 들어오자, 내륙 시장과 개항장을 연결하며 성장했던 개항장 객주 등 조선인 중간 상인이 큰 타격을 입었고, 한성의 시전 상인도 상권을 위협받았다.</p></div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">청 상인의 유리한 점</div>
+        <div class="step-desc">청·일 상인 모두 홍콩·상하이 등을 통해 유통된 영국산 면직물 판매 — 청 상인은 유통 경로가 단순해 가격 경쟁에서 유리, 갑신정변 이후 조선에서 청의 영향력 더욱 강화</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">청·일 상권 경쟁</div>
+        <div class="step-desc">청·일 전쟁 직전에는 조선의 수입액에서 청과 일본이 차지하는 비율이 비슷해짐 — 참고(이전 교육과정 교과서): 이는 청·일 전쟁의 주요 원인 중 하나</div>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>조선의 수입액에서 청·일의 비중(단위: %) — 국사편찬위원회, 1999</caption>
+      <thead><tr><th>연도</th><th>1885</th><th>1887</th><th>1889</th><th>1891</th><th>1892</th><th>1893</th><th>1894</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">청</td><td>19</td><td>26</td><td>32</td><td>40</td><td>45</td><td>49</td><td>36</td></tr>
+        <tr><td class="hd crimson">일본</td><td>81</td><td>74</td><td>68</td><td>60</td><td>55</td><td>51</td><td>64</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="quote-block deep">
+      <h4>참고(이전 교육과정 교과서) — 내륙 장시로 들어온 청 상인(1893)</h4>
+      어느 벽촌이든 장날에 청 상인이 오지 않는 곳이 없다고 한다.
+      <div class="src">일본의 무역 상황 보고서 「통상휘찬」(1893) (재구성) — 안성 시장에서는 청 상인이 늘어 상권을 빼앗긴 조선 상인 중 폐업하는 자가 많아졌다고 기록하였다.</div>
+    </div>
+
+    <div class="note-box">조·청 상민 수륙 무역 장정이 맺어진 정치적 배경, 곧 임오군란 이후 청의 내정 간섭은 <a href="Ⅰ-3-1-05_개화정책에대한반발_도표(해설포함).html#qing">「개화 정책에 대한 반발」 — 청의 내정 간섭</a>에서 볼 수 있다.</div>
+  </section>
+
+  <section class="block" id="concession">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>아관 파천 이후, 열강이 이권을 다투어 가져가다</h2>
+    </div>
+    <p class="block-sub">EBS: 아관 파천을 전후하여 자원·산업 부문에서 최혜국 대우 규정을 내세운 열강의 이권 침탈이 심각해졌다.</p>
+
+    <div class="branch-root">아관 파천(1896) 이후 열강의 이권 침탈</div>
+    <p class="branch-cause">제국주의 열강은 왕실을 보호해 주겠다며 접근하였고, 고종도 열강의 보호를 기대하며 이권을 넘겨주었다. 열강은 저마다 독자적으로 이권을 차지해 나갔다.</p>
+    <div class="branch-cols">
+      <div class="branch-col deep">
+        <h4>러시아</h4>
+        <p class="why">정치적 영향력을 바탕으로</p>
+        <div class="branch-node">군사 교관과 재정 고문 파견</div>
+        <div class="branch-node">광산 채굴권, 압록강·두만강·울릉도 삼림 채벌권(1896)</div>
+        <div class="branch-node">1903년 압록강 삼림 채벌권을 구실로 용암포 차지 시도 → 러·일 갈등, 러·일 전쟁의 한 계기</div>
+      </div>
+      <div class="branch-col deep">
+        <h4>미국·영국·독일·프랑스</h4>
+        <p class="why">미국은 알렌의 지위를, 나머지는 최혜국 대우를 이용</p>
+        <div class="branch-node">미국: 운산 금광 등 광산 채굴권, 철도·전기·전차 부설권</div>
+        <div class="branch-node">영국·독일: 광산 채굴권(교과서 지도: 은산·당현)</div>
+        <div class="branch-node">프랑스: 경의선 부설권(1896)</div>
+      </div>
+      <div class="branch-col crimson">
+        <h4>일본</h4>
+        <p class="why">청·일 전쟁 이후 철도 부설에 집중</p>
+        <div class="branch-node">미국의 경인선 부설권 매수, 경부선 부설권 획득(1898)</div>
+        <div class="branch-node">러·일 전쟁 발발 직후 프랑스가 반환한 경의선 부설권 차지(1904)</div>
+        <div class="branch-node">철도로 물자를 일본으로 반출, 러·일 전쟁과 항일 의병 운동 탄압에 필요한 병력 이동</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>열강이 이권을 다투는 가운데, 일본은 대한 제국을 정치·경제적으로 침략하기 위해 철도를 차지하는 데 힘을 기울였다.</p></div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>열강의 이권 침탈(교과서 지도 정리)</caption>
+      <thead><tr><th>나라</th><th>철도·교통</th><th>광산·삼림·기타</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">러시아</td><td>—</td><td>두만강·압록강·울릉도 삼림 채벌권(1896), 경성 광산</td></tr>
+        <tr><td class="hd deep">미국</td><td>경인선 부설권(1896 → 1898 일본)</td><td>운산 금광(1895), 갑산 광산, 전등·전화·전차 부설권(1896)</td></tr>
+        <tr><td class="hd deep">영국·독일</td><td>—</td><td>은산 광산(영국), 당현 광산(독일)</td></tr>
+        <tr><td class="hd deep">프랑스</td><td>경의선 부설권(1896 → 1904 일본)</td><td>—</td></tr>
+        <tr><td class="hd crimson">일본</td><td>경인선(1898), 경부선(1898), 경의선·경원선(1904)</td><td>직산·송화 광산</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="quote-grid">
+      <div class="quote-block deep">
+        <h4>운산 금광 — 『서우』(1907. 3.)</h4>
+        운산은 우리나라 제일가는 금광으로, 1년 생산액이 약 100만 원이다.
+        <div class="src">『서우』 (재구성) — 1895년 알렌의 주선으로 미국에 채굴권이 넘어갔고, 이후 미국은 운산 금광에서 막대한 수익을 올렸다(교과서).</div>
+      </div>
+      <div class="quote-block crimson">
+        <h4>부관 연락선</h4>
+        1905년 경부선이 개통되자 같은 해 9월부터 부산과 시모노세키(하관)를 잇는 연락선이 정기적으로 운항하였다.
+        <div class="src">교과서 지도 설명 — 이를 통해 경부선은 일본 철도와 연결되었으며, 한국 침략을 위한 인력과 물자의 이동로가 되었다.</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">알렌 — 갑신정변 당시 민영익을 치료한 것을 계기로 광혜원에서 서양 의술을 가르치면서 고종의 의사이자 정치 고문 역할을 하였으며, 이후 주한 미국 공사가 되었다. 알렌은 이러한 지위를 바탕으로 대한 제국의 이권을 미국에 헐값에 넘겨주게 하기도 하였다(교과서).</p>
+
+    <div class="note-box">러시아의 이권 요구에 맞선 만민 공동회의 활동은 <a href="Ⅰ-3-2-03_독립협회_도표(해설포함).html#manmin">「독립 협회」 — 만민 공동회</a>에서, 용암포 사건 이후 러·일의 대립과 러·일 전쟁은 <a href="Ⅰ-3-3-01_일본의침략과국권피탈_도표(해설포함).html#russo">「일본의 침략과 국권 피탈」 — 러·일 전쟁</a>에서 볼 수 있다.</div>
+  </section>
+
+  <section class="block" id="finance">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>일본, 금융·재정·토지를 장악하다</h2>
+    </div>
+    <p class="block-sub">러·일 전쟁을 전후하여 일본은 대한 제국 경제의 뿌리인 돈(금융), 나라 살림(재정), 땅(토지)을 차례로 장악하였다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>금융</h4>
+        개항 이후 조선에 진출한 일본 제일은행이 조선의 해관세(관세) 업무 담당 — 조선의 국고를 이용해 일본 상인의 조선 진출 지원
+      </div>
+      <div class="compare-card crimson">
+        <h4>재정</h4>
+        을사늑약 이후 통감부가 식민지화 기초를 닦으려고 도로·항만 건설, 항일 의병 운동 탄압 예산 확대 → 비용을 일본 차관으로 도입 → 재정의 일본 예속 — EBS: 개혁과 시설 개선 등의 명목으로 차관 제공
+      </div>
+      <div class="compare-card crimson">
+        <h4>토지</h4>
+        러·일 전쟁 발발 직후 철도 부지·군용 부지 확보를 명목으로 국유지 약탈, 민간인 소유 토지 강제 수용 → 개항장 이외 지역의 외국인 토지 소유를 금지한 법령을 무효화, 일본인 토지 소유 합법화 → 동양 척식 주식회사(1908)
+      </div>
+    </div>
+
+    <div class="causal-link"><p>제1차 한·일 협약으로 대한 제국의 재정 고문이 된 메가타는 대한 제국의 금융을 장악하기 위해 화폐 정리 사업을 추진하였다.</p></div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">명분</div>
+        <div class="step-desc">백동화는 1892년부터 주조 — 무분별한 발행과 위조 화폐의 범람으로 물가 상승 등 부작용 → 일본은 이를 명분으로 화폐 정리 사업 진행</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">화폐 정리 사업(1905)</div>
+        <div class="step-desc">메가타 주도 — 백동화 등 구화폐를 일본 제일은행권으로 교환 — 백동화를 품질에 따라 갑·을·병으로 나누어 병종은 교환해 주지 않음</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">결과</div>
+        <div class="step-desc">일본 제일은행권이 대한 제국의 법정 화폐 역할, 일본 제일은행 조선 지점이 사실상 중앙은행 역할 — 교환 과정에서 백동화의 가치를 제대로 인정받지 못하거나 교환 거부 → 시중 화폐량 크게 감소, 많은 한국인 상공업자가 현금을 구하지 못해 파산·몰락</div>
+      </div>
+    </div>
+
+    <div class="quote-grid">
+      <div class="quote-block crimson">
+        <h4>역사 깊이 보기 자료 1 — 일본 내각의 결정(1904. 5. 31.)</h4>
+        일본인 중 적당한 ㉠고문관을 들여 한국의 재무 실권을 우리 손에 넣는다.
+        <div class="src">「일본 내각의 결정」 (재구성)</div>
+      </div>
+      <div class="quote-block crimson">
+        <h4>역사 깊이 보기 자료 2 — 탁지부령 제1호(1905)</h4>
+        갑종 백동화는 개당 2전 5리로 교환, 을종은 1전에 매수, 병종은 매수하지 않는다.
+        <div class="src">「탁지부령」 제1호 (재구성)</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">EBS 자료 3: 기존에 사용하던 백동화를 갑·을·병종으로 나누어 일본 제일은행권으로 교환하였는데, 2/3가량이 병종으로 판정되어 폐기되었다. 이에 따라 병종 백동화를 많이 보유하고 있던 한국 상인들이 큰 피해를 입었고, 통화량이 급격하게 감소하여 전황(돈 부족)이 발생하였다. EBS: 한국인이 설립한 은행과 한국인 상공업자에게 큰 타격을 주었다. 백동화는 급증하는 재정 수요를 충당하기 위해 1892년부터 전환국에서 주조한 화폐이며, 일본 제일은행권은 일본 제일은행이 한국의 재정을 장악할 목적으로 발행한 지폐이다(EBS).</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>일본의 연도별 차관 제공 현황(단위: 만 원) — 이상근, 1990 외</caption>
+      <thead><tr><th>연도</th><th>1895</th><th>1900</th><th>1901</th><th>1902</th><th>1905</th><th>1906</th></tr></thead>
+      <tbody>
+        <tr><td class="hd crimson">차관</td><td>313</td><td>30</td><td>122</td><td>15</td><td>650</td><td>1,000</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">1907년에는 대한 제국이 일본에 진 빚이 대한 제국 1년 예산과 맞먹는 1,300만 원에 달하였다(교과서). 이 빚을 국민의 힘으로 갚으려 한 운동은 같은 소단원의 <a href="Ⅰ-3-4-02_경제적구국운동_도표(해설포함).html#debt">「경제적 구국 운동」 — 국채 보상 운동</a>에서 다룬다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">동양 척식 주식회사(1908)</div>
+        <div class="step-desc">대한 제국의 토지·자원 수탈을 목적으로 세운 회사 — EBS: 서울에 설립한 독점적 국책 회사</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">토지 처리</div>
+        <div class="step-desc">약탈한 토지를 일본인에게 매매·양도하거나 한국인에게 소작 → 식민 지배의 기초 마련 — EBS: 관리한 토지를 일본인에게 헐값으로 넘김</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 일본은 1908년 동양 척식 주식회사를 세워 황무지, 관청이나 역에 딸린 토지 등을 대규모로 약탈하였고, 그 결과 1910년 무렵 일본인이 소유한 토지는 495㎢에 이르렀다.</p>
+
+    <div class="note-box">메가타가 재정 고문으로 들어온 제1차 한·일 협약(고문 정치)은 <a href="Ⅰ-3-3-01_일본의침략과국권피탈_도표(해설포함).html#russo">「일본의 침략과 국권 피탈」 — 러·일 전쟁</a>에서 볼 수 있다.</div>
+  </section>
+
+  <section class="block" id="sovereignty">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>경제 주권은 이렇게 무너졌다 — 권리별로 다시 보기</h2>
+    </div>
+    <p class="block-sub">앞 소단원에서는 일본이 조약 하나마다 근대 국가의 기둥을 하나씩 빼앗아 간 과정을 보았다. 경제에서도 마찬가지였다. 시간 순서가 아니라 ‘어떤 경제적 권리를 빼앗겼나’를 기준으로 정리해 보자.</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>경제 주권과 그 침탈 — 맨 오른쪽 열은 교과서·EBS의 내용을 이해하기 쉽도록 풀어 쓴 정리이다(풀이)</caption>
+      <thead><tr><th>경제적 권리</th><th>언제·누구에게</th><th>근거 조약·사업</th><th>무너진 것(풀이)</th></tr></thead>
+      <tbody>
+        <tr><td class="hd brass">관세권</td><td>1876 일본(무관세) → 1883 관세 부과로 일부 회복</td><td>조·일 무역 규칙 → 조·일 통상 장정 제9관</td><td>국내 산업을 보호할 방패</td></tr>
+        <tr><td class="hd crimson">식량(곡물)</td><td>1876 일본 — 곡물의 무제한 유출</td><td>조·일 무역 규칙 → 조·일 통상 장정 제37관(방곡령, 1개월 전 통보)</td><td>백성의 먹거리와 곡물 가격</td></tr>
+        <tr><td class="hd deep">상권(시장)</td><td>1882~1883 청 → 영국·일본 등 각국</td><td>조·청 상민 수륙 무역 장정, 조·영 수호 통상 조약, 최혜국 대우</td><td>객주·시전 상인 등 조선 상인의 시장</td></tr>
+        <tr><td class="hd deep">자원(광산·삼림)</td><td>1895~ 미국·러시아·영국·독일·일본</td><td>아관 파천 전후의 이권 양도, 최혜국 대우</td><td>나라의 부를 낳는 자원</td></tr>
+        <tr><td class="hd crimson">교통(철도)</td><td>1896 미국·프랑스 → 1898~1904 일본</td><td>경인선·경부선·경의선·경원선 부설권</td><td>물자와 병력이 오가는 길</td></tr>
+        <tr><td class="hd crimson">화폐·금융</td><td>1905 일본</td><td>화폐 정리 사업(메가타)</td><td>나라가 돈을 발행하고 관리하는 권리</td></tr>
+        <tr><td class="hd crimson">재정</td><td>1905~1907 일본</td><td>통감부의 차관 도입(1907년 1,300만 원)</td><td>나라 살림을 스스로 꾸리는 힘</td></tr>
+        <tr><td class="hd crimson">토지</td><td>1904~1908 일본</td><td>철도·군용 부지 명목의 약탈, 동양 척식 주식회사</td><td>농민이 살아가는 터전</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h4>헷갈리기 쉬운 짝 ① 두 장정</h4>
+        조·청 상민 수륙 무역 장정(1882): 청 상인의 내지 통상, 속방 명시 — 조·일 통상 장정(1883): 관세·방곡령 조항을 얻었으나 일본에 최혜국 대우
+      </div>
+      <div class="compare-card">
+        <h4>헷갈리기 쉬운 짝 ② 거류지 무역과 내지 통상</h4>
+        거류지 무역: 개항장 10리 이내, 조선 중간 상인이 성장 — 내지 통상: 외국 상인이 내륙까지 진출, 조선 중간 상인이 타격
+      </div>
+      <div class="compare-card">
+        <h4>헷갈리기 쉬운 짝 ③ 철도의 주인</h4>
+        경인선: 미국(1896) → 일본(1898) — 경의선: 프랑스(1896) → 일본(1904) — 경부선: 처음부터 일본(1898)
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">정치적 권리를 기준으로 한 같은 형식의 표는 <a href="Ⅰ-3-3-01_일본의침략과국권피탈_도표(해설포함).html#rights">「일본의 침략과 국권 피탈」 — 국권은 이렇게 빼앗겼다</a>에서 볼 수 있다.</p>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>정리 — 열강의 경제 침탈</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>단계별 경제 침탈과 조선 경제에 끼친 영향</caption>
+      <thead><tr><th>시기</th><th>주도 세력</th><th>방식</th><th>조선 경제에 끼친 영향</th></tr></thead>
+      <tbody>
+        <tr><td class="hd crimson">1876~1882</td><td>일본 상인</td><td>거류지 무역, 일본 화폐 사용·무관세·곡물 유출 특권, 중계 무역</td><td>일부 중간 상인·지주의 부 축적, 곡물 가격 상승, 면직물 짜던 농민 타격</td></tr>
+        <tr><td class="hd deep">1882~1894</td><td>청·일 상인</td><td>내지 통상(조·청 상민 수륙 무역 장정, 최혜국 대우)</td><td>개항장 객주 등 중간 상인 타격, 시전 상인의 상권 위협</td></tr>
+        <tr><td class="hd deep">1896~</td><td>러시아·미국·영국·독일·프랑스·일본</td><td>광산·삼림·철도·전기 등 이권 침탈</td><td>자원과 기간 시설을 외국이 차지</td></tr>
+        <tr><td class="hd crimson">1904~1908</td><td>일본</td><td>화폐 정리 사업, 차관 제공, 토지 약탈, 동양 척식 주식회사</td><td>한국인 상공업자 몰락, 재정 예속, 식민 지배의 기초</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 길잡이 질문</h4>
+      <ol>
+        <li>개항 이후 조선의 무역 방식은 어떻게 바뀌었을까?</li>
+        <li>열강의 이권 침탈은 어떻게 전개되었을까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 개항 초기 외국 상인들은 개항장 10리 이내에서만 무역을 할 수 있었다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 일본으로 대량의 곡물이 수출되면서 조선의 곡물 가격이 올라 대다수 백성이 고통을 겪었다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 일본은 (   )(으)로 최혜국 대우 조항을 얻어 냈다.</summary>
+        <div class="check-answer">조·일 통상 장정(1883)</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 러시아는 운산 금광 채굴권을 차지하였다. (○, ×)</summary>
+        <div class="check-answer">× — 운산 금광 채굴권은 1895년 알렌의 주선으로 미국에 넘어갔다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q5. (   )(으)로 일본 제일은행권이 대한 제국의 법정 화폐 역할을 하게 되었다.</summary>
+        <div class="check-answer">화폐 정리 사업(1905)</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 일본은 (   )을/를 세워 약탈한 토지를 일본인에게 매매·양도하거나 한국인에게 소작시켰다.</summary>
+        <div class="check-answer">동양 척식 주식회사(1908)</div>
+      </details></div>
+
+      <div class="check-group">교과서 질문+ · 생각 키우기</div>
+      <div class="check-item"><details><summary>Q7. 조·청 상민 수륙 무역 장정으로 청 상인이 얻은 특권을 말해 보자.</summary>
+        <div class="check-answer">양화진과 한성에 점포를 열 수 있게 되었고, 허가증을 받으면 개항장을 벗어나 내지에서 토산물을 구입(내지 통상)할 수 있게 되었다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q8. 조·일 통상 장정의 제9관, 제37관, 제42관이 의미하는 바를 써 보자.</summary>
+        <div class="check-answer">제9관: 관세 부과(관세권 설정) / 제37관: 방곡령(식량 부족 시 1개월 전 통보 후 쌀 수출 금지) / 제42관: 최혜국 대우</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q9. 일본 내각의 결정(1904)에서 ㉠ ‘고문관’으로 들어온 인물은 누구인가?</summary>
+        <div class="check-answer">메가타 — 제1차 한·일 협약으로 대한 제국의 재정 고문이 되어 화폐 정리 사업을 추진하였다.</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q10. 갑신정변 이후 체결된 톈진 조약에 의해 청과 일본 상인들이 조선의 내륙에 진출하였다. (○, ×)</summary>
+        <div class="check-answer">× — 청 상인의 내지 통상은 임오군란 이후 체결된 조·청 상민 수륙 무역 장정(1882)에서 비롯되었고, 최혜국 대우로 각국 상인에게 확대되었다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q11. 청·일 전쟁 이후 청의 영향력이 강화된 상황에서 조·청 상민 수륙 무역 장정이 체결되었다. (○, ×)</summary>
+        <div class="check-answer">× — 조·청 상민 수륙 무역 장정은 임오군란 이후 청의 영향력이 강화된 상황에서 체결되었다(1882).</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q12. 화폐 정리 사업은 제1차 한·일 협약에 따라 대한 제국의 재정 고문이 된 (메가타 / 스티븐스)에 의해 진행되었다.</summary>
+        <div class="check-answer">메가타</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅲ 「근대 국가 수립의 노력」 4 「개항 이후의 변화」 01 「열강의 경제 침탈」, 146–149쪽 — 본문·연표·도입 자료·거류지와 동양 척식 주식회사 곁글·일본과의 교역 품목·일본 상인의 특권·사료 읽기(조·청 상민 수륙 무역 장정)·질문+·조선의 수입액에서 청·일의 비중·사료로 보는 역사(조·일 통상 장정)·알렌·열강의 이권 침탈 지도·일본의 연도별 차관 제공 현황·역사 깊이 보기(화폐 정리 사업)·생각 키우기·확인하기의 기본 출처 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「개항 이후 사회·경제의 변화와 문화 변동」 중 「열강의 경제 침탈」, 110–111쪽 — 일본 상인의 특권과 거류지 무역, 청과 일본 상인의 경제 침탈, 일본의 금융·재정 장악과 토지 약탈, 백동화·일본 제일은행권, 자료 탐구 1~3, 개념 체크 문항 (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국사』, 「열강의 경제 침략」, 220–222쪽 (참고용) — 지주의 소작인 수탈 강화와 지주제 확대, 청·일 상권 경쟁과 청·일 전쟁, 「통상휘찬」(1893)의 청 상인 기록, 1910년 무렵 일본인 소유 토지 면적에만 활용</li>
+    </ol>
+    <div class="note">
+      ‘최혜국 대우의 연쇄’ 상자와 「경제 주권과 그 침탈」 표의 ‘무너진 것’ 열은 교과서·EBS의 내용을 이해하기 쉽도록 풀어 쓴 정리이다. 이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다. 같은 쪽의 EBS 방곡령·상권 수호 문항은 <a href="Ⅰ-3-4-02_경제적구국운동_도표(해설포함).html#check">「경제적 구국 운동」</a>에서 다룬다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-3-4-01)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p01-N과 대응)
+  const SECTION_PREFIX = "1-3-4-01";
+
+  const narrativeData = {
+    // 1-3-4-01-2: 거류지 무역, 일본 상인이 시장을 차지하다  (대본 p01-2)
+    "1-3-4-01-2": [
+      "개항 직후 외국 상인은 조선 땅 어디서나 장사할 수 있었던 것이 아닙니다. 개항장에서 10리, 약 4킬로미터 안에서만 활동할 수 있었는데, 이를 <b>거류지 무역</b>이라고 합니다.",
+      "그래서 외국 상인은 내륙의 물건을 사거나 팔 때 개항장 객주 같은 조선 상인을 거쳐야 했고, 이 중간 상인들 가운데에는 오히려 부를 쌓은 사람도 있었습니다.",
+      "문제는 일본 상인에게 주어진 특권이었습니다. 자기 나라 화폐를 그대로 쓰고, 쌀과 잡곡을 제한 없이 사 갔으며, 관련 조항이 없어 <b>무관세</b>로 거래했습니다.",
+      "일본 상인은 영국산 면직물을 들여와 팔고, 그 돈으로 조선의 곡물을 대량으로 사 갔습니다. 1879년 수출품의 절반 이상이 쌀이었고, 수입품의 대부분이 면제품이었던 까닭입니다.",
+      "곡물이 빠져나가자 곡물 가격이 크게 올라 대다수 백성이 어려움을 겪었고, 면직물을 짜서 팔던 농민도 값싼 영국산 면직물에 밀려 타격을 입었습니다. 반대로 일본은 싼 조선 곡물로 노동자의 임금을 낮게 유지하며 산업화의 기초를 다졌습니다.",
+      "이처럼 처음에는 개항장 안에 묶여 있던 외국 상인이 어떻게 그 울타리를 넘어 내륙까지 들어오게 되었을까요?"
+    ],
+    // 1-3-4-01-3: 개항장을 넘어 — 내지 통상과 청·일 상권 경쟁  (대본 p01-3)
+    "1-3-4-01-3": [
+      "울타리를 처음 허문 것은 청이었습니다. 임오군란을 진압하며 영향력을 키운 청은 1882년 <b>조·청 상민 수륙 무역 장정</b>을 맺어, 청 상인이 한성과 양화진에 점포를 열고 허가를 받으면 내륙에서도 장사할 수 있게 했습니다.",
+      "조선 정부도 손 놓고 있지는 않았습니다. 이듬해 <b>조·일 통상 장정</b>으로 관세를 매기고 식량이 부족할 때 쌀 수출을 막는 방곡령 조항을 얻어 냈습니다. 그러나 그 대가로 일본에 <b>최혜국 대우</b>를 내주었습니다.",
+      "이 조항이 어떤 힘을 가졌는지는 곧 드러났습니다. 1883년 조선이 영국에 <b>내지 통상</b>을 허용하자, 일본 상인도 최혜국 대우를 근거로 곧바로 내륙에 들어올 수 있었습니다. 한 나라에 연 문이 모든 나라에 열린 것입니다.",
+      "외국 상인이 직접 내륙 장시까지 들어오자, 그동안 개항장과 내륙을 이어 주며 성장하던 객주 같은 중간 상인이 큰 타격을 입었고, 한성의 시전 상인도 상권을 위협받았습니다.",
+      "그리고 조선 시장을 두고 청과 일본 상인의 경쟁이 치열해졌습니다. 1885년 19퍼센트에 불과하던 청의 수입액 비중은 1893년 49퍼센트까지 올라 일본과 거의 비슷해졌습니다. 시장에서의 이 다툼은 머지않아 두 나라의 전쟁으로 이어집니다."
+    ],
+    // 1-3-4-01-4: 아관 파천 이후, 열강이 이권을 다투어 가져가다  (대본 p01-4)
+    "1-3-4-01-4": [
+      "청·일 전쟁 이후 침탈의 대상은 상품 시장에서 나라의 자원과 기간 시설로 넓어졌습니다. 그 계기가 1896년 <b>아관 파천</b>이었습니다.",
+      "고종은 열강의 보호를 기대하며 이권을 넘겨주었고, 열강은 왕실을 보호하겠다며 접근했습니다. 그리고 앞에서 본 최혜국 대우가 여기서 다시 힘을 발휘해, 한 나라가 이권을 얻으면 다른 나라들도 같은 몫을 요구했습니다.",
+      "러시아는 압록강과 두만강, 울릉도의 삼림 채벌권을 얻었고, 1903년에는 이를 구실로 <b>용암포</b>를 차지하려다 일본과 충돌했습니다. 이 갈등이 러·일 전쟁의 한 계기가 됩니다.",
+      "미국은 고종의 신임을 받던 알렌의 주선으로 <b>운산 금광</b>의 채굴권을 얻어, 1년에 약 100만 원어치의 금이 나는 광산에서 막대한 수익을 올렸습니다.",
+      "일본이 가장 공을 들인 것은 <b>철도 부설</b>이었습니다. 미국의 경인선 부설권을 사들이고, 경부선 부설권을 얻고, 러·일 전쟁이 터지자 경의선 부설권까지 차지했습니다. 철도는 대한 제국의 물자를 일본으로 실어 나르고, 전쟁과 의병 탄압에 필요한 병력을 옮기는 길이 되었습니다.",
+      "이렇게 다른 열강을 제치고 앞서 나간 일본은, 이제 대한 제국 경제의 가장 깊은 곳까지 손을 뻗게 됩니다."
+    ],
+    // 1-3-4-01-5: 일본, 금융·재정·토지를 장악하다  (대본 p01-5)
+    "1-3-4-01-5": [
+      "러·일 전쟁을 전후하여 일본이 노린 것은 대한 제국 경제의 뿌리, 곧 돈과 나라 살림, 그리고 땅이었습니다.",
+      "먼저 돈입니다. 제1차 한·일 협약으로 재정 고문이 된 <b>메가타</b>는 1905년 <b>화폐 정리 사업</b>을 추진했습니다. 남발과 위조로 물가를 올리던 <b>백동화</b>를 정리한다는 명분이었지만, 일본 내각은 이미 한국의 재무 실권을 손에 넣겠다고 결정해 둔 상태였습니다.",
+      "백동화를 품질에 따라 갑·을·병으로 나누고, 병종은 아예 바꿔 주지 않았습니다. 백동화의 3분의 2가량이 병종으로 판정되면서 시중의 돈이 크게 줄었고, 현금을 구하지 못한 많은 한국인 상공업자가 파산했습니다. 그 자리를 일본 제일은행권이 차지해, 일본 제일은행이 사실상 대한 제국의 중앙은행이 되었습니다.",
+      "다음은 나라 살림입니다. 통감부는 도로와 항만, 의병 탄압에 쓸 돈을 일본 <b>차관</b>으로 들여왔고, 1907년 대한 제국이 진 빚은 1년 예산과 맞먹는 1,300만 원에 이르렀습니다.",
+      "마지막은 땅입니다. 일본은 철도 부지와 군용지를 명목으로 토지를 빼앗고, 외국인의 토지 소유를 막던 법령마저 무효로 만든 뒤, 1908년 <b>동양 척식 주식회사</b>를 세워 약탈한 토지를 일본인에게 넘기거나 한국인에게 소작시켰습니다.",
+      "그렇다면 나라의 빚이 이렇게 불어나는 것을 보며, 한국인들은 무엇을 했을까요? 그 답은 다음 소주제에서 이어집니다."
+    ],
+    // 1-3-4-01-6: 경제 주권은 이렇게 무너졌다 — 권리별로 다시 보기  (대본 p01-6)
+    "1-3-4-01-6": [
+      "지금까지 시간 순서로 따라온 경제 침탈을, 이번에는 무엇을 빼앗겼는가를 기준으로 다시 묶어 보겠습니다.",
+      "근대 국가는 정치적 주권뿐 아니라 경제 주권도 스스로 지켜야 합니다. 수입품에 세금을 매겨 자기 산업을 보호하는 <b>관세권</b>, 자기 상인이 장사하는 <b>상권</b>, 자원과 철도 같은 기간 시설, 돈을 발행하고 관리하는 권리, 나라 살림을 꾸리는 <b>재정</b>, 그리고 농민의 터전인 토지가 그것입니다.",
+      "표를 위에서부터 읽어 보면 흐름이 보입니다. 관세권은 무관세에서 출발해 1883년 조·일 통상 장정으로 일부 되찾았지만, 같은 장정의 최혜국 대우가 상권을 무너뜨리는 통로가 되었습니다. 상권이 열리자 아관 파천 이후에는 자원과 철도가 넘어갔습니다.",
+      "표의 아래쪽으로 갈수록 빼앗은 나라는 일본 하나로 좁혀집니다. 화폐와 금융, 재정, 토지는 모두 러·일 전쟁 이후 일본이 차지했습니다. 시장에서 시작된 침탈이 결국 나라 경제의 뼈대 전체로 번진 것입니다.",
+      "앞 소단원에서 본 정치적 국권 피탈 표와 나란히 놓아 보면, 일본이 정치와 경제 두 방향에서 동시에 대한 제국을 조여 갔다는 사실을 확인할 수 있습니다. 이렇게 경제 주권이 무너지는 동안, 한국인들도 상권과 이권을 지키기 위해 맞섰습니다. 그 이야기가 「경제적 구국 운동」입니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

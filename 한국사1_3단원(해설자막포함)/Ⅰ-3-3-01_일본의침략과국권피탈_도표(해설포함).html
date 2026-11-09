@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>일본의 침략과 국권 피탈(자막 해설) | 열강이 눈감는 사이, 조약 하나에 권리 하나씩 — 국권 피탈의 과정</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-3-2-04_대한제국과광무개혁_도표(해설포함).html">‹ 이전: 대한 제국과 광무개혁 (대단원 이동)</a>
+  <a href="Ⅰ-3-3_일본의국권침탈과국권수호운동_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#russo">러·일 전쟁</a>
+  <a href="#eulsa">을사늑약</a>
+  <a href="#annex">국권 피탈</a>
+  <a href="#rights">권리별로 보기</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+  <a href="Ⅰ-3-3-02_항일의병운동과의열투쟁_도표(해설포함).html">다음: 항일 의병 운동과 의열 투쟁 ›</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 국가 수립의 노력</span> · 일본의 국권 침탈과 국권 수호 운동</div>
+    <h1>열강이 눈감는 사이, 조약 하나에 권리 하나씩 — 국권 피탈의 과정</h1>
+    <p class="lead">일본은 러·일 전쟁을 일으켜 한·일 의정서와 제1차 한·일 협약을 강요하였고, 미국·영국·러시아로부터 한국 지배를 인정받았다. 이어 을사늑약으로 외교권을 빼앗고 통감부를 설치하였으며, 헤이그 특사 파견을 구실로 고종을 강제로 퇴위시킨 뒤 한·일 신협약으로 행정권을 장악하고 군대를 해산하였다. 1910년 ‘한·일 병합 조약’이 강제로 맺어지면서 대한 제국은 일본의 식민지가 되었다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1902 – 1910</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>열강의 승인과 일본의 강요, 두 줄의 흐름</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 열강의 승인</strong> · <strong style="color:var(--crimson)">적색 = 일본의 국권 침탈 단계</strong> · <strong style="color:var(--brass)">황동색 = 대한 제국의 대응과 불법성</strong>. 열강의 승인과 일본의 조약 강요가 맞물려 진행되었으므로 두 줄의 흐름으로 나누었다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">제1차 영·일 동맹(1902. 1.)</div>
+        <div class="step-desc">영국과 손잡고 러시아 견제</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">가쓰라·태프트 밀약(1905. 7.)</div>
+        <div class="step-desc">미국의 승인</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">제2차 영·일 동맹(1905. 8.)</div>
+        <div class="step-desc">영국의 승인</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">포츠머스 조약(1905. 9.)</div>
+        <div class="step-desc">러시아의 승인</div>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">한·일 의정서(1904. 2.)</div>
+        <div class="step-desc">군사적 요충지 사용</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">제1차 한·일 협약(1904. 8.)</div>
+        <div class="step-desc">외교·재정 고문 → 간섭</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">을사늑약(1905. 11.)</div>
+        <div class="step-desc">외교권 박탈, 통감부</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">한·일 신협약(1907. 7.)</div>
+        <div class="step-desc">행정권 장악, 군대 해산</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">‘한·일 병합 조약’(1910. 8.)</div>
+        <div class="step-desc">국권 피탈</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>대한 제국은 중립 선언, 을사늑약 무효 외교, 헤이그 특사 파견 등으로 맞섰지만, 이미 일본의 한국 지배를 인정한 열강의 외면으로 국권을 지키지 못하였다.</p></div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 열강의 승인</strong> · <strong style="color:var(--crimson)">적색 = 일본의 국권 침탈</strong> · <strong style="color:var(--brass)">황동색 = 대한 제국의 대응</strong></p>
+    <div class="timeline">
+      <div class="tl-item deep"><div class="tl-year">1902</div><div class="tl-body"><div class="tl-title">제1차 영·일 동맹</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1904</div><div class="tl-body"><div class="tl-title">러·일 전쟁 발발, 한·일 의정서</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1905</div><div class="tl-body"><div class="tl-title">을사늑약</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1907</div><div class="tl-body"><div class="tl-title">고종 강제 퇴위, 한·일 신협약</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1910</div><div class="tl-body"><div class="tl-title">국권 피탈</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="russo">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>러·일 전쟁, 일본이 한국 지배를 인정받다</h2>
+    </div>
+    <p class="block-sub">이 그림은 한·일 의정서가 강제로 맺어졌다는 것을 표현하고 있다. 러·일 전쟁 이후 일본은 어떤 과정을 거쳐 대한 제국의 국권을 빼앗았을까?</p>
+
+    <div class="quote-block crimson">
+      <h4>도입 자료 — 한·일 의정서</h4>
+      대한 제국 정부는 일본의 행동이 쉽도록 충분히 편의를 제공하고, 일본은 전략상 필요한 지점을 수용할 수 있다.
+      <div class="src">「한·일 의정서」 (재구성) — 풍자화 「너무나 헌신적인」(『브루클린데일리이글』, 1904. 2. 17.)에는 한국인이 엎드려 “나는 이로써 당신이 한국 영토를 지나가는 것을 허가한다.”라고 말하는 모습이 그려져 있다.</div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">러·일의 대립</div>
+        <div class="step-desc">청·일 전쟁 이후 만주와 대한 제국을 둘러싸고 러시아와 일본이 대립 — 러시아는 아관 파천 이후 대한 제국에 정치적 영향력을 확대하고, 압록강 하구 용암포의 조차를 요구하며 군사 시설 설치</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">일본의 준비</div>
+        <div class="step-desc">러시아를 견제하려는 영국과 제1차 영·일 동맹을 맺고, 미국의 지지도 얻어 냄</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">러·일 전쟁(1904)</div>
+        <div class="step-desc">만주와 한반도를 둘러싼 러시아와의 협상이 실패하자 선전 포고도 없이 인천의 러시아 함대를 기습 공격</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 러시아는 의화단 운동을 진압한다는 구실로 청에 파견한 군대 일부를 만주에 계속 주둔시켰고, 일본은 한국을 분할하여 차지하자는 러시아의 제안을 거절하고 러·일 전쟁을 일으켰다. 의화단 운동 — 청 말기에 서양 세력을 몰아내자는 구호를 내세운 반크리스트교·반제국주의 운동.</p>
+
+    <div class="causal-link"><p>전쟁 직전 대한 제국은 중립을 선언하였지만, 일본은 이를 무시하고 인천에 상륙하여 한성에 군대를 주둔시킨 뒤 조약을 강요하였다.</p></div>
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>한·일 의정서(1904. 2.)</h4>
+        전쟁에 필요한 군사적 요충지를 마음대로 사용할 수 있다는 내용을 대한 제국에 강요하여 체결 — EBS: 일본이 한반도 내에서 군사적 요충지 사용권 확보
+      </div>
+      <div class="compare-card crimson">
+        <h4>제1차 한·일 협약(1904. 8.)</h4>
+        전쟁에서 유리해지자 재정·외교 고문 용빙에 관한 협정서를 강제로 맺도록 함 → 외교 고문으로 미국인 스티븐스, 재정 고문으로 일본인 메가타를 파견하여 외교와 재정에 본격적으로 간섭 — EBS: 고문 정치
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">제1차 한·일 협약은 대한 제국의 내정을 개선한다는 명목으로 체결되었으나, 실상은 일본이 대한 제국의 외교·재정에 간섭하는 것이었다(교과서). 스티븐스는 1908년 장인환, 전명운에 의해 제거되었고, 메가타는 화폐 정리 사업을 추진하였다(EBS). 화폐 정리 사업의 과정과 결과는 <a href="Ⅰ-3-4-01_열강의경제침탈_도표(해설포함).html#finance">「열강의 경제 침탈」 — 일본, 금융·재정·토지를 장악하다</a>에서 볼 수 있다.</p>
+
+    <div class="causal-link"><p>동해 해전 승리로 승기를 잡은 일본은 미국, 영국, 러시아로부터 차례로 한국에 대한 지배권을 인정받았다(1905).</p></div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>일본의 한국 지배에 대한 열강의 인정(교과서 「흐름으로 보는 한국사」·EBS)</caption>
+      <thead><tr><th>조약(연도)</th><th>상대</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">제1차 영·일 동맹(1902. 1.)</td><td>영국</td><td>프랑스와 독일의 간섭을 막고 러시아 견제 — 영국은 주로 청국에, 일본은 청국에서 가진 이익에 더하여 한국에서 정치상과 상·공업상 특별한 이익을 가짐</td></tr>
+        <tr><td class="hd deep">가쓰라·태프트 밀약(1905. 7.)</td><td>미국</td><td>미국 육군 장관 태프트가 일본 가쓰라 수상과의 대화에서 사견임을 전제로 일본의 한국 지배 인정 — EBS: 미국의 필리핀 지배와 일본의 한국 지배를 양국이 서로 인정</td></tr>
+        <tr><td class="hd deep">제2차 영·일 동맹(1905. 8.)</td><td>영국</td><td>러·일 전쟁 종료 직전 한국과 인도에 대한 독점적 권리를 서로 인정 — 일본은 한국에서 지도·감리 및 보호 조치를 집행할 권리를 가짐</td></tr>
+        <tr><td class="hd deep">포츠머스 조약(1905. 9.)</td><td>러시아</td><td>미국의 중재로 맺어 러·일 전쟁을 끝냄 — 러시아는 일본이 한국에서 정치·군사상 및 경제상의 탁월한 이익을 갖는 것을 인정하고, 일본의 지도·보호 및 감리 조치를 저지하거나 간섭하지 않음</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 포츠머스 조약 체결 모습을 담은 사진에는 한국을 두고 협상하는데 정작 한국 대표의 모습은 없다.</p>
+
+    <div class="think-box">
+      <h4>질문+</h4>
+      <ol>
+        <li>러·일 전쟁을 풍자한 엽서(러시아·일본·영국·미국)에 나타난 러·일 전쟁 당시 국제 정세를 말해 보자.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="eulsa">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>을사늑약, 외교권을 상실하다</h2>
+    </div>
+    <p class="block-sub">포츠머스 조약 체결 이후 일본은 이토 히로부미를 파견하였다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">강요</div>
+        <div class="step-desc">이토 히로부미가 궁궐을 군대로 포위하고, 을사5적을 앞세워 일방적으로 을사늑약의 발효를 선포(1905)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">외교권 상실</div>
+        <div class="step-desc">대한 제국은 일본에 외교권을 빼앗기고, 한성에 일본 정부를 대표하는 통감부 설치</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">통감 정치</div>
+        <div class="step-desc">이토 히로부미가 초대 통감으로 부임하여 대한 제국의 외교를 장악하였으며, 내정까지 간섭</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">을사5적 — 을사늑약 체결에 앞장선 대신 5명(이완용, 박제순, 이근택, 이지용, 권중현). 을사늑약 — 을사(乙巳)는 을사년(1905), 늑약(勒約)은 강제로·억지로 맺은 조약으로, 을사년에 강제로 맺은 조약이라는 뜻이다(교과서). 통감부 — 대한 제국의 외교 업무를 대행한다는 명분으로 설치한 기구로, 1907년 한·일 신협약 체결 이후에는 내정 전반을 장악하였다(EBS).</p>
+
+    <div class="quote-block crimson">
+      <h4>을사늑약(교과서·EBS 자료)</h4>
+      2조 한국 정부는 일본 정부의 중개를 거치지 않고는 국제적 조약이나 약속을 맺지 않는다. 3조 일본 정부는 한국 황제 밑에 통감 1명을 둔다.
+      <div class="src">『고종실록』 (재구성) — 제2조는 일본이 대한 제국의 외교권을 빼앗은 내용이다(EBS).</div>
+    </div>
+
+    <div class="causal-link"><p>고종은 을사늑약의 무효를 알리려 하였지만, 이미 일본의 한국 지배를 인정한 열강은 이를 외면하였다.</p></div>
+    <div class="compare-grid">
+      <div class="compare-card brass">
+        <h4>미국에 호소</h4>
+        고종은 헐버트를 미국에 보내 을사늑약이 무효임을 알렸지만, 미국은 이를 무시
+      </div>
+      <div class="compare-card brass">
+        <h4>헤이그 특사(1907)</h4>
+        네덜란드 헤이그에서 열린 만국 평화 회의에 특사를 파견하여 을사늑약의 불법성을 알리려 하였으나, 일본의 방해와 열강의 외면으로 실패
+      </div>
+    </div>
+
+    <div class="sidebox">
+      <h4>자료 탐구 1 — 헐버트(교과서 145쪽)</h4>
+      <div class="quote-block brass">
+        <h4>헐버트의 말</h4>
+        한국인들은 끝까지 항일 투쟁을 할 것이며, 일본은 한국인들을 말살시켜야만 평화를 얻을 것이다.
+        <div class="src">『뉴욕타임스』, 1907. 7. 22. (재구성)</div>
+      </div>
+      <p>헐버트는 미국인으로 육영 공원 교사로 처음 조선에 들어왔다. 고종의 신임을 얻어 정치·외교 등 다양한 분야에서 자문을 하였다. 을사늑약 이후 고종의 친서를 미국에 전달하였으며, 헤이그 특사 파견에도 큰 역할을 하였다. 이후 일본에 의해 추방되어 미국으로 돌아갔다. 일제 강점기에는 한국의 독립운동을 돕고, 일본의 만행을 알렸다. 1949년 사망하여 서울 마포의 양화진 외국인 묘지에 묻혔으며, 외국인으로는 처음으로 대한민국 건국 공로 훈장을 받았다(교과서).</p>
+    </div>
+    <div class="think-box">
+      <h4>자료 탐구 1</h4>
+      <ol>
+        <li>한국의 독립을 위해 힘쓴 외국인으로는 누가 있는지 조사해 보자. (국가보훈부, 독립기념관 누리집 등을 활용해 보자.)</li>
+      </ol>
+    </div>
+
+    <div class="sidebox">
+      <h4>역사 속 사람 — 일본의 침략을 폭로한 헤이그 특사</h4>
+      <p>1907년 네덜란드 헤이그에서 세계 평화를 논의하기 위한 만국 평화 회의가 열렸다. 고종은 을사늑약의 무효를 알리고자 이준, 이상설, 이위종을 특사로 파견하였다. 이들은 1907년 6월 25일에 헤이그에 도착하였다. 그리고 의장과 각국 대표단에 탄원서를 보냈지만, 일본의 방해와 열강의 외면으로 회의에 참여하지 못하였다. 이후 특사단은 외국 언론인들의 도움으로 일본의 침략성을 전 세계에 폭로하였다(교과서). 이준은 4월 22일 출발하여 블라디보스토크에서 이상설, 상트페테르부르크에서 이위종과 합류하였다(교과서 지도).</p>
+      <div class="quote-block brass">
+        <h4>이위종의 인터뷰</h4>
+        을사늑약은 황제의 재가 없이 협박으로 체결한 것이어서 조약이 될 수 없고 아무런 효력이 없습니다.
+        <div class="src">『평화회의보』, 1907. 7. 5. (재구성)</div>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>을사늑약의 불법성(교과서 134쪽) — 을사늑약을 ‘늑약’이라고 부르는 까닭</caption>
+      <thead><tr><th>불법성</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd brass">① 고종의 위임과 비준이 없음</td><td>고종은 끝까지 을사늑약을 비준하지 않았으며, 체결에 참여한 관리도 고종의 위임장을 받지 않았다.</td></tr>
+        <tr><td class="hd brass">② 조약이 아닌 협약</td><td>일본은 을사늑약을 ‘협약’으로 표현하였다. 하지만 외교 주권을 넘기는 중요한 사항은 조약을 통해야 하는 것이 국제법적 상식이다. — 1906년 프랑스의 법학자 레이: 을사늑약은 폭력에 의해 체결되었으므로 무효 / 1935년 미국 국제법 학회 보고서: 강제로 체결되어 무효인 조약의 다섯 가지 사례 중 하나로 을사늑약 제시</td></tr>
+        <tr><td class="hd brass">③ 강제로 체결됨</td><td>일본은 군대를 동원하고, 대신을 감금한 상태에서 을사늑약을 강요하였다. — 을사늑약 풍자 만평(『신한민보』, 1913. 8. 29.)</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section class="block" id="annex">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>대한 제국, 일본에 국권을 빼앗기다</h2>
+    </div>
+    <p class="block-sub">일본은 헤이그 특사 파견을 구실로 고종을 강제로 퇴위시켰다.</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">고종 강제 퇴위(1907)</div>
+        <div class="step-desc">헤이그 특사 파견을 구실로 고종을 강제로 퇴위시키고 순종 즉위</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">한·일 신협약(1907. 7.)</div>
+        <div class="step-desc">정미 7조약 — 통감이 추천한 일본인 차관이 각 부의 실권을 장악하였으며, 대한 제국 군대도 강제로 해산됨</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">사법권·경찰권</div>
+        <div class="step-desc">이후 일본이 대한 제국의 사법권과 경찰권도 차지</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">국권 피탈(1910)</div>
+        <div class="step-desc">8월 22일 일본군과 경찰의 삼엄한 경계 속에서 ‘한·일 병합 조약’ 강제 체결 → 8월 29일 조약이 공포되고 순종의 퇴위가 선포되면서 대한 제국은 일본의 식민지가 됨</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">대한 제국군의 저항 — 군대 해산 당시 시위대 2개 대대가 일본군과 전투를 벌였다(『르쁘띠주르날』, 1907. 8. 4.). EBS: 국권 강탈 후 조선 총독부를 설치하였으며, 초대 총독으로 제3대 통감 데라우치가 부임하였다.</p>
+
+    <div class="quote-grid">
+      <div class="quote-block crimson">
+        <h4>한·일 신협약(정미 7조약)</h4>
+        한국 정부는 시정 개선에 관해 통감의 지도를 받고, 법령 제정과 고등 관리 임면은 통감의 승인·동의를 거친다.
+        <div class="src">한·일 신협약 제1·2·4조 (재구성) — 이로써 통감은 한국 내정의 최고 감독권자가 되었다(교과서).</div>
+      </div>
+      <div class="quote-block crimson">
+        <h4>부수 각서(EBS 자료)</h4>
+        황궁 수위를 담당할 1대대만 남기고 육군의 기타 부대를 해산하며, 각 부 차관에 일본인을 임명한다.
+        <div class="src">한·일 신협약 부수 각서 (재구성) — 대한 제국의 군대를 해산하고 행정 각부에 일본인 차관을 임명한다는 내용(EBS)</div>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>‘한·일 병합 조약’의 불법성(교과서 135쪽)</caption>
+      <thead><tr><th>불법성</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="hd brass">① 순종의 비준이 없음</td><td>1910년 이완용과 데라우치가 조약을 체결하고 서명·날인을 하였다. ‘병합 조칙’으로 순종의 비준을 대신하기로 하였는데, 순종의 어새만 찍혀 있고 서명이 없다. 어새의 날인만으로는 순종의 비준이 이루어졌다고 할 수 없다. 일본의 ‘병합 조칙’에는 일왕의 서명이 있다.</td></tr>
+        <tr><td class="hd brass">② 강제로 체결됨</td><td>일제는 한성에 대포까지 동원하여 조약 체결을 강요하였다.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section class="block" id="rights">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>국권은 이렇게 빼앗겼다 — 권리별로 다시 보기</h2>
+    </div>
+    <p class="block-sub">앞 소단원에서 갑오개혁부터 광무개혁까지 세운 근대 국가의 기둥을, 일본은 조약 하나마다 하나씩 빼앗아 갔다. 시간 순서가 아니라 ‘무엇을 빼앗겼나’를 기준으로 정리해 보자.</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>조약과 빼앗긴 권리 — 맨 오른쪽 열은 앞 소단원의 ‘근대 국가의 기둥’과 이어 본 풀이이다(풀이)</caption>
+      <thead><tr><th>조약(연도)</th><th>빼앗긴 권리</th><th>핵심 내용</th><th>무너진 기둥(풀이)</th></tr></thead>
+      <tbody>
+        <tr><td class="hd crimson">한·일 의정서(1904. 2.)</td><td>군사적 요충지</td><td>전략상 필요한 지점을 수시로 사용</td><td>영토와 국방</td></tr>
+        <tr><td class="hd crimson">제1차 한·일 협약(1904. 8.)</td><td>외교·재정의 자율</td><td>외교 고문 스티븐스, 재정 고문 메가타(고문 정치)</td><td>재정</td></tr>
+        <tr><td class="hd crimson">을사늑약(1905. 11.)</td><td>외교권</td><td>일본의 중개 없이 국제적 조약 금지, 통감부 설치</td><td>주권(대외)</td></tr>
+        <tr><td class="hd crimson">한·일 신협약(1907. 7.)</td><td>행정권, 군대</td><td>통감의 지도·승인, 일본인 차관, 부수 각서로 군대 해산</td><td>정부 조직, 국방</td></tr>
+        <tr><td class="hd crimson">(이후 1909~1910)</td><td>사법권, 경찰권</td><td>일본이 차례로 차지</td><td>법과 재판</td></tr>
+        <tr><td class="hd crimson">‘한·일 병합 조약’(1910. 8.)</td><td>통치권 전체</td><td>대한 제국이 일본의 식민지가 됨, 조선 총독부</td><td>국가 자체</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h4>헷갈리기 쉬운 짝</h4>
+        고문 정치 = 제1차 한·일 협약 / 통감부·외교권 = 을사늑약 / 차관 정치·군대 해산 = 한·일 신협약 / 조선 총독부 = ‘병합 조약’ 이후
+      </div>
+      <div class="compare-card">
+        <h4>‘병합’이라는 말</h4>
+        참고(이전 교육과정 교과서): 일본은 ‘병탄’은 침략성이 너무 드러나고, ‘합방’은 두 나라가 대등하게 한 나라가 되었다는 뜻이 되어 쓸 수 없다며, ‘병합’이라는 용어를 새로 고안해 냈다. 교과서가 ‘한·일 병합 조약’에 작은따옴표를 붙이는 까닭도 여기에 있다.
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">갑오·을미개혁과 독립 협회, 광무개혁이 세운 근대 국가의 기둥은 같은 소단원 「근대 국가 수립 운동」의 각 소주제에서 볼 수 있다.</p>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>정리 — 국권 피탈의 과정</h2>
+    </div>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>러·일 전쟁에서 국권 피탈까지</caption>
+      <thead><tr><th>시기</th><th>열강의 승인</th><th>일본의 강요</th><th>대한 제국의 대응</th></tr></thead>
+      <tbody>
+        <tr><td class="hd">1902~1904</td><td>제1차 영·일 동맹, 미국의 지지</td><td>러·일 전쟁, 한·일 의정서, 제1차 한·일 협약</td><td>국외 중립 선언(1904. 1.)</td></tr>
+        <tr><td class="hd">1905</td><td>가쓰라·태프트 밀약, 제2차 영·일 동맹, 포츠머스 조약</td><td>을사늑약, 통감부</td><td>헐버트를 통해 미국에 무효 호소</td></tr>
+        <tr><td class="hd">1907</td><td>—</td><td>고종 강제 퇴위, 한·일 신협약, 군대 해산</td><td>헤이그 특사, 대한 제국군의 저항</td></tr>
+        <tr><td class="hd">1910</td><td>—</td><td>‘한·일 병합 조약’, 조선 총독부</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="think-box">
+      <h4>생각해 보기 — 교과서의 길잡이 질문</h4>
+      <ol>
+        <li>대한 제국은 어떤 과정을 거쳐 일본의 식민지가 되었을까?</li>
+        <li>을사늑약을 조약이 아니라 늑약이라고 부르는 까닭은 무엇일까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 일본은 대한 제국에 군사적 요충지를 임의로 사용할 수 있다는 내용의 (   )을/를 강요하였다.</summary>
+        <div class="check-answer">한·일 의정서</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. (   )(으)로 대한 제국은 일본이 추천하는 외교와 재정 고문을 임명하게 되었다.</summary>
+        <div class="check-answer">제1차 한·일 협약</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. (   )(으)로 대한 제국은 외교권을 일본에 빼앗겼다.</summary>
+        <div class="check-answer">을사늑약</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 일본은 (   ) 특사 파견을 구실로 고종을 강제로 퇴위시켰다.</summary>
+        <div class="check-answer">헤이그</div>
+      </details></div>
+
+      <div class="check-group">EBS 개념 체크</div>
+      <div class="check-item"><details><summary>Q5. 일본은 제1차 한·일 협약을 통해 대한 제국에 재정 고문 메가타와 외교 고문 스티븐스를 고용하게 하였다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 영국은 가쓰라·태프트 밀약을 통해 일본의 대한 제국 지배를 인정하였다. (○, ×)</summary>
+        <div class="check-answer">× — 가쓰라·태프트 밀약은 미국과 맺었다. 영국은 제2차 영·일 동맹으로 인정하였다.</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q7. 일본은 (포츠머스 조약 / 시모노세키 조약)을 통해 러시아로부터 한반도에서의 우월적 지위를 인정받았다.</summary>
+        <div class="check-answer">포츠머스 조약</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q8. 을사늑약의 결과 초대 통감으로 (이토 히로부미 / 데라우치)가 부임하였다.</summary>
+        <div class="check-answer">이토 히로부미</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q9. 고종은 (을미사변 / 을사늑약)의 불법성을 알리고자 1907년 네덜란드 헤이그에서 열린 만국 평화 회의에 특사를 파견하였다.</summary>
+        <div class="check-answer">을사늑약</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q10. 일본은 을사늑약으로 (   )을/를 설치하여 한국의 외교와 내정에 간섭하였다.</summary>
+        <div class="check-answer">통감부</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q11. 일본은 1907년 헤이그 특사 파견을 구실로 (   )을/를 강제로 퇴위시켰다.</summary>
+        <div class="check-answer">고종</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q12. 한·일 신협약의 비밀 각서(부수 각서)에 따라 대한 제국의 (   )이/가 해산되었다.</summary>
+        <div class="check-answer">군대</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅲ 「근대 국가 수립의 노력」 3 「일본의 국권 침탈과 국권 수호 운동」 01 「일본의 침략과 국권 피탈」, 132–133쪽 — 본문·연표·도입 자료(풍자화, 한·일 의정서)·러·일 전쟁 엽서와 지도·질문+·을사5적·을사늑약 용어 풀이·대한 제국군의 저항·역사 속 사람(헤이그 특사)·확인하기의 기본 출처 (1차 근거)</li>
+      <li>동아출판 고등학교 『한국사1』, 흐름으로 보는 한국사 「일본의 국권 강탈」, 134–135쪽 — 제1차 영·일 동맹에서 ‘한·일 병합 조약’까지의 조약 조문, 을사늑약과 ‘한·일 병합 조약’의 불법성 / 자료로 보는 한국사 「일본의 국권 침탈과 국권 수호 운동」 자료 탐구 1(헐버트), 145쪽 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「국권 침탈과 국권 수호 운동」 중 「일제의 침략과 국권 피탈」, 118–119쪽 — 러·일 전쟁과 일본의 침략, 일제의 국권 침탈, 통감부·헤이그 특사 곁글, 자료(을사늑약, 한·일 신협약과 부수 각서), 개념 체크 문항 (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국사』, 「러·일 전쟁과 일제의 침략」, 206–209쪽 (참고용) — 러시아의 만주 주둔과 분할 제안, 포츠머스 조약 체결 사진 설명, ‘병합’ 용어의 고안에만 활용</li>
+    </ol>
+    <div class="note">
+      「조약과 빼앗긴 권리」 표의 ‘무너진 기둥’ 열은 교과서·EBS의 내용을 이해하기 쉽도록 풀어 쓴 정리이다. 이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다. 같은 쪽의 EBS 간도·독도 자료는 <a href="Ⅰ-3-3-04_독도와간도_도표(해설포함).html#gando">「독도와 간도」</a>에서 다룬다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-3-3-01)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p01-N과 대응)
+  const SECTION_PREFIX = "1-3-3-01";
+
+  const narrativeData = {
+    // 1-3-3-01-2: 러·일 전쟁, 일본이 한국 지배를 인정받다  (대본 p01-2)
+    "1-3-3-01-2": [
+      "청·일 전쟁 이후 만주와 대한 제국을 두고 이번에는 러시아와 일본이 맞섰습니다. 러시아는 압록강 하구 용암포를 빌려 달라며 군사 시설까지 세웠습니다.",
+      "일본은 러시아를 견제하려는 영국과 <b>영·일 동맹</b>을 맺고 미국의 지지도 얻은 뒤, 1904년 선전 포고도 없이 인천의 러시아 함대를 기습해 <b>러·일 전쟁</b>을 일으켰습니다. 대한 제국은 전쟁 직전 중립을 선언했지만, 일본은 이를 무시하고 군대를 한성에 들여보냈습니다.",
+      "그리고 조약을 강요하기 시작했습니다. 먼저 <b>한·일 의정서</b>로 전쟁에 필요한 땅을 마음대로 쓰게 했고, 이어 <b>제1차 한·일 협약</b>으로 외교 고문 스티븐스와 재정 고문 메가타를 앉혀 외교와 재정에 간섭했습니다. 이것을 고문 정치라고 합니다.",
+      "승기를 잡은 일본은 국제 사회의 승인도 차례로 얻었습니다. 미국과는 <b>가쓰라·태프트 밀약</b>으로 필리핀과 한국을 맞바꾸듯 인정했고, 영국과는 제2차 영·일 동맹을, 러시아와는 미국의 중재로 <b>포츠머스 조약</b>을 맺었습니다.",
+      "포츠머스에서 한국의 운명을 정하는 자리에 정작 한국 대표는 없었습니다. 열강이 모두 눈감아 주자, 일본은 이제 거칠 것이 없었습니다."
+    ],
+    // 1-3-3-01-3: 을사늑약, 외교권을 상실하다  (대본 p01-3)
+    "1-3-3-01-3": [
+      "1905년 일본은 이토 히로부미를 보내 궁궐을 군대로 둘러쌌습니다. 그리고 이완용 등 을사5적을 앞세워 일방적으로 조약의 성립을 선포했습니다. 이것이 <b>을사늑약</b>입니다.",
+      "이 조약으로 대한 제국은 일본을 거치지 않고는 어떤 나라와도 조약을 맺을 수 없게 되었습니다. 곧 <b>외교권</b>을 빼앗긴 것입니다. 한성에는 <b>통감부</b>가 들어섰고, 초대 통감 이토 히로부미는 외교를 넘어 내정까지 간섭했습니다.",
+      "그런데 왜 '조약'이 아니라 '늑약', 곧 억지로 맺은 약속이라고 부를까요? 첫째, 고종은 끝까지 비준하지 않았고 서명한 관리도 위임장이 없었습니다. 둘째, 외교권처럼 중요한 일은 조약으로 해야 하는데 일본은 '협약'이라 불렀습니다. 셋째, 군대를 동원하고 대신을 가둔 채 강요했습니다.",
+      "고종은 헐버트를 미국에 보내 무효를 알렸지만 미국은 외면했습니다. 1907년에는 이준, 이상설, 이위종을 <b>헤이그</b> 만국 평화 회의에 특사로 보냈지만, 일본의 방해와 열강의 외면으로 회의장에 들어가지도 못했습니다. 특사들은 외국 언론의 도움으로 일본의 침략을 세계에 알렸습니다.",
+      "그러나 일본은 이 특사 파견을 오히려 기회로 삼았습니다."
+    ],
+    // 1-3-3-01-4: 대한 제국, 일본에 국권을 빼앗기다  (대본 p01-4)
+    "1-3-3-01-4": [
+      "일본은 헤이그 특사 파견을 구실로 1907년 <b>고종</b>을 강제로 물러나게 하고 순종을 즉위시켰습니다.",
+      "곧이어 <b>한·일 신협약</b>, 곧 정미 7조약을 강요했습니다. 법령을 만들거나 고위 관리를 임명할 때 통감의 승인을 받게 했고, 통감이 추천한 일본인 차관이 각 부의 실권을 쥐었습니다. 비밀리에 맺은 부수 각서에 따라 대한 제국 <b>군대</b>도 해산되었습니다.",
+      "군대가 해산되던 날, 시위대 병사들은 일본군과 맞서 싸웠습니다. 그러나 일본은 이어서 사법권과 경찰권까지 차례로 빼앗았습니다.",
+      "그리고 1910년 8월, 일본군과 경찰이 삼엄하게 지키는 가운데 '<b>한·일 병합 조약</b>'이 강제로 맺어졌습니다. 이 조약 역시 순종의 서명이 없이 어새만 찍혀 비준이 이루어졌다고 할 수 없고, 대포까지 동원해 강요한 것이었습니다.",
+      "8월 29일 조약이 공포되고 순종의 퇴위가 선포되면서, 대한 제국은 일본의 식민지가 되었습니다."
+    ],
+    // 1-3-3-01-5: 국권은 이렇게 빼앗겼다 — 권리별로 다시 보기  (대본 p01-5)
+    "1-3-3-01-5": [
+      "국권 피탈의 과정은 조약 이름이 많아 헷갈리기 쉽습니다. 시간 순서 대신 '무엇을 빼앗겼나'로 다시 묶어 보면 훨씬 또렷해집니다.",
+      "한·일 의정서로는 군사적 요충지를, 제1차 한·일 협약으로는 외교와 재정의 자율을 잃었습니다. 고문 정치는 제1차 한·일 협약이라는 짝을 기억해 두세요.",
+      "을사늑약으로는 <b>외교권</b>을 빼앗기고 통감부가 생겼습니다. 한·일 신협약으로는 <b>행정권</b>과 군대를 잃었으니, 차관 정치와 군대 해산은 한·일 신협약의 짝입니다. 그 뒤 사법권과 경찰권까지 넘어갔고, 마지막 병합 조약으로 나라의 통치권 전체가 사라졌습니다.",
+      "앞 소단원에서 우리는 갑오개혁, 독립 협회, 광무개혁이 주권, 재정, 정부, 국방이라는 근대 국가의 기둥을 세워 가는 모습을 보았습니다. 일본은 바로 그 기둥을 조약 하나마다 하나씩 뽑아 간 것입니다.",
+      "일본은 침략의 모습을 감추려고 '병합'이라는 말을 새로 만들어 쓰기까지 했습니다. 그러나 국권이 무너지는 동안에도 나라를 지키려는 사람들은 멈추지 않았습니다. 다음 소주제에서 의병들의 항쟁을 살펴보겠습니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>

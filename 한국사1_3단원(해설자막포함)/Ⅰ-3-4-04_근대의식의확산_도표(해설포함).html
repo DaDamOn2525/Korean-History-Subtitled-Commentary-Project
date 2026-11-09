@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>근대 의식의 확산(자막 해설) | 백성에서 국민으로 — 평등을 깨친 근대 의식, 나라를 지키려는 민족의식</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DA; --paper-card:#FBF8F0; --ink:#20242B; --ink-soft:#4A4F58;
+    --indigo:#2B3A55; --indigo-soft:#DCE3EC;
+    --crimson:#7A2331; --crimson-soft:#EFDBDD;
+    --brass:#93701F; --brass-soft:#EDE1C2;
+    --line:#D3C9AE; --line-strong:#B8AB88;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper);
+    background-image: radial-gradient(circle at 10% 5%, rgba(147,112,31,0.05), transparent 40%), radial-gradient(circle at 90% 15%, rgba(43,58,85,0.05), transparent 40%);
+    color:var(--ink); font-family:'Noto Sans KR', sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:'Noto Serif KR', serif; margin:0; color:var(--ink); }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 100px;}
+  .hero{ padding:56px 24px 40px; border-bottom:1px solid var(--line-strong); margin-bottom:48px; }
+  .hero-inner{max-width:960px; margin:0 auto;}
+  .kicker{ font-size:14px; color:var(--ink-soft); margin-bottom:14px; }
+  .kicker span{color:var(--brass); font-weight:700;}
+  .hero h1{ font-size:clamp(30px,5vw,46px); font-weight:700; line-height:1.25; max-width:11em; }
+  .hero p.lead{ margin-top:18px; font-size:17px; color:var(--ink-soft); max-width:640px; }
+  .hero-tags{display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;}
+  .tag{ font-size:13px; padding:6px 14px; border:1px solid var(--line-strong); border-radius:100px; color:var(--ink-soft); background:var(--paper-card); }
+  section.block{margin-bottom:64px;}
+  .block-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; padding-bottom:14px; border-bottom:2px solid var(--ink); }
+  .block-num{ font-family:'Noto Serif KR', serif; font-size:15px; color:var(--paper-card); background:var(--ink); padding:3px 10px; border-radius:3px; flex-shrink:0; }
+  .block-head h2{font-size:26px;}
+  .block-sub{font-size:14.5px; color:var(--ink-soft); margin:10px 0 28px;}
+
+  .flow{display:flex; align-items:stretch; flex-wrap:wrap; gap:0; margin-bottom:20px;}
+  .flow-step{ background:var(--paper-card); border:1px solid var(--line-strong); padding:16px 18px; flex:1; min-width:160px; }
+  .flow-step .step-title{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .flow-step .step-desc{font-size:13px; color:var(--ink-soft);}
+  .flow-arrow{ display:flex; align-items:center; justify-content:center; width:34px; flex-shrink:0; color:var(--line-strong); font-size:18px; }
+  @media (max-width:760px){ .flow{flex-direction:column;} .flow-arrow{width:auto; transform:rotate(90deg); padding:2px 0;} }
+
+  /* 인과 접속문 — flow/branch 화살표를 대신하거나 보완, 화살표만으로 압축하지 않음 */
+  .causal-link{ display:flex; align-items:center; gap:10px; margin:4px 0 4px; padding:0 4px; }
+  .causal-link::before{ content:"↓"; color:var(--line-strong); font-size:16px; flex-shrink:0; }
+  .causal-link p{ margin:0; font-size:13px; color:var(--ink-soft); font-style:italic; }
+  .causal-link.h::before{ content:"→"; }
+  .causal-row{ display:flex; align-items:center; gap:10px; margin:0 6px; flex-shrink:0; }
+  .causal-row p{ margin:0; font-size:12.5px; color:var(--ink-soft); font-style:italic; max-width:150px; text-align:center; }
+  @media (max-width:760px){ .causal-row{flex-direction:column; margin:6px 0;} }
+
+  /* BRANCH DIAGRAM — 하나의 원인에서 병렬로 갈라지는 구조 */
+  .branch-root{ background:var(--ink); color:var(--paper-card); font-family:'Noto Serif KR', serif; font-weight:600; font-size:15px; padding:14px 18px; text-align:center; }
+  .branch-cause{ text-align:center; font-size:13.5px; color:var(--ink-soft); font-style:italic; padding:10px 20px; max-width:560px; margin:0 auto; }
+  .branch-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:6px;}
+  .branch-cols.two{grid-template-columns:1fr 1fr;}
+  @media (max-width:760px){.branch-cols, .branch-cols.two{grid-template-columns:1fr;}}
+  .branch-col{padding-top:14px; border-top:3px solid var(--line-strong);}
+  .branch-col.deep{border-top-color:var(--indigo);}
+  .branch-col.crimson{border-top-color:var(--crimson);}
+  .branch-col h4{font-size:14.5px; margin-bottom:6px;}
+  .branch-col.deep h4{color:var(--indigo);}
+  .branch-col.crimson h4{color:var(--crimson);}
+  .branch-col .why{font-size:12.5px; color:var(--ink-soft); font-style:italic; margin-bottom:8px;}
+  .branch-node{ background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:6px; }
+  .branch-node b{color:var(--ink);}
+
+  .timeline{position:relative; margin:0 0 8px; padding-left:2px;}
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line-strong); }
+  .tl-item{position:relative; display:flex; gap:20px; padding:14px 0;}
+  .tl-year{ width:64px; flex-shrink:0; text-align:right; padding-right:20px; font-family:'Noto Serif KR', serif; font-weight:700; font-size:14.5px; color:var(--ink-soft); position:relative; }
+  .tl-year::after{ content:""; position:absolute; right:-5px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brass); border:2px solid var(--paper); }
+  .tl-item.deep .tl-year::after{background:var(--indigo);}
+  .tl-item.crimson .tl-year::after{background:var(--crimson);}
+  .tl-item.mute .tl-year::after{background:var(--ink-soft);}
+  .tl-body{flex:1; padding-top:1px;}
+  .tl-title{font-weight:700; font-size:15.5px;}
+  .tl-item.deep .tl-title{color:var(--indigo);}
+  .tl-item.crimson .tl-title{color:var(--crimson);}
+  .tl-item.turn .tl-title{color:var(--brass);}
+  .tl-item.mute .tl-title{color:var(--ink-soft);}
+  .tl-desc{font-size:14px; color:var(--ink-soft); margin-top:3px;}
+
+  table.data-table{ width:100%; border-collapse:collapse; font-size:14px; margin:20px 0 28px; background:var(--paper-card); }
+  table.data-table caption{ text-align:left; font-family:'Noto Serif KR', serif; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--ink); }
+  table.data-table th, table.data-table td{ border:1px solid var(--line-strong); padding:10px 12px; text-align:left; vertical-align:top; }
+  table.data-table thead th{ background:var(--ink); color:var(--paper-card); font-weight:500; font-size:13px; }
+  table.data-table tbody tr:nth-child(even){background:rgba(0,0,0,0.02);}
+  table.data-table td.hd{font-weight:700; width:150px;}
+  table.data-table td.deep{color:var(--indigo); font-weight:700;}
+  table.data-table td.crimson{color:var(--crimson); font-weight:700;}
+  table.data-table td.brass{color:var(--brass); font-weight:700;}
+  .table-scroll{overflow-x:auto;}
+
+  .compare-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 24px;}
+  @media (max-width:760px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{ background:var(--paper-card); border:1px solid var(--line-strong); border-top:3px solid var(--line-strong); padding:16px 20px; font-size:13.5px; color:var(--ink-soft); }
+  .compare-card.deep{border-top-color:var(--indigo);}
+  .compare-card.crimson{border-top-color:var(--crimson);}
+  .compare-card h4{font-size:15px; margin-bottom:10px;}
+  .compare-card.deep h4{color:var(--indigo);}
+  .compare-card.crimson h4{color:var(--crimson);}
+  .branch-col.brass{border-top-color:var(--brass);}
+  .branch-col.brass h4{color:var(--brass);}
+  .compare-card.brass{border-top-color:var(--brass);}
+  .compare-card.brass h4{color:var(--brass);}
+  .tl-year.long{font-size:12.5px;}
+  .compare-card dl{margin:0;}
+  .compare-card dt{font-weight:700; color:var(--ink); font-size:13px; margin-top:8px;}
+  .compare-card dd{margin:2px 0 0;}
+
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:16px 0 12px;}
+  @media (max-width:760px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-block{ background:var(--paper-card); border:1px solid var(--line-strong); border-left:4px solid var(--brass); padding:16px 20px; font-size:13.8px; color:var(--ink-soft); margin-bottom:20px; }
+  .quote-block h4{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .quote-block .src{margin-top:8px; font-size:12.5px; color:var(--brass); font-weight:700;}
+  .quote-block.deep{border-left-color:var(--indigo);}
+  .quote-block.deep .src{color:var(--indigo);}
+  .quote-block.crimson{border-left-color:var(--crimson);}
+  .quote-block.crimson .src{color:var(--crimson);}
+  .quote-grid .quote-block{margin-bottom:0;}
+
+  .limit-box{ background:transparent; border:1px dashed var(--line-strong); padding:16px 20px; margin:8px 0 28px; color:var(--ink-soft); font-size:13.8px; }
+  .limit-box h4{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .limit-box p{margin:0;}
+
+  .sidebox{ background:var(--brass-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .sidebox h4{font-size:14.5px; color:var(--brass); margin-bottom:10px;}
+  .sidebox p{margin:0 0 8px; font-size:13.8px; color:var(--ink-soft);}
+  .sidebox .region-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+  @media (max-width:760px){.sidebox .region-grid{grid-template-columns:1fr;}}
+  .sidebox .region{background:var(--paper-card); border:1px solid var(--line-strong); padding:10px 14px; font-size:13px; color:var(--ink-soft);}
+  .sidebox .region b{display:block; font-size:13.5px; color:var(--ink); margin-bottom:3px;}
+
+  .note-box{ background:var(--paper-card); border:1px solid var(--line-strong); padding:14px 18px; margin:8px 0 24px; font-size:13.5px; color:var(--ink-soft); }
+  .note-box a{color:var(--brass); font-weight:700; text-decoration:none;}
+
+  .think-box{ background:var(--indigo-soft); border:1px solid var(--line-strong); padding:18px 22px; margin:8px 0 28px; }
+  .think-box h4{font-size:14.5px; color:var(--indigo); margin-bottom:10px;}
+  .think-box ol{margin:0; padding-left:20px; font-size:14px;}
+  .think-box li{margin-bottom:6px;}
+
+  .check-box{ background:var(--indigo); color:var(--paper-card); padding:20px 24px; margin-top:8px; }
+  .check-box h4{font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px; color:var(--paper-card);}
+  .check-item{margin-bottom:10px; font-size:14px;}
+  .check-item summary{cursor:pointer; list-style:none; padding:2px 0;}
+  .check-item summary::-webkit-details-marker{display:none;}
+  .check-item summary::before{content:"▸ "; color:var(--brass-soft);}
+  .check-item[open] summary::before{content:"▾ "; }
+  .check-answer{ margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.08); border-radius:3px; font-size:13.5px; color:#EDE6D6; }
+  .check-group{font-family:'Noto Serif KR', serif; font-size:13.5px; color:var(--brass-soft); margin:18px 0 8px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.15);}
+  .check-group:first-child{margin-top:0; padding-top:0; border-top:none;}
+
+  .trust{ margin-top:80px; padding:28px 24px; background:var(--ink); color:#D9D3C4; font-size:13px; line-height:1.8; }
+  .trust h4{color:var(--paper-card); font-family:'Noto Serif KR', serif; font-size:15px; margin-bottom:12px;}
+  .trust ol{margin:0; padding-left:20px;}
+  .trust .note{margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); color:#B7AF98;}
+
+  .nav-pill{ position:sticky; top:0; z-index:10; background:rgba(239,233,218,0.94); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line-strong); padding:10px 24px; display:flex; gap:8px; overflow-x:auto; font-size:13px; }
+  .nav-pill a{ color:var(--ink-soft); text-decoration:none; padding:6px 12px; border-radius:100px; white-space:nowrap; border:1px solid transparent; }
+  .nav-pill a:hover{border-color:var(--line-strong); background:var(--paper-card);}
+  .nav-pill .sib{color:var(--line-strong); pointer-events:none;}
+
+  @media print{ .nav-pill{display:none;} .check-box{background:none; color:var(--ink); border:1px solid var(--line-strong);} }
+  .timeline.wide::before{left:118px;}
+  .timeline.wide .tl-year{width:118px; font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav class="nav-pill">
+  <a href="Ⅰ-3-4-03_근대문물의수용_도표(해설포함).html">‹ 이전: 근대 문물의 수용</a>
+  <a href="Ⅰ-3-4_개항이후의변화_목차.html">☰ 목차</a>
+  <a href="#overview">전체 구조</a>
+  <a href="#timeline">연표</a>
+  <a href="#equality">평등 의식</a>
+  <a href="#women">여성 의식</a>
+  <a href="#school">근대 교육</a>
+  <a href="#press">신문</a>
+  <a href="#history">국학 연구</a>
+  <a href="#religion">종교계</a>
+  <a href="#summary">정리</a>
+  <a href="#check">확인하기</a>
+  <a href="#sources">출처</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>근대 국가 수립의 노력</span> · 개항 이후의 변화</div>
+    <h1>백성에서 국민으로 — 평등을 깨친 근대 의식, 나라를 지키려는 민족의식</h1>
+    <p class="lead">갑신정변과 동학 농민 운동의 평등 요구는 갑오개혁의 신분제 폐지로 이어졌고, 독립 협회는 천부 인권 사상을 내세워 평등 의식을 확산하였다. 여성들은 여권 통문을 발표하여 여성 교육의 중요성을 강조하였다. 근대 학교와 신문은 근대 의식을 퍼뜨렸으며, 러·일 전쟁과 을사늑약 이후에는 교육·언론·국학·종교를 통해 민족의식이 강화되었다.</p>
+    <div class="hero-tags">
+      <span class="tag">고등학교 한국사 자기주도 학습용</span>
+      <span class="tag">전자칠판 수업 게시용</span>
+      <span class="tag">1883 – 1909</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="overview">
+    <div class="block-head">
+      <span class="block-num">0</span>
+      <h2>근대 의식과 민족의식, 두 갈래</h2>
+    </div>
+    <p class="block-sub">색으로 구분: <strong style="color:var(--indigo)">남색 = 근대 의식(평등·민권·여성)</strong> · <strong style="color:var(--brass)">황동색 = 민족의식</strong> · <strong style="color:var(--crimson)">적색 = 일제의 탄압</strong>. 두 의식은 같은 시기에 함께 퍼져 나갔으므로 나란히 놓고 보자.</p>
+
+    <div class="branch-root">개항 이후 근대 사상의 유입과 국권의 위기</div>
+    <p class="branch-cause">개항 이후 들어온 근대 사상과 근대 학교·신문은 사람들에게 평등과 권리를 깨우쳤고, 러·일 전쟁과 을사늑약으로 국권이 위태로워지자 나라를 지키려는 민족의식도 함께 강해졌다.</p>
+    <div class="branch-cols two">
+      <div class="branch-col deep">
+        <h4>근대 의식</h4>
+        <p class="why">나는 신분과 성별에 관계없이 권리를 가진 사람이다</p>
+        <div class="branch-node">신분제 폐지(갑오개혁), 천부 인권 사상(독립 협회)</div>
+        <div class="branch-node">여권 통문 발표, 찬양회 조직</div>
+        <div class="branch-node">근대 학교·신문을 통해 인권·민권 의식 수용</div>
+      </div>
+      <div class="branch-col brass">
+        <h4>민족의식</h4>
+        <p class="why">우리 민족의 힘으로 나라를 지켜야 한다</p>
+        <div class="branch-node">사립 학교 — 민족과 애국심을 강조하는 교육</div>
+        <div class="branch-node">『대한매일신보』 등 신문의 계몽과 애국심 고취</div>
+        <div class="branch-node">국어 연구, 「독사신론」, 천도교·대종교</div>
+      </div>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card crimson">
+        <h4>일제의 탄압</h4>
+        신문지법(1907)으로 언론 활동 탄압 — 사립 학교령으로 사립 학교 탄압 — 『대한매일신보』의 베델 기소와 상하이 추방
+      </div>
+    </div>
+    <div class="causal-link"><p>그래서 백성은 권리를 가진 국민으로 거듭나는 한편, 그 국민이 나라를 지키는 주체가 되어야 한다는 생각도 함께 자라났다.</p></div>
+  </section>
+
+  <section class="block" id="timeline">
+    <div class="block-head">
+      <span class="block-num">1</span>
+      <h2>한눈에 보는 연표</h2>
+    </div>
+    <p class="block-sub">점 색깔: <strong style="color:var(--indigo)">남색 = 근대 의식</strong> · <strong style="color:var(--brass)">황동색 = 민족의식</strong> · <strong style="color:var(--crimson)">적색 = 일제의 탄압</strong></p>
+    <div class="timeline wide">
+      <div class="tl-item deep"><div class="tl-year">1883</div><div class="tl-body"><div class="tl-title">『한성순보』 창간, 원산 학사 설립</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1884</div><div class="tl-body"><div class="tl-title">갑신정변 — 인민 평등권 확립 주장</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1886</div><div class="tl-body"><div class="tl-title">육영 공원 설립, 이화 학당 설립</div><div class="tl-desc">참고(이전 교육과정 교과서)</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1894</div><div class="tl-body"><div class="tl-title">갑오개혁 — 신분제 폐지</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1895</div><div class="tl-body"><div class="tl-title">교육 입국 조서 반포</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1896</div><div class="tl-body"><div class="tl-title">『독립신문』 창간</div></div></div>
+      <div class="tl-item deep"><div class="tl-year">1898</div><div class="tl-body"><div class="tl-title">여권 통문 발표, 찬양회 조직, 관민 공동회에서 박성춘 연설</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1904</div><div class="tl-body"><div class="tl-title">『대한매일신보』 창간</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1907</div><div class="tl-body"><div class="tl-title">신문지법 제정</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1907</div><div class="tl-body"><div class="tl-title">국문 연구소 설립</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1908</div><div class="tl-body"><div class="tl-title">신채호, 「독사신론」 연재</div></div></div>
+      <div class="tl-item crimson"><div class="tl-year">1908. 8. 26.</div><div class="tl-body"><div class="tl-title">사립 학교령 공포</div></div></div>
+      <div class="tl-item turn"><div class="tl-year">1909</div><div class="tl-body"><div class="tl-title">나철·오기호, 대종교 창시</div></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="equality">
+    <div class="block-head">
+      <span class="block-num">2</span>
+      <h2>평등 의식이 확산되다</h2>
+    </div>
+    <p class="block-sub">1898년 열린 관민 공동회에서 백정 출신인 박성춘이 연설하였다(교과서 도입 자료). 가장 낮은 신분으로 여겨지던 백정이 많은 시민과 정부 관리 앞에서 연설할 수 있게 되기까지 어떤 변화가 있었을까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">조선 후기</div>
+        <div class="step-desc">사회·경제적 변화로 양반 중심 신분제를 비판적으로 보는 시각 등장</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">갑신정변(1884)</div>
+        <div class="step-desc">인민 평등권 확립 주장</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">동학 농민 운동(1894)</div>
+        <div class="step-desc">농민군의 노비 문서 소각, 과부 재가 허용 등 요구</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">갑오개혁(1894)</div>
+        <div class="step-desc">이러한 요구를 받아들여 신분제 폐지 → 근대 사회로의 길</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">독립 협회</div>
+        <div class="step-desc">천부 인권 사상을 바탕으로 언론·집회의 자유, 신체의 자유 등 개인의 권리 보장과 남녀 차별 폐지 주장 — 토론회·강연회로 평등 의식 확산</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">애국 계몽 운동</div>
+        <div class="step-desc">독립 협회의 노력을 계승</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>신분제 폐지는 법으로 평등의 길을 열었고, 독립 협회의 토론회와 강연회는 그 평등을 사람들의 생각 속으로 퍼뜨렸다.</p></div>
+
+    <div class="quote-grid">
+      <div class="quote-block deep">
+        <h4>박성춘의 관민 공동회 연설(1898)</h4>
+        가장 천한 사람이지만, 나라를 이롭게 하려면 관민이 합심해야 합니다.
+        <div class="src">정교, 『대한계년사』 (재구성) — 장대 하나로는 차일을 받치기 힘들지만 여럿이 힘을 합치면 튼튼하다고 비유함</div>
+      </div>
+      <div class="quote-block deep">
+        <h4>민권에 대한 인식 — 『독립신문』(1897. 3. 9.)</h4>
+        자주독립을 하려면 먼저 백성의 권리부터 보호하라.
+        <div class="src">『독립신문』 (재구성) — 국민의 권리를 지켜야 나라가 부강해짐을 강조</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">EBS 자료 — 많은 시민과 정부 관료가 모인 자리에서 가장 낮은 신분으로 여겨졌던 백정 출신이 연사로 나선 점은 당시 민권 의식이 함양되고 평등 사회로 나아가고 있음을 보여 준다. 참고(이전 교육과정 교과서): 갑오개혁으로 과부의 재혼이 허용되고 고문과 연좌법이 폐지되었으며, 독립 협회는 국민 주권론을 주장하여 입헌 군주제와 의회 설립을 추진하였다.</p>
+
+    <div class="sidebox">
+      <h4>자료 탐구 4 — 차별을 넘어선 사람들 ① 박서양(교과서 157쪽)</h4>
+      <p>백정 박성춘의 아들로 제중원 의학교를 졸업하고 의사가 되었다. 1917년에 간도로 이주하여 독립운동에 헌신하였다. 아버지는 관민 공동회의 연사로, 아들은 의사이자 독립운동가로 신분의 벽을 넘어섰다.</p>
+    </div>
+
+    <div class="note-box">인민 평등권을 내건 갑신정변은 <a href="Ⅰ-3-1-06_갑신정변과열강의대립_도표(해설포함).html#gapsin">「갑신정변과 열강의 대립」</a>에서, 신분제를 폐지한 갑오개혁은 <a href="Ⅰ-3-2-02_갑오개혁_도표(해설포함).html#gabo">「갑오개혁」</a>에서, 박성춘이 연설한 관민 공동회는 <a href="Ⅰ-3-2-03_독립협회_도표(해설포함).html#manmin">「독립 협회」</a>에서 볼 수 있다.</div>
+  </section>
+
+  <section class="block" id="women">
+    <div class="block-head">
+      <span class="block-num">3</span>
+      <h2>여성 의식이 성장하다</h2>
+    </div>
+    <p class="block-sub">평등 의식이 퍼지면서 여성들도 스스로 목소리를 내기 시작하였다. 여성들은 무엇을 요구하였을까?</p>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">여권 통문(1898)</div>
+        <div class="step-desc">한성(서울 북촌)의 여성들이 발표 — 여성 교육의 중요성, 여성의 경제적 능력과 사회 진출 강조</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">여성 단체 조직</div>
+        <div class="step-desc">최초의 근대적 여성 단체인 찬양회 조직 — 여자 교육회 등 많은 여성 단체 설립, 여성 학교 설립</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">사회 활동 확대</div>
+        <div class="step-desc">교육과 의료를 중심으로 여성의 사회 활동 증가</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">국권 수호 참여</div>
+        <div class="step-desc">국채 보상 운동 등에 여성의 적극 참여</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>배울 권리를 요구한 여성들은 교육을 받아 사회로 나아갔고, 나라가 위기에 처하자 국권 수호 운동에도 앞장섰다.</p></div>
+
+    <div class="quote-block deep">
+      <h4>여권 통문 — 『독립신문』(1898. 9. 9.)</h4>
+      남녀가 같은 사람이니, 여성도 학교에서 배워 재주와 권리를 갖춰야 한다.
+      <div class="src">『독립신문』 (재구성) — 전통적 여성상에서 벗어나 사회·경제 활동 참여와 여성 교육의 필요성 주장</div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft);">참고(이전 교육과정 교과서): 1886년에 세워진 이화 학당은 우리 역사상 최초의 여성 교육 기관이었으며, 여학교가 많이 세워져 남녀평등 사상을 고취함으로써 여성의 사회 활동도 점차 활발해졌다.</p>
+
+    <div class="sidebox">
+      <h4>자료 탐구 4 — 차별을 넘어선 사람들 ② 김점동(박에스더)(교과서 157쪽)</h4>
+      <p>한국 최초의 여의사이다. 이화 학당을 졸업하고 미국에 유학하여 의사가 되었다. 귀국 후 여성 진료에 공헌하였다. 여권 통문이 요구한 여성 교육이 실제 삶을 바꾼 사례이다.</p>
+    </div>
+
+    <div class="note-box">여성들이 패물을 내놓으며 참여한 국채 보상 운동은 <a href="Ⅰ-3-4-02_경제적구국운동_도표(해설포함).html#debt">「경제적 구국 운동」</a>에서 볼 수 있다.</div>
+  </section>
+
+  <section class="block" id="school">
+    <div class="block-head">
+      <span class="block-num">4</span>
+      <h2>근대 교육 기관이 세워지다</h2>
+    </div>
+    <p class="block-sub">학교는 근대 학문을 가르치는 곳이자, 인권·민권 같은 근대 의식과 민족의식이 퍼져 나가는 통로였다. 시기에 따라 학교를 세운 주체와 목적은 어떻게 달라졌을까?</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>근대 교육 기관의 설립 — EBS 정리, 오른쪽 열은 교과서·이전 교육과정 교과서의 보충</caption>
+      <thead><tr><th>시기</th><th>근대 교육 기관(EBS)</th><th>보충</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">1880년대</td><td>원산 학사, 동문학(외국어 강습소), 육영 공원(근대적 관립 학교), 배재 학당·이화 학당 등 개신교 선교사들이 설립한 사립 학교가 근대 학문을 교육</td><td>원산 학사: 근대적 학문과 외국어를 교육한 최초의 근대식 학교, 함경도 덕원에 설립(EBS) / 육영 공원: 미국인 강사를 초빙하여 상류층 자제에게 영어를 비롯한 수학·지리학 등을 가르침(EBS)</td></tr>
+        <tr><td class="hd deep">1890년대</td><td>교육 입국 조서 반포(1895), 한성 사범 학교·소학교·외국어 학교 등 설립</td><td>교육 입국 조서: 제2차 갑오개혁 때 고종이 교육을 통한 입국(立國)의 의지를 천명한 조서 → 이후 근대적인 학제 마련(EBS)</td></tr>
+        <tr><td class="hd brass">1900년대 이후</td><td>광무개혁으로 각종 기술 교육 기관 설립 — 애국 계몽 운동으로 오산 학교, 대성 학교 등 수많은 학교와 각종 학회 설립 → 민족 교육 강조</td><td>교과서: 사립 학교들이 민족과 애국심을 강조하는 교육 실시</td></tr>
+        <tr><td class="hd crimson">탄압</td><td>일제가 사립 학교령(1908)을 통해 탄압</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">배움</div>
+        <div class="step-desc">학교에서 근대 학문과 함께 인권, 민권 등 근대 의식 수용</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">참여</div>
+        <div class="step-desc">졸업 이후 정부의 근대화 정책과 독립 협회 활동에 참여 → 근대 국가 건설 운동에 기여</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">민족 교육</div>
+        <div class="step-desc">러·일 전쟁과 을사늑약 이후 애국 계몽 운동과 항일 의병 운동으로 민족의식 강화 — 사립 학교의 민족·애국심 교육</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>근대 교육은 처음에는 나라를 부강하게 할 인재를 기르기 위해 시작되었지만, 국권이 위태로워지자 민족의 힘을 기르는 교육으로 그 의미가 넓어졌다.</p></div>
+
+    <div class="quote-block">
+      <h4>참고(이전 교육과정 교과서) — 교육 입국 조서(1895)</h4>
+      왕실의 안전도, 국가의 부강도 국민의 교육에 있다.
+      <div class="src">교육 입국 조서 (재구성) — 널리 학교를 세워 인재를 기르고, 국민은 덕·체·지를 기르라고 함</div>
+    </div>
+
+    <div class="note-box">안창호의 대성 학교, 이승훈의 오산 학교 등 애국 계몽 운동기의 교육 활동은 <a href="Ⅰ-3-3-03_애국계몽운동_도표(해설포함).html#edu">「애국 계몽 운동」</a>에서 볼 수 있다.</div>
+  </section>
+
+  <section class="block" id="press">
+    <div class="block-head">
+      <span class="block-num">5</span>
+      <h2>신문, 세상을 보는 새로운 눈이 되다</h2>
+    </div>
+    <p class="block-sub">개항 이후 국내외 정세와 정부의 개화 정책 등을 소개할 목적으로 다양한 신문이 발행되었다. 신문은 사람들에게 무엇을 알리고 무엇을 일깨웠을까?</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>개항 이후의 주요 신문 — 교과서·EBS, 「참고」 표시는 이전 교육과정 교과서</caption>
+      <thead><tr><th>신문</th><th>발행</th><th>특징</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">『한성순보』</td><td>1883, 정부(박문국)</td><td>정부가 발행한 최초의 근대적 신문, 순 한문(EBS) — 정부의 개화 정책 홍보, 국내외 정세 소개(참고)</td></tr>
+        <tr><td class="hd deep">『독립신문』</td><td>1896, 서재필 등(정부 지원)</td><td>최초의 민간 발행 신문(교과서), 순 한글과 영문으로 간행한 최초의 순 한글 신문(EBS) — 영문판으로 국내 사정을 외국인에게도 전달(참고)</td></tr>
+        <tr><td class="hd deep">『황성신문』</td><td>—</td><td>국한문 혼용, 유림층이 주 독자 — 을사늑약을 규탄한 장지연의 「시일야방성대곡」(참고)</td></tr>
+        <tr><td class="hd deep">『제국신문』</td><td>—</td><td>순 한글, 주로 서민층과 부녀자가 읽음(참고)</td></tr>
+        <tr><td class="hd brass">『대한매일신보』</td><td>1904, 양기탁·베델</td><td>베델 등이 운영, 의병 활동을 호의적으로 보도, 국채 보상 운동을 전국으로 확산(교과서·EBS) — 순 한글·국한문·영문 세 종류로 발행, 발행 부수가 가장 많았음(참고)</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--indigo)">
+        <div class="step-title">역할</div>
+        <div class="step-desc">대중을 계몽하고 애국심을 높이려 노력 — 민중 계몽과 민족의식 고취</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">국권 수호</div>
+        <div class="step-desc">일본의 침략 비판, 의병 활동 보도, 국채 보상 운동 확산</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--crimson)">
+        <div class="step-title">탄압</div>
+        <div class="step-desc">일제가 신문지법(1907)으로 언론 활동 탄압 — 신문 창간의 허가제, 발행 전 관할 기관에 사전 제출 등 통제·검열(EBS)</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>신문이 일본의 침략을 비판하고 국권 수호 운동을 전국으로 퍼뜨리자, 일제는 법을 만들어 신문을 미리 검열하고 통제하였다.</p></div>
+
+    <div class="sidebox">
+      <h4>『대한매일신보』는 어떻게 일본을 비판할 수 있었을까?(교과서 155쪽)</h4>
+      <p>양기탁과 영국인 베델이 함께 만든 신문이다. 사장인 베델이 일본과 동맹을 맺은 영국의 국민이어서 일본의 검열에서 비교적 자유로웠다.</p>
+      <p>민족의식이 투철한 박은식, 신채호 등이 논설위원으로 활동하면서 일본의 침략과 한국인의 매국 행위를 신랄하게 비판하였다.</p>
+      <p>일본은 베델을 여러 차례 기소하고 영국 정부를 통해 베델을 상하이로 보냈다. 또한 양기탁을 국채 보상 운동 기금 횡령 혐의로 재판에 넘기는 등 『대한매일신보』를 탄압하였다.</p>
+    </div>
+
+    <div class="quote-grid">
+      <div class="quote-block">
+        <h4>나라를 파는 놈을 꾸짖어 깨우다 — 『대한매일신보』(1909. 7. 31.)</h4>
+        을사늑약을 경사로 여기며 침략을 축하하는 신문은 나라를 파는 자이다.
+        <div class="src">『대한매일신보』 (재구성) — 친일 신문을 비판한 논설</div>
+      </div>
+      <div class="quote-block">
+        <h4>베델의 유언 — 『대한매일신보』(1909. 5. 8.)</h4>
+        나는 죽더라도 『대한매일신보』는 살려 한국 민족을 구하라.
+        <div class="src">『대한매일신보』 (재구성)</div>
+      </div>
+    </div>
+
+    <div class="note-box">『대한매일신보』가 앞장서 전국으로 확산한 국채 보상 운동은 <a href="Ⅰ-3-4-02_경제적구국운동_도표(해설포함).html#debt">「경제적 구국 운동」</a>에서 볼 수 있다.</div>
+  </section>
+
+  <section class="block" id="history">
+    <div class="block-head">
+      <span class="block-num">6</span>
+      <h2>국학 연구로 민족을 일깨우다</h2>
+    </div>
+    <p class="block-sub">우리 말과 우리 역사를 새롭게 연구하려는 노력은 민족이 누구인지, 무엇을 지켜야 하는지를 일깨웠다.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card brass">
+        <h4>국어 연구</h4>
+        국문 연구소 설립(1907) — 학부 안에 설치된 한글 연구 기관, 국문 연구 의정안 작성(EBS) — 주시경의 『국어 문법』 등<br><br>
+        참고(이전 교육과정 교과서): 갑오개혁 이후 공문서에 한문과 한글을 함께 쓰는 경우 증가 — 유길준의 『대한문전』 등 국어 문법 연구서 출간 — 주시경은 독립 협회 직원으로 근무하던 중 한글 표기법 통일의 필요성을 절감
+      </div>
+      <div class="compare-card brass">
+        <h4>역사 연구</h4>
+        근대 계몽 사학을 통해 애국심 고취, 민중 계몽(EBS) — 신채호의 『이순신전』, 『을지문덕전』, 「독사신론」 발표 → 민족주의 사학의 방향 제시<br><br>
+        참고(이전 교육과정 교과서): 『베트남 망국사』, 『이태리 건국 삼걸전』 등 외국의 흥망사를 다룬 역사책도 번역
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step" style="border-color:var(--ink-soft)">
+        <div class="step-title">이전의 역사 서술</div>
+        <div class="step-desc">왕조 중심의 역사 서술</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">「독사신론」(1908)</div>
+        <div class="step-desc">신채호가 『대한매일신보』에 연재 — 중국 중심의 역사 인식과 일본에 의한 고대사 왜곡 비판(EBS)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-color:var(--brass)">
+        <div class="step-title">민족 중심의 역사</div>
+        <div class="step-desc">역사 서술의 주체를 민족으로 설정 → 민족을 중심으로 우리 역사 체계화, 민족주의 사학의 연구 방향 제시</div>
+      </div>
+    </div>
+    <div class="causal-link"><p>국권이 위태로운 때에 역사의 주인공을 왕조가 아닌 민족으로 바꾼 것은, 나라를 지킬 힘이 민족에게 있다는 생각을 담고 있었다.</p></div>
+
+    <div class="quote-block">
+      <h4>신채호의 역사관 — 「독사신론」</h4>
+      국가의 역사는 민족의 소장성쇠를 서술한 것이니, 민족을 빼면 역사가 없다.
+      <div class="src">신채호, 「독사신론」 (재구성) — 소장성쇠(消長盛衰): 성하고 쇠퇴함, 발전하고 쇠퇴함(EBS)</div>
+    </div>
+  </section>
+
+  <section class="block" id="religion">
+    <div class="block-head">
+      <span class="block-num">7</span>
+      <h2>종교계가 변화하다</h2>
+    </div>
+    <p class="block-sub">종교계도 근대 교육과 의료를 펼치거나, 스스로를 혁신하고 민족의식을 고취하며 변화하였다. 색으로 구분: <strong style="color:var(--indigo)">남색 = 근대 교육·의료·양성평등에 기여</strong> · <strong style="color:var(--brass)">황동색 = 혁신과 민족의식 고취</strong>.</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>종교계의 변화 — EBS 정리, 오른쪽 열은 이전 교육과정 교과서(참고)</caption>
+      <thead><tr><th>종교</th><th>변화(EBS)</th><th>참고(이전 교육과정 교과서)</th></tr></thead>
+      <tbody>
+        <tr><td class="hd brass">유교</td><td>박은식의 「유교 구신론」 제기 — 유교의 문제점을 세 가지로 지적하고 실천적인 유교 정신을 강조하는 등 개혁 방향을 제시한 논문</td><td>민중 교화를 통해 지배층 중심의 유교를 민중 중심으로 전환하자고 주장</td></tr>
+        <tr><td class="hd brass">불교</td><td>한용운의 『조선불교유신론』 저술, 조선 불교의 자주성 수호 운동 전개</td><td>일본 불교의 침투와 통감부의 탄압으로 위기 — 조선 불교의 자주성 회복, 미신적 요소 제거 등 철저한 개혁 주장</td></tr>
+        <tr><td class="hd brass">동학 → 천도교</td><td>손병희가 천도교로 개칭, 민족의식 고취 노력(학교 설립, 기관지 『만세보』 발행)</td><td>교육·문화 사업에 힘씀 — 『만세보』는 여성 교육에도 관심, 일진회 등의 반민족 행위 비판</td></tr>
+        <tr><td class="hd brass">대종교</td><td>나철, 오기호 등이 단군 신앙을 기반으로 창시(1909) → 만주로 포교 확대 — 국권 피탈 이후 만주에서 중광단을 결성하여 무장 독립 전쟁 전개</td><td>이후 무장 독립 전쟁에서 크게 기여</td></tr>
+        <tr><td class="hd deep">천주교</td><td>소학교·고아원·양로원 등 설립, 『경향신문』 발행</td><td rowspan="2">선교 과정에서 민중과 마찰을 빚기도 했지만, 근대 교육 발전과 서양 의술 보급, 양성평등 의식 전파 등에 기여</td></tr>
+        <tr><td class="hd deep">개신교</td><td>병원 설립, 학교 설립(이화 학당, 배재 학당 등), 여성 교육과 사회봉사 활동 전개</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="causal-link"><p>서양에서 들어온 종교는 학교와 병원으로 근대 의식을 퍼뜨렸고, 우리 안의 종교는 스스로를 혁신하거나 단군 신앙을 되살려 민족의식을 일깨웠다.</p></div>
+    <p style="font-size:13px; color:var(--ink-soft);">이화 학당과 배재 학당은 4번 「근대 교육 기관이 세워지다」의 1880년대 사립 학교와, 『만세보』는 5번 「신문」과 이어진다. 김점동은 개신교 선교사가 세운 이화 학당 출신이다.</p>
+  </section>
+
+  <section class="block" id="summary">
+    <div class="block-head">
+      <span class="block-num">8</span>
+      <h2>정리 — 백성에서 국민으로</h2>
+    </div>
+    <p class="block-sub">앞 소단원에서 근대 문물이 사람들의 생활을 바꾼 모습을 보았다면, 이번에는 사람들의 생각이 어떻게 바뀌었는지 영역별로 정리해 보자.</p>
+    <div class="table-scroll">
+    <table class="data-table">
+      <caption>백성에서 국민으로 — 교과서·EBS의 내용을 영역별로 풀어 쓴 정리(풀이)</caption>
+      <thead><tr><th>영역</th><th>그전</th><th>이후</th><th>바꾼 계기</th></tr></thead>
+      <tbody>
+        <tr><td class="hd deep">신분</td><td>양반 중심의 신분 질서</td><td>법적으로 신분제 폐지 — 백정 출신도 관민 공동회에서 연설</td><td>갑신정변, 동학 농민 운동, 갑오개혁, 독립 협회</td></tr>
+        <tr><td class="hd deep">성별</td><td>전통적 여성상</td><td>여성 교육과 사회·경제 활동 참여, 국채 보상 운동 참여</td><td>여권 통문, 찬양회, 여학교</td></tr>
+        <tr><td class="hd deep">배움</td><td>근대 학문을 가르치는 학교 없음</td><td>근대 학문과 함께 인권·민권 의식 수용</td><td>원산 학사 등 근대 학교, 교육 입국 조서</td></tr>
+        <tr><td class="hd brass">소식</td><td>근대적 신문 없음</td><td>신문으로 국내외 정세를 접하고 계몽됨, 국권 수호 운동 확산</td><td>『한성순보』, 『독립신문』, 『대한매일신보』 등</td></tr>
+        <tr><td class="hd brass">역사</td><td>왕조 중심의 역사 서술</td><td>민족 중심의 역사 서술, 구국 위인의 이야기</td><td>「독사신론」, 『이순신전』·『을지문덕전』</td></tr>
+        <tr><td class="hd brass">신앙</td><td>지배층 중심의 유교(참고)</td><td>종교가 교육·의료·언론과 민족의식 고취의 기반이 됨</td><td>개신교·천주교의 학교·병원, 천도교, 대종교, 유교·불교의 혁신</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="limit-box">
+      <h4>근대 의식 확산의 어려움</h4>
+      <p>EBS: 일제가 사립 학교령을 통해 사립 학교를, 신문지법(1907)을 통해 언론 활동을 탄압하였다. 참고(이전 교육과정 교과서): 오랫동안 이어져 온 차별적 신분 의식은 쉽게 사라지지 않았고, 일제의 침략으로 우리 사회의 민주적 정치 체제 확립과 사회 발전에는 큰 어려움이 있었다.</p>
+    </div>
+
+    <div class="think-box">
+      <h4>자료 탐구 4 — 차별을 넘어선 사람들(157쪽)</h4>
+      <ol>
+        <li>김점동, 박서양 외에 근대 시기 차별을 넘어 자신의 삶을 개척한 인물을 조사해 보자.</li>
+      </ol>
+      <h4>생각해 보기 — 교과서의 길잡이 질문</h4>
+      <ol>
+        <li>평등 의식의 확산에 영향을 준 사회 운동에는 무엇이 있을까?</li>
+        <li>근대 의식과 민족의식은 어떻게 확산하였을까?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="check">
+    <div class="block-head">
+      <span class="block-num">9</span>
+      <h2>스스로 확인하기</h2>
+    </div>
+    <div class="check-box">
+      <div class="check-group">교과서 확인하기</div>
+      <div class="check-item"><details><summary>Q1. 갑오개혁에서 (　　　)이/가 폐지되어 평등 사회로의 길을 열었다.</summary>
+        <div class="check-answer">신분제</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q2. 한성에서 여성 교육의 중요성을 강조한 여권 통문이 발표되고, 뒤이어 찬양회가 조직되었다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q3. 애국 계몽 운동과 항일 의병 운동으로 한국인의 민족의식이 강화되었다. (○, ×)</summary>
+        <div class="check-answer">○</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q4. 『대한매일신보』는 (　　　) 운동을 전국으로 확산하는 데 앞장섰다.</summary>
+        <div class="check-answer">국채 보상</div>
+      </details></div>
+
+      <div class="check-group">교과서 질문 · 사료 읽기</div>
+      <div class="check-item"><details><summary>Q5. 사회적으로 차별받던 백정 출신이 관민 공동회에서 연설할 수 있었던 까닭은 무엇일까?</summary>
+        <div class="check-answer">갑오개혁으로 신분제가 법적으로 폐지되었고, 독립 협회가 천부 인권 사상을 바탕으로 토론회와 강연회를 열어 평등 의식을 확산하였기 때문이다. 백정 출신이 연사로 나선 것은 당시 민권 의식이 함양되고 평등 사회로 나아가고 있음을 보여 준다(EBS).</div>
+      </details></div>
+      <div class="check-item"><details><summary>Q6. 「독사신론」에 나타난 신채호의 역사 서술은 이전의 역사 서술과 무엇이 달랐을까?</summary>
+        <div class="check-answer">이전의 왕조 중심 역사 서술과 달리 민족을 중심으로 역사를 서술하였다. 역사 서술의 주체를 민족으로 설정하여 민족주의 사학의 연구 방향을 제시하였다.</div>
+      </details></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="trust" id="sources">
+  <div class="wrap" style="padding:0;">
+    <h4>이 자료의 출처</h4>
+    <ol>
+      <li>동아출판 고등학교 『한국사1』, Ⅲ 「근대 국가 수립의 노력」 4 「개항 이후의 변화」 04 「근대 의식의 확산」, 154–155쪽 — 본문·연표·도입 자료(박성춘)·사료 읽기(박성춘의 관민 공동회 연설, 『독립신문』의 민권 인식, 여권 통문, 신채호의 역사관)·『대한매일신보』 곁글·확인하기의 기본 출처 (1차 근거)</li>
+      <li>동아출판 고등학교 『한국사1』, 자료로 보는 한국사 자료 탐구 4 「차별을 넘어선 사람들」, 157쪽 — 김점동(박에스더), 박서양 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 「개항 이후 사회·경제의 변화와 문화 변동」 중 「서구 문물의 도입과 사회·문화 변화」 3 종교계의 변화, 「국민 의식과 민권 의식의 확산」, 곁글(한성순보·독립신문·신문지법·국문 연구소·여권통문), 112쪽 (1차 근거)</li>
+      <li>EBS 개념완성 한국사 (2022 개정), 자료 ② 독사신론, 자료 ③ 민권 의식의 성장, 113쪽 (1차 근거)</li>
+      <li>이전 교육과정 고등학교 『한국사』, 「평등 의식의 확대와 사회 모습의 변화」·「근대 문화의 발달」, 226·230–233쪽 (참고용) — 육영 공원·이화 학당 설립 연도, 교육 입국 조서, 신문별 독자층과 특징, 종교계와 국어·역사 연구의 보충 설명, 근대 의식 확산의 한계에만 활용</li>
+    </ol>
+    <div class="note">
+      「백성에서 국민으로」 표는 교과서·EBS의 내용을 이해하기 쉽도록 풀어 쓴 정리이다. 사립 학교령의 공포일(1908. 8. 26., 대한 제국 칙령 제62호)은 교과서·EBS에 없는 내용을 보충한 것이다. 이전 교육과정 교과서는 현행 교육과정 이전의 자료로, 연표·개념 구성의 기준으로 삼지 않았다. 이전 교육과정 교과서의 문학과 예술 관련 자료는 이 소주제 범위를 벗어나 반영하지 않았다.
+    </div>
+  </div>
+</footer>
+
+<!-- [자막 해설 엔진] 섹션별 집중 모드 + 타이핑 자막 재생 -->
+<style>
+  #focus-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.97); z-index: 9990; display: none;
+  }
+  .block.focus-active {
+    position: relative; z-index: 9995 !important;
+    background: #FBF8F0 !important; border: 4px solid var(--brass) !important;
+    border-radius: 12px; padding: 16px; transform: scale(1.01);
+    box-shadow: 0 0 100px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.4s ease; margin-bottom: 5px !important;
+  }
+  .subtitle-container {
+    margin-top: 10px; position: relative; background: #1A222E !important;
+    display: none; flex-direction: column; text-align: left; border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.3); border-top: 3px solid var(--brass);
+  }
+  .subtitle-ctrl-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+    background: #11161D; padding: 8px 15px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .ctrl-title { font-size: 11px; color: var(--brass-soft); font-weight: 700; letter-spacing: 0.5px; }
+  .ctrl-btns { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+  .progress-wrap { width: 100%; height: 5px; background: rgba(255,255,255,0.1); }
+  .liquid-bar { width: 0%; height: 100%; background: #FFD700; box-shadow: 0 0 12px #FFD700; transition: width 0s linear; }
+  .subtitle-body { padding: 15px 25px 25px; display: flex; flex-direction: column; gap: 8px; }
+  .sent { transition: all 0.5s ease; line-height: 1.6; font-family: 'Noto Sans KR', sans-serif; }
+  .sent.past { opacity: 0.85; font-size: 1.05em; color: #EEEEEE; }
+  .sent.current {
+    font-size: clamp(1.2em, 2vw, 1.4em); opacity: 1; color: #FFFFFF; font-weight: 700;
+    border-left: 6px solid #FFD700; padding-left: 15px;
+  }
+  .sent b { color: #FFD700 !important; text-decoration: underline; text-underline-offset: 5px; font-weight: 800; }
+  .doc-word-highlight {
+    color: #000 !important; background-color: #FFD700 !important;
+    font-weight: 900 !important; padding: 0px 4px; border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  .speed-btn { background: #4A4F58; color: #fff; border: none; padding: 3px 7px; border-radius: 3px; cursor: pointer; font-size: 10px; font-weight: 700; }
+  .speed-btn.active { background: #FFD700; color: #000; }
+  .exit-btn { background: #7A2331 !important; color:#fff !important; margin-left: 4px; }
+  .narrative-footer { text-align: right !important; padding: 5px 0; }
+  .narrative-run-btn { background: var(--brass); color: #fff; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  @media print{ .narrative-footer, .subtitle-container, #focus-overlay{display:none !important;} }
+</style>
+
+<div id="focus-overlay"></div>
+
+<script>
+  // 섹션 접두어 — 파일 ID(Ⅰ-3-4-04)의 로마 숫자를 아라비아 숫자로 치환. 섹션 id = 접두어-섹션번호(대본 p04-N과 대응)
+  const SECTION_PREFIX = "1-3-4-04";
+
+  const narrativeData = {
+    // 1-3-4-04-2: 평등 의식이 확산되다  (대본 p04-2)
+    "1-3-4-04-2": [
+      "1898년 관민 공동회에서 백정 출신 박성춘이 연단에 섰습니다. 가장 낮은 신분으로 여겨지던 사람이 관리와 시민 앞에서 나라를 걱정하는 연설을 한 것입니다. 이 장면은 하루아침에 만들어진 것이 아니었습니다.",
+      "조선 후기부터 양반 중심 신분제를 비판하는 시각이 자라났고, 갑신정변은 <b>인민 평등권</b>을, 동학 농민군은 노비 문서 소각과 과부 재가 허용을 요구했습니다. 갑오개혁은 이 요구를 받아들여 마침내 <b>신분제</b>를 법으로 폐지했습니다.",
+      "하지만 법이 바뀐다고 생각까지 바로 바뀌지는 않습니다. 그 빈자리를 채운 것이 독립 협회였습니다. 독립 협회는 사람은 누구나 태어나면서부터 권리를 가진다는 <b>천부 인권</b> 사상을 내세우고, 토론회와 강연회를 열어 평등 의식을 사람들 속으로 퍼뜨렸습니다.",
+      "박성춘의 아들 박서양은 의사가 되었고, 훗날 간도로 건너가 독립운동에 헌신했습니다. 신분의 벽이 무너지자, 이제 또 하나의 벽인 성별의 차별이 눈에 들어오기 시작했습니다."
+    ],
+    // 1-3-4-04-3: 여성 의식이 성장하다  (대본 p04-3)
+    "1-3-4-04-3": [
+      "평등 의식이 퍼지자 여성들도 스스로 목소리를 냈습니다. 1898년 서울 북촌의 여성들은 <b>여권 통문</b>을 발표해, 남녀가 같은 사람이니 여성도 학교에서 배워 재주와 권리를 갖춰야 한다고 주장했습니다.",
+      "이 요구는 말에서 그치지 않았습니다. 최초의 근대적 여성 단체인 <b>찬양회</b>가 조직되었고, 여자 교육회 같은 여성 단체와 여성 학교가 잇따라 세워졌습니다. 배울 기회를 얻은 여성들은 교육과 의료를 중심으로 사회에 진출했습니다.",
+      "이화 학당을 졸업하고 미국에서 의사가 되어 돌아온 김점동은 한국 최초의 여의사로서 여성 진료에 힘썼습니다. 여권 통문이 요구한 여성 교육이 한 사람의 삶을 실제로 바꾼 것입니다.",
+      "이렇게 자라난 여성 의식은 나라가 빚에 시달릴 때 국채 보상 운동에 적극 참여하는 모습으로도 나타났습니다. 그렇다면 이런 새로운 생각을 사람들에게 가르친 곳은 어디였을까요?"
+    ],
+    // 1-3-4-04-4: 근대 교육 기관이 세워지다  (대본 p04-4)
+    "1-3-4-04-4": [
+      "새로운 생각을 퍼뜨린 첫 번째 통로는 학교였습니다. 1880년대에는 원산 학사, 동문학, 육영 공원이 세워졌고, 선교사들도 배재 학당과 이화 학당을 열어 근대 학문을 가르쳤습니다.",
+      "1895년 고종은 <b>교육 입국 조서</b>를 반포해 교육으로 나라를 바로 세우겠다는 뜻을 밝혔습니다. 이후 한성 사범 학교와 소학교, 외국어 학교가 세워지며 근대적인 학제가 자리 잡았습니다.",
+      "학생들은 학교에서 근대 학문과 함께 인권, 민권 같은 근대 의식을 받아들였고, 졸업 뒤에는 정부의 근대화 정책과 독립 협회 활동에 참여했습니다. 학교가 근대 국가를 만드는 사람을 길러 낸 것입니다.",
+      "러·일 전쟁과 을사늑약으로 국권이 흔들리자 교육의 목적도 넓어졌습니다. 오산 학교, 대성 학교 같은 <b>사립 학교</b>가 곳곳에 세워져 민족과 애국심을 가르쳤습니다. 그러자 일제는 사립 학교령으로 이 학교들을 탄압했습니다. 학교와 함께 생각을 퍼뜨린 또 하나의 통로가 있었습니다."
+    ],
+    // 1-3-4-04-5: 신문, 세상을 보는 새로운 눈이 되다  (대본 p04-5)
+    "1-3-4-04-5": [
+      "두 번째 통로는 신문이었습니다. 1883년 정부가 박문국에서 펴낸 『한성순보』는 순 한문으로 쓰여 국내외 정세를 알렸고, 1896년 창간된 『독립신문』은 최초의 민간 신문으로 순 한글과 영문으로 발행되었습니다. 한글 신문 덕분에 더 많은 사람이 세상 소식을 읽을 수 있었습니다.",
+      "신문은 대중을 계몽하고 애국심을 높이는 데 힘썼습니다. 특히 <b>『대한매일신보』</b>는 영국인 베델이 사장이어서 일본의 검열에서 비교적 자유로웠습니다. 박은식, 신채호 등이 논설을 쓰며 일본의 침략과 매국 행위를 비판했고, 의병 활동을 호의적으로 보도하며 국채 보상 운동을 전국으로 퍼뜨렸습니다.",
+      "신문의 목소리가 커지자 일제는 1907년 <b>신문지법</b>을 만들어 신문을 미리 검열하고 통제했습니다. 베델을 기소해 상하이로 보내고, 양기탁을 재판에 넘기기도 했습니다.",
+      "학교와 신문이 새로운 생각을 실어 날랐다면, 이제는 그 생각의 뿌리인 우리 말과 역사를 다시 들여다볼 차례였습니다."
+    ],
+    // 1-3-4-04-6: 국학 연구로 민족을 일깨우다  (대본 p04-6)
+    "1-3-4-04-6": [
+      "나라가 위기에 처하자 학자들은 우리 말과 우리 역사에서 민족의 힘을 찾으려 했습니다.",
+      "먼저 우리 말입니다. 정부는 1907년 <b>국문 연구소</b>를 세워 한글을 체계적으로 연구했고, 주시경은 『국어 문법』을 펴냈습니다. 갑오개혁 이후 공문서에도 한글을 함께 쓰게 되면서, 우리 말의 규칙을 바로 세울 필요가 커졌기 때문입니다.",
+      "역사 연구도 달라졌습니다. 『이순신전』과 『을지문덕전』 같은 구국 위인의 이야기가 나와 애국심을 일깨웠습니다. 특히 신채호는 1908년 『대한매일신보』에 <b>「독사신론」</b>을 연재해, 중국 중심의 역사 인식과 일본의 고대사 왜곡을 비판했습니다.",
+      "신채호는 민족을 빼면 역사가 없다고 말했습니다. 왕조가 아니라 민족을 역사의 주인공으로 세운 것입니다. 이 생각은 <b>민족주의 사학</b>의 방향이 되었습니다. 나라를 지킬 힘이 민족에게 있다는 이 믿음은 종교계에서도 나타났습니다."
+    ],
+    // 1-3-4-04-7: 종교계가 변화하다  (대본 p04-7)
+    "1-3-4-04-7": [
+      "종교계는 두 방향으로 변화했습니다.",
+      "먼저 서양에서 들어온 종교입니다. 개신교는 병원과 이화 학당, 배재 학당 같은 학교를 세우고 여성 교육과 사회봉사에 힘썼고, 천주교는 고아원과 양로원을 세우고 『경향신문』을 발행했습니다. 이들 종교는 근대 교육과 서양 의술, 양성평등 의식을 퍼뜨리는 데 기여했습니다.",
+      "다음은 우리 안의 종교입니다. 손병희는 동학을 <b>천도교</b>로 바꾸고 학교를 세우며 『만세보』를 발행했습니다. 나철과 오기호는 1909년 단군 신앙을 바탕으로 <b>대종교</b>를 창시했는데, 대종교는 국권 피탈 뒤 만주에서 중광단을 조직해 무장 독립 전쟁에 나섰습니다.",
+      "전통 종교도 스스로를 고쳤습니다. 박은식은 「유교 구신론」으로 유교의 개혁을 주장했고, 한용운은 『조선불교유신론』으로 불교의 자주성을 지키려 했습니다. 이렇게 평등을 깨친 근대 의식과 나라를 지키려는 민족의식은 함께 자라며, 백성을 국민으로 바꾸어 갔습니다."
+    ]
+  };
+
+  let activeTimer = null;
+  let currentBaseDelay = 110 * 1.1;   // 글자당 읽기 시간(ms)
+  const TYPE_RATIO = 0.35;            // 읽기 시간 중 타이핑에 쓰는 비율
+
+  function initEngine() {
+    document.querySelectorAll('section.block').forEach(block => {
+      const numEl = block.querySelector('.block-num');
+      if (!numEl) return;
+      const blockId = `${SECTION_PREFIX}-${numEl.innerText.trim()}`;
+      if (!narrativeData[blockId]) return;
+
+      const footer = document.createElement('div');
+      footer.className = 'narrative-footer';
+      footer.innerHTML = `<button class="narrative-run-btn" onclick="runFocusNarrative('${blockId}', this)">▶️📖 위 주제 자막 해설 (클릭 재생)</button>`;
+      block.appendChild(footer);
+
+      const sub = document.createElement('div');
+      sub.id = `sub-box-${blockId}`;
+      sub.className = 'subtitle-container';
+      sub.innerHTML = `
+        <div class="subtitle-ctrl-bar">
+          <span class="ctrl-title">📖 자막 해설 재생 중</span>
+          <div class="ctrl-btns">
+            <button class="speed-btn" onclick="setSpeed(1.4, this)">x0.8</button>
+            <button class="speed-btn active" onclick="setSpeed(1.1, this)">x1.0</button>
+            <button class="speed-btn" onclick="setSpeed(0.85, this)">x1.2</button>
+            <button class="speed-btn" onclick="setSpeed(0.65, this)">x1.5</button>
+            <button class="speed-btn exit-btn" onclick="forceExit()">✕ 종료</button>
+          </div>
+        </div>
+        <div class="progress-wrap"><div id="bar-${blockId}" class="liquid-bar"></div></div>
+        <div class="subtitle-body"></div>`;
+      block.appendChild(sub);
+    });
+  }
+
+  function runFocusNarrative(id, btn) {
+    const block = btn.closest('section.block');
+    const subArea = document.getElementById(`sub-box-${id}`);
+    const subBody = subArea.querySelector('.subtitle-body');
+    const progressBar = document.getElementById(`bar-${id}`);
+
+    forceExit();
+    document.getElementById('focus-overlay').style.display = 'block';
+    block.classList.add('focus-active');
+    subArea.style.display = 'flex';
+    window.scrollTo({ top: block.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+
+    const scripts = narrativeData[id];
+    const plain = s => s.replace(/<[^>]*>/g, '');
+    const totalChars = scripts.map(plain).join('').length;
+    let step = 0, completedChars = 0;
+
+    function play() {
+      if (step >= scripts.length) {
+        const endUI = document.createElement('div');
+        endUI.style = "display:flex; gap:15px; justify-content:center; margin-top:20px; padding-top:15px; border-top:1px solid #444;";
+        endUI.innerHTML = `
+          <button class="narrative-run-btn" onclick="runFocusNarrative('${id}', this.closest('section.block').querySelector('.narrative-run-btn'))">↺ 다시 보기</button>
+          <button class="narrative-run-btn" style="background:#20242B" onclick="forceExit()">✕ 정리 완료</button>`;
+        subBody.appendChild(endUI);
+        window.scrollBy({ top: 100, behavior: 'smooth' });
+        return;
+      }
+      const prev = subBody.querySelector('.current');
+      if (prev) prev.classList.replace('current', 'past');
+
+      const html = scripts[step];
+      const now = document.createElement('div');
+      now.className = 'sent current';
+      subBody.appendChild(now);
+      accumulateWordHighlight(block, html);
+
+      const len = plain(html).length;
+      const duration = len * currentBaseDelay + 800;
+      completedChars += len;
+      progressBar.style.transition = `width ${duration}ms linear`;
+      progressBar.style.width = (completedChars / totalChars * 100) + '%';
+      window.scrollBy({ top: 80, behavior: 'smooth' });
+
+      // 한 글자씩 타이핑 — 태그는 통째로 건너뛰어 <b> 강조가 깨지지 않게 한다
+      let i = 0;
+      const typeDelay = currentBaseDelay * TYPE_RATIO;
+      const started = Date.now();
+      function typeNext() {
+        if (i < html.length) {
+          if (html[i] === '<') { i = html.indexOf('>', i) + 1; } else { i++; }
+          now.innerHTML = html.slice(0, i);
+          activeTimer = setTimeout(typeNext, typeDelay);
+        } else {
+          now.innerHTML = html;
+          step++;
+          activeTimer = setTimeout(play, Math.max(300, duration - (Date.now() - started)));
+        }
+      }
+      typeNext();
+    }
+    play();
+  }
+
+  function setSpeed(val, btn) {
+    currentBaseDelay = 110 * val;
+    btn.parentElement.querySelectorAll('.speed-btn').forEach(b => { if (!b.classList.contains('exit-btn')) b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+
+  function accumulateWordHighlight(block, htmlText) {
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    const keywords = Array.from(temp.querySelectorAll('b')).map(b => b.textContent);
+    keywords.forEach(kw => {
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const p = node.parentNode;
+        if (!p || p.className === 'doc-word-highlight' || p.closest('.subtitle-container, .narrative-footer, b')) return;
+        const pos = node.textContent.indexOf(kw);
+        if (pos >= 0) {
+          const span = document.createElement('span');
+          span.className = 'doc-word-highlight';
+          const highlighted = node.splitText(pos);
+          highlighted.splitText(kw.length);
+          span.appendChild(highlighted.cloneNode(true));
+          highlighted.parentNode.replaceChild(span, highlighted);
+        }
+      });
+    });
+  }
+
+  function forceExit() {
+    clearTimeout(activeTimer);
+    document.querySelectorAll('.block').forEach(b => b.classList.remove('focus-active'));
+    document.querySelectorAll('.subtitle-container').forEach(s => {
+      s.querySelector('.subtitle-body').innerHTML = '';
+      const bar = s.querySelector('.liquid-bar');
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.doc-word-highlight').forEach(el => {
+      const parent = el.parentNode;
+      if (parent) { parent.replaceChild(document.createTextNode(el.textContent), el); parent.normalize(); }
+    });
+    document.getElementById('focus-overlay').style.display = 'none';
+  }
+
+  window.addEventListener('load', initEngine);
+</script>
+
+</body>
+
+</html>
