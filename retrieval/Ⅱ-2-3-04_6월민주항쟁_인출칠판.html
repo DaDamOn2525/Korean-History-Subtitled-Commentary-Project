@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>떠올려 이어 보기 · Ⅱ-2-3-04 6월 민주 항쟁</title>
+<style>
+:root{
+  --u:min(1vw,1.7778vh);
+  --bg:#0f1923; --ink:#f3ecd8; --dim:#93a1b0; --faint:#5d6c7c;
+  --acc:#e8bb62; --link:#7ccbb2; --line:#273749;
+  --serif:"Noto Serif KR","Nanum Myeongjo","Batang","AppleMyungjo",serif;
+  --sans:"Noto Sans KR","Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:var(--serif);overflow:hidden}
+button{font-family:var(--sans);color:inherit;cursor:pointer}
+
+#board{position:fixed;inset:0;display:grid;grid-template-rows:auto 1fr auto;padding:calc(var(--u)*2.2) calc(var(--u)*4) calc(var(--u)*2)}
+header{display:flex;justify-content:space-between;align-items:center;min-height:calc(var(--u)*4)}
+#secTitle{font-family:var(--sans);font-size:calc(var(--u)*1.7);color:var(--dim);letter-spacing:.02em}
+#secTitle b{color:var(--ink);font-weight:600}
+#ctl{display:flex;gap:calc(var(--u)*.6);align-items:center;opacity:.45;transition:opacity .2s}
+#ctl:hover,#ctl:focus-within{opacity:1}
+#ctl button{background:transparent;border:1px solid var(--line);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.45) calc(var(--u)*1);font-size:calc(var(--u)*1.2)}
+#ctl button[aria-pressed=true]{border-color:var(--link);color:var(--link)}
+#ctl .sep{width:1px;height:calc(var(--u)*2);background:var(--line);margin:0 calc(var(--u)*.3)}
+
+#stage{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 calc(var(--u)*4)}
+#stem{font-size:calc(var(--u)*3.3);line-height:1.58;max-width:calc(var(--u)*82);word-break:keep-all;text-wrap:balance;min-height:calc(var(--u)*10)}
+.prev{color:var(--link);border-bottom:calc(var(--u)*.14) solid currentColor}
+#cnt{font-family:var(--sans);font-size:calc(var(--u)*1.7);color:var(--acc);letter-spacing:.04em;min-height:calc(var(--u)*2.6);margin-top:calc(var(--u)*.8);visibility:hidden}
+#timer{width:calc(var(--u)*36);height:calc(var(--u)*.3);background:var(--line);border-radius:9px;margin:calc(var(--u)*2.6) 0 calc(var(--u)*2.2);overflow:hidden;transition:opacity .3s}
+#timerBar{display:block;height:100%;width:100%;background:var(--link);transform-origin:left}
+#ans{min-height:calc(var(--u)*12);opacity:0;transform:translateY(calc(var(--u)*1));transition:opacity .45s,transform .45s}
+#ans.on{opacity:1;transform:none}
+#ansText{font-size:calc(var(--u)*5.2);color:var(--acc);font-weight:700}
+#ansNote{font-family:var(--sans);font-size:calc(var(--u)*1.7);color:var(--dim);margin-top:calc(var(--u)*.8)}
+#ansRef{font-family:var(--sans);font-size:calc(var(--u)*1.35);color:var(--faint);margin-top:calc(var(--u)*.5)}
+#ansText.multi{font-size:inherit;font-weight:400}
+.alist{display:flex;flex-wrap:wrap;justify-content:center;gap:calc(var(--u)*1.1) calc(var(--u)*1.2);max-width:calc(var(--u)*84)}
+.aitem{display:flex;flex-direction:column;align-items:center;gap:calc(var(--u)*.3);border:1px solid rgba(232,187,98,.5);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.7);animation:pop .6s both}
+.aitem .al{font-family:var(--sans);font-size:calc(var(--u)*1.2);color:var(--dim);letter-spacing:.05em}
+.aitem .at{font-size:calc(var(--u)*3.1);color:var(--acc);font-weight:700}
+body.nonote #ansNote,body.nonote #ansRef{display:none}
+#ansMask{display:none;font-family:var(--sans);background:transparent;border:2px dashed var(--faint);color:var(--dim);border-radius:calc(var(--u)*1);padding:calc(var(--u)*1.6) calc(var(--u)*6);font-size:calc(var(--u)*3);letter-spacing:.3em}
+#ansMask small{display:block;font-size:calc(var(--u)*1.3);letter-spacing:0;color:var(--faint);margin-top:calc(var(--u)*.6)}
+#ansMask:hover{border-color:var(--acc);color:var(--acc)}
+body.masked #ansText,body.masked #ansNote,body.masked #ansRef{display:none}
+body.masked #ansMask{display:block}
+#pauseTag{position:absolute;right:calc(var(--u)*4);bottom:calc(var(--u)*.5);font-family:var(--sans);font-size:calc(var(--u)*1.3);color:var(--acc);display:none}
+body.paused #pauseTag{display:block}
+#cue{position:absolute;left:50%;bottom:calc(var(--u)*1.2);transform:translateX(-50%);display:none;z-index:3;background:transparent;border:1px solid var(--acc);color:var(--acc);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*.8) calc(var(--u)*2.6);font-size:calc(var(--u)*1.9)}
+#cue:hover{background:rgba(232,187,98,.12)}
+
+footer{padding-top:calc(var(--u)*1)}
+#chain{display:flex;justify-content:center;gap:calc(var(--u)*2.2)}
+.grp{display:flex;flex-direction:column;align-items:center;gap:calc(var(--u)*.55)}
+.glabel{font-family:var(--sans);font-size:calc(var(--u)*1.05);line-height:calc(var(--u)*1.5);height:calc(var(--u)*1.5);color:var(--faint);background:none;border:0;padding:0;white-space:nowrap}
+.grp.cur .glabel{color:var(--ink)}
+.dots{display:flex;gap:calc(var(--u)*.45)}
+.dot{width:calc(var(--u)*1.15);height:calc(var(--u)*1.15);border-radius:50%;border:calc(var(--u)*.14) solid var(--faint);background:transparent;padding:0}
+.dot.multi{border-radius:calc(var(--u)*.3)}
+.dot.done{background:var(--link);border-color:var(--link)}
+.dot.cur{border-color:var(--acc);box-shadow:0 0 0 calc(var(--u)*.22) rgba(232,187,98,.32)}
+
+/* 구간 사이 화면 */
+#inter{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--bg);padding:0 calc(var(--u)*4)}
+#inter.on{display:flex}
+.itag{font-family:var(--sans);font-size:calc(var(--u)*1.7);color:var(--dim);margin-bottom:calc(var(--u)*3)}
+.ichips{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:calc(var(--u)*1.2) calc(var(--u)*1.3);max-width:calc(var(--u)*86)}
+.ipair{display:flex;align-items:center;gap:calc(var(--u)*1.3);white-space:nowrap}
+.ichip{font-size:calc(var(--u)*2.5);color:var(--acc);border:1px solid rgba(232,187,98,.45);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*.6) calc(var(--u)*1.4);animation:pop .6s both}
+.ipair.m{white-space:normal}
+.ichip.m{font-size:calc(var(--u)*2);max-width:calc(var(--u)*46)}
+.iarr{font-size:calc(var(--u)*2.2);color:var(--link);animation:pop .6s both}
+.inext{font-family:var(--sans);font-size:calc(var(--u)*1.7);color:var(--faint);margin-top:calc(var(--u)*3.4)}
+@keyframes pop{from{opacity:0;transform:translateY(calc(var(--u)*.9))}to{opacity:1;transform:none}}
+
+/* 시작·마지막 화면 */
+.full{position:fixed;inset:0;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--bg);padding:calc(var(--u)*3) calc(var(--u)*4);z-index:5}
+.full.on{display:flex}
+#start h1{font-size:calc(var(--u)*4.6);font-weight:700;margin:0 0 calc(var(--u)*1.6);line-height:1.4}
+#start .sub{font-family:var(--sans);font-size:calc(var(--u)*1.9);color:var(--dim);margin-bottom:calc(var(--u)*3.4)}
+#start p{font-size:calc(var(--u)*2.1);line-height:1.8;color:var(--ink);margin:0}
+#start p.mute{color:var(--dim)}
+.btnrow{display:flex;gap:calc(var(--u)*1.4);margin-top:calc(var(--u)*3.6);align-items:stretch}
+.btn{background:transparent;border:1px solid var(--acc);color:var(--acc);font-size:calc(var(--u)*1.9);padding:calc(var(--u)*.9) calc(var(--u)*2.6);border-radius:calc(var(--u)*.8);text-align:center;line-height:1.35}
+.btn small{display:block;font-size:calc(var(--u)*1.2);color:var(--dim);margin-top:calc(var(--u)*.3)}
+.btn:hover{background:rgba(232,187,98,.12)}
+.btn.ghost{border-color:var(--line);color:var(--dim)}
+.btn.ghost:hover{background:rgba(255,255,255,.04)}
+#start .btn{margin:0}
+
+#finale h2{font-size:calc(var(--u)*3);font-weight:700;margin:0 0 calc(var(--u)*2.2)}
+#rows{width:100%;max-width:calc(var(--u)*92);display:flex;flex-direction:column;gap:calc(var(--u)*1.05)}
+.row{display:flex;align-items:center;gap:calc(var(--u)*1.4);text-align:left}
+.rlabel{flex:0 0 calc(var(--u)*8.2);font-family:var(--sans);font-size:calc(var(--u)*1.15);color:var(--dim);text-align:right;line-height:1.3}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.5) calc(var(--u)*.2)}
+.full{overflow:auto}
+#finale{justify-content:safe center}
+#rows.dense{gap:calc(var(--u)*.6)}
+#rows.dense .chip{font-size:calc(var(--u)*1.1);padding:calc(var(--u)*.22) calc(var(--u)*.6)}
+#rows.dense .arrow{font-size:calc(var(--u)*1.1);padding:0 calc(var(--u)*.45)}
+#rows.dense .arrow em{font-size:calc(var(--u)*.75);top:calc(var(--u)*-.9)}
+#rows.dense .rlabel{font-size:calc(var(--u)*1.05)}
+.fpair{display:inline-flex;align-items:center;white-space:nowrap}
+.chip.m{white-space:normal;max-width:calc(var(--u)*40)}
+.chip{font-size:calc(var(--u)*1.3);color:var(--acc);border:1px solid rgba(232,187,98,.4);border-radius:calc(var(--u)*.5);padding:calc(var(--u)*.35) calc(var(--u)*.85);white-space:nowrap}
+.arrow{position:relative;font-size:calc(var(--u)*1.3);color:var(--link);padding:0 calc(var(--u)*.7);font-family:var(--sans)}
+.arrow em{position:absolute;left:50%;top:calc(var(--u)*-1.05);transform:translateX(-50%);font-style:normal;font-size:calc(var(--u)*.85);color:var(--faint)}
+#finale .hint{font-family:var(--sans);font-size:calc(var(--u)*1.55);color:var(--dim);margin-top:calc(var(--u)*2.4)}
+#finale .btn{margin-top:calc(var(--u)*1.6);font-size:calc(var(--u)*1.4);padding:calc(var(--u)*.6) calc(var(--u)*2)}
+
+/* 설정 패널 */
+#panel{position:fixed;top:0;right:0;bottom:0;width:calc(var(--u)*34);background:#132130;border-left:1px solid var(--line);padding:calc(var(--u)*2.2);z-index:10;overflow:auto;font-family:var(--sans);transform:translateX(104%);transition:transform .25s;visibility:hidden}
+#panel.on{transform:none;visibility:visible}
+.phead{display:flex;justify-content:space-between;align-items:center;margin-bottom:calc(var(--u)*2.2);font-size:calc(var(--u)*1.8);font-weight:600}
+.phead button{background:transparent;border:1px solid var(--line);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.4) calc(var(--u)*1);font-size:calc(var(--u)*1.2)}
+.pgrp{margin-bottom:calc(var(--u)*2)}
+.plabel{font-size:calc(var(--u)*1.3);color:var(--dim);margin-bottom:calc(var(--u)*.7)}
+.seg{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5)}
+.seg button{background:transparent;border:1px solid var(--line);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.55) calc(var(--u)*1.1);font-size:calc(var(--u)*1.3)}
+.seg[data-key=range]{flex-direction:column}
+.seg[data-key=range] button{text-align:left}
+.seg button small{color:var(--dim);margin-left:calc(var(--u)*.4);font-size:calc(var(--u)*1.1)}
+.seg button[aria-pressed=true]{border-color:var(--acc);color:var(--acc)}
+.pfoot{font-size:calc(var(--u)*1.1);color:var(--faint);margin-top:calc(var(--u)*1.5);line-height:1.6}
+
+/* 목차·요약도표로 돌아가는 링크 */
+#ctl a.nl{background:transparent;border:1px solid var(--line);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.45) calc(var(--u)*1);font-size:calc(var(--u)*1.2);color:inherit;text-decoration:none;font-family:var(--sans);white-space:nowrap}
+#ctl a.nl:hover,#ctl a.nl:focus-visible{border-color:var(--link);color:var(--link)}
+.outlinks{display:flex;gap:calc(var(--u)*2.4);justify-content:center;margin-top:calc(var(--u)*2.6);font-family:var(--sans);font-size:calc(var(--u)*1.5)}
+.outlinks a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:calc(var(--u)*.15)}
+.outlinks a:hover,.outlinks a:focus-visible{color:var(--link);border-bottom-color:var(--link)}
+</style>
+</head>
+<body>
+<div id="board">
+  <header>
+    <div id="secTitle"></div>
+    <div id="ctl">
+      <a class="nl" href="../한국사2_2단원(해설자막포함)/Ⅱ-2-3-04_6월민주항쟁_도표(해설포함).html" title="요약도표로">← 요약도표</a>
+      <a class="nl" href="index.html" title="인출 목차로">☰ 목차</a>
+      <span class="sep"></span>
+      <button id="bPrev" title="이전 (←)">◀ 이전</button>
+      <button id="bPause" title="일시정지 (Space)">일시정지</button>
+      <button id="bStep" title="다음 (→ / Enter)">다음 ▶</button>
+      <span class="sep"></span>
+      <button id="pClass" aria-pressed="false" title="수업용: 짧게, 정답만, 자동 진행">수업용</button>
+      <button id="pSelf" aria-pressed="false" title="자습용: 직접 넘기며, 관련 개념어까지">자습용</button>
+      <button id="bGear" title="세부 설정">⚙ 설정</button>
+      <button id="bFs" title="전체화면 (F)">전체화면</button>
+    </div>
+  </header>
+  <main id="stage">
+    <div id="stem"></div>
+    <div id="cnt"></div>
+    <div id="timer"><span id="timerBar"></span></div>
+    <div id="ans"><button id="ansMask" type="button" title="정답 열기 (A)">정답 가림<small>눌러서 열기 (A)</small></button><div id="ansText"></div><div id="ansNote"></div><div id="ansRef"></div></div>
+    <div id="inter"></div>
+    <button id="cue" type="button"></button>
+    <div id="pauseTag">일시정지</div>
+  </main>
+  <footer><nav id="chain" aria-label="전체 문항"></nav></footer>
+</div>
+
+<section id="start" class="full on">
+  <h1>책을 덮고,<br>이어서 떠올려 봅니다</h1>
+  <div class="sub">Ⅱ-2-3-04 · 신군부의 집권에서 노태우 정부까지</div>
+  <p>떠오른 말은 책 여백에 적습니다. 답이 여럿인 물음은 ‘답 n개’라고 알려 줍니다.</p>
+  <p>앞의 답이 뒤의 물음 속으로 이어집니다. 놓쳐도 이어서 따라오면 됩니다.</p>
+  <p class="mute">점수도, 기록도 없습니다.</p>
+  <div class="btnrow">
+    <button class="btn" id="bStartClass">수업용으로 시작<small></small></button>
+    <button class="btn" id="bStartSelf">자습용으로 시작<small></small></button>
+    <button class="btn ghost" id="bStartSet">세부 설정<small>시간 · 정답 · 개념어</small></button>
+  </div>
+  <nav class="outlinks" aria-label="다른 자료로 이동"><a href="../한국사2_2단원(해설자막포함)/Ⅱ-2-3-04_6월민주항쟁_도표(해설포함).html">← 요약도표로</a><a href="index.html">☰ 인출 목차</a></nav>
+</section>
+
+<section id="finale" class="full">
+  <h2>하나의 사슬</h2>
+  <div id="rows"></div>
+  <div class="hint">화살표 하나를 골라 ‘왜?’를 물어봅니다. 묻는 것이 이 시간의 공부입니다.</div>
+  <button class="btn" id="bRestart">처음부터 다시</button>
+  <nav class="outlinks" aria-label="다른 자료로 이동"><a href="../한국사2_2단원(해설자막포함)/Ⅱ-2-3-04_6월민주항쟁_도표(해설포함).html">← 요약도표로</a><a href="index.html">☰ 인출 목차</a></nav>
+</section>
+
+<aside id="panel" aria-hidden="true">
+  <div class="phead"><span>설정</span><button id="pClose">닫기 (Esc)</button></div>
+  <div id="pBody"></div>
+  <div class="pfoot">바꾼 설정은 이 기기의 브라우저에 기억됩니다. 진행 중에도 바로 적용됩니다.</div>
+</aside>
+
+<script>
+(function(){
+"use strict";
+
+/* ── 자료: 한 소단원 = 이 객체 하나. 다른 소단원은 이 부분만 바꿉니다. ──
+   it(수준, 발문, [정답…], 정답 아래 설명, 쪽수)
+   수준 1 = 핵심, 2 = 표준에서 추가, 3 = 전체에서 추가
+   정답이 둘 이상이면 복수 답 문항입니다. "분류|정답" 형태로 쓰면 분류가 단서(‘입법 2 · 사법 1’)로 먼저 보입니다.
+   발문의 [[말]]은 앞에서 답한 말일 때만 강조되고, 그 문항이 보이지 않으면 그냥 글자로 나옵니다. */
+const it = (lv, q, a, note, ref) => ({lv, q, a, note, ref});
+const DATA = {
+  id: "Ⅱ-2-3-04",
+  sections: [
+    { short:"신군부", title:"신군부, 불법적으로 정권을 장악하다", items:[
+      it(1,"5·18을 진압한 직후 신군부가 대통령 아래 설치해 실권을 장악한 초헌법 기구는?",["국가 보위 비상 대책 위원회"],"국보위 · 1980년 · 신군부의 정권 장악","교 106 · EBS 206"),
+      it(1,"[[국가 보위 비상 대책 위원회]] 시기 신군부가 언론과 인권을 억누른 조치는?",["언론|언론 통폐합","인권|삼청 교육대"],"언론 통폐합: 동양방송이 KBS 2TV로 · 삼청 교육대: 1980년 8월, 2만여 명 강제 수용","교 106 · EBS 206"),
+      it(1,"1980년 8월 신군부의 중심인물이 간접 선거로 대통령에 올랐다. 그 사람과 그를 뽑은 기구는?",["인물|전두환","기구|통일 주체 국민 회의"],"1980년 8월 당선 · 간접 선거","교 106 · EBS 206"),
+      it(2,"1981년 새 헌법에 따라 전두환을 다시 대통령으로 뽑은 간접 선거 기구는?",["대통령 선거인단"],"7년 단임 · 1981년 재선출","교 106 · EBS 206"),
+      it(3,"[[전두환]] 정부의 집권 여당으로 창당된 정당은?",["민주 정의당"],"민정당","교 106 · EBS 206")
+    ]},
+    { short:"탄압", title:"전두환 정부가 민주화 운동을 탄압하다", items:[
+      it(2,"민주화 운동가와 학생을 반체제 혐의로 구속하는 데 쓰인 법은?",["국가 보안법"],"민주화 운동 탄압 · 구속","교 106"),
+      it(3,"시위 진압을 위해 대학 안팎에 투입된 경찰 조직은?",["전투 경찰"],"학원 통제 · 대학 투입","교 106"),
+      it(2,"시위에 참여한 대학생을 강제로 입대시켜 학생 운동을 탄압한 사업은?",["녹화 사업"],"강제 입대 · 학생 운동 탄압","교 106"),
+      it(1,"[[언론 통폐합]] 뒤 정부가 신문·방송에 기사의 내용과 방향을 지시한 비밀 문건으로, 1986년 폭로된 것은?",["보도 지침"],"언론 통제 · 검열 · 1986년 폭로","교 106 · EBS 206"),
+      it(2,"억압 한편에서 국민의 불만을 달래려 내놓은 유화 정책 가운데, 시간과 복장에 관한 것은?",["통행|야간 통행 금지 해제","복장|교복 자율화"],"0시~4시 통행금지 전면 해제 · 중고생 교복","교 106 · EBS 206")
+    ]},
+    { short:"직선제 요구", title:"전두환 정부, 국민들의 직선제 요구를 거부하다", items:[
+      it(3,"5·18 때 미국이 신군부를 묵인했다는 비판에서 시작된 학생 운동의 흐름은?",["반미 운동"],"5·18 이후 · 미국 방조 비판","교 107"),
+      it(3,"[[반미 운동]]의 흐름 속에서 1982년 남쪽 항구 도시의 학생들이 불을 지른 사건은?",["부산 미국 문화원 방화 사건"],"1982년 · 부산","교 107"),
+      it(3,"1980년대 중반 학생 운동을 이끈 대학생 연합 조직은?",["전국 학생 연합"],"전학련","교 107"),
+      it(2,"1984년 5월 김영삼·김대중 등 재야와 야당 인사가 결성해 정치적 자유를 요구한 단체는?",["민주화 추진 협의회"],"1984년 5월 · 김영삼 · 김대중","교 107"),
+      it(1,"[[민주화 추진 협의회]] 인사들이 1985년 창당해 총선에서 제1야당이 된 정당은?",["신한 민주당"],"1985년 창당 · 제1야당","교 107 · EBS 206"),
+      it(2,"[[신한 민주당]]을 중심으로 직선제 개헌을 바라는 뜻을 모아 전국에서 벌인 서명 운동은?",["천만 인 서명 운동"],"직선제 개헌 · 전국적 서명","교 107"),
+      it(2,"직선제 요구가 커지자 정부가 안보 위기를 부풀려 이용한 사례는?",["조작|간첩단 사건","왜곡 선전|금강산댐"],"간첩단 사건: 조작 · 금강산댐: 평화의 댐 성금","교 107"),
+      it(3,"1986년 경찰에 위장 취업 혐의로 연행된 여대생이 당한 인권 유린 사건은?",["부천 경찰서 성 고문 사건"],"1986년 · 권인숙","EBS 206"),
+      it(1,"1987년 1월 서울대생이 경찰 조사 중 물고문으로 숨진 사건은?",["박종철 고문 치사 사건"],"1987년 1월 · ‘탁! 치니 억! 하고’","교 107 · EBS 206"),
+      it(3,"[[박종철 고문 치사 사건]]이 일어난 장소로, 현재 민주화 운동 기념관이 된 곳은?",["남영동 대공 분실"],"고문 장소 · 현재 기념관","교 107"),
+      it(1,"직선제 개헌 요구가 커지자 전두환이 현행 헌법대로 대통령 선거를 치르겠다고 밝힌 조치는?",["4·13 호헌 조치"],"1987년 4월 13일 · 간선제 고수","교 107 · EBS 206")
+    ]},
+    { short:"6월 항쟁", title:"시민들, 대통령 직선제를 쟁취하다", items:[
+      it(1,"[[박종철 고문 치사 사건]]의 은폐·조작 사실을 폭로한 종교 단체는?",["천주교 정의 구현 사제단"],"은폐·조작 사실 공개","교 108 · EBS 206"),
+      it(1,"[[4·13 호헌 조치]]에 맞서 재야와 야당이 연합해 호헌 철폐를 외친 단체는?",["민주 헌법 쟁취 국민 운동 본부"],"국민운동본부 · 독재 타도","교 108 · EBS 206"),
+      it(1,"연세대 앞 시위 중 최루탄에 맞아 쓰러져 6월 항쟁의 불길을 키운 대학생은?",["이한열"],"1987년 6월 9일 · 연세대 · 의식불명","교 108 · EBS 206"),
+      it(1,"[[민주 헌법 쟁취 국민 운동 본부]]가 호헌 철폐를 외치며 전국 18개 도시에서 연 대규모 시민 집회는?",["6·10 국민 대회"],"1987년 6월 10일 · 18개 도시","교 108 · EBS 206"),
+      it(3,"6월 항쟁 때 시위대와 농성의 거점이 된 서울의 성당은?",["명동 성당"],"1987년 6월 · 시위 농성 장소","교 108"),
+      it(2,"6월 항쟁 후반 전국에서 열린 두 대규모 시위는?",["6월 18일|최루탄 추방 대회","6월 26일|국민 평화 대행진"],"전국 시위 · 6월 26일에는 100만 명","교 108"),
+      it(1,"항쟁에 밀려 여당 대통령 후보가 직선제 수용 등 8개 항을 발표한 선언은?",["6·29 선언"],"1987년 6월 29일 · 6·29 민주화 선언 · 8개 항","교 108 · EBS 206"),
+      it(2,"[[6·29 선언]]을 발표한 민주 정의당 대통령 후보로, 직선제 대선에서 당선된 사람은?",["노태우"],"민주 정의당 · 대통령 후보","교 108 · EBS 206"),
+      it(1,"직선제 개헌을 이끌어 낸 1987년의 범국민적 시민 항쟁은?",["6월 민주 항쟁"],"1987년 6월","교 108 · EBS 206"),
+      it(3,"학생과 노동자, 직장인, 종교인까지 전 계층이 함께한 6월 항쟁의 성격은?",["범국민적"],"전 계층 참여","교 108"),
+      it(2,"[[6월 민주 항쟁]]이 민주주의에 남긴 성과는?",["선거|직선제","정권|평화적 정권 교체"],"직선제 개헌 · 군부 독재 종식","교 108 · EBS 206")
+    ]},
+    { short:"노태우 정부", title:"노태우 정부가 들어서다", items:[
+      it(2,"1987년 대선에서 갈라져 맞선 세 야당 후보가 이끈 정당은?",["김영삼|통일 민주당","김대중|평화 민주당","김종필|신민주 공화당"],"야권 분열","교 314"),
+      it(1,"야권이 갈라진 대선에서 36% 득표로 당선되어 1988년 2월 출범한 정부는?",["노태우 정부"],"1988년 2월 · 직선제 당선 · 36% 득표","교 314"),
+      it(1,"1988년 4월 총선에서 여당이 과반수를 얻지 못해 야당 의석이 더 많아진 정국은?",["여소 야대"],"1988년 4월 · 국회의원 선거","교 314"),
+      it(2,"[[여소 야대]]의 국회가 전두환 정부의 비리와 5·18 진상을 캐려 연 청문회는?",["5공 청문회"],"일해 재단 · 5·18 진상","교 314"),
+      it(3,"[[5공 청문회]] 뒤 전두환이 설악산 사찰에서 2년여 은둔한 곳은?",["백담사"],"전두환 은둔","교 314"),
+      it(1,"여소 야대를 뒤집으려 1990년 2월 여당과 두 야당이 합친 일은?",["3당 통합"],"1990년 2월 · 3당 합당","교 314"),
+      it(3,"[[3당 통합]]으로 출범한 거대 여당은?",["민주 자유당"],"민자당","교 314"),
+      it(2,"6·29 선언 이후 이어진 민주화 조치 가운데 지방과 언론에 관한 것은?",["지방|지방 자치제","언론|언론 기본법 폐지"],"지방 자치제: 1991년 시·군·구 의회 부분 실시 · 언론 자유 신장","교 314"),
+      it(3,"1988년 한국에서 열려 냉전 완화의 분위기 속에 동구권 선수단도 참가한 국제 대회는?",["서울 올림픽"],"1988년 · 북방 외교","교 314"),
+      it(1,"[[서울 올림픽]]을 계기로 동구권과 소련·중국으로 관계를 넓힌 외교 정책은?",["북방 외교"],"동구권 · 소련·중국과 수교","교 314"),
+      it(1,"[[북방 외교]]의 흐름 속에서 1991년 9월 남북한이 함께 이룬 국제 기구 가입은?",["유엔 동시 가입"],"1991년 9월 · 남북한","교 314")
+    ]}
+  ]
+};
+DATA.sections.forEach(s => s.items.forEach(x => { x.ans = x.a.map(parseA); }));
+function parseA(s){ const k = s.indexOf("|"); return k < 0 ? {l:"", t:s} : {l:s.slice(0, k), t:s.slice(k + 1)}; }
+(function(){ let g = 0; DATA.sections.forEach((s, si) => s.items.forEach(x => { x.gid = g++; x.si = si; })); })();
+
+/* ── 설정 ── */
+const OPTS = [
+  {key:"range",   label:"문항 수",       choices:[[1,"핵심"],[2,"표준"],[3,"전체"]]},
+  {key:"stemSec", label:"문제 노출 시간 (복수 답은 자동으로 더 줌)", choices:[[5,"5초"],[7,"7초"],[10,"10초"],["auto","문장 길이에 맞춤"]]},
+  {key:"reveal",  label:"정답 공개",     choices:[["auto","시간이 되면 자동"],["click","눌러서 보기"]]},
+  {key:"hide",    label:"정답 표시",     choices:[[0,"보이기"],[1,"가리기 (눌러서 열기)"]]},
+  {key:"advance", label:"다음 문항으로", choices:[["auto","자동으로 넘김"],["click","눌러서 넘김"]]},
+  {key:"note",    label:"정답 아래 관련 개념어·쪽수", choices:[[1,"보이기"],[0,"숨기기"]]},
+  {key:"inter",   label:"구간이 끝났을 때", choices:[["show","사슬 요약을 보여 주고 이어 감"],["hold","사슬 요약에서 멈춤"],["skip","바로 다음 구간"]]}
+];
+const RANGE_NAME = {1:"핵심", 2:"표준", 3:"전체"};
+const PRESETS = {
+  class:{range:1, stemSec:7, reveal:"auto",  hide:0, advance:"auto",  note:0, inter:"skip"},
+  self: {range:3, stemSec:"auto", reveal:"click", hide:0, advance:"click", note:1, inter:"hold"}
+};
+const KEY = "recallBoard.II2304.v1";
+const cfg = Object.assign({}, PRESETS.class);
+function loadCfg(){
+  try {
+    const j = JSON.parse(localStorage.getItem(KEY) || "null");
+    if (j && j.cfg) OPTS.forEach(o => { if (o.choices.some(c => c[0] === j.cfg[o.key])) cfg[o.key] = j.cfg[o.key]; });
+  } catch (e) {}
+}
+function saveCfg(){ try { localStorage.setItem(KEY, JSON.stringify({cfg})); } catch (e) {} }
+
+/* ── 준비 ── */
+const BETWEEN = 5600;
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const plainLen = s => s.replace(/\[\[|\]\]/g, "").length;
+
+/* 고른 문항 수에 맞춰 문항 목록을 만든다 */
+function makeQ(range){
+  const Qn = [], st = [], ln = [], seen = new Set();
+  DATA.sections.forEach((s, si) => {
+    const vis = s.items.filter(x => x.lv <= range);
+    st.push(Qn.length); ln.push(vis.length);
+    vis.forEach((x, ii) => {
+      Qn.push({si, ii, gid:x.gid, q:x.q, len:plainLen(x.q), ans:x.ans, note:x.note, ref:x.ref, seen:new Set(seen)});
+      x.ans.forEach(a => seen.add(a.t));
+    });
+  });
+  return {Q:Qn, secStart:st, secLen:ln};
+}
+const Q = [], secStart = [], secLen = [];
+let builtRange = 0;
+function build(){
+  const m = makeQ(cfg.range);
+  Q.length = 0; secStart.length = 0; secLen.length = 0;
+  m.Q.forEach(q => Q.push(q)); m.secStart.forEach(v => secStart.push(v)); m.secLen.forEach(v => secLen.push(v));
+  builtRange = cfg.range;
+}
+const secItems = si => Q.filter(q => q.si === si);
+const fmtStem = q => esc(q.q).replace(/\[\[(.+?)\]\]/g, (m, x) => q.seen.has(x) ? '<span class="prev">' + x + '</span>' : x);
+const ansJoin = q => q.ans.map(a => a.t).join(" · ");
+function cueOf(q){
+  if (q.ans.length < 2) return "";
+  let s = "답 " + q.ans.length + "개";
+  const m = new Map();
+  q.ans.forEach(a => { if (a.l) m.set(a.l, (m.get(a.l) || 0) + 1); });
+  if (m.size) s += " · " + [...m].map(([k, v]) => v > 1 ? k + " " + v : k).join(" · ");
+  return s;
+}
+
+/* 노출·정답 시간 (복수 답은 답 하나당 시간을 더 준다) */
+const secFor = q => Math.max(7, Math.min(11, Math.round(5 + q.len / 18)));
+const multiBonus = q => q.ans.length > 1 ? Math.min(4.5, (q.ans.length - 1) * 1.5) * 1000 : 0;
+const stemDur = (q, c = cfg) => (c.stemSec === "auto" ? secFor(q) : c.stemSec) * 1000 + multiBonus(q);
+const holdBase = (q, c = cfg) => (c.note ? 3000 : 2200) + (q.ans.length > 1 ? (q.ans.length - 1) * 700 : 0);
+const ansHold = () => masked() ? 2000 : holdBase(Q[state.qi]);
+
+const state = {mode:"start", qi:0, si:0, elapsed:0, dur:0, paused:false, opened:false, done:new Set()};
+const masked = () => !!cfg.hide && !state.opened;
+function paintAnswer(){ document.body.classList.toggle("masked", state.mode === "answer" && masked()); }
+function setMode(m){ state.mode = m; document.body.dataset.mode = m; }
+
+/* 예상 시간: 자동 진행일 때만 계산한다 */
+function estimate(range, c = cfg){
+  if (c.reveal === "click" || c.advance === "click") return null;
+  const m = makeQ(range); let ms = 0;
+  m.Q.forEach(q => { ms += stemDur(q, c) + holdBase(q, c); });
+  if (c.inter === "show") ms += BETWEEN * (DATA.sections.length - 1);
+  return ms;
+}
+function fmtTime(ms){
+  const s = Math.round(ms / 1000), m = Math.floor(s / 60), r = s % 60;
+  return m ? (r ? m + "분 " + r + "초" : m + "분") : r + "초";
+}
+const countAt = r => makeQ(r).Q.length;
+
+/* ── 아래 사슬 네비게이션 ── */
+function buildChain(){
+  const c = $("#chain"); c.innerHTML = "";
+  DATA.sections.forEach((s, si) => {
+    const g = document.createElement("div"); g.className = "grp"; g.dataset.si = si;
+    const lb = document.createElement("button"); lb.className = "glabel"; lb.textContent = s.short;
+    lb.onclick = () => { goto(secStart[si]); blurBtn(); };
+    const ds = document.createElement("div"); ds.className = "dots";
+    Q.forEach((q, i) => {
+      if (q.si !== si) return;
+      const b = document.createElement("button"); b.className = "dot" + (q.ans.length > 1 ? " multi" : "");
+      b.setAttribute("aria-label", s.short + " " + (q.ii + 1));
+      b.onclick = () => { goto(i); blurBtn(); };
+      ds.appendChild(b);
+    });
+    g.append(lb, ds); c.appendChild(g);
+  });
+}
+function paintChain(){
+  const live = state.mode === "stem" || state.mode === "answer";
+  document.querySelectorAll(".dot").forEach((d, i) => {
+    d.classList.toggle("done", state.done.has(i));
+    d.classList.toggle("cur", live && i === state.qi);
+  });
+  const cs = Q[state.qi] ? Q[state.qi].si : 0;
+  document.querySelectorAll(".grp").forEach(g => g.classList.toggle("cur", +g.dataset.si === cs));
+}
+
+/* 눌러서 진행할 때 나타나는 버튼 */
+function paintCue(){
+  let t = "";
+  if (state.mode === "stem" && cfg.reveal === "click") t = cfg.hide ? "넘어가기 ▶" : "정답 보기 ▶";
+  else if (state.mode === "answer" && cfg.advance === "click") t = "다음 ▶";
+  else if (state.mode === "between" && cfg.inter === "hold") t = "다음 구간 ▶";
+  const c = $("#cue"); c.textContent = t; c.style.display = t ? "block" : "none";
+}
+function waiting(){
+  return (state.mode === "stem" && cfg.reveal === "click" && state.dur === Infinity) ||
+         (state.mode === "answer" && cfg.advance === "click") ||
+         (state.mode === "between" && cfg.inter === "hold");
+}
+
+/* ── 화면 전환 ── */
+function hideOverlays(){ ["#start", "#finale"].forEach(s => $(s).classList.remove("on")); $("#inter").classList.remove("on"); }
+function showQuestion(i){
+  hideOverlays();
+  state.qi = i; state.si = Q[i].si;
+  const q = Q[i];
+  setMode("stem"); state.elapsed = 0; state.dur = stemDur(q);
+  state.opened = false; /* 가림 상태는 정답 칸이 사라질 때까지 그대로 둔다(페이드 중 노출 방지) */
+  $("#stem").innerHTML = fmtStem(q);
+  const cue = cueOf(q); $("#cnt").textContent = cue; $("#cnt").style.visibility = cue ? "visible" : "hidden";
+  $("#secTitle").innerHTML = "<b>" + esc(DATA.sections[q.si].title) + "</b>";
+  $("#ans").classList.remove("on");
+  $("#timer").style.opacity = 1; $("#timerBar").style.transform = "scaleX(1)";
+  paintChain(); paintCue();
+}
+function paintAnsText(q){
+  const el = $("#ansText");
+  if (q.ans.length === 1 && !q.ans[0].l) { el.className = "single"; el.textContent = q.ans[0].t; return; }
+  el.className = "multi";
+  el.innerHTML = '<div class="alist">' + q.ans.map((a, k) =>
+    '<div class="aitem" style="animation-delay:' + (k * .35) + 's">' +
+    (a.l ? '<span class="al">' + esc(a.l) + '</span>' : '') + '<span class="at">' + esc(a.t) + '</span></div>').join("") + '</div>';
+}
+function showAnswer(){
+  const q = Q[state.qi];
+  setMode("answer"); state.elapsed = 0; state.opened = false; state.done.add(state.qi);
+  state.dur = cfg.advance === "click" ? Infinity : ansHold();
+  paintAnsText(q); $("#ansNote").textContent = q.note || ""; $("#ansRef").textContent = q.ref || "";
+  $("#ans").classList.add("on"); $("#timer").style.opacity = 0;
+  paintAnswer(); paintChain(); paintCue();
+}
+/* 가려 둔 정답을 연다. 열린 뒤에는 보이는 시간을 처음부터 다시 줍니다. */
+function openAnswer(){
+  if (state.mode !== "answer" || !masked()) return;
+  state.opened = true; paintAnswer();
+  state.elapsed = 0; state.dur = cfg.advance === "click" ? Infinity : ansHold();
+}
+function afterAnswer(){
+  const q = Q[state.qi];
+  if (state.qi === Q.length - 1) return showFinale();
+  if (q.ii === secLen[q.si] - 1) return cfg.inter === "skip" ? showQuestion(state.qi + 1) : showInterlude(q.si);
+  showQuestion(state.qi + 1);
+}
+const chipHtml = (q, cls) => '<span class="' + cls + (q.ans.length > 1 ? ' m' : '') + '">' + esc(ansJoin(q)) + '</span>';
+function showInterlude(si){
+  setMode("between"); state.si = si; state.elapsed = 0; state.dur = cfg.inter === "hold" ? Infinity : BETWEEN;
+  const s = DATA.sections[si], nx = DATA.sections[si + 1];
+  $("#inter").innerHTML =
+    '<div class="itag">' + esc(s.title) + ' — 이어진 사슬</div>' +
+    '<div class="ichips">' + secItems(si).map((q, k) =>
+      '<span class="ipair' + (q.ans.length > 1 ? ' m' : '') + '">' +
+      (k ? '<span class="iarr" style="animation-delay:' + (k * .4 - .2) + 's">→</span>' : '') +
+      '<span class="ichip' + (q.ans.length > 1 ? ' m' : '') + '" style="animation-delay:' + (k * .4) + 's">' + esc(ansJoin(q)) + '</span></span>').join("") + '</div>' +
+    '<div class="inext">다음 · ' + esc(nx.title) + '</div>';
+  $("#inter").classList.add("on"); paintChain(); paintCue();
+}
+function showFinale(){
+  setMode("finale");
+  $("#rows").innerHTML = DATA.sections.map((s, si) =>
+    '<div class="row"><div class="rlabel">' + esc(s.short) + '</div><div class="chips">' +
+    secItems(si).map((q, k) => '<span class="fpair">' + (k ? '<span class="arrow"><em>왜?</em>→</span>' : '') + chipHtml(q, "chip") + '</span>').join("") +
+    '</div></div>').join("");
+  $("#rows").classList.toggle("dense", Q.length > 36);
+  $("#finale").classList.add("on"); paintChain(); paintCue();
+}
+function goto(i){ state.paused = false; document.body.classList.remove("paused"); $("#bPause").textContent = "일시정지"; showQuestion(i); }
+function begin(){ state.done.clear(); goto(0); }
+function goNextSection(){ showQuestion(secStart[state.si + 1]); }
+
+function step(){
+  switch (state.mode) {
+    case "start": begin(); break;
+    case "stem": showAnswer(); break;
+    case "answer": afterAnswer(); break;
+    case "between": goNextSection(); break;
+  }
+}
+function prev(){
+  if (state.mode === "start") return;
+  if (state.mode === "between") return goto(secStart[state.si] + secLen[state.si] - 1);
+  if (state.mode === "finale") return goto(Q.length - 1);
+  goto(Math.max(0, state.qi - 1));
+}
+function togglePause(){
+  if (state.mode === "start" || state.mode === "finale") return;
+  state.paused = !state.paused; document.body.classList.toggle("paused", state.paused);
+  $("#bPause").textContent = state.paused ? "계속" : "일시정지";
+}
+function fullscreen(){
+  try { (document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen()).catch(() => {}); } catch (e) {}
+}
+function blurBtn(){ if (document.activeElement && document.activeElement.blur) document.activeElement.blur(); }
+
+/* 문항 수를 바꾸면 지금 보던 자리에서 이어 간다 */
+function reflow(){
+  const live = state.mode === "stem" || state.mode === "answer";
+  const cur = live && Q[state.qi] ? Q[state.qi].gid : null;
+  const doneG = new Set([...state.done].map(i => Q[i] && Q[i].gid));
+  build(); buildChain();
+  state.done = new Set(); Q.forEach((q, i) => { if (doneG.has(q.gid)) state.done.add(i); });
+  if (state.mode === "start") { state.qi = 0; paintChain(); paintStartButtons(); return; }
+  if (live) {
+    let i = Q.findIndex(q => q.gid >= cur); if (i < 0) i = Q.length - 1;
+    const wasAnswer = state.mode === "answer";
+    showQuestion(i);
+    if (wasAnswer && Q[i].gid === cur) showAnswer();
+  } else if (state.mode === "between") {
+    showQuestion(Math.min(secStart[Math.min(state.si + 1, secStart.length - 1)], Q.length - 1));
+  } else if (state.mode === "finale") showFinale();
+  paintStartButtons();
+}
+
+/* ── 설정 패널 ── */
+function buildPanel(){
+  $("#pBody").innerHTML = OPTS.map(o =>
+    '<div class="pgrp"><div class="plabel">' + esc(o.label) + '</div><div class="seg" data-key="' + o.key + '">' +
+    o.choices.map(c => '<button type="button" data-v="' + c[0] + '">' + esc(c[1]) + '</button>').join("") +
+    '</div></div>').join("");
+  document.querySelectorAll(".seg").forEach(seg => {
+    seg.addEventListener("click", e => {
+      const b = e.target.closest("button"); if (!b) return;
+      const o = OPTS.find(x => x.key === seg.dataset.key);
+      const ch = o.choices.find(c => String(c[0]) === b.dataset.v);
+      cfg[o.key] = ch[0]; applyCfg(); blurBtn();
+    });
+  });
+}
+const same = (a, b) => OPTS.every(o => a[o.key] === b[o.key]);
+function paintSettings(){
+  OPTS.forEach(o => {
+    document.querySelectorAll('.seg[data-key="' + o.key + '"] button').forEach(b =>
+      b.setAttribute("aria-pressed", String(b.dataset.v) === String(cfg[o.key])));
+  });
+  document.querySelectorAll('.seg[data-key="range"] button').forEach(b => {
+    const r = +b.dataset.v, t = estimate(r);
+    b.innerHTML = RANGE_NAME[r] + ' <small>' + countAt(r) + '문항' + (t == null ? '' : ' · 약 ' + fmtTime(t)) + '</small>';
+  });
+  $("#pClass").setAttribute("aria-pressed", same(cfg, PRESETS.class));
+  $("#pSelf").setAttribute("aria-pressed", same(cfg, PRESETS.self));
+  document.body.classList.toggle("nonote", !cfg.note);
+}
+function paintStartButtons(){
+  const ct = estimate(PRESETS.class.range, PRESETS.class);
+  $("#bStartClass small").textContent = RANGE_NAME[PRESETS.class.range] + " " + countAt(PRESETS.class.range) + "문항" + (ct == null ? "" : " · 약 " + fmtTime(ct)) + " · 자동 진행";
+  $("#bStartSelf small").textContent = RANGE_NAME[PRESETS.self.range] + " " + countAt(PRESETS.self.range) + "문항 · 내 속도로";
+}
+function applyCfg(){
+  saveCfg();
+  if (builtRange !== cfg.range) reflow();
+  paintSettings();
+  /* 진행 중인 화면에도 바로 반영 */
+  if (state.mode === "stem") {
+    if (cfg.reveal === "click" && state.dur === Infinity) { /* 이미 기다리는 중 */ }
+    else state.dur = Math.max(state.elapsed + 300, stemDur(Q[state.qi]));
+  } else if (state.mode === "answer") {
+    paintAnswer();
+    state.dur = cfg.advance === "click" ? Infinity : Math.max(state.elapsed + 300, ansHold());
+  } else if (state.mode === "between") {
+    if (cfg.inter === "skip") return goNextSection();
+    state.dur = cfg.inter === "hold" ? Infinity : Math.max(state.elapsed + 300, BETWEEN);
+  }
+  paintCue();
+}
+function usePreset(name){ Object.assign(cfg, PRESETS[name]); applyCfg(); }
+function openPanel(on){
+  const p = $("#panel"); p.classList.toggle("on", on); p.setAttribute("aria-hidden", String(!on));
+}
+
+/* ── 시간 ── */
+let last = 0;
+function tick(t){
+  const dt = Math.min(120, t - (last || t)); last = t;
+  if (!state.paused && (state.mode === "stem" || state.mode === "answer" || state.mode === "between")) {
+    state.elapsed += dt;
+    if (state.mode === "stem" && state.dur !== Infinity) {
+      const r = Math.max(0, 1 - state.elapsed / state.dur);
+      const bar = $("#timerBar"); bar.style.transform = "scaleX(" + r + ")";
+      bar.style.background = r < .28 ? "var(--acc)" : "var(--link)";
+    }
+    if (state.elapsed >= state.dur) {
+      if (state.mode === "stem") {
+        if (cfg.reveal === "auto") showAnswer();
+        else { state.dur = Infinity; $("#timerBar").style.transform = "scaleX(0)"; paintCue(); }
+      }
+      else if (state.mode === "answer") afterAnswer();
+      else goNextSection();
+    }
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ── 조작 ── */
+$("#bStartClass").onclick = () => { usePreset("class"); begin(); blurBtn(); };
+$("#bStartSelf").onclick = () => { usePreset("self"); begin(); blurBtn(); };
+$("#bStartSet").onclick = () => { openPanel(true); blurBtn(); };
+$("#bRestart").onclick = () => { begin(); blurBtn(); };
+$("#bPrev").onclick = () => { prev(); blurBtn(); };
+$("#bStep").onclick = () => { step(); blurBtn(); };
+$("#bPause").onclick = () => { togglePause(); blurBtn(); };
+$("#pClass").onclick = () => { usePreset("class"); blurBtn(); };
+$("#pSelf").onclick = () => { usePreset("self"); blurBtn(); };
+$("#bGear").onclick = () => { openPanel(!$("#panel").classList.contains("on")); blurBtn(); };
+$("#pClose").onclick = () => { openPanel(false); blurBtn(); };
+$("#bFs").onclick = () => { fullscreen(); blurBtn(); };
+$("#cue").onclick = () => { step(); blurBtn(); };
+$("#ansMask").onclick = () => { openAnswer(); blurBtn(); };
+
+addEventListener("keydown", e => {
+  if (e.target && e.target.closest && e.target.closest("a")) return;
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  const k = e.key;
+  if (k === "Escape") { openPanel(false); return; }
+  if (k === " ") { e.preventDefault(); if (state.mode === "start") begin(); else if (waiting()) step(); else togglePause(); }
+  else if (k === "ArrowRight" || k === "Enter") { e.preventDefault(); step(); }
+  else if (k === "ArrowLeft") { e.preventDefault(); prev(); }
+  else if (k === "a" || k === "A") openAnswer();
+  else if (k === "f" || k === "F") fullscreen();
+  else if (/^[1-9]$/.test(k) && +k <= DATA.sections.length) goto(secStart[+k - 1]);
+  else if (k === "Home") begin();
+});
+
+loadCfg(); build(); buildChain(); buildPanel(); paintChain(); paintSettings(); paintStartButtons(); paintCue();
+requestAnimationFrame(tick);
+
+/* 점검용 */
+window.__BOARD = {Q, DATA, state, cfg, step, prev, goto, usePreset, applyCfg, estimate, makeQ};
+})();
+</script>
+</body>
+</html>

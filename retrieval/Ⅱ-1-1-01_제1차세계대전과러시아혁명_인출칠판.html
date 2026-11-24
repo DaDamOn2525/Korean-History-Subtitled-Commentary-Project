@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>떠올려 이어 보기 · Ⅱ-1-1-01 제1차 세계 대전과 러시아 혁명</title>
+<style>
+:root{
+  --u:min(1vw,1.7778vh);
+  --bg:#0f1923; --ink:#f3ecd8; --dim:#93a1b0; --faint:#5d6c7c;
+  --acc:#e8bb62; --link:#7ccbb2; --line:#273749;
+  --serif:"Noto Serif KR","Nanum Myeongjo","Batang","AppleMyungjo",serif;
+  --sans:"Noto Sans KR","Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:var(--serif);overflow:hidden}
+button{font-family:var(--sans);color:inherit;cursor:pointer}
+
+#board{position:fixed;inset:0;display:grid;grid-template-rows:auto 1fr auto;padding:calc(var(--u)*2.2) calc(var(--u)*4) calc(var(--u)*2)}
+header{display:flex;justify-content:space-between;align-items:center;min-height:calc(var(--u)*4)}
+#secTitle{font-family:var(--sans);font-size:calc(var(--u)*1.7);color:var(--dim);letter-spacing:.02em}
+#secTitle b{color:var(--ink);font-weight:600}
+#ctl{display:flex;gap:calc(var(--u)*.6);align-items:center;opacity:.45;transition:opacity .2s}
+#ctl:hover,#ctl:focus-within{opacity:1}
+#ctl button{background:transparent;border:1px solid var(--line);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.45) calc(var(--u)*1);font-size:calc(var(--u)*1.2)}
+#ctl button[aria-pressed=true]{border-color:var(--link);color:var(--link)}
+#ctl .sep{width:1px;height:calc(var(--u)*2);background:var(--line);margin:0 calc(var(--u)*.3)}
+
+#stage{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 calc(var(--u)*4)}
+#stem{font-size:calc(var(--u)*3.3);line-height:1.58;max-width:calc(var(--u)*82);word-break:keep-all;text-wrap:balance;min-height:calc(var(--u)*10)}
+.prev{color:var(--link);border-bottom:calc(var(--u)*.14) solid currentColor}
+#cnt{font-family:var(--sans);font-size:calc(var(--u)*1.7);color:var(--acc);letter-spacing:.04em;min-height:calc(var(--u)*2.6);margin-top:calc(var(--u)*.8);visibility:hidden}
+#timer{width:calc(var(--u)*36);height:calc(var(--u)*.3);background:var(--line);border-radius:9px;margin:calc(var(--u)*2.6) 0 calc(var(--u)*2.2);overflow:hidden;transition:opacity .3s}
+#timerBar{display:block;height:100%;width:100%;background:var(--link);transform-origin:left}
+#ans{min-height:calc(var(--u)*12);opacity:0;transform:translateY(calc(var(--u)*1));transition:opacity .45s,transform .45s}
+#ans.on{opacity:1;transform:none}
+#ansText{font-size:calc(var(--u)*5.2);color:var(--acc);font-weight:700}
+#ansNote{font-family:var(--sans);font-size:calc(var(--u)*1.7);color:var(--dim);margin-top:calc(var(--u)*.8)}
+#ansRef{font-family:var(--sans);font-size:calc(var(--u)*1.35);color:var(--faint);margin-top:calc(var(--u)*.5)}
+#ansText.multi{font-size:inherit;font-weight:400}
+.alist{display:flex;flex-wrap:wrap;justify-content:center;gap:calc(var(--u)*1.1) calc(var(--u)*1.2);max-width:calc(var(--u)*84)}
+.aitem{display:flex;flex-direction:column;align-items:center;gap:calc(var(--u)*.3);border:1px solid rgba(232,187,98,.5);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.7);animation:pop .6s both}
+.aitem .al{font-family:var(--sans);font-size:calc(var(--u)*1.2);color:var(--dim);letter-spacing:.05em}
+.aitem .at{font-size:calc(var(--u)*3.1);color:var(--acc);font-weight:700}
+body.nonote #ansNote,body.nonote #ansRef{display:none}
+#ansMask{display:none;font-family:var(--sans);background:transparent;border:2px dashed var(--faint);color:var(--dim);border-radius:calc(var(--u)*1);padding:calc(var(--u)*1.6) calc(var(--u)*6);font-size:calc(var(--u)*3);letter-spacing:.3em}
+#ansMask small{display:block;font-size:calc(var(--u)*1.3);letter-spacing:0;color:var(--faint);margin-top:calc(var(--u)*.6)}
+#ansMask:hover{border-color:var(--acc);color:var(--acc)}
+body.masked #ansText,body.masked #ansNote,body.masked #ansRef{display:none}
+body.masked #ansMask{display:block}
+#pauseTag{position:absolute;right:calc(var(--u)*4);bottom:calc(var(--u)*.5);font-family:var(--sans);font-size:calc(var(--u)*1.3);color:var(--acc);display:none}
+body.paused #pauseTag{display:block}
+#cue{position:absolute;left:50%;bottom:calc(var(--u)*1.2);transform:translateX(-50%);display:none;z-index:3;background:transparent;border:1px solid var(--acc);color:var(--acc);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*.8) calc(var(--u)*2.6);font-size:calc(var(--u)*1.9)}
+#cue:hover{background:rgba(232,187,98,.12)}
+
+footer{padding-top:calc(var(--u)*1)}
+#chain{display:flex;justify-content:center;gap:calc(var(--u)*2.2)}
+.grp{display:flex;flex-direction:column;align-items:center;gap:calc(var(--u)*.55)}
+.glabel{font-family:var(--sans);font-size:calc(var(--u)*1.05);line-height:calc(var(--u)*1.5);height:calc(var(--u)*1.5);color:var(--faint);background:none;border:0;padding:0;white-space:nowrap}
+.grp.cur .glabel{color:var(--ink)}
+.dots{display:flex;gap:calc(var(--u)*.45)}
+.dot{width:calc(var(--u)*1.15);height:calc(var(--u)*1.15);border-radius:50%;border:calc(var(--u)*.14) solid var(--faint);background:transparent;padding:0}
+.dot.multi{border-radius:calc(var(--u)*.3)}
+.dot.done{background:var(--link);border-color:var(--link)}
+.dot.cur{border-color:var(--acc);box-shadow:0 0 0 calc(var(--u)*.22) rgba(232,187,98,.32)}
+
+/* 구간 사이 화면 */
+#inter{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--bg);padding:0 calc(var(--u)*4)}
+#inter.on{display:flex}
+.itag{font-family:var(--sans);font-size:calc(var(--u)*1.7);color:var(--dim);margin-bottom:calc(var(--u)*3)}
+.ichips{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:calc(var(--u)*1.2) calc(var(--u)*1.3);max-width:calc(var(--u)*86)}
+.ipair{display:flex;align-items:center;gap:calc(var(--u)*1.3);white-space:nowrap}
+.ichip{font-size:calc(var(--u)*2.5);color:var(--acc);border:1px solid rgba(232,187,98,.45);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*.6) calc(var(--u)*1.4);animation:pop .6s both}
+.ipair.m{white-space:normal}
+.ichip.m{font-size:calc(var(--u)*2);max-width:calc(var(--u)*46)}
+.iarr{font-size:calc(var(--u)*2.2);color:var(--link);animation:pop .6s both}
+.inext{font-family:var(--sans);font-size:calc(var(--u)*1.7);color:var(--faint);margin-top:calc(var(--u)*3.4)}
+@keyframes pop{from{opacity:0;transform:translateY(calc(var(--u)*.9))}to{opacity:1;transform:none}}
+
+/* 시작·마지막 화면 */
+.full{position:fixed;inset:0;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--bg);padding:calc(var(--u)*3) calc(var(--u)*4);z-index:5}
+.full.on{display:flex}
+#start h1{font-size:calc(var(--u)*4.6);font-weight:700;margin:0 0 calc(var(--u)*1.6);line-height:1.4}
+#start .sub{font-family:var(--sans);font-size:calc(var(--u)*1.9);color:var(--dim);margin-bottom:calc(var(--u)*3.4)}
+#start p{font-size:calc(var(--u)*2.1);line-height:1.8;color:var(--ink);margin:0}
+#start p.mute{color:var(--dim)}
+.btnrow{display:flex;gap:calc(var(--u)*1.4);margin-top:calc(var(--u)*3.6);align-items:stretch}
+.btn{background:transparent;border:1px solid var(--acc);color:var(--acc);font-size:calc(var(--u)*1.9);padding:calc(var(--u)*.9) calc(var(--u)*2.6);border-radius:calc(var(--u)*.8);text-align:center;line-height:1.35}
+.btn small{display:block;font-size:calc(var(--u)*1.2);color:var(--dim);margin-top:calc(var(--u)*.3)}
+.btn:hover{background:rgba(232,187,98,.12)}
+.btn.ghost{border-color:var(--line);color:var(--dim)}
+.btn.ghost:hover{background:rgba(255,255,255,.04)}
+#start .btn{margin:0}
+
+#finale h2{font-size:calc(var(--u)*3);font-weight:700;margin:0 0 calc(var(--u)*2.2)}
+#rows{width:100%;max-width:calc(var(--u)*92);display:flex;flex-direction:column;gap:calc(var(--u)*1.05)}
+.row{display:flex;align-items:center;gap:calc(var(--u)*1.4);text-align:left}
+.rlabel{flex:0 0 calc(var(--u)*8.2);font-family:var(--sans);font-size:calc(var(--u)*1.15);color:var(--dim);text-align:right;line-height:1.3}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.5) calc(var(--u)*.2)}
+.full{overflow:auto}
+#finale{justify-content:safe center}
+#rows.dense{gap:calc(var(--u)*.6)}
+#rows.dense .chip{font-size:calc(var(--u)*1.1);padding:calc(var(--u)*.22) calc(var(--u)*.6)}
+#rows.dense .arrow{font-size:calc(var(--u)*1.1);padding:0 calc(var(--u)*.45)}
+#rows.dense .arrow em{font-size:calc(var(--u)*.75);top:calc(var(--u)*-.9)}
+#rows.dense .rlabel{font-size:calc(var(--u)*1.05)}
+.fpair{display:inline-flex;align-items:center;white-space:nowrap}
+.chip.m{white-space:normal;max-width:calc(var(--u)*40)}
+.chip{font-size:calc(var(--u)*1.3);color:var(--acc);border:1px solid rgba(232,187,98,.4);border-radius:calc(var(--u)*.5);padding:calc(var(--u)*.35) calc(var(--u)*.85);white-space:nowrap}
+.arrow{position:relative;font-size:calc(var(--u)*1.3);color:var(--link);padding:0 calc(var(--u)*.7);font-family:var(--sans)}
+.arrow em{position:absolute;left:50%;top:calc(var(--u)*-1.05);transform:translateX(-50%);font-style:normal;font-size:calc(var(--u)*.85);color:var(--faint)}
+#finale .hint{font-family:var(--sans);font-size:calc(var(--u)*1.55);color:var(--dim);margin-top:calc(var(--u)*2.4)}
+#finale .btn{margin-top:calc(var(--u)*1.6);font-size:calc(var(--u)*1.4);padding:calc(var(--u)*.6) calc(var(--u)*2)}
+
+/* 설정 패널 */
+#panel{position:fixed;top:0;right:0;bottom:0;width:calc(var(--u)*34);background:#132130;border-left:1px solid var(--line);padding:calc(var(--u)*2.2);z-index:10;overflow:auto;font-family:var(--sans);transform:translateX(104%);transition:transform .25s;visibility:hidden}
+#panel.on{transform:none;visibility:visible}
+.phead{display:flex;justify-content:space-between;align-items:center;margin-bottom:calc(var(--u)*2.2);font-size:calc(var(--u)*1.8);font-weight:600}
+.phead button{background:transparent;border:1px solid var(--line);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.4) calc(var(--u)*1);font-size:calc(var(--u)*1.2)}
+.pgrp{margin-bottom:calc(var(--u)*2)}
+.plabel{font-size:calc(var(--u)*1.3);color:var(--dim);margin-bottom:calc(var(--u)*.7)}
+.seg{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5)}
+.seg button{background:transparent;border:1px solid var(--line);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.55) calc(var(--u)*1.1);font-size:calc(var(--u)*1.3)}
+.seg[data-key=range]{flex-direction:column}
+.seg[data-key=range] button{text-align:left}
+.seg button small{color:var(--dim);margin-left:calc(var(--u)*.4);font-size:calc(var(--u)*1.1)}
+.seg button[aria-pressed=true]{border-color:var(--acc);color:var(--acc)}
+.pfoot{font-size:calc(var(--u)*1.1);color:var(--faint);margin-top:calc(var(--u)*1.5);line-height:1.6}
+
+/* 목차·요약도표로 돌아가는 링크 */
+#ctl a.nl{background:transparent;border:1px solid var(--line);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.45) calc(var(--u)*1);font-size:calc(var(--u)*1.2);color:inherit;text-decoration:none;font-family:var(--sans);white-space:nowrap}
+#ctl a.nl:hover,#ctl a.nl:focus-visible{border-color:var(--link);color:var(--link)}
+.outlinks{display:flex;gap:calc(var(--u)*2.4);justify-content:center;margin-top:calc(var(--u)*2.6);font-family:var(--sans);font-size:calc(var(--u)*1.5)}
+.outlinks a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:calc(var(--u)*.15)}
+.outlinks a:hover,.outlinks a:focus-visible{color:var(--link);border-bottom-color:var(--link)}
+</style>
+</head>
+<body>
+<div id="board">
+  <header>
+    <div id="secTitle"></div>
+    <div id="ctl">
+      <a class="nl" href="../한국사2_1단원(해설자막포함)/Ⅱ-1-1-01_제1차세계대전과러시아혁명_도표(해설포함).html" title="요약도표로">← 요약도표</a>
+      <a class="nl" href="index.html" title="인출 목차로">☰ 목차</a>
+      <span class="sep"></span>
+      <button id="bPrev" title="이전 (←)">◀ 이전</button>
+      <button id="bPause" title="일시정지 (Space)">일시정지</button>
+      <button id="bStep" title="다음 (→ / Enter)">다음 ▶</button>
+      <span class="sep"></span>
+      <button id="pClass" aria-pressed="false" title="수업용: 짧게, 정답만, 자동 진행">수업용</button>
+      <button id="pSelf" aria-pressed="false" title="자습용: 직접 넘기며, 관련 개념어까지">자습용</button>
+      <button id="bGear" title="세부 설정">⚙ 설정</button>
+      <button id="bFs" title="전체화면 (F)">전체화면</button>
+    </div>
+  </header>
+  <main id="stage">
+    <div id="stem"></div>
+    <div id="cnt"></div>
+    <div id="timer"><span id="timerBar"></span></div>
+    <div id="ans"><button id="ansMask" type="button" title="정답 열기 (A)">정답 가림<small>눌러서 열기 (A)</small></button><div id="ansText"></div><div id="ansNote"></div><div id="ansRef"></div></div>
+    <div id="inter"></div>
+    <button id="cue" type="button"></button>
+    <div id="pauseTag">일시정지</div>
+  </main>
+  <footer><nav id="chain" aria-label="전체 문항"></nav></footer>
+</div>
+
+<section id="start" class="full on">
+  <h1>책을 덮고,<br>이어서 떠올려 봅니다</h1>
+  <div class="sub">Ⅱ-1-1-01 · 제1차 세계 대전에서 치안 유지법까지</div>
+  <p>떠오른 말은 책 여백에 적습니다. 답이 여럿인 물음은 ‘답 n개’라고 알려 줍니다.</p>
+  <p>앞의 답이 뒤의 물음 속으로 이어집니다. 놓쳐도 이어서 따라오면 됩니다.</p>
+  <p class="mute">점수도, 기록도 없습니다.</p>
+  <div class="btnrow">
+    <button class="btn" id="bStartClass">수업용으로 시작<small></small></button>
+    <button class="btn" id="bStartSelf">자습용으로 시작<small></small></button>
+    <button class="btn ghost" id="bStartSet">세부 설정<small>시간 · 정답 · 개념어</small></button>
+  </div>
+  <nav class="outlinks" aria-label="다른 자료로 이동"><a href="../한국사2_1단원(해설자막포함)/Ⅱ-1-1-01_제1차세계대전과러시아혁명_도표(해설포함).html">← 요약도표로</a><a href="index.html">☰ 인출 목차</a></nav>
+</section>
+
+<section id="finale" class="full">
+  <h2>하나의 사슬</h2>
+  <div id="rows"></div>
+  <div class="hint">화살표 하나를 골라 ‘왜?’를 물어봅니다. 묻는 것이 이 시간의 공부입니다.</div>
+  <button class="btn" id="bRestart">처음부터 다시</button>
+  <nav class="outlinks" aria-label="다른 자료로 이동"><a href="../한국사2_1단원(해설자막포함)/Ⅱ-1-1-01_제1차세계대전과러시아혁명_도표(해설포함).html">← 요약도표로</a><a href="index.html">☰ 인출 목차</a></nav>
+</section>
+
+<aside id="panel" aria-hidden="true">
+  <div class="phead"><span>설정</span><button id="pClose">닫기 (Esc)</button></div>
+  <div id="pBody"></div>
+  <div class="pfoot">바꾼 설정은 이 기기의 브라우저에 기억됩니다. 진행 중에도 바로 적용됩니다.</div>
+</aside>
+
+<script>
+(function(){
+"use strict";
+
+/* ── 자료: 한 소단원 = 이 객체 하나. 다른 소단원은 이 부분만 바꿉니다. ──
+   it(수준, 발문, [정답…], 정답 아래 설명, 쪽수)
+   수준 1 = 핵심, 2 = 표준에서 추가, 3 = 전체에서 추가
+   정답이 둘 이상이면 복수 답 문항입니다. "분류|정답" 형태로 쓰면 분류가 단서(‘입법 2 · 사법 1’)로 먼저 보입니다.
+   발문의 [[말]]은 앞에서 답한 말일 때만 강조되고, 그 문항이 보이지 않으면 그냥 글자로 나옵니다. */
+const it = (lv, q, a, note, ref) => ({lv, q, a, note, ref});
+const DATA = {
+  id: "Ⅱ-1-1-01",
+  sections: [
+    { short:"제1차 세계 대전", title:"제1차 세계 대전이 일어나다", items:[
+      it(2,"식민지를 두고 다투던 유럽 제국주의 국가들이 맺고 대립한 두 진영은?",["3국 동맹","3국 협상"],"","교 12"),
+      it(1,"1914년 두 진영의 대립이 이어져 일어난 전쟁은?",["제1차 세계 대전"],"1918년 독일의 항복으로 종전","교 12"),
+      it(2,"동아시아에서 연합국으로 참전해 독일이 차지한 산둥반도와 태평양의 섬들을 점령한 나라는?",["일본"],"중국도 연합국으로 참전","교 12")
+    ]},
+    { short:"파리 강화 회의", title:"승전국들이 파리 강화 회의를 열다", items:[
+      it(1,"1919년 승전국들이 전후 처리를 위해 모인 자리는?",["파리 강화 회의"],"","교 12"),
+      it(2,"[[파리 강화 회의]]의 바탕이 된, 미국 윌슨 대통령이 내세운 방침은?",["14개조 평화 원칙"],"","교 12"),
+      it(1,"[[14개조 평화 원칙]]에서 제시되어 식민 지배를 받던 사람들에게 독립의 희망을 준 것은?",["민족 자결주의"],"한 민족의 운명은 스스로 결정","교 12"),
+      it(2,"[[민족 자결주의]]가 적용되지 않은 곳은?",["승전국의 식민지"],"표방과 실제의 간극","교 12"),
+      it(2,"독일이 승전국과 맺어 해외 식민지를 모두 잃고 막대한 배상금을 물게 된 문서는?",["베르사유 조약"],"","교 12"),
+      it(2,"[[파리 강화 회의]]에 독립 청원을 제출한 한국 대표단의 두 인물은?",["김규식","조소앙"],"성과를 거두지 못함","교 13")
+    ]},
+    { short:"러시아 혁명과 동아시아", title:"러시아 혁명과 동아시아의 변화", items:[
+      it(1,"제1차 세계 대전 중 잇따른 패배로 불만이 높아진 나라에서 레닌이 권력을 잡은 사건은?",["러시아 혁명"],"사회주의 국가 소비에트 러시아 성립","교 13"),
+      it(1,"[[러시아 혁명]]의 레닌이 각국 노동 운동과 식민지 해방 운동 지원을 약속하며 조직한 공산당 국제 조직은?",["코민테른"],"","교 13"),
+      it(1,"1922년 모스크바에서 열려 한국 민족 운동과 임시 정부를 돕기로 결의한 대회는?",["극동 인민 대표 회의"],"김규식·여운형·홍범도 등 참여","교 13"),
+      it(2,"1915년 일본이 중국에 강요해 산둥반도 등의 이권을 차지한 문서는?",["21개조 요구"],"","교 13"),
+      it(2,"[[21개조 요구]] 철폐 주장이 받아들여지지 않자 1919년 중국인들이 벌인 저항은?",["5·4 운동"],"","교 13"),
+      it(2,"미국 등 열강이 일본의 팽창 저지와 군비 축소를 논의하려 연 자리는?",["워싱턴 회의"],"","교 13"),
+      it(2,"[[워싱턴 회의]] 결과 일본이 이권을 반환한 지역은?",["산둥반도"],"해군력도 조정","교 13"),
+      it(1,"1925년 일제가 일본 국내와 한국의 사회주의 운동을 탄압하려 제정한 법은?",["치안 유지법"],"","교 13")
+    ]}
+  ]
+};
+DATA.sections.forEach(s => s.items.forEach(x => { x.ans = x.a.map(parseA); }));
+function parseA(s){ const k = s.indexOf("|"); return k < 0 ? {l:"", t:s} : {l:s.slice(0, k), t:s.slice(k + 1)}; }
+(function(){ let g = 0; DATA.sections.forEach((s, si) => s.items.forEach(x => { x.gid = g++; x.si = si; })); })();
+
+/* ── 설정 ── */
+const OPTS = [
+  {key:"range",   label:"문항 수",       choices:[[1,"핵심"],[2,"표준"],[3,"전체"]]},
+  {key:"stemSec", label:"문제 노출 시간 (복수 답은 자동으로 더 줌)", choices:[[5,"5초"],[7,"7초"],[10,"10초"],["auto","문장 길이에 맞춤"]]},
+  {key:"reveal",  label:"정답 공개",     choices:[["auto","시간이 되면 자동"],["click","눌러서 보기"]]},
+  {key:"hide",    label:"정답 표시",     choices:[[0,"보이기"],[1,"가리기 (눌러서 열기)"]]},
+  {key:"advance", label:"다음 문항으로", choices:[["auto","자동으로 넘김"],["click","눌러서 넘김"]]},
+  {key:"note",    label:"정답 아래 관련 개념어·쪽수", choices:[[1,"보이기"],[0,"숨기기"]]},
+  {key:"inter",   label:"구간이 끝났을 때", choices:[["show","사슬 요약을 보여 주고 이어 감"],["hold","사슬 요약에서 멈춤"],["skip","바로 다음 구간"]]}
+];
+const RANGE_NAME = {1:"핵심", 2:"표준", 3:"전체"};
+const PRESETS = {
+  class:{range:1, stemSec:7, reveal:"auto",  hide:0, advance:"auto",  note:0, inter:"skip"},
+  self: {range:3, stemSec:"auto", reveal:"click", hide:0, advance:"click", note:1, inter:"hold"}
+};
+const KEY = "recallBoard.II1101.v1";
+const cfg = Object.assign({}, PRESETS.class);
+function loadCfg(){
+  try {
+    const j = JSON.parse(localStorage.getItem(KEY) || "null");
+    if (j && j.cfg) OPTS.forEach(o => { if (o.choices.some(c => c[0] === j.cfg[o.key])) cfg[o.key] = j.cfg[o.key]; });
+  } catch (e) {}
+}
+function saveCfg(){ try { localStorage.setItem(KEY, JSON.stringify({cfg})); } catch (e) {} }
+
+/* ── 준비 ── */
+const BETWEEN = 5600;
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const plainLen = s => s.replace(/\[\[|\]\]/g, "").length;
+
+/* 고른 문항 수에 맞춰 문항 목록을 만든다 */
+function makeQ(range){
+  const Qn = [], st = [], ln = [], seen = new Set();
+  DATA.sections.forEach((s, si) => {
+    const vis = s.items.filter(x => x.lv <= range);
+    st.push(Qn.length); ln.push(vis.length);
+    vis.forEach((x, ii) => {
+      Qn.push({si, ii, gid:x.gid, q:x.q, len:plainLen(x.q), ans:x.ans, note:x.note, ref:x.ref, seen:new Set(seen)});
+      x.ans.forEach(a => seen.add(a.t));
+    });
+  });
+  return {Q:Qn, secStart:st, secLen:ln};
+}
+const Q = [], secStart = [], secLen = [];
+let builtRange = 0;
+function build(){
+  const m = makeQ(cfg.range);
+  Q.length = 0; secStart.length = 0; secLen.length = 0;
+  m.Q.forEach(q => Q.push(q)); m.secStart.forEach(v => secStart.push(v)); m.secLen.forEach(v => secLen.push(v));
+  builtRange = cfg.range;
+}
+const secItems = si => Q.filter(q => q.si === si);
+const fmtStem = q => esc(q.q).replace(/\[\[(.+?)\]\]/g, (m, x) => q.seen.has(x) ? '<span class="prev">' + x + '</span>' : x);
+const ansJoin = q => q.ans.map(a => a.t).join(" · ");
+function cueOf(q){
+  if (q.ans.length < 2) return "";
+  let s = "답 " + q.ans.length + "개";
+  const m = new Map();
+  q.ans.forEach(a => { if (a.l) m.set(a.l, (m.get(a.l) || 0) + 1); });
+  if (m.size) s += " · " + [...m].map(([k, v]) => v > 1 ? k + " " + v : k).join(" · ");
+  return s;
+}
+
+/* 노출·정답 시간 (복수 답은 답 하나당 시간을 더 준다) */
+const secFor = q => Math.max(7, Math.min(11, Math.round(5 + q.len / 18)));
+const multiBonus = q => q.ans.length > 1 ? Math.min(4.5, (q.ans.length - 1) * 1.5) * 1000 : 0;
+const stemDur = (q, c = cfg) => (c.stemSec === "auto" ? secFor(q) : c.stemSec) * 1000 + multiBonus(q);
+const holdBase = (q, c = cfg) => (c.note ? 3000 : 2200) + (q.ans.length > 1 ? (q.ans.length - 1) * 700 : 0);
+const ansHold = () => masked() ? 2000 : holdBase(Q[state.qi]);
+
+const state = {mode:"start", qi:0, si:0, elapsed:0, dur:0, paused:false, opened:false, done:new Set()};
+const masked = () => !!cfg.hide && !state.opened;
+function paintAnswer(){ document.body.classList.toggle("masked", state.mode === "answer" && masked()); }
+function setMode(m){ state.mode = m; document.body.dataset.mode = m; }
+
+/* 예상 시간: 자동 진행일 때만 계산한다 */
+function estimate(range, c = cfg){
+  if (c.reveal === "click" || c.advance === "click") return null;
+  const m = makeQ(range); let ms = 0;
+  m.Q.forEach(q => { ms += stemDur(q, c) + holdBase(q, c); });
+  if (c.inter === "show") ms += BETWEEN * (DATA.sections.length - 1);
+  return ms;
+}
+function fmtTime(ms){
+  const s = Math.round(ms / 1000), m = Math.floor(s / 60), r = s % 60;
+  return m ? (r ? m + "분 " + r + "초" : m + "분") : r + "초";
+}
+const countAt = r => makeQ(r).Q.length;
+
+/* ── 아래 사슬 네비게이션 ── */
+function buildChain(){
+  const c = $("#chain"); c.innerHTML = "";
+  DATA.sections.forEach((s, si) => {
+    const g = document.createElement("div"); g.className = "grp"; g.dataset.si = si;
+    const lb = document.createElement("button"); lb.className = "glabel"; lb.textContent = s.short;
+    lb.onclick = () => { goto(secStart[si]); blurBtn(); };
+    const ds = document.createElement("div"); ds.className = "dots";
+    Q.forEach((q, i) => {
+      if (q.si !== si) return;
+      const b = document.createElement("button"); b.className = "dot" + (q.ans.length > 1 ? " multi" : "");
+      b.setAttribute("aria-label", s.short + " " + (q.ii + 1));
+      b.onclick = () => { goto(i); blurBtn(); };
+      ds.appendChild(b);
+    });
+    g.append(lb, ds); c.appendChild(g);
+  });
+}
+function paintChain(){
+  const live = state.mode === "stem" || state.mode === "answer";
+  document.querySelectorAll(".dot").forEach((d, i) => {
+    d.classList.toggle("done", state.done.has(i));
+    d.classList.toggle("cur", live && i === state.qi);
+  });
+  const cs = Q[state.qi] ? Q[state.qi].si : 0;
+  document.querySelectorAll(".grp").forEach(g => g.classList.toggle("cur", +g.dataset.si === cs));
+}
+
+/* 눌러서 진행할 때 나타나는 버튼 */
+function paintCue(){
+  let t = "";
+  if (state.mode === "stem" && cfg.reveal === "click") t = cfg.hide ? "넘어가기 ▶" : "정답 보기 ▶";
+  else if (state.mode === "answer" && cfg.advance === "click") t = "다음 ▶";
+  else if (state.mode === "between" && cfg.inter === "hold") t = "다음 구간 ▶";
+  const c = $("#cue"); c.textContent = t; c.style.display = t ? "block" : "none";
+}
+function waiting(){
+  return (state.mode === "stem" && cfg.reveal === "click" && state.dur === Infinity) ||
+         (state.mode === "answer" && cfg.advance === "click") ||
+         (state.mode === "between" && cfg.inter === "hold");
+}
+
+/* ── 화면 전환 ── */
+function hideOverlays(){ ["#start", "#finale"].forEach(s => $(s).classList.remove("on")); $("#inter").classList.remove("on"); }
+function showQuestion(i){
+  hideOverlays();
+  state.qi = i; state.si = Q[i].si;
+  const q = Q[i];
+  setMode("stem"); state.elapsed = 0; state.dur = stemDur(q);
+  state.opened = false; /* 가림 상태는 정답 칸이 사라질 때까지 그대로 둔다(페이드 중 노출 방지) */
+  $("#stem").innerHTML = fmtStem(q);
+  const cue = cueOf(q); $("#cnt").textContent = cue; $("#cnt").style.visibility = cue ? "visible" : "hidden";
+  $("#secTitle").innerHTML = "<b>" + esc(DATA.sections[q.si].title) + "</b>";
+  $("#ans").classList.remove("on");
+  $("#timer").style.opacity = 1; $("#timerBar").style.transform = "scaleX(1)";
+  paintChain(); paintCue();
+}
+function paintAnsText(q){
+  const el = $("#ansText");
+  if (q.ans.length === 1 && !q.ans[0].l) { el.className = "single"; el.textContent = q.ans[0].t; return; }
+  el.className = "multi";
+  el.innerHTML = '<div class="alist">' + q.ans.map((a, k) =>
+    '<div class="aitem" style="animation-delay:' + (k * .35) + 's">' +
+    (a.l ? '<span class="al">' + esc(a.l) + '</span>' : '') + '<span class="at">' + esc(a.t) + '</span></div>').join("") + '</div>';
+}
+function showAnswer(){
+  const q = Q[state.qi];
+  setMode("answer"); state.elapsed = 0; state.opened = false; state.done.add(state.qi);
+  state.dur = cfg.advance === "click" ? Infinity : ansHold();
+  paintAnsText(q); $("#ansNote").textContent = q.note || ""; $("#ansRef").textContent = q.ref || "";
+  $("#ans").classList.add("on"); $("#timer").style.opacity = 0;
+  paintAnswer(); paintChain(); paintCue();
+}
+/* 가려 둔 정답을 연다. 열린 뒤에는 보이는 시간을 처음부터 다시 줍니다. */
+function openAnswer(){
+  if (state.mode !== "answer" || !masked()) return;
+  state.opened = true; paintAnswer();
+  state.elapsed = 0; state.dur = cfg.advance === "click" ? Infinity : ansHold();
+}
+function afterAnswer(){
+  const q = Q[state.qi];
+  if (state.qi === Q.length - 1) return showFinale();
+  if (q.ii === secLen[q.si] - 1) return cfg.inter === "skip" ? showQuestion(state.qi + 1) : showInterlude(q.si);
+  showQuestion(state.qi + 1);
+}
+const chipHtml = (q, cls) => '<span class="' + cls + (q.ans.length > 1 ? ' m' : '') + '">' + esc(ansJoin(q)) + '</span>';
+function showInterlude(si){
+  setMode("between"); state.si = si; state.elapsed = 0; state.dur = cfg.inter === "hold" ? Infinity : BETWEEN;
+  const s = DATA.sections[si], nx = DATA.sections[si + 1];
+  $("#inter").innerHTML =
+    '<div class="itag">' + esc(s.title) + ' — 이어진 사슬</div>' +
+    '<div class="ichips">' + secItems(si).map((q, k) =>
+      '<span class="ipair' + (q.ans.length > 1 ? ' m' : '') + '">' +
+      (k ? '<span class="iarr" style="animation-delay:' + (k * .4 - .2) + 's">→</span>' : '') +
+      '<span class="ichip' + (q.ans.length > 1 ? ' m' : '') + '" style="animation-delay:' + (k * .4) + 's">' + esc(ansJoin(q)) + '</span></span>').join("") + '</div>' +
+    '<div class="inext">다음 · ' + esc(nx.title) + '</div>';
+  $("#inter").classList.add("on"); paintChain(); paintCue();
+}
+function showFinale(){
+  setMode("finale");
+  $("#rows").innerHTML = DATA.sections.map((s, si) =>
+    '<div class="row"><div class="rlabel">' + esc(s.short) + '</div><div class="chips">' +
+    secItems(si).map((q, k) => '<span class="fpair">' + (k ? '<span class="arrow"><em>왜?</em>→</span>' : '') + chipHtml(q, "chip") + '</span>').join("") +
+    '</div></div>').join("");
+  $("#rows").classList.toggle("dense", Q.length > 36);
+  $("#finale").classList.add("on"); paintChain(); paintCue();
+}
+function goto(i){ state.paused = false; document.body.classList.remove("paused"); $("#bPause").textContent = "일시정지"; showQuestion(i); }
+function begin(){ state.done.clear(); goto(0); }
+function goNextSection(){ showQuestion(secStart[state.si + 1]); }
+
+function step(){
+  switch (state.mode) {
+    case "start": begin(); break;
+    case "stem": showAnswer(); break;
+    case "answer": afterAnswer(); break;
+    case "between": goNextSection(); break;
+  }
+}
+function prev(){
+  if (state.mode === "start") return;
+  if (state.mode === "between") return goto(secStart[state.si] + secLen[state.si] - 1);
+  if (state.mode === "finale") return goto(Q.length - 1);
+  goto(Math.max(0, state.qi - 1));
+}
+function togglePause(){
+  if (state.mode === "start" || state.mode === "finale") return;
+  state.paused = !state.paused; document.body.classList.toggle("paused", state.paused);
+  $("#bPause").textContent = state.paused ? "계속" : "일시정지";
+}
+function fullscreen(){
+  try { (document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen()).catch(() => {}); } catch (e) {}
+}
+function blurBtn(){ if (document.activeElement && document.activeElement.blur) document.activeElement.blur(); }
+
+/* 문항 수를 바꾸면 지금 보던 자리에서 이어 간다 */
+function reflow(){
+  const live = state.mode === "stem" || state.mode === "answer";
+  const cur = live && Q[state.qi] ? Q[state.qi].gid : null;
+  const doneG = new Set([...state.done].map(i => Q[i] && Q[i].gid));
+  build(); buildChain();
+  state.done = new Set(); Q.forEach((q, i) => { if (doneG.has(q.gid)) state.done.add(i); });
+  if (state.mode === "start") { state.qi = 0; paintChain(); paintStartButtons(); return; }
+  if (live) {
+    let i = Q.findIndex(q => q.gid >= cur); if (i < 0) i = Q.length - 1;
+    const wasAnswer = state.mode === "answer";
+    showQuestion(i);
+    if (wasAnswer && Q[i].gid === cur) showAnswer();
+  } else if (state.mode === "between") {
+    showQuestion(Math.min(secStart[Math.min(state.si + 1, secStart.length - 1)], Q.length - 1));
+  } else if (state.mode === "finale") showFinale();
+  paintStartButtons();
+}
+
+/* ── 설정 패널 ── */
+function buildPanel(){
+  $("#pBody").innerHTML = OPTS.map(o =>
+    '<div class="pgrp"><div class="plabel">' + esc(o.label) + '</div><div class="seg" data-key="' + o.key + '">' +
+    o.choices.map(c => '<button type="button" data-v="' + c[0] + '">' + esc(c[1]) + '</button>').join("") +
+    '</div></div>').join("");
+  document.querySelectorAll(".seg").forEach(seg => {
+    seg.addEventListener("click", e => {
+      const b = e.target.closest("button"); if (!b) return;
+      const o = OPTS.find(x => x.key === seg.dataset.key);
+      const ch = o.choices.find(c => String(c[0]) === b.dataset.v);
+      cfg[o.key] = ch[0]; applyCfg(); blurBtn();
+    });
+  });
+}
+const same = (a, b) => OPTS.every(o => a[o.key] === b[o.key]);
+function paintSettings(){
+  OPTS.forEach(o => {
+    document.querySelectorAll('.seg[data-key="' + o.key + '"] button').forEach(b =>
+      b.setAttribute("aria-pressed", String(b.dataset.v) === String(cfg[o.key])));
+  });
+  document.querySelectorAll('.seg[data-key="range"] button').forEach(b => {
+    const r = +b.dataset.v, t = estimate(r);
+    b.innerHTML = RANGE_NAME[r] + ' <small>' + countAt(r) + '문항' + (t == null ? '' : ' · 약 ' + fmtTime(t)) + '</small>';
+  });
+  $("#pClass").setAttribute("aria-pressed", same(cfg, PRESETS.class));
+  $("#pSelf").setAttribute("aria-pressed", same(cfg, PRESETS.self));
+  document.body.classList.toggle("nonote", !cfg.note);
+}
+function paintStartButtons(){
+  const ct = estimate(PRESETS.class.range, PRESETS.class);
+  $("#bStartClass small").textContent = RANGE_NAME[PRESETS.class.range] + " " + countAt(PRESETS.class.range) + "문항" + (ct == null ? "" : " · 약 " + fmtTime(ct)) + " · 자동 진행";
+  $("#bStartSelf small").textContent = RANGE_NAME[PRESETS.self.range] + " " + countAt(PRESETS.self.range) + "문항 · 내 속도로";
+}
+function applyCfg(){
+  saveCfg();
+  if (builtRange !== cfg.range) reflow();
+  paintSettings();
+  /* 진행 중인 화면에도 바로 반영 */
+  if (state.mode === "stem") {
+    if (cfg.reveal === "click" && state.dur === Infinity) { /* 이미 기다리는 중 */ }
+    else state.dur = Math.max(state.elapsed + 300, stemDur(Q[state.qi]));
+  } else if (state.mode === "answer") {
+    paintAnswer();
+    state.dur = cfg.advance === "click" ? Infinity : Math.max(state.elapsed + 300, ansHold());
+  } else if (state.mode === "between") {
+    if (cfg.inter === "skip") return goNextSection();
+    state.dur = cfg.inter === "hold" ? Infinity : Math.max(state.elapsed + 300, BETWEEN);
+  }
+  paintCue();
+}
+function usePreset(name){ Object.assign(cfg, PRESETS[name]); applyCfg(); }
+function openPanel(on){
+  const p = $("#panel"); p.classList.toggle("on", on); p.setAttribute("aria-hidden", String(!on));
+}
+
+/* ── 시간 ── */
+let last = 0;
+function tick(t){
+  const dt = Math.min(120, t - (last || t)); last = t;
+  if (!state.paused && (state.mode === "stem" || state.mode === "answer" || state.mode === "between")) {
+    state.elapsed += dt;
+    if (state.mode === "stem" && state.dur !== Infinity) {
+      const r = Math.max(0, 1 - state.elapsed / state.dur);
+      const bar = $("#timerBar"); bar.style.transform = "scaleX(" + r + ")";
+      bar.style.background = r < .28 ? "var(--acc)" : "var(--link)";
+    }
+    if (state.elapsed >= state.dur) {
+      if (state.mode === "stem") {
+        if (cfg.reveal === "auto") showAnswer();
+        else { state.dur = Infinity; $("#timerBar").style.transform = "scaleX(0)"; paintCue(); }
+      }
+      else if (state.mode === "answer") afterAnswer();
+      else goNextSection();
+    }
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ── 조작 ── */
+$("#bStartClass").onclick = () => { usePreset("class"); begin(); blurBtn(); };
+$("#bStartSelf").onclick = () => { usePreset("self"); begin(); blurBtn(); };
+$("#bStartSet").onclick = () => { openPanel(true); blurBtn(); };
+$("#bRestart").onclick = () => { begin(); blurBtn(); };
+$("#bPrev").onclick = () => { prev(); blurBtn(); };
+$("#bStep").onclick = () => { step(); blurBtn(); };
+$("#bPause").onclick = () => { togglePause(); blurBtn(); };
+$("#pClass").onclick = () => { usePreset("class"); blurBtn(); };
+$("#pSelf").onclick = () => { usePreset("self"); blurBtn(); };
+$("#bGear").onclick = () => { openPanel(!$("#panel").classList.contains("on")); blurBtn(); };
+$("#pClose").onclick = () => { openPanel(false); blurBtn(); };
+$("#bFs").onclick = () => { fullscreen(); blurBtn(); };
+$("#cue").onclick = () => { step(); blurBtn(); };
+$("#ansMask").onclick = () => { openAnswer(); blurBtn(); };
+
+addEventListener("keydown", e => {
+  if (e.target && e.target.closest && e.target.closest("a")) return;
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  const k = e.key;
+  if (k === "Escape") { openPanel(false); return; }
+  if (k === " ") { e.preventDefault(); if (state.mode === "start") begin(); else if (waiting()) step(); else togglePause(); }
+  else if (k === "ArrowRight" || k === "Enter") { e.preventDefault(); step(); }
+  else if (k === "ArrowLeft") { e.preventDefault(); prev(); }
+  else if (k === "a" || k === "A") openAnswer();
+  else if (k === "f" || k === "F") fullscreen();
+  else if (/^[1-9]$/.test(k) && +k <= DATA.sections.length) goto(secStart[+k - 1]);
+  else if (k === "Home") begin();
+});
+
+loadCfg(); build(); buildChain(); buildPanel(); paintChain(); paintSettings(); paintStartButtons(); paintCue();
+requestAnimationFrame(tick);
+
+/* 점검용 */
+window.__BOARD = {Q, DATA, state, cfg, step, prev, goto, usePreset, applyCfg, estimate, makeQ};
+})();
+</script>
+</body>
+</html>
