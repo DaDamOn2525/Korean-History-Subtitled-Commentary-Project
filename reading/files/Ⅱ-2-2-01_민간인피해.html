@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="6.25 전쟁 당시 민간인 피해 - 전자칠판용 학습자료">
+    <title>6.25 전쟁 당시 민간인 피해</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ffffff;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 80px;
+        }
+        
+        /* 헤더 */
+        header {
+            text-align: center;
+            padding: 80px 0 100px 0;
+            background: linear-gradient(135deg, #0f3460 0%, #533483 100%);
+            margin: -60px -80px 80px -80px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            font-size: 4.5em;
+            margin-bottom: 30px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            line-height: 1.3;
+        }
+        
+        .subtitle {
+            font-size: 2.2em;
+            opacity: 0.9;
+            margin-top: 20px;
+        }
+        
+        /* 섹션 */
+        section {
+            margin-bottom: 100px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 60px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            font-size: 3.5em;
+            margin-bottom: 50px;
+            color: #ffd700;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            border-bottom: 5px solid #ffd700;
+            padding-bottom: 20px;
+        }
+        
+        h3 {
+            font-size: 2.8em;
+            margin: 50px 0 30px 0;
+            color: #87ceeb;
+            font-weight: bold;
+        }
+        
+        h4 {
+            font-size: 2.3em;
+            margin: 40px 0 25px 0;
+            color: #98fb98;
+            font-weight: bold;
+        }
+        
+        p {
+            font-size: 2em;
+            margin-bottom: 30px;
+            line-height: 1.9;
+        }
+        
+        /* 강조 박스 */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 165, 0, 0.2) 100%);
+            border-left: 8px solid #ffd700;
+            padding: 40px 50px;
+            margin: 40px 0;
+            border-radius: 15px;
+            font-size: 2.2em;
+            font-weight: bold;
+            line-height: 1.8;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 69, 0, 0.2) 0%, rgba(220, 20, 60, 0.2) 100%);
+            border-left: 8px solid #ff4444;
+            padding: 40px 50px;
+            margin: 40px 0;
+            border-radius: 15px;
+            font-size: 2.2em;
+            line-height: 1.8;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, rgba(64, 224, 208, 0.2) 0%, rgba(72, 209, 204, 0.2) 100%);
+            border-left: 8px solid #40e0d0;
+            padding: 40px 50px;
+            margin: 40px 0;
+            border-radius: 15px;
+            font-size: 2.2em;
+            line-height: 1.8;
+        }
+        
+        /* 통계 카드 */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 50px;
+            border-radius: 25px;
+            text-align: center;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 5em;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .stat-label {
+            font-size: 2em;
+            color: #ffffff;
+            opacity: 0.9;
+        }
+        
+        /* 리스트 */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        li {
+            font-size: 2em;
+            margin: 25px 0;
+            padding-left: 50px;
+            position: relative;
+            line-height: 1.8;
+        }
+        
+        li::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-size: 1.2em;
+        }
+        
+        /* 인용구 */
+        blockquote {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 8px solid #87ceeb;
+            padding: 40px 50px;
+            margin: 40px 0;
+            font-size: 2em;
+            font-style: italic;
+            line-height: 1.9;
+            border-radius: 15px;
+        }
+        
+        /* 참고자료 */
+        .reference {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 50px;
+            border-radius: 25px;
+            margin-top: 80px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .reference h3 {
+            color: #ffa500;
+            margin-bottom: 40px;
+        }
+        
+        .reference ol {
+            counter-reset: ref-counter;
+            list-style: none;
+        }
+        
+        .reference li {
+            counter-increment: ref-counter;
+            font-size: 1.8em;
+            margin: 20px 0;
+            padding-left: 60px;
+        }
+        
+        .reference li::before {
+            content: "[" counter(ref-counter) "]";
+            position: absolute;
+            left: 0;
+            color: #ffa500;
+            font-weight: bold;
+        }
+        
+        /* 스크롤 버튼 */
+        .scroll-top {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            background: #ffd700;
+            color: #1a1a2e;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: #ffed4e;
+            transform: scale(1.1);
+        }
+        
+        /* 구분선 */
+        hr {
+            border: none;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #ffd700, transparent);
+            margin: 80px 0;
+        }
+        
+        /* 반응형 디자인 */
+        
+        /* 대형 모니터 (1920px 이상) */
+        @media (min-width: 1920px) {
+            .container { max-width: 1800px; padding: 80px 100px; }
+            h1 { font-size: 5.5em; }
+            h2 { font-size: 4em; }
+            h3 { font-size: 3.2em; }
+            h4 { font-size: 2.6em; }
+            p { font-size: 2.3em; }
+            .highlight-box, .warning-box, .info-box { font-size: 2.5em; }
+            .stat-number { font-size: 6em; }
+        }
+        
+        /* 중형 화면 (1366px ~ 1919px) - 기본값 유지 */
+        
+        /* 소형 화면 (1024px ~ 1365px) */
+        @media (min-width: 1024px) and (max-width: 1365px) {
+            .container { padding: 50px 60px; }
+            header { padding: 60px 0 80px 0; }
+            h1 { font-size: 3.8em; }
+            .subtitle { font-size: 1.9em; }
+            h2 { font-size: 3em; }
+            h3 { font-size: 2.4em; }
+            h4 { font-size: 2em; }
+            p { font-size: 1.7em; }
+            section { padding: 50px; margin-bottom: 80px; }
+            .highlight-box, .warning-box, .info-box { font-size: 1.9em; padding: 35px 40px; }
+            .stat-grid { gap: 30px; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
+            .stat-number { font-size: 4em; }
+            .stat-label { font-size: 1.7em; }
+            li { font-size: 1.7em; }
+            blockquote { font-size: 1.7em; }
+        }
+        
+        /* 태블릿 가로 (768px ~ 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .container { padding: 40px 50px; }
+            header { padding: 50px 20px 70px 20px; margin: -40px -50px 60px -50px; }
+            h1 { font-size: 3.2em; }
+            .subtitle { font-size: 1.6em; }
+            h2 { font-size: 2.5em; margin-bottom: 40px; }
+            h3 { font-size: 2em; }
+            h4 { font-size: 1.8em; }
+            p { font-size: 1.5em; }
+            section { padding: 40px; margin-bottom: 60px; }
+            .highlight-box, .warning-box, .info-box { font-size: 1.6em; padding: 30px 35px; }
+            .stat-grid { gap: 25px; grid-template-columns: 1fr; }
+            .stat-card { padding: 40px; }
+            .stat-number { font-size: 3.5em; }
+            .stat-label { font-size: 1.5em; }
+            li { font-size: 1.5em; padding-left: 40px; }
+            blockquote { font-size: 1.5em; padding: 30px 40px; }
+            .scroll-top { width: 70px; height: 70px; font-size: 2em; }
+        }
+        
+        /* 모바일 (767px 이하) */
+        @media (max-width: 767px) {
+            .container { padding: 30px 25px; }
+            header { padding: 40px 15px 50px 15px; margin: -30px -25px 40px -25px; }
+            h1 { font-size: 2.5em; line-height: 1.2; }
+            .subtitle { font-size: 1.3em; }
+            h2 { font-size: 2em; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 3px solid #ffd700; }
+            h3 { font-size: 1.7em; margin: 35px 0 25px 0; }
+            h4 { font-size: 1.5em; }
+            p { font-size: 1.3em; line-height: 1.7; margin-bottom: 25px; }
+            section { padding: 30px 25px; margin-bottom: 50px; border-radius: 20px; }
+            .highlight-box, .warning-box, .info-box { 
+                font-size: 1.4em; 
+                padding: 25px 30px; 
+                margin: 30px 0;
+                border-left-width: 5px;
+            }
+            .stat-grid { gap: 20px; grid-template-columns: 1fr; }
+            .stat-card { padding: 30px; }
+            .stat-number { font-size: 3em; }
+            .stat-label { font-size: 1.3em; }
+            li { font-size: 1.3em; padding-left: 35px; margin: 20px 0; }
+            li::before { font-size: 1em; }
+            blockquote { font-size: 1.3em; padding: 25px 30px; }
+            .reference { padding: 30px 25px; }
+            .reference li { font-size: 1.2em; padding-left: 50px; }
+            .scroll-top { width: 60px; height: 60px; font-size: 1.8em; bottom: 30px; right: 30px; }
+            hr { margin: 60px 0; }
+        }
+        
+        /* 초소형 모바일 (480px 이하) */
+        @media (max-width: 480px) {
+            .container { padding: 20px 15px; }
+            header { padding: 30px 10px 40px 10px; }
+            h1 { font-size: 2em; }
+            .subtitle { font-size: 1.1em; }
+            h2 { font-size: 1.7em; }
+            h3 { font-size: 1.5em; }
+            h4 { font-size: 1.3em; }
+            p { font-size: 1.1em; }
+            section { padding: 25px 20px; }
+            .highlight-box, .warning-box, .info-box { font-size: 1.2em; padding: 20px 25px; }
+            .stat-number { font-size: 2.5em; }
+            .stat-label { font-size: 1.1em; }
+            li { font-size: 1.1em; padding-left: 30px; }
+        }
+        
+        /* 가로 모드 최적화 */
+        @media (orientation: landscape) and (max-height: 768px) {
+            header { padding: 40px 20px 50px 20px; }
+            h1 { font-size: 3em; }
+            section { padding: 40px; margin-bottom: 60px; }
+        }
+        
+        /* 프린트 스타일 */
+        @media print {
+            body { background: white; color: black; }
+            header { background: none; color: black; }
+            section { break-inside: avoid; }
+            .scroll-top { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>6·25 전쟁 당시<br>민간인 피해</h1>
+            <div class="subtitle">북한군의 강제동원과 양측의 학살</div>
+        </header>
+
+        <!-- 섹션 1: 북한군의 강제동원 -->
+        <section id="section1">
+            <h2>📋 1. 북한군의 한국인 강제동원 (인민의용군)</h2>
+            
+            <h3>전시동원령과 징집 규모</h3>
+            <div class="highlight-box">
+                1950년 7월 1일, 북한 최고인민회의 상임위원회가 '전시동원령'을 선포하여 만 18세부터 36세까지의 주민을 동원 대상으로 지정
+            </div>
+            
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-label">남한 점령지 강제동원</div>
+                    <div class="stat-number">10~40만 명</div>
+                    <div class="stat-label">추산 규모</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">김일성 발표</div>
+                    <div class="stat-number">40만 명</div>
+                    <div class="stat-label">남한 청년 강제징집</div>
+                </div>
+            </div>
+
+            <h3>동원 방식의 변화</h3>
+            <p>개전 초기에는 출옥한 좌익사범, 지하활동가, 보도연맹원 등을 대상으로 '<strong>자원</strong>'이라는 형태로 이루어졌습니다.</p>
+            
+            <div class="warning-box">
+                <strong>7월 말부터</strong> 자발적 지원이 고갈되자 강제성을 띤 징집으로 전환
+                <br><br>
+                • 가두모집과 호별 할당<br>
+                • 마을 단위 제비뽑기<br>
+                • 논의구조를 통한 대상자 선정
+            </div>
+
+            <h3>인천 지역 증언</h3>
+            <blockquote>
+                "1950년 6월 25일 개전 후 인민군 치하에서 많은 중학생 또래의 청소년들이 인민의용군에 강제로 끌려갔으며, 인민의용군으로 끌려간 인천 지역 청소년들은 대부분 실종되었습니다."
+            </blockquote>
+        </section>
+
+        <hr>
+
+        <!-- 섹션 2: 북한군과 좌익의 인민재판 -->
+        <section id="section2">
+            <h2>⚖️ 2. 북한군과 좌익의 인민재판과 학살</h2>
+            
+            <h3>점령정책의 실상</h3>
+            <div class="warning-box">
+                북한의 점령정책은 '해방'정책과는 정면으로 상반되는 것이었습니다. 민족해방을 표방하였던 북한의 점령정책은 <strong>인민재판이라는 피비린내 나는 숙청을 통한 공포정치</strong>였습니다.
+                <br><br>
+                <small>- 한국민족문화대백과사전</small>
+            </div>
+
+            <h3>인민재판의 실행 주체</h3>
+            <ul>
+                <li>전쟁 초 남진 시기: 북한군 지휘부 승인으로 지역 동조자, 내무서, 정치보위부 등이 담당</li>
+                <li>북한군이 자체적으로 나서서 저지른 경우도 많음</li>
+                <li>인천 상륙작전 후 후퇴 과정에서 점령지 주민 대규모 학살</li>
+            </ul>
+
+            <div class="info-box">
+                미군 전쟁범죄조사국(RG 153) 문서들에서 북한군의 후퇴 과정 중 민간인 학살이 명백히 기록됨
+            </div>
+
+            <h3>민간인 학살 규모 (공식 통계)</h3>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-label">1952년 내무부 통계</div>
+                    <div class="stat-number">122,799명</div>
+                    <div class="stat-label">북한군·좌익에 의한 학살</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">2003년 국방부 자료</div>
+                    <div class="stat-number">128,936명</div>
+                    <div class="stat-label">남 97,680명 / 여 31,256명</div>
+                </div>
+            </div>
+
+            <h3>기독교인 학살</h3>
+            <p>진실·화해를위한과거사정리위원회의 '한국전쟁 전후 기독교 탄압과 학살 연구' 보고서에 따르면:</p>
+            
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-label">개신교인 희생</div>
+                    <div class="stat-number">1,026명</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">천주교인 희생</div>
+                    <div class="stat-number">119명</div>
+                </div>
+            </div>
+
+            <h4>영광 야월교회 사건</h4>
+            <div class="warning-box">
+                전남 영광 야월교회에서 인민군들이 교인들과 마을 주민들을 교회에 몰아넣은 후 석유를 뿌리고 불을 질렀습니다.
+                <br><br>
+                <strong>야월교회 교인 65명 전원 피살</strong> - 단 한 명의 생존자도 없음
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 섹션 3: 유엔군과 한국군의 보복 -->
+        <section id="section3">
+            <h2>🔴 3. 유엔군과 한국군의 보복성 처벌</h2>
+            
+            <h3>보도연맹 학살</h3>
+            <div class="highlight-box">
+                1950년 6월 27일, 보도연맹원에 대한 처형이 집행되었습니다.
+            </div>
+
+            <h4>학살 실행 주체</h4>
+            <ul>
+                <li>주로 국군(육·해·공군)과 서북청년회 등의 극우 폭력단체가 자행</li>
+                <li>미국 문서에서 미군 장교의 참관과 허가, 최종 지시가 밝혀짐</li>
+            </ul>
+
+            <h3>AP통신 보도 (2008년)</h3>
+            <blockquote>
+                미 국립문서보관소의 비밀해제 기록을 토대로, 미군 장교들이 한국군이 집행한 '집단처형'을 참관하고, 카메라에 담았으며, 은밀히 상부에 보고했다.
+                <br><br>
+                <strong>10만 명이 넘는 좌익 인사 및 동조자들이 1950년 중반 불과 수주 동안에 기소, 재판 같은 법적 절차 없이 죽음을 맞았다.</strong>
+                <br><br>
+                <small>- AP 통신, 2008년</small>
+            </blockquote>
+
+            <h3>헌병 증언</h3>
+            <div class="warning-box">
+                "6월 27일경 헌병사령부를 통해 <strong>대통령 특명</strong>으로 분대장급 이상 지휘관은 명령에 불복하는 부대원을 사형시키고 남로당 계열 및 보도연맹 관계자들을 처형하라는 무전지시를 직접 받았다."
+                <br><br>
+                <small>- 당시 헌병대 6사단 상사 김만식의 증언</small>
+            </div>
+
+            <h3>보복 학살의 순환</h3>
+            <p>대전, 공주, 전주, 목포, 진주, 대구 지역에서는 군경이 후퇴하기 직전에 재소자와 보도연맹원들을 학살하고 낙동강 방어선으로 후퇴하였습니다.</p>
+            
+            <div class="warning-box">
+                보도연맹 학살과 북한군의 학살이 맞물리면서 <strong>충청, 호남, 서부 경남 지역은 내걸린 국기가 바뀔 때마다 좌우가 서로 번갈아 가며 보복 학살</strong>을 벌였습니다.
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 섹션 4: 진실화해위원회 조사 -->
+        <section id="section4">
+            <h2>📊 4. 진실화해위원회 조사 결과</h2>
+            
+            <div class="info-box">
+                1기(2005~2010)와 2기(2020~) 진실화해위원회에서 민간인 학살 생존자와 유가족으로부터 신고받고 파악한 사망자를 조사
+            </div>
+
+            <h3>조사 대상 총 57,882명의 사망 원인 분석</h3>
+            
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-label">남한 군경과 우익</div>
+                    <div class="stat-number">41,082명</div>
+                    <div class="stat-label">(71.0%)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">미군</div>
+                    <div class="stat-number">8,814명</div>
+                    <div class="stat-label">(15.2%)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">북한군·중국군·좌익</div>
+                    <div class="stat-number">7,986명</div>
+                    <div class="stat-label">(13.8%)</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>주의:</strong> 이 통계는 진실화해위원회에 신고된 사건만을 대상으로 하며, 실제 전체 민간인 희생자 규모를 대표하지는 않습니다. 신고 과정에서의 편향성, 접근성 차이 등을 고려해야 합니다.
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 섹션 5: 역사적 의미 -->
+        <section id="section5">
+            <h2>💭 5. 역사적 성찰</h2>
+            
+            <h3>복합적 진실</h3>
+            <p>6·25 전쟁 당시 민간인 피해는 북한군과 좌익, 남한 군경과 우익, 그리고 유엔군 모두에 의해 발생했습니다.</p>
+
+            <div class="info-box">
+                <strong>양측 모두의 잔혹행위</strong>
+                <br><br>
+                • 북한군: 인민재판, 강제징집, 후퇴 과정 학살<br>
+                • 남한 군경: 보도연맹 학살, 보복 처형<br>
+                • 미군: 집단처형 참관 및 승인<br>
+                • 좌우 양측: 점령지 교체 시마다 반복된 보복 학살
+            </div>
+
+            <h3>기억해야 할 교훈</h3>
+            <ul>
+                <li>이념 대립이 가져온 민간인 희생의 참상</li>
+                <li>법적 절차 없는 처벌의 위험성</li>
+                <li>전쟁이 민간인에게 미치는 광범위한 피해</li>
+                <li>역사적 진실 규명의 중요성</li>
+                <li>화해와 치유를 위한 지속적 노력의 필요성</li>
+            </ul>
+
+            <div class="highlight-box">
+                전쟁의 참상을 정확히 이해하고 기억하는 것은 같은 비극을 반복하지 않기 위한 첫걸음입니다.
+            </div>
+        </section>
+
+        <!-- 참고자료 -->
+        <div class="reference">
+            <h3>🔍 참고문헌</h3>
+            <ol>
+                <li>위키백과 - "인민의용군 (6.25 전쟁)"</li>
+                <li>한국민족문화대백과사전 - "한국전쟁"</li>
+                <li>진실·화해를위한과거사정리위원회 공식 홈페이지</li>
+                <li>배경식 (2001), "민중의 전쟁인식과 인민의용군", 『역사문제연구』 제6호, 역사문제연구소</li>
+                <li>미래한국 (2016.6.23), "민간인 학살은 전부 국군과 미군 짓이었나?"</li>
+                <li>AP 통신 (2008년 보도) - 미 국립문서보관소 비밀해제 문서 기반</li>
+                <li>국방부 군사편찬연구소 (2003), 『한국전쟁사』</li>
+                <li>진실·화해를위한과거사정리위원회, "한국전쟁 전후 기독교 탄압과 학살 연구"</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- 맨 위로 버튼 -->
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <script>
+        // 맨 위로 버튼 표시/숨김
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // 맨 위로 스크롤
+        document.getElementById('scrollTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 부드러운 스크롤 (앵커 링크)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 전체화면 토글 (더블클릭)
+        let lastTap = 0;
+        document.addEventListener('touchend', function(e) {
+            const currentTime = new Date().getTime();
+            const tapLength = currentTime - lastTap;
+            if (tapLength < 500 && tapLength > 0) {
+                toggleFullScreen();
+                e.preventDefault();
+            }
+            lastTap = currentTime;
+        });
+
+        document.addEventListener('dblclick', function() {
+            toggleFullScreen();
+        });
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.log('전체화면 모드를 사용할 수 없습니다.');
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // 키보드 단축키
+        document.addEventListener('keydown', function(e) {
+            // Home 키: 맨 위로
+            if (e.key === 'Home') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            // End 키: 맨 아래로
+            else if (e.key === 'End') {
+                e.preventDefault();
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
+            // Page Down: 한 화면 아래로
+            else if (e.key === 'PageDown') {
+                e.preventDefault();
+                window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
+            }
+            // Page Up: 한 화면 위로
+            else if (e.key === 'PageUp') {
+                e.preventDefault();
+                window.scrollBy({ top: -window.innerHeight * 0.8, behavior: 'smooth' });
+            }
+        });
+
+        // 인쇄 전 경고
+        window.addEventListener('beforeprint', function() {
+            console.log('문서를 인쇄합니다...');
+        });
+    </script>
+</body>
+</html>

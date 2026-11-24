@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정주영과 유엔군 묘지 - 카드뉴스</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif;
+            background: #1a1a2e;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .card {
+            border-radius: 30px;
+            padding: 80px 60px;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            right: -150px;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 72px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 60px;
+            opacity: 0.9;
+        }
+
+        .content-list p {
+            font-size: 32px;
+            margin: 24px 0;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .content-list.small p {
+            font-size: 26px;
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .nav-btn.prev {
+            left: 30px;
+        }
+
+        .nav-btn.next {
+            right: 30px;
+        }
+
+        .nav-btn svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .indicators {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .indicator {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #666;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .indicator.active {
+            width: 48px;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .counter {
+            text-align: center;
+            margin-top: 20px;
+            color: #999;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .bg-0 { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+        .bg-1 { background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%); }
+        .bg-2 { background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%); }
+        .bg-3 { background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%); }
+        .bg-4 { background: linear-gradient(135deg, #7e22ce 0%, #6b21a8 100%); }
+        .bg-5 { background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%); }
+        .bg-6 { background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%); }
+        .bg-7 { background: linear-gradient(135deg, #059669 0%, #047857 100%); }
+        .bg-8 { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .bg-9 { background: linear-gradient(135deg, #475569 0%, #334155 100%); }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card bg-0" id="slide-0">
+            <button class="nav-btn prev" onclick="prevSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="content">
+                <h1>정주영과 유엔군 묘지</h1>
+                <h2>1952년 겨울, 부산</h2>
+            </div>
+            <button class="nav-btn next" onclick="nextSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+
+        <div class="card bg-1 hidden" id="slide-1">
+            <button class="nav-btn prev" onclick="prevSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="content">
+                <h1>1950년 6월</h1>
+                <h2>피난과 만남</h2>
+                <div class="content-list">
+                    <p>동아일보 외신부 기자 정인영</p>
+                    <p>형 정주영과 부산으로 피난</p>
+                    <p>미군 사령부 통역 모집 광고 발견</p>
+                    <p>공병대 매카리스트 중위의 통역으로 근무</p>
+                </div>
+            </div>
+            <button class="nav-btn next" onclick="nextSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+
+        <div class="card bg-2 hidden" id="slide-2">
+            <button class="nav-btn prev" onclick="prevSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="content">
+                <h1>현대건설의 시작</h1>
+                <h2>형제의 협력</h2>
+                <div class="content-list">
+                    <p>1947년 5월: 현대토건사 설립</p>
+                    <p>1950년 1월: 현대건설주식회사로 변경</p>
+                    <p>정인영이 형 정주영을 미군에 소개</p>
+                    <p>서울 수복 후 미군 발주 공사 시작</p>
+                </div>
+            </div>
+            <button class="nav-btn next" onclick="nextSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+
+        <div class="card bg-3 hidden" id="slide-3">
+            <button class="nav-btn prev" onclick="prevSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="content">
+                <h1>유엔군 묘지 조성</h1>
+                <h2>부산 대연동</h2>
+                <div class="content-list">
+                    <p>1950년 10월: 중공군 참전, 사상자 증가</p>
+                    <p>1951년 1월 18일: 부산 당곡리 결정</p>
+                    <p>1951년 4월: 묘지 완공</p>
+                    <p>1951-1954년: 약 11,000여명 안장</p>
+                </div>
+            </div>
+            <button class="nav-btn next" onclick="nextSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+
+        <div class="card bg-4 hidden" id="slide-4">
+            <button class="nav-btn prev" onclick="prevSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="content">
+                <h1>아이젠하워 방한</h1>
+                <h2>1952년 12월</h2>
+                <div class="content-list">
+                    <p>1952년 10월 24일: 전장 방문 공약</p>
+                    <p>1882년 한미 수교 이래 70년 만</p>
+                    <p>12월 2일-5일: 사흘간 방문</p>
+                    <p>12월 4일: 160만 시민 환영 대회</p>
+                </div>
+            </div>
+            <button class="nav-btn next" onclick="nextSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+
+        <div class="card bg-5 hidden" id="slide-5">
+            <button class="nav-btn prev" onclick="prevSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="content">
+                <h1>불가능한 주문</h1>
+                <h2>한겨울의 푸른 잔디</h2>
+                <div class="content-list">
+                    <p>미8군: '묘역에 반드시 파란 잔디 필요'</p>
+                    <p>여러 건설업체 모두 거절</p>
+                    <p>엄동설한에 푸른 잔디는 불가능</p>
+                    <p>묘지는 황량한 흙밭 상태</p>
+                </div>
+            </div>
+            <button class="nav-btn next" onclick="nextSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+
+        <div class="card bg-6 hidden" id="slide-6">
+            <button class="nav-btn prev" onclick="prevSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="content">
+                <h1>정주영의 제안</h1>
+                <h2>보리밭 아이디어</h2>
+                <div class="content-list">
+                    <p>'풀만 파랗게 나 있으면 되느냐?'</p>
+                    <p>보리는 겨울에도 푸른색 유지</p>
+                    <p>12월의 보리 싹과 잔디 모습 유사</p>
+                    <p>성공 시 3배 지급, 실패 시 3배 배상</p>
+                </div>
+            </div>
+            <button class="nav-btn next" onclick="nextSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+
+        <div class="card bg-7 hidden" id="slide-7">
+            <button class="nav-btn prev" onclick="prevSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="content">
+                <h1>실행</h1>
+                <h2>낙동강에서 부산으로</h2>
+                <div class="content-list">
+                    <p>트럭 30여 대 동원</p>
+                    <p>낙동강 연안 보리밭 매입</p>
+                    <p>묘지로 옮겨 심기</p>
+                    <p>동시에 아이젠하워 숙소 리모델링</p>
+                </div>
+            </div>
+            <button class="nav-btn next" onclick="nextSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+
+        <div class="card bg-8 hidden" id="slide-8">
+            <button class="nav-btn prev" onclick="prevSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="content">
+                <h1>결과</h1>
+                <h2>새로운 시작</h2>
+                <div class="content-list">
+                    <p>공사 성공</p>
+                    <p>약속대로 공사비 3배 지급</p>
+                    <p>미군: '현대 넘버원' 기억</p>
+                    <p>이후 미군 발주 증가</p>
+                </div>
+            </div>
+            <button class="nav-btn next" onclick="nextSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+
+        <div class="card bg-9 hidden" id="slide-9">
+            <button class="nav-btn prev" onclick="prevSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="content">
+                <h1>출처</h1>
+                <div class="content-list small">
+                    <p>전국경제인연합회 기업가박물관</p>
+                    <p>재한유엔기념공원 공식 홈페이지</p>
+                    <p>대한민국사 데이터베이스</p>
+                    <p>한국민족문화대백과사전</p>
+                    <p>아시아투데이, 월간중앙, 한국일보</p>
+                    <p>시사저널, 비즈니스포스트</p>
+                </div>
+            </div>
+            <button class="nav-btn next" onclick="nextSlide()">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+
+        <div class="indicators" id="indicators">
+            <button class="indicator active" onclick="goToSlide(0)"></button>
+            <button class="indicator" onclick="goToSlide(1)"></button>
+            <button class="indicator" onclick="goToSlide(2)"></button>
+            <button class="indicator" onclick="goToSlide(3)"></button>
+            <button class="indicator" onclick="goToSlide(4)"></button>
+            <button class="indicator" onclick="goToSlide(5)"></button>
+            <button class="indicator" onclick="goToSlide(6)"></button>
+            <button class="indicator" onclick="goToSlide(7)"></button>
+            <button class="indicator" onclick="goToSlide(8)"></button>
+            <button class="indicator" onclick="goToSlide(9)"></button>
+        </div>
+
+        <div class="counter" id="counter">1 / 10</div>
+    </div>
+
+    <script>
+        var currentSlide = 0;
+        var totalSlides = 10;
+
+        function showSlide(n) {
+            var i;
+            for (i = 0; i < totalSlides; i++) {
+                document.getElementById('slide-' + i).classList.add('hidden');
+            }
+            
+            document.getElementById('slide-' + n).classList.remove('hidden');
+            
+            var indicators = document.querySelectorAll('.indicator');
+            for (i = 0; i < indicators.length; i++) {
+                if (i === n) {
+                    indicators[i].classList.add('active');
+                } else {
+                    indicators[i].classList.remove('active');
+                }
+            }
+            
+            document.getElementById('counter').textContent = (n + 1) + ' / ' + totalSlides;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            showSlide(currentSlide);
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        });
+    </script>
+</body>
+</html>

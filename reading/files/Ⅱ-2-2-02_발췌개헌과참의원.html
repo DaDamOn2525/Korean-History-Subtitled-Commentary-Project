@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>발췌개헌 결과: 참의원 미구성 원인과 위헌성</title>
+    <style>
+        @import url('https://googleapis.com');
+
+        /* 전자칠판용 다크 배경 및 기본 스타일 설정 */
+        body {
+            background-color: #121214; /* 딥 다크 배경 */
+            color: #F3F4F6; /* 클라우드 화이트 */
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 40px 60px;
+            line-height: 1.6;
+            letter-spacing: -0.02em;
+        }
+
+        /* 메인 타이틀 */
+        .main-title {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #F3F4F6;
+            border-bottom: 4px solid #FCD34D; /* 옐로우 모닝 포인트 */
+            padding-bottom: 15px;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* 대주제 레이아웃 그레이드 */
+        .section-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        /* 각 섹션 카드 */
+        .section-box {
+            background-color: #1E1E24; /* 대조를 위한 약간 밝은 다크 */
+            border-left: 8px solid #FCD34D; /* 옐로우 모닝 좌측 바 */
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-box.full-width {
+            grid-column: 1 / -1;
+            border-left: block;
+            border-top: 8px solid #FCD34D;
+            border-left: none;
+        }
+
+        /* 소주제 타이틀 */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #F3F4F6;
+            margin-top: 0;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 핵심 키워드 강조 (옐로우 모닝) */
+        .highlight {
+            color: #FCD34D; /* 옐로우 모닝 */
+            font-weight: 700;
+        }
+
+        /* 판서형 리스트 구조 */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        li {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        /* 대시(-) 기호 판서 느낌 구현 */
+        li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #FCD34D;
+            font-weight: 700;
+        }
+
+        /* 보조 텍스트 및 상세 설명 */
+        .sub-text {
+            display: block;
+            font-size: 1.15rem;
+            color: #9CA3AF; /* 미디엄 그레이로 가독성 분리 */
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-title">발췌개헌 결과: 참의원 미구성 원인 및 위헌성</div>
+
+    <div class="section-container">
+        <!-- 1. 참의원 미구성 원인 -->
+        <div class="section-box">
+            <div class="section-title">📌 참의원 미구성 원인 (안 한 이유)</div>
+            <ul>
+                <li>
+                    <span class="highlight">대통령 직선제 확보가 목적</span>
+                    <span class="sub-text">이승만 정권의 본래 목적은 오직 직선제 (양원제는 야당 안을 마지못해 절충한 결과)</span>
+                </li>
+                <li>
+                    <span class="highlight">독점 권력 분산 방지</span>
+                    <span class="sub-text">국회가 민의원·참의원으로 분산되는 것보다 단원제 국회를 상대하는 것이 통제에 용이</span>
+                </li>
+                <li>
+                    <span class="highlight">정국 혼란 핑계</span>
+                    <span class="sub-text">6·25 전쟁 직후의 정세 불안정을 이유로 선거법 제정 및 선거 실시 기피</span>
+                </li>
+                <li>
+                    <span class="highlight">야당 부통령 견제</span>
+                    <span class="sub-text">1956년 야당 장면 후보가 부통령 당선되자, 그가 겸임할 참의원 의장직 권한 무력화 위해 선거 무산</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 2. 참의원 미구성의 위헌성 -->
+        <div class="section-box">
+            <div class="section-title">📌 참의원 미구성의 위헌성</div>
+            <ul>
+                <li>
+                    <span class="highlight">입법권 주체의 부적격</span>
+                    <span class="sub-text">개정 헌법상 국회는 '민의원+참의원' 구조 ➡️ 민의원 단독 입법은 불완전한 기관의 권한 행사로 명백한 위헌</span>
+                </li>
+                <li>
+                    <span class="highlight">사사오입 개헌의 절차적 위헌</span>
+                    <span class="sub-text">헌법 개정은 양원의 의결을 각각 거쳐야 함 ➡️ 참의원 없이 감행하여 내용뿐만 아니라 절차상으로도 중대한 위헌</span>
+                </li>
+                <li>
+                    <span class="highlight">권력분립 및 법치주의 부정</span>
+                    <span class="sub-text">행정부가 하위 법률 미제정 및 선거 고의 기피로 헌법기관 탄생 저지 ➡️ 입법부 구성을 침해한 반헌법적 행위</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. 결론 및 의의 -->
+    <div class="section-box full-width">
+        <div class="section-title">📌 결론 및 의의</div>
+        <ul>
+            <li>
+                <span class="highlight">기형적 국회 운영 :</span> 제1공화국 내내 헌법상 양원제였으나 실질적으로는 기형적인 단원제로 파행 운영됨
+            </li>
+            <li>
+                <span class="highlight">정상화 (1960년) :</span> 4·19 혁명으로 이승만 정권이 붕괴된 후, 제3차 개헌을 거쳐 비로소 참의원이 정상 구성됨 (본격적인 양원제 실시)
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

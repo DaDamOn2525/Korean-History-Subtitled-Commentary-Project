@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제2대 국회의원 선거: 26일간의 희망과 비극</title>
+    <style>
+        /* 기본 설정 - 전자칠판 최적화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            line-height: 2;
+            font-size: 28px;
+            padding: 50px 70px;
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+
+        /* 제목 영역 */
+        .header {
+            text-align: center;
+            margin-bottom: 70px;
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+            letter-spacing: -2px;
+        }
+
+        .header .subtitle {
+            font-size: 48px;
+            color: #ffd700;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .header .date {
+            font-size: 32px;
+            color: #ffffff;
+            opacity: 0.9;
+            margin-top: 20px;
+        }
+
+        /* 섹션 구분 */
+        .section {
+            background: rgba(255, 255, 255, 0.97);
+            color: #1a1a1a;
+            padding: 60px 70px;
+            margin-bottom: 50px;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            font-size: 56px;
+            font-weight: 900;
+            color: #c41e3a;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 6px solid #c41e3a;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .subsection-title {
+            font-size: 44px;
+            font-weight: 700;
+            color: #0f4c81;
+            margin: 50px 0 30px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .subsection-title::before {
+            content: "▶";
+            color: #0f4c81;
+            margin-right: 20px;
+            font-size: 38px;
+        }
+
+        /* 본문 텍스트 */
+        p {
+            margin-bottom: 30px;
+            text-align: justify;
+            font-size: 30px;
+            line-height: 2;
+        }
+
+        /* 강조 박스 */
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 60px;
+            margin: 50px 0;
+            border-radius: 20px;
+            border-left: 12px solid #ffd700;
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 2;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        /* 인용구 스타일 */
+        .quote {
+            background: #f0f4f8;
+            border-left: 10px solid #0f4c81;
+            padding: 40px 50px;
+            margin: 40px 0;
+            font-style: italic;
+            color: #2c3e50;
+            font-size: 28px;
+            line-height: 2;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-source {
+            display: block;
+            margin-top: 20px;
+            font-size: 24px;
+            color: #666;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* 인포그래픽 1: 출마 경쟁률 */
+        .competition-infographic {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 60px;
+            border-radius: 25px;
+            margin: 60px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .competition-title {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .competition-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            margin: 40px 0;
+        }
+
+        .candidate-box {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 50px 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .candidate-number {
+            font-size: 96px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .candidate-label {
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .arrow {
+            font-size: 80px;
+            opacity: 0.8;
+        }
+
+        .competition-ratio {
+            font-size: 64px;
+            font-weight: 900;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .competition-comparison {
+            margin-top: 40px;
+            font-size: 28px;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        /* 인포그래픽 2: 의석 구성도 */
+        .seat-infographic {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 60px;
+            border-radius: 25px;
+            margin: 60px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .seat-title {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hemicycle {
+            position: relative;
+            width: 800px;
+            height: 450px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 400px 400px 0 0;
+            overflow: hidden;
+            padding: 40px;
+        }
+
+        .seat-row {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .seat {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .seat.independent {
+            background: #95a5a6;
+        }
+
+        .seat.democratic {
+            background: #3498db;
+        }
+
+        .seat.national {
+            background: #e74c3c;
+        }
+
+        .seat.other {
+            background: #f39c12;
+        }
+
+        .seat-legend {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .legend-color {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .seat-stat {
+            margin-top: 40px;
+            font-size: 28px;
+            line-height: 2;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .seat-stat strong {
+            font-size: 48px;
+            color: #ffd700;
+        }
+
+        /* 인포그래픽 3: 26일 타임라인 */
+        .timeline-infographic {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            padding: 60px;
+            border-radius: 25px;
+            margin: 60px 0;
+            color: #1a1a1a;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-title {
+            font-size: 56px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #c41e3a;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+        }
+
+        .timeline-container {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(to right, #2ecc71, #f39c12, #e74c3c);
+            border-radius: 4px;
+            transform: translateY(-50%);
+        }
+
+        .timeline-points {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .timeline-point {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .timeline-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-dot.hope {
+            background: #2ecc71;
+        }
+
+        .timeline-dot.middle {
+            background: #f39c12;
+        }
+
+        .timeline-dot.tragedy {
+            background: #e74c3c;
+        }
+
+        .timeline-dot.final {
+            background: #34495e;
+        }
+
+        .timeline-date {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: #c41e3a;
+        }
+
+        .timeline-event {
+            font-size: 26px;
+            font-weight: 600;
+            line-height: 1.6;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timeline-days {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 64px;
+            font-weight: 900;
+            color: #c41e3a;
+            text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.7);
+        }
+
+        /* 비교 박스 */
+        .comparison-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .comparison-item {
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .comparison-item.past {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #1a1a1a;
+        }
+
+        .comparison-item.present {
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            color: #1a1a1a;
+        }
+
+        .comparison-year {
+            font-size: 44px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .comparison-stat {
+            font-size: 72px;
+            font-weight: 900;
+            margin: 20px 0;
+            color: #c41e3a;
+        }
+
+        .comparison-desc {
+            font-size: 28px;
+            line-height: 1.8;
+        }
+
+        /* 개념 설명 박스 */
+        .concept-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 50px 60px;
+            margin: 50px 0;
+            border-radius: 20px;
+            border: 5px solid #0f4c81;
+            color: #1a1a1a;
+        }
+
+        .concept-title {
+            font-size: 44px;
+            font-weight: 900;
+            color: #0f4c81;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .concept-item {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+        }
+
+        .concept-term {
+            font-size: 36px;
+            font-weight: 800;
+            color: #c41e3a;
+            margin-bottom: 15px;
+        }
+
+        .concept-desc {
+            font-size: 28px;
+            line-height: 1.9;
+        }
+
+        /* 에필로그 */
+        .epilogue {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 70px 80px;
+            border-radius: 25px;
+            margin-top: 70px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .epilogue h2 {
+            font-size: 56px;
+            margin-bottom: 40px;
+            color: #ffd700;
+            text-align: center;
+        }
+
+        .epilogue h3 {
+            font-size: 44px;
+            margin: 40px 0 25px 0;
+            color: #74b9ff;
+        }
+
+        /* 목록 */
+        ul {
+            margin: 30px 0;
+            padding-left: 60px;
+        }
+
+        li {
+            margin-bottom: 25px;
+            font-size: 30px;
+            line-height: 2;
+        }
+
+        li::marker {
+            font-size: 32px;
+            color: #c41e3a;
+        }
+
+        /* 강조 텍스트 */
+        strong {
+            color: #c41e3a;
+            font-weight: 800;
+        }
+
+        em {
+            color: #0f4c81;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        /* 출처 섹션 */
+        .sources {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 50px 60px;
+            border-radius: 20px;
+            margin-top: 50px;
+            font-size: 26px;
+            line-height: 2;
+        }
+
+        .sources h2 {
+            font-size: 44px;
+            margin-bottom: 30px;
+            color: #ffd700;
+        }
+
+        .sources ol {
+            padding-left: 50px;
+        }
+
+        .sources li {
+            margin-bottom: 20px;
+            font-size: 26px;
+        }
+
+        /* 스크롤 바 */
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        /* 애니메이션 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* 프린트 최적화 */
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 12pt;
+                padding: 20px;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <div class="header">
+        <h1>🇰🇷 제2대 국회의원 선거</h1>
+        <div class="subtitle">26일간의 희망과 비극</div>
+        <div class="date">1950년 5월 30일, 대한민국 역사의 전환점에서</div>
+    </div>
+
+    <!-- 프롤로그 -->
+    <div class="section">
+        <h2 class="section-title">프롤로그: 1950년 봄, 희망의 투표소</h2>
+        
+        <p>1950년 5월 30일 새벽. 전국의 투표소 앞에는 이른 아침부터 사람들이 줄을 서기 시작했다. 해방 5년차, 좌우 대립과 제주 4·3사건, 여순사건의 상처가 채 아물기도 전이었다. 김구 선생의 암살(1949년 6월)과 반민특위 해체라는 좌절을 경험한 국민이었지만, 이날은 달랐다.</p>
+
+        <div class="highlight-box">
+            "이제는 좀 살아보자."
+        </div>
+
+        <p>투표소를 향하는 사람들의 마음에는 이 한마디가 새겨져 있었다. 광복의 기쁨, 좌우 대립의 갈등, 정부 수립의 혼란을 겪은 2년. 이제. 그들은 알았다. <strong>투표가 무엇을 할 수 있는지를.</strong></p>
+    </div>
+
+    <!-- 1부: 선거 전야 -->
+    <div class="section">
+        <h2 class="section-title">1부: 선거 전야 - 독재에 대한 저항</h2>
+        
+        <h3 class="subsection-title">미루려던 선거, 강행된 민심</h3>
+        
+        <p>이승만 대통령은 이 선거를 두려워했다. 그럴 만한 이유가 있었다.</p>
+
+        <p>1949년 반민특위 해체 사건으로 친일파 청산은 좌절되었고, 김구의 암살은 이승만 정권에 대한 의혹을 키웠다. 2년간의 실정(失政)에 국민의 불만은 팽배했다.</p>
+
+        <div class="quote">
+            "1950년 초, 이승만은 예정되어 있던 이선에서 패배할 것으로 예상되자, 이를 12월로 연기하려고 했다."
+            <span class="quote-source">- 국사편찬위원회 『우리역사넷』</span>
+        </div>
+
+        <p>그러나 미국 국무장관 딘 애치슨(Dean Acheson)은 1950년 4월 초, 애치슨은 원조 중단을 압박하며 선거 연기를 엄중히 경고했다. 이승만은 결국 예정대로 선거를 치뤄야 하는 상황이었다.</p>
+
+        <div class="quote">
+            "1950년 4월 초순 미국 국무장관 딘 애치슨이 엄중 경고하였다. 결국 이승만은 선거를 예정대로 치뤄야만 했다."
+            <span class="quote-source">- 한국민족문화대백과사전</span>
+        </div>
+
+        <h3 class="subsection-title">과열된 경쟁, 깨어난 민심</h3>
+        
+        <p>제헌국회를 보이콧했던 남북협상파도 이번에는 참여했다. 이 2,209명이 출마하여 평균 10.5대 1이라는 역대 최고 경쟁률을 기록했다. 유권자 843만 명 중 775만 명이 투표에 참여해 91.1%라는 경이적인 투표율을 보였다.</p>
+
+        <!-- 인포그래픽 1: 출마 경쟁률 -->
+        <div class="competition-infographic">
+            <div class="competition-title">📊 역대 최고 경쟁률</div>
+            <div class="competition-visual">
+                <div class="candidate-box">
+                    <div class="candidate-number">2,209명</div>
+                    <div class="candidate-label">출마자</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="candidate-box">
+                    <div class="candidate-number">210석</div>
+                    <div class="candidate-label">의석수</div>
+                </div>
+            </div>
+            <div class="competition-ratio">평균 경쟁률 10.5 : 1</div>
+            <div class="competition-comparison">
+                역대 국회의원 선거 중 가장 높은 경쟁률<br>
+                투표율 91.1% (775만 명 / 843만 명)
+            </div>
+        </div>
+
+        <div class="quote">
+            "경쟁률은 의원정수 210명에 대하여 무려 2,209명이 출마하여 평균 10.5 대 1로 역대선거 중 가장 높았다."
+            <span class="quote-source">- 한국민족문화대백과사전</span>
+        </div>
+
+        <p>이는 단순한 숫자가 아니었다. 2년간의 민주주의 경험을 통해 국민은 자신이 내는 소리가 투표로 표현될 수 있다는 것을 경험했다. 그들은 정당보다는 개인의 자질을, 정권보다는 민생을 외치는 후보에게 표를 주었다. 그 결과!</p>
+    </div>
+
+    <!-- 2부: 무소속의 압승 -->
+    <div class="section">
+        <h2 class="section-title">2부: 1950년 5월 30일 - 무소속의 압승</h2>
+        
+        <h3 class="subsection-title">삼균주의자의 귀환, 그리고 마지막 여정</h3>
+        
+        <p>서울 성북구 투표소. 조소앙(趙素昻, 1887-1958)은 63세의 나이로 투표지에 자신의 이름이 적힌 것을 보며 감회에 젖었다.</p>
+
+        <p>2년 전인 1948년, 그는 김구와 함께 남북협상을 추진하며 단독정부 수립을 반대했다. 제헌국회 선거를 보이콧했고, 이승만 정권으로부터 '빨갱이'라는 낙인이 찍혔다. 김구가 암살당한 후(1949년 6월), 조소앙은 더욱 고립되었다.</p>
+
+        <p>그는 포기하지 않았다. 대한독립촉성국민회를 이끌며 삼균주의(三均主義) - 정치·경제·교육의 균등을 외쳤다. "좌도, 우도 아닌, 민족 전체의 균등한 삶"을 꿈꾸었다. 그리고 이번에는 선거에 참여했다.</p>
+
+        <p>1950년 5월 30일, 조소앙은 서울 성북구에서 당선되었다. 그가 이끄는 사회당(구 한국독립당 잔여파)은 비록 소수 정당이었지만, 그의 당선은 상징적이었다. 남북협상파도, 제3의 길을 걷는 이들도, 이 나라의 주인임을 증명한 순간이었다.</p>
+
+        <div class="highlight-box">
+            "이제야 진짜 민주주의가 시작되는구나."
+        </div>
+
+        <p>하지만. 그 희망은 단 26일밖에 지속되지 못했다.</p>
+
+        <p>1950년 6월 25일 새벽, 한국전쟁이 발발했다. 6월 28일, 그는 북한군에 의해 납북되었다.</p>
+
+        <p>평양으로 끌려간 조소앙은 북한 정권에 협력을 강요받았지만 끝까지 거부했다. 그는 1958년 9월 10일, 평양에서 71세의 나이로 생을 마감했다. 삼균주의를 외치던 그의 목소리는, 분단된 한반도 어디에서도 울려 퍼지지 못했다.</p>
+
+        <p><strong>5월 30일 투표소에서 희망을 품었던 조소앙. 그의 26일간의 국회의원 생활은, 대한민국 민주주의의 가능성과 한계를 동시에 보여주는 비극이었다.</strong></p>
+
+        <h3 class="subsection-title">민심의 심판</h3>
+        
+        <p>개표 결과는 충격적이었다. 전체 210석 중 무소속이 126석(60%)을 차지했다. 제1당이 된 민주국민당도 겨우 24석, 여당 격인 대한국민당도 24석에 불과했다. 이승만을 지지하는 세력 전체를 합쳐도 57석에 그쳤다.</p>
+
+        <!-- 인포그래픽 2: 의석 구성도 -->
+        <div class="seat-infographic">
+            <div class="seat-title">🏛️ 제2대 국회 의석 구성</div>
+            
+            <div class="hemicycle">
+                <!-- 의석 시각화 (간략화된 버전) -->
+                <div class="seat-row">
+                    <span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span>
+                </div>
+                <div class="seat-row">
+                    <span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat democratic"></span><span class="seat democratic"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat national"></span><span class="seat national"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span>
+                </div>
+                <div class="seat-row">
+                    <span class="seat independent"></span><span class="seat democratic"></span><span class="seat democratic"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat national"></span><span class="seat national"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat democratic"></span><span class="seat democratic"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span>
+                </div>
+                <div class="seat-row">
+                    <span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat democratic"></span><span class="seat independent"></span><span class="seat national"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat national"></span><span class="seat independent"></span><span class="seat democratic"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span>
+                </div>
+                <div class="seat-row">
+                    <span class="seat independent"></span><span class="seat democratic"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat national"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat other"></span><span class="seat other"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat national"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat democratic"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span>
+                </div>
+                <div class="seat-row">
+                    <span class="seat independent"></span><span class="seat independent"></span><span class="seat national"></span><span class="seat independent"></span><span class="seat democratic"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat other"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat other"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat democratic"></span><span class="seat independent"></span><span class="seat national"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span>
+                </div>
+                <div class="seat-row">
+                    <span class="seat independent"></span><span class="seat democratic"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat national"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat other"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat other"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat national"></span><span class="seat independent"></span><span class="seat democratic"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span><span class="seat independent"></span>
+                </div>
+            </div>
+
+            <div class="seat-legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #95a5a6;"></div>
+                    <span>무소속 126석</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #3498db;"></div>
+                    <span>민주국민당 24석</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #e74c3c;"></div>
+                    <span>대한국민당 24석</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #f39c12;"></div>
+                    <span>기타 36석</span>
+                </div>
+            </div>
+
+            <div class="seat-stat">
+                <strong>60%</strong>가 무소속<br>
+                야당(민주국민당)이 제1당<br>
+                재선율 <strong>15.5%</strong> (역대 최저)
+            </div>
+        </div>
+
+        <div class="quote">
+            "정당·단체별 당선자는 무소속이 모두 126명으로 이 정원의 60%를 차지하여 절대다수를 차지하게 되었고, 정당으로는 대한국민당과 민주국민당이 각각 24명을 당선시켰다."
+            <span class="quote-source">- 한국민족문화대백과사전</span>
+        </div>
+
+        <p>더욱 놀라운 것은 재선율이었다. 제헌국회 의원 200명 중 재선에 성공한 이는 단 31명, 15.5%에 불과했다. 역대 최저 재선율이었다.</p>
+
+        <h3 class="subsection-title">왜 무소속이었나: 정당 불신의 시대</h3>
+        
+        <p><strong>126석. 전체 의석의 60%.</strong></p>
+
+        <p>이 압도적인 무소속 당선은 무엇을 의미했을까?</p>
+
+        <p><strong>첫째, 정당정치의 미성숙이었다.</strong> 1950년 당시 대한민국의 정당은 아직 뚜렷한 이념이나 정강정책보다는 인물 중심으로 움직였다. 이승만의 대한국민당, 신익희의 민주국민당 모두 "누구의 당"이라는 인식이 강했지, "무엇을 하는 당"이라는 정체성이 약했다.</p>
+
+        <p><strong>둘째, 정당에 대한 불신이었다.</strong> 광복 후 5년간 수많은 정당이 생겼다 사라졌다. 좌우 대립 속에서 정당은 이념 싸움의 도구였고, 친일파들은 정당을 갈아타며 생존했다. 반민특위 해체 과정에서 국민은 정치인의 실체를 봤다. 정당이 민의보다는 권력과 결탁한다는 것을.</p>
+
+        <p><strong>셋째, 인물 중심 투표였다.</strong> 국민들은 정당 공천보다는 "이 사람이 우리 지역을 위해 무엇을 해줄 것인가"를 봤다. 지역 유지, 독립운동가 출신, 명망가들이 무소속으로 대거 당선되었다.</p>
+
+        <!-- 1950 vs 2025 비교 -->
+        <div class="comparison-box">
+            <div class="comparison-item past">
+                <div class="comparison-year">1950년</div>
+                <div class="comparison-stat">60%</div>
+                <div class="comparison-desc">
+                    무소속 의원 126명<br>
+                    정당 불신의 시대<br>
+                    인물 중심 투표<br>
+                    정당정치 미성숙
+                </div>
+            </div>
+            <div class="comparison-item present">
+                <div class="comparison-year">2025년</div>
+                <div class="comparison-stat">0.5%</div>
+                <div class="comparison-desc">
+                    무소속 의원 1~2명<br>
+                    공천권의 지배<br>
+                    정당 중심 투표<br>
+                    정당정치 고착화?
+                </div>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">역사상 처음, 야당이 제1당이 되다</h3>
+        
+        <p>이 선거는 "제1당이 야당에게 넘어간 최초의 선거"였다. 국민은 투표로 정권을 바꿀 수 있음을 경험했다. 이승만 정권의 실정, 친일파 청산 좌절, 권력 독점에 대한 반대였다.</p>
+
+        <p>거리에서는 "우리가 해냈다!"라는 환호가 터졌다.</p>
+
+        <p>신익희가 이끄는 민주국민당은 야당으로서 제1당이 되었고, 6월 19일 신익희는 국회의장에 선출되었다. 이로써 국회는 이승만을 견제할 준비를 갖추었다.</p>
+    </div>
+
+    <!-- 3부: 26일 후 -->
+    <div class="section">
+        <h2 class="section-title">3부: 26일 후 - 희망에서 비극으로</h2>
+
+        <!-- 인포그래픽 3: 26일 타임라인 -->
+        <div class="timeline-infographic">
+            <div class="timeline-title">⏰ 희망에서 비극까지: 단 26일</div>
+            
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                <div class="timeline-points">
+                    <div class="timeline-point">
+                        <div class="timeline-dot hope"></div>
+                        <div class="timeline-date">5월 30일</div>
+                        <div class="timeline-event">
+                            제2대 국회의원 선거<br>
+                            무소속 60% 압승<br>
+                            야당이 제1당
+                        </div>
+                    </div>
+                    <div class="timeline-point">
+                        <div class="timeline-dot middle"></div>
+                        <div class="timeline-date">6월 19일</div>
+                        <div class="timeline-event">
+                            신익희<br>
+                            국회의장 선출<br>
+                            견제 체제 구축
+                        </div>
+                    </div>
+                    <div class="timeline-point">
+                        <div class="timeline-dot tragedy"></div>
+                        <div class="timeline-date">6월 25일</div>
+                        <div class="timeline-event">
+                            한국전쟁 발발<br>
+                            의원 24명 납북<br>
+                            희망의 붕괴
+                        </div>
+                    </div>
+                    <div class="timeline-point">
+                        <div class="timeline-dot final"></div>
+                        <div class="timeline-date">1952년<br>7월 4일</div>
+                        <div class="timeline-event">
+                            부산 정치파동<br>
+                            발췌개헌 강행<br>
+                            민주주의 질식
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-days">
+                5월 30일 → 6월 25일<br>
+                단 <span style="font-size: 96px; color: #e74c3c;">26일</span>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">1950년 6월 25일, 모든 것이 무너지다</h3>
+        
+        <p><strong>단 26일.</strong></p>
+
+        <p>5월 30일 투표소에서 희망을 심던 사람들이 꿈꾸던 나라가 존속한 시간.</p>
+
+        <p>1950년 6월 25일 새벽 4시, 북한군의 남침으로 한국전쟁이 발발했다. 국회는 피난길에 올랐고, 많은 의원이 정보를 제대로 전달받지 못한 채 서울에 남았다.</p>
+
+        <div class="quote">
+            "선거 직후 6.25 전쟁이 발발하여 국회도 피난을 가게 되었으며, 이 과정에서 정부로부터 정보를 늦게 받거나 수도 사수 등의 명분으로 붙잡혀 납북된 의원도 있다."
+            <span class="quote-source">- 인천투데이, 2025년 5월 30일</span>
+        </div>
+
+        <p>민세 안재홍(경기 평택), 조소앙(사회당 당수), 원세훈, 윤기섭 등 저명한 의원들이 납북되었다. 이 24명의 의원이 납북되거나 월북했다.</p>
+
+        <div class="quote">
+            "전란 속에 국회의원 24명이 납북되거나 월북했고, 남은 의원들은 각지로 흩어진 채 피난민 신세가 됐다."
+            <span class="quote-source">- 인천투데이, 2025년 5월 30일</span>
+        </div>
+
+        <p>조봉암 부의장은 국회의 기밀서류를 챙기느라 가족을 먼저 피난시키지 못했고, 그의 아내는 북한군에 의해 납북되어 행방불명이 되었다.</p>
+
+        <p><strong>5월 30일 투표소 앞에서 환호하던 사람들, 민의를 믿었던 의원들, 그들이 만들어내려던 새로운 대한민국은 전쟁 속에 산산이 부서졌다.</strong></p>
+    </div>
+
+    <!-- 4부: 1952년 부산 -->
+    <div class="section">
+        <h2 class="section-title">4부: 1952년 부산 - 민주주의의 질식</h2>
+        
+        <h3 class="subsection-title">피난 국회의 저항</h3>
+        
+        <p>전쟁 중에도 국회는 부산에서 명맥을 이어갔다. 그리고 1952년, 이승만은 대통령 임기 말기가 다가오자 새로운 싸움을 준비했다.</p>
+
+        <p>제헌 의회에서 규정한 헌법은 대통령을 국회에서 간접선거로 선출하도록 규정했다. 그러나 제2대 국회는 이승만 세력이 많지 않았다. 재선을 바라던 이승만 대통령의 계획은 실현이 불투명해졌다.</p>
+
+        <div class="quote">
+            "1950년 5월 30일 실시된 제2대 국회의원 이선거의 결과, 무소속이 의원정수의 60％에 해당하는 절대다수를 차지하게 되었고, 이승만 지지자들은 당선이 크게 줄어 이승만 정부는 위기에 처했다."
+            <span class="quote-source">- 한국민족문화대백과사전</span>
+        </div>
+
+        <p>1952년 1월 18일, 이승만이 제출한 대통령 직선제 개헌안은 국회에서 찬성 19표, 반대 143표라는 큰 차로 통과되지 않았다. 즉, 국회는 이승만이 제출한 대통령 직선제를 부결하였다.</p>
+
+        <h3 class="subsection-title">계엄령과 공포정치</h3>
+        
+        <p>이승만은 다른 수단을 택했다. 1952년 5월 25일 자정, 부산을 포함한 23개 시·군에 비상계엄이 선포되었다.</p>
+
+        <div class="quote">
+            "1952년 5월 25일의 계엄령 선포로부터 같은 해 7월 7일의 제1차 개정헌법 공포에 이르기까지 전시 임시수도였던 부산에서 일어난 일련의 정치적 소요사건."
+            <span class="quote-source">- 한국민족문화대백과사전 (부산정치파동)</span>
+        </div>
+
+        <p>5월 26일, 국회의원 통근버스가 헌병대에 의해 통째로 연행되었다. 양병일, 박정근, 곽상훈 등 야당 의원들이 "국제공산당 관련 혐의"로 체포되었다. 약 50명의 의원이 연행되었다.</p>
+
+        <div class="quote">
+            "1952년 5월 26일 아침에는 40여 명의 의원들이 탄 통근버스가 헌병대로 연행되었다."
+            <span class="quote-source">- 국사편찬위원회 『우리역사넷』</span>
+        </div>
+
+        <p>부통령 김성수는 항의의 표시로 사표를 제출했다. 트루먼 미국 대통령은 서한을 보내 "국회 해산과 같은 돌이킬 수 없는 행동"을 하지 말라고 경고했다.</p>
+
+        <h3 class="subsection-title">1952년 7월 4일 - 발췌개헌의 강행</h3>
+        
+        <p>1952년 7월 4일 밤, 경찰과 군이 국회의사당을 포위한 가운데, 의원들은 이틀간 감금되어 있었다. 자유당 소장파들이 출입을 통제했다.</p>
+
+        <div class="quote">
+            "강제로 연행, 동원되어 연 이틀간이나 국회에 감금되어 있던 야당의원들은 경찰과 군이 국회를 포위하고, 남송학 의원 등 자유당합동파와 신라회 소장의원들이 출입을 통제하는 가운데 1952년 7월 4일 밤 개헌안이 기립표결로 처리되었다."
+            <span class="quote-source">- 한국민족문화대백과사전</span>
+        </div>
+
+        <p>결과는 출석 166명, 찬성 163명, 기권 3명. 발췌개헌안이 통과되었다. 대통령 직선제가 도입되었다.</p>
+
+        <p>형식적으로는 직선제로 '더 민주적'이 되었지만, 그 과정은 헌법 절차를 무시한 결과였다. 일사부재의 원칙 위반, 30일 공고기간 무시, 의원 강제 등원과 감금, 계엄령 하의 기립표결. <strong>모든 것이 위헌이었다.</strong></p>
+    </div>
+
+    <!-- 개념 설명 섹션 추가 -->
+    <div class="section">
+        <h2 class="section-title">개념 이해: 민주주의, 정당정치, 공천제</h2>
+        
+        <div class="concept-box">
+            <div class="concept-title">💡 핵심 개념 설명</div>
+            
+            <div class="concept-item">
+                <div class="concept-term">① 민주주의(民主主義)</div>
+                <div class="concept-desc">
+                    국민이 주권을 가지고 국민을 위해 정치를 하는 제도. 선거를 통해 대표자를 선출하고, 그 대표자가 국민의 뜻에 따라 국가를 운영한다. <strong>핵심은 국민의 선택권과 권력에 대한 견제</strong>이다.
+                </div>
+            </div>
+
+            <div class="concept-item">
+                <div class="concept-term">② 정당정치(政黨政治)</div>
+                <div class="concept-desc">
+                    비슷한 정치적 이념과 정책을 가진 사람들이 모여 정당을 만들고, 정당 단위로 정치 활동을 하는 방식. <strong>장점:</strong> 체계적인 정책 개발, 책임 정치 구현. <strong>단점:</strong> 정당의 힘이 너무 강해지면 개인(후보자)의 자질보다 당의 결정이 우선될 수 있다.
+                </div>
+            </div>
+
+            <div class="concept-item">
+                <div class="concept-term">③ 공천제(公薦制)</div>
+                <div class="concept-desc">
+                    정당이 선거에 나갈 후보자를 선정하여 추천하는 제도. 제2대 선거(1950년)에는 없었고, <strong>제3대 선거(1954년)부터 도입</strong>되었다. 공천제로 정당 중심의 정치가 확립되었지만, 공천권이 당 지도부에 집중되면서 <strong>"누가 공천을 받느냐"가 당선의 핵심</strong>이 되었다.
+                </div>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">1950년 무소속 60% vs 2025년 무소속 0.5%: 무엇이 달라졌나?</h3>
+        
+        <div class="comparison-box">
+            <div class="comparison-item past">
+                <div class="comparison-year">1950년: 무소속의 시대</div>
+                <div class="comparison-desc" style="text-align: left; font-size: 26px;">
+                    <strong>• 정당 미성숙:</strong> 정당이 아직 체계적이지 못함<br>
+                    <strong>• 인물 중심:</strong> "이 사람이 지역을 위해 무엇을 할까?"<br>
+                    <strong>• 정당 불신:</strong> 좌우 대립, 친일파 청산 실패로 정당 불신<br>
+                    <strong>• 공천제 없음:</strong> 누구나 자유롭게 출마 가능<br>
+                    <strong>→ 결과:</strong> 유권자의 선택권은 넓지만, 정책 중심 정치는 약함
+                </div>
+            </div>
+            <div class="comparison-item present">
+                <div class="comparison-year">2025년: 정당의 시대</div>
+                <div class="comparison-desc" style="text-align: left; font-size: 26px;">
+                    <strong>• 정당 고착화:</strong> 강력한 정당 조직 구축<br>
+                    <strong>• 정당 중심:</strong> "어느 당 소속인가?"가 당선의 핵심<br>
+                    <strong>• 공천권 집중:</strong> 당 지도부가 후보 결정<br>
+                    <strong>• 무소속 당선 어려움:</strong> 정당 지원 없이는 사실상 불가능<br>
+                    <strong>→ 결과:</strong> 정책 중심 정치는 강화되었지만, 유권자 선택권은 축소
+                </div>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">정당정치의 성숙인가, 유권자 선택권의 축소인가?</h3>
+        
+        <p>1950년 60% → 2025년 0.5%로의 변화는 <strong>동전의 양면</strong>과 같다.</p>
+
+        <p><strong>긍정적 측면 (정당정치의 발전):</strong></p>
+        <ul>
+            <li>체계적인 정책 개발과 실행이 가능해짐</li>
+            <li>정당이 책임을 지는 구조가 만들어짐</li>
+            <li>인물이 아닌 정책으로 선택할 수 있는 기반 마련</li>
+            <li>정치의 안정성과 예측가능성 증가</li>
+        </ul>
+
+        <p><strong>부정적 측면 (선택권의 제약):</strong></p>
+        <ul>
+            <li>공천권이 당 지도부에 집중되면서 "보스 정치" 우려</li>
+            <li>유권자가 선택할 수 있는 후보의 폭이 좁아짐</li>
+            <li>인물의 자질보다 당의 결정이 우선되는 경향</li>
+            <li>무소속이나 신진 정치인의 진입 장벽 상승</li>
+        </ul>
+
+        <p style="text-align: center; font-size: 34px; margin-top: 50px; color: #c41e3a; font-weight: 800;">
+            정당정치는 민주주의의 발전인가, 아니면 유권자 선택권의 축소인가?<br>
+            이 질문에 대한 답은 우리가 어떤 정치 시스템을 만들어가느냐에 달려 있다.
+        </p>
+    </div>
+
+    <!-- 에필로그 -->
+    <div class="epilogue">
+        <h2>에필로그: 역사의 아이러니와 교훈</h2>
+        
+        <h3>무소속 압승이 정당정치에 남긴 유산</h3>
+        
+        <p>1950년 제2대 선거의 무소속 60% 압승은 이후 한국 정당정치에 깊은 영향을 미쳤다.</p>
+
+        <p><strong>① 취약한 정당 기반과 이합집산의 정치문화</strong></p>
+        <p>126명의 무소속 의원들은 국회 내에서 생존하기 위해 끊임없이 교섭단체를 만들고 해체했다. 1950년 11월 무소속구락부, 1951년 5월 공화민정회(108석) 등이 결성되었지만, 이들은 일관된 정책 노선 없이 상황에 따라 여당과 야당을 오갔다. 이러한 이합집산의 정치문화는 한국 정치의 고질적 문제로 자리잡았다.</p>
+
+        <p><strong>② 공천제 도입의 배경</strong></p>
+        <p>무소속 의원들의 혼란과 정당의 무력함을 경험한 후, 제3대 국회의원 선거(1954년)부터 공천제가 본격 도입되었다. 정당이 후보를 지명하고 관리하는 시스템이 만들어지면서, 정당 중심의 정치가 시작되었다. 이는 정당정치의 발전이었지만, 동시에 공천권을 둘러싼 새로운 권력 투쟁의 시작이기도 했다.</p>
+
+        <p><strong>③ 1950년 60% → 2025년 0.5%의 의미</strong></p>
+        <p>75년간 무소속 비율이 극적으로 감소한 것은 정당정치의 성숙을 의미하지만, 동시에 유권자의 선택권이 정당의 공천권으로 대체되었음을 의미한다. 1950년에는 "이 사람"을 선택했다면, 2025년에는 "이 당"을 선택하는 구조가 되었다.</p>
+
+        <h3>1950년 5월 30일이 남긴 것</h3>
+        
+        <p>1950년 5월 30일, 국민은 투표로 이승만 정권을 심판했다. 126석의 무소속 의원, 야당이 제1당이 된 역사적 순간. 그것은 대한민국 민주주의가 살아있다는 증거였다.</p>
+
+        <p>하지만 26일 후 전쟁이 터졌고, 2년 후 계엄령이 선포되었다. 국민이 선택한 의원들은 납북되거나 감금되었다. 민의를 보여준 선거는 오히려 독재 강화의 명분이 되었다.</p>
+
+        <div class="quote">
+            "부산정치파동은 그 뒤 여야 사이의 정치 운영방식을 폭력 대결을 통한 극한대립의 양상으로 바꾸어 놓았으며, 헌정사에서도 평화적 정권교체의 사례를 찾아보기 힘들게 만드는 분기점이 되고 말았다."
+            <span class="quote-source">- 한국민족문화대백과사전</span>
+        </div>
+
+        <p>역사의 아이러니는 여기에 있다. 국민이 투표로 만든 견제 장치가 오히려 권력자에게 더 강력한 독재의 빌미를 주었다. "전시 상황"이라는 명분 아래, "공산당 음모"라는 조작된 명목으로, 민주주의는 질식당했다.</p>
+
+        <h3>우리에게 남긴 교훈</h3>
+        
+        <p>제2대 국회의원 선거는 우리에게 묻는다.</p>
+
+        <ul>
+            <li><strong>민주주의는 한 번의 선거로 완성되지 않는다.</strong> 1950년 5월 30일의 투표는 희망이었지만, 그것을 지켜내지 못했다.</li>
+            <li><strong>제도적 견제장치만으로는 부족하다.</strong> 국회가 존재했지만, 계엄령 앞에서 무력했다.</li>
+            <li><strong>비상상황은 민주주의를 후퇴시키는 가장 위험한 구실이 된다.</strong> 전쟁, 공안, 국가안보. 그 이름으로 얼마나 많은 민의가 짓밟혔는가.</li>
+            <li><strong>정당정치의 발전은 필요하지만, 공천권의 집중은 경계해야 한다.</strong> 1950년의 무소속 60%가 혼란이었다면, 2025년의 무소속 0.5%는 선택권의 과도한 제약일 수 있다.</li>
+        </ul>
+
+        <p>75년이 지난 2025년, 우리는 여전히 이 질문 앞에 서 있다. 1950년 5월 30일 투표소에 들어선 유권자가 꿈꾸던 희망은 지켜졌는가? 그들이 만들려던 나라는 이루어졌는가?</p>
+
+        <div class="highlight-box">
+            "이제는 좀 살아보자."
+        </div>
+
+        <p style="text-align: center; font-size: 32px; margin-top: 40px;">그 한마디는 여전히 메아리친다.<br>26일간의 희망과, 그 후 75년간의 질문으로.</p>
+
+        <p style="text-align: center; font-size: 36px; margin-top: 60px; color: #ffd700; font-weight: 900;">
+            민주주의는 선거로 시작되지만,<br>
+            그것을 지켜내는 것은 우리 모두의 몫이다.
+        </p>
+    </div>
+
+    <!-- 출처 -->
+    <div class="sources">
+        <h2>📚 주요 출처</h2>
+        <ol>
+            <li>국사편찬위원회 『우리역사넷』 - 1952년 부산정치파동 해제 (https://contents.history.go.kr)</li>
+            <li>한국민족문화대백과사전 (한국학중앙연구원) - 부산정치파동, 조소앙, 제2대 국회의원 선거 항목 (http://encykorea.aks.ac.kr)</li>
+            <li>인천투데이 (2025년 5월 30일) - "[오늘의 역사] 한국전쟁 발발 불과 25일전 치른 제2대 국회의원 이선"</li>
+            <li>중앙선거관리위원회 역대선거정보시스템 - 제2대 국회의원 선거 공식 기록</li>
+            <li>중앙선거관리위원회 사이버선거역사관 - 제2대 국회의원선거 (http://museum.nec.go.kr)</li>
+        </ol>
+        <p style="margin-top: 30px; font-style: italic;">※ 본 자료는 위키백과, 나무위키, 블로그 등의 출처는 배제하고, 국가기관 및 학술기관의 공신력 있는 자료만을 인용하여 작성되었습니다.</p>
+    </div>
+</body>
+</html>

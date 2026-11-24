@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1950년대 대한민국 경제의 설계도</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --highlight-color: #f1c40f;
+            --bg-light: #f8f9fa;
+            --text-dark: #212529;
+        }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            background-color: #ecf0f1;
+            font-size: 22px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        header {
+            background: linear-gradient(135deg, var(--main-color), #34495e);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+        header h1 { font-size: 4em; margin: 0; font-weight: 900; line-height: 1.2; }
+        header p { font-size: 1.8em; opacity: 0.9; margin-top: 20px; }
+        .timeline-nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ddd;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .timeline-nav a {
+            text-decoration: none;
+            color: var(--main-color);
+            font-weight: 800;
+            padding: 15px 30px;
+            border-radius: 30px;
+            transition: all 0.3s;
+            font-size: 1.3em;
+        }
+        .timeline-nav a:hover, .timeline-nav a.active {
+            background-color: var(--main-color);
+            color: white;
+        }
+        section {
+            padding: 80px 50px;
+            border-bottom: 1px solid #eee;
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h2 {
+            font-size: 3em;
+            color: var(--main-color);
+            border-left: 15px solid var(--accent-color);
+            padding-left: 30px;
+            margin-bottom: 50px;
+            font-weight: 900;
+        }
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .flow-step {
+            background: var(--bg-light);
+            border: 4px solid var(--main-color);
+            border-radius: 20px;
+            padding: 30px;
+            font-size: 1.4em;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .flow-step::after {
+            content: '⬇️';
+            position: absolute;
+            bottom: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+        }
+        .flow-step:last-child::after { content: none; }
+        .flow-highlight { background-color: #fff3cd; font-weight: 900; padding: 5px 10px; }
+        
+        /* === [수정된 부분 시작] 지도 스타일 구조 변경 === */
+        .map-table-container {
+            display: flex;
+            gap: 50px;
+            align-items: stretch;
+        }
+        /* 지도와 텍스트를 감싸는 왼쪽 영역 */
+        .map-left-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column; /* 위아래로 배치 */
+            min-height: 800px;
+            border-radius: 20px;
+            border: 3px solid #ced4da;
+            background-color: #f9f9f9;
+            overflow: hidden; /* 둥근 모서리 밖으로 나가는 것 방지 */
+        }
+        /* 실제 지도가 들어갈 위쪽 영역 */
+        .actual-map-area {
+            flex: 1; /* 남은 공간을 모두 차지 */
+            min-height: 500px; /* 최소 높이 보장 */
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Map_of_Korea-blank.svg/500px-Map_of_Korea-blank.svg.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-top: 20px; /* 상단 여백 */
+        }
+        /* 아래쪽 판서 가이드 영역 (이제 겹치지 않음) */
+        .map-guide {
+            /* position: absolute; 삭제됨 */
+            background: rgba(255,255,255,0.95);
+            padding: 25px;
+            margin: 20px; /* 상하좌우 여백 */
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            font-size: 1.1em;
+            line-height: 1.5;
+            border: 2px solid var(--main-color);
+            z-index: 2;
+        }
+        /* === [수정된 부분 끝] === */
+
+        .map-guide ul li { margin-bottom: 10px; }
+        .table-container { flex: 1.3; }
+        table { width: 100%; border-collapse: collapse; font-size: 1.3em; box-shadow: 0 0 15px rgba(0,0,0,0.05); }
+        th, td { padding: 20px; text-align: left; border-bottom: 2px solid #ddd; }
+        th { background-color: var(--main-color); color: white; font-weight: 900; }
+        tr:hover { background-color: #f0f0f0; }
+        .impact-text { color: var(--accent-color); font-weight: 900; font-size: 1.1em; }
+        .comparison { display: flex; gap: 40px; }
+        .light, .shadow { flex: 1; padding: 40px; border-radius: 25px; color: #fff; font-size: 1.2em; }
+        .light { background: linear-gradient(135deg, #27ae60, #2ecc71); box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3); }
+        .shadow { background: linear-gradient(135deg, #7f8c8d, #95a5a6); box-shadow: 0 10px 20px rgba(127, 140, 141, 0.3); }
+        .light h3, .shadow h3 { margin-top: 0; font-size: 2.2em; border-bottom: 3px solid rgba(255,255,255,0.3); padding-bottom: 20px; font-weight: 900; }
+        .source-cite { display: block; margin-top: 25px; font-size: 0.9em; opacity: 0.9; font-style: italic; background: rgba(0,0,0,0.1); padding: 10px; border-radius: 10px; }
+        .discussion-box { background-color: var(--main-color); color: white; padding: 50px; border-radius: 30px; font-size: 1.6em; text-align: center; }
+        .discussion-q { background: rgba(255,255,255,0.15); margin: 30px 0; padding: 30px; border-radius: 20px; text-align: left; border-left: 10px solid var(--highlight-color); }
+        @media (max-width: 1024px) {
+            .map-table-container, .comparison { flex-direction: column; }
+            .map-left-column { min-height: 600px; }
+            header h1 { font-size: 3em; }
+            body { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header id="intro">
+            <h1>1950년대, 대한민국 경제의 설계도</h1>
+            <p>폐허 속에서 우리는 무엇으로 다시 일어섰을까?</p>
+        </header>
+
+        <nav class="timeline-nav">
+            <a href="#intro">🏠 처음으로</a>
+            <a href="#us-aid">🌾 원조경제</a>
+            <a href="#vested-property">🏭 귀속재산</a>
+            <a href="#light-shadow">⚖️ 빛과 그림자</a>
+            <a href="#discussion">💬 토론하기</a>
+        </nav>
+
+        <section id="us-aid">
+            <h2>🌾 미국 텍사스 밀은 어떻게 '수제비'가 되었나?</h2>
+            <div class="flowchart">
+                <div class="flow-step">
+                    <strong>1단계: [출발] 미국 잉여 농산물</strong><br>
+                    미국에 남아도는 밀과 면화가 'PL 480호' 법에 의해 태평양을 건너옵니다.
+                </div>
+                <div class="flow-step">
+                    <strong>2단계: [도착] 인천항/부산항</strong><br>
+                    한국 정부가 물자를 인수합니다. 미국은 '공짜'로 줬지만, 정부는 국민에게 그냥 주지 않습니다.
+                </div>
+                <div class="flow-step">
+                    <strong>3단계: [분배] <span class="flow-highlight">재벌의 탄생 (삼백산업)</span></strong><br>
+                    정부가 선택된 소수 기업(제분·방직 등)에게 싼값에 원료를 배정합니다.
+                </div>
+                <div class="flow-step">
+                    <strong>4단계: [소비] 국민들의 구매</strong><br>
+                    기업은 이를 가공해 시장에 팔고, 국민들은 돈을 내고 사 먹습니다.
+                </div>
+                <div class="flow-step" style="background-color: #e8f6f3;">
+                    <strong>5단계: [종착] <span class="flow-highlight">국가의 비상금 '대충자금'</span></strong><br>
+                    기업이 낸 돈은 정부의 핵심 자금(대충자금)이 되어 국방비와 공무원 월급으로 쓰입니다.
+                </div>
+            </div>
+        </section>
+
+        <section id="vested-property">
+            <h2>🏭 주인이 사라진 거대한 부, 누가 차지했나?</h2>
+            <div class="map-table-container">
+                <div class="map-left-column">
+                    <div class="actual-map-area"></div>
+                    
+                    <div class="map-guide">
+                        <strong><img src="https://em-content.zobj.net/source/microsoft/319/pencil_270f-fe0f.png" alt="연필" style="width: 30px; vertical-align: sub;"> 포인트</strong>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 15px;">
+                            <li style="margin-bottom: 10px;">🖍️ <strong>서울/인천</strong>: 경성방직, 삼양사, 조선화약(한화)</li>
+                            <li style="margin-bottom: 10px;">🖍️ <strong>수원</strong>: 선경직물(SK)</li>
+                            <li style="margin-bottom: 10px;">🖍️ <strong>부산</strong>: 제일제당(CJ), 조선중공업(한진중공업)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <h3 style="font-size: 2em; margin-top: 0;">그때 그 공장, 지금은 어디?</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>일제강점기 (귀속재산)</th>
+                                <th>불하 받은 기업인</th>
+                                <th>현재의 모습 (그룹)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>선경직물 (수원)</td>
+                                <td>최종건</td>
+                                <td class="impact-text">SK 그룹</td>
+                            </tr>
+                            <tr>
+                                <td>소와 기린맥주 (서울)</td>
+                                <td>두산상회 (박승직)</td>
+                                <td class="impact-text">두산 그룹 (OB)</td>
+                            </tr>
+                            <tr>
+                                <td>조선화약공판 (인천)</td>
+                                <td>김종희</td>
+                                <td class="impact-text">한화 그룹</td>
+                            </tr>
+                            <tr>
+                                <td>조선해운</td>
+                                <td>한진상사 (조중훈)</td>
+                                <td class="impact-text">한진 그룹 (대한항공)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="background: #fff3cd; padding: 25px; border-radius: 15px; margin-top: 30px; font-size: 1.2em; border-left: 10px solid var(--highlight-color);">
+                        <strong>💡 핵심:</strong><br>
+                        "이 거대한 공장들은 당시 극심한 인플레이션을 고려하면 사실상 <strong>'헐값(실제 가격의 10분의 1 수준)'</strong>에, 그것도 15년 장기 분할 상환이라는 <strong>'특혜'</strong>로 불하되었습니다. 이것이 한국 재벌의 출발점입니다."
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="light-shadow">
+            <h2>⚖️ 1950년대 경제의 두 얼굴</h2>
+            <div class="comparison">
+                <div class="light">
+                    <h3>☀️ 빛: 국가 생존의 동아줄</h3>
+                    <ul>
+                        <li><strong>대충자금(Counterpart Fund) 확보</strong>:<br>원조 물자 판매 대금은 당시 국가 전체 수입의 50% 이상을 차지했습니다.</li>
+                        <li>이 돈이 없었다면 전후 복구는 물론, 60만 대군 유지도 불가능했을 것입니다.</li>
+                    </ul>
+                </div>
+                <div class="shadow">
+                    <h3>🌑 그림자: 농촌 몰락과 정경유착</h3>
+                    <ul>
+                        <li><strong>농촌의 몰락</strong>:<br>공짜나 다름없는 미국 밀가루가 쏟아지자 우리 밀 농업 기반이 붕괴되었습니다.</li>
+                        <li><strong>정경유착의 시작</strong>:<br>귀속재산과 원조 달러를 배정받기 위해 정치권력에 줄을 서는 검은 관행이 생겨났습니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="discussion">
+            <h2>💬 역사의 선택, 여러분이라면?</h2>
+            <div class="discussion-box">
+                <p style="font-weight: 900; margin-bottom: 30px;">만약 여러분이 1950년대의 정책 결정자라면?</p>
+                <div class="discussion-q">
+                    <strong>Q1. 굶주림 해결 vs 농민 보호</strong><br>
+                    당장 굶는 도시민을 위해 미국 밀가루를 받는다 <br>vs<br> 우리 농업 보호를 위해 원조를 거부한다.
+                </div>
+                <div class="discussion-q">
+                    <strong>Q2. 신속한 재건 vs 공정한 분배</strong><br>
+                    주인 없는 공장을 유능한 기업인에게 빨리 넘겨 돌린다 <br>vs<br> 시간이 걸리더라도 공개 입찰로 공정하게 나눈다.
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            let fromTop = window.scrollY + 200; 
+            let navLinks = document.querySelectorAll('.timeline-nav a');
+            navLinks.forEach(link => {
+                let section = document.querySelector(link.hash);
+                if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
